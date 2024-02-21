@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surgical_Disposables_DocMatter_Required</fullName>
+    <active>true</active>
+    <description>If Product Family is Fascial Closure DocMatter field is required</description>
+    <errorConditionFormula>AND(
+NOT(ISPICKVAL( Business_Unit__c , &quot;Latin America&quot;)),
+
+ISPICKVAL(Product_Family_GPL__c, &quot;Fascial Closure&quot;),
+
+  ISBLANK(TEXT(DocMatter__c))  
+
+)</errorConditionFormula>
+    <errorDisplayField>DocMatter__c</errorDisplayField>
+    <errorMessage>If Product Family is Fascial Closure DocMatter field is required</errorMessage>
+</ValidationRule>

@@ -1,0 +1,24 @@
+<apex:page sidebar="true" showheader="true" standardController="Demo__c" tabStyle="Demo__c">
+   <apex:form >
+       <apex:sectionHeader title="Demo" subtitle="{!if(Demo__c.Id==null,'New Demo',Demo__c.Name)}"/>
+       <apex:pageblock title="Demo Edit" >
+       <apex:pageblockButtons >
+       <apex:commandButton action="{!save}" value="Save"/>
+       <apex:commandButton action="{!cancel}" value="Cancel"/>
+       </apex:pageblockButtons>
+
+       <apex:pagemessages />
+          
+           <apex:pageBlockSection columns="2" title="Demo Information">
+               <apex:inputField value="{!Demo__c.Opportunity__c}"/>
+               <apex:inputField value="{!Demo__c.VPS_Console__c}" />
+               <apex:inputField value="{!Demo__c.Start_Date__c}" />
+               <apex:inputField value="{!Demo__c.Status__c}" />
+               <apex:inputField value="{!Demo__c.End_Date__c}" />
+                        
+           </apex:pageBlockSection>                   
+           
+       </apex:pageblock>
+   </apex:form>
+   
+</apex:page>

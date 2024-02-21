@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Product_Tracking_120_Day_Alert</fullName>
+        <description>Product Tracking 120 Day Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Tracking_Email_Alert/Product_Tracking_Aging</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Tracking_14_Day_Alert</fullName>
+        <description>Product Tracking 14 Day Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Tracking_Email_Alert/Product_Tracking_Aging</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Tracking_150_Day_Alert</fullName>
+        <description>Product Tracking 150 Day Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Tracking_Email_Alert/Product_Tracking_Aging</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Tracking_180_Day_Alert</fullName>
+        <description>Product Tracking 180 Day Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Tracking_Email_Alert/Product_Tracking_Aging</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Tracking_30_Day_Alert</fullName>
+        <description>Product Tracking 30 Day Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Tracking_Email_Alert/Product_Tracking_Aging</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Tracking_60_Day_Alert</fullName>
+        <description>Product Tracking 60 Day Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Tracking_Email_Alert/Product_Tracking_Aging</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Tracking_90_Day_Alert</fullName>
+        <description>Product Tracking 90 Day Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Tracking_Email_Alert/Product_Tracking_Aging</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Opp_Naming_Convention</fullName>
+        <description>05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Opportunity_Name__c</field>
+        <formula>LEFT(Account__r.Name  + &quot; - &quot; + 
+if(ispickval( Product_Family_GPL__c ,&quot;&quot;),&quot;No Product Family&quot;,Text(Product_Family_GPL__c)),100)</formula>
+        <name>Opp Naming Convention</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Tracking_Name</fullName>
+        <description>05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>LEFT((Account__r.Name + &quot;-&quot; + Account__r.SAP_Sold_To__c + &quot;-&quot; +  Strategic_Initiative_Name__c),80)</formula>
+        <name>Product Tracking Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Product_Tracking_Status_if_Opp_Cr</fullName>
+        <field>Status__c</field>
+        <literalValue>Opportunity Created</literalValue>
+        <name>Update Product Tracking Status if Opp Cr</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Opp Naming Convention</fullName>
+        <actions>
+            <name>Opp_Naming_Convention</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product Tracking Email Alert</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product_Tracking__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vascular Product Tracking</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product_Tracking__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New,Working</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product_Tracking__c.Strategic_Initiative_Name__c</field>
+            <operation>notEqual</operation>
+            <value>Vizient Sole Source</value>
+        </criteriaItems>
+        <description>Currently, only for Vascular. Sends email alert when a certain # of days is reached.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_Tracking_14_Day_Alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product_Tracking__c.CreatedDate</offsetFromField>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_Tracking_60_Day_Alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product_Tracking__c.CreatedDate</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_Tracking_30_Day_Alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product_Tracking__c.CreatedDate</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_Tracking_90_Day_Alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product_Tracking__c.CreatedDate</offsetFromField>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_Tracking_120_Day_Alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product_Tracking__c.CreatedDate</offsetFromField>
+            <timeLength>120</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_Tracking_150_Day_Alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product_Tracking__c.CreatedDate</offsetFromField>
+            <timeLength>150</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_Tracking_180_Day_Alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product_Tracking__c.CreatedDate</offsetFromField>
+            <timeLength>180</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Product Tracking Name</fullName>
+        <actions>
+            <name>Product_Tracking_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product_Tracking__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Anesthesia Product Tracking,Vascular Product Tracking</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Product Tracking Status if Opp Created</fullName>
+        <actions>
+            <name>Update_Product_Tracking_Status_if_Opp_Cr</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product_Tracking__c.Opportunity_Name_Blank__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

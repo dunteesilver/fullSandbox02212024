@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Was_an_Xray_Performed_No_equals_No_1</fullName>
+    <active>false</active>
+    <description>Please don not enter  &apos;Is X-ray available for Review&apos;  if &apos;Was an X-ray performed?&apos; is &apos;No&apos;.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Is_this_complaint_regarding_VPS_Consoles__c,&quot;Yes&quot;),
+ISPICKVAL( Was_an_X_ray_performed__c , &quot;No&quot;),
+NOT(ISPICKVAL( Is_X_ray_available_for_review__c,&apos;&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Is_X_ray_available_for_review__c</errorDisplayField>
+    <errorMessage>This field is not required when &apos;Was an X-ray performed?&apos; is &apos;No&apos;.</errorMessage>
+</ValidationRule>

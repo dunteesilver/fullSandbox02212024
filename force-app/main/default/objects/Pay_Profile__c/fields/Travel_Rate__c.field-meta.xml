@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Rate__c</fullName>
+    <description>This is automatically calculated at 1/2 the hourly rate.</description>
+    <externalId>false</externalId>
+    <formula>ROUND( Inservice_Hour__c  / 2, 2)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This is automatically calculated at 1/2 the hourly rate.</inlineHelpText>
+    <label>Travel Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

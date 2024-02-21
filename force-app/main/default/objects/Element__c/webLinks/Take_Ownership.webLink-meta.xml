@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Take_Ownership</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Take Ownership</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var url = parent.location.href; 
+var elementObj = new sforce.SObject(&quot;Element__c&quot;); 
+elementObj.Id = &apos;{!Element__c.Id}&apos;; 
+var userid = &apos;{!$User.Id}&apos;; 
+var isowner = &apos;{!Element__c.IsOwner__c}&apos;; 
+var closed = &apos;{!Element__c.IsClosed__c}&apos;; 
+
+if (isowner == &quot;TRUE&quot;) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_AlreadyTestOwner}&quot;); 
+} 
+
+else 
+if (closed == &quot;1&quot;)
+{ 
+alert(&quot;{!$Label.ButtonAlert_TestCanNotBeClosed}&quot;); 
+} 
+
+else 
+{ 
+var result = sforce.connection.query(&quot;select Id from Team_Member__c Where Salesforce_User_ID__c = \&apos;&quot; + userid + &quot;\&apos; LIMIT 1&quot;); 
+records = result.getArray(&quot;records&quot;); 
+
+if(records[0] == undefined) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_TeamMemberNotLinkedToUser}&quot;); 
+} 
+
+else 
+{ 
+elementObj.Owner__c = records[0].Id; 
+var results = sforce.connection.update([elementObj]); 
+
+if (results[0].success==&apos;false&apos;) 
+{ 
+alert(results[0].errors.message); 
+} 
+
+else 
+{ 
+parent.location.href = url; 
+} 
+} 
+}</url>
+</WebLink>

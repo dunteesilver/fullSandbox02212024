@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Template__c</fullName>
+    <externalId>false</externalId>
+    <label>Template</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arrow Interventional</fullName>
+                <default>false</default>
+                <label>Arrow Interventional</label>
+            </value>
+            <value>
+                <fullName>Arrow International</fullName>
+                <default>false</default>
+                <label>Arrow International</label>
+            </value>
+            <value>
+                <fullName>Standard</fullName>
+                <default>false</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>Eaches</fullName>
+                <default>false</default>
+                <label>Eaches</label>
+            </value>
+            <value>
+                <fullName>Arrow</fullName>
+                <default>false</default>
+                <label>Arrow</label>
+            </value>
+            <value>
+                <fullName>Teleflex</fullName>
+                <default>false</default>
+                <label>Teleflex</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

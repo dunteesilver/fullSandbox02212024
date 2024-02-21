@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_List_Type__c</fullName>
+    <description>List Price Type Abbreviation is a better name and is used for apex but the &apos;List Price Type&apos; is what is shown in reporting and the UI. - ESC
+CASE(Customer_Group__c, 
+&quot;01&quot;, &quot;ZD&quot;,
+&quot;02&quot;, &quot;ZD&quot;,
+&quot;03&quot;, &quot;ZA&quot;,
+&quot;04&quot;, &quot;ZD&quot;,
+&quot;05&quot;, &quot;ZD&quot;,
+&quot;06&quot;, &quot;ZD&quot;,
+&quot;07&quot;, &quot;ZD&quot;,
+&quot;08&quot;, &quot;ZD&quot;,
+&quot;09&quot;, &quot;ZD&quot;,
+&quot;10&quot;, &quot;ZD&quot;,
+&quot;11&quot;, &quot;ZD&quot;,
+&quot;12&quot;, &quot;ZD&quot;,
+&quot;13&quot;, &quot;ZA&quot;,
+&quot;14&quot;, &quot;ZH&quot;,
+&quot;15&quot;, &quot;ZA&quot;,
+&quot;16&quot;, &quot;ZH&quot;,
+&quot;17&quot;, &quot;ZH&quot;,
+&quot;18&quot;, &quot;ZH&quot;,
+&quot;19&quot;, &quot;ZH&quot;,
+&quot;20&quot;, &quot;ZH&quot;,
+&quot;21&quot;, &quot;ZH&quot;,
+&quot;23&quot;, &quot;ZH&quot;,
+&quot;24&quot;, &quot;ZA&quot;,
+&quot;25&quot;, &quot;ZD&quot;,
+&quot;26&quot;, &quot;ZD&quot;,
+&quot;27&quot;, &quot;ZD&quot;,
+&quot;28&quot;, &quot;ZA&quot;,
+&quot;29&quot;, &quot;ZD&quot;,
+&quot;30&quot;, &quot;ZD&quot;,
+&quot;31&quot;, &quot;ZH&quot;,
+&quot;32&quot;, &quot;ZA&quot;,
+&quot;33&quot;, &quot;ZA&quot;,
+&quot;34&quot;, &quot;ZA&quot;,
+&quot;35&quot;, &quot;ZD&quot;,
+&quot;36&quot;, &quot;ZD&quot;,
+&quot;37&quot;, &quot;ZA&quot;,
+&quot;38&quot;, &quot;ZA&quot;,
+&quot;39&quot;, &quot;ZH&quot;,
+&quot;40&quot;, &quot;ZH&quot;,
+&quot;41&quot;, &quot;ZA&quot;,
+&quot;42&quot;, &quot;ZA&quot;,
+&quot;50&quot;, &quot;ZD&quot;,
+&quot;51&quot;, &quot;ZD&quot;,
+&quot;52&quot;, &quot;ZD&quot;,
+&quot;ZH&quot;)</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    Sales_Org__c == &quot;AT10&quot;,
+    Alt_Customer_Group__c,
+    IF(
+        OR(
+            Customer_Group__c == &quot;01&quot;,
+            Customer_Group__c == &quot;02&quot;,
+            Customer_Group__c == &quot;04&quot;,
+            Customer_Group__c == &quot;05&quot;,
+            Customer_Group__c == &quot;06&quot;,
+            Customer_Group__c == &quot;07&quot;,
+            Customer_Group__c == &quot;08&quot;,
+            Customer_Group__c == &quot;09&quot;,
+            Customer_Group__c == &quot;10&quot;,
+            Customer_Group__c == &quot;11&quot;,
+            Customer_Group__c == &quot;12&quot;,
+            Customer_Group__c == &quot;25&quot;,
+            Customer_Group__c == &quot;26&quot;,
+            Customer_Group__c == &quot;27&quot;,
+            Customer_Group__c == &quot;29&quot;,
+            Customer_Group__c == &quot;30&quot;,
+            Customer_Group__c == &quot;35&quot;,
+            Customer_Group__c == &quot;36&quot;,
+            Customer_Group__c == &quot;50&quot;,
+            Customer_Group__c == &quot;51&quot;,
+            Customer_Group__c == &quot;52&quot;
+        ),
+        &quot;ZD&quot;,
+        
+        IF(
+            OR(
+                Customer_Group__c == &quot;03&quot;,
+                Customer_Group__c == &quot;13&quot;,
+                Customer_Group__c == &quot;15&quot;,
+                Customer_Group__c == &quot;32&quot;,
+                Customer_Group__c == &quot;33&quot;,
+                Customer_Group__c == &quot;34&quot;,
+                Customer_Group__c == &quot;37&quot;,
+                Customer_Group__c == &quot;38&quot;,
+                Customer_Group__c == &quot;41&quot;,
+                Customer_Group__c == &quot;42&quot;
+            ),
+            &quot;ZA&quot;,
+            
+            IF(
+                OR(
+                    Customer_Group__c == &quot;14&quot;,
+                    Customer_Group__c == &quot;16&quot;,
+                    Customer_Group__c == &quot;17&quot;,
+                    Customer_Group__c == &quot;18&quot;,
+                    Customer_Group__c == &quot;19&quot;,
+                    Customer_Group__c == &quot;20&quot;,
+                    Customer_Group__c == &quot;21&quot;,
+                    Customer_Group__c == &quot;23&quot;,
+                    Customer_Group__c == &quot;31&quot;,
+                    Customer_Group__c == &quot;39&quot;,
+                    Customer_Group__c == &quot;40&quot;
+                ),
+                &quot;ZH&quot;,
+                &quot;ZH&quot;
+            )
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>List Price Type Abbreviation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

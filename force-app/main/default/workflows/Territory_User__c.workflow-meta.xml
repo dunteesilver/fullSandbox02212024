@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Fill_in_BU_if_it_is_blank</fullName>
+        <description>This action will fill in BU if it is Blank</description>
+        <field>Business_Unit__c</field>
+        <formula>Text(User__r.Business_Unit__c)</formula>
+        <name>Fill in BU if it is blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_User_BU_Update</fullName>
+        <field>Business_Unit__c</field>
+        <formula>TEXT(Territory_Master__r.Business_Unit__c)</formula>
+        <name>Territory User - BU Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_User_Full_Name</fullName>
+        <field>Full_Name__c</field>
+        <formula>User_Full_Name__c</formula>
+        <name>Territory User - Full Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_User_Name_Update</fullName>
+        <field>Territory_Number__c</field>
+        <formula>Territory_Master__r.Territory_Number__c</formula>
+        <name>Territory User - Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>If Territory User BU is Blank</fullName>
+        <actions>
+            <name>Fill_in_BU_if_it_is_blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Territory_User__c.Business_Unit__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This is meant to fill in Territory User&apos;s BU is f blank this is so Leads will be assigned correctly</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Territory User - Add Full Name</fullName>
+        <actions>
+            <name>Territory_User_Full_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Trying to &apos;fix&apos; the search issue.</description>
+        <formula>Full_Name__c &lt;&gt; User_Full_Name__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Territory Name</fullName>
+        <actions>
+            <name>Territory_User_BU_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Territory_User_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(Business_Unit__c &lt;&gt; TEXT(Territory_Master__r.Business_Unit__c), Territory_Number__c  &lt;&gt;  Territory_Master__r.Territory_Number__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

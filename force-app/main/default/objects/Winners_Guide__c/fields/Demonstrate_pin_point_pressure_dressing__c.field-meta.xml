@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demonstrate_pin_point_pressure_dressing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Clinically demonstrate kit and all components (do not demo VTFX capital equipment  on a metal table)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Clinically demonstrate kit and all components (do not demo VTFX capital equipment  on a metal table)</inlineHelpText>
+    <label>Clinically demo kit + components</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

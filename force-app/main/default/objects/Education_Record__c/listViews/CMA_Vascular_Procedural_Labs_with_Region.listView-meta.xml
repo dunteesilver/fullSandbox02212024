@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CMA_Vascular_Procedural_Labs_with_Region</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Region__c</columns>
+    <columns>Account_Facility__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Final_Approval_Date__c</columns>
+    <columns>Date_of_Event_Start__c</columns>
+    <columns>Approval_Status__c</columns>
+    <columns>Stage__c</columns>
+    <columns>CEM__c</columns>
+    <columns>RCEM__c</columns>
+    <columns>Sales_Rep__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Education_Record__c.CMA_Procedural_Lab</value>
+    </filters>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>VA</value>
+    </filters>
+    <filters>
+        <field>Date_of_Event_Start__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <label>CMA Vascular Procedural Labs with Region</label>
+</ListView>

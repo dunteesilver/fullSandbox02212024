@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Approved_Value_NEW__c</fullName>
+    <externalId>false</externalId>
+    <label>Other Approved Value</label>
+    <summarizedField>Medical_Education_Grant_Products__c.Product_Value__c</summarizedField>
+    <summaryFilterItems>
+        <field>Medical_Education_Grant_Products__c.Category__c</field>
+        <operation>equals</operation>
+        <value>Other</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Medical_Education_Grant_Products__c.Medical_Education_Grant__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

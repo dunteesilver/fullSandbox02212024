@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vascular_Top_Ten_Selling_Products</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Product_Description__c</columns>
+    <columns>Item_number__c</columns>
+    <columns>Sales_Prior_Year__c</columns>
+    <columns>Sales_YTD__c</columns>
+    <columns>Product_Group__c</columns>
+    <columns>Product_Sub_Group__c</columns>
+    <columns>Product_Line__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>Vascular</value>
+    </filters>
+    <label>Vascular Top Ten Selling Products</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+    </sharedTo>
+</ListView>

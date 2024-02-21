@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cross_Reference_Project__c</fullName>
+    <externalId>false</externalId>
+    <label>Cross Reference Project</label>
+    <referenceTo>Cross_Reference_Project__c</referenceTo>
+    <relationshipLabel>Cross Reference Project Items</relationshipLabel>
+    <relationshipName>Cross_Reference_Project_Items</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

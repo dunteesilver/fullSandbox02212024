@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Simulate_Training_Complete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>This is used to simulate the nightly scheduled job that:
+- Sets the &quot;Stage&quot; field to &quot;Training Completed&quot;
+- Create CRF&apos;s for any related Education Contractor that has an email and rate
+- Flip CRF&apos;s statuses set to Save to New.</inlineHelpText>
+    <label>Simulate Training Complete</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

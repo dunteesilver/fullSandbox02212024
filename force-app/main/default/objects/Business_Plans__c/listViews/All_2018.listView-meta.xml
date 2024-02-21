@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_2018</fullName>
+    <columns>OWNER.ALIAS</columns>
+    <columns>NAME</columns>
+    <columns>Annual_Target__c</columns>
+    <columns>YTD_Actual__c</columns>
+    <columns>YTD_Results__c</columns>
+    <columns>Q1_Actual__c</columns>
+    <columns>Quarter_1_Target__c</columns>
+    <columns>Q2_Actual__c</columns>
+    <columns>Q2_Target__c</columns>
+    <columns>Q3_Actual__c</columns>
+    <columns>Q3_Target__c</columns>
+    <columns>Q4_Actual__c</columns>
+    <columns>Q4_Target__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Business_Plans__c.Latin_American_Business_Plan_2</value>
+    </filters>
+    <filters>
+        <field>Year__c</field>
+        <operation>equals</operation>
+        <value>2018</value>
+    </filters>
+    <label>2018 All</label>
+    <language>en_US</language>
+</ListView>

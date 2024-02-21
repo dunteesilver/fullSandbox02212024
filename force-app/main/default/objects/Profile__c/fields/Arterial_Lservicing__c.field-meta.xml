@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Arterial_Lservicing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Arterial Line Product and Procedural Training</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Arterial Line Product and Procedural Training</inlineHelpText>
+    <label>Arterial Line</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

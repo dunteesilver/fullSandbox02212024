@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_Contact_Initiation__c</fullName>
+    <description>1. How did you initiate the first contact for Service?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>1. How did you initiate the first contact for Service?</inlineHelpText>
+    <label>1. Contact Initiation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phoned the Technical Support Hotline?</fullName>
+                <default>false</default>
+                <label>Phoned the Technical Support Hotline?</label>
+            </value>
+            <value>
+                <fullName>Phoned my Service representative directly?</fullName>
+                <default>false</default>
+                <label>Phoned my Service representative directly?</label>
+            </value>
+            <value>
+                <fullName>Phoned a member of the Service Team in the Chelmsford Office?</fullName>
+                <default>false</default>
+                <label>Phoned a member of the Service Team in the Chelmsford Office?</label>
+            </value>
+            <value>
+                <fullName>Emailed a member of the Service Team in the Chelmsford Office?</fullName>
+                <default>false</default>
+                <label>Emailed a member of the Service Team in the Chelmsford Office?</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

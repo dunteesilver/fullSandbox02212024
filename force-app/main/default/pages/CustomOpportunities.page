@@ -1,0 +1,14 @@
+<!--<apex:page standardController="Opportunity" recordSetvar="opportunities" action="{!URLFOR($Action.Opportunity.List.Public, $ObjectType.Opportunity)}">-->
+<apex:page standardController="Opportunity" recordSetvar="opportunities">
+    <apex:sectionHeader title="Opportunities" subtitle="Home"/>
+    <apex:enhancedList type="Opportunity" height="500" id="OpportunityList" customizable="true"/>
+    <apex:PanelGrid columns="1" width="100%">
+        <apex:PageBlock title="Reports" rendered="{!ispickval($User.Business_Unit__c,'Vascular')}" >
+            <apex:PageBlockSection columns="3">
+                <apex:outputLink value="{!$Site.Domain}/00OE00000020e8E">Vascular Opportunity Pipeline</apex:outputLink>
+                <apex:outputLink value="{!$Site.Domain}/00OE00000020e8i">Vascular Stuck Opportunities</apex:outputLink>
+                <apex:outputLink value="{!$Site.Domain}/00OE00000020e8d">Vascular Closed Opportunities</apex:outputLink>
+            </apex:PageBlockSection>
+        </apex:PageBlock>
+    </apex:PanelGrid>
+</apex:page>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>image/jpeg</contentType>
+    <description>Terms &amp; Conditions document for Australia. This is used for the PP_Print_Quote_NZ VisualForce page.</description>
+</StaticResource>

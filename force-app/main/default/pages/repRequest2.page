@@ -1,0 +1,4 @@
+<!--written by Dunte'e Silver -->
+<apex:page standardController="Request_Demo_Unit__c" extensions="documentInfo" showHeader="false">
+   <apex:iframe frameborder="true" scrolling="true" src="{!$Site.Domain}/servlet/servlet.FileDownload?file={!Document2}"/>
+</apex:page>

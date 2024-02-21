@@ -1,0 +1,475 @@
+<apex:page controller="sales_Cockpit"  >
+    <head>
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+        <!--
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+-->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js">
+        </script>
+        <style>
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            td {
+            padding: 5px;
+            }
+            
+            #tbs {
+            border:1px solid black;
+            
+            }
+            #tbs th{
+            padding:5px;
+            border:1px solid black; 
+            background-color:#777;
+            color:#FFF;
+            
+            }
+            #tbs td{
+            padding:5px;
+            border:1px solid black; 
+            }
+            #ytd td{
+            text-align: center;
+            vertical-align: center;
+            vertical-align: middle;
+            }
+            #ytd th{
+            background-color:#00205b;
+            color:#FFF;
+            font-weight: bold;
+            text-align: center;
+            }
+            
+            .c {
+            text-align: center;
+            }
+            .r {
+            text-align: right;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            .well {
+            background: #00205b !important;
+            color:#FFF;
+            text-align: center;
+            }
+        </style>
+    </head>
+    <div class="teleflex">
+        <br/>&nbsp;
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h6 class="panel-title"><img src="/img/icon/dashboards24.png"/>&nbsp;&nbsp;Sales Cockpit: Eric Clay / 800158</h6>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <div class="well well-lg">
+                                Total 2016 Sales<br/><br/>
+                                <h2 style="color:#FFF;">
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!ytdTotal}" />
+                                    </apex:outputText>
+                                </h2>
+                                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                                {!round(annualizedPercent,0)}%
+                                <br/>&nbsp;
+                            </div>
+                        </td>
+                        <td>
+                            <div class="well well-lg">
+                                2016 Quota<br/><br/>
+                                <h2 style="color:#FFF;">
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!quotaMap[thisMonth]}" />
+                                    </apex:outputText>
+                                </h2>
+                                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                                {!round((1-quotaMap[thisMonth] / ytdTotal) * 100,0)}%
+                                <br/>&nbsp;
+                            </div>
+                        </td>
+                        <td>
+                            <div class="well well-lg">
+                                Opportunities Closing This Month<br/><br/>
+                                <h2 style="color:#FFF;">
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!OppsThisMonth}" />
+                                    </apex:outputText>
+                                </h2>
+                                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                                <br/><apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!(quotaMap[thisMonth]-ytdTotal)*4}" />
+                                </apex:outputText> Needed for {!thisMonthName} Quota<br/>Quota YTD - Sales YTD x Months Remaining (4)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="well well-lg">
+                                 Pipeline Health (1x)<br/><br/>
+                                <h2 style="color:#FFF;">
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!PiplineThisYear}" />
+                                    </apex:outputText>
+                                </h2>
+                                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                                <br/>$168,000.00 Needed for 2016 Quota 
+                                <br/>Growth Quota Remaining x Months Remaining (4)
+                                <!--<apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!(quotaMap[thisMonth]-ytdTotal)*monthsLeft}" />
+                                </apex:outputText> Needed to Make Quota - {!monthsLeft}-->
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr>
+                    <td colspan="2">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><img src="/img/icon/cash24.png"/>&nbsp;&nbsp;Sales Totals</h6>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-hover table-bordered table-condensed" id="ytd">
+                                        <tr>
+                                            <th class="c">{!lastYear} Total Sales</th>
+                                            <th class="c">{!lastYear} {!thisMonthName} YTD Sales</th>
+                                            <th class="c">{!thisYear} {!thisMonthName} YTD Sales</th>
+                                            <th class="c">{!thisYear} Annualized Sales</th>
+                                            <th class="c">{!lastYear} / {!thisYear} Variance</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!lastYearTotal}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td class="c">
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!pytdTotal}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td class="c">
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!ytdTotal}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!annualizedTotal}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!annualizedTotal-lastYearTotal}" />
+                                                </apex:outputText> ({!round(annualizedPercent,0)}%)
+                                            </td>
+                                        </tr>
+                                        <!--
+                                            <td class="c">
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!ytdTotal-pytdTotal}" />
+                                                </apex:outputText> ({!round(ytdTotalPercent,0)}%)
+                                            </td>
+                                        -->
+                                    </table> 
+                                    &nbsp;
+                                    <table class="table table-hover table-bordered table-condensed" id="ytd">
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <apex:repeat value="{!mList}" var="m">
+                                                <th>{!monthMap[m]}</th>
+                                            </apex:repeat>
+                                        </tr>
+                                        <apex:repeat value="{!yList}" var="yr">
+                                            <tr>
+                                                <td rowspan="2" valign="middle">{!yr}</td>
+                                                <apex:repeat value="{!mList}" var="m">
+                                                    <td><center>
+                                                        <apex:outputText rendered="{!salesMap[yr+m] = 0}">-</apex:outputText>
+                                                        <apex:outputText rendered="{!salesMap[yr+m] != 0}">
+                                                            <apex:outputText value="{0, number, currency}">
+                                                                <apex:param value="{!salesMap[yr+m]}" />
+                                                            </apex:outputText>
+                                                        </apex:outputText>
+                                                        </center></td>
+                                                </apex:repeat>
+                                            </tr>
+                                            <tr>
+                                                <apex:repeat value="{!mList}" var="m">
+                                                    <td><center>
+                                                        <apex:outputText rendered="{!qtyMap[yr+m] = 0}">-</apex:outputText>
+                                                        <apex:outputText rendered="{!qtyMap[yr+m] != 0}">{!round(qtyMap[yr+m],0)}</apex:outputText>
+                                                        </center></td>
+                                                </apex:repeat>
+                                            </tr>
+                                        </apex:repeat>
+                                        <tr>
+                                            <td valign="middle">Quota</td>
+                                            <apex:repeat value="{!mList}" var="m">
+                                                <td><center>
+                                                    <apex:outputText rendered="{!quotaMonthlyMap[m] = 0}">-</apex:outputText>
+                                                    <apex:outputText rendered="{!quotaMonthlyMap[m] != 0}">
+                                                        <apex:outputText value="{0, number, currency}">
+                                                                <apex:param value="{!quotaMonthlyMap[m]}" />
+                                                            </apex:outputText>
+                                                        <apex:outputText rendered="{!quotaMonthlyMap[m] < salesMap[thisYear+m] && salesMap[thisYear+m] != 0}">
+                                                            <span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:green;"/>
+                                                        </apex:outputText>
+                                                        <apex:outputText rendered="{!quotaMonthlyMap[m] > salesMap[thisYear+m] && salesMap[thisYear+m] != 0}">
+                                                            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red;"/>
+                                                        </apex:outputText>
+                                                        </apex:outputText>
+                                                    </center></td>
+                                            </apex:repeat>
+                                        </tr>
+                                        <tr>
+                                            <td>Difference</td>
+                                            <apex:repeat value="{!mList}" var="m">
+                                                <td><center>
+                                                    <apex:outputText rendered="{!salesMap[thisYear+m] = 0  && m = thisMonth}">-</apex:outputText>
+                                                    <apex:outputText rendered="{!salesMap[thisYear+m] != 0}">
+                                                        <apex:outputText value="{0, number, currency}">
+                                                            <apex:param value="{!salesMap[thisYear+m] - quotaMonthlyMap[m]}" />
+                                                        </apex:outputText><br/>
+                                                        <apex:outputText rendered="{! m != thisMonth}">
+                                                            ({!round((1-quotaMonthlyMap[m] / salesMap[thisYear+m]) * 100,0)}%)
+                                                        </apex:outputText>
+
+                                                    </apex:outputText>
+                                                    </center></td>
+                                            </apex:repeat>
+                                        </tr>
+                                    </table>
+                                    <center><div id="ytdLine" style="height: 250px;"></div></center>
+                                </div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><img src="/img/icon/campaigns24.png"/>&nbsp;&nbsp;Cumulative Sales + Quota</h6>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-hover table-bordered table-condensed" id="ytd">
+                                        <tr>
+                                            <th class="c">{!thisYear} {!thisMonthName} YTD Sales</th>
+                                            <th class="c">{!thisYear} {!thisMonthName} Quota Target</th>
+                                            <th class="c">Variance</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="c">
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!ytdTotal}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!quotaMap[thisMonth]}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!ytdTotal-quotaMap[thisMonth]}" />
+                                                </apex:outputText> ({!round((1-quotaMap[thisMonth] / ytdTotal) * 100,0)}%)
+                                                
+                                                
+                                            </td>
+                                        </tr>
+                                    </table> 
+                                    &nbsp;
+                                    <table class="table table-hover table-bordered table-condensed" id="ytd">
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <apex:repeat value="{!mList}" var="m">
+                                                <th>{!monthMap[m]}</th>
+                                            </apex:repeat>
+                                        </tr>
+                                        <apex:repeat value="{!yList}" var="yr">
+                                            <tr>
+                                                <td valign="middle">{!yr}</td>
+                                                <apex:repeat value="{!mList}" var="m">
+                                                    <td><center>
+                                                        <apex:outputText rendered="{!salesMap[yr+m+'cumulativeTotal'] = 0}">-</apex:outputText>
+                                                        <apex:outputText rendered="{!salesMap[yr+m+'cumulativeTotal'] != 0}">
+                                                            <apex:outputText value="{0, number, currency}">
+                                                                <apex:param value="{!salesMap[yr+m+'cumulativeTotal']}" />
+                                                            </apex:outputText>
+                                                        </apex:outputText>
+                                                        </center></td>
+                                                </apex:repeat>
+                                            </tr>
+                                        </apex:repeat>
+                                        <tr>
+                                            <td valign="middle">Quota</td>
+                                            <apex:repeat value="{!mList}" var="m">
+                                                <td><center>
+                                                    <apex:outputText rendered="{!quotaMap[m] = 0}">-</apex:outputText>
+                                                    <apex:outputText rendered="{!quotaMap[m] != 0}">
+                                                        <apex:outputText value="{0, number, currency}">
+                                                            <apex:param value="{!quotaMap[m]}" />
+                                                        </apex:outputText>
+                                                        <apex:outputText rendered="{!quotaMap[m] < salesMap[thisYear+m+'cumulativeTotal'] && salesMap[thisYear+m+'cumulativeTotal'] != 0}">
+                                                            <span class="glyphicon glyphicon-ok-circle" aria-hidden="true" style="color:green;"/>
+                                                        </apex:outputText>
+                                                        <apex:outputText rendered="{!quotaMap[m] > salesMap[thisYear+m+'cumulativeTotal'] && salesMap[thisYear+m+'cumulativeTotal'] != 0}">
+                                                            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red;"/>
+                                                        </apex:outputText>
+                                                    </apex:outputText>
+                                                    </center></td>
+                                            </apex:repeat>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle">Variance</td>
+                                            <apex:repeat value="{!mList}" var="m">
+                                                <td><center>
+                                                    <apex:outputText rendered="{!salesMap[thisYear+m+'cumulativeTotal'] = 0}">-</apex:outputText>
+                                                    <apex:outputText rendered="{!salesMap[thisYear+m+'cumulativeTotal'] != 0}">
+                                                        <apex:outputText value="{0, number, currency}">
+                                                            <apex:param value="{!salesMap[thisYear+m+'cumulativeTotal']-quotaMap[m]}" />
+                                                        </apex:outputText>
+                                                        <br/>({!round((1-quotaMap[m] / salesMap[thisYear+m+'cumulativeTotal']) * 100,0)}%)
+                                                    </apex:outputText>
+                                                    </center></td>
+                                            </apex:repeat>
+                                        </tr>
+                                    </table>
+                                    <center><div id="cumulativeGraph" style="height: 250px;"></div></center>
+                                </div></div>
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">
+                        <table class="table table-hover table-striped table-bordered table-condensed" id="ytd">
+                                <tr>
+                                    <th class="text-center" style="width: 20px;">&nbsp;</th>
+                                    <th>Customer</th>
+                                    <th>#</th>
+                                    <th>YTD %</th>
+                                    <th>YTD YOY</th>
+                                    <th>Year</th>
+                                    <th>Total</th>
+                                    <apex:repeat value="{!mList}" var="m">
+                                        <th>{!monthMap[m]}</th>
+                                    </apex:repeat>
+                                </tr>
+                            <apex:variable value="{!1}" var="row"/><!--  style:background-color:green;-->
+                            <apex:repeat value="{!acctList}" var="a">
+                                <apex:repeat value="{!yList}" var="yr">
+                                    <tr>
+                                        <apex:outputText rendered="{!yr=lastYear}">
+                                            <td style="width: 20px;" rowspan="2" class="text-center">{!row}</td>
+                                            <td rowspan="2" class="text-nowrap">
+                                            <a href="/apex/sales_Cockpit_Account?id={!tid}&sap={!sapMap[a].SAP_Sold_To__c}">{!sapMap[a].Name}</a>    
+                                                
+                                            </td>
+                                            <td rowspan="2">{!sapMap[a].SAP_Sold_To__c}</td>
+                                            <td rowspan="2">
+                                                <apex:outputText rendered="{!salesMap[thisYear+a+'compareSAPYOY'] != 0}">
+                                                    <apex:variable value="{!if(round((1-salesMap[lastYear+a+'compareSAPYOY'] / salesMap[thisYear+a+'compareSAPYOY']) * 100,0) > 0,'Green','Red')}" var="cl"/>
+                                                    {!round((1-salesMap[lastYear+a+'compareSAPYOY'] / salesMap[thisYear+a+'compareSAPYOY']) * 100,0)}%
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!salesMap[thisYear+a+'compareSAPYOY'] = 0}">
+                                                    0%
+                                                </apex:outputText>
+                                            </td>
+                                        </apex:outputText>
+                                        <!--<td class="text-nowrap">{!sapMap[a].Name}</td>
+                                        <td>{!sapMap[a].SAP_Sold_To__c}</td>
+                                        <apex:outputText rendered="{!yr=thisYear}">
+                                            <td rowspan="4" valign="middle">{!sapMap[a].Name} ({!sapMap[a].SAP_Sold_To__c})</td>
+                                        </apex:outputText>-->
+                                        <td>
+                                            <apex:outputText rendered="{!salesMap[yr+a+'compareSAPYOY'] = 0}">-</apex:outputText>
+                                            <apex:outputText rendered="{!salesMap[yr+a+'compareSAPYOY'] != 0}">
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!salesMap[yr+a+'compareSAPYOY']}" />
+                                                </apex:outputText>
+                                            </apex:outputText>
+                                            </td>
+                                        <td>{!yr}</td>
+                                        <td>
+                                            <apex:outputText rendered="{!salesMap[yr+a+'currentYearTotal'] = 0}">-</apex:outputText>
+                                            <apex:outputText rendered="{!salesMap[yr+a+'currentYearTotal'] != 0}">
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!salesMap[yr+a+'currentYearTotal']}" />
+                                                </apex:outputText>
+                                                <br/>{!round(qtyMap[yr+a+'currentYearQTYTotal'],0)}
+                                            </apex:outputText>
+                                            
+                                        </td>
+                                        <apex:repeat value="{!mList}" var="m">
+                                            <td><center>
+                                                <apex:outputText rendered="{!salesMap[yr+m+a] = 0}">-</apex:outputText>
+                                                <apex:outputText rendered="{!salesMap[yr+m+a] != 0}">
+                                                    <apex:outputText value="{0, number, currency}">
+                                                        <apex:param value="{!salesMap[yr+m+a]}" />
+                                                    </apex:outputText>
+                                                    <br/>{!round(qtyMap[yr+m+a],0)}
+                                                </apex:outputText>
+                                                </center></td>
+                                        </apex:repeat>
+                                    </tr>
+                                </apex:repeat>
+                                <apex:variable var="row" value="{!row + 1}"/>
+                            </apex:repeat>
+                            </table>
+                        </td>
+                    </tr>
+                </table> 
+            </div>
+        </div>
+        
+        <br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;    
+    </div>    
+    <script>
+    new Morris.Line({
+        element: 'ytdLine',
+        data: [ {!ytdGraph} ],
+        xkey: 'month',
+        ykeys: ['{!lastYear}','{!thisYear}'],
+        labels: ['{!lastYear}','{!thisYear}'],
+        parseTime: false,
+        lineColors: ['#00a9ce','#ffa300'],
+        hideHover: ['auto']
+    });
+    new Morris.Line({
+        element: 'cumulativeGraph',
+        data: [ {!cumulativeGraph} ],
+        xkey: 'month',
+        ykeys: ['{!lastYear}','{!thisYear}','Quota'],
+        labels: ['{!lastYear}','{!thisYear}','Quota'],
+        parseTime: false,
+        lineColors: ['#00a9ce','#ffa300','#78be20'],
+        hideHover: ['auto']
+    });
+    new Morris.Bar({
+        element: 'ytdBAR',
+        data: [ {!ytdGraph} ],
+        xkey: 'month',
+        ykeys: ['{!lastYear}','{!thisYear}'],
+        labels: ['{!lastYear}','{!thisYear}'],
+        parseTime: false,
+        barColors: ['#00a9ce','#51534a'],
+        hideHover: ['auto']
+    });
+    
+    </script>
+    
+</apex:page>

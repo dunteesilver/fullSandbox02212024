@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Logged_in_Last_7_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>(DATEVALUE(CreatedDate) - DATEVALUE(Last_Login__c))  &lt;= 7</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Logged in Last 7 Days</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

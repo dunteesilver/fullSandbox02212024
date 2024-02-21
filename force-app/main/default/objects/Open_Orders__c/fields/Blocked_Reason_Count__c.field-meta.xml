@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blocked_Reason_Count__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Order_Delivery_Block_Reason__c != NULL, 1, 0) +
+if(Schedule_Line_Block_Reason__c != NULL, 1, 0) +
+if(Status_Credit_Check_Reason__c != NULL, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Blocked Reason Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

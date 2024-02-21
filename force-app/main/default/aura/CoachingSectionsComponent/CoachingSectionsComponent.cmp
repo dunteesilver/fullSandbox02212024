@@ -1,0 +1,1865 @@
+<aura:component
+  controller="CoachingSectionsCompHandler"
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+  access="global"
+>
+  <aura:handler name="init" action="{!c.myAction}" value="{!this}" />
+
+  <aura:attribute name="formVisibilityWrapperObj" type="Object" />
+
+  <aura:attribute name="dirEmail" type="String" />
+
+  <aura:attribute
+    name="newCoaching"
+    type="Coaching__c"
+    default="{ 'sobjectType': 'Coaching__c',
+                             'is_BS_Pre_Call_Plan_Completed__c': '',
+                             'is_BS_Researches_Acc_Completed__c': '',
+                             'is_BS_Researches_Sales_Data_Completed__c': '',
+                             'is_BS_Wri_Actn_Pri_Call_Objs_Completed__c': '',
+                             'is_BS_Wri_Actn_Sec_FallBk_Objs_Completed__c': '',
+                             'BS_Pre_Call_Plan_Comments__c': '',
+                             'BS_Pre_Call_Plan_RSM_Comments__c': '',
+                             'BS_Researches_Acc_Comments__c': '',
+                             'BS_Researches_Acc_RSM_Comments__c': '',
+                             'BS_Researches_Sales_Data_Comments__c': '',
+                             'BS_Researches_Sales_Data_RSM_Comments__c': '',
+                             'BS_Wri_Actn_Pri_Call_Objs_Comments__c': '',
+                             'BS_Wri_Actn_Pri_Call_Objs_RSM_Comments__c': '',
+                             'BS_Wri_Actn_Sec_FallBk_Objs_Comments__c': '',
+                             'BS_Wri_Actn_Sec_FallBk_Objs_RSM_Comments__c': '',
+                             'BS_Pre_Call_Plan_RepProfLvl__c': '',
+                             'BS_Researches_Acc_RepProfLvl__c': '',
+                             'BS_Researches_Sales_Data_RepProfLvl__c': '',
+                             'BS_Wri_Actn_Pri_Call_Objs_RepProfLvl__c': '',
+                             'BS_Wri_Actn_Sec_FallBk_Objs_RepProfLvl__c': '',
+                             'BS_Pre_Call_Plan_RSMProfLvl__c': '',
+                             'BS_Researches_Acc_RSMProfLvl__c': '',
+                             'BS_Researches_Sales_Data_RSMProfLvl__c': '',
+                             'BS_Wri_Actn_Pri_Call_Objs_RSMProfLvl__c': '',
+                             'BS_Wri_Actn_Sec_FallBk_Objs_RSMProfLvl__c': '',
+                             'BS_Rep_Ove_Prof_Lvl__c':'',
+                             'BS_RSM_Ove_Prof_Lvl__c':'',
+                             
+                             'is_Engage_Insight_Completed__c': '',
+                             'Engage_Insight_Comments__c': '',
+                             'Engage_Insight_RSM_Comments__c': '',
+                             'Engage_Insight_RepProfLvl__c': '',
+                             'Engage_Insight_RSMProfLvl__c': '',
+                             
+                             'is_Discover_Prep_High_Imp_Completed__c': '',
+                             'is_Discover_4P_Que_Completed__c': '',
+                             'Discover_Prep_High_Comments__c': '',
+                             'Discover_Prep_High_RSM_Comments__c': '',
+                             'Discover_4P_Que_Comments__c': '',
+                             'Discover_4P_Que_RSM_Comments__c': '',
+                             'Discover_Prep_High_RepProfLvl__c': '',
+                             'Discover_4P_Que_RepProfLvl__c': '',
+                             'Discover_Prep_High_RSMProfLvl__c': '',
+                             'Discover_4P_Que_RSMProfLvl__c': '',
+                             'Discover_Rep_Ove_Prof_Lvl__c': '',
+                             'Discover_RSM_Ove_Prof_Lvl__c': '',
+                             
+                             'is_Magnify_Needs_Completed__c': '',
+                             'Magnify_Needs_Comments__c': '',
+                             'Magnify_Needs_RSM_Comments__c': '',
+                             'Magnify_Needs_RepProfLvl__c': '',
+                             'Magnify_Needs_RSMProfLvl__c': '',
+                             
+                             'is_Pos_Sols_Completed_1__c': '',
+                             'is_Pos_Sols_Completed_2__c': '',
+                             'Pos_Sols_Comments_1__c': '',
+                             'Pos_Sols_RSM_Comments_1__c': '',
+                             'Pos_Sols_Comments_2__c': '',
+                             'Pos_Sols_RSM_Comments_2__c': '',
+                             'Pos_Sols_RepProfLvl_1__c': '',
+                             'Pos_Sols_RepProfLvl_2__c': '',
+                             'Pos_Sols_RSMProfLvl_1__c': '',
+                             'Pos_Sols_RSMProfLvl_2__c': '',
+                             'Pos_Sols_Rep_Ove_Prof_Lvl__c': '',
+                             'Pos_Sols_RSM_Ove_Prof_Lvl__c': '',
+                             
+                             'is_Gain_Commitment_Completed_1__c': '',
+                             'is_Gain_Commitment_Completed_2__c': '',
+                             'is_Gain_Commitment_Completed_3__c': '',
+                             'Gain_Commitment_Comments_1__c': '',
+                             'Gain_Commitment_RSM_Comments_1__c': '',
+                             'Gain_Commitment_Comments_2__c': '',
+                             'Gain_Commitment_RSM_Comments_2__c': '',
+                             'Gain_Commitment_Comments_3__c': '',
+                             'Gain_Commitment_RSM_Comments_3__c': '',
+                             'Gain_Commitment_RepProfLvl_1__c': '',
+                             'Gain_Commitment_RepProfLvl_2__c': '',
+                             'Gain_Commitment_RepProfLvl_3__c': '',
+                             'Gain_Commitment_RSMProfLvl_1__c': '',
+                             'Gain_Commitment_RSMProfLvl_2__c': '',
+                             'Gain_Commitment_RSMProfLvl_3__c': '',
+                             'Gain_Commitment_Rep_Ove_Prof_Lvl__c': '',
+                             'Gain_Commitment_RSM_Ove_Prof_Lvl__c': '',
+                             
+                             'Rep_Comments_Strengths__c': '',
+                             'Rep_Comments_Area_Of_Impvmnt__c': '',
+                             'Rep_Comments_Core_Vals__c': '',
+                             
+                             'Manager_Comments_Strengths__c': '',
+                             'Manager_Comments_Area_Of_Impvmnt__c': '',
+                             'Manager_Comments_Core_Vals__c': '',
+                             
+                             'Director_Comments_Strengths__c': '',
+                             'Director_Comments_Area_Of_Impvmnt__c ': '',
+                             'Director_Comments_Core_Vals__c ': '',
+                             
+                             'Total_Rep_Ove_Prof_Lvl__c': '',
+                             'Total_RSM_Ove_Prof_Lvl__c': ''
+                             }"
+  />
+
+  <!--aura handler with waiting and donewaiting events-->
+  <aura:handler event="aura:waiting" action="{!c.showSpinner}" />
+  <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}" />
+
+  <!--component attributs -->
+  <aura:attribute name="spinner" type="boolean" default="FALSE" />
+
+  <!--
+loading spinner start
+  <aura:if isTrue="{!v.spinner}">
+    <div aura:id="spinnerId" class="slds-spinner_container">
+      <div
+        class="slds-spinner-****************-brand  slds-spinner slds-spinner-*************-large slds-is-relative"
+        role="alert"
+      >
+        <span class="slds-assistive-text">Loading...</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+  </aura:if>
+   Loading spinner end
+-->
+
+  <!-- show save form success toast start -->
+  <aura:attribute name="status" type="String" />
+
+  <!-- mobile -->
+  <div class="slds-box">
+    <div class="slds-m-around_xxx-small">
+      <div
+        class="slds-text-heading_medium slds-text-align_left"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Balanced Seller
+      </div>
+      <div style="color: rgb(0, 25, 86)"
+        ><strong>Planning a Communication Strategy: </strong>Research, Pre-call
+        plan, Primary and Fall-Back Call Objectives</div
+      >
+    </div>
+
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Title">Title </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Completed">Completed</div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">Rep Comments</div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="Rep Proficiency Level"
+              >Rep<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate">RSM Comments </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Balanced<br />Seller<br />Pre-call<br />Plans:</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_BS_Pre_Call_Plan_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Pre_Call_Plan_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Pre_Call_Plan_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calBalSellRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Pre_Call_Plan_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calBalSellRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                maxlength="255"
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Pre_Call_Plan_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title" class="slds-cell-wrap">
+            <div class="slds-truncate">Researches<br />accounts:</div>
+          </td>
+          <td data-label="completed" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_BS_Researches_Acc_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select></div
+            >
+          </td>
+          <td data-label="Rep Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Researches_Acc_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Researches_Acc_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calBalSellRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Researches_Acc_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calBalSellRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Researches_Acc_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title" class="slds-cell-wrap">
+            <div class="slds-truncate">Researches<br />sales<br />data:</div>
+          </td>
+          <td data-label="Completed" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_BS_Researches_Sales_Data_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select></div
+            >
+          </td>
+          <td data-label="Rep Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Researches_Sales_Data_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Researches_Sales_Data_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calBalSellRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Researches_Sales_Data_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calBalSellRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Researches_Sales_Data_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              >Written<br />actionable<br />primary<br />call<br />objectives:</div
+            >
+          </td>
+          <td data-label="Completed" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_BS_Wri_Actn_Pri_Call_Objs_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select></div
+            >
+          </td>
+          <td data-label="Rep Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Wri_Actn_Pri_Call_Objs_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Wri_Actn_Pri_Call_Objs_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calBalSellRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Wri_Actn_Pri_Call_Objs_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calBalSellRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Wri_Actn_Pri_Call_Objs_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              >Written<br />actionable<br />secondary<br />or fall<br />back<br />objectives</div
+            >
+          </td>
+          <td data-label="Completed" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_BS_Wri_Actn_Sec_FallBk_Objs_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select></div
+            >
+          </td>
+          <td data-label="Rep Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Wri_Actn_Sec_FallBk_Objs_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Wri_Actn_Sec_FallBk_Objs_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calBalSellRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level" class="slds-cell-wrap">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Wri_Actn_Sec_FallBk_Objs_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calBalSellRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments" class="slds-cell-wrap">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.BS_Wri_Actn_Sec_FallBk_Objs_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap">
+            Overall Proficiency Level
+          </th>
+          <th
+            data-label="Balanced Seller Overall Rep Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_Rep_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+          <th
+            data-label="Balanced Seller Overall RSM Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.BS_RSM_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-m-around_xx-large">
+      <div
+        class="slds-text-heading_medium slds-text-align_left"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Engage with Insight:
+      </div>
+      <div style="color: rgb(0, 25, 86)"
+        ><strong>IAO </strong>statement (Insight: Customer priority to
+        explore?<br /> <strong>Agenda: </strong>What you intend to do?<br />
+        <strong>Outcome: </strong>What's in it for the customer?<br />
+      </div>
+    </div>
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Title">Title </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Completed">Completed </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">Rep Comments </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="Rep Proficiency Level"
+              >Rep<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM Comments
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Engages<br />customer<br />with<br />insight</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Engage_Insight_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Engage_Insight_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Engage_Insight_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calRepTotOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1.00">1</option>
+                <option value="2.00">2</option>
+                <option value="3.00">3</option>
+                <option value="4.00">4</option>
+                <option value="5.00">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Engage_Insight_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calRSMTotOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1.00">1</option>
+                <option value="2.00">2</option>
+                <option value="3.00">3</option>
+                <option value="4.00">4</option>
+                <option value="5.00">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Engage_Insight_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-m-around_x-large">
+      <div
+        class="slds-text-heading_medium slds-text-align_left"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Discover Needs:
+      </div>
+      <div style="color: rgb(0, 25, 86)"
+        >Build a clear, complete and mutual understanding of the customer's
+        needs.<br /> Ask high impact open-ended questions. double click
+        questions to uncover more information.<br /> Explore the
+        <strong>4P's</strong> to uncover needs and identify stakeholders
+        (Personal, Process, Procedure and People).
+      </div>
+    </div>
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Title">Title </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Completed">Completed </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">Rep Comments </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="Rep Proficiency Level"
+              >Rep<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM Comments
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Prepared<br />with<br />written<br />high<br />impact<br />questions</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Discover_Prep_High_Imp_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Discover_Prep_High_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Discover_Prep_High_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calDiscNeedsRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Discover_Prep_High_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calDiscNeedsRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Discover_Prep_High_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate">Use<br />of 4P<br />questioning</div>
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Discover_4P_Que_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Discover_4P_Que_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Discover_4P_Que_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calDiscNeedsRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Discover_4P_Que_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calDiscNeedsRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Discover_4P_Que_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap">
+            Overall Proficiency Level
+          </th>
+          <th
+            data-label="Discover Needs Overall Rep Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Discover_Rep_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+          <th
+            data-label="Discover Needs Overall RSM Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Discover_RSM_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-m-around_x-large">
+      <div
+        class="slds-text-heading_medium slds-text-align_left"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Magnify Needs:
+      </div>
+      <div style="color: rgb(0, 25, 86)"
+        >Develop an awareness of the customer's needs.<br /> Ask a question that
+        foucs, expand and clarify the need to make our solution to the
+        problem<br /> compelling enough to implement.
+      </div>
+    </div>
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Title">Title </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Completed">Completed </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">Rep Comments </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="Rep Proficiency Level"
+              >Rep<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">RSM Comments </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Use of<br />magnification<br />questions</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Magnify_Needs_Completed__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Magnify_Needs_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Magnify_Needs_RepProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calRepTotOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1.00">1</option>
+                <option value="2.00">2</option>
+                <option value="3.00">3</option>
+                <option value="4.00">4</option>
+                <option value="5.00">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Magnify_Needs_RSMProfLvl__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calRSMTotOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1.00">1</option>
+                <option value="2.00">2</option>
+                <option value="3.00">3</option>
+                <option value="4.00">4</option>
+                <option value="5.00">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Magnify_Needs_RSM_Comments__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-m-around_x-large">
+      <div
+        class="slds-text-heading_medium slds-text-align_left"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Position Solutions:
+      </div>
+      <div style="color: rgb(0, 25, 86)"
+        >Help the customer understand specifically how you can satisfy their
+        need.<br /> Need/Benifits/Features/Solution.<br />
+      </div>
+    </div>
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Title">Title </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Completed">Completed </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">Rep Comments </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="Rep Proficiency Level"
+              >Rep<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">RSM Comments </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Positions<br />solutions<br />important <br />to the<br />customer</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Pos_Sols_Completed_1__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Pos_Sols_Comments_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Pos_Sols_RepProfLvl_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calPosSolsRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Pos_Sols_RSMProfLvl_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calPosSolsRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Pos_Sols_RSM_Comments_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Starts<br />with<br />need,<br />benefits,<br />features,<br />then<br />solution</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Pos_Sols_Completed_2__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Pos_Sols_Comments_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Pos_Sols_RepProfLvl_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calPosSolsRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Pos_Sols_RSMProfLvl_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calPosSolsRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Pos_Sols_RSM_Comments_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap">
+            Overall Proficiency Level
+          </th>
+          <th
+            data-label="Position Solutions Overall Rep Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Pos_Sols_Rep_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+          <th
+            data-label="Position Solutions Overall RSM Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Pos_Sols_RSM_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-m-around_x-large">
+      <div
+        class="slds-text-heading_medium slds-text-align_left"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Gain Commitment:
+      </div>
+      <div style="color: rgb(0, 25, 86)"
+        >Agree with customer on best next steps.<br /> 1) Summarize benefits<br />
+        2) Propose next steps for you <strong>and the customer</strong><br /> 3)
+        Ask for commitment. Need <strong>YES or ADVANCEMENT</strong
+        ><br /> Objection Handling: <strong>Clarify </strong>the problem,
+        <strong>Paraphrase </strong> the need, <strong>Respond </strong>with
+        facts and/or benefits,<br /> Test for Agreement.
+      </div>
+    </div>
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Title">Title </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Completed">Completed </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">Rep Comments </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="Rep Proficiency Level"
+              >Rep<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+            <div class="slds-truncate" title="RSM Proficiency Level"
+              >RSM<br />Proficiency<br />Level
+            </div>
+          </th>
+          <th scope="col" class="slds-cell-wrap">
+            <div class="slds-truncate" title="Comments">RSM Comments </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              ><b>1)</b>Summarizes<br />Benefits<br /><b>2)</b
+              >Proposes<br />next steps<br />for rep and the<br />customer<br /><b
+                >3)</b
+              >Asks for<br />commitment</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Gain_Commitment_Completed_1__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Gain_Commitment_Comments_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_RepProfLvl_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calGainCmtRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_RSMProfLvl_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calGainCmtRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Gain_Commitment_RSM_Comments_1__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Gets to<br />"yes" or<br />"advancement"</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Gain_Commitment_Completed_2__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Gain_Commitment_Comments_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_RepProfLvl_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calGainCmtRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_RSMProfLvl_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calGainCmtRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Gain_Commitment_RSM_Comments_2__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <td data-label="Title">
+            <div class="slds-truncate"
+              >Handles <br />Objections<br />with CPR<br />(Clarify,<br />Paraphrase,<br />
+              Respond and<br />gain<br />agreement)</div
+            >
+          </td>
+          <td data-label="Completed">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.is_Gain_Commitment_Completed_3__c}"
+              >
+                <option value="">Please select</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
+                <option value="Incomplete">Incomplete</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Gain_Commitment_Comments_3__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+            /></div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_RepProfLvl_3__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+                onchange="{!c.calGainCmtRepOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="Rep Proficiency Level">
+            <div class="slds-truncate">
+              <lightning:select
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_RSMProfLvl_3__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+                onchange="{!c.calGainCmtRSMOveProf}"
+              >
+                <option value="0">Please Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">N/A</option>
+              </lightning:select>
+            </div>
+          </td>
+          <td data-label="RSM Comments">
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                aura:id="coachingForm"
+                maxlength="255"
+                value="{!v.newCoaching.Gain_Commitment_RSM_Comments_3__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+            /></div>
+          </td>
+        </tr>
+
+        <tr class="slds-text-title_caps">
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap"> </th>
+          <th scope="col" class="slds-cell-wrap">
+            Overall Proficiency Level
+          </th>
+          <th
+            data-label="Gain Commitment Rep Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_Rep_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+          <th
+            data-label="Gain Commitment RSM Proficiency Level"
+            scope="col"
+            class="slds-cell-wrap"
+          >
+            <div class="slds-truncate"
+              ><lightning:input
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Gain_Commitment_RSM_Ove_Prof_Lvl__c}"
+                disabled="true"
+              />
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-size_12-of-12">
+      <div
+        class="slds-text-heading_medium slds-text-align_left slds-m-around_xx-large"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Grand Total Overall Proficiency Level</div
+      >
+    </div>
+
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate"
+              >Grand Total Overall Proficiency Level</div
+            >
+          </td>
+          <td>
+            <div class="slds-truncate"
+              >Rep Proficiency Level
+            </div>
+          </td>
+          <td>
+            <div class="slds-truncate"
+              ><lightning:input
+                type="number"
+                min="1"
+                max="5"
+                disabled="true"
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Total_Rep_Ove_Prof_Lvl__c}"
+                onblur="{!c.calRepTotOveProf}"
+            /></div>
+          </td>
+          <td>
+            <div class="slds-truncate"
+              >RSM Proficiency Level</div
+            >
+          </td>
+          <td>
+            <div class="slds-truncate"
+              ><lightning:input
+                type="number"
+                min="1"
+                max="5"
+                disabled="true"
+                aura:id="coachingForm"
+                value="{!v.newCoaching.Total_RSM_Ove_Prof_Lvl__c}"
+                onblur="{!c.calRSMTotOveProf}"
+            /></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-size_12-of-12">
+      <div
+        class="slds-text-heading_medium slds-text-align_left slds-var-m-around_xxx-small"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Rep Comments</div
+      >
+    </div>
+
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                title="Rep Comments about Strengths"                   
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Strengths:"
+                value="{!v.newCoaching.Rep_Comments_Strengths__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+              ></lightning:TextArea
+            ></div>
+          </td>
+        </tr>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate">
+              <lightning:TextArea
+                title="Rep Comments about Areas for Improvement"
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Areas for improvement:"
+                value="{!v.newCoaching.Rep_Comments_Area_Of_Impvmnt__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+              ></lightning:TextArea>
+            </div>
+          </td>
+        </tr>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                title="Rep Comments about Core Values"
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Core values: (examples of building trust, entrepreneurial sprit and having fun!)"
+                value="{!v.newCoaching.Rep_Comments_Core_Vals__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRepDisable}"
+              ></lightning:TextArea
+            ></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-size_12-of-12">
+      <div
+        class="slds-text-heading_medium slds-text-align_left slds-var-m-around_xxx-small"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Manager Comments</div
+      >
+    </div>
+
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                title="Manager Comments about Strengths"
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Strengths:"
+                value="{!v.newCoaching.Manager_Comments_Strengths__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+              ></lightning:TextArea
+            ></div>
+          </td>
+        </tr>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate">
+              <lightning:TextArea
+                title="Manager Comments about Areas for Improvement"
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Areas for improvement:"
+                value="{!v.newCoaching.Manager_Comments_Area_Of_Impvmnt__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+              ></lightning:TextArea>
+            </div>
+          </td>
+        </tr>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                title="Manager Comments about Core Values"
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Core values: (examples of building trust, entrepreneurial sprit and having fun!)"
+                value="{!v.newCoaching.Manager_Comments_Core_Vals__c}"
+                disabled="{!v.formVisibilityWrapperObj.isRSMDisable}"
+              ></lightning:TextArea
+            ></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="slds-size_12-of-12">
+      <div
+        class="slds-text-heading_medium slds-text-align_left slds-var-m-around_xxx-small"
+        style="color: rgb(0, 25, 86);font-weight: bold"
+        >Director Comments</div
+      >
+    </div>
+
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+    >
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                title="Director Comments about Strengths"
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Strengths:"
+                value="{!v.newCoaching.Director_Comments_Strengths__c}"
+                disabled="{!v.formVisibilityWrapperObj.isDirDisable}"
+              ></lightning:TextArea
+            ></div>
+          </td>
+        </tr>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate">
+              <lightning:TextArea
+                title="Director Comments about Areas for Improvement"
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Areas for improvement:"
+                value="{!v.newCoaching.Director_Comments_Area_Of_Impvmnt__c}"
+                disabled="{!v.formVisibilityWrapperObj.isDirDisable}"
+              ></lightning:TextArea>
+            </div>
+          </td>
+        </tr>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate"
+              ><lightning:TextArea
+                title="Director Comments about Core Values"                   
+                aura:id="coachingForm"
+                maxlength="131072"
+                placeholder="Core values: (examples of building trust, entrepreneurial sprit and having fun!)"
+                value="{!v.newCoaching.Director_Comments_Core_Vals__c}"
+                disabled="{!v.formVisibilityWrapperObj.isDirDisable}"
+              ></lightning:TextArea
+            ></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table
+      class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal"
+    >
+      <tbody>
+        <tr class="slds-hint-parent">
+          <td>
+            <div class="slds-truncate" style="text-align: center"
+              ><lightning:button
+                variant="brand"
+                label="Save"
+                onclick="{!c.saveCoachingDetails}"
+            /></div>
+          </td>
+          <td>
+            <div class="slds-truncate" style="text-align: center"
+              ><lightning:button
+                variant="brand"
+                label="Print"
+                onclick="{!c.printPage}"
+            /></div>
+          </td>
+          <td>
+              <aura:if isTrue="{!v.formVisibilityWrapperObj.notifyDirBool}">
+                <div class="slds-truncate" style="text-align: center"
+                  ><lightning:button
+                    variant="brand"
+                    label="Notify Director"
+                    onclick="{!c.notifyDirector}"
+                /></div>
+              </aura:if>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- mobile -->
+</aura:component>

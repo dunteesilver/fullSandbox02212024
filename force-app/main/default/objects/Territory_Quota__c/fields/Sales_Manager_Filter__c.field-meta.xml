@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Manager_Filter__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( AND(Role_Toggle__c = &quot;REP&quot;, ISBLANK( Territory_Master__r.Manager__c)), Territory_Master__r.Parent_Territory__r.Sales_Rep_Name__c ,
+if( AND (Role_Toggle__c = &quot;REP&quot;,  Territory_Master__r.Manager__r.IsActive = true),Territory_Master__r.Manager_Name__c,
+if( AND(Role_Toggle__c = &quot;REP&quot;, Territory_Master__r.Manager__r.IsActive = false), Territory_Master__r.Parent_Territory__r.Sales_Rep_Name__c ,
+if(  AND (Role_Toggle__c = &quot;RSM&quot;,  Territory_Master__r.Sales_Rep__r.IsActive = true),  Territory_Master__r.Sales_Rep__r.FirstName &amp; &quot; &quot; &amp; Territory_Master__r.Sales_Rep__r.LastName,
+NULL
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Manager Filter</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

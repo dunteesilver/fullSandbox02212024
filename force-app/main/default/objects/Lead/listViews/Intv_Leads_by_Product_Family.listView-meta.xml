@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Intv_Leads_by_Product_Family</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Product_Family_GPL__c</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Unqualified,Qualified</value>
+    </filters>
+    <filters>
+        <field>Product_Family_GPL__c</field>
+        <operation>equals</operation>
+        <value>Access (Cardiac),Access (Interventional),Catheter-Extension,Guidewires,Hemostasis/Biologics,Interventional Procedures,Large Bore Access,OnControl,Right Heart,Specialty Catheters</value>
+    </filters>
+    <label>Intv Leads by Product Family</label>
+    <sharedTo>
+        <roleAndSubordinates>Interventional_Executive</roleAndSubordinates>
+    </sharedTo>
+</ListView>

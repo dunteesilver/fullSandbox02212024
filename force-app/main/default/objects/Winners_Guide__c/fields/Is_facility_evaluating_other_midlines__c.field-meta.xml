@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_facility_evaluating_other_midlines__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is facility evaluating other midlines?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is facility evaluating other midlines?</inlineHelpText>
+    <label>Is facility evaluating other midlines?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Standard_Pay_Profiles_USD</fullName>
+    <columns>Role__c</columns>
+    <columns>Level__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
+    <columns>Inservice_Hour__c</columns>
+    <columns>Onboarding_Prof_Development_Hour__c</columns>
+    <columns>Product_Implementation_Hour__c</columns>
+    <columns>Speaking_Engagements_Hour__c</columns>
+    <columns>Conference_Support_Hour__c</columns>
+    <columns>Consulting_Hour__c</columns>
+    <columns>Procedural_Program_Physician_Day__c</columns>
+    <columns>Procedural_Program_MD_Prof_Dev_Day__c</columns>
+    <columns>Procedural_Program_Lead_Day__c</columns>
+    <columns>Procedural_Program_Faculty_Day__c</columns>
+    <columns>Procedural_Program_Prof_Dev_Day__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Custom_Pay_Profile__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Pay_Profile__c.Contractor</value>
+    </filters>
+    <filters>
+        <field>CURRENCY_ISO_CODE</field>
+        <operation>equals</operation>
+        <value>USD</value>
+    </filters>
+    <label>Active Standard Pay Profiles USD</label>
+    <language>en_US</language>
+</ListView>

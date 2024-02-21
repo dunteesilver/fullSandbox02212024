@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Filter_Key_Temp__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ZPSA_Table__c = &quot;A681&quot;, SAP_Code__c &amp; &quot;-A681&quot;,
+IF(ZPSA_Table__c = &quot;A680&quot;, SAP_Code__c &amp; &quot;-A680&quot;,
+IF(ZPSA_Table__c = &quot;A654&quot;, SAP_Code__c &amp; &quot;-A654&quot;,
+IF(ZPSA_Table__c = &quot;A679&quot;, SAP_Code__c &amp; &quot;-A679&quot;,
+
+IF(ZPSA_Table__c = &quot;A659&quot;, Region__c &amp; &quot;-A659&quot;,
+IF(ZPSA_Table__c = &quot;A688&quot;, Region__c &amp; &quot;-A688&quot;,
+IF(ZPSA_Table__c = &quot;A689&quot;, Region__c &amp; &quot;-A689&quot;,
+
+IF(ZPSA_Table__c = &quot;A626&quot;, Zip10__c &amp; &quot;-A626&quot;,
+IF(ZPSA_Table__c = &quot;A675&quot;, Zip3__c &amp; &quot;-A675&quot;,
+IF(ZPSA_Table__c = &quot;A667&quot;, Zip5__c &amp; &quot;-A667&quot;,
+
+IF(ZPSA_Table__c = &quot;A672&quot;, Zip3__c &amp; Customer_Group__c &amp; &quot;-A672&quot;,
+IF(ZPSA_Table__c = &quot;A671&quot;, Zip3__c &amp; Customer_Group__c &amp; &quot;-A671&quot;,
+IF(ZPSA_Table__c = &quot;A663&quot;, Zip5__c &amp; Customer_Group__c &amp; &quot;-A663&quot;,
+IF(ZPSA_Table__c = &quot;A664&quot;, Zip5__c &amp; Customer_Group__c &amp; &quot;-A664&quot;,
+
+IF(ZPSA_Table__c = &quot;A668&quot;, Zip5__c &amp; &quot;-A668&quot;,
+IF(ZPSA_Table__c = &quot;A622&quot;, Customer_Group__c &amp; &quot;-A622&quot;,
+&quot;&quot;))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Filter Key Temp</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

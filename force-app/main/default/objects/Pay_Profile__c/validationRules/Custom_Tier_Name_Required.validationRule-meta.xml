@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Tier_Name_Required</fullName>
+    <active>true</active>
+    <description>Requires a Custom Tier Name if the Tier selected is &quot;Custom&quot;</description>
+    <errorConditionFormula>AND(
+ISBLANK(Custom_Tier_Name__c),
+ISPICKVAL(Level__c,&quot;Custom&quot;))</errorConditionFormula>
+    <errorDisplayField>Custom_Tier_Name__c</errorDisplayField>
+    <errorMessage>Custom Tiers require a Custom Tier Name</errorMessage>
+</ValidationRule>

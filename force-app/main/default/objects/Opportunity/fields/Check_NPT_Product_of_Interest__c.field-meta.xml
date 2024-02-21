@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_NPT_Product_of_Interest__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+NOT(ISBLANK(New_Product_Tracking_Rule__c)),
+NOT(ISBLANK(TEXT(Product_of_Interest_GPL__c))),
+UPPER(TEXT(Product_of_Interest_GPL__c)) &lt;&gt; UPPER(New_Product_Tracking_Rule__r.Product__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Checked if the Product of Interest does not match the rule Product of Interest</inlineHelpText>
+    <label>Check NPT Product of Interest</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hemostatic_agent_s__c</fullName>
+    <description>(e.g: Surgicel®, SecurePortIV™, StatSeal®, Dermabond Advanced® Adhesive)
+Trial/Evaluation Stage</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(e.g: Surgicel®, SecurePortIV™, StatSeal®, Dermabond Advanced® Adhesive)
+Trial/Evaluation Stage</inlineHelpText>
+    <label>Hemostatic agent(s)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

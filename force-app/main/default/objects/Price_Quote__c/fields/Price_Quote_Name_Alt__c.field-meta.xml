@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Quote_Name_Alt__c</fullName>
+    <description>If( $User.ProfileId = &quot;00eE0000000j4Vk&quot;, Name &amp; &quot; - &quot; &amp; Account_Name__r.Name &amp; &quot; - &quot; &amp; Owner_Full_Name__c &amp; &quot; -- &quot; &amp; TEXT(Status__c),
+			Name &amp; &quot; - &quot; &amp; Account_Name__r.Name &amp; &quot; -- &quot; &amp; TEXT(Status__c)
+)</description>
+    <externalId>false</externalId>
+    <formula>If( $User.ProfileId = &quot;00eE0000000j4Vk&quot;, Name &amp; &quot; - &quot; &amp; Account_Name__r.Name &amp; &quot; - &quot; &amp; Owner_Full_Name__c &amp; &quot; -- &quot; &amp; TEXT(Status__c),
+			Name &amp; &quot; - &quot; &amp; Account_Name__r.Name &amp; &quot; -- &quot; &amp; TEXT(Status__c)
+)</formula>
+    <label>Price Quote Name Alt</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

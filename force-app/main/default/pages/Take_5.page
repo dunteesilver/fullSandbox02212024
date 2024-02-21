@@ -1,0 +1,58 @@
+<apex:page controller="RetUrlSearchController" showHeader="false" sidebar="false">
+<style>
+html, body {
+height: 100%;
+}
+body {
+  background-image:url('{!$Resource.Teleflex_NAKO_2013_Top}');
+  background-position:left top;
+  background-repeat:no-repeat;
+}
+
+* {
+margin: 0;
+}
+</style>
+<div id="logo">
+ <!--<apex:image value="{!$Resource.Teleflex_NAKO_2013_Top}"/>-->
+ <!--<apex:image style="margin-left:auto;margin-right:auto;width:400px;" value="{!$Resource.Take5Bar_TFX}"/>-->
+ </div>
+<div style="display:block;width:100%;">
+  <div style="width:420px;margin-left:auto;margin-right:auto;">
+    <apex:pagemessages />
+    <apex:form >
+      <apex:pageBlock mode="mainDetail">
+        <div style="margin-top:25px;margin-bottom:25px;text-align:center;color:#013073;font-size:102px;margin-left:auto;margin-right:auto;">
+          <!--<apex:image style="margin-right:-20px;" value="{!$Resource.tbug}"/><b>ake 5 with IT</b>-->
+          <apex:image style="margin-left:auto;margin-right:auto;" value="{!$Resource.Take5basic}"/>
+        </div>
+        
+      
+        
+        <apex:pageBlockSection columns="2">
+
+          <span style="font-size:16px;float:right;line-height:25px;"> <!--color:#013073;-->
+                What is your last name?
+          </span>
+          <!--<apex:outputLabel style="float:right;" value="What is your last name?"/>-->
+          <apex:outputPanel style="width:100%;display:block;margin-left:auto;margin-right:auto;">
+            <apex:inputText style="width:127px;" value="{!nameQuery}" id="searchBox"/>
+            <apex:commandButton action="{!executeSearch}" value="Search"/>
+          </apex:outputPanel>
+        </apex:pageBlockSection>
+       <apex:pageBlockTable value="{!Users}" var="use" rendered="{!Users != null}">
+          <apex:column headerValue="Name">
+             <apex:outputLink value="{!$Site.Domain}/apex/take5list?uid={!use.Id}">{!use.Name}</apex:outputLink>
+          </apex:column>
+          <apex:column style="width:50px;" headerValue="Photo">
+            <apex:image value="{!use.SmallPhotoUrl}" height="45px" width="45px"/>
+          </apex:column>
+       </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+  </div>
+</div>
+<div style="position:fixed;right:0;bottom:0;">
+<apex:image style="z-index:99999;" value="{!$Resource.Teleflex_NAKO_2013_BottomR}"/>
+</div>
+</apex:page>

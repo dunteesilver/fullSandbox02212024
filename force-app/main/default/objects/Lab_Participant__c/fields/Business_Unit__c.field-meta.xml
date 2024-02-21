@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate Retail</fullName>
+                <default>false</default>
+                <label>Corporate Retail</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Independent Retail</fullName>
+                <default>false</default>
+                <label>Independent Retail</label>
+            </value>
+            <value>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+                <label>Industrial</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Resellers</fullName>
+                <default>false</default>
+                <label>Resellers</label>
+            </value>
+            <value>
+                <fullName>Safety &amp; Industrial</fullName>
+                <default>false</default>
+                <label>Safety &amp; Industrial</label>
+            </value>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Surgical</fullName>
+                <default>false</default>
+                <label>Surgical</label>
+            </value>
+            <value>
+                <fullName>Vascular</fullName>
+                <default>false</default>
+                <label>Vascular</label>
+            </value>
+            <value>
+                <fullName>Cardiac</fullName>
+                <default>false</default>
+                <label>Cardiac</label>
+            </value>
+            <value>
+                <fullName>Interventional Access</fullName>
+                <default>false</default>
+                <label>Interventional Access</label>
+            </value>
+            <value>
+                <fullName>LMA</fullName>
+                <default>false</default>
+                <label>LMA</label>
+            </value>
+            <value>
+                <fullName>Specialty Markets</fullName>
+                <default>false</default>
+                <label>Specialty Markets</label>
+            </value>
+            <value>
+                <fullName>Vidacare</fullName>
+                <default>false</default>
+                <label>Vidacare</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

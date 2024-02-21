@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X7M_Quarter_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* 2021 */
+
+if(TODAY() &gt; DATEVALUE(&quot;2021-09-27&quot;), 2,
+if(TODAY() &gt; DATEVALUE(&quot;2021-06-01&quot;), 1,
+
+/* 2020 */
+if(TODAY() &gt; DATEVALUE(&quot;2020-09-28&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2020-06-29&quot;), 3,
+
+0
+))
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>7M Quarter Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

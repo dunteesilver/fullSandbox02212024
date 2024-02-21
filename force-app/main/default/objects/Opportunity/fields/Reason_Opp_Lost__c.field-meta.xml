@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Opp_Lost__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If this is a opportunity that is marked &quot;Lost&quot;, choose a reason that best describes why it was lost</inlineHelpText>
+    <label>Reason Opportunity Lost</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Clinical</fullName>
+                <default>false</default>
+                <label>Clinical</label>
+            </value>
+            <value>
+                <fullName>Clinical Issue</fullName>
+                <default>false</default>
+                <label>Clinical Issue</label>
+            </value>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+            <value>
+                <fullName>Duplicate/Error</fullName>
+                <default>false</default>
+                <label>Duplicate/Error</label>
+            </value>
+            <value>
+                <fullName>GPO/Contract Compliance</fullName>
+                <default>false</default>
+                <label>GPO/Contract Compliance</label>
+            </value>
+            <value>
+                <fullName>Lost Current Business</fullName>
+                <default>false</default>
+                <label>Lost Current Business</label>
+            </value>
+            <value>
+                <fullName>Lost Revenue</fullName>
+                <default>false</default>
+                <label>Lost Revenue</label>
+            </value>
+            <value>
+                <fullName>Off Contract</fullName>
+                <default>false</default>
+                <label>Off Contract</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Poor Outcome</fullName>
+                <default>false</default>
+                <label>Poor Outcome</label>
+            </value>
+            <value>
+                <fullName>Postponed</fullName>
+                <default>false</default>
+                <label>Postponed</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Product Specs</fullName>
+                <default>false</default>
+                <label>Product Specs</label>
+            </value>
+            <value>
+                <fullName>Service Issue</fullName>
+                <default>false</default>
+                <label>Service Issue</label>
+            </value>
+            <value>
+                <fullName>Supply</fullName>
+                <default>false</default>
+                <label>Supply</label>
+            </value>
+            <value>
+                <fullName>SYSTEM</fullName>
+                <default>false</default>
+                <label>SYSTEM</label>
+            </value>
+            <value>
+                <fullName>Technical Docs</fullName>
+                <default>false</default>
+                <label>Technical Docs</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

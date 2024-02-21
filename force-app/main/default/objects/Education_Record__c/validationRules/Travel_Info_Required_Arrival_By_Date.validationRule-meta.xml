@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Info_Required_Arrival_By_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  RecordType.Name =&quot;Education Program Request&quot;,
+OR(ISPICKVAL(  Travel_Type_Requested__c  , &quot;Flight&quot;)  ,ISPICKVAL(  Travel_Type_Requested__c  , &quot;Train&quot;)
+),
+ ISBLANK (    Arrival_by__c   ))</errorConditionFormula>
+    <errorDisplayField>Arrival_by__c</errorDisplayField>
+    <errorMessage>Please fill in Arrival by Date/Time when Flight or Train transportation is is requested</errorMessage>
+</ValidationRule>

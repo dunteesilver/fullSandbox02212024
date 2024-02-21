@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAC_Members_is_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+
+(Record_Type_Name__c = &quot;Surgical Device &amp; Bariatrics&quot;),
+
+OR(
+ISPICKVAL(StageName, &quot;VAC Submission&quot;),
+ISPICKVAL(StageName, &quot;VAC Approval&quot;),
+ISPICKVAL(StageName, &quot;Surgeon Proctoring Scheduled&quot;), 
+ISPICKVAL(StageName, &quot;Trial Phase&quot;),
+ISPICKVAL(StageName, &quot;Closed Won&quot;)
+),
+
+OR(VACMemberCount__c   =  0,
+ ISPICKVAL(VACChampionIdentified__c,&quot;&quot;),
+ ISPICKVAL(VACChampionPrepMeetingCompleted__c,&quot;&quot;), 
+ ISPICKVAL( ProvidedCostCalculator__c,&quot;&quot;),
+ ISPICKVAL(VACSystem__c , &quot;&quot;)
+)
+
+)</errorConditionFormula>
+    <errorMessage>Please create a VAC Member and/or fully fill out the VAC Section before moving the Opportunity Forward</errorMessage>
+</ValidationRule>

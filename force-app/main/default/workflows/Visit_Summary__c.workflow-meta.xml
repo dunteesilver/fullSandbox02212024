@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CSS_Review_of_Field_Ride</fullName>
+        <description>CSS Review of Field Ride</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ProfileEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Visit_Summary/CSS_Review_of_Field_Ride</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Rep_that_RSM_approved</fullName>
+        <description>Email to Rep that RSM approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Field_Visit_Letter_RSM_Comments_Added</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Rep_that_RSM_approved_Surgical</fullName>
+        <description>Email to Repthat RSM approved Surgical</description>
+        <protected>false</protected>
+        <recipients>
+            <field>RSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Field_Visit_Letter_Has_Been_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Field_Visit_Letter_Created_Edited</fullName>
+        <ccEmails>Leslie.Collins@teleflex.com</ccEmails>
+        <description>Field Visit Letter Created/Edited</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Visit_Summary/Field_Ride_Form_Created_Edited</template>
+    </alerts>
+    <alerts>
+        <fullName>Field_Visit_Letter_DIR_Comments_Added_Email_ALert</fullName>
+        <description>Field Visit Letter DIR Comments Added Email ALert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Visit_Summary/Field_Ride_Form_Director_Comments_Added</template>
+    </alerts>
+    <alerts>
+        <fullName>Reviewed_by_Rep</fullName>
+        <description>Reviewed by Rep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>leslie.collins@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Visit_Summary/Field_Ride_Reviewed_by_REp</template>
+    </alerts>
+    <alerts>
+        <fullName>The_CSS_Has_Provided_Comments_on_Their_Field_Ride</fullName>
+        <description>The CSS Has Provided Comments on Their Field Ride</description>
+        <protected>false</protected>
+        <recipients>
+            <field>RSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Visit_Summary/CSS_Return_to_RCSM</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_Profile_Email_Address_to_Visit_Summa</fullName>
+        <field>ProfileEmail__c</field>
+        <formula>Profile__r.E_mail_Address__c</formula>
+        <name>Add Profile Email Address to Visit Summa</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Director_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Director Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FVL_Recalled</fullName>
+        <field>Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>FVL Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_Visit_Letter_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Field Visit Letter Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_Visit_Letter_Naming_Conventionv3</fullName>
+        <field>Name</field>
+        <formula>&quot;Field Visit Letter for&quot; + &quot; &quot;+  Owner:User.FirstName + &quot; &quot;+Owner:User.LastName +  &quot; &quot; +TEXT(Date_of_Meeting__c)</formula>
+        <name>Field Visit Letter Naming Conventionv3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_Visit_Letter_Update_Status_Approv</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Field Visit Letter Update Status: Approv</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_Visit_Letter_Update_Status_DIR2</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting on Director</literalValue>
+        <name>Field Visit Letter Update Status: DIR2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_Visit_Letter_Update_Status_Dir</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting on Director</literalValue>
+        <name>Field Visit Letter Update Status: Dir</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_Visit_Letter_Update_Status_RSM2</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting on RSM</literalValue>
+        <name>Field Visit Letter Update Status: RSM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reject_Field_Visit_Letter</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Reject Field Visit Letter</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reject_Field_Visit_Letter_Alt_Care</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Reject Field Visit Letter Alt Care</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reject_Field_Visit_Letter_Perc</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Reject Field Visit Letter Perc</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reject_Field_Visit_Letter_Surg</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Reject Field Visit Letter Surg</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Send_to_CSS_4_Review</fullName>
+        <field>SendtoCSSforReview__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Send to CSS 4 Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_RSM_Email</fullName>
+        <field>RSM_Email__c</field>
+        <formula>Owner:User.Manager.Email</formula>
+        <name>Update Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Visit_Summary_Name_Update</fullName>
+        <field>Name</field>
+        <formula>Profile__r.Name+&quot;-&quot;+  TEXT(Date_of_Meeting__c)+&quot;-&quot;+Account__r.Name</formula>
+        <name>Visit Summary Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Add Profile Email Address to Visit Summary</fullName>
+        <actions>
+            <name>Add_Profile_Email_Address_to_Visit_Summa</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Visit_Summary__c.ProfileEmail__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This is necessary to send the email to CSS for review</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CSS Email Notification</fullName>
+        <actions>
+            <name>CSS_Review_of_Field_Ride</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Visit_Summary__c.SendtoCSSforReview__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Uncheck_Send_to_CSS_4_Review</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Field Visit Letter Naming Conventionv2</fullName>
+        <actions>
+            <name>Field_Visit_Letter_Naming_Conventionv3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Visit_Summary__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Field Visit Letter,Surgical Field Visit Letter</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Visit Summary Created%2FEdited</fullName>
+        <actions>
+            <name>Field_Visit_Letter_Created_Edited</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Visit_Summary__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Surgical Field Visit Letter</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Visit_Summary__c.Business_Unit__c</field>
+            <operation>contains</operation>
+            <value>Surgical</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reviewed by Rep Email Alert</fullName>
+        <actions>
+            <name>Reviewed_by_Rep</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Visit_Summary__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Field Ride</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Visit_Summary__c.Viewed_by_Rep__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>The CSS Has Provided Comments on Their Field Ride</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Visit_Summary__c.CSSReviewComments__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Visit_Summary__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Field Ride</value>
+        </criteriaItems>
+        <description>The CSS Has Provided Comments on Their Field Ride</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>The_CSS_Has_Provided_Comments_on_Their_Field_Ride</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Update Manager Email</fullName>
+        <actions>
+            <name>Update_RSM_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Visit_Summary__c.RSM_Email__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update RSM Email</fullName>
+        <actions>
+            <name>Update_RSM_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Visit Summary Name Update</fullName>
+        <actions>
+            <name>Visit_Summary_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( ISNEW(),   ISCHANGED(Account__c),   ISCHANGED(Date_of_Meeting__c ),   ISCHANGED(Profile__c)   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

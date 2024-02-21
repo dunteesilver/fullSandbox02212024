@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Respiratory_Below_RSM_Level_PRF</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Respiratory Below RSM Level</label>
+    <queue>Respiratory_Below_RSM_Level</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matching_Logic__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(ZPSA_Table__c = &quot;A681&quot;, &quot;SAP Code&quot;,
+if(ZPSA_Table__c = &quot;A680&quot;, &quot;SAP Code&quot;,
+if(ZPSA_Table__c = &quot;A654&quot;, &quot;SAP Code&quot;,
+if(ZPSA_Table__c = &quot;A679&quot;, &quot;SAP Code&quot;,
+if(ZPSA_Table__c = &quot;A659&quot;, &quot;Region/State&quot;,
+if(ZPSA_Table__c = &quot;A688&quot;, &quot;Region/State&quot;,
+if(ZPSA_Table__c = &quot;A689&quot;, &quot;Region/State&quot;,
+if(ZPSA_Table__c = &quot;A626&quot;, &quot;Zip/Postal Code&quot;,
+if(ZPSA_Table__c = &quot;A675&quot;, &quot;Zip/Postal Code&quot;,
+if(ZPSA_Table__c = &quot;A667&quot;, &quot;Zip/Postal Code&quot;,
+if(ZPSA_Table__c = &quot;A668&quot;, &quot;Zip/Postal Code&quot;,
+if(ZPSA_Table__c = &quot;A672&quot;, &quot;Zip/Postal Code and Customer Group&quot;,
+if(ZPSA_Table__c = &quot;A671&quot;, &quot;Zip/Postal Code and Customer Group&quot;,
+if(ZPSA_Table__c = &quot;A663&quot;, &quot;Zip/Postal Code and Customer Group&quot;,
+if(ZPSA_Table__c = &quot;A664&quot;, &quot;Zip/Postal Code and Customer Group&quot;,
+if(ZPSA_Table__c = &quot;A622&quot;, &quot;Customer Group and Territory Number&quot;,
+&quot;Error&quot;
+))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Matching Logic</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

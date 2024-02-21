@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Attendees_EZ_IO__c</fullName>
+    <externalId>false</externalId>
+    <formula>Attendees_EZ_IO_EMS__c+Attendees_EZ_IO_Other__c+of_Attendees_EZ_IO__c+Attendees_Airway_MD__c+Attendees_EZ_IO_RN__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total # Attendees EZ-IO</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

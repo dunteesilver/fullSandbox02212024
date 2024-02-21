@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EloquaCheckBox__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check box is to notify Eloqua that a new task has been logged and that it needs to evaluate this Opportunity</description>
+    <externalId>false</externalId>
+    <label>Eloqua Check Box</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

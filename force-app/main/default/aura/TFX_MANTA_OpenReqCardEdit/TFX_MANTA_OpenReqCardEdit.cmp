@@ -1,0 +1,107 @@
+<aura:component 
+                controller="TFX_MANTA_Handler"
+                implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="openReqId" type="String" />
+    <aura:attribute name="caseDate" type="String" />
+    <aura:attribute name="hospitalId" type="String" />
+    <aura:attribute name="hospital" type="String" />
+    <aura:attribute name="region" type="String" />
+    <aura:attribute name="physicianId" type="String" />
+    <aura:attribute name="physician" type="String" /> 
+    <aura:attribute name="physicianNPINum" type="String" /> 
+    <aura:attribute name="caseType" type="String" />
+    <aura:attribute name="numOfCases" type="String" />
+    <aura:attribute name="caseInitiator" type="String" />
+    <aura:attribute name="caseInitID" type="String" />
+    <aura:attribute name="daysOpen" type="String" />
+    <aura:attribute name="notes" type="String" />
+    <aura:attribute name="status" type="String" />
+    <aura:attribute name="proctor" type="String" />
+	<aura:attribute name="showEdit" type="String" />
+    
+    <aura:attribute
+                    name="editOpenReqObj"
+                    type="sObject"
+                    default="{ 'sobjectType': 'MANTA_Proctorship_Request__c',
+                             'Id': '',
+                             'Hospital__c': '',
+                             'Case_Date__c': '',
+                             'Physician__c': '',
+                             'Physician_NPI_Number__c': '',
+                             'Estimated_of_Cases__c': '',
+                             'Case_Type__c': '',
+                             'Status__c': 'Open (Not Accepted)',
+                             'Case_Initiator__c': '',
+                             'Notes__c': '',
+                             'Proctor__c': '',
+                             'Region__c': ''
+                             }"
+                    />
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    <ui:scrollerWrapper class="scrollerSize">      
+        <article class="slds-align_absolute-center slds-card" style="width: 100%">
+            <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+                <br/><br/><br/>
+                <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_small">Edit Open Request</div>
+                
+                
+                <dl class="slds-list_horizontal slds-wrap slds-p-around_small">
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Case Date:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.caseDate}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Hospital:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.hospital}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Region:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.region}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Physician:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.physician}</dd> 
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Type of Case:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.caseType}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Estimated # of Cases:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.numOfCases}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Case Initiator:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.caseInitiator}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Days Open:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.daysOpen}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Notes:</dt>
+                    <dd class="slds-item_detail slds-p-around_small">
+                        <lightning:textarea value="{!v.notes}" />
+                    </dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Status:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" style="width: 15rem; margin: -1rem">
+                        <lightning:select value="{!v.status}">
+                            <option value="ChooseOne">Choose one...</option>
+                            <option value="Accepted">Accepted</option>
+                            <option value="No Trainer Needed">No Trainer Needed</option>
+                        </lightning:select>
+                    </dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" style="width: 24rem;">
+                         <aura:if isTrue="{! v.status == 'Accepted' }">
+                        <lightning:recordEditForm objectApiName="MANTA_Proctorship_Request__c"                 >
+                            <lightning:inputField fieldName="Proctor__c" value="{!v.proctor}" />
+                        </lightning:recordEditForm>
+                        </aura:if>
+                    </dt>
+                </dl>
+                <lightning:layout class="slds-align_absolute-center">
+                    <lightning:layoutItem>
+                        <lightning:button variant="Brand" label="Back" onclick="{!c.navigateToTFX_MANTA_Open_Reqs_Comp}" />
+                        <lightning:button variant="Brand" label="Confirm" onclick="{!c.confirmEditOpenReq}" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </article>
+    </ui:scrollerWrapper>    
+</aura:component>

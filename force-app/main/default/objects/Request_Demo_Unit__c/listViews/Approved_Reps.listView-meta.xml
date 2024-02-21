@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Reps</fullName>
+    <columns>NAME</columns>
+    <columns>Trainings__c</columns>
+    <columns>Agree__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Trainings__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Agree__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Rep_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Approved Reps</label>
+    <language>en_US</language>
+</ListView>

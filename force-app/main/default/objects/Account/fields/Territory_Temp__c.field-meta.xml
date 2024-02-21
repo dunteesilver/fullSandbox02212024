@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Temp__c</fullName>
+    <description>Temp field for territory to be manually updated for Vascular to view the accounts that are in their territory. Manually filling in this field for each rep (not all at one - as they complain).</description>
+    <externalId>false</externalId>
+    <label>Territory Temp</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

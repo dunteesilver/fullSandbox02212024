@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Approval_Flag_Reason__c</fullName>
+    <description>IF(
+Material_Status_Check__c = 1,
+&quot;Material Not Saleable&quot;,
+IF(
+OR(Floor_Price__c &gt;= Sales_Price__c, Director_Price__c &gt; Sales_Price__c) ,&quot;Sales Price below Cost/Floor/DIR&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; Sales_Price__c, RSM_Price__c &gt; Sales_Price__c),&quot;Sales Price below RSM&quot;,
+IF(
+AND(Eligible_Price__c = List_Price__c, Eligible_Price__c &lt; RSM_Price__c),&quot;Sales Price below RSM&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; Sales_Price__c, Rep_Price__c &gt; Sales_Price__c),&quot;Sales Price below Rep&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; List_Price__c, Eligible_Price__c &gt; Sales_Price__c),&quot;Sales Price below Eligible(Vistex)&quot;,
+IF(
+AND(Eligible_Price__c  = List_Price__c, Eligible_Price__c &lt; Rep_Price__c),&quot;Sales Price below Rep&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; Sales_Price__c, Rep_Price__c &lt;= Sales_Price__c ),&quot;Ready&quot;,&quot;Ready&quot;
+)
+)
+)
+)
+)
+)
+)
+)</description>
+    <externalId>false</externalId>
+    <formula>IF(
+Material_Status_Check__c = 1,
+&quot;Material Not Saleable&quot;,
+IF(
+OR(Floor_Price__c &gt;= Sales_Price__c, Director_Price__c &gt; Sales_Price__c) ,&quot;Below either Cost/Floor/DIR&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; List_Price__c, Eligible_Price__c &lt;&gt; Sales_Price__c, Sales_Price__c &lt; RSM_Price__c),&quot;On Contract below RSM&quot;,
+IF(
+AND(Eligible_Price__c = List_Price__c, Sales_Price__c &lt; RSM_Price__c),&quot;Below RSM&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; List_Price__c, Eligible_Price__c &lt;&gt; Sales_Price__c, Sales_Price__c &lt; Rep_Price__c),&quot;On Contract below Rep&quot;,
+IF(
+AND(Eligible_Price__c = List_Price__c, Sales_Price__c &lt; Rep_Price__c),&quot;Below Rep&quot;,
+IF(
+OR(Rep_Price__c = 0.00, RSM_Price__c = 0),&quot;RSM/Rep is 0&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; List_Price__c, Eligible_Price__c &gt; Sales_Price__c),&quot;Not Equal Eligible&quot;,
+IF(
+AND(Eligible_Price__c &lt;&gt; Sales_Price__c, Rep_Price__c &lt;= Sales_Price__c ),&quot;Ready&quot;,&quot;Ready&quot;
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <label>EMEA Approval Flag Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

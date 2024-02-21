@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PIVdwelltimeoutlinedinPP__c</fullName>
+    <description>PIV dwell time outlined in Policy and Procedure (clinically indicated or dwell hours, e.g. 72/96 hrs)
+Endurance
+Needs Analysis
+Vetting</description>
+    <externalId>false</externalId>
+    <inlineHelpText>PIV dwell time outlined in Policy and Procedure (clinically indicated or dwell hours, e.g. 72/96 hrs)
+Endurance
+Needs Analysis
+Vetting</inlineHelpText>
+    <label>*PIV dwell time outlined in P&amp;P</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

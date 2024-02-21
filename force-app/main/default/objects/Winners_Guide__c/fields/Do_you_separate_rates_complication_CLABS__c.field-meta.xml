@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_you_separate_rates_complication_CLABS__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Do you separate rates/complication/CLABSI by Vascular Access device?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Needs Analysis: (Identify Hospital Rates (%))
+
+Do you separate rates/complication/CLABSI by Vascular Access device?</inlineHelpText>
+    <label>Do you separate rates/complication...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

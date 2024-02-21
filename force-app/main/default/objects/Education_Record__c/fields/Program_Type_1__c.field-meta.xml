@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Type_1__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is meant to replace the program object</inlineHelpText>
+    <label>Program Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Evaluation</fullName>
+                <default>false</default>
+                <label>Evaluation</label>
+            </value>
+            <value>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+                <label>Implementation</label>
+            </value>
+            <value>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+                <label>Follow-Up Training</label>
+            </value>
+            <value>
+                <fullName>TFXA Lunch and Learn</fullName>
+                <default>false</default>
+                <label>TFXA Lunch and Learn</label>
+            </value>
+            <value>
+                <fullName>Dinner Program</fullName>
+                <default>false</default>
+                <label>Dinner Program</label>
+            </value>
+            <value>
+                <fullName>CEU</fullName>
+                <default>false</default>
+                <label>CEU</label>
+            </value>
+            <value>
+                <fullName>Clinical Education Program</fullName>
+                <default>false</default>
+                <label>Clinical Education Program</label>
+            </value>
+            <value>
+                <fullName>Booth Education</fullName>
+                <default>false</default>
+                <label>Booth Education</label>
+            </value>
+            <value>
+                <fullName>Clinical Indication Review</fullName>
+                <default>false</default>
+                <label>Clinical Indication Review</label>
+            </value>
+            <value>
+                <fullName>Master Class</fullName>
+                <default>false</default>
+                <label>Master Class</label>
+            </value>
+            <value>
+                <fullName>Virtual Training</fullName>
+                <default>false</default>
+                <label>Virtual Training</label>
+            </value>
+            <value>
+                <fullName>Content Development/Review</fullName>
+                <default>false</default>
+                <label>Content Development/Review</label>
+            </value>
+            <value>
+                <fullName>Market Research</fullName>
+                <default>false</default>
+                <label>Market Research</label>
+            </value>
+            <value>
+                <fullName>OPERA</fullName>
+                <default>false</default>
+                <label>OPERA</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Product Development (Mktg/R&amp;D Only)</fullName>
+                <default>false</default>
+                <label>Product Development (Mktg/R&amp;D Only)</label>
+            </value>
+            <value>
+                <fullName>Product Troubleshooting</fullName>
+                <default>false</default>
+                <label>Product Troubleshooting</label>
+            </value>
+            <value>
+                <fullName>Professional Development</fullName>
+                <default>false</default>
+                <label>Professional Development - Cadaveric Procedural Lab</label>
+            </value>
+            <value>
+                <fullName>Professional Development - Onboarding</fullName>
+                <default>false</default>
+                <label>Professional Development - Onboarding</label>
+            </value>
+            <value>
+                <fullName>Professional Development - Product Implementation</fullName>
+                <default>false</default>
+                <label>Professional Development - Product Implementation</label>
+            </value>
+            <value>
+                <fullName>Professional Development - Product Inservice</fullName>
+                <default>false</default>
+                <label>Professional Development - Product Inservice</label>
+            </value>
+            <value>
+                <fullName>Conference Support</fullName>
+                <default>false</default>
+                <label>Conference Support</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Arterial Catheter Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Arterial Catheter Insertion</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided CVC Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided CVC Insertion</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Peripheral Access Program</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Peripheral Access Program</label>
+            </value>
+            <value>
+                <fullName>Midline Fundamentals</fullName>
+                <default>false</default>
+                <label>Midline Fundamentals</label>
+            </value>
+            <value>
+                <fullName>PICC Fundamentals</fullName>
+                <default>false</default>
+                <label>PICC Fundamentals</label>
+            </value>
+            <value>
+                <fullName>Lunch Inservice</fullName>
+                <default>false</default>
+                <label>Lunch Inservice</label>
+            </value>
+            <value>
+                <fullName>Dinner Inservice</fullName>
+                <default>false</default>
+                <label>Dinner Inservice</label>
+            </value>
+            <value>
+                <fullName>Product In-Service</fullName>
+                <default>false</default>
+                <label>Product In-Service</label>
+            </value>
+            <value>
+                <fullName>Speaker Program</fullName>
+                <default>false</default>
+                <label>Speaker Program</label>
+            </value>
+            <value>
+                <fullName>Proctorship</fullName>
+                <default>false</default>
+                <label>Proctorship</label>
+            </value>
+            <value>
+                <fullName>Preceptorship</fullName>
+                <default>false</default>
+                <label>Preceptorship</label>
+            </value>
+            <value>
+                <fullName>Procedural Program</fullName>
+                <default>false</default>
+                <label>Procedural Program</label>
+            </value>
+            <value>
+                <fullName>Case Coverage</fullName>
+                <default>false</default>
+                <label>Case Coverage</label>
+            </value>
+            <value>
+                <fullName>Train the Trainer</fullName>
+                <default>false</default>
+                <label>Train the Trainer</label>
+            </value>
+            <value>
+                <fullName>Didactic Dinner</fullName>
+                <default>false</default>
+                <label>Didactic Dinner</label>
+            </value>
+            <value>
+                <fullName>Tradeshow Sponsorship</fullName>
+                <default>false</default>
+                <label>Tradeshow Sponsorship</label>
+            </value>
+            <value>
+                <fullName>Ambassador Program</fullName>
+                <default>false</default>
+                <label>Ambassador Program</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

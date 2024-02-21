@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Educator__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary Educator?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CE</fullName>
+                <default>false</default>
+                <label>CE</label>
+            </value>
+            <value>
+                <fullName>MSR</fullName>
+                <default>false</default>
+                <label>MSR</label>
+            </value>
+            <value>
+                <fullName>RSM</fullName>
+                <default>false</default>
+                <label>RSM</label>
+            </value>
+            <value>
+                <fullName>Clinical Affairs</fullName>
+                <default>false</default>
+                <label>Clinical Affairs</label>
+            </value>
+            <value>
+                <fullName>CEM</fullName>
+                <default>false</default>
+                <label>CEM</label>
+            </value>
+            <value>
+                <fullName>CS (Clinical Specialist)</fullName>
+                <default>false</default>
+                <label>CS (Clinical Specialist)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

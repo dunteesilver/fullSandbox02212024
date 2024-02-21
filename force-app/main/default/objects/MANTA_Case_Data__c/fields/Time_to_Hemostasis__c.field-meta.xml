@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_to_Hemostasis__c</fullName>
+    <externalId>false</externalId>
+    <label>Time to Hemostasis</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Immediate</fullName>
+                <default>false</default>
+                <label>Immediate</label>
+            </value>
+            <value>
+                <fullName>Less and 1 minute</fullName>
+                <default>false</default>
+                <label>Less and 1 minute</label>
+            </value>
+            <value>
+                <fullName>Less than 5 minutes</fullName>
+                <default>false</default>
+                <label>Less than 5 minutes</label>
+            </value>
+            <value>
+                <fullName>10 or more</fullName>
+                <default>false</default>
+                <label>10 or more</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

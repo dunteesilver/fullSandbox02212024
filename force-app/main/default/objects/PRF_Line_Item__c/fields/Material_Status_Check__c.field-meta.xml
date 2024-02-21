@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Status_Check__c</fullName>
+    <description>IF( 
+OR( 
+Material_Status__c = &quot;40&quot;, 
+Material_Status__c = &quot;60&quot;, 
+Material_Status__c = &quot;Z1&quot;,
+Material_Status__c = &quot;Z8&quot;,
+AND(Material_Status__c = &quot;Z5&quot;, List_Price__c &gt; 0.0),
+ISBLANK(Material_Status__c) 
+),0,1)</description>
+    <externalId>false</externalId>
+    <formula>IF(
+OR( 
+Material_Status__c = &quot;40&quot;, 
+Material_Status__c = &quot;60&quot;, 
+Material_Status__c = &quot;Z1&quot;,
+Material_Status__c = &quot;Z8&quot;,
+Material_Status__c = &quot;ZT&quot;,
+Material_Status__c = &quot;ZE&quot;,
+Material_Status__c = &quot;Z7&quot;,
+Material_Name_Text__c == &apos;CDC-35541-TTS&apos;,
+Material_Name_Text__c == &apos;CDC-35552-TTS&apos;,
+Material_Name_Text__c == &apos;CDC-35563-TTS&apos;,
+Material_Name_Text__c == &apos;CDC-45541-TTS&apos;,
+Material_Name_Text__c == &apos;CDC-45552-TTS&apos;,
+Material_Name_Text__c == &apos;CDC-45563-TTS&apos;,
+Material_Name_Text__c == &apos;RHY-100-BAT&apos;,
+Material_Name_Text__c == &apos;RHY-100-ECGA-1&apos;,
+Material_Name_Text__c == &apos;RHY-100-ECGA-5&apos;,
+Material_Name_Text__c == &apos;RHY-100-ECGJ&apos;,
+Material_Name_Text__c == &apos;RHY-100-ECGO&apos;,
+Material_Name_Text__c == &apos;RHY-100-ECGPC&apos;,
+Material_Name_Text__c == &apos;RHY-100-ECGPC&apos;,
+Material_Name_Text__c == &apos;RHY-100-PRNL-A&apos;,
+Material_Name_Text__c == &apos;RHY-100-PRNL-A&apos;,
+Material_Name_Text__c == &apos;RHY-100-PWRC-B&apos;,
+Material_Name_Text__c == &apos;RHY-100-RC&apos;,
+Material_Name_Text__c == &apos;RHY-100-TP&apos;,
+Material_Name_Text__c == &apos;RHY-177-TTSAP&apos;,
+Material_Name_Text__c == &apos;RHY–100–PRNC&apos;,
+Material_Name_Text__c == &apos;SGS23R&apos;,
+Material_Name_Text__c == &apos;SGS23RB&apos;,
+Material_Name_Text__c == &apos;SPU01&apos;,
+Material_Name_Text__c == &apos;SB38&apos;,
+Material_Name_Text__c == &apos;ST19&apos;,
+Material_Name_Text__c == &apos;SBHP&apos;,
+Material_Name_Text__c == &apos;STB38&apos;,
+AND(
+Material_Status__c = &quot;Z5&quot;, 
+List_Price__c &gt; 0.0),
+ISBLANK(Material_Status__c
+)
+/* End of OR */
+),0,1)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Material Status Check</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

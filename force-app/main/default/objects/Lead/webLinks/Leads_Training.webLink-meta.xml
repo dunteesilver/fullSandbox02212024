@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leads_Training</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Leads Training</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://tfxinc.sharepoint.com/sites/vascular/TFVascular/Marketing/MarketingOperations/Marketing%20Operations/Forms/AllItems.aspx?id=%2Fsites%2Fvascular%2FTFVascular%2FMarketing%2FMarketingOperations%2FMarketing%20Operations%2FProjects%2FLeads%20MGMT%2FTraining%20Materials%2FLeads%20%2D%20Quick%20Reference%2Epdf&amp;parent=%2Fsites%2Fvascular%2FTFVascular%2FMarketing%2FMarketingOperations%2FMarketing%20Operations%2FProjects%2FLeads%20MGMT%2FTraining%20Materials&amp;p=true&amp;ga=1</url>
+</WebLink>

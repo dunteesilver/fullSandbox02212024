@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Year_Impact__c</fullName>
+    <description>if(or(Amount == null, Amount == 0 ),
+  0,
+  (Amount/365)*( (Date(YEAR(CloseDate)+1,MONTH(CloseDate),DAY(CloseDate))+1) - DATE( Year(CloseDate)+1,1,1 ) )
+  )</description>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(Amount == null, Amount == 0 ),
+0,
+IF(
+AND( NOT( One_Time_Sale__c ),YEAR(CloseDate) - YEAR( Today() ) = 1 ),
+(Amount/365) * ( DATE(YEAR(CloseDate),12,31) - DATE(YEAR(CloseDate),MONTH(CloseDate),DAY(CloseDate) ) ),
+IF(
+AND( One_Time_Sale__c,YEAR(CloseDate) - YEAR( Today() ) = 1 ),
+Amount,
+Carry_Over_Amount1__c
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Next Year Impact</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

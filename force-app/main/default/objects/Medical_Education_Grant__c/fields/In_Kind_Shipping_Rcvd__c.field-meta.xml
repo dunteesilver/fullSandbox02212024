@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Kind_Shipping_Rcvd__c</fullName>
+    <description>Manually entered</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to reflect the total actual expense for this medical education grant.</inlineHelpText>
+    <label>In-Kind Shipping Rcvd</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

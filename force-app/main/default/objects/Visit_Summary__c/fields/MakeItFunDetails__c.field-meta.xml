@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MakeItFunDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Make It Fun Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>MakeItFun__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demonstrate an appreciation for people with different backgrounds and diversity</fullName>
+                <default>false</default>
+                <label>Demonstrate an appreciation for people with different backgrounds and diversity</label>
+            </value>
+            <value>
+                <fullName>Enrich customer experience by working globally and others across the organization</fullName>
+                <default>false</default>
+                <label>Enrich customer experience by working globally and others across the organization</label>
+            </value>
+            <value>
+                <fullName>Collaborate effectively within own team and across segments, functions and organizations to achieve common goals with confidence and trust</fullName>
+                <default>false</default>
+                <label>Collaborate effectively within own team and across segments, functions and organizations to achieve common goals with confidence and trust</label>
+            </value>
+            <value>
+                <fullName>Encourage respectful debate and embrace differing opinions and points of view</fullName>
+                <default>false</default>
+                <label>Encourage respectful debate and embrace differing opinions and points of view</label>
+            </value>
+            <value>
+                <fullName>Take pride in own work and celebrate wins</fullName>
+                <default>false</default>
+                <label>Take pride in own work and celebrate wins</label>
+            </value>
+            <value>
+                <fullName>Recognize the unique contribution of each individual and the value of teamwork</fullName>
+                <default>false</default>
+                <label>Recognize the unique contribution of each individual and the value of teamwork</label>
+            </value>
+            <value>
+                <fullName>Promote an atmosphere of recognition and give due credit for team contribution and accomplishment</fullName>
+                <default>false</default>
+                <label>Promote an atmosphere of recognition and give due credit for team contribution and accomplishment</label>
+            </value>
+            <value>
+                <fullName>Create opportunities for positive and collaborative working relationships for capabilities building</fullName>
+                <default>false</default>
+                <label>Create opportunities for positive and collaborative working relationships for capabilities building</label>
+            </value>
+            <value>
+                <fullName>Treat each other with dignity and respect</fullName>
+                <default>false</default>
+                <label>Treat each other with dignity and respect</label>
+            </value>
+            <value>
+                <fullName>Practice inclusion and value diversity</fullName>
+                <default>false</default>
+                <label>Practice inclusion and value diversity</label>
+            </value>
+            <value>
+                <fullName>Being considerate of the intrinsic needs of others</fullName>
+                <default>false</default>
+                <label>Being considerate of the intrinsic needs of others</label>
+            </value>
+            <value>
+                <fullName>Promote and embrace fun at work</fullName>
+                <default>false</default>
+                <label>Promote and embrace fun at work</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Be collaborative &amp; friendly</controllingFieldValue>
+            <valueName>Demonstrate an appreciation for people with different backgrounds and diversity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be collaborative &amp; friendly</controllingFieldValue>
+            <valueName>Enrich customer experience by working globally and others across the organization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be collaborative &amp; friendly</controllingFieldValue>
+            <valueName>Collaborate effectively within own team and across segments, functions and organizations to achieve common goals with confidence and trust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be collaborative &amp; friendly</controllingFieldValue>
+            <valueName>Encourage respectful debate and embrace differing opinions and points of view</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Show appreciation</controllingFieldValue>
+            <valueName>Take pride in own work and celebrate wins</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Show appreciation</controllingFieldValue>
+            <valueName>Recognize the unique contribution of each individual and the value of teamwork</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Show appreciation</controllingFieldValue>
+            <valueName>Promote an atmosphere of recognition and give due credit for team contribution and accomplishment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Make your work place a better place</controllingFieldValue>
+            <valueName>Create opportunities for positive and collaborative working relationships for capabilities building</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Make your work place a better place</controllingFieldValue>
+            <valueName>Treat each other with dignity and respect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Make your work place a better place</controllingFieldValue>
+            <valueName>Practice inclusion and value diversity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Make your work place a better place</controllingFieldValue>
+            <valueName>Being considerate of the intrinsic needs of others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Make your work place a better place</controllingFieldValue>
+            <valueName>Promote and embrace fun at work</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

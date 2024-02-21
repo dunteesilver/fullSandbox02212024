@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ZPSA_Priority__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(ZPSA_Table__c, 
+&quot;A679&quot;, 1, 
+&quot;A680&quot;, 2, 
+&quot;A681&quot;, 3, 
+&quot;A654&quot;, 4, 
+&quot;A659&quot;, 5, 
+&quot;A622&quot;, 6, 
+&quot;A615&quot;, 7, 
+&quot;A664&quot;, 8, 
+&quot;A663&quot;, 9, 
+&quot;A668&quot;, 10, 
+&quot;A667&quot;, 11, 
+&quot;A672&quot;, 12, 
+&quot;A671&quot;, 13, 
+&quot;A675&quot;, 14, 
+&quot;A688&quot;, 15, 
+&quot;A689&quot;, 16,
+999
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used to pull the ZPSA rules in the proper alignment order to ensure the highest priority rule is aligned first.</inlineHelpText>
+    <label>ZPSA Priority</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

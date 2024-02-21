@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Sales Summary by BU" variant="base" icon-name="custom:custom18" class="slds-p-top_x-small">
+        <article class="slds-card">
+            <div class="slds-card__body slds-card__body_inner">
+        <table class="slds-table slds-table_bordered">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th class="slds-text-align_center"><strong></strong>
+                        <div class="slds-truncate"></div>
+                    </th>
+                        <th class="slds-text-align_center"><strong>{currYear}</strong>
+                         <div class="slds-truncate"></div>
+                        </th>
+                            <th class="slds-text-align_center"><strong>{prevYear}</strong>
+                          <div class="slds-truncate"></div>
+                            </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={finalSales} for:item="buname">
+                    <tr class="slds-text-title_caps" key={buname.id}>
+                        <td if:true={buname.isBold} >
+                            <strong><em>{buname.bu}</em></strong>
+                         </td>
+                         <td if:false={buname.isBold}>{buname.bu}</td>
+                        
+                      <td class="slds-text-align_center">
+                          <lightning-formatted-number value={buname.curVal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                      </td>
+                         <td class="slds-text-align_center">
+                            <lightning-formatted-number value={buname.prevVal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+
+        </table>
+        </div>
+       </article>
+    </lightning-card>
+</template>

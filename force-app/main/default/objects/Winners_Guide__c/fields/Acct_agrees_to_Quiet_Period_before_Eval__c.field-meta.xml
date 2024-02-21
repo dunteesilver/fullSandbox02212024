@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acct_agrees_to_Quiet_Period_before_Eval__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Account has agreed to a competitive “Quiet Period” during the evaluation. Confirmed?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirm account has agreed to a competitive “Quiet Period” (no competitive trials) during the Teleflex product evaluation.   Y    N</inlineHelpText>
+    <label>Acct agrees to Quiet Period during Eval</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

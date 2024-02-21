@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>AR_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AR Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Anesthesia_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Anesthesia Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>AnesResp</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Temp rule - Resp items were loaded as Anes</description>
+        <label>Anes &gt; Resp</label>
+        <sharedTo>
+            <roleAndSubordinates>Respiratory_President_Corporate_Accounts_VP</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Anesthesia Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>IA_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IA Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Specialty_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IA Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>LatAm_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>LatAm Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Latin_America_Executive</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Latin America Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Respiratory</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Respiratory</label>
+        <sharedTo>
+            <roleAndSubordinates>Respiratory_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Respiratory Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_to_LatAm_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share to LatAm Read</label>
+        <sharedTo>
+            <roleAndSubordinates>Latin_America_Executive</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Anesthesia Cross Reference,Vascular Cross Reference,Surgical Cross Reference,Specialty Markets Cross-Reference,Cross Reference,IA Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Surgical_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Surgical Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Surgical_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Surgical Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Vascular_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vascular Cross Reference</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

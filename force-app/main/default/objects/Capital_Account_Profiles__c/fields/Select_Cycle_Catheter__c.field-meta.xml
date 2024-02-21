@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Select_Cycle_Catheter__c</fullName>
+    <externalId>false</externalId>
+    <label>Select Cycle</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0%=Not currently interested in converting</fullName>
+                <default>false</default>
+                <label>0%=Not currently interested in converting</label>
+            </value>
+            <value>
+                <fullName>25%=Expressed interest in converting</fullName>
+                <default>false</default>
+                <label>25%=Expressed interest in converting</label>
+            </value>
+            <value>
+                <fullName>40%=Catheter demo</fullName>
+                <default>false</default>
+                <label>40%=Catheter demo</label>
+            </value>
+            <value>
+                <fullName>60%=Catheter Eval</fullName>
+                <default>false</default>
+                <label>60%=Catheter Eval</label>
+            </value>
+            <value>
+                <fullName>75%=Verbal confirmation they will go with TFX</fullName>
+                <default>false</default>
+                <label>75%=Verbal confirmation they will go with TFX</label>
+            </value>
+            <value>
+                <fullName>95%=Conversion in progress</fullName>
+                <default>false</default>
+                <label>95%=Conversion in progress</label>
+            </value>
+            <value>
+                <fullName>100%=Purchasing product</fullName>
+                <default>false</default>
+                <label>100%=Purchasing product</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

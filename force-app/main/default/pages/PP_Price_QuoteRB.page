@@ -1,0 +1,683 @@
+<apex:page docType="html-5.0" id="thePage" title="Price Quote: #{!pq.Price_Quote_Name__c}" standardController="Price_Quote__c" extensions="PP_Price_QuoteRB" sidebar="false">
+
+  <style type="text/css">
+    #errors-js{
+      text-align: center;
+      font-size: large;
+    }
+  </style>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+      initialize();
+  });
+
+  </script>
+
+    <div class="teleflex">
+        <apex:include id="menu" pageName="PP_Menu"/>
+        <!-- DIV to Render the rest of the page in Bootstrap -->
+
+        <!-- Line Items -->
+        <apex:form id="itemsform">
+            <!--<div class="panel-body">-->
+            <apex:inputHidden value="{!pq.Sales_Org_Key__c}" id="theHiddenInput"/>
+            <!-- Line Item Button Bar -->
+            <a href="myAnchor" id="myAnchor"/>
+            <apex:outputText rendered="{!NOT(pq.InApproval__c)}">
+            <apex:actionFunction name="removeError" rerender="errorPanel,errorsjs" oncomplete="initialize(),retainFocus();"/>
+                <!-- Line Item Entry -->
+                <apex:actionFunction name="rerenderPanel1" rerender="panel1,priceform" onbeforedomupdate="return setFocus()" oncomplete="initialize(),retainFocus();"/>
+                <apex:outputLink value="/apex/PP_Price_Quote?pqid={!pq.Id}">
+                <h4>
+                <strong>Back to Price Quote</strong>
+                </h4>
+                </apex:outputLink>
+
+                <apex:outputPanel Styleclass="panel-body" id="panel1" layout="block">
+                    <!-- <apex:pageMessages ></apex:pageMessages> -->
+                    <table class="table table-hover table-bordered" id="sortable">
+                        <thead>
+                          <tr>
+                            <th colspan="19" class="col-sm-1" style="vertical-align:middle;">
+                              <apex:outputText rendered="{!if(OR(CONTAINS($UserRole.Name,'Surgical'),$UserRole.Name = 'Teleflex Global IT',$UserRole.Name = 'Commercial Operations'),TRUE,FALSE)}">
+                                  <strong>Update Contracts:</strong>&nbsp;&nbsp;&nbsp;
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary btn-sm">Rep Bids</a>
+                                        <a href="#" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <apex:repeat value="{!RepBids}" var="r">
+                                                <li style="margin-left: 0px;">
+                                                    <apex:commandLink action="{!updateDeal}" status="actStatusId" oncomplete="initialize();" reRender="panel1,errorPanel,errorsjs">
+                                                      {!r.name} - {!r.Contract_Description__c}
+                                                      <apex:param name="sValue" value="{!r.name}"/>
+                                                    </apex:commandLink>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                              </apex:outputText>
+                            </th>
+                          </tr>
+                            <tr>
+                                <!-- <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Row Order</th> -->
+                                <!-- <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Bold</th> -->
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Material</th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Brand</th>
+                                <th class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;">
+                                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Material Status"/>
+                                </th>
+                                <th class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;"> MRP<br /> Group</th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Cross<br /> Reference</th>
+                                <th class="text-center col-sm-3" style="text-align:center; vertical-align:middle;">Description</th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">#/SU</th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">SU</th>
+                                <apex:outputText rendered="{!IF($UserRole.Name = 'Teleflex Global IT' || $UserRole.Name = 'Interventional Capital Director' ||
+                                                            $UserRole.Name = 'Interventional Capital Service' || CONTAINS($UserRole.Name,'Surgical')
+                                                            || CONTAINS($UserRole.Name,'Respiratory'),true,false)}">
+                                  <th class="text-center col-sm-2" style="text-align:center; vertical-align:middle;">Sales Deal</th>
+                                </apex:outputText>
+                                <th style="text-align:center;white-space: normal;">
+                                    <apex:commandLink action="{!massUpdList}" html-data-toggle="tooltip" html-data-placement="top" title="Set All Lines to List Price" value="List Price" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId" oncomplete="initialize();" status="actStatusId"/>
+                                </th>
+                                <th style="text-align:center;white-space: normal;">
+                                    <apex:commandLink action="{!massUpdRSM}" html-data-toggle="tooltip" html-data-placement="top" title="Set All Lines to RSM Price" value="RSM Price" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId" oncomplete="initialize();" status="actStatusId"/>
+                                </th>
+                                <th style="text-align:center;white-space: normal;">
+                                    <apex:commandLink action="{!massUpdRep}" html-data-toggle="tooltip" html-data-placement="top" title="Set All Lines to Rep Price" value="Rep Price" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId" oncomplete="initialize();" status="actStatusId"/>
+                                </th>
+                                <th style="text-align:center;white-space: normal;">
+                                    <apex:commandLink action="{!massUpdEligible}" html-data-toggle="tooltip" html-data-placement="top" title="Set All Lines to Eligible Price" value="Eligible Price" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId" oncomplete="initialize();" status="actStatusId" />
+                                </th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Sales Price</th>
+                                <th class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;">&nbsp;</th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Qty</th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Line Price</th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">
+                                    <apex:commandLink action="{!bulkrefresh}" html-data-toggle="tooltip" html-data-placement="top" title="Refresh Pricing All Lines" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId,customerform,customerPanel" StyleClass="glyphicon glyphicon-repeat" status="actStatusId" oncomplete="initialize();">
+                                        <apex:param name="pqid" value="{!pq.Id}"/>
+                                    </apex:commandLink>
+                                </th>
+                                <th class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">
+                                    <apex:commandLink action="{!massDelItems}" html-data-toggle="tooltip" html-data-placement="top" title="Delete ALL Lines" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId,customerform,customerPanel" StyleClass="glyphicon glyphicon-trash" status="actStatusId" oncomplete="initialize();">
+                                        <apex:param name="delId" value="{!pq.Id}"/>
+                                    </apex:commandLink>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <!-- START OF LINE ITEMS -->
+                          <apex:actionFunction name="setMatValue" action="{!setMat}" reRender="panel1,errorPanel" status="actStatusId" oncomplete="initialize();">
+                            <apex:param name="matValue" value="{!matValue}" assignTo="{!matValue}"/>
+                            <apex:param name="rowId" value="{!rowId}" assignTo="{!rowId}" />
+                          </apex:actionFunction>
+                            <apex:repeat value="{!LineItems}" var="row" id="repeatId">
+                                <apex:outputText rendered="{!row.Material_Name__c != NULL || row.IsBold__c = False}">
+                                <tr class="text-center" style="vertical-align:middle; " id="{!row.Id}" >
+                                    <td class="text-center" style="vertical-align:middle; white-space: nowrap;">
+                                      <!-- Will show Material as dropdown if there is a Cross Reference -->
+                                      <apex:outputText html-class="slide-link" id="dropOut" html-data-id="{!row.Id}">
+																			<!-- <apex:variable var="picColor" value="{!if(ISBLANK(row.Material_Name__r.Image_URL__c),'color:lightgrey','color:green')}"/>
+                                      <a href="/apex/PP_Material_Info?id={!row.Material_Name__r.Id}&pqId={!ActiveQuoteIdStr}" >
+																					<span class="glyphicon glyphicon-camera" aria-hidden="true" style="{!picColor};" id="picture1"/>
+																			</a> -->
+                                      <div class="form-group">
+                                        <div class="col-lg-10">
+                                          <select class="form-control" id="selectMat" data-id="{!row.Id}" style="width: 100px;"
+                                          onchange="selectInfo(this.value,'{!row.Id}')">
+                                            <option id="optLength" value="{!row.Material_Name__r.Name}">{!row.Material_Name__r.Name}</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      </apex:outputText>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle;">
+                                      <apex:outputText value="{!row.Material_Name__r.Brand_Name__c}" />
+                                    </td>
+                                    <td class="text-center" id="matCell" style="padding: 0px; vertical-align:middle;background-color:
+                                                                                {!If(row.Material_Status__c == '40','#66FF66',
+                                                                                IF( row.Material_Status__c == 'Z4' || row.Material_Status__c == 'Z5'|| row.Material_Status__c == 'Z9' || row.Material_Status__c == 'Z0' || row.Material_Status__c == 'ZU' || row.Material_Status__c == 'ZO' , '#CC3333' ,
+                                                                                IF( row.Material_Status__c == 'Z1' || row.Material_Status__c == 'Z2' || row.Material_Status__c == 'Z3' || row.Material_Status__c == 'Z7' || row.Material_Status__c == 'Z8' , '#CCFF66' ,
+                                                                                IF( row.Material_Status__c == 'Z6' || row.Material_Status__c == 'ZR' , '#0099FF' , 'White' ) ) )  )};" >
+                                      <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="{!row.Material_Status_Description__c}"/>
+                                    </td>
+                                    <td class="text-center col-xs-1" style="vertical-align:middle; white-space: nowrap;">
+                                        <apex:outputText value="{!row.MRP_Group__c}" />
+                                    </td>
+                                    <td class="text-center" style="padding: 5px; vertical-align:middle; ">
+                                      <apex:outputText rendered="{!row.Hide_Crossreference__c}">
+                                        <input type="text" placeholder="Enter Cross Reference..." data-id="{!row.Id}" id="compProd" value="{!row.Competetive_Product__r.Competitor_Product_Code__c}"/>
+                                      </apex:outputText>
+
+                                      <apex:outputText rendered="{!!row.Hide_Crossreference__c}" html-data-id="{!row.Id}" id="textComp" value="{!row.Competetive_Product__r.Competitor_Product_Code__c}"/>&nbsp;&nbsp;
+                                    </td>
+                                    <apex:outputText rendered="{!row.Hide_Crossreference__c}">
+                                    <td class="text-center text-nowrap" style="width:175px; padding: 5px; vertical-align:middle; ">
+                                        <apex:outputText value="{!row.Product_Description__c}"/>
+                                    </td>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!!row.Hide_Crossreference__c}">
+                                    <td class="text-center text-nowrap" style="width:175px; padding: 5px; vertical-align:middle; ">
+                                        <input type="text" style="height:40px;width:400px;" data-id="{!row.Id}" class="prodDesc" value="{!row.Product_Description__c}"/>
+                                    </td>
+                                    </apex:outputText>
+                                    <td class="text-center" style="padding: 0px; vertical-align:middle; ">
+                                        <apex:outputText value="{!row.Sales_Unit_Qty__c}"/>
+                                    </td>
+                                    <td class="text-center" style="padding: 0px; vertical-align:middle; ">
+                                        <apex:outputText value="{!row.Sales_Unit__c}"/>
+                                    </td>
+
+                                    <!-- Show Sales Deal for certain roles -->
+                                    <apex:outputText rendered="{!IF($UserRole.Name = 'Interventional Capital Director' || $UserRole.Name = 'Interventional Capital Service'
+                                                              || CONTAINS($UserRole.Name,'Respiratory'),true,false)}">
+                                        <td class="text-center" style="text-align:center; vertical-align:middle; white-space: nowrap;">
+                                            <apex:outputText value="{!row.Sales_Number__c} - {!row.Sales_Deal_Description__c}" />
+                                        </td>
+                                    </apex:outputText>
+
+                                    <apex:outputText rendered="{!IF(CONTAINS($UserRole.Name,'Surgical') || $UserRole.Name = 'Teleflex Global IT',true,false)}">
+                                    <td class="text-center" style="text-align:center; vertical-align:middle; white-space: nowrap;">
+                                      <div class="form-group">
+                                        <div class="col-lg-10">
+                                          <select class="form-control" id="selectCon" data-id="{!row.Id}" style="width:100px;">
+                                            <!-- Show assigned contract -->
+                                            <option value="{!row.Sales_Number__c}">{!row.Sales_Number__c} - {!row.Sales_Deal_Description__c}</option>
+                                            <!-- Build Contracts from custom setting -->
+                                            <apex:repeat value="{!RepBids}" var="r">
+                                              <option value="{!r.Name}">{!r.Name} - {!r.Contract_Description__c}</option>
+                                            </apex:repeat>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    </apex:outputText>
+
+                                    <apex:outputText rendered="{!!row.Hide_Crossreference__c}">
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                        <apex:commandLink action="{!updateListPrice}" html-data-toggle="tooltip" html-data-placement="top" title="Set Line to List Price" reRender="panel1,buttonPannelId,priceform,itemsform,quotePanel" value="${!row.List_Price__c}" oncomplete="initialize();"  >
+                                            <apex:param name="listPrice" value="{!row.List_Price__c}"/>
+                                            <apex:param name="lineId" value="{!row.Id}"/>
+                                            <apex:param name="lineQty" value="{!row.Quantity__c}"/>
+                                        </apex:commandLink>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                        <apex:commandLink action="{!updateRSMprice}" html-data-toggle="tooltip" html-data-placement="top" title="Set Line to RSM Price" reRender="panel1,buttonPannelId,priceform,itemsform,quotePanel" value="${!row.RSM_Price__c}" oncomplete="initialize();" >
+                                            <apex:param name="rsmPrice" value="{!row.RSM_Price__c}"/>
+                                            <apex:param name="lineId" value="{!row.Id}"/>
+                                            <apex:param name="lineQty" value="{!row.Quantity__c}"/>
+                                        </apex:commandLink>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                        <apex:commandLink action="{!updateRepPrice}" html-data-toggle="tooltip" html-data-placement="top" title="Set Line to Rep Price" reRender="panel1,buttonPannelId,priceform,itemsform,quotePanel" value="${!row.Rep_Price__c}" oncomplete="initialize();" >
+                                            <apex:param name="repPrice" value="{!row.Rep_Price__c}"/>
+                                            <apex:param name="lineId" value="{!row.Id}"/>
+                                            <apex:param name="lineQty" value="{!row.Quantity__c}"/>
+                                        </apex:commandLink>
+                                    </td>
+                                    <td class="text-center" style="0px; vertical-align:middle; ">
+                                        <apex:commandLink action="{!updateEligiblePrice}" html-data-toggle="tooltip" html-data-placement="top" title="Set Line to Eligible Price" reRender="panel1,buttonPannelId,priceform,itemsform,quotePanel,quotePanelContainer" value="${!row.Eligible_Price__c}" oncomplete="initialize();" >
+                                            <apex:param name="eligiblePrice" value="{!row.Eligible_Price__c}"/>
+                                            <apex:param name="lineId" value="{!row.Id}"/>
+                                            <apex:param name="lineQty" value="{!row.Quantity__c}"/>
+                                        </apex:commandLink>
+                                    </td>
+                                    <td class="text-center" style="padding: 0px; vertical-align:middle; ">
+                                      <input size="15" value="{!row.Sales_Price__c}" tabindex="{!row.Row_Order__c}" class="newPrice" data-id="{!row.Id}" id="{!row.Id}+.1"/>
+                                    </td>
+                                  </apex:outputText>
+                                  <apex:outputText rendered="{!row.Hide_Crossreference__c}">
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                      <apex:outputText value="{!row.List_Price__c}"/>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                      <apex:outputText value="{!row.RSM_Price__c}"/>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                      <apex:outputText value="{!row.Rep_Price__c}"/>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                      <apex:outputText value="{!row.Eligible_Price__c}"/>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle; ">
+                                      <apex:outputText value="{!row.Sales_Price__c}"/>
+                                    </td>
+                                  </apex:outputText>
+                                    <td class="text-center" style="padding: 0px; vertical-align:middle;" >
+                                        <!-- Zero means no errors, One means errors -->
+                                      <apex:outputText rendered="{!row.Approval_Flag_Checkbox__c  = FALSE}">
+                                          <span data-toggle="tooltip" data-placement="top" title="{!row.Approval_Flag_Reason__c}" class="glyphicon glyphicon-ok-sign" aria-hidden="true" style="color:green;"/>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!row.Approval_Flag_Checkbox__c = TRUE}">
+                                          <span data-toggle="tooltip" data-placement="top" title="{!row.Approval_Flag_Reason__c}" class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red;" />
+                                      </apex:outputText>
+                                    </td>
+                                    <td class="text-center" style="padding: 0px; vertical-align:middle; ">
+                                        <input size="6" value="{!row.Quantity__c}" tabindex="{!row.Row_Order__c}" class="newQty" data-id="{!row.Id}" id="{!row.Id}+.2" />
+                                    </td>
+                                    <td class="text-center" style="padding: 0px; vertical-align:middle; ">
+                                        <apex:outputText value="${!row.Line_Price__c}"/>
+                                    </td>
+                                    <td class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">
+                                        <apex:commandLink action="{!Refresh}" html-data-toggle="tooltip" html-data-placement="top" title="Refresh Pricing" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId,customerform,customerPanel" StyleClass="glyphicon glyphicon-repeat" status="actStatusId" oncomplete="initialize();">
+                                            <apex:param name="itemId" value="{!row.Material_Name__c}"/>
+                                            <apex:param name="lineItemId" value="{!row.Id}"/>
+                                        </apex:commandLink>
+                                    </td>
+                                    <td class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">
+                                        <apex:commandLink action="{!removingRow}" html-data-toggle="tooltip" html-data-placement="top" title="Delete Line" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId,customerform,customerPanel" StyleClass="glyphicon glyphicon-trash" status="actStatusId" oncomplete="initialize();">
+                                            <apex:param name="itemId" value="{!row.Id}"/>
+                                        </apex:commandLink>
+                                    </td>
+                                </tr>
+                                  </apex:outputText>
+                                  <apex:outputText rendered="{!row.Material_Name__c = NULL && row.Competetive_Product__r.Competitor_Product_Code__c = NULL && row.IsBold__c = True}">
+                                      <tr id="{!row.Id}">
+                                        <td colspan="18" class="text-center" >
+                                          <strong>
+                                              <input value="{!row.Product_Description__c}" data-id="{!row.Id}" class="blankInput" type="textarea" size="50" style="text-align: center"/>
+                                          </strong>
+                                        </td>
+                                        <td class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">
+                                          <apex:commandLink action="{!removingRow}" html-data-toggle="tooltip" html-data-placement="top" title="Delete Line" reRender="panel1,buttonPannelId,priceform,itemsform,panelTotalId,customerform,customerPanel" StyleClass="glyphicon glyphicon-trash" status="actStatusId" oncomplete="initialize();">
+                                                  <apex:param name="itemId" value="{!row.Id}"/>
+                                          </apex:commandLink>
+                                        </td>
+                                      </tr>
+                                  </apex:outputText>
+                            </apex:repeat>
+                            <!-- END OF LINE ITEMS -->
+                        </tbody>
+                        <!-- Input Panel-->
+                        <tr>
+                            <td colspan="12" style="border-right-width: 0px;">
+                              <apex:outputPanel id="buttonPannelId2">
+                                <table>
+                                  <tr>
+                                    <td class="col-s-4" style="vertical-align:middle;">
+                                      <div class="form-inline">
+                                        <apex:outputlink value="/apex/PP_ProductSearch?gs=off&pqId={!pq.Id}" styleclass="input-group">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </apex:outputlink>&nbsp;
+                                        <apex:inputText value="{!strProdSearch}" size="35" id="autocomplete_textbox" onkeyup="autoMaterialName(event, '{!$Component.addBtnId}');" styleClass="form-control input-sm" html-placeholder="Enter Material..." />
+                                        <apex:commandLink action="{!sapPrice}" reRender="panel1,buttonPannelId,priceform,itemsform,quotePanelContainer,customerform,errorsjs" id="addBtnId" value="Add Line Item" status="actStatusId" styleClass="btn btn-success btn-sm" oncomplete="initialize();"/>&nbsp;&nbsp;
+                                        <apex:outputText >OR</apex:outputText>&nbsp;&nbsp;
+                                        <apex:commandLink action="{!addCross}" id="addCrossRef" reRender="buttonPannelId,panel1,errorPanel,errorsjs" value="Add Cross Ref" styleClass="btn btn-success btn-sm" status="actStatusId" oncomplete="initialize();" />&nbsp;&nbsp;
+                                        <span >
+                                          <apex:commandLink action="{!blankRow}" reRender="buttonPannelId,panel1,errorsjs" id="blankRow" value="Blank Row" styleClass="btn btn-success btn-sm" oncomplete="initialize();" status="actStatusId"/>&nbsp;&nbsp;
+                                          <!-- <apex:commandLink action="{!addCrossBlank}" id="addCross" reRender="buttonPannelId,panel1,errorPanel,errorsjs" value="Add Cross Ref" styleClass="btn btn-success btn-sm" status="actStatusId" oncomplete="initialize();" />&nbsp;&nbsp; -->
+                                          <apex:commandLink action="{!fixString}" id="fixString" reRender="buttonPannelId,panel1,errorPanel,errorsjs" value="Fix Material Desc" styleClass="btn btn-success btn-sm" status="actStatusId" oncomplete="initialize();" />
+                                        </span>
+                                        <apex:inputText value="{!strQtyChange}" id="massQty" styleClass="form-control input-sm" html-placeholder="Enter Qty..."/>
+                                        <apex:commandLink action="{!massQtyChange}" reRender="buttonPannelId,panel1,errorsjs" id="qtyId" value="Mass Qty" styleClass="btn btn-success btn-sm" status="actStatusId" oncomplete="initialize();" >
+                                            <apex:param name="changeQty" value="{!strQtyChange}"/>
+                                        </apex:commandLink>&nbsp;&nbsp;
+                                      </div>
+                                      <script>
+                                      document.getElementById('{!$Component.autocomplete_textbox}').focus();
+                                      document.getElementById('{!$Component.autocomplete_textbox}').value='';
+                                      </script>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </apex:outputPanel>
+                            </td>
+                            <!-- Grand Total -->
+                            <td colspan="4" class="text-right" style="vertical-align:middle;border-left-width: 0px;border-right-width: 0px;"><strong>Grand Total ({!pq.CurrencyIsoCode}):</strong></td>
+                            <td class="text-center" style="padding: 0px; vertical-align:middle; border-left-width: 0px;border-right-width: 0px;"><strong>${!round(grandTotal,2)}&nbsp;</strong></td>
+                            <td colspan="2" style="border-left-width: 0px;">&nbsp;</td>
+                        </tr>
+                        <!-- End Input Panel -->
+                    </table>
+
+                    <apex:actionstatus id="actStatusId">
+                        <apex:facet name="start">
+                            <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                                 height: 100%;opacity:0.65;width:100%;">
+                                <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                                    <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." />
+                                    <span class="waitingDescription">Loading...</span>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus>
+
+                    <apex:pageMessages ></apex:pageMessages>
+                </apex:outputPanel>
+                <!-- End Line Items -->
+                <apex:outputPanel Styleclass="panel-body"  layout="block" id="errorsjs">
+                  <div style="text-align:center; vertical-align:middle;" class="btn-group" id="errors-js"></div>
+                </apex:outputPanel>
+            </apex:outputText>
+
+            <apex:actionFunction name="updateFlag" action="{!updateFlag}" rerender="sortable,panel1,errorsjs" oncomplete="initialize();">
+                <apex:param name="trId" value=""/>
+            </apex:actionFunction>
+            <!-- </div>
+                        </div>-->
+            <script type="text/javascript">
+            console.log("hasError----> {!hasError}");
+            if("{!hasError}" == "true"){
+                var b =  document.getElementById("a-update");
+                b.click();
+            }
+            </script>
+        </apex:form>
+        <!-- Dun's Form -->
+
+        <!-- Bulk Insert only renders if Quote is not in the Approval Process -->
+        <apex:form id="bulkform" rendered="{!NOT(pq.InApproval__c)}">
+            <table class="table table-striped table-hover table-bordered" id="bulktable">
+                <tr><th>Bulk Material Insert:</th></tr>
+                <tr><td>
+                    <apex:param name="pqid" value="{!pq.Id}"/>
+                    <apex:inputTextArea value="{!strMats}" html-placeholder="Copy and Paste Materials Here..." cols="50" rows="1" id="autoresize"/>&nbsp;&nbsp;
+                    </td>
+                </tr>
+                <tr><td>
+                    <apex:commandButton value="Insert (Limit 75)" action="{!bulkInsert2}" styleClass="btn btn-primary btn-sm" status="actStatusId"
+                                        reRender="panel1,buttonPannelId,priceform,itemsform,quotePanelContainer" oncomplete="initialize();"/>&nbsp;&nbsp;
+                    <apex:commandButton value="Insert Cross Ref(Limit 75)" action="{!bulkInsertCross}" styleClass="btn btn-primary btn-sm" status="actStatusId"
+                                        reRender="panel1,buttonPannelId,priceform,itemsform,quotePanelContainer" oncomplete="initialize();"/>&nbsp;&nbsp;
+                    <apex:commandButton value="Clear" onclick="this.form.reset();return false;" styleClass="btn btn-primary btn-sm" oncomplete="initialize();"/>
+                    <!--&nbsp;
+                    <apex:commandButton value="Insert Using Cached Pricing (Limit 1000)" action="{!gknBulkInsert}" styleClass="btn btn-primary btn-sm"
+                    reRender="panel1,buttonPannelId,priceform,itemsform,bulkform,quotePanelContainer" oncomplete="initialize();" status="actStatusId"/>
+                    -->
+                    </td>
+                </tr>
+            </table>
+        </apex:form>
+        <!-- Bulk Insert only renders if Quote is not in the Approval Process -->
+
+        <!-- </apex:pageBlock> -->
+    </div> <!-- End of Main Div Teleflex -->
+    <!-- End of Dun's Form -->
+    <script type="text/javascript">
+    function selectInfo(matValue,rowId){
+      console.log('matValue = ' + matValue + ' ***** rowId = ' + rowId);
+      setMatValue(matValue,rowId);
+      $('[id$=errors-js]').empty();
+    }
+
+    //function to handle cross ref list size
+    function crossListSize(){
+      var orgKey = $('[id$=theHiddenInput]').val();
+      var row = {};
+
+      $('[id$=textComp]').each(function(){
+        if($(this).text() !== ''){
+          row[$(this).attr('data-id')] = $(this).text();
+        }
+      });
+
+      $.each(row, function(key, value){
+        //start RemoteAction
+        Visualforce.remoting.Manager.invokeAction(
+          '{!$RemoteAction.PP_Price_QuoteRB.updateCompProd}',
+          key,value,orgKey,
+          function(result, event){
+            length = result.length;
+            $('[id$=selectMat]').each(function(index,value){
+              if( $(this).attr('data-id') == key){
+								for(i=0; i < length; i++){
+									$(this).last().append('<option value='+result[i].TFX_Product__c+'>'+result[i].TFX_Product__c+' / '+result[i].Percent_Match__c+ '% / '+result[i].Product__r.Brand_Name__c+'</option>');
+								}
+								$('.slide-link[data-id='+key+']').after('<apex:outputText >' + length +'</apex:outputText>').addClass('mylen').css({'color':'black','font-weight':'800'});
+                //$('.mylen').text(length).css({'color':'black','font-weight':'800'});
+              }
+            });
+
+        });//end RemoteAction
+      });//end of outter each
+    }//end of cross ref list size
+
+    //function to handle auto-updating of sale price and quantity
+    function initialize(){
+      var orgKey = $('[id$=theHiddenInput]').val();
+
+      crossListSize();
+
+      if($('[id$=selectMat]').val() == 'None'){
+        $('[id$=compProd]').css('background-color','yellow').focus();
+      }
+
+      if($('[id$=selectMat]').val() == 'None'){
+        	$('[id$=addCross]').toggleClass('btnDisabled',true).attr('disabled', 'disabled');
+      }
+
+        //update quantity
+        $('[data-toggle="tooltip"]').tooltip();
+        $('.newQty').change(function() {
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.PP_Price_QuoteRB.updateQuantity}',
+            $(this).attr('data-id'),$(this).val(),
+            function(result, event){
+              rerenderPanel1();
+            });
+        });
+
+        //update pricing
+        $('.newPrice').change(function() {
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.PP_Price_QuoteRB.updatePrice}',
+            $(this).attr('data-id'),$(this).val(),
+            function(result, event){
+              rerenderPanel1();
+          });
+        });
+
+        //update pricing
+        $('.blankInput').change(function() {
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.PP_Price_QuoteRB.updateBlank}',
+            $(this).attr('data-id'),$(this).val(),
+            function(result, event){
+            console.log(result.Id + ' updated');
+          });
+        });
+
+        //update Competitor Product
+        $('[id$=compProd]').change(function() {
+          var rowIndex = $(this).parent().index();
+          //rowIndex = rowIndex -1;
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.PP_Price_QuoteRB.updateCompProd}',
+            $(this).attr('data-id'),$(this).val(),orgKey,
+            function(result, event){
+              length = result.length;
+              if(length === 0){
+                $('[id$=errors-js]').html('Invalid Cross Reference / No matching TFX Material...').css('color','red');
+                rerenderPanel1();
+              }
+              else{
+                $('[id$=selectMat]').find('option:gt(0)').remove().end();
+                for(i=0; i < length; i++){
+                  $('[id$=errors-js]').html('Found Matching TFX Material(s), you can switch via dropdown... ').css('color','#32cd32');
+                  $('[id$=selectMat]').last().append('<option value='+result[i].TFX_Product__c+'>'+result[i].TFX_Product__c+' / '+result[i].Percent_Match__c+ '% / '+result[i].Product__r.Brand_Name__c+'</option>').focus();
+                }
+                //auto expand Material Select List
+                var e = document.createEvent('MouseEvents');
+                e.initMouseEvent('mousedown');
+                $('[id$=selectMat]')[0].dispatchEvent(e);
+              }
+          });
+        });
+
+        //edit Competitor Product
+        $('[id$=compProdEdit]').click(function() {
+
+          // Get the current row
+          var row = $(this).closest('tr');
+          var lineId = $(this).attr('data-id');
+          var crossRef = row.find('[id$=textComp]').text();
+
+          //var first = $(this).closest('tr').find('td:first').text();
+          $(this).closest('tr').find('td:first').replaceWith('<div class="form-group"><div class="col-lg-10">' +
+          '<select class="form-control" id="selectMat" data-id="$(this).attr(data-id)" style="width: 100px;" >'+
+          '<option value="" selected="selected">None</option></select></div></div>');
+
+          $('[id$=selectMat]').on("change", function(event) {
+               selectInfo(this.value,lineId);
+          } );
+
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.PP_Price_QuoteRB.updateCompProd}',
+            $(this).attr('data-id'),crossRef,orgKey,
+            function(result, event){
+              length = result.length;
+              if(length === 0){
+                $('[id$=errors-js]').html('Invalid Cross Reference / No matching TFX Material...').css('color','red');
+                rerenderPanel1();
+              }
+              else{
+
+                $('[id$=selectMat]').find('option:gt(0)').remove().end();
+
+                for(i=0; i < length; i++){
+                  $('[id$=errors-js]').html('Found Matching TFX Material(s), you can switch via dropdown... ').css('color','#32cd32');
+                  $('[id$=selectMat]').last().append('<option value='+result[i].TFX_Product__c+'>'+result[i].TFX_Product__c+' / '+result[i].Percent_Match__c+ '% / '+result[i].Product__r.Brand_Name__c+'</option>').focus();
+                }
+                //auto expand Material Select List
+                var e = document.createEvent('MouseEvents');
+                e.initMouseEvent('mousedown');
+                $('[id$=selectMat]')[0].dispatchEvent(e);
+              }
+
+            });
+        });
+
+        //update description
+        $('.prodDesc').change(function() {
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.PP_Price_QuoteRB.updateDesc}',
+            $(this).attr('data-id'),$(this).val(),
+            function(result, event){
+              console.log(result.Id + ' updated');
+          });
+        });
+
+        //update contracts single line
+        $('[id$=selectCon]').change(function() {
+          Visualforce.remoting.Manager.invokeAction(
+          '{!$RemoteAction.PP_Price_QuoteRB.updateContract}',
+          $(this).attr('data-id'),$(this).val(),
+          function(result, event){
+            if (result.Product_Description__c === 'Error message'){
+              $('[id$=errors-js]').html('No Contract for Material selected...').css('color','red');
+              rerenderPanel1();
+            }
+            else{
+              $('[id$=errors-js]').html('Contract has been changed to... ' + result.Sales_Number__c).css('color','#32cd32');
+              rerenderPanel1();
+            }
+          });
+        });
+
+        $( "#sortable tbody" ).sortable({
+            cursor: 'move',
+            opacity: 0.60,
+            tolerance: 'pointer',
+            containment: 'parent',
+            update: function(event, ui) {
+                //$("#msg").toggle();
+                var result = $(this).sortable('toArray');
+                length = result.length;
+                var lineItem;
+                for( i=0; i < length; i++){
+                    lineItem = new sforce.SObject("Price_Quote_Line_Item__c");
+                    lineItem.id = result[i];
+                    lineItem.row_order__c = i+1;
+                    console.log('lineItem.id ========== ' + lineItem.id + ', ' + lineItem.row_order__c);
+                    //final = sforce.connection.update([lineItem]);
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.PP_Price_QuoteRB.updateOrder}',
+                        lineItem.id,lineItem.row_order__c,
+                        function(result, event){
+                            console.log(result.Id + ' updated');
+                            //priceQuotePanel();
+                            //rerenderPanel1();
+                        });
+
+                }
+                //$("#msg").toggle();
+            }
+        });
+
+    }
+    //end function to update sales price and quantity
+
+    function oppChange(itemId){
+        prodUpdate(itemId);
+    }
+
+    function processChange(itemId) {
+        aSelectItem(itemId);
+    }
+
+    //function to handle bolding of line items
+    function highlightBack(trId) {
+        updateFlag(trId);
+    }
+    //end of function to handle bolding of line items
+
+    function autoMaterialName(e, btnId) {
+        e = e || window.event;
+        if (e.keyCode == 13) {
+            document.getElementById(btnId).click();
+        }
+    }
+
+    // Auto Scroll Script - http://jsfiddle.net/CbqFv/
+    // From this post: http://stackoverflow.com/questions/454202/creating-a-textarea-with-auto-resize
+    var observe;
+    if (window.attachEvent) {
+        observe = function (element, event, handler) {
+            element.attachEvent('on'+event, handler);
+        };
+    }
+    else {
+        observe = function (element, event, handler) {
+            element.addEventListener(event, handler, false);
+        };
+    }
+
+    function init () {
+        // Had to look at the source to get the nested id
+        var text = document.getElementById('thePage:bulkform:autoresize');
+        function resize () {
+            text.style.height = 'auto';
+            text.style.height = text.scrollHeight+'px';
+        }
+        /* 0-timeout to get the already changed text */
+        function delayedResize () {
+            window.setTimeout(resize, 0);
+        }
+        observe(text, 'change',  resize);
+        observe(text, 'cut',     delayedResize);
+        observe(text, 'paste',   delayedResize);
+        observe(text, 'drop',    delayedResize);
+        observe(text, 'keydown', delayedResize);
+
+        //text.focus();
+        //text.select();
+        resize();
+    }
+
+    init();
+    // End Auto Scroll Script
+
+    // Focus Script
+    // https://developer.salesforce.com/forums/?id=906F000000099KSIAY
+    var elementId = null;
+    function setFocus(){
+        elementId = document.activeElement.id;
+    }
+    function retainFocus(){
+        document.getElementById(elementId).focus();
+        document.getElementById(elementId).select();
+    }
+    </script>
+</apex:page>

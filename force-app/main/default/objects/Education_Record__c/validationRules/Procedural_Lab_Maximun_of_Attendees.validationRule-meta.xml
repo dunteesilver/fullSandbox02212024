@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Procedural_Lab_Maximun_of_Attendees</fullName>
+    <active>false</active>
+    <description>The max  is 96</description>
+    <errorConditionFormula>AND(    CONTAINS(RecordType.DeveloperName,&quot;CMA&quot;), 
+Anticipated_attendees__c  &gt; 96
+)</errorConditionFormula>
+    <errorDisplayField>Anticipated_attendees__c</errorDisplayField>
+    <errorMessage>Maximum number on the Anticipated # of Attendees is 96</errorMessage>
+</ValidationRule>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Main_GPO__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Primary group purchasing affiliation.</inlineHelpText>
+    <label>Primary GPO</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Intralere</fullName>
+                <default>false</default>
+                <label>Intralere</label>
+            </value>
+            <value>
+                <fullName>Premier Purchasing Partners</fullName>
+                <default>false</default>
+                <label>Premier Purchasing Partners</label>
+            </value>
+            <value>
+                <fullName>MedAssets Supply Chain Systems</fullName>
+                <default>false</default>
+                <label>MedAssets Supply Chain Systems</label>
+            </value>
+            <value>
+                <fullName>Vizient Inc.</fullName>
+                <default>false</default>
+                <label>Vizient Inc.</label>
+            </value>
+            <value>
+                <fullName>HealthTrust Purchasing Group</fullName>
+                <default>false</default>
+                <label>HealthTrust Purchasing Group</label>
+            </value>
+            <value>
+                <fullName>ROI</fullName>
+                <default>false</default>
+                <label>ROI</label>
+            </value>
+            <value>
+                <fullName>FirstChoice Cooperative</fullName>
+                <default>false</default>
+                <label>FirstChoice Cooperative</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

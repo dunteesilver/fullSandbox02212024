@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Orders_on_Constraint</fullName>
+    <columns>NAME</columns>
+    <columns>Order_Number__c</columns>
+    <columns>PO_Number__c</columns>
+    <columns>Order_Quantity__c</columns>
+    <columns>Order_Total__c</columns>
+    <columns>SAP_Code__c</columns>
+    <columns>Sales_Rep__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Blocked_Reason__c</field>
+        <operation>contains</operation>
+        <value>Constraint</value>
+    </filters>
+    <label>Open Orders on Constraint</label>
+</ListView>

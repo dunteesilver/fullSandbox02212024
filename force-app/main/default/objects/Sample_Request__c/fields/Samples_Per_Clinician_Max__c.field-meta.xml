@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Samples_Per_Clinician_Max__c</fullName>
+    <description>Shows the maximum number for Samples Per Clinician</description>
+    <externalId>false</externalId>
+    <label>Samples Per Clinician</label>
+    <summarizedField>Sample_Request_Line_Item__c.Samples_Per_Clinician__c</summarizedField>
+    <summaryForeignKey>Sample_Request_Line_Item__c.Sample_Request__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

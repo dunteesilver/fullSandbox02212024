@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Status_TurnPike__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitive Status TurnPike</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Competitive Threat</fullName>
+                <default>true</default>
+                <label>No Competitive Threat</label>
+            </value>
+            <value>
+                <fullName>Competitive Evaluation - Corsair</fullName>
+                <default>false</default>
+                <label>Competitive Evaluation - Corsair</label>
+            </value>
+            <value>
+                <fullName>Competitive Evaluation - Mamba</fullName>
+                <default>false</default>
+                <label>Competitive Evaluation - Mamba</label>
+            </value>
+            <value>
+                <fullName>Competitive Evaluation - Teleport</fullName>
+                <default>false</default>
+                <label>Competitive Evaluation - Teleport</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Corsair</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Corsair</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Mamba</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Mamba</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Teleport</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Teleport</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Corsair &amp; Mamba</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Corsair &amp; Mamba</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Corsair &amp; Teleport</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Corsair &amp; Teleport</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Mamba &amp; Teleport</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Mamba &amp; Teleport</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Corsair &amp; Mamba &amp; Teleport</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Corsair &amp; Mamba &amp; Teleport</label>
+            </value>
+            <value>
+                <fullName>Lost Business to Corsair</fullName>
+                <default>false</default>
+                <label>Lost Business to Corsair</label>
+            </value>
+            <value>
+                <fullName>Lost Business to Mamba</fullName>
+                <default>false</default>
+                <label>Lost Business to Mamba</label>
+            </value>
+            <value>
+                <fullName>Lost Business to Teleport</fullName>
+                <default>false</default>
+                <label>Lost Business to Teleport</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

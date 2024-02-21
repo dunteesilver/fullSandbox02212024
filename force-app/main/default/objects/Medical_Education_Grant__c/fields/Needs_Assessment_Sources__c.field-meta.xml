@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_Assessment_Sources__c</fullName>
+    <externalId>false</externalId>
+    <label>Needs Assessment Sources</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advisory Board Feedback (Indepoendent of TFX)</fullName>
+                <default>false</default>
+                <label>Advisory Board Feedback (Independent of TFX)</label>
+            </value>
+            <value>
+                <fullName>Expert practitioner/thought-leader interactions</fullName>
+                <default>false</default>
+                <label>Expert practitioner/thought-leader interactions</label>
+            </value>
+            <value>
+                <fullName>Focus Panels</fullName>
+                <default>false</default>
+                <label>Focus Panels</label>
+            </value>
+            <value>
+                <fullName>Literature Searches of peer-reviewed medical literature</fullName>
+                <default>false</default>
+                <label>Literature Searches of peer-reviewed medical literature</label>
+            </value>
+            <value>
+                <fullName>Medical Education feedback</fullName>
+                <default>false</default>
+                <label>Medical Education feedback</label>
+            </value>
+            <value>
+                <fullName>National and Regional Data from National Reserch</fullName>
+                <default>false</default>
+                <label>National and Regional Data from National Reserch</label>
+            </value>
+            <value>
+                <fullName>Observed Data</fullName>
+                <default>false</default>
+                <label>Observed Data</label>
+            </value>
+            <value>
+                <fullName>Survey(s) of the proposed target audience</fullName>
+                <default>false</default>
+                <label>Survey(s) of the proposed target audience</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

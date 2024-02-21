@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_catheters_are_audited__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ensure catheters are audited post insertion to monitor performance
+PICC, Midline, Endurance, Arterials
+Trial/Evaluation Stage
+Evaluation Go Live/Clinical
+Bedside Education:</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ensure catheters are audited post insertion to monitor performance
+PICC, Midline, Endurance, Arterials
+Trial/Evaluation Stage
+Evaluation Go Live/Clinical
+Bedside Education:</inlineHelpText>
+    <label>Ensure catheters are audited</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

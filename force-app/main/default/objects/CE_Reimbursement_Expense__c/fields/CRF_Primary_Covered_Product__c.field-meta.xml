@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRF_Primary_Covered_Product__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Education_Record__r.Primary_Product__c , 
+&quot;EZ-IO&quot;, &quot;ARROW® EZ-IO® Intraosseous Vascular Access System&quot;,
+&quot;TALON&quot;, &quot;EZ-IO® T.A.L.O.N.™ Tactically Advanced Lifesaving Intraosseous Needle&quot;,
+&quot;OnControl&quot;, &quot;ARROW® OnControl® &quot;,
+&quot;LMA Supreme&quot;, &quot;LMA Supreme® Airway&quot;,
+&quot;Rusch Quicktrach&quot;, &quot;RUSCH® QUICKTRACH®Emergency Cricothyrotomy Kit&quot;,
+&quot;LMA MAD Nasal&quot;, &quot;LMA® MAD Nasal™ Intranasal Mucosal Atomization Device&quot;,
+&quot;AutoFuser&quot;, &quot;AUTOFUSER® DISPOSABLE PAIN CONTROL PUMP WITH AUTOSELECTOR® VARIABLE FLOW REGULATOR&quot;,
+&quot;Pleur-e-vac&quot;, &quot;Pleur-evac®&quot;,
+&quot;Ligation&quot;, &quot;Weck® Ligation&quot;,
+&quot;Rusch AirTraq&quot;, &quot;Rusch® Airtraq™&quot;,
+&quot;Percuvance&quot;, &quot;Percuvance® Percutaneous Surgical System&quot;,
+&quot;Percutaneous&quot;, &quot;ARROW® PSI(Percutaneous Sheath Introducers)&quot;,
+&quot;CVC&quot;, &quot;ARROW® CVCs with ARROWg+ard® Technology&quot;,
+&quot;MAC&quot;, &quot;ARROW® MAC with ARROWg+ard® Blue Technology&quot;,
+&quot;Acute HD&quot;, &quot; ARROWg+ard Blue® Catheter Two-Lumen Hemodialysis Catheterization Kit with Blue FlexTip®&quot;,
+&quot;JACC&quot;, &quot;ARROW® JACC&quot;,
+&quot;VPS&quot;, &quot;ARROW® VPS Vascular Positioning System&quot;,
+&quot;Chlorag+ard/A5 PICC&quot;, &quot;ARROW® Chlorag+ard® PICC Technology&quot;,
+&quot;PICC&quot;, &quot;Arrowg+ard Blue Advance™ PICC Technology&quot;,
+&quot;Arterials&quot;, &quot;ARROW® Arterial Products&quot;,
+&quot;ISO-Gard&quot;, &quot;ISO-Gard® Mask with ClearAir™ Technology&quot;,
+&quot;FlexTip&quot;, &quot;FlexTip Plus® Epidural Catheter &quot;,
+&quot;FlexBlock&quot;, &quot;FlexBlock™ Continuous Peripheral Nerve Block Product&quot;,
+&quot;StimuCath&quot;, &quot;StimuCath® Continuous Plexus and Nerve Block Product&quot;,
+&quot;StimuQuik&quot;, &quot;StimuQuik® Peripheral Nerve Block Needle&quot;,
+&quot;StimuQuik ECHO&quot;, &quot;StimuQuik ECHO® Peripheral Nerve Block Needle&quot;,
+&quot;UltraQuik&quot;, &quot;UltraQuik® Peripheral Nerve Block Needle&quot;,
+&quot;Laryngoscopy&quot;, &quot;Laryngoscopy&quot;, TEXT(Education_Record__r.Primary_Product__c ))</formula>
+    <label>Primary Covered Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

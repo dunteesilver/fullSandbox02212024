@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flag_for_Review</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Flag for Review</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/28.0/connection.js&apos;)}
+
+try{
+   var cr = new sforce.SObject(&apos;Cross_Reference__c&apos;);
+   cr.Id = &apos;{!Cross_Reference__c.Id}&apos;; //Setting the ID of the Current Quote Record
+   cr.Status__c = &apos;Under Review&apos;; //Setting the Status Picklist to Accepted
+
+   var resultCr = sforce.connection.update([cr]); //Updating the Quote Record
+}
+catch(e){
+   alert(&apos;An Error has Occured. Error: &apos; + e);
+}
+location.reload();</url>
+</WebLink>

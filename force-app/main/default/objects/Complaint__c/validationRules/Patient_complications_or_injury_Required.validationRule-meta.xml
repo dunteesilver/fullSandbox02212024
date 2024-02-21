@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_complications_or_injury_Required</fullName>
+    <active>false</active>
+    <description>Not VSI Record Type - if &quot;How the product was being used&quot; = During use on a patient AND During use on a patient = An injury occurred but not death OR Patient death occurred then Patient complications or injury? is mandatory</description>
+    <errorConditionFormula>AND(
+RecordType.Name &lt;&gt; &quot;Interventional – Legacy VSI Products&quot;, 
+ispickval(How_the_product_was_being_used__c,&quot;During use on a patient&quot;),
+
+OR(
+ispickval(During_use_on_a_patient__c,&quot;An injury occurred but not a death&quot;), 
+ispickval(During_use_on_a_patient__c,&quot;Patient death occurred&quot;), 
+ispickval(During_use_on_a_patient__c,&quot;No patient injury or consequence&quot;) 
+),
+
+isblank(text(Patient_complications_or_injury__c))
+)</errorConditionFormula>
+    <errorDisplayField>Patient_complications_or_injury__c</errorDisplayField>
+    <errorMessage>Please specify patient&apos;s complications or injury.</errorMessage>
+</ValidationRule>

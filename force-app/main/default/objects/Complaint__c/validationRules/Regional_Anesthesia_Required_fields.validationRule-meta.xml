@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Anesthesia_Required_fields</fullName>
+    <active>true</active>
+    <description>Regional Anesthesia record type Required fields  validation rule</description>
+    <errorConditionFormula>AND(RecordType.Name = &quot;Regional Anesthesia&quot;,
+OR(TEXT(Was_the_device_replaced__c)=&apos;&apos;,
+TEXT(Did_delay_cause_harm_to_patient__c)=&apos;&apos;
+))</errorConditionFormula>
+    <errorMessage>You are missing one of the below required fields,Please fill in.
+
+&quot;Was the device replaced?&quot; OR  &quot;Did delay cause harm to patient?&quot;</errorMessage>
+</ValidationRule>

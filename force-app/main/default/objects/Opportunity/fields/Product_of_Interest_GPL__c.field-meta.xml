@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_of_Interest_GPL__c</fullName>
+    <description>New field based on Global Pick list Values</description>
+    <externalId>false</externalId>
+    <label>Product of Interest</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product_Family_GPL__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Product_of_Interest_GPL</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Teleflex Overview</controllingFieldValue>
+            <valueName>Teleflex Overview</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Trans-Radial Access</controllingFieldValue>
+            <controllingFieldValue>Access (Cardiac)</controllingFieldValue>
+            <valueName>Accumed Wrist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Hemostasis/Biologics</controllingFieldValue>
+            <valueName>D-Stat Clamp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Hemostasis/Biologics</controllingFieldValue>
+            <valueName>D-Stat Dry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Hemostasis/Biologics</controllingFieldValue>
+            <valueName>D-Stat Flowable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <valueName>Gel-Flow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Access (Interventional)</controllingFieldValue>
+            <valueName>Greb Set</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Access (Interventional)</controllingFieldValue>
+            <valueName>Microintroducer kits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Interventional Access</controllingFieldValue>
+            <valueName>Optiseal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Access (Cardiac)</controllingFieldValue>
+            <valueName>PSI Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Sheaths</controllingFieldValue>
+            <valueName>SAF (Cuper Arrow-Flex)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Access (Interventional)</controllingFieldValue>
+            <valueName>Strait Set</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Hemostasis/Biologics</controllingFieldValue>
+            <valueName>Thrombi-Gel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Hemostasis/Biologics</controllingFieldValue>
+            <valueName>Thrombi-Pad</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Hemostasis/Biologics</controllingFieldValue>
+            <valueName>Thrombix</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access + Closure</controllingFieldValue>
+            <controllingFieldValue>Trans-Radial Access</controllingFieldValue>
+            <controllingFieldValue>Access (Cardiac)</controllingFieldValue>
+            <valueName>VascBand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drainage/Centesis</controllingFieldValue>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Cavity Drainage and Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drainage/Centesis</controllingFieldValue>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Paracentesis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Drainage/Centesis</controllingFieldValue>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Thoracentesis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Embolization</controllingFieldValue>
+            <controllingFieldValue>Embolics</controllingFieldValue>
+            <valueName>Gel-Bead</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Embolization</controllingFieldValue>
+            <controllingFieldValue>Embolics</controllingFieldValue>
+            <valueName>Gel-Block</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemodyalysis</controllingFieldValue>
+            <valueName>Cannon II Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemodyalysis</controllingFieldValue>
+            <valueName>Chronic Hemodialysis Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemodyalysis</controllingFieldValue>
+            <valueName>Edge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemodyalysis</controllingFieldValue>
+            <valueName>Nextstep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemodyalysis</controllingFieldValue>
+            <valueName>Vectorflow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCS Support</controllingFieldValue>
+            <controllingFieldValue>IAB Consoles</controllingFieldValue>
+            <valueName>AC3 Optimus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCS Support</controllingFieldValue>
+            <valueName>AutoCAT2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCS Support</controllingFieldValue>
+            <valueName>AutoCAT2WAVE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MCS Support</controllingFieldValue>
+            <controllingFieldValue>IAB Service</controllingFieldValue>
+            <valueName>IAB Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart Catheters</controllingFieldValue>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Berman Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart Catheters</controllingFieldValue>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Pacing Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart Catheters</controllingFieldValue>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Thermodilution Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart Catheters</controllingFieldValue>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Wedge Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Structural Heart</controllingFieldValue>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Langston</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Structural Heart</controllingFieldValue>
+            <controllingFieldValue>Large Bore Access</controllingFieldValue>
+            <valueName>Manta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Structural Heart</controllingFieldValue>
+            <valueName>Wattson</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visualization Naviga</controllingFieldValue>
+            <valueName>DLX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visualization Naviga</controllingFieldValue>
+            <valueName>Stylet G4 BSK - No PICCs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visualization Naviga</controllingFieldValue>
+            <valueName>VPS G4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Visualization Naviga</controllingFieldValue>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>VPS Rhythm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bone Access + Biopsy</controllingFieldValue>
+            <valueName>OnControl Bone Lesion (CoAx)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bone Access + Biopsy</controllingFieldValue>
+            <valueName>OnControl Bone Marrow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>ASK CVC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>ASK Large Bore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>ASK MAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>ASK PSI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>CVC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>Ergo Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>IR JACC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>JACC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>Large Bore Coated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>Large Bore UnCoated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>MAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>Non-ErgoPack Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>Nursing JACC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Access</controllingFieldValue>
+            <valueName>PSI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Cart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Large Screen + Small Screen + Cart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Large Screen +Small Screen+ Cart+ extra Video Baton</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Large Screen +Small Screen+ Cart+ extra Video Baton + Wireless Connector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Large Screen + Video Baton+ Cart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Large Screen Video Laryngoscope</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Rigid Stylet</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Small Screen Video Laryngoscope + Baton</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Video Baton</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia Capital</controllingFieldValue>
+            <valueName>Wireless Connector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Collection Devices</controllingFieldValue>
+            <valueName>Bags</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Collection Devices</controllingFieldValue>
+            <valueName>Drainage Bags</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Collection Devices</controllingFieldValue>
+            <valueName>Leg Bags</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Collection Devices</controllingFieldValue>
+            <valueName>Rusch Belly Bag Urinary Collection Device</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ANZ - Non-TFX Products</controllingFieldValue>
+            <controllingFieldValue>Dressing/Securement</controllingFieldValue>
+            <valueName>Biopatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ANZ - Non-TFX Products</controllingFieldValue>
+            <controllingFieldValue>Dressing/Securement</controllingFieldValue>
+            <valueName>Griplok</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>Acute Hemodialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>AGB Acute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>ASK Hemodialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>ErgoPack Complete - Hemodialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>Non-Ergo Hemodialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology</controllingFieldValue>
+            <valueName>Suprapubic Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology</controllingFieldValue>
+            <controllingFieldValue>Specialty Catheter</controllingFieldValue>
+            <valueName>Ureteral Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <controllingFieldValue>Other Access</controllingFieldValue>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <controllingFieldValue>ANZ - EZ-IO</controllingFieldValue>
+            <valueName>Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <controllingFieldValue>ANZ - EZ-IO</controllingFieldValue>
+            <valueName>Drivers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <controllingFieldValue>ANZ - EZ-IO</controllingFieldValue>
+            <valueName>Needles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <valueName>Sterile Needles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <valueName>Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <valueName>Training (Non-Sterile) Product &amp; Material</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <controllingFieldValue>ANZ - EZ-IO</controllingFieldValue>
+            <valueName>Training Bones</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <valueName>Training Resources</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fascial Closure</controllingFieldValue>
+            <valueName>Berci Passer P47428</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fascial Closure</controllingFieldValue>
+            <valueName>EFx Classic EFXCT1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fascial Closure</controllingFieldValue>
+            <valueName>EFx Passer EFXSP1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fascial Closure</controllingFieldValue>
+            <valueName>EFx Shield EFX002</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fascial Closure</controllingFieldValue>
+            <valueName>EFX Suture Passer EFXSP2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fascial Closure</controllingFieldValue>
+            <valueName>P47482</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filters/HMEs</controllingFieldValue>
+            <valueName>Bacterial Viral Filter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filters/HMEs</controllingFieldValue>
+            <valueName>Gibeck Humid-Flo HME</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filters/HMEs</controllingFieldValue>
+            <valueName>Gibeck Trach-Vent HMEs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filters/HMEs</controllingFieldValue>
+            <valueName>Hepa Filter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filters/HMEs</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>HMEs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Filters/HMEs</controllingFieldValue>
+            <valueName>Non-Heated Wire Circuits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gynecology</controllingFieldValue>
+            <controllingFieldValue>Specialty Catheter</controllingFieldValue>
+            <valueName>Word Bartholin Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Flow Nasal Cannula Therapy</controllingFieldValue>
+            <valueName>Comfort Flo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Flow Nasal Cannula Therapy</controllingFieldValue>
+            <valueName>Comfort Flo Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Flow Nasal Cannula Therapy</controllingFieldValue>
+            <valueName>HFNCT Circuit/Column</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Flow Nasal Cannula Therapy</controllingFieldValue>
+            <valueName>Maxtec</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hydrophilic Intermittent Catheters</controllingFieldValue>
+            <valueName>FloCath Hydrophilic Intermittent Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hydrophilic Intermittent Catheters</controllingFieldValue>
+            <valueName>FloCath Quick Hydrophilic Intermittent Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hydrophilic Intermittent Catheters</controllingFieldValue>
+            <valueName>FloCath Quick Intermittent Catheter Kits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access (Surgical)</controllingFieldValue>
+            <controllingFieldValue>Access (Interventional)</controllingFieldValue>
+            <valueName>Access Custom</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access (Surgical)</controllingFieldValue>
+            <controllingFieldValue>Access (Interventional)</controllingFieldValue>
+            <valueName>Access Kits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access (Surgical)</controllingFieldValue>
+            <valueName>Cholanglography</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access (Surgical)</controllingFieldValue>
+            <valueName>Insufflation Needles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access (Surgical)</controllingFieldValue>
+            <valueName>MemoBag</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access (Surgical)</controllingFieldValue>
+            <valueName>Vista</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>Concha-Pak (Column/Water)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>ConchaSmart Circuits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>ConchaSmart Column</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>ConchaSmart Neptune Heated Humidifier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>Disposable Temperature Probe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>IsoGard Circuits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>Reservoir Water</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Active Humidification</controllingFieldValue>
+            <valueName>Temperature Probes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute</controllingFieldValue>
+            <valueName>Acute Double Lumen Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute</controllingFieldValue>
+            <valueName>Acute Triple Lumen Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute Dialysis</controllingFieldValue>
+            <controllingFieldValue>Acute Dialysis</controllingFieldValue>
+            <valueName>Acute Dialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute Dialysis</controllingFieldValue>
+            <controllingFieldValue>Acute Dialysis</controllingFieldValue>
+            <valueName>TEGO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Adaptors/Connectors</controllingFieldValue>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>Respiratory Disposables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Addipak</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Aerosol Masks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Aerosol Tubing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>ClearConnect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Corragated Tubing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Large Volume Nebulizers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Nebulizer Heaters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Peak Flow Meters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Pocket Chamber</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aerosol Therapy</controllingFieldValue>
+            <valueName>Small Volume Nebulizers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>AirTraq (Avant &amp; SP)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>DispoGRIP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>DispoLED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Emergency Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Endobronchial Tubes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>EquipLite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>ET Tubes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>EZ-Blocker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Green RuschLite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Guardian Subglottic Suctioning Tube</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Resuscitation</controllingFieldValue>
+            <valueName>Hyperinflation Bags</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>ISO-Gard Mask</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Atomization</controllingFieldValue>
+            <valueName>MADgic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Atomization</controllingFieldValue>
+            <valueName>MADNasal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Atomization</controllingFieldValue>
+            <valueName>MADomizer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Oral &amp; Nasal Airways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Other Airway</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Resuscitation</controllingFieldValue>
+            <valueName>Peep Valves</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Polaris Blades</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Polaris Handles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Resuscitation</controllingFieldValue>
+            <valueName>Resuscitation Bags</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Reusable Laryngoscopes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <controllingFieldValue>Laryngoscopes</controllingFieldValue>
+            <valueName>TruLite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Video Laryngoscope Disposable Sheath</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Arterials</controllingFieldValue>
+            <valueName>Arterials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Arterials</controllingFieldValue>
+            <controllingFieldValue>Angioplasty</controllingFieldValue>
+            <valueName>SAC Arterials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Auto Ligation</controllingFieldValue>
+            <valueName>AE-05</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Auto Ligation</controllingFieldValue>
+            <valueName>AE5</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAB Catheters</controllingFieldValue>
+            <valueName>AC3 Pumps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAB Catheters</controllingFieldValue>
+            <valueName>IAB Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Indwelling Catheters</controllingFieldValue>
+            <controllingFieldValue>Intermittent Catheters</controllingFieldValue>
+            <valueName>Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Indwelling Catheters</controllingFieldValue>
+            <valueName>Latex</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Indwelling Catheters</controllingFieldValue>
+            <valueName>Malecot Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Indwelling Catheters</controllingFieldValue>
+            <valueName>Pezzer Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Indwelling Catheters</controllingFieldValue>
+            <valueName>Silicone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Indwelling Catheters</controllingFieldValue>
+            <valueName>Simplastic Post-Op Indwelling Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Infant Nasal Cpap</controllingFieldValue>
+            <valueName>CPAP Prongs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Infant Nasal Cpap</controllingFieldValue>
+            <valueName>CPAP Sets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>Circutract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>Containers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>CVT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>ENT Survey</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>General</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>Grunwald</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>IMA Retractor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>Light Source</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>LPD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>Ortho</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <controllingFieldValue>Laryngoscopes</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intermittent Catheter Closed Systems</controllingFieldValue>
+            <valueName>PocketPac Intermittent Catheter Closed System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intermittent Catheter Closed Systems</controllingFieldValue>
+            <valueName>Rusch MMG H2O Hydrophilic Intermittent Catheter Closed System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intermittent Catheter Closed Systems</controllingFieldValue>
+            <valueName>Rusch MMG Intermittent Catheter Closed System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Pneumothorax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intraosseous Access</controllingFieldValue>
+            <valueName>EZ-IO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intraosseous Access</controllingFieldValue>
+            <valueName>Vidacare (EZIO)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IR JACC</controllingFieldValue>
+            <valueName>JACC - Non Tunneled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IR JACC</controllingFieldValue>
+            <valueName>JACC - Tunneled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ligation</controllingFieldValue>
+            <valueName>Appliers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ligation</controllingFieldValue>
+            <valueName>Metal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ligation</controllingFieldValue>
+            <valueName>Polymer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Guardian</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA Airway (Other)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA EVO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA Flexible , LMA Flexible PreCurved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA Gastro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA Protector</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA Reusable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <controllingFieldValue>LMA Supraglottic</controllingFieldValue>
+            <valueName>LMA Supreme</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA Unique (PVC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA Unique (Silicone Cuff)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Male External Catheters</controllingFieldValue>
+            <valueName>Rusch Golden-Drain Male External Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NIV</controllingFieldValue>
+            <valueName>Headgear</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NIV</controllingFieldValue>
+            <valueName>NIV Circuits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NIV</controllingFieldValue>
+            <valueName>NIV Full Face Mask</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NIV</controllingFieldValue>
+            <valueName>NIV Nasal Mask</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OnControl</controllingFieldValue>
+            <valueName>Bone Lesion (CoAx)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OnControl</controllingFieldValue>
+            <valueName>Bone Marrow</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Access</controllingFieldValue>
+            <valueName>Arterial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Access</controllingFieldValue>
+            <valueName>ASK Arterials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Access</controllingFieldValue>
+            <valueName>Central Access Procedure Trays</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Access</controllingFieldValue>
+            <valueName>Emergency / Trauma</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Access</controllingFieldValue>
+            <valueName>SAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Access</controllingFieldValue>
+            <valueName>SWG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>Babi.Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>Bubble Humidifier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>Nasal Cannulas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>Oxygen Masks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>Oxygen Tubing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Oxygen Therapy</controllingFieldValue>
+            <valueName>Tracheostomy Masks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>AutoFuser (CPNB &amp; Incisional Sites)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>FlexBlock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>FlexTip Plus Epidurals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>Other Pain Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>Spinals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>StimuCath</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>StimuQuik Echo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>UltraCath</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>UltraQuik</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Percutaneous</controllingFieldValue>
+            <valueName>LiVac</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Percutaneous</controllingFieldValue>
+            <valueName>Minilap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Percutaneous</controllingFieldValue>
+            <valueName>Percuvance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>DLX G4 PICCs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>DLX HPK1A PICCs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>DLX Rhythm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>Endurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>Endurance Basic/Device Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>G4 PICCs Non-DLX (with G4 Nav)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>High/Mid Tier Endurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>I.V. Catheter (Twin)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>Legacy AGBA PI Midline (MPK1A)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>Midline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>PICC Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>PICC Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>PI Midline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Peripheral Access</controllingFieldValue>
+            <valueName>Twin Cath</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Port(s)</controllingFieldValue>
+            <valueName>Port(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sheaths</controllingFieldValue>
+            <valueName>Arrow Percutaneous Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suture</controllingFieldValue>
+            <valueName>Deklene Maxx</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suture</controllingFieldValue>
+            <valueName>Deknatel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suture</controllingFieldValue>
+            <valueName>Gabbay-Frater</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suture</controllingFieldValue>
+            <valueName>Nextstitch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suture</controllingFieldValue>
+            <valueName>Tevdek/Polydek</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uncoated Intermittent Catheters</controllingFieldValue>
+            <valueName>EasyCath Intermittent Catheter Kits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uncoated Intermittent Catheters</controllingFieldValue>
+            <valueName>EasyCath Intermittent Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uncoated Intermittent Catheters</controllingFieldValue>
+            <valueName>Rusch Red Rubber Latex Intermittent Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uncoated Intermittent Catheters</controllingFieldValue>
+            <valueName>Rusch Tiemann Intermittent Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uretheral Access</controllingFieldValue>
+            <valueName>Filiforms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uretheral Access</controllingFieldValue>
+            <valueName>Followers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uretheral Access</controllingFieldValue>
+            <valueName>Rüsch ARV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uretheral Access</controllingFieldValue>
+            <valueName>Rüsch Tumour</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Uretheral Access</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>Urolift</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urodynamic Catheters</controllingFieldValue>
+            <valueName>Single Lumen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urodynamic Catheters</controllingFieldValue>
+            <valueName>Twin Lumen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Minnie</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Piggy Back</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Supercross</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Turnpike</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Twin-Pass</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Twin-Pass Torque</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheters</controllingFieldValue>
+            <valueName>Venture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catheter-Extension</controllingFieldValue>
+            <valueName>Guideliner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catheter-Extension</controllingFieldValue>
+            <valueName>Trapliner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trans-Radial Access</controllingFieldValue>
+            <controllingFieldValue>Access (Cardiac)</controllingFieldValue>
+            <valueName>Transradio Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trans-Radial Access</controllingFieldValue>
+            <controllingFieldValue>Access (Cardiac)</controllingFieldValue>
+            <valueName>Radial Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aspiration</controllingFieldValue>
+            <valueName>Pronto</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aspiration</controllingFieldValue>
+            <valueName>Pronto LP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aspiration</controllingFieldValue>
+            <valueName>Pronto V3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aspiration</controllingFieldValue>
+            <valueName>Pronto V4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aspiration</controllingFieldValue>
+            <valueName>Pronto XL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemostasis/Biologics</controllingFieldValue>
+            <valueName>ThrombiDisc</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vein</controllingFieldValue>
+            <valueName>AutoFill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vein</controllingFieldValue>
+            <valueName>Reprocessing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vein</controllingFieldValue>
+            <valueName>Vari-Lase</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vein</controllingFieldValue>
+            <valueName>Vein Hook</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vein</controllingFieldValue>
+            <valueName>Vein Procedure Pack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Angio Assist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Drainage Drainer Centesis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Expro Elite Snares</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Interventional Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Interventional Kits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Snares</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <valueName>Sympro Elite Snares</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>UL-GRASP Grasping forceps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>UL-SCOPE4 Cystoscope 4,0 mm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>UL-SCOPE Cystoscope 2,9 mm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>UL-SHEATH Sheath 20 Fr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>UL-TRAY Cleaning and storage basket</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>UL-VO Visual obturator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Accessories - Other</controllingFieldValue>
+            <controllingFieldValue>Interventional Urology</controllingFieldValue>
+            <valueName>UL-WBRIDGE Working bridge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guidewires</controllingFieldValue>
+            <valueName>Bandit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guidewires</controllingFieldValue>
+            <valueName>R350</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guidewires</controllingFieldValue>
+            <valueName>Raider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guidewires</controllingFieldValue>
+            <valueName>Spectre</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guidewires</controllingFieldValue>
+            <valueName>Tru-Torque</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guidewires</controllingFieldValue>
+            <valueName>Warrior</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Guidewires</controllingFieldValue>
+            <valueName>Wattson temporary pacing guidewire</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access (Interventional)</controllingFieldValue>
+            <valueName>Smart Needle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PYNG</controllingFieldValue>
+            <valueName>Pelvic stabilizer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PYNG</controllingFieldValue>
+            <valueName>Pelvic Stabilizer (T-Pod)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PYNG</controllingFieldValue>
+            <valueName>Tourniquets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pulmonary Hygiene</controllingFieldValue>
+            <valueName>CleanSweep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pulmonary Hygiene</controllingFieldValue>
+            <valueName>Gentle-Lock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pulmonary Hygiene</controllingFieldValue>
+            <valueName>Incentive Spirometer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Coronary Angioplasty</controllingFieldValue>
+            <controllingFieldValue>Angioplasty</controllingFieldValue>
+            <valueName>Chocolate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Coronary Angioplasty</controllingFieldValue>
+            <controllingFieldValue>Angioplasty</controllingFieldValue>
+            <valueName>Glider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute Dialysis</controllingFieldValue>
+            <valueName>Acute Doble or Triple Lumen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute Dialysis</controllingFieldValue>
+            <valueName>Acute Hemodialysis AGB+</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ventrain</controllingFieldValue>
+            <valueName>Ventrian Kit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stimpod</controllingFieldValue>
+            <valueName>Stimpod</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chest Drain</controllingFieldValue>
+            <valueName>Chest Drain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non TFX</controllingFieldValue>
+            <valueName>Glidescope</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non TFX</controllingFieldValue>
+            <valueName>Triarc</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non TFX</controllingFieldValue>
+            <valueName>Verathon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Angioplasty</controllingFieldValue>
+            <valueName>Quick Flash</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Angioplasty</controllingFieldValue>
+            <valueName>RA Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PTD Thrombectomy</controllingFieldValue>
+            <valueName>Arrow Trerotola PTD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Radiation safety</controllingFieldValue>
+            <valueName>RadPad</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IABP Catheters</controllingFieldValue>
+            <valueName>FOS Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IABP Catheters</controllingFieldValue>
+            <valueName>Ultraflex</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Thoracic Catheters</controllingFieldValue>
+            <valueName>Right Angle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Thoracic Catheters</controllingFieldValue>
+            <valueName>Straight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Thoracic Catheters</controllingFieldValue>
+            <controllingFieldValue>Internal Stapling</controllingFieldValue>
+            <valueName>Trocar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Multiple Product Families</controllingFieldValue>
+            <valueName>Multiple Products of Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Aortic Punch</controllingFieldValue>
+            <valueName>Aortic Punch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Skin Stapling</controllingFieldValue>
+            <valueName>Skin Stapling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ANZ - Cardiac Care</controllingFieldValue>
+            <valueName>IAB Pump Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ANZ - Cardiac Care</controllingFieldValue>
+            <valueName>Intra-Aortic Balloon Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ANZ - Cardiac Care</controllingFieldValue>
+            <valueName>Intra-Aortic Balloon Consoles AC3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ANZ - EZ-IO</controllingFieldValue>
+            <valueName>Training Kits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laryngoscopes</controllingFieldValue>
+            <valueName>Polaris</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA Supraglottic</controllingFieldValue>
+            <valueName>LMA Unique</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA Supraglottic</controllingFieldValue>
+            <valueName>Other LMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Filters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dura/Derma</controllingFieldValue>
+            <valueName>Dura/Derma</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Specialty Catheter</controllingFieldValue>
+            <valueName>Externals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Electrosurgery</controllingFieldValue>
+            <valueName>Electrosurgery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Conduit Harvesting</controllingFieldValue>
+            <valueName>Conduit Harvesting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemostatic Products</controllingFieldValue>
+            <valueName>Control+</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemostatic Products</controllingFieldValue>
+            <valueName>QC Combat Gauze</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemostatic Products</controllingFieldValue>
+            <valueName>QC Everyday</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemostatic Products</controllingFieldValue>
+            <valueName>QC Kits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemostatic Products</controllingFieldValue>
+            <valueName>QC Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hemostatic Products</controllingFieldValue>
+            <valueName>QuikClot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Several</controllingFieldValue>
+            <valueName>Several</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Stapling</controllingFieldValue>
+            <valueName>Clamp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Stapling</controllingFieldValue>
+            <valueName>Power Unit SGS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal Stapling</controllingFieldValue>
+            <valueName>Titan SGS</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surg_Disp_Poly_Replace_is_yes_Amount_Req</fullName>
+    <active>true</active>
+    <description>When &quot;Will this replace Polymer Ligation Sales&quot; = Yes.  Then &quot;Amount of Polymer Lost&quot; is required</description>
+    <errorConditionFormula>AND(
+
+ISPICKVAL(willthisreplacepolymerligationSales__c ,&quot;Yes&quot;),
+
+
+ ISBLANK(AmountofPolymerLost__c) 
+)</errorConditionFormula>
+    <errorDisplayField>AmountofPolymerLost__c</errorDisplayField>
+    <errorMessage>The Amount of Polymer Lost is required if this AE-05 Opportunity will replace Polymer Ligations</errorMessage>
+</ValidationRule>

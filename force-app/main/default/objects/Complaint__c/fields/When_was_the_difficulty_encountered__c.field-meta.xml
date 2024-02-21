@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>When_was_the_difficulty_encountered__c</fullName>
+    <description>Used in Cardiac Complaint Form</description>
+    <externalId>false</externalId>
+    <inlineHelpText>At exactly what point in the procedure was the difficulty encountered?</inlineHelpText>
+    <label>When was the difficulty encountered?</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

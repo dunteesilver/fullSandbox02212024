@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Lab_1_Week_Notification</fullName>
+        <description>Lab 1 Week Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>cmarequest@teleflex.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Lab_Participant_Notifications/Lab_Participant_1_Week_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Lab_Accepted</fullName>
+        <description>Lab - Accepted</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Lab_AcceptedV3</template>
+    </alerts>
+    <alerts>
+        <fullName>Lab_Empty_Time_Slots</fullName>
+        <description>Lab - Empty Time Slots</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.clay@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Formstack_Emails/Lab_Participant_Empty_Time</template>
+    </alerts>
+    <alerts>
+        <fullName>Lab_New_Participant_Approval_Waiting</fullName>
+        <description>Lab - New Participant Approval Waiting</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Formstack_Emails/Lab_New_Participant_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Lab_Participant_Empty_Approver</fullName>
+        <description>Lab Participant - Empty Approver</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.clay@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Formstack_Emails/Lab_Participant_Empty_Approver</template>
+    </alerts>
+    <alerts>
+        <fullName>Lab_Time_Change_Notification</fullName>
+        <description>Lab Time Change Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>cmarequest@teleflex.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Lab_Participant_Notifications/Lab_Participant_Change_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Lab_Waitlist_Notification_for_Heather</fullName>
+        <description>Lab Waitlist Notification for Heather</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.clay@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Administrators/Lab_Waitlist_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_Email</fullName>
+        <description>Rejection Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Formstack_Emails/Lab_Wait_List</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Check_Stop_1_Week_Notification</fullName>
+        <field>Stop_1_week_lab_notification__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Stop 1 Week Notification</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Approval_Pending_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Lab Approval - Pending Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Approval_Status_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Lab Approval - Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Approval_Status_Wait_List</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting List</literalValue>
+        <name>Lab Approval - Status Wait List</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Participant_Empty_Approver_Checkbo</fullName>
+        <field>Empty_Approver_Notification_Sent__c</field>
+        <literalValue>1</literalValue>
+        <name>Lab Participant - Empty Approver Checkbo</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Participant_Fix_First_Name</fullName>
+        <field>First_Name__c</field>
+        <formula>TRIM(
+LEFT(Full_Name__c, FIND(&quot; &quot;, Full_Name__c))
+)</formula>
+        <name>Lab Participant - Fix First Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Participant_Fix_Last_Name</fullName>
+        <field>Last_Name__c</field>
+        <formula>TRIM(
+RIGHT(Full_Name__c, 
+(LEN(Full_Name__c) - FIND(&quot; &quot;, Full_Name__c))
+)
+)</formula>
+        <name>Lab Participant - Fix Last Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Participant_Lab_Time_Fix</fullName>
+        <field>Lab_Time__c</field>
+        <formula>IF(!ISBLANK(Lab_Time_Anesthesia_Pain__c),Lab_Time_Anesthesia_Pain__c,
+IF(!ISBLANK(Lab_Time_Hospital_Provider__c),Lab_Time_Hospital_Provider__c,
+IF(!ISBLANK(Lab_Time_Prehospital_Providers__c),Lab_Time_Prehospital_Providers__c,
+IF(!ISBLANK(Lab_Time_Interventional_Providers__c),Lab_Time_Interventional_Providers__c,
+IF(!ISBLANK(Lab_Time_Surgical_Providers__c),Lab_Time_Surgical_Providers__c,
+&quot;&quot;
+)))))</formula>
+        <name>Lab Participant - Lab Time Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Participant_Status</fullName>
+        <description>Updates lab participant status to approved when lab field: Auto Approval All Attendees&quot; is checked.</description>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Lab Participant Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lab_Participant_Stranger</fullName>
+        <field>Status__c</field>
+        <literalValue>New</literalValue>
+        <name>Lab Participant - Stranger</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stop_1_Week_Lab_notification</fullName>
+        <field>Stop_1_week_lab_notification__c</field>
+        <literalValue>0</literalValue>
+        <name>Set Stop 1 Week Lab notification</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_for_EZ_IO</fullName>
+        <field>Status_for_EZIO__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Status for EZ-IO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Approval</fullName>
+        <actions>
+            <name>Lab_Participant_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>This uses the auto approval all attendees checkbox on the lab to update all lab participants to approved status.</description>
+        <formula>AND(  ISPICKVAL(Status__c, &quot;New&quot;),  Lab__r.auto_approve_all_Attendees__c = TRUE )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Approval 1</fullName>
+        <actions>
+            <name>Status_for_EZ_IO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>This uses the auto approval all attendees checkbox on the lab to update all lab participants to approved status.</description>
+        <formula>AND(  ISPICKVAL(Status_for_EZIO__c, &quot;New&quot;),  Lab__r.auto_approve_all_Attendees__c = TRUE )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab - Accepted</fullName>
+        <actions>
+            <name>Lab_Accepted</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lab_Participant__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab - Wait List</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lab_Participant__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Waiting List</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab Change Notifications</fullName>
+        <actions>
+            <name>Lab_Time_Change_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lab_Time_Change_Notification_Sent</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>This rule creates a task and generates an email notification if a lab participant is removed from the waitlist or if their time is changed.</description>
+        <formula>AND(  Lab_Date__c&gt;DATE(2018,04,01),  OR(  AND( ISCHANGED(Status__c), ISPICKVAL(Status__c,&quot;Approved&quot;) ),  AND( ISCHANGED(Lab_Time__c), ISPICKVAL(Status__c,&quot;Approved&quot;) ) ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab Notification 1 Week</fullName>
+        <actions>
+            <name>X1_Week_Reminder_Scheduled</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>This rule creates tasks and send a reminder email for lab dates after 3/15 that are active and have not been flagged to stop the reminder.</description>
+        <formula>AND( Lab_Date__c &gt; DATE(2018,03,15), ISPICKVAL(Lab__r.Status__c, &quot;Active&quot;), Stop_1_week_lab_notification__c = False )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Lab_1_Week_Notification</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Check_Stop_1_Week_Notification</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>X1_Week_Reminder_Sent</name>
+                <type>Task</type>
+            </actions>
+            <offsetFromField>Lab_Participant__c.Lab_Date__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Lab Participant - Empty Approver</fullName>
+        <actions>
+            <name>Lab_Participant_Empty_Approver</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lab_Participant_Empty_Approver_Checkbo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lab_Participant__c.Approver__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lab_Participant__c.Empty_Approver_Notification_Sent__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lab_Participant__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab Participant - Empty Lab Time</fullName>
+        <actions>
+            <name>Lab_Empty_Time_Slots</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lab_Participant__c.Empty_Lab_Time__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab Participant - Fix Names</fullName>
+        <actions>
+            <name>Lab_Participant_Fix_First_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lab_Participant_Fix_Last_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>LEFT(First_Name__c, 1) = &quot;{&quot;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab Participant - Lab Time Fix</fullName>
+        <actions>
+            <name>Lab_Participant_Lab_Time_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISBLANK(Lab_Time__c),
+OR(
+!ISBLANK(Lab_Time_Anesthesia_Pain__c),
+!ISBLANK(Lab_Time_Hospital_Provider__c),
+!ISBLANK(Lab_Time_Prehospital_Providers__c),
+!ISBLANK(Lab_Time_Interventional_Providers__c),
+!ISBLANK(Lab_Time_Surgical_Providers__c)
+)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lab Participant - Stranger</fullName>
+        <actions>
+            <name>Lab_Participant_Stranger</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lab_Participant__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lab_Participant__c.Approver__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Lab Acceptance Email</fullName>
+        <actions>
+            <name>Lab_Accepted</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lab_Participant__c.Send_Lab_Acceptance_Email__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>This Workflow was created to support a mass email for Lab Participants. If you check the Send Lab Acceptance Email it will send the Lab Accept new Template</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stop 1week lab notification for cancelled labs</fullName>
+        <actions>
+            <name>Set_Stop_1_Week_Lab_notification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lab__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <description>This rule will stop sending the lab notifications to its participants if a lab is cancelled.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Lab_Time_Change_Notification_Sent</fullName>
+        <assignedTo>heather.wear@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Used to confirm that lab time change notification has been sent.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Lab Time Change Notification Sent</subject>
+    </tasks>
+    <tasks>
+        <fullName>X1_Week_Reminder_Scheduled</fullName>
+        <assignedTo>heather.wear@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>This indicates that there is a scheduled reminder to be sent 1 week prior to the lab date.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>1 Week Reminder Scheduled</subject>
+    </tasks>
+    <tasks>
+        <fullName>X1_Week_Reminder_Sent</fullName>
+        <assignedTo>heather.wear@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>If this task is populated, then a notification was sent advising this lab participant that the lab is coming up in one week.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>1 Week Reminder Sent</subject>
+    </tasks>
+</Workflow>

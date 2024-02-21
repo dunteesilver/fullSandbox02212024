@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_Clinicals_Cant_Create_Education_Reco</fullName>
+    <active>false</active>
+    <description>It has been asked that only Sales Reps should create Education Records</description>
+    <errorConditionFormula>AND(
+
+ISPICKVAL( Business_Unit__c , &quot;VA&quot;),
+
+NOT(OR(
+$User.Id &lt;&gt; &quot;00544000008nwZF&quot;,
+$User.Id &lt;&gt; &quot;005E0000000i9sE&quot;,
+$User.Id &lt;&gt; &quot;005E0000005ju26&quot;
+)),
+
+OR(
+CONTAINS(  CreatedBy.UserRole.Name  ,&quot;Clinical&quot;), CONTAINS( CreatedBy.UserRole.Name ,&quot;CEM -&quot;)
+)
+
+)</errorConditionFormula>
+    <errorMessage>Only the Sales Rep or CMA should be creating a Training Request</errorMessage>
+</ValidationRule>

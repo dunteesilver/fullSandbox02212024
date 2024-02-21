@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hemostatic_Being_Used__c</fullName>
+    <externalId>false</externalId>
+    <label>Hemostatic Being Used</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>QC EMS</fullName>
+                <default>false</default>
+                <label>QC EMS</label>
+            </value>
+            <value>
+                <fullName>QC CG</fullName>
+                <default>false</default>
+                <label>QC CG</label>
+            </value>
+            <value>
+                <fullName>Celox</fullName>
+                <default>false</default>
+                <label>Celox</label>
+            </value>
+            <value>
+                <fullName>Std Gauze</fullName>
+                <default>false</default>
+                <label>Std Gauze</label>
+            </value>
+            <value>
+                <fullName>Chito Gauze</fullName>
+                <default>false</default>
+                <label>Chito Gauze</label>
+            </value>
+            <value>
+                <fullName>NAR Gauze</fullName>
+                <default>false</default>
+                <label>NAR Gauze</label>
+            </value>
+            <value>
+                <fullName>TQ</fullName>
+                <default>false</default>
+                <label>TQ</label>
+            </value>
+            <value>
+                <fullName>TXA</fullName>
+                <default>false</default>
+                <label>TXA</label>
+            </value>
+            <value>
+                <fullName>Blood Products</fullName>
+                <default>false</default>
+                <label>Blood Products</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

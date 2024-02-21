@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Group_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Customer_Group__c ,
+&quot;02&quot;,&quot;EM EZIO&quot;,
+&quot;13&quot;,&quot;EM EZIO&quot;,
+&quot;03&quot;,&quot;HOSP EZIO&quot;,
+&quot;04&quot;,&quot;HOSP EZIO&quot;,
+&quot;05&quot;,&quot;HOSP EZIO&quot;,
+&quot;06&quot;,&quot;HOSP EZIO&quot;,
+&quot;08&quot;,&quot;HOSP EZIO&quot;,
+&quot;14&quot;,&quot;HOSP EZIO&quot;,
+&quot;17&quot;,&quot;HOSP EZIO&quot;,
+&quot;18&quot;,&quot;HOSP EZIO&quot;,
+&quot;19&quot;,&quot;HOSP EZIO&quot;,
+&quot;20&quot;,&quot;HOSP EZIO&quot;,
+&quot;21&quot;,&quot;HOSP EZIO&quot;,
+&quot;23&quot;,&quot;HOSP EZIO&quot;,
+&quot;24&quot;,&quot;HOSP EZIO&quot;,
+&quot;28&quot;,&quot;HOSP EZIO&quot;,
+&quot;30&quot;,&quot;HOSP EZIO&quot;,
+&quot;31&quot;,&quot;HOSP EZIO&quot;,
+&quot;33&quot;,&quot;HOSP EZIO&quot;,
+&quot;34&quot;,&quot;HOSP EZIO&quot;,
+&quot;37&quot;,&quot;HOSP EZIO&quot;,
+&quot;41&quot;,&quot;HOSP EZIO&quot;,
+NULL)</formula>
+    <label>Customer Group Bucket</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

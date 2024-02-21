@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exception__c</fullName>
+    <description>For reps to use to type in an exception for certain product samples.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For reps to use to type in an exception for certain product samples.</inlineHelpText>
+    <label>Exception</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

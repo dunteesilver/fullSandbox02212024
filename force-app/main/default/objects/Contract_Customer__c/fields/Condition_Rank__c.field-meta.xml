@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condition_Rank__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Condition__c  = &quot;XIND&quot;, 1,
+if(Condition__c  = &quot;XPRI&quot;, 2,
+if(Condition__c  = &quot;XSEC&quot;, 3,
+if(Condition__c  = &quot;XNAF&quot;, 4,
+100
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Condition Rank</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approved_rep_email</fullName>
+        <description>Approved rep email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>VPS_Trials/VPS_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_notify_rep_of_request_approval</fullName>
+        <description>Email to notify rep of request approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>VPS_Trials/Notify_rep_of_approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_VPS_teleflex_com_to_ship_demo_to_rep_SF_com</fullName>
+        <ccEmails>vps@teleflex.com</ccEmails>
+        <description>Notify VPS@teleflex.com to ship demo to rep SF.com</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>charles.poske@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>VPS_Trials/Ship_Demo_to_Rep</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_email_to_rep</fullName>
+        <description>Rejection email to rep</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>VPS_Trials/VPS_Rejection</template>
+    </alerts>
+    <alerts>
+        <fullName>VPS_Terms_of_Agreement</fullName>
+        <description>VPS Terms of Agreement</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>VPS_Trials/VPS_Rep_Agreement</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Uncheck_Agree_checkbox</fullName>
+        <field>Agree__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Agree checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_of_Record</fullName>
+        <field>Status__c</field>
+        <literalValue>In Process</literalValue>
+        <name>Update Status of Record</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_of_Record_to_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Status of Record to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_of_Record_to_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Status of Record to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_of_Record_to_Submitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Update Status of Record to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Notify rep of approval</fullName>
+        <actions>
+            <name>Email_to_notify_rep_of_request_approval</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Status_of_Record</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Request_Demo_Unit__c.CreatedDate</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <description>Email to notify rep that he/she has been approved to request a demo unit.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Assign_VPS_Demo_Unit</fullName>
+        <assignedTo>charles.poske@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Go to VPS tab and assign the approved user a demo unit.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Assign VPS Demo Unit</subject>
+    </tasks>
+    <tasks>
+        <fullName>Delete_record_of_the_rep_that_has_been_rejected</fullName>
+        <assignedTo>jacqueline.cronin@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Delete the record of the rejected rep by navigating to &quot;Request for Demo&quot; tab.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Delete record of the rep that has been rejected</subject>
+    </tasks>
+</Workflow>

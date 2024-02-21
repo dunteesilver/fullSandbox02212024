@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PleasePutNotesInWhenContractorIsNeeded</fullName>
+    <active>true</active>
+    <description>Revision for 2019 EDUREC enhancements.
+If the checkbox ischecked and the requested Contractor field is null.
+Part of the compliance changes and page layout enhancements</description>
+    <errorConditionFormula>AND(
+OR(
+RecordType.Name = &quot;CMA Program&quot;, RecordType.Name = &quot;Clinical Sales Program&quot;
+),
+RequestClinicalEducationContractor__c = True,
+Requested_Contractor__c = NULL,
+ISPICKVAL(Business_Unit__c, &quot;VA&quot;)
+
+)</errorConditionFormula>
+    <errorDisplayField>Requested_Contractor__c</errorDisplayField>
+    <errorMessage>Please ADD Suggested Contractor&apos;s Name here or enter NO Specific Recommendation</errorMessage>
+</ValidationRule>

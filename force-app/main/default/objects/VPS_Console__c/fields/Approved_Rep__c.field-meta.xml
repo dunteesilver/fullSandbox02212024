@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Rep__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Reps approved for Demo units.</description>
+    <externalId>false</externalId>
+    <label>Approved Rep</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Request_Demo_Unit__c.Status__c</field>
+            <operation>contains</operation>
+            <value>Approved</value>
+        </filterItems>
+        <filterItems>
+            <field>Request_Demo_Unit__c.Agree__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Request_Demo_Unit__c</referenceTo>
+    <relationshipLabel>VPS Consoles</relationshipLabel>
+    <relationshipName>VPS_Machines</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

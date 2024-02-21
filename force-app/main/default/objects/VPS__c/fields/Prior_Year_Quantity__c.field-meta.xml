@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prior_Year_Quantity__c</fullName>
+    <externalId>false</externalId>
+    <label>Prior Year Quantity</label>
+    <summarizedField>VPS_Consumables__c.Prior_Year_Quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>VPS_Consumables__c.Product_Class_Text__c</field>
+        <operation>notEqual</operation>
+        <value>Respiratory</value>
+    </summaryFilterItems>
+    <summaryForeignKey>VPS_Consumables__c.VPS_Contract__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

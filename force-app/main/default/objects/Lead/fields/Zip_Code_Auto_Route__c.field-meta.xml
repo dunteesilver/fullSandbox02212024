@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zip_Code_Auto_Route__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field used to drive whether the Zip Code Territory automation fires again (if false).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please uncheck when you want to evaluate and assign this lead using territory rules.</inlineHelpText>
+    <label>Do Not Assign Lead using Territory rules</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

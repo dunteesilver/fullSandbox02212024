@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>AR_Opp_Probability_Alert</fullName>
+        <description>A&amp;R Pain Management Probability Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>richard.folk@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_to_Being_Won_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>A_R_Airway_Probability_Alert</fullName>
+        <description>A&amp;R Airway Probability Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>adriana.albrecht@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.hurley@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.andersen@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tracey.hopson@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_to_Being_Won_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>A_R_Respiratory_Probability_Alert</fullName>
+        <description>A&amp;R Respiratory Probability Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>corey.stewart@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eric.halsey@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_to_Being_Won_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Applier_Email_to_Humberto</fullName>
+        <description>Applier Email to Humberto</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>humberto.sanchez@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>luis.salazar@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Applier_Email_to_Humberto</template>
+    </alerts>
+    <alerts>
+        <fullName>Close_Date_Opp_Reminder</fullName>
+        <description>Close Date Opp Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>Close_Date_Reminder_15_Days_Prior</fullName>
+        <description>Close Date Reminder 15 Days Prior</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner_s_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder_90_30_15</template>
+    </alerts>
+    <alerts>
+        <fullName>Close_Date_Reminder_30_Days_Prior</fullName>
+        <description>Close Date Reminder 30 Days Prior</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder_90_30_15</template>
+    </alerts>
+    <alerts>
+        <fullName>Close_Date_Reminder_90_Days_Prior</fullName>
+        <description>Close Date Reminder 90 Days Prior</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder_90_30_15</template>
+    </alerts>
+    <alerts>
+        <fullName>Next_Step_Date</fullName>
+        <description>Next Step Date</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Next_Step_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Close_Date_5_days_prior</fullName>
+        <description>Opportunity Close Date - 5 days prior</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_5_Days_Prior</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Close_Date_Approaching_LatAm</fullName>
+        <description>Opportunity Close Date Approaching LatAm</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Close_Date_Approaching</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Close_Date_Approaching_LatAm_15</fullName>
+        <description>Opportunity Close Date Approaching LatAm 15</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Close_Date_Approaching</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Close_Date_Past_Due</fullName>
+        <description>Opportunity Close Date - Past Due</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner_s_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Past_Due</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Close_Date_Today</fullName>
+        <description>Opportunity Close Date - Today</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Today</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Closed</fullName>
+        <description>Opportunity Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>nancy.holt@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Closed_Won_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Closed_Won_Notice</fullName>
+        <description>Opportunity Closed Won Notice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>leslie.collins@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shawn.mcgurran@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Closed_Won_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Surgical_Opportunity_180_Days_old</fullName>
+        <description>Surgical Opportunity &lt;180 Days old</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner_s_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Past_Due_Opportunity_6_mths_past_creation</template>
+    </alerts>
+    <alerts>
+        <fullName>X14_Days_Before_Opportunity_Close_Date</fullName>
+        <description>14 Days Before Opportunity: Close Date</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder_90_30_15</template>
+    </alerts>
+    <alerts>
+        <fullName>X15_day_Opp_Reminder</fullName>
+        <description>15 day Opp Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>X1_Day_Before_Opportunity_Closing_Notice</fullName>
+        <description>1 Day Before Opportunity Closing Notice</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Next_Step_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>X2_Days_Before_Opportunity_Close_Date</fullName>
+        <description>2 Days Before Opportunity: Close Date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner_s_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder_90_30_15</template>
+    </alerts>
+    <alerts>
+        <fullName>X30_day_Opp_Reminder</fullName>
+        <description>30 day Opp Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Close_Date_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>X7_Day_After_Opportunity_Closing_Notice</fullName>
+        <description>7 Day After Opportunity Closing Notice</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Next_Step_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>X7_Day_Opportunity_Closing_Notice</fullName>
+        <description>7 Day Opportunity Closing Notice</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/Opportunity_Next_Step_Alert</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Check_Focus_Product_checkbox</fullName>
+        <description>Checks the Focus Product checkbox if a certain Product of interest is chosen. Case: 00007160</description>
+        <field>Tender_Product_Group__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Focus Product checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Opp_as_Inside_Sales</fullName>
+        <description>Update Opportunity to Inside Sales if owned by an Inside Sales person.</description>
+        <field>Inside_Sales_Opp__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Opp as Inside Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Increment_Push_Counter_Field</fullName>
+        <description>Increment the Push Counter by 1</description>
+        <field>Push_Counter__c</field>
+        <formula>IF( 
+ISNULL( Push_Counter__c ), 
+1, 
+Push_Counter__c + 1 
+)</formula>
+        <name>Increment Push Counter Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Interventional_Capital_Opportunity_Name</fullName>
+        <description>updating name to standard
+05/25/2018 -Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>Left(Account.Name &amp; &quot; - &quot; &amp; TEXT( Product_Family_GPL__c ) &amp; &quot; - &quot; &amp; TEXT(Type),120)</formula>
+        <name>Interventional Capital Opportunity Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LatAm_Opportunity_Name</fullName>
+        <description>05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>LEFT((Account.Name + &apos;-&apos; + text(Product_Family_LatAm__c) + &apos;-&apos; +  RecordType.Name),120)</formula>
+        <name>LatAm Opportunity Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Capture_Actual_Closed_Date</fullName>
+        <field>Close_Date_Actual__c</field>
+        <formula>NOW()</formula>
+        <name>Opportunity - Capture Actual Closed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Last_Modified_Non_Admin</fullName>
+        <field>Last_Modified_Date_Time__c</field>
+        <formula>NOW()</formula>
+        <name>Opportunity - Last Modified - Non-Admin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Name</fullName>
+        <description>Opportunity Name standard format: Account Name - Product Family
+05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>Left(Account.Name + &quot; - &quot; + 
+if(ispickval(Product_Family_GPL__c,&quot;&quot;),&quot;No Product Family&quot;,Text(Product_Family_GPL__c)),120)</formula>
+        <name>Opportunity Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Name_Standard_Format_Vascula</fullName>
+        <description>05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>Left(Account.Name +&quot; - &quot;+if(ispickval(Product_Family_GPL__c,&quot;&quot;),&quot;No Product Family&quot;,Text(Product_Family_GPL__c)),120)</formula>
+        <name>Opportunity Name Standard Format Vascula</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Standard_Name_Surgical</fullName>
+        <description>05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>Left((Account.Name +&quot; - &quot;+
+Product_Family_Reporting__c+&quot; - &quot;+ 
+Text(Primary_Contact__r.Salutation)+&quot; &quot;+ 
+Primary_Contact__r.FirstName +&quot; &quot;+
+Primary_Contact__r.LastName),120)</formula>
+        <name>Opportunity Standard Name Surgical</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Focus_Product</fullName>
+        <description>Unchecks the Focus Product checkbox if a certain Product of interest is not chosen. Case: 00007160</description>
+        <field>Tender_Product_Group__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Focus Product</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Inside_Sales</fullName>
+        <description>Unchecks Inside Sales Checkbox</description>
+        <field>Inside_Sales_Opp__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Inside Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Applier_Opps_to_One_Time_Purchase</fullName>
+        <description>Update One Time Purchase field for Applier Opportunities.</description>
+        <field>One_Time_Sale__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Applier Opps to One Time Purchase</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Managers_Email</fullName>
+        <field>Owner_s_Manager_Email__c</field>
+        <formula>Owner.Manager_s_Email__c</formula>
+        <name>Update Managers Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Vascular_Fix_Stage_Name_10_Help</fullName>
+        <field>StageName</field>
+        <literalValue>Target.</literalValue>
+        <name>Vascular - Fix Stage Name @ 10%   Help</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>AU Opportunity to AUD Currency</fullName>
+        <active>false</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anesthesia Airway Probability Alert</fullName>
+        <actions>
+            <name>A_R_Airway_Probability_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Anesthesia Opportunity,Respiratory Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>greaterOrEqual</operation>
+            <value>70</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_Family_GPL__c</field>
+            <operation>equals</operation>
+            <value>Airway</value>
+        </criteriaItems>
+        <description>Alerts the Anesthesia marketing team that a airway opportunity is at a high percentage of being won.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anesthesia Pain Management Probability Alert</fullName>
+        <actions>
+            <name>AR_Opp_Probability_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Anesthesia Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>greaterOrEqual</operation>
+            <value>70</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_Family_GPL__c</field>
+            <operation>equals</operation>
+            <value>Pain Management</value>
+        </criteriaItems>
+        <description>Alerts the Anesthesia marketing team that a pain management opportunity is at a high percentage of being won.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anesthesia Update Focus Product Checkbox</fullName>
+        <actions>
+            <name>Check_Focus_Product_checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Anesthesia,EMS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_of_Interest_GPL__c</field>
+            <operation>equals</operation>
+            <value>AirTraq (Avant &amp; SP),DispoGRIP,DispoLED,EquipLite,Green RuschLite,TruLite</value>
+        </criteriaItems>
+        <description>Workflow to check the Focus Product checkbox if the Product of Interest contains a specific list of products of interest for Anesthesia</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anesthesia Update Focus Product Checkbox %28unchecked%29</fullName>
+        <actions>
+            <name>Uncheck_Focus_Product</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Anesthesia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_of_Interest_GPL__c</field>
+            <operation>notEqual</operation>
+            <value>AirTraq (Avant &amp; SP),DispoGRIP,DispoLED,EquipLite,Green RuschLite,TruLite</value>
+        </criteriaItems>
+        <description>Workflow to uncheck the Focus Product checkbox if the Product of Interest does not contain a specific list of products of interest for Anesthesia</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anesthesia and Respiratory Opportunity Closed Won Notice</fullName>
+        <actions>
+            <name>Opportunity_Closed_Won_Notice</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email notice sent to the Anesthesia Manager and Respiratory Manager when Opportunity stage = closed won</description>
+        <formula>AND(RecordTypeId= &quot;012L0000000DGUm&quot;, RecordTypeId= &quot;012L0000000DGUh&quot;, Owner.UserRole.Name =&quot;AR Sales NA MSR Rocky Mountain&quot;,(ISPICKVAL(StageName, &quot;Closed Won&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anesthesia and Respiratory Opportunity Closing Notice</fullName>
+        <active>false</active>
+        <description>Email notice sent to the Opportunity Owner of an Opportunity that is 7 days from the close date, the day of, and once per week after</description>
+        <formula>AND( RecordTypeId = &quot;012L0000000DGUh&quot;, RecordTypeId = &quot;012L0000000DGUm&quot;, AND(  Owner_Region__c  &lt;&gt; &quot;Great Lakes&quot;, AND( Owner_Region__c &lt;&gt; &quot;Rocky Mountains&quot;, AND( IsClosed  = False))))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X7_Day_After_Opportunity_Closing_Notice</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X1_Day_Before_Opportunity_Closing_Notice</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Anesthesia and Respiratory Opportunity Next Step Notice</fullName>
+        <active>false</active>
+        <description>Email notice sent to the Opportunity Owner of an Opportunity that is 7 days from a next step date, the day of, and once per week after</description>
+        <formula>AND( RecordTypeId = &quot;012L0000000DGUm&quot;, RecordTypeId = &quot;012L0000000DGUh&quot;, AND(  Owner_Region__c  &lt;&gt; &quot;Great Lakes&quot;, AND( Owner_Region__c &lt;&gt; &quot;Rocky Mountains&quot;, AND( IsClosed  = False))))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Next_Step_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Next_Step_Date__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Next_Step_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Next_Step_Date__c</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Next_Step_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Next_Step_Date__c</offsetFromField>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Applier Opps Must Be One Time Purchase</fullName>
+        <actions>
+            <name>Update_Applier_Opps_to_One_Time_Purchase</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Surgical Disposables</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_Family_GPL__c</field>
+            <operation>equals</operation>
+            <value>Ligation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_of_Interest_GPL__c</field>
+            <operation>equals</operation>
+            <value>Appliers</value>
+        </criteriaItems>
+        <description>Make applier opportunities a one time purchase.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Check Opp Not Inside Sales</fullName>
+        <actions>
+            <name>Uncheck_Inside_Sales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Unchecks if Opp set to Inside Sales by checking the owner.</description>
+        <formula>AND(ISCHANGED( OwnerId ),  NOT( ISNEW() ),    
+ NOT(CONTAINS(Owner.UserRole.Name, &apos;Inside Sales&apos;) )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Check Opp as Inside Sales</fullName>
+        <actions>
+            <name>Check_Opp_as_Inside_Sales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Owner_Region__c</field>
+            <operation>equals</operation>
+            <value>Inside Sales</value>
+        </criteriaItems>
+        <description>Rule checks a checkbox on an Opportunity if created by an Inside Sales person.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Close Date Reminder 14 and 2 Day Close Date Reminder</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Interventional</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Closed Won,Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.OwnerId</field>
+            <operation>equals</operation>
+            <value>Jeff Gauthier,Rob Leach,Trisha Lopez,Brady McIntyre,Randy Reinhardt,Bryan Bernard,Bronson Hill,David Marvin,Steve Gappa</value>
+        </criteriaItems>
+        <description>Currently only set for Interventional (Mike Kubicek team) - Close Date Reminder 14 (emailing owner) and 2 Days Prior Close (emailing owner and manager)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X14_Days_Before_Opportunity_Close_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X2_Days_Before_Opportunity_Close_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-2</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>EMS Update Focus Product Checkbox</fullName>
+        <actions>
+            <name>Check_Focus_Product_checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>EMS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_of_Interest_GPL__c</field>
+            <operation>equals</operation>
+            <value>AirTraq (Avant &amp; SP),DispoGRIP,DispoLED,EquipLite,Green RuschLite,TruLite,Supreme</value>
+        </criteriaItems>
+        <description>Workflow to check the Focus Product checkbox if the Product of Interest contains a specific list of products of interest for EMS</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>EMS Update Focus Product Checkbox %28unchecked%29</fullName>
+        <actions>
+            <name>Uncheck_Focus_Product</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>EMS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Product_of_Interest_GPL__c</field>
+            <operation>notEqual</operation>
+            <value>AirTraq (Avant &amp; SP),DispoGRIP,DispoLED,EquipLite,Green RuschLite,TruLite,Supreme</value>
+        </criteriaItems>
+        <description>Workflow to uncheck the Focus Product checkbox if the Product of Interest does not contain a specific list of products of interest for EMS</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>LatAm Close Date Approaching Email</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Latin America Opportunity</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Close_Date_Approaching_LatAm</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Close_Date_Approaching_LatAm_15</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opportunity - Capture Actual Closed Date</fullName>
+        <actions>
+            <name>Opportunity_Capture_Actual_Closed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+Probability = 1, 
+PRIORVALUE( Probability ) &lt;&gt; 1,
+ISBLANK(Close_Date_Actual__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity - Last Modified - Non-Admin</fullName>
+        <actions>
+            <name>Opportunity_Last_Modified_Non_Admin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>$UserRole.Name != &quot;Teleflex Global IT&quot;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Close Notifications - Surgical</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Surgical Disposables,Surgical Instruments</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.CloseDate</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2017</value>
+        </criteriaItems>
+        <description>Notifications set up for Surgical Reps and RSMs. 5 days prior and day of close to the rep and 5 days post close date for the RSMs.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Close_Date_5_days_prior</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Close_Date_Today</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Close_Date_Past_Due</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opportunity Email Close Date %3E6mth</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Surgical Percuvance,Surgical Opportunity Canada,Surgical Sales Opportunity,Surgical Disposable Sales Opportunity,Surgical Instruments Sales Opportunity</value>
+        </criteriaItems>
+        <description>Opportunity email that gets fired if the closed date of the opportunity is past 180 days. Currently only for Surgical BU</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Surgical_Opportunity_180_Days_old</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CreatedDate</offsetFromField>
+            <timeLength>180</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opportunity Name Standard Format</fullName>
+        <actions>
+            <name>Opportunity_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Surgical Disposable Sales Opportunity,Surgical Instruments Sales Opportunity,Mayo Healthcare Opportunity Record Type</value>
+        </criteriaItems>
+        <description>This workflow rule updates the Opportunity Name field with the standard opportunity naming convention.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Name Standard Format - Interventional Capital</fullName>
+        <actions>
+            <name>Interventional_Capital_Opportunity_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Used to rename Interventional Capital Opportunities to a Standard Naming Convention of  Account - Product Family - Opportunity Type when created or edited</description>
+        <formula>AND  (  (Account.Name &amp; &quot; - &quot; &amp; TEXT(Product_Family_GPL__c) &amp; &quot; - &quot; &amp; TEXT(Type)) != Name,  RecordTypeId = &quot;012E000000094fi&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Name Standard Format Surgical</fullName>
+        <actions>
+            <name>Opportunity_Standard_Name_Surgical</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Surgical Disposables,Surgical Instruments</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.ANZ_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Record_Type_Name__c</field>
+            <operation>notEqual</operation>
+            <value>ANZ Opportunity</value>
+        </criteriaItems>
+        <description>This workflow rule updates the Opportunity Name field with the standard opportunity naming convention.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Name Standard Format Vascular</fullName>
+        <actions>
+            <name>Opportunity_Name_Standard_Format_Vascula</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Vascular</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.ANZ_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Record_Type_Name__c</field>
+            <operation>notEqual</operation>
+            <value>ANZ Opportunity</value>
+        </criteriaItems>
+        <description>This workflow rule updates the Opportunity Name field with the standard opportunity naming convention. 7/7/17 changed to look at BU instead of record type</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Populate Managers Email</fullName>
+        <actions>
+            <name>Update_Managers_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Populates Opp Owners Managers Email
+OR(
+ISCHANGED(OwnerId),
+ ISBLANK( Owner_s_Manager_Email__c ) 
+)</description>
+        <formula>Owner_s_Manager_Email__c &lt;&gt; Owner.Manager_s_Email__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Push Counter</fullName>
+        <actions>
+            <name>Increment_Push_Counter_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Increment the Push Counter field by 1</description>
+        <formula>IF(  CloseDate &gt; PRIORVALUE( CloseDate ),  IF (DAY(CloseDate) &lt;&gt; DAY(PRIORVALUE( CloseDate )) ,  TRUE,  FALSE),  FALSE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Resp Central Opportunity Closed Won Notice</fullName>
+        <actions>
+            <name>Opportunity_Closed_Won_Notice</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email notice sent to Central RSM (Shawn McGurran) alerting them of a &quot;won&quot; opportunity</description>
+        <formula>AND(RecordTypeId= &quot;012E0000000RWQg&quot;, Owner.UserRole.Name =&quot;Respiratory MSR - Central&quot;,(ISPICKVAL(StageName, &quot;Closed Won&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vascular - Fix Stage Name %40 10%25</fullName>
+        <actions>
+            <name>Vascular_Fix_Stage_Name_10_Help</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Vascular Standard</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>notEqual</operation>
+            <value>Target.</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Opportunity_Stage_Change_Comment_Required</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Opportunity Stage Change Comment Required</subject>
+    </tasks>
+</Workflow>

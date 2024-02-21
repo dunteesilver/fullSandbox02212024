@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Course Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Program_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Live Training</fullName>
+                <default>false</default>
+                <label>Live Training</label>
+            </value>
+            <value>
+                <fullName>LMS - Online Course</fullName>
+                <default>false</default>
+                <label>LMS - Online Course</label>
+            </value>
+            <value>
+                <fullName>LMS - Webinar</fullName>
+                <default>false</default>
+                <label>LMS - Webinar</label>
+            </value>
+            <value>
+                <fullName>Strategic Vascular</fullName>
+                <default>false</default>
+                <label>Strategic Vascular</label>
+            </value>
+            <value>
+                <fullName>Speaking Engagement</fullName>
+                <default>false</default>
+                <label>Speaking Engagement</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Education Program Request</controllingFieldValue>
+            <controllingFieldValue>Live Education Program Request</controllingFieldValue>
+            <controllingFieldValue>Inservice Record</controllingFieldValue>
+            <valueName>Live Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education Program Request</controllingFieldValue>
+            <controllingFieldValue>Online Education Program Request</controllingFieldValue>
+            <valueName>LMS - Online Course</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education Program Request</controllingFieldValue>
+            <controllingFieldValue>Online Education Program Request</controllingFieldValue>
+            <valueName>LMS - Webinar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education Program Request</controllingFieldValue>
+            <controllingFieldValue>CMA Speaker Request</controllingFieldValue>
+            <controllingFieldValue>Strategic Vascular Education Programs</controllingFieldValue>
+            <valueName>Strategic Vascular</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CMA Speaker Request</controllingFieldValue>
+            <controllingFieldValue>Strategic Vascular Education Programs</controllingFieldValue>
+            <valueName>Speaking Engagement</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

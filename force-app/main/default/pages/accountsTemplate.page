@@ -1,0 +1,41 @@
+<apex:page >
+<!-- UC custom console template -->
+    <apex:outputPanel layout="block" >
+        <apex:outputPanel id="sectionHead" styleClass="width:100%" layout="block">
+            <!-- Here, expecting a section header -->
+            <apex:insert name="TFHeader"/>
+            <!-- <apex:pageMessages /> -->
+        </apex:outputPanel>
+        <apex:panelGrid columns="2">
+            <apex:outputPanel id="details"><!-- styleClass="float:left;width:50%;display:block;" style="min-width:80%">-->
+                <apex:form id="frm" ><!--style="width:100%" -->
+                    <!-- here expecting a page block with buttons and input/output fields -->
+                    <apex:insert name="TFDetail"/>
+
+                    <apex:insert name="TFTopSingle"/>
+                    <apex:panelGrid columns="2" width="100%">
+                    <!--  
+                    two inserts here if there are two parent related objects
+                    Best results, add page block with single column page block sections
+                    -->
+                        <apex:insert name="TFLowerLeft"/>
+                        <apex:insert name="TFLowerRight"/>
+                    </apex:panelGrid>
+                    <!--
+                    if only one single related parent record use the following
+                    Best results, again use a page block here.
+                    -->
+                    <apex:insert name="TFLowerSingle"/>
+                </apex:form>
+                <apex:insert name="TFBottomLeftSingleRelList"/>
+                <apex:insert name="TFLeftRelatedLists"/>
+            </apex:outputPanel>
+            <apex:outputPanel id="relatedLists" layout="block" styleClass="min-width:80%">
+                <apex:insert name="TFRelLists"/>
+            </apex:outputPanel>
+        </apex:panelGrid>
+        <apex:outputPanel id="relatedListsBottom" layout="block" >
+            <apex:insert name="TFRelListsBottom" />
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:page>

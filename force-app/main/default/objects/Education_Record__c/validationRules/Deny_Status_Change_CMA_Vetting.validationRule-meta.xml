@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deny_Status_Change_CMA_Vetting</fullName>
+    <active>false</active>
+    <description>Only CMA change status to CMA Vetting</description>
+    <errorConditionFormula>AND(NOT($UserRole.Name =&quot;Clinical Affairs Manager&quot;),
+NOT($UserRole.Name =&quot;Clinical Affairs&quot;),
+ISPICKVAL( Stage__c , &quot;CMA Vetting&quot;),ISCHANGED(Stage__c))</errorConditionFormula>
+    <errorMessage>Status can only be changed to CMA Vetting by the CMA team.</errorMessage>
+</ValidationRule>

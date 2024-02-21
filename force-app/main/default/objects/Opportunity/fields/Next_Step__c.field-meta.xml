@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Step__c</fullName>
+    <externalId>false</externalId>
+    <label>Next Step PL</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Catalogues to be provided</fullName>
+                <default>false</default>
+                <label>Catalogues to be provided</label>
+            </value>
+            <value>
+                <fullName>Demo/Trial - to arrange</fullName>
+                <default>false</default>
+                <label>Demo/Trial - to arrange</label>
+            </value>
+            <value>
+                <fullName>Follow Up - Email</fullName>
+                <default>false</default>
+                <label>Follow Up - Email</label>
+            </value>
+            <value>
+                <fullName>Follow Up - Phone</fullName>
+                <default>false</default>
+                <label>Follow Up - Phone</label>
+            </value>
+            <value>
+                <fullName>Forward on to Colleague</fullName>
+                <default>false</default>
+                <label>Forward on to Colleague</label>
+            </value>
+            <value>
+                <fullName>In-Service</fullName>
+                <default>false</default>
+                <label>In-Service</label>
+            </value>
+            <value>
+                <fullName>Liase with My Manager</fullName>
+                <default>false</default>
+                <label>Liase with My Manager</label>
+            </value>
+            <value>
+                <fullName>Liase with Alternate Contact</fullName>
+                <default>false</default>
+                <label>Liase with Alternate Contact</label>
+            </value>
+            <value>
+                <fullName>Make Appointment</fullName>
+                <default>false</default>
+                <label>Make Appointment</label>
+            </value>
+            <value>
+                <fullName>Quote</fullName>
+                <default>false</default>
+                <label>Quote</label>
+            </value>
+            <value>
+                <fullName>Sighting - to arrange</fullName>
+                <default>false</default>
+                <label>Sighting - to arrange</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

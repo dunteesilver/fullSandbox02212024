@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Goal_2_Integrate_product_w_least_amt__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Goal#2-Integrate prod. w/least amt. of change 2 curr insertion proc</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Goal #2 – integrate product with the least amount of change as possible to their current insertion procedure</inlineHelpText>
+    <label>Goal#2-Integrate product w/least amt...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

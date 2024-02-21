@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Product__c</field>
+        <field>Approval_Status__c</field>
+        <field>Owner</field>
+        <field>Open_Order_Qty__c</field>
+        <field>Back_Order_Qty__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>russell.fakoury@teleflex.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Ventilation Circuits - 001200030003
+Active Heated Humidification - 001200030001
+CPAP - 001200030006
+High Flow Nasal Cannula Therapy - 001200030007</description>
+        <label>Product SubGroup 1</label>
+        <name>Product_SubGroup_1</name>
+    </approvalStep>
+    <description>Ventilation Circuits - 001200030003
+Active Heated Humidification - 001200030001
+CPAP - 001200030006
+High Flow Nasal Cannula Therapy - 001200030007</description>
+    <emailTemplate>Open_Order_Templates/Open_Orders_on_Constraint</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Open_Orders__c.Blocked_Reason__c</field>
+            <operation>contains</operation>
+            <value>Constraint</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Open_Orders__c.Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Waiting for Approval</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Open_Orders__c.Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Open_Orders__c.Product_Sub_Group__c</field>
+            <operation>equals</operation>
+            <value>001200030003,001200030001,001200030006,001200030007</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Open_Order_on_Constraint_Final_Approval_Email</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Open_Order_on_Constraint_Rejection_Email</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Update_Status_to_Waiting_for_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Product SubGroup 1</label>
+    <processOrder>3</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

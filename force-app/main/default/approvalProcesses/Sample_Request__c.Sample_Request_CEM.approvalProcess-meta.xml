@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Territory__c</field>
+        <field>Shipping_Method__c</field>
+        <field>Type__c</field>
+        <field>Shipping_Address_1__c</field>
+        <field>Shipping_Address_2__c</field>
+        <field>Shipping_City__c</field>
+        <field>Shipping_Country__c</field>
+        <field>Shipping_State__c</field>
+        <field>Shipping_Zipcode__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_to_Waiting_for_Territory_Manager</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>Route to RCEM on record of the CEM.</description>
+        <entryCriteria>
+            <formula>CONTAINS(Owner:User.UserRole.Name, &quot;CEM&quot;)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Route to RCEM</label>
+        <name>Route_to_RCEM</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Sample_Request_Update_Status</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>Route to manager of the territory.</description>
+        <entryCriteria>
+            <formula>AND( 
+CONTAINS(Owner:User.UserRole.Name, &quot;CEM&quot;),
+NOT( ISBLANK(TerritoryManager__c) )  
+)</formula>
+        </entryCriteria>
+        <label>Route to Territory Manager</label>
+        <name>Route_to_Territory_Manager</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Sample Request Approval Process for CEMs</description>
+    <emailTemplate>Pricing_Portal/Approval_Assignment_Sample_Request_Supa</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+Line_Count__c  &gt;= 1,
+CONTAINS(Owner:User.UserRole.Name, &quot;CEM&quot;),
+Sales_Org_Key__c  &lt;&gt; &quot;US103010&quot;,
+Sales_Org_Key__c  &lt;&gt; &quot;US103020&quot;
+)
+&amp;&amp;
+OR(ISPICKVAL(Status__c, &quot;New&quot;), ISPICKVAL(Status__c, &quot;Rejected&quot;) )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Sample_Request_Approval_Email</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Sample_Request_Update_Status</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Sample_Request_Rejection_Email</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Sample_Request_Update_Status_Reject</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Sample_Request_Update_Status_Submit</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Sample Request CEM</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>RCEM__c</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>4</processOrder>
+    <recallActions>
+        <action>
+            <name>Sample_Request_Update_Status_Recall</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

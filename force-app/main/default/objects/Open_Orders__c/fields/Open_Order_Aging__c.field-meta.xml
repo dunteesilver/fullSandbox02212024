@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Order_Aging__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* 0-30 */
+IF(Order_Date__c &gt;= TODAY()-30, &quot;0-30 Days&quot;,
+/* 31-60 */
+IF(AND(Order_Date__c &gt;= TODAY()-60,Order_Date__c &lt; TODAY()-30), &quot;31-60 Days&quot;,
+/* 61-90 */
+IF(AND(Order_Date__c &gt;= TODAY()-90,Order_Date__c &lt; TODAY()-60), &quot;61-90 Days&quot;,
+/* 91+ */
+IF(Order_Date__c &lt; TODAY()-90, &quot;91+ Days&quot;,NULL)
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Open Order Aging</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

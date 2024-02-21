@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Audience__c</fullName>
+    <externalId>false</externalId>
+    <label>Target Audience</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EMT/PM</fullName>
+                <default>false</default>
+                <label>EMT/PM</label>
+            </value>
+            <value>
+                <fullName>NP/PA/CRNA</fullName>
+                <default>false</default>
+                <label>NP/PA/CRNA</label>
+            </value>
+            <value>
+                <fullName>Nurse</fullName>
+                <default>false</default>
+                <label>Nurse</label>
+            </value>
+            <value>
+                <fullName>Physician</fullName>
+                <default>false</default>
+                <label>Physician</label>
+            </value>
+            <value>
+                <fullName>Patient</fullName>
+                <default>false</default>
+                <label>Patient</label>
+            </value>
+            <value>
+                <fullName>Respiratory Therapist</fullName>
+                <default>false</default>
+                <label>Respiratory Therapist</label>
+            </value>
+            <value>
+                <fullName>Specialty/Other</fullName>
+                <default>false</default>
+                <label>Specialty/Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disable_Autorouting__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This disables routing for a particular SBU (like Mayo).</description>
+    <externalId>false</externalId>
+    <label>Disable Autorouting</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

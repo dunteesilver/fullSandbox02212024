@@ -1,0 +1,8 @@
+<apex:page standardController="Customer_In_Service__c" sidebar="false" title="{!Customer_In_Service__c.Name}" showHeader="false">
+    <apex:form >
+        <br/>&nbsp;&nbsp;&nbsp;
+        <apex:commandbutton value="<-- Click to Return to {!Customer_In_Service__c.Name}" action="/{!Customer_In_Service__c.Id}" />&nbsp;&nbsp;&nbsp;
+        <apex:commandButton onclick="window.print();" value="Print Customer In-Service" />
+        <apex:detail subject="{!Customer_In_Service__c.Id}" relatedList="false" title="false"/>
+    </apex:form>
+</apex:page>

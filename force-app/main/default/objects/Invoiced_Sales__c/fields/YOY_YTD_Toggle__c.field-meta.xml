@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>YOY_YTD_Toggle__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+OR(
+MONTH(Date__c) &lt; MONTH(Business_Days__r.Date_Key__c) 
+),&quot;Include Current Month&quot;, &quot;Exclude Current Month&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>YOY YTD Toggle</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

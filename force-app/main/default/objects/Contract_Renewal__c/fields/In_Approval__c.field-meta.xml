@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Approval__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Should only be checked when a Contract enters the Approval Process.  Uncheck only if rejected.</description>
+    <externalId>false</externalId>
+    <label>In Approval</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

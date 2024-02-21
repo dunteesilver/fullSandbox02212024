@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complaint_Cardiac_Abnormalities</fullName>
+    <active>true</active>
+    <description>If &quot;Where there any cardiac abnormalities?&quot; is Yes please fill out &quot;Cardiac Abnormality Details&quot;</description>
+    <errorConditionFormula>AND( 
+TEXT(Were_there_any_cardiac_abnormalities__c) = &apos;Yes&apos;, 
+ISBLANK(Cardiac_Abnormality_Details__c)
+)</errorConditionFormula>
+    <errorDisplayField>Cardiac_Abnormality_Details__c</errorDisplayField>
+    <errorMessage>If &quot;Where there any cardiac abnormalities?&quot; is Yes please fill out &quot;Cardiac Abnormality Details&quot;</errorMessage>
+</ValidationRule>

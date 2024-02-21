@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Alignment__c</fullName>
+    <externalId>false</externalId>
+    <label>Territory Alignment Rules</label>
+    <referenceTo>Territory_Alignment__c</referenceTo>
+    <relationshipLabel>Territory Account Assignments</relationshipLabel>
+    <relationshipName>Territory_Assignment</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

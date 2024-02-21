@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tasks_Not_Done__c</fullName>
+    <externalId>false</externalId>
+    <label>Tasks Not Done</label>
+    <summaryFilterItems>
+        <field>Element__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Task</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Element__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started, In Progress</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Element__c.User_Story__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

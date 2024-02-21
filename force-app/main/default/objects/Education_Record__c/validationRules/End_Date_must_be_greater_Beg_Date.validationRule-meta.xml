@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_Date_must_be_greater_Beg_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(Ending_Date__c) ),  (Date_of_Event_Start__c)  &gt;(Ending_Date__c))</errorConditionFormula>
+    <errorDisplayField>Ending_Date__c</errorDisplayField>
+    <errorMessage>The Ending Date must be after the Beginning Date</errorMessage>
+</ValidationRule>

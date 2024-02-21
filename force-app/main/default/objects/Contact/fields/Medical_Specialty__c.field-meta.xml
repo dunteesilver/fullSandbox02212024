@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical_Specialty__c</fullName>
+    <externalId>false</externalId>
+    <label>Medical Specialty</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Respiratory Director</fullName>
+                <default>false</default>
+                <label>Respiratory Director</label>
+            </value>
+            <value>
+                <fullName>Respiratory Therapist</fullName>
+                <default>false</default>
+                <label>Respiratory Therapist</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Director</fullName>
+                <default>false</default>
+                <label>Anesthesia Director</label>
+            </value>
+            <value>
+                <fullName>Anesthesiologist</fullName>
+                <default>false</default>
+                <label>Anesthesiologist</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Tech</fullName>
+                <default>false</default>
+                <label>Anesthesia Tech</label>
+            </value>
+            <value>
+                <fullName>Materials Management</fullName>
+                <default>false</default>
+                <label>Materials Management</label>
+            </value>
+            <value>
+                <fullName>Risk Management</fullName>
+                <default>false</default>
+                <label>Risk Management</label>
+            </value>
+            <value>
+                <fullName>Infection Control</fullName>
+                <default>false</default>
+                <label>Infection Control</label>
+            </value>
+            <value>
+                <fullName>Neonatologist</fullName>
+                <default>false</default>
+                <label>Neonatologist</label>
+            </value>
+            <value>
+                <fullName>CRNA</fullName>
+                <default>false</default>
+                <label>CRNA</label>
+            </value>
+            <value>
+                <fullName>Pain Nurse</fullName>
+                <default>false</default>
+                <label>Pain Nurse</label>
+            </value>
+            <value>
+                <fullName>Emergency Medicine</fullName>
+                <default>false</default>
+                <label>Emergency Medicine</label>
+            </value>
+            <value>
+                <fullName>Anesthesia- Pain Management</fullName>
+                <default>false</default>
+                <label>Anesthesia- Pain Management</label>
+            </value>
+            <value>
+                <fullName>Hematology/Oncology</fullName>
+                <default>false</default>
+                <label>Hematology/Oncology</label>
+            </value>
+            <value>
+                <fullName>Interventional Radiology</fullName>
+                <default>false</default>
+                <label>Interventional Radiology</label>
+            </value>
+            <value>
+                <fullName>Pathology</fullName>
+                <default>false</default>
+                <label>Pathology</label>
+            </value>
+            <value>
+                <fullName>Stem Cell Research</fullName>
+                <default>false</default>
+                <label>Stem Cell Research</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Creating_Records</fullName>
+    <active>false</active>
+    <description>This is a simple validation rule used to stop the creation of new records in the case that Jitterbit has a bad data load and cannot be stopped. - ESC 20Oct2015</description>
+    <errorConditionFormula>ISNEW()</errorConditionFormula>
+    <errorMessage>Temp</errorMessage>
+</ValidationRule>

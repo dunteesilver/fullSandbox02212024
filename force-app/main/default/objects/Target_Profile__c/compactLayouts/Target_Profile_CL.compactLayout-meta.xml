@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Profile_CL</fullName>
+    <fields>Name</fields>
+    <fields>Identifier__c</fields>
+    <fields>RecordTypeId</fields>
+    <label>Target Profile CL</label>
+</CompactLayout>

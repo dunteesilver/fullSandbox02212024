@@ -1,0 +1,156 @@
+<apex:page controller="sales_Rosters" readOnly="true" title="Sales Rosters">
+    <head>
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+        
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.css')}"/>
+        
+        <apex:stylesheet value="{!UrlFor($Resource.tablesorter,'/tablesorter-master/dist/css/theme.bootstrap.min.css')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.widgets.min.js')}"/>
+        
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/libs/FileSaver/FileSaver.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/tableExport.min.js')}"/>
+        
+        <style>
+           
+            .l {
+            text-align: left;
+            }
+            
+            #tfx th{
+            text-align: center;
+            vertical-align: center;
+            vertical-align: bottom;
+            }
+            
+            #tfx td{
+            text-align: center;
+            vertical-align: center;
+            vertical-align: middle;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <apex:outputText rendered="{!bu != NULL}">
+            <div class="teleflex">
+                <table class="table table-hover table-striped table-bordered table-condensed" id="tfx">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Role</th>
+                            <th>Territory</th>
+                            <th>Territory Name</th>
+                            <th>Active</th>
+                            <th>Sales YTD</th>
+                            <th>Quota YTD</th>
+                            <th>% to Quota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <apex:repeat value="{!repMap}" var="rep">
+                            <tr>
+                                <td>{!repMap[rep].Full_Name__c}</td>
+                                <td>{!repMap[rep].User__r.Title}</td>
+                                <td>{!repMap[rep].Role__c}</td>
+                                <td><a href="sales_Accounts?id={!repMap[rep].Territory_Number__c}">{!repMap[rep].Territory_Number__c}</a></td>
+                                <td><a href="sales_Accounts?id={!repMap[rep].Territory_Number__c}">{!repMap[rep].Territory_Master__r.Territory_Name__c}</a></td>
+                                <td><apex:outputField value="{!repMap[rep].Primary__c}"/></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>                                
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                    
+                </table>
+            </div>
+        </apex:outputText>
+        <apex:outputText rendered="{!bu = NULL}">
+            <div class="teleflex">
+                <table class="table table-hover table-striped table-bordered table-condensed" id="tfx">
+                    <thead>
+                        <apex:repeat value="{!buList}" var="bu">
+                            <tr>
+                                <td><a href="sales_Rosters?bu={!bu}">{!bu}</a></td>
+                            </tr>
+                        </apex:repeat>
+                        
+                    </thead>
+                </table>
+            </div>
+        </apex:outputText>
+    </body>
+    <script>
+    
+    $(function(){
+        
+        
+        $('table').tablesorter({
+            theme: 'bootstrap',
+            //showProcessing: true,
+            widthFixed: true,
+            headerTemplate : '{content} {icon}', // new in v2.7. Needed to add the bootstrap icon!
+            
+            selectorHeaders: '> thead th, > thead td',
+            // desc so that when sorting numbers it sorts the highest first.
+            sortInitialOrder: "desc",
+            // third click on the header will reset column to default - unsorted
+            sortReset   : true,
+            // Resets the sort direction so that clicking on an unsorted column will sort in the sortInitialOrder direction.
+            sortRestart : true,
+            widgets: ['zebra', 'stickyHeaders', 'uitheme', 'filter'],
+            
+            widgetOptions: {
+                
+                // css class name applied to the sticky header row (tr)
+                stickyHeaders : 'tablesorter-stickyHeader',
+                
+                // adding zebra striping, using content and default styles - the ui css removes the background from default
+                // even and odd class names included for this demo to allow switching themes
+                //zebra   : ["ui-widget-content even", "ui-state-default odd"],
+                zebra : ["even", "odd"],
+                // reset filters button
+                filter_reset : ".reset",
+                
+                // extra css class name (string or array) added to the filter element (input or select)
+                filter_cssFilter: "form-control",
+                
+                // reset filters button
+                //filter_reset : ".reset",
+                
+                // change default uitheme icons - find the full list of icons here: http://jqueryui.com/themeroller/ (hover over them for their name)
+                // default icons: ["ui-icon-arrowthick-2-n-s", "ui-icon-arrowthick-1-s", "ui-icon-arrowthick-1-n"]
+                // ["up/down arrow (cssHeaders/unsorted)", "down arrow (cssDesc/descending)", "up arrow (cssAsc/ascending)" ]
+                //uitheme : ["ui-icon-carat-2-n-s", "ui-icon-carat-1-s", "ui-icon-carat-1-n"]
+                
+                
+            }
+            
+        });
+        $.extend($.tablesorter.themes.bootstrap
+                 // change default jQuery uitheme icons - find the full list of icons
+                 // here: http://jqueryui.com/themeroller/ (hover over them for their name)
+                 ,{table: 'ui-widget ui-widget-content ui-corner-all'        // table classes
+                   ,header: 'ui-widget-header ui-corner-all ui-state-default' // header classes
+                   ,icons: 'ui-icon'               // icon class added to the <i> in the header
+                   ,sortNone: 'ui-icon-carat-2-n-s'
+                   ,sortAsc: 'ui-icon-carat-1-n'
+                   ,sortDesc: 'ui-icon-carat-1-s'
+                   ,active: 'ui-state-active'       // applied when column is sorted
+                   ,hover: 'ui-state-hover'         // hover class
+                   ,filterRow: ''
+                   ,even: 'ui-widget-content'       // even row zebra striping
+                   ,odd: 'ui-state-default'         // odd row zebra striping
+                  });
+        
+        
+        
+    });
+    </script>
+</apex:page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Tasks</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Description__c</columns>
+    <columns>Project__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>LOE__c</columns>
+    <columns>Owner__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Element__c.Task</value>
+    </filters>
+    <label>All Tasks</label>
+    <language>en_US</language>
+</ListView>

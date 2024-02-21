@@ -1,0 +1,53 @@
+<aura:component 
+                controller="TFX_MANTA_Handler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="backgroundImageURL" type="String" default=""/>
+    <aura:attribute name="usrId" type="String" default=""/>
+    <aura:attribute name="usrName" type="String" default=""/>
+    <aura:attribute name="showSetup" type="Boolean" default=""/>
+    <aura:attribute name="showEdit" type="String" />
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    <center><strong>***Please Note Hospital Region changes are In Progress. You may see some discrepancies***</strong></center>
+    
+    <div class="slds-align_absolute-center slds-card slds-grid slds-wrap slds-size_12-of-12" >
+        <article class="articleCls slds-card slds-size_12-of-12">
+            <div style="{!'position: center;margin: 1%; background:' + v.backgroundColor + ' url(' + v.backgroundImageURL +') no-repeat;background-position: center;background-size: cover;'}">
+                <div class="slds-card__body slds-card__body_inner slds-size_12-of-12" style="padding: 10%">
+                    <div class="welcomeUsrCls">Welcome <ui:outputText value="{!v.usrName}" /></div><br/><br/>
+                    <lightning:layout>
+                        <lightning:layoutItem>
+                            <lightning:button class="slds-size_12-of-12" variant="Brand" label="New Request" onclick="{!c.navigateToTFX_MANTA_New_Req_Comp}" /><br/><br/>
+                            <lightning:button class="slds-size_12-of-12" variant="Brand" label="Open Requests" onclick="{!c.navigateToTFX_MANTA_Open_Reqs_Comp}"/><br/><br/>
+                            <lightning:button class="slds-size_12-of-12" variant="Brand" label="Accepted Requests" onclick="{!c.navigateToTFX_MANTA_Accepted_Reqs_Comp}"/><br/><br/>
+                            <!--<lightning:button class="slds-size_12-of-12" variant="Brand" label="Cancelled Requests" onclick="{!c.navigateToTFX_MANTA_Cancelled_Reqs_Comp}"/><br/><br/>-->
+                            <lightning:button class="slds-size_12-of-12" variant="Brand" label="Archived Requests" onclick="{!c.navigateToTFX_MANTA_Archived_Reqs_Comp}"/><br/><br/>
+                            <lightning:button class="slds-size_12-of-12" variant="Brand" label="Setup" onclick="{!c.navigateToTFX_MANTA_SetupOptionsCard}"/><br/><br/>
+                            <lightning:button class="slds-size_12-of-12" variant="Brand" label="Demo Request" onclick="{!c.navigateToDemoRequestForm}"/><br/><br/>
+                           
+                            <div class="slds-align_absolute-center" >
+                                <!--<div class="slds-p-around_small" >
+                                    <lightning:icon iconName="doctype:video" alternativeText="Watch MANTA Videos" title="Videos" size="large" onclick="{!c.navigateToTFX_MANTA_VideosComp}" />
+                                </div>-->
+                                <div class="slds-p-around_small" >
+                                    <lightning:icon iconName="standard:event" alternativeText="View Calender" title="Calender" size="large" onclick="{!c.navigateToTFX_MANTA_CalenderComp}" />
+                                </div>
+                            </div>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </div>
+            </div> 
+        </article>
+    </div> 
+</aura:component>

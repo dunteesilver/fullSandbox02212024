@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Arrow_Advance_unfamiliar_decide_no_use__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Arrow® Advancer — (if unfamiliar may decide not to use)
+PICC, Midline
+Evaluation Go Live/Clinical
+Provide Clinical Education, Demo and Practice Prior to Going Bedside for:</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Arrow® Advancer — (if unfamiliar may decide not to use)
+PICC, Midline
+Evaluation Go Live/Clinical
+Provide Clinical Education, Demo and Practice Prior to Going Bedside for:</inlineHelpText>
+    <label>Arrow Advance:unfamiliar decide no use</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

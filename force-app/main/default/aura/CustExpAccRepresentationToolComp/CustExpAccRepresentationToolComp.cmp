@@ -1,0 +1,13 @@
+<aura:component
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+  access="global"
+>
+    
+  <aura:attribute
+    name="contacts"
+    type="Contact"
+    default="{'sobjectType':'Contact'}"
+  />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <!--<force:inputField aura:id="lookup" value="{!v.contacts.AccountId}" />-->
+</aura:component>

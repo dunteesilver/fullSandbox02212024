@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_ExpirationDate_change_for_EMEA</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+BusinessUnit__c=&apos;EMEA&apos; ,
+Expiration_Date__c != DATEVALUE(&apos;2023-12-31&apos;),
+Expiration_Date__c != DATEVALUE(&apos;2024-12-31&apos;),
+ISCHANGED(Expiration_Date__c)
+)</errorConditionFormula>
+    <errorMessage>Please note that you can only change the date to 31/12/2023 or 31/12/2024</errorMessage>
+</ValidationRule>

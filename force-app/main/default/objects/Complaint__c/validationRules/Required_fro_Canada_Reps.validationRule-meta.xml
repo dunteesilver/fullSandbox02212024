@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_fro_Canada_Reps</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISBLANK(Product_Purchased_From_Text__c),
+				ISPICKVAL($User.Region__c, &apos;Canada&apos;)
+				)</errorConditionFormula>
+    <errorDisplayField>Product_Purchased_From_Text__c</errorDisplayField>
+    <errorMessage>Please fill in from where the product is being purchased from</errorMessage>
+</ValidationRule>

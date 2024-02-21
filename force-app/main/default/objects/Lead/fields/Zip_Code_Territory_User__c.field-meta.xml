@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zip_Code_Territory_User__c</fullName>
+    <description>This will not support all SBU&apos;s so will have to show this with the trigger...</description>
+    <externalId>false</externalId>
+    <formula>if(ISPICKVAL(Business_Unit__c, &quot;Anesthesia&quot;),  Zip_Code_Territories__r.Anesthesia__c,
+if(ISPICKVAL(Business_Unit__c, &quot;Surgical&quot;), Zip_Code_Territories__r.Surgical_Instruments__c,
+if(ISPICKVAL(Business_Unit__c, &quot;EMS&quot;), Zip_Code_Territories__r.EMS__c,
+if(ISPICKVAL(Business_Unit__c, &quot;Respiratory&quot;), Zip_Code_Territories__r.Respiratory__c,
+if(ISPICKVAL(Business_Unit__c, &quot;Surgical Disposables&quot;), Zip_Code_Territories__r.Surgical_Disposables__c,
+if(ISPICKVAL(Business_Unit__c, &quot;Surgical Instruments&quot;), Zip_Code_Territories__r.Surgical_Instruments__c,
+if(ISPICKVAL(Business_Unit__c, &quot;Surgical Percuvance&quot;), Zip_Code_Territories__r.Surgical_Percuvance__c,
+if(ISPICKVAL(Business_Unit__c, &quot;Vascular&quot;), Zip_Code_Territories__r.Vascular__c,
+if(ISPICKVAL(Business_Unit__c, &quot;Interventional Access&quot;),  Zip_Code_Territories__r.IA__c,
+&quot;&quot;
+)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Zip Code Territory User</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERP_Active__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>This field is updated as part of the Daily Data Load from the ERP system. Any Active Customers will have a Value of True (checked).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When this box is checked, the account is an active customer in the ERP System.</inlineHelpText>
+    <label>Active in SAP</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

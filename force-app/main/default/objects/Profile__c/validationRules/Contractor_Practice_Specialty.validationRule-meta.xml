@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contractor_Practice_Specialty</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL( Status__c , &quot;Active&quot;), 
+RecordType.Name =&quot;Contractor&quot; ,ISBLANK(  Practice_Specialty__c   ),
+
+OR( 
+INCLUDES( Credentials__c , &quot;DO&quot;) ,
+INCLUDES( Credentials__c , &quot;FACEP&quot;), 
+INCLUDES( Credentials__c , &quot;MD&quot;)))</errorConditionFormula>
+    <errorDisplayField>Practice_Specialty__c</errorDisplayField>
+    <errorMessage>Please enter Practice Specialty.</errorMessage>
+</ValidationRule>

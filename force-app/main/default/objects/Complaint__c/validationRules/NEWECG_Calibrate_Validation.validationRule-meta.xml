@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NEWECG_Calibrate_Validation</fullName>
+    <active>true</active>
+    <description>Is complaint is related to G4/Flybook, this field must be filled out.</description>
+    <errorConditionFormula>AND( 
+RecordType.Name = &quot;Vascular/Legacy Arrow Products&quot;, 
+ISPICKVAL(Is_the_complaint_related_to__c ,&quot;G4/Flybook&quot;),
+ISBLANK(TEXT(Did_ECG_calibrate_on_the_VPS_correctly__c)))</errorConditionFormula>
+    <errorDisplayField>Did_ECG_calibrate_on_the_VPS_correctly__c</errorDisplayField>
+    <errorMessage>Is complaint is related to G4/Flybook, this field must be filled out.</errorMessage>
+</ValidationRule>

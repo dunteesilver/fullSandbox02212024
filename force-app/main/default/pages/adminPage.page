@@ -1,0 +1,13 @@
+<apex:page controller="adminController">
+    <apex:sectionHeader title="SFDC Data Admin"/>
+    <apex:form >
+        <div style="Width:400px;">
+        <apex:pageblock mode="mainDetail">
+            <apex:pageblockSection >
+                <apex:outputLabel value="Batch Top 10 Delete"/>
+                <apex:commandButton value="Start" action="{!batchDeleteT10}"/>
+            </apex:pageblockSection>
+        </apex:pageblock>
+        </div>
+    </apex:form>
+</apex:page>

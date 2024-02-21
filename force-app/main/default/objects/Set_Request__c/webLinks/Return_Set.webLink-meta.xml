@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Set</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Return Set</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var url = parent.location.href; 
+var SetReqObj = new sforce.SObject(&quot;Set_Request__c&quot;);
+SetReqObj.Id= &quot;{!Set_Request__c.Id}&quot;;
+var currResult = &quot;{!Set_Request__c.Did_this_result_in_a_sale__c}&quot;;
+var currExplain = &quot;{!Set_Request__c.Explain__c}&quot;;
+var rgaNumber = &quot;{!Set_Request__c.Name}&quot;;
+
+if (currResult == &quot;&quot; &amp;&amp; currExplain == &quot;&quot;)
+{
+alert(&quot;Please answer \&quot;Did this result in a sale?\&quot;, and \&quot;Explain\&quot;!&quot;);
+}
+else if (currResult == &quot;&quot;)
+{
+alert(&quot;Please answer \&quot;Did this result in a sale?\&quot;!&quot;); 
+}
+else if (currExplain == &quot;&quot;)
+{
+alert(&quot;Please provide and explanation in the \&quot;Explain\&quot; textbox!&quot;);
+}
+else if (currResult != &quot;&quot; &amp;&amp; currExplain != &quot;&quot;)
+{
+alert(&quot;Thank you for providing your feedback and initiating the return process. Your RGA number, to be included on your return label, is &quot; + rgaNumber + &quot;. Please remember to ship the set securely in the box it came in to:\n\nTeleflex – National Pool Return\nAttn: RGA# &quot; + rgaNumber + &quot;\n4620 Industry Lane, Bldg A Durham, NC 27713&quot;);
+
+SetReqObj.Status__c = &quot;Pending Return&quot;;
+
+var result = sforce.connection.update([SetReqObj]); 
+
+if (result[0].success==&apos;false&apos;) 
+{ 
+alert(result[0].errors.message);
+} 
+else 
+{ 
+parent.location.href = url;
+}
+
+}</url>
+</WebLink>

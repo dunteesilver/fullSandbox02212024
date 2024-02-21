@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountRespiratorySpecialityContract__c</fullName>
+    <externalId>false</externalId>
+    <formula>Account__r.RespiratorySpecialityContract__c</formula>
+    <label>Account Respiratory Speciality Contract</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

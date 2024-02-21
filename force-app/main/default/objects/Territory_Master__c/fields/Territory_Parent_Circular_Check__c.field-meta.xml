@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Parent_Circular_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>Territory_Number__c = Region_Number__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Checked if the Territory Number equals the Region Number. This breaks the parent/child logic and should never happen (but does).</inlineHelpText>
+    <label>Territory Parent Circular Check</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

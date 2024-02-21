@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_G4_Device__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>VPS G4™ Device:
+•Intravascular Doppler – directional blood flow for guidance &amp; Blue Bullseye
+•Open platform/pre-loaded PICCs available with Arrowg+ard Blue Advance™ Protection &amp; A5
+•Most precise tip confirmation system
+•No subjective interpretation of P-wave required</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Intravascular Doppler – directional blood flow for guidance &amp; Blue Bullseye  
+Open platform/preloaded PICCs available with Arrowg+ard Blue Advance® Protection &amp; A5  
+Precise tip confirmation system  
+No subjective interpretation of P-wave required  
+Confirm if goals of Eval are met, commitment to purchase outright or loaner agreement based on usage  
+Confirm “quiet period” for the incumbent competitive vendor  
+Discuss setup of the system, ensure Biomed is informed</inlineHelpText>
+    <label>VPS G4™ Device...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

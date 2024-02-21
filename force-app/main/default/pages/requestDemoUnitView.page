@@ -1,0 +1,5 @@
+<apex:page showHeader="true" sidebar="true" standardController="Request_Demo_Unit__c">
+<apex:include pageName="vpsMenu"/>
+	<apex:detail subject="{!Request_Demo_Unit__c.Id}" relatedList="false" title="false" />
+	<apex:relatedList list="ProcessSteps" subject="{!$CurrentPage.parameters.id}" /><br />
+</apex:page>

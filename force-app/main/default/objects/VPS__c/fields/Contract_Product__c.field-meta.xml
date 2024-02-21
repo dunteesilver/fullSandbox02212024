@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Contract Product</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VPS-G4C</fullName>
+                <default>false</default>
+                <label>VPS-G4C</label>
+            </value>
+            <value>
+                <fullName>VPS-G4C-R</fullName>
+                <default>false</default>
+                <label>VPS-G4C-R</label>
+            </value>
+            <value>
+                <fullName>VSNCSPCW3A</fullName>
+                <default>false</default>
+                <label>VSNCSPCW3A</label>
+            </value>
+            <value>
+                <fullName>VSNCSPCW3A-R</fullName>
+                <default>false</default>
+                <label>VSNCSPCW3A-R</label>
+            </value>
+            <value>
+                <fullName>RHY-100-MTRB</fullName>
+                <default>false</default>
+                <label>RHY-100-MTRB</label>
+            </value>
+            <value>
+                <fullName>VSNCSPCW3AP</fullName>
+                <default>false</default>
+                <label>VSNCSPCW3AP</label>
+            </value>
+            <value>
+                <fullName>Neptune Only</fullName>
+                <default>false</default>
+                <label>Neptune Only</label>
+            </value>
+            <value>
+                <fullName>Maxtec Only</fullName>
+                <default>false</default>
+                <label>Maxtec Only</label>
+            </value>
+            <value>
+                <fullName>Neptune &amp; Maxtec</fullName>
+                <default>false</default>
+                <label>Neptune &amp; Maxtec</label>
+            </value>
+            <value>
+                <fullName>DLX-200-MTRB</fullName>
+                <default>false</default>
+                <label>DLX-200-MTRB</label>
+            </value>
+            <value>
+                <fullName>DLX-200-MTRB-R</fullName>
+                <default>false</default>
+                <label>DLX-200-MTRB-R</label>
+            </value>
+            <value>
+                <fullName>DLX-200-SUB-MT</fullName>
+                <default>false</default>
+                <label>DLX-200-SUB-MT</label>
+            </value>
+            <value>
+                <fullName>DLX-200-SUB-MTP</fullName>
+                <default>false</default>
+                <label>DLX-200-SUB-MTP</label>
+            </value>
+            <value>
+                <fullName>RHY-100-TP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RHY-100-TP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>MANTA_Demo_Request_Alert</fullName>
+        <ccEmails>surya.arvan@teleflex.com</ccEmails>
+        <ccEmails>alexis.wolf@teleflex.com</ccEmails>
+        <description>MANTA Demo Request Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Representative__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>manta@teleflex.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>MANTA/MANTA_Demo_Request_Template</template>
+    </alerts>
+</Workflow>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Based_on_goals_determine_length_of_Eval__c</fullName>
+    <description>Based on goals determine length of Eval
+Midline, Endurance, Arterials
+Value Proposition Stage
+Trial/Evaluation Criteria</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Based on goals determine length of Eval
+Midline, Endurance, Arterials
+Value Proposition Stage
+Trial/Evaluation Criteria</inlineHelpText>
+    <label>Based on goals determine length of Eval</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

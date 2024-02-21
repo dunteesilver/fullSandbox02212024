@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductKnowledgeDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Knowledge Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product_Knowledge_CE__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lack of product knowledge and IFU’s</fullName>
+                <default>false</default>
+                <label>Lack of product knowledge and IFU’s</label>
+            </value>
+            <value>
+                <fullName>Inability to communicate clinical messages</fullName>
+                <default>false</default>
+                <label>Inability to communicate clinical messages</label>
+            </value>
+            <value>
+                <fullName>Limited knowledge of competitors products</fullName>
+                <default>false</default>
+                <label>Limited knowledge of competitors products</label>
+            </value>
+            <value>
+                <fullName>Has basic product knowledge and understanding of IFU’s</fullName>
+                <default>false</default>
+                <label>Has basic product knowledge and understanding of IFU’s</label>
+            </value>
+            <value>
+                <fullName>Ability to communicate clinical messages</fullName>
+                <default>false</default>
+                <label>Ability to communicate clinical messages</label>
+            </value>
+            <value>
+                <fullName>Adequate knowledge of competitors products</fullName>
+                <default>false</default>
+                <label>Adequate knowledge of competitors products</label>
+            </value>
+            <value>
+                <fullName>Exceptional product knowledge and understanding of IFU’s</fullName>
+                <default>false</default>
+                <label>Exceptional product knowledge and understanding of IFU’s</label>
+            </value>
+            <value>
+                <fullName>Clearly communicates clinical messages</fullName>
+                <default>false</default>
+                <label>Clearly communicates clinical messages</label>
+            </value>
+            <value>
+                <fullName>In depth competitor product knowledge</fullName>
+                <default>false</default>
+                <label>In depth competitor product knowledge</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Lack of product knowledge and IFU’s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Inability to communicate clinical messages</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Limited knowledge of competitors products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Has basic product knowledge and understanding of IFU’s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Ability to communicate clinical messages</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Adequate knowledge of competitors products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Exceptional product knowledge and understanding of IFU’s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Clearly communicates clinical messages</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>In depth competitor product knowledge</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

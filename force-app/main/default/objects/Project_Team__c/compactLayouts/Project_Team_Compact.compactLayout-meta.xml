@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Team_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Project_Role__c</fields>
+    <fields>Level__c</fields>
+    <fields>Project__c</fields>
+    <label>Project Team Compact</label>
+</CompactLayout>

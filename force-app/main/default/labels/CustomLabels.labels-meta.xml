@@ -1,0 +1,2396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Active_Language</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Active Language</shortDescription>
+        <value>Active Language</value>
+    </labels>
+    <labels>
+        <fullName>Active_Sales_Org</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Active Sales Org</shortDescription>
+        <value>Active Sales Org</value>
+    </labels>
+    <labels>
+        <fullName>Addattachments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Addattachments</shortDescription>
+        <value>Add Attachments</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_AlreadyStoryOwner</fullName>
+        <categories>Button, Alert</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert AlreadyStoryOwner</shortDescription>
+        <value>You are already the Owner of this Story.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_AlreadyTaskOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert AlreadyTaskOwner</shortDescription>
+        <value>You are already the Owner of this Task.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_AlreadyTestOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert AlreadyTestOwner</shortDescription>
+        <value>You are already the Owner of this Test.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_ArticleAsYouRequested</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert ArticleAsYouRequested</shortDescription>
+        <value>as you requested.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_ArticleOfThe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert ArticleOfThe</shortDescription>
+        <value>of the</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_ArticleThe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert ArticleThe</shortDescription>
+        <value>The</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_AssignedToNameBlank</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert AssignedToNameBlank</shortDescription>
+        <value>You have not entered a Project Team Member.\n\nPlease try again.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_AssignedToNameNotFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert AssignedToNameNotFound</shortDescription>
+        <value>The Name that you entered does not match a Project Team Member.\n\nPlease verify the Project Team Member&apos;s First and Last Name in the system match exactly as you type and try again.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_CustomSettingsNotSetup</fullName>
+        <categories>Button, Alert</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert CustomSettingsNotSetup</shortDescription>
+        <value>You can not use this button until your Admin has managed the Custom Setting for Custom IDs. ***Setup&gt; Develop&gt; Custom Settings&gt; Manage on Custom IDs***</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_NoStoriesSelected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert NoStoriesSelected</shortDescription>
+        <value>You have not selected any Stories.\n\nPlease check the box next to the Stories you wish to work with and try again.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SprintNameBlank</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert_SprintNameBlank</shortDescription>
+        <value>You have not entered a Sprint name.\n\nPlease try again.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SprintNameNotFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert SprintNameNotFound</shortDescription>
+        <value>The name of the Sprint that you entered does not match a Sprint in the system.\n\nPlease verify the Sprint&apos;s name in the system matches exactly what you type and try again.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryAlreadyComplete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryAlreadyComplete</shortDescription>
+        <value>This Story is already Complete.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryCanNotBeClosed</fullName>
+        <categories>Button, Alert</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryCanNotBeClosed</shortDescription>
+        <value>You can not accept this Story because the Status must be Product Backlog or In Sprint.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryCantCompleteInPBL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryCantCompleteInPBL</shortDescription>
+        <value>This Story is still in the Product Backlog, so it is not eligible to be Completed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryCantCompleteIsCanceled</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryCantCompleteIsCanceled</shortDescription>
+        <value>This Story was Canceled, so it is not eligible to be Completed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryCantCompleteTasksOpen</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryCantCompleteTasksOpen</shortDescription>
+        <value>This Story can not be Completed until all related TASKS are Done.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryCantCompleteTestsOpen</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryCantCompleteTestsOpen</shortDescription>
+        <value>This Story can not be Completed until all related TESTS have Passed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryIsCompleteNoNewTasks</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryIsCompleteNoNewTasks</shortDescription>
+        <value>You can not create a Task because the Story is Complete.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_StoryIsCompleteNoNewTests</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert StoryIsCompleteNoNewTests</shortDescription>
+        <value>You can not create a Test because the Story is Complete.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SuccessAssignedAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert SuccessAssignedAll</shortDescription>
+        <value>Stories that you selected have been assigned to the Project Team Member</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SuccessAssignedSome</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert SuccessAssignedSome</shortDescription>
+        <value>\n\n(Note that this tool does not allow you to change the Owner of Completed or Canceled Stories.)</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SuccessMovedToPBLAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert SuccessMovedToPBLAll</shortDescription>
+        <value>Stories that you selected have been moved into the Product Backlog as you requested.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SuccessMovedToPBLSome</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert SuccessMovedToPBLSome</shortDescription>
+        <value>Stories that you selected have been moved into the Product Backlog as you requested.\n\n(Note that this tool does not allow you to mass move Complete Stories into the Product Backlog and if Stories were selected that are already in the Product Backlog, they have not been modified.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SuccessMovedToSprintAll</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert SuccessMovedToSprintAll</shortDescription>
+        <value>Stories that you selected have been moved into the Sprint</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_SuccessMovedToSprintSome</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert SuccessMovedToSprintSome</shortDescription>
+        <value>\n\n(Note that this tool does not allow you to move Stories with Status of Canceled into a Sprint, they must first be moved to the Product Backlog. Complete Stories can not be mass moved back into a Sprint.)</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_TaskCanNotBeClosed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert TaskCanNotBeClosed</shortDescription>
+        <value>You can not take this Task because it is already Closed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_TeamMemberNotLinkedToUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert TeamMemberNotLinkedToUser</shortDescription>
+        <value>You do not have a Team Member record linked to your User record. To use this function, you must first have a Team Member record related to your User record.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_TestAlreadyFailed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert TestAlreadyFailed</shortDescription>
+        <value>This Test has already been run and Failed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_TestAlreadyPassed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert TestAlreadyPassed</shortDescription>
+        <value>This Test has already been run and Passed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonAlert_TestCanNotBeClosed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonAlert TestCanNotBeClosed</shortDescription>
+        <value>You can not take this Test because it is already Closed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonConfirm_MoveToPBL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonConfirm MoveToPBL</shortDescription>
+        <value>Click OK to confirm you would like to move the selected Stories into the Product Backlog.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonConfirm_TestAlreadyFailedConfirmPass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonConfirm TestAlreadyFailedConfirmPass</shortDescription>
+        <value>This Test has already been run and Failed. Click OK to confirm you would like to change this Test to Passed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonConfirm_TestAlreadyPassedConfirmFail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonConfirm TestAlreadyPassedConfirmFail</shortDescription>
+        <value>This Test has already been run and Passed. Click OK to confirm you would like to change this Test to Failed.</value>
+    </labels>
+    <labels>
+        <fullName>ButtonPrompt_EnterAssignToName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonPrompt EnterAssignToName</shortDescription>
+        <value>Which Project Team Member do you want to assign the Stories to?\n\nPlease type the Project Team Member&apos;s First and Last Name below and click OK</value>
+    </labels>
+    <labels>
+        <fullName>ButtonPrompt_EnterSprintName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonPrompt EnterSprintName</shortDescription>
+        <value>Which Sprint do you want to assign the Stories to?\n\nPlease type the exact name of the Sprint in the box below and click OK.</value>
+    </labels>
+    <labels>
+        <fullName>CPI_ECC_MYTFX_CUSTOMERS_NMD_CRED_ENV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPI_ECC_MYTFX_CUSTOMERS_NMD_CRED_ENV</shortDescription>
+        <value>CPI_ECC_MYTFX_GET_CUSTOMERS_DEV</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Account_Currency</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Account_Currency</shortDescription>
+        <value>Měna</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Date</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Date</shortDescription>
+        <value>Datum</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_EA</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_EA</shortDescription>
+        <value>KS</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Incoterms</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Incoterms</shortDescription>
+        <value>Dodací podmínky</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Line</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Line</shortDescription>
+        <value>Řádek</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Line_Price</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Line_Price</shortDescription>
+        <value>Cena celkem</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Material</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Material</shortDescription>
+        <value>Katalogové číslo</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Page</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Page</shortDescription>
+        <value>Strana</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Price_Quote_Number</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Price_Quote_Number</shortDescription>
+        <value>Číslo cenové nabídky</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Product_Description</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Product_Description</shortDescription>
+        <value>Popis produktu</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Quantity</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Quantity</shortDescription>
+        <value>Počet</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Quotation</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Quotation</shortDescription>
+        <value>Cenová nabídka</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Sales_Price</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Sales_Price</shortDescription>
+        <value>Cena za KS</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Ship_To_Party</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Ship_To_Party</shortDescription>
+        <value>Dodací adresa</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Sold_To_Party</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Sold_To_Party</shortDescription>
+        <value>Fakturační adresa</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Sub_Total</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Sub-Total</shortDescription>
+        <value>Celková cena bez DPH</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Terms</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Terms</shortDescription>
+        <value>Platební podmínky</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Total</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Total</shortDescription>
+        <value>Celkem</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_UOM</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_UOM</shortDescription>
+        <value>KS</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_VAT</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_VAT</shortDescription>
+        <value>DPH</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_VAT_Amount</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_VAT_Amount</shortDescription>
+        <value>Výše daně</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_VAT_Base</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_VAT_Base</shortDescription>
+        <value>Základ daně</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_VAT_Rate</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_VAT_Rate</shortDescription>
+        <value>Sazba daně</value>
+    </labels>
+    <labels>
+        <fullName>CZ_EMEA_Validity_Period</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CZ_EMEA_Validity_Period</shortDescription>
+        <value>Platnost nabídky</value>
+    </labels>
+    <labels>
+        <fullName>Casetest</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please provide a brief description</shortDescription>
+        <value>Please provide a brief description.</value>
+    </labels>
+    <labels>
+        <fullName>Coaching_Form_Director_Email_Template_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Coaching_Form_Director_Email_Template_ID</shortDescription>
+        <value>00X2S000001HZzOUAW</value>
+    </labels>
+    <labels>
+        <fullName>CreateaCase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CreateaCase</shortDescription>
+        <value>Create a Case</value>
+    </labels>
+    <labels>
+        <fullName>CustomermasterData</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomermasterData</shortDescription>
+        <value>Customer Master Data</value>
+    </labels>
+    <labels>
+        <fullName>EMA_Contact_Email</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMA_Contact Email</shortDescription>
+        <value>Contact has no email address.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Account_Search</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Account Search</shortDescription>
+        <value>Account Search</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Action</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Action</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Action_Menu</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Action_Menu</shortDescription>
+        <value>Action Menu</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Add_Line_Item</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Add_Line_Item</shortDescription>
+        <value>Add Line Item</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Advance_Edit</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Advance_Edit</shortDescription>
+        <value>Advance Edit</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_All_lines_Rep_Price</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_All_lines_Rep Price</shortDescription>
+        <value>Set All Lines to Rep Price</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_An_error_has_occured_while_importing_data_Please_make_sure_input_csv</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_An_error_has_occurred_while_importing_data_Please_make_sure_input_csv</shortDescription>
+        <value>An error has occurred while importing data. Please make sure input csv file is correct..</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_An_error_has_occured_while_trying_to_insert_materials_Please_make_sure</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_An_error_has_occured_while_trying_to_insert_materials._Please_make_sure</shortDescription>
+        <value>An error has occured while trying to insert materials.  Please make sure input csv file is correct..</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Approval_Reason_s</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Approval_Reason(s):</shortDescription>
+        <value>Approval Reason(s):</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Approval_Required</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Approval_Required!</shortDescription>
+        <value>Approval Required!</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Approve_Reject</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Approve/Reject</shortDescription>
+        <value>Approve/Reject Approval Request</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Back_to_Price_Quote</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Back_to_Price_Quote</shortDescription>
+        <value>Back to Price Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Blank_Row</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Blank_Row</shortDescription>
+        <value>Blank Row</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Bulk_Material_Insert</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Bulk_Material_Insert</shortDescription>
+        <value>Bulk Material Insert</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Bundles</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Bundles</shortDescription>
+        <value>Bundles</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Can_only_add_trade_ins_to_match_available_trade_in_products</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Can_only_add_trade-ins_to_match_available_trade-in_products.</shortDescription>
+        <value>Can only add trade-ins to match available trade-in products.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_CancelQuote</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_CancelQuote</shortDescription>
+        <value>Cancel Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Cannot_add_Material_to_an_Approved_Quote_please_create_a_new_quote</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Cannot_add_Material_to_an_Approved_Quote,_please_create_a_new_quote</shortDescription>
+        <value>Cannot add Material to an Approved Quote, please create a new quote and then try again or click Revise/Clone and try again.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Change_Customer</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Change_Customer</shortDescription>
+        <value>Change Customer</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Change_Owner</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Change_Owner</shortDescription>
+        <value>Change Owner</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Choose_File</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Choose_File</shortDescription>
+        <value>Choose File</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_City_State</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_City/State</shortDescription>
+        <value>City/State</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Clear</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Clear</shortDescription>
+        <value>Clear</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Commit_Quote</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Commit_Quote</shortDescription>
+        <value>Commit Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Contact_Email1</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Contact_Email1</shortDescription>
+        <value>Contact has no email address. Try emailing to self and forwarding to customer</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Contact_Email2</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Contact_Email2</shortDescription>
+        <value>or edit the contact to add an email address</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Contact_Info</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Contact Info</shortDescription>
+        <value>Sales Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Copy_and_Paste_Materials_Here</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Copy_and_Paste_Materials_Here</shortDescription>
+        <value>Copy and Paste Materials Here...</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Courtesy_Pricing</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Courtesy_Pricing</shortDescription>
+        <value>Courtesy Pricing</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Create_Contact</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Create_Contact</shortDescription>
+        <value>Create Contact</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Create_Contact_and_PQ_PRF</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Create_Contact_and_PQ/PRF</shortDescription>
+        <value>Create Contact and PQ/PRF</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Create_PRF</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Create_PRF</shortDescription>
+        <value>Create PRF</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Cross_Reference</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Cross_Reference</shortDescription>
+        <value>Cross Reference</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Currency</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Currency</shortDescription>
+        <value>Currency</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Current_Approval_Level</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Current_Approval_Level</shortDescription>
+        <value>Current Approval Level</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Current_account_is_excluded_from_purchasing_this_product</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Current_account_is_excluded_from_purchasing_this_product…</shortDescription>
+        <value>Current account is excluded from purchasing this product…</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Customer_Comments</fullName>
+        <categories>Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Customer_Comments</shortDescription>
+        <value>Customer Comments</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Customer_Detail</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Customer Detail</shortDescription>
+        <value>Customer Detail</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Date</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Delete</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Delete_All_Lines</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Delete_All_Lines</shortDescription>
+        <value>Delete ALL Lines</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Download_PDF</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Download_PDF</shortDescription>
+        <value>Download PDF</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Edit</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Edit_Contact</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Edit Contact</shortDescription>
+        <value>Edit Contact</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Edit_Owner</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Edit Owner</shortDescription>
+        <value>Edit Owner</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Email_Owner</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Email_Owner</shortDescription>
+        <value>Email Owner</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Email_to_Customer</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Email_to_Customer</shortDescription>
+        <value>Email to Customer</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Email_to_Self</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Email_to_Self</shortDescription>
+        <value>Email to Self</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Enter_Material</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Enter_Material</shortDescription>
+        <value>Enter Material</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Enter_Qty</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Enter_Qty</shortDescription>
+        <value>Enter Qty...</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Export</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Export</shortDescription>
+        <value>Export</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Fix_Material_Desc</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Fix_Material_Desc</shortDescription>
+        <value>Fix Material Desc</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Grand_Total</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Grand_Total</shortDescription>
+        <value>Grand Total</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Import_CSV</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Import_CSV</shortDescription>
+        <value>Import CSV</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Import_CSV_Price_Quote</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Import_CSV_Price_Quote</shortDescription>
+        <value>Import CSV Price Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Import_Line_Items</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Import_Line_Items</shortDescription>
+        <value>Import Line Items</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Inactive_Account</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Inactive_Account</shortDescription>
+        <value>Inactive Account</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Insert_Limit</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Insert_Limit</shortDescription>
+        <value>Insert (Limit75)</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Language</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Language</shortDescription>
+        <value>Language</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Line</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Line</shortDescription>
+        <value>Line</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_LineItems</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_LineItems</shortDescription>
+        <value>Line Items</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Mass_Qty</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Mass Qty</shortDescription>
+        <value>Mass Qty</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Material</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Material</shortDescription>
+        <value>Enter Material</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Material_Description</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Material_Description</shortDescription>
+        <value>Material Description</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Material_Search</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Material_Search</shortDescription>
+        <value>Material Search</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Material_Status</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Material_Status</shortDescription>
+        <value>Material Status</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_My_Contacts</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_My Contacts</shortDescription>
+        <value>My Contacts</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Net_Value</fullName>
+        <categories>Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA Net Value</shortDescription>
+        <value>Net Value</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_No</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_No</shortDescription>
+        <value>No.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_No_File_Choosen</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_No_File_Choosen</shortDescription>
+        <value>No File Choosen</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_No_line_items_found_for_this_Price_Quote</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_No_line_items_found_for_this_Price_Quote.</shortDescription>
+        <value>No line items found for this Price Quote.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_No_products_found</fullName>
+        <categories>Create Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_No_products_found..</shortDescription>
+        <value>No products found..</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Not_able_to_create_your_quote_Please_contact_someone_from_your_SF_Team</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Not_able_to_create_your_quote._Please_contact_someone_from_your_SF_Team.</shortDescription>
+        <value>Not able to create your quote. Please contact someone from your SF Team.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Open_Quote</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Open_Quote</shortDescription>
+        <value>Open Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Options</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Options</shortDescription>
+        <value>Options</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Other_Contacts</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Other_Contacts</shortDescription>
+        <value>Other Contacts</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Page</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Page</shortDescription>
+        <value>Page</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Payment_Terms</fullName>
+        <categories>Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Payment_Terms</shortDescription>
+        <value>Payment Terms</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Payment_Terms_CZ</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Payment_Terms_CZ</shortDescription>
+        <value>Platební podmínky</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Please_Enter_Valid_Material</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Please_Enter_Valid_Material</shortDescription>
+        <value>Please enter a valid material..</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Please_choose_a_valid_owner</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Please_choose_a_valid_owner!</shortDescription>
+        <value>Please choose a valid owner!</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Please_choose_contact_related_to_account</fullName>
+        <categories>Create Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Please_choose_contact_related_to_account</shortDescription>
+        <value>Please choose contact related to account</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Please_edit_contact_to_add_a_valid_email_address_or_email_Price_Quote</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Please_edit_contact_to_add_a_valid_email_address,_or_email_Price_Quote</shortDescription>
+        <value>Please edit contact to add a valid email address, or email Price Quote to yourself and forward to the contact.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Please_enter_a_valid_quantity</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Please_enter_a_valid_quantity…</shortDescription>
+        <value>Please enter a valid quantity…</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Please_enter_valid_material_name</fullName>
+        <categories>Create Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Please_enter_valid_material_name…</shortDescription>
+        <value>Please enter valid material name…</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Please_fill_required_fields</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Please_fill_required_fields</shortDescription>
+        <value>Please fill required fields</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Price</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Price</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Price_Quote</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Price_Quote</shortDescription>
+        <value>Price Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Price_Quote_Approval</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Price_Quote_Approval</shortDescription>
+        <value>Price Quote Approval Analysis Page</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Price_Quote_Name</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Price_Quote_Name</shortDescription>
+        <value>Price Quote Name</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Print_Email_Quote</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Print/Email_Quote</shortDescription>
+        <value>Print/Email Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Print_Price_Quote</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Print_Price_Quote</shortDescription>
+        <value>Print Price Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Print_email</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Print/email</shortDescription>
+        <value>Print/Email</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Print_or_Preview</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Print_or_Preview</shortDescription>
+        <value>Print or Preview</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Qty</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Qty</shortDescription>
+        <value>Qty</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Quick_Edit</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Quick_Edit</shortDescription>
+        <value>Quick Edit</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Quotation</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Quotation</shortDescription>
+        <value>Quotation</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Quote</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Quote#</shortDescription>
+        <value>Quote #</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Quote_Locked</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Quote_Locked</shortDescription>
+        <value>Quote Locked</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Quote_Requires_Approval</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Quote Requires Approval</shortDescription>
+        <value>Your Quote either requires approval or you have reached this page in error.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Quote_Status</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Quote Status</shortDescription>
+        <value>Quote Status</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Recall_Approval</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Recall_Approval</shortDescription>
+        <value>Recall Approval</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Recent_Accounts</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Recent_Accounts:</shortDescription>
+        <value>Recent Accounts:</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Recent_Quotes</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Recent_Quotes:</shortDescription>
+        <value>Recent Quotes:</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Refresh_Pricing_All_Lines</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Refresh_Pricing_All_Lines</shortDescription>
+        <value>Refresh Pricing All Lines</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Related_Lists</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Related_Lists</shortDescription>
+        <value>Related Lists</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Requested_Sales_Deal</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Requested_Sales_Deal</shortDescription>
+        <value>Requested Sales Deal</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Return_to_Quote</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Return_to_Quote</shortDescription>
+        <value>Return to Quote</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Sales_Deal</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Sales Deal</shortDescription>
+        <value>Existing Sales Deal</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Sales_Price_can_not_be_0_Please_enter_a_price_other_than_0</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Sales_Price_can_not_be_0._Please_enter_a_price_other_than_0…</shortDescription>
+        <value>Sales Price can not be 0.  Please enter a price other than 0…</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Search_Terms_must_be_longer_than_one_character</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Search_Terms_must_be_longer_than_one_character.</shortDescription>
+        <value>Search Terms must be longer than one character.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Search_on_Customer_Name_Address_or_SAP_Number</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Search_on_Customer_Name,_Address_or_SAP_Number</shortDescription>
+        <value>Search on Customer Name, Address or SAP Number</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Select_Account</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Select_Account</shortDescription>
+        <value>Select Account</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Select_Contact</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Select_Contact</shortDescription>
+        <value>Select Contact</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Select_Customer</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Select_Customer</shortDescription>
+        <value>Select Customer</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Selected_Account</fullName>
+        <categories>Create Contact</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Selected_Account</shortDescription>
+        <value>Selected Account</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Set_All_Lines_to_List_Price</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Set_All Lines to List Price</shortDescription>
+        <value>Set All Lines to List Price</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Set_All_Lines_to_RSM_Price</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Set_All Lines to RSM_Price</shortDescription>
+        <value>Set All Lines to RSM Price</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Set_All_lines_To_Eligible_Price</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Set_All_lines_To Eligible_Price</shortDescription>
+        <value>Set All Lines to Eligible Price</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Ship_To_Party</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Ship_To_Party</shortDescription>
+        <value>Ship To Party</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Show_Images</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Show_Images</shortDescription>
+        <value>Show Images</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Show_List_Prices</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Show_List_Prices</shortDescription>
+        <value>Show List Prices</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Show_RSM_REP</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Show_RSM/REP</shortDescription>
+        <value>Show RSM/REP</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Sold_To_Party</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Sold_To_Party</shortDescription>
+        <value>Sold To Party</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Sorry_cannot_add_line_items_to_a_quote_while_in_the_approval_process</fullName>
+        <categories>Create Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Sorry,_cannot_add_line_items_to_a_quote_while_in_the_approval_process…</shortDescription>
+        <value>Sorry, cannot add line items to a quote while in the approval process…</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Sorry_cannot_update_line_items_on_an_approved_quote</fullName>
+        <categories>Create Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Sorry,_cannot_update_line_items_on_an_approved_quote.</shortDescription>
+        <value>Sorry, cannot update line items on an approved quote.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Sorry_no_results_returned_with_matching_string</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Sorry,_no_results_returned_with_matching_string..</shortDescription>
+        <value>Sorry, no results returned with matching string..</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Stationary</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Stationary</shortDescription>
+        <value>Stationary</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Sub_Total</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Sub_Total</shortDescription>
+        <value>Sub-Total</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_SubmitPRF</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_SubmitPRF</shortDescription>
+        <value>Submit PRF</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Submit_for_Approval</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Submit for Approval</shortDescription>
+        <value>Submit for Approval</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Tax_Number</fullName>
+        <categories>Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Tax_Number</shortDescription>
+        <value>Tax Number</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Template</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Template</shortDescription>
+        <value>Template</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Terms_Conditions</fullName>
+        <categories>Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Terms_&amp;_Conditions</shortDescription>
+        <value>Terms &amp; Conditions</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Total</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Total</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Trade_In_has_been_added</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Trade-In_has_been_added.</shortDescription>
+        <value>Trade-In has been added.</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_UOM</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_UOM</shortDescription>
+        <value>UOM</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Unit_Price</fullName>
+        <categories>Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Unit_Price</shortDescription>
+        <value>Unit Price</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Update</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Update</shortDescription>
+        <value>Update</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_VAT</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_VAT</shortDescription>
+        <value>VAT</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_VAT_Amount</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_VAT_Amount</shortDescription>
+        <value>VAT Amount</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_VAT_Base</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_VAT_Base</shortDescription>
+        <value>VAT Base</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_VAT_Rate</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_VAT_Rate</shortDescription>
+        <value>VAT Rate</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Validity_Period</fullName>
+        <categories>EMEA Quote Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Validity_Period</shortDescription>
+        <value>Validity Period</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Verify_Quote_Status</fullName>
+        <categories>Print Center</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Verify Quote Status</shortDescription>
+        <value>Please verify the Quote status is &quot;Approved&quot;</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_View_PDF</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_View_PDF</shortDescription>
+        <value>View PDF</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Waiting_for_Contracts_Approval</fullName>
+        <categories>Create Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Waiting_for_Contracts_Approval</shortDescription>
+        <value>Waiting for Contracts Approval</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Your_request_is_being_processed_You_will_receive_an_email_when_your_batch</fullName>
+        <categories>Import CSV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA_Your_request_is_being_processed._You_will_receive_an_email_when_your_batch</shortDescription>
+        <value>Your request is being processed. You will receive an email when your batch job is complete.</value>
+    </labels>
+    <labels>
+        <fullName>FieldValue_ElementStatusFailed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldValue ElementStatusFailed</shortDescription>
+        <value>Failed</value>
+    </labels>
+    <labels>
+        <fullName>FieldValue_ElementStatusPassed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldValue ElementStatusPassed</shortDescription>
+        <value>Passed</value>
+    </labels>
+    <labels>
+        <fullName>FieldValue_StoryStatusCanceled</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldValue StoryStatusCanceled</shortDescription>
+        <value>Canceled</value>
+    </labels>
+    <labels>
+        <fullName>FieldValue_StoryStatusComplete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldValue StoryStatusComplete</shortDescription>
+        <value>Complete</value>
+    </labels>
+    <labels>
+        <fullName>FieldValue_StoryStatusInSprint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldValue StoryStatusInSprint</shortDescription>
+        <value>In Sprint</value>
+    </labels>
+    <labels>
+        <fullName>FieldValue_StoryStatusProductBacklog</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldValue StoryStatusProductBacklog</shortDescription>
+        <value>Product Backlog</value>
+    </labels>
+    <labels>
+        <fullName>FirstName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FirstName</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>General_Sales_Questions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General Sales Questions</shortDescription>
+        <value>General Salesforce Question</value>
+    </labels>
+    <labels>
+        <fullName>Here1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Here1</shortDescription>
+        <value>HERE</value>
+    </labels>
+    <labels>
+        <fullName>Here2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Here2</shortDescription>
+        <value>HERE</value>
+    </labels>
+    <labels>
+        <fullName>Hide_RSM_REP</fullName>
+        <categories>Price Quote</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hide RSM/REP</shortDescription>
+        <value>Hide RSM/Rep</value>
+    </labels>
+    <labels>
+        <fullName>High</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>High</shortDescription>
+        <value>High</value>
+    </labels>
+    <labels>
+        <fullName>LastName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LastName</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>Low</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Low</shortDescription>
+        <value>Low</value>
+    </labels>
+    <labels>
+        <fullName>Margin_Calculator_Tab</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Margin Calculator Tab</shortDescription>
+        <value>Margin Calculator</value>
+    </labels>
+    <labels>
+        <fullName>Medium</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medium</shortDescription>
+        <value>Medium</value>
+    </labels>
+    <labels>
+        <fullName>NewContact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewContact</shortDescription>
+        <value>It seems the contact you listed on the previous screen does not exist. Please fill out the following information to create this contact now.</value>
+    </labels>
+    <labels>
+        <fullName>Opencasescreen</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opencasescreen</shortDescription>
+        <value>If you would like to see a list of all your open cases, please click</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Attn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Attn</shortDescription>
+        <value>Attn</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Brand</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Brand</shortDescription>
+        <value>Brand</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Comments</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Comments</shortDescription>
+        <value>Comments</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Committed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Committed</shortDescription>
+        <value>Committed</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_CreatedDate</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_CreatedDate</shortDescription>
+        <value>Created Date</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Cutomer</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Customer</shortDescription>
+        <value>Customer</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Description</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Expiration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Expiration</shortDescription>
+        <value>Expiration</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Footer</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Footer</shortDescription>
+        <value>&lt;p&gt;&lt;b&gt;Teleflex, Arrow, EZ-IO, LMA, Hudson RCI and Rusch are trademarks or registered trademarks of Teleflex Incorporated or its affiliates.&lt;br/&gt;
+                        © 2014 Teleflex Incorporated. All rights reserved. MC-000219&amp;nbsp;&lt;/b&gt;&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Grand_Total</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Grand Total</shortDescription>
+        <value>Grand Total</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Image</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Image</shortDescription>
+        <value>Product Image</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_List_Price</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_List Price</shortDescription>
+        <value>List Price</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Location</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Location</shortDescription>
+        <value>Location</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Material</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Material</shortDescription>
+        <value>Material</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Mobile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Mobile</shortDescription>
+        <value>Mobile</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Phone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_ProductCode</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_ProductCode</shortDescription>
+        <value>Product Code</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_ProductDescription</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_ProductDescription</shortDescription>
+        <value>Product Description</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Quote</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Quote</shortDescription>
+        <value>Quote</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Representative</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Representative</shortDescription>
+        <value>Representative</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_SalesPrice</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_SalesPrice</shortDescription>
+        <value>Sales Price</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_ShipTo</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_ShipTo</shortDescription>
+        <value>Ship To:</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Telephone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Telephone</shortDescription>
+        <value>Telephone</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Thank_YOu</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Thank_YOu</shortDescription>
+        <value>&lt;p&gt;Thank you for the opportunity to quote Teleflex products. To place your order please call 866-246-6990 or email cs@teleflex.com.&lt;/p&gt;
+            &lt;p&gt;Please note prices are subject to change.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_TollFree</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_TollFree</shortDescription>
+        <value>Toll Free: 866.246.6990</value>
+    </labels>
+    <labels>
+        <fullName>PP_Print_Quote_Total_Price</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PP_Print_Quote_Total Price</shortDescription>
+        <value>Total Price</value>
+    </labels>
+    <labels>
+        <fullName>Please_Provide_addi</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please Provide additional details.</shortDescription>
+        <value>Please Provide additional details.</value>
+    </labels>
+    <labels>
+        <fullName>Price_Lookup_Tab</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Price Lookup Tab</shortDescription>
+        <value>Price Lookup</value>
+    </labels>
+    <labels>
+        <fullName>Price_Quote_Tab</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Price Quote Tab</shortDescription>
+        <value>Price Quote</value>
+    </labels>
+    <labels>
+        <fullName>Pricing_Portal_Search_Button</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricing Portal Search Button</shortDescription>
+        <value>Pricing Portal Search</value>
+    </labels>
+    <labels>
+        <fullName>Pricing_Portal_Tab</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricing Portal Tab</shortDescription>
+        <value>Pricing Portal</value>
+    </labels>
+    <labels>
+        <fullName>Priority</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Priority</shortDescription>
+        <value>Priority</value>
+    </labels>
+    <labels>
+        <fullName>RecordLink</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecordLink</shortDescription>
+        <value>Link to the Record</value>
+    </labels>
+    <labels>
+        <fullName>RenderLeadsList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RenderLeadsList</shortDescription>
+        <value>AR Customer Advocacy</value>
+    </labels>
+    <labels>
+        <fullName>RenderNotesAndAttachList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RenderNotesAndAttachList</shortDescription>
+        <value>Anesthesia Inside Sales,Respiratory Inside sales,Anesthesia Inside sales Executive,Respiratory Inside Sales Executive</value>
+    </labels>
+    <labels>
+        <fullName>RenderOpportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RenderOpportunityList</shortDescription>
+        <value>Anesthesia RSM - Great Lakes,Anesthesia MSR - Great Lakes ,Teleflex Global IT</value>
+    </labels>
+    <labels>
+        <fullName>RenderOpportunityList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RenderOpportunityList</shortDescription>
+        <value>AR Customer Advocacy</value>
+    </labels>
+    <labels>
+        <fullName>RenderTerritoryList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RenderTerritoryList</shortDescription>
+        <value>Anesthesia Inside Sales,Respiratory Inside sales,Anesthesia Inside Sales Executive,Respiratory Inside Sales Executive</value>
+    </labels>
+    <labels>
+        <fullName>ReviewComments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReviewComments</shortDescription>
+        <value>To review or comment on your case, click</value>
+    </labels>
+    <labels>
+        <fullName>SAP_ORDDETAILS_ENDPOINT_NMD_CRED_ENV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAP_ORDDETAILS_ENDPOINT_NMD_CRED_ENV</shortDescription>
+        <value>SAP_SOAP_OrderDetails_QA</value>
+    </labels>
+    <labels>
+        <fullName>SAP_ORDHIST_ENDPOINT_NMD_CRED_ENV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAP_ORDHIST_ENDPOINT_NMD_CRED_ENV</shortDescription>
+        <value>SAP_SOAP_OrderHistory_QA</value>
+    </labels>
+    <labels>
+        <fullName>SAP_SALESREP_ENDPOINT_NMD_CRED_ENV</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAP_SALESREP_ENDPOINT_NMD_CRED_ENV</shortDescription>
+        <value>SAP_SOAP_SalesRepLookup_QA</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Account_Currency</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Account_Currency</shortDescription>
+        <value>Mena</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Account_Search</fullName>
+        <categories>Select Account</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Account Search</shortDescription>
+        <value>Vyhľadávanie účtu</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Date</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Date</shortDescription>
+        <value>Dátum</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_EA</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_EA</shortDescription>
+        <value>KS</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Incoterms</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Incoterms</shortDescription>
+        <value>Dodacie podmienky</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Line</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Line</shortDescription>
+        <value>Riadok</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Line_Price</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Line_Price</shortDescription>
+        <value>Cena spolu</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Material</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Material</shortDescription>
+        <value>Katalógové číslo</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Page</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Page</shortDescription>
+        <value>Strana</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Price_Quote_Number</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Price_Quote_Number</shortDescription>
+        <value>Číslo cenovej ponuky</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Product_Description</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Product_Description</shortDescription>
+        <value>Popis produktu</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Quantity</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Quantity</shortDescription>
+        <value>Počet</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Quotation</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Quotation</shortDescription>
+        <value>Cenová ponuka</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Sales_Price</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Sales_Price</shortDescription>
+        <value>JC bez DPH</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Ship_To_Party</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Ship_To_Party</shortDescription>
+        <value>Dodacia adresa</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Sold_To_Party</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Sold_To_Party</shortDescription>
+        <value>Fakturačná adresa</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Sub_Total</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Sub-Total</shortDescription>
+        <value>Cena spolu bez DPH</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Terms</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Terms</shortDescription>
+        <value>Platobné podmienky</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Total</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Total</shortDescription>
+        <value>Spolu</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_UOM</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_UOM</shortDescription>
+        <value>KS</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_VAT</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_VAT</shortDescription>
+        <value>DPH</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_VAT_Amount</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_VAT_Amount</shortDescription>
+        <value>Výška dane</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_VAT_Base</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_VAT_Base</shortDescription>
+        <value>Základ dane</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_VAT_Rate</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_VAT_Rate</shortDescription>
+        <value>Sadzba dane</value>
+    </labels>
+    <labels>
+        <fullName>SK_EMEA_Validity_Period</fullName>
+        <categories>Pricing Portal</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SK_EMEA_Validity_Period</shortDescription>
+        <value>Platnosť ponuky</value>
+    </labels>
+    <labels>
+        <fullName>Snares_Comp_Rule_SF_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Snares_Comp_Rule_SF_Id</shortDescription>
+        <value>a4F440000005MEnEAM</value>
+    </labels>
+    <labels>
+        <fullName>Snares_Comp_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Snares_Comp_Type</shortDescription>
+        <value>All Products</value>
+    </labels>
+    <labels>
+        <fullName>UserRoleForOpp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Used in the batch class to give access for Opportunity to a user role</shortDescription>
+        <value>AR Inside Sales Rep</value>
+    </labels>
+    <labels>
+        <fullName>What_type_of_question_do_you_have</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>What type of question do you have?</shortDescription>
+        <value>What type of question do you have?</value>
+    </labels>
+    <labels>
+        <fullName>contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact email</shortDescription>
+        <value>What is the contact&apos;s email address?</value>
+    </labels>
+    <labels>
+        <fullName>thankyou</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>thankyou</shortDescription>
+        <value>Thank you for submitting your Salesforce Case.The appropriate team will review your request and reach out with any additional questions. Please add any relevant attachments here.</value>
+    </labels>
+</CustomLabels>

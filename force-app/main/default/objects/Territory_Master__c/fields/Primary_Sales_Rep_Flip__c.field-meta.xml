@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Sales_Rep_Flip__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Makes the Primary Sales Rep preferred over Sales Rep which drives Sales and Quota record ownership. Used when ICM cannot be changed but we want a different rep to own related records.
+Make Primary Sales Rep Blank if you want the Manager to Own Sales.</inlineHelpText>
+    <label>Primary Sales Rep Flip</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

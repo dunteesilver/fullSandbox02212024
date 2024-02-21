@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fix_Territory_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>ZPSA_Table__c &amp; &quot;-&quot; &amp;
+Matching_Logic__c &amp; &quot;-&quot; &amp; 
+Territory__c &amp; 
+if(!ISBLANK(Territory2__c),&quot;-&quot; &amp; Territory2__c,
+if(!ISBLANK(Territory3__c),&quot;-&quot; &amp; Territory3__c,
+if(!ISBLANK(Territory4__c),&quot;-&quot; &amp; Territory4__c,
+&quot;&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fix Territory Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

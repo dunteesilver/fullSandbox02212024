@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Sample_Request</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Sample Request</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+
+function redirect()
+{
+parent.frames.location.replace(&apos;/{!$ObjectType.Sample_Request_OLD__c}/e?CF00Nc0000000xqDo={!Account.Name}&amp;CF00Nc0000000xqDo_lkid={!Account.Id}&amp;CF00Nc0000000xqDt={!$User.FirstName}+{!$User.LastName}&amp;CF00Nc0000000xqDt_lkid={!$User.Id}&amp;retURL=/{!Account.Id}&apos;);
+}
+
+redirect();</url>
+</WebLink>

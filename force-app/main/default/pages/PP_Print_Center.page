@@ -1,0 +1,188 @@
+<apex:page controller="PP_Print_Center" title="Pricing Portal - Print Center" tabStyle="Pricing_Portal__tab" sidebar="false">
+
+    <!-- This Variable Sets Whether a User can Print or Not -->
+    <apex:variable value="{!if(
+                          $UserRole.Name = 'Teleflex Global IT' || 
+                          $UserRole.Name = 'Commercial Operations' || 
+                          pq.Status__c = 'Approved' || 
+                          pq.Approval_Flag_Rollup__c = 0,TRUE,FALSE
+                          )}" var="Security"/>
+    <apex:variable var="csRemove" value="{!IF(LEFT($UserRole.Name,10) = 'Customer S',TRUE,FALSE)}"/>
+    <apex:variable value="{!IF(contains($UserRole.Name,'EMEA') || pq.BusinessUnit__c = 'EMEA',TRUE,FALSE)}" var="emeaUser"/>
+    <apex:outputText rendered="{!Security}">
+    <apex:pageMessages />
+        <!-- DIV to Render the rest of the page in Bootstrap -->
+        <div class="teleflex">
+            <!-- Call the Menu -->
+            <apex:include id="menu" pageName="PP_Menu"/>
+            <div class="contain-fluid">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><img src="/img/icon/documents24.png" alt="Price"/>&nbsp;&nbsp;{!$Label.EMEA_Print_Price_Quote}</h6>
+                            </div>
+                            <div class="panel-body">
+                                <apex:form id="form">
+                                    <apex:variable value="{!if(OR(pq.Stationary__c = 'EMS' || pq.Stationary__c = 'Cardiac' || pq.Stationary__c = 'Cardiac Service'),FALSE,TRUE)}" var="showOptions"/>
+                                    <table>
+                                        <tr>
+                                            <td align="right" style="padding: 5px;">{!$Label.EMEA_Price_Quote} :</td>
+                                            <td style="padding: 5px;">&nbsp;<strong><a href="/apex/PP_Price_Quote?pqid={!pq.id}">{!pq.Name} - {!pq.Account_Name__r.Name} - {!pq.Contact_Name__r.name}</a></strong></td></tr>
+                                        <tr>
+                                            <td align="right" style="padding: 5px;">{!$Label.EMEA_Stationary}:</td>
+                                            <td style="padding: 5px;">&nbsp;
+                                                <apex:outputText rendered="{!!emeaUser}">
+                                                    <apex:inputfield value="{!pq.Stationary__c}">
+                                                        <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                    </apex:inputfield>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!emeaUser}">
+                                                    {!pq.Stationary__c}
+                                                </apex:outputText>
+                                            </td>
+                                        </tr>
+                                        <apex:outputText rendered="{!showOptions}">
+                                            <!-- Customer Service -->
+                                            <apex:outputText rendered="{!csRemove}">
+                                                <td align="right" style="padding: 5px;">{!$Label.EMEA_Template}:</td>
+                                                <td style="padding: 5px;">&nbsp;
+                                                        <apex:selectList value="{!pq.Template__c}" size="1">
+                                                            <apex:selectOption itemValue="Arrow" itemLabel="Arrow"/>
+                                                            <apex:selectOption itemValue="Teleflex" itemLabel="Teleflex"/>
+                                                            <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                        </apex:selectList> 
+                                                    </td> 
+                                                <!--
+                                                <td style="padding: 5px;">&nbsp;
+                                                    <apex:selectList value="{!pq.Template__c}" size="1">
+                                                        <apex:selectOption itemValue="Standard" itemLabel="Standard"/>
+                                                        <apex:selectOption itemValue="Eaches" itemLabel="Eaches" />
+                                                        <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                    </apex:selectList> 
+                                                </td>-->
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!qURL='PP_Print_Quote_CS'}">
+                                                <tr>
+                                                    <td align="right" style="padding: 5px;">{!$Label.EMEA_Language}:</td>
+                                                    <td style="padding: 5px;">&nbsp;
+                                                        <apex:inputfield value="{!pq.Language__c}">
+                                                            <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                        </apex:inputfield>
+                                                    </td>
+                                                </tr>
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!!emeaUser}">
+                                            <tr><td align="right" style="padding: 5px;">{!$Label.EMEA_Show_Images}:</td><td style="padding: 5px;">&nbsp;<apex:inputField value="{!pq.Show_Images__c}">
+                                                <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                </apex:inputField></td>
+                                            </tr>
+                                            </apex:outputText>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!LEFT(pq.Stationary__c,7) != 'Cardiac' && !csRemove}">
+                                            <tr>
+                                                <td align="right" style="padding: 5px;">{!$Label.EMEA_Show_List_Prices}:</td><td style="padding: 5px;">&nbsp;<apex:inputField value="{!pq.Show_List_Price__c}">
+                                                <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                </apex:inputField></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" style="padding: 5px;">{!$Label.EMEA_Language}:</td>
+                                                <td style="padding: 5px;">&nbsp;<!-- Standard -->
+                                                    <apex:selectList value="{!pq.Language__c}" size="1">
+                                                        <apex:selectOption itemValue="English" itemLabel="English"/>
+                                                        <apex:selectOption itemValue="Spanish" itemLabel="Spanish" />
+                                                        <apex:selectOption itemValue="German" itemLabel="German" />
+                                                        <apex:selectOption itemValue="Czech" itemLabel="Czech" />
+                                                        <apex:selectOption itemValue="Dutch" itemLabel="Dutch" />
+                                                        <apex:selectOption itemValue="French" itemLabel="French" />
+                                                        <apex:selectOption itemValue="Italian" itemLabel="Italian" />
+                                                        <apex:selectOption itemValue="Polish" itemLabel="Polish" />
+                                                        <apex:selectOption itemValue="Portuguese" itemLabel="Portuguese" />
+                                                        <apex:selectOption itemValue="Slovakian" itemLabel="Slovakian" />
+                                                        <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                    </apex:selectList>
+                                                    <!--<apex:inputfield value="{!pq.Language__c}">
+                                                        <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                    </apex:inputfield>-->
+                                                </td>
+                                            </tr>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!!showOptions}">
+                                            <!-- pq.Stationary__c = 'Cardiac' -->
+                                            <tr>
+                                                <apex:outputText rendered="{!pq.Stationary__c = 'Cardiac'}">
+                                                    <td align="right" style="padding: 5px;">Template:</td>
+                                                    <td style="padding: 5px;">&nbsp;
+                                                        <apex:selectList value="{!pq.Template__c}" size="1">
+                                                            <apex:selectOption itemValue="Arrow Interventional" itemLabel="Arrow Interventional"/>
+                                                            <apex:selectOption itemValue="Arrow International" itemLabel="Arrow International" />
+                                                            <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                        </apex:selectList> 
+                                                    </td>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!pq.Stationary__c = 'EMS'}">
+                                                    <td align="right" style="padding: 5px;">Template:</td>
+                                                    <td style="padding: 5px;">&nbsp;
+                                                        <apex:selectList value="{!pq.Template__c}" size="1">
+                                                            <apex:selectOption itemValue="Arrow" itemLabel="Arrow"/>
+                                                            <apex:selectOption itemValue="Teleflex" itemLabel="Teleflex" />
+                                                            <apex:actionSupport event="onchange" action="{!save}" rerender="form"/>
+                                                        </apex:selectList> 
+                                                    </td>
+                                                </apex:outputText>
+                                                
+                                            </tr>
+                                            <tr><td align="right" style="padding: 5px;">&nbsp;</td><td style="padding: 5px;">&nbsp;</td></tr>
+                                        </apex:outputText>
+                                        <tr><td style="padding: 5px;">&nbsp;</td>
+                                            <td style="padding: 5px;">
+                                                <apex:commandButton action="{!print}" styleClass="btn btn-primary btn-sm" value="{!$Label.EMEA_Print_or_Preview}"/>&nbsp;
+                                                <a href="/apex/PP_Print_Quote_File_Export?r=pdf&id={!pq.id}{!lang}" class="btn btn-primary btn-sm">{!$Label.EMEA_Download_PDF}</a>&nbsp;
+                                                <!-- Customer Service -->
+                                                <apex:outputText rendered="{!!csRemove}">
+                                                    <apex:commandButton action="{!sendReport}" styleClass="btn btn-primary btn-sm" value="{!$Label.EMEA_Email_to_Self}"/>&nbsp;
+                                                    <apex:outputText rendered="{!IF( pqRec.Contact_Name__r.Email != NULL, true, false )}">
+                                                        <apex:commandButton action="{!sendEmail}" value="{!$Label.EMEA_Email_to_Customer}" styleClass="btn btn-primary btn-sm" />&nbsp;
+                                                    </apex:outputText>
+                                                    <apex:outputText rendered="{!IF( pqRec.Contact_Name__r.Email = NULL, true, false )}">
+                                                        <apex:commandButton action="{!sendEmail}" value="{!$Label.EMEA_Email_to_Customer}" styleClass="btn btn-primary btn-sm disabled" />&nbsp;
+                                                    </apex:outputText>
+                                                </apex:outputText>
+                                                <apex:commandButton action="{!cancel}" styleClass="btn btn-primary btn-sm"  value="{!$Label.EMEA_Return_to_Quote}"/>
+                                            </td>
+                                        </tr>
+                                        <tr><td>&nbsp;</td>
+                                            <td style="padding: 4px;"><br/><apex:iframe src="/apex/{!qURL}?r=pdf&id={!pq.id}{!lang}" scrolling="true" frameborder="true" title="Test Title" width="100%"/></td>
+                                        </tr>
+                                    </table>
+                                </apex:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </apex:outputText>
+    <apex:outputText rendered="{!!Security}">
+        <div class="teleflex">
+            <div class="contain-fluid">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><img src="/img/icon/documents24.png" alt="Price"/>&nbsp;&nbsp;{!$Label.EMEA_Price_Quote}: <a href="/apex/PP_Price_Quote?pqid={!pq.id}">{!pq.Name} - {!pq.Account_Name__r.Name} - {!pq.Contact_Name__r.name}</a></h6>
+                            </div>
+                            <div class="panel-body">
+                                <p>{!$Label.EMEA_Quote_Requires_Approval}</p>
+                                <p>{!$Label.EMEA_Quote_Status}: {!pq.Status__c}</p>
+                                <p>{!$Label.EMEA_Verify_Quote_Status}</p>
+                                <p><a href="/apex/PP_Price_Quote?pqid={!pq.id}" class="btn btn-primary btn-sm">{!$Label.EMEA_Return_to_Quote}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </apex:outputText>
+
+</apex:page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Landmarking_PH_on_next_10_Patients__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Post: Consider landmarking PH on next 10 patients ?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Post: Consider landmarking PH on next 10 patients ?</inlineHelpText>
+    <label>Post: Landmarking PH on next 10 Patients</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cardiac_basis_for_conclusion</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+RecordType.Name   = &quot;Cardiac_Care&quot;,
+ISPICKVAL(  Did_device_cause_contribute_to_death_inj__c, &quot;Yes&quot;),
+ISBLANK( If_yes_state_basis_for_conclusion__c ))</errorConditionFormula>
+    <errorDisplayField>If_yes_state_basis_for_conclusion__c</errorDisplayField>
+    <errorMessage>If the device caused or contributed to the death/injury of the patient, please provide a basis for that conclusion.</errorMessage>
+</ValidationRule>

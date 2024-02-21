@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Floor_List_Price_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+OR(
+Floor_Price__c &gt; List_Price__c,
+Floor_Price__c &gt; Rep_Price__c,
+Floor_Price__c &gt; RSM_Price__c 
+),
+List_Price__c &gt; 0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Floor List Price Check</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

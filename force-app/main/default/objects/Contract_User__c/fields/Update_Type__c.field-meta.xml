@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Type__c</fullName>
+    <defaultValue>&quot;New&quot;</defaultValue>
+    <description>Field used by APEX to filter Sales Org updates vs. User Updates.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field used by APEX to filter Sales Org updates vs. User Updates.</inlineHelpText>
+    <label>Update Type</label>
+    <length>10</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

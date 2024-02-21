@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surgical_Opportunity_Mass_Update</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Confidence_Rating__c</columns>
+    <columns>Price_Quote__c</columns>
+    <columns>Primary_Contact__c</columns>
+    <columns>Product_of_Interest_GPL__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Business_Unit_GPL__c</field>
+        <operation>equals</operation>
+        <value>Surgical Disposables,Surgical Instruments</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Qualified Prospect,Budget Allocated,Financial Decision,Trial/Evaluation</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Teleflex_Standard_Opportunity</value>
+    </filters>
+    <label>Surgical Opportunity Mass Update</label>
+    <sharedTo>
+        <roleAndSubordinates>Surgical_Executive</roleAndSubordinates>
+    </sharedTo>
+</ListView>

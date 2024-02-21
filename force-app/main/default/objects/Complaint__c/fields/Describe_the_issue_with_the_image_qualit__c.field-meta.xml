@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Describe_the_issue_with_the_image_qualit__c</fullName>
+    <description>Describe the issue with the image quality</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the issue details</inlineHelpText>
+    <label>Describe the issue with image quality</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

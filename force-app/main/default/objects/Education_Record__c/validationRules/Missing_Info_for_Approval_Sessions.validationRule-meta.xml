@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Info_for_Approval_Sessions</fullName>
+    <active>true</active>
+    <description>Need # sessions</description>
+    <errorConditionFormula>AND( Contains(RecordType.Name,&quot;Education Program Request&quot;)  ,
+ OR(Course_Type__c =&quot;Live Training&quot;,Course_Type__c =&quot;Speaker Program&quot;),
+ISPICKVAL( Stage__c , &quot;confirmed&quot;),
+(RecordType.DeveloperName != &quot;Clinical Sales Program&quot; || RecordType.DeveloperName != &quot;CMA Program&quot;),
+ISBLANK(  Number_of_Sessions__c  ))</errorConditionFormula>
+    <errorMessage>In order to approve, please enter the # of sessions</errorMessage>
+</ValidationRule>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_quiet_period_for_the_incumbent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Confirm “quiet period” for the incumbent competitive vendor
+PICC,Midline, Arterials
+Trial/Evaluation Stage
+Round Table with the Account/Sales</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirm “quiet period” for the incumbent competitive vendor
+PICC,Midline, Arterials
+Trial/Evaluation Stage
+Round Table with the Account/Sales</inlineHelpText>
+    <label>Confirm quiet period for the incumbent</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

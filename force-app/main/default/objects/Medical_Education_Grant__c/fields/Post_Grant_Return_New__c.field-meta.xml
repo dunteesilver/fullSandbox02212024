@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Grant_Return_New__c</fullName>
+    <externalId>false</externalId>
+    <label>Post Grant Return</label>
+    <summarizedField>Medical_Education_Grant_Products__c.Product_Value__c</summarizedField>
+    <summaryFilterItems>
+        <field>Medical_Education_Grant_Products__c.Category__c</field>
+        <operation>equals</operation>
+        <value>Post Grant Return</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Medical_Education_Grant_Products__c.Medical_Education_Grant__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

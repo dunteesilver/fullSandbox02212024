@@ -1,0 +1,4 @@
+<apex:page showHeader="true" sidebar="true" standardController="VPS__c">
+<apex:include pageName="vpsMenu"/>
+    <apex:detail subject="{!VPS__c.Id}" relatedList="true" title="false" />
+</apex:page>

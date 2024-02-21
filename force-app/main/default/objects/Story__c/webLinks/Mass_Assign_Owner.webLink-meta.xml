@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mass_Assign_Owner</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Mass Assign Owner</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var url = parent.location.href; 
+var records = {!GETRECORDIDS($ObjectType.Story__c)}; 
+
+if (records[0] == null) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_NoStoriesSelected}&quot;); 
+} 
+
+else 
+{ 
+var Assign = prompt(&quot;{!$Label.ButtonPrompt_EnterAssignToName}&quot;,&quot;&quot;); 
+
+if ( Assign == &quot; &quot; || Assign == false ) 
+{
+alert(&quot;{!$Label.ButtonAlert_AssignedToNameBlank}&quot;); 
+}
+
+else if ( Assign != null &amp;&amp; Assign != &quot;&quot; ) 
+{ 
+var queryTeamMember = &quot;Select Id, Name FROM Team_Member__c WHERE Name = &apos;&quot; + Assign + &quot;&apos;&quot;; 
+var queryTeamMemberResults = sforce.connection.query(queryTeamMember); 
+var lookupTeamMemberAssignId; 
+lookupTeamMemberAssignId = null; 
+var TeamMemberDetails = queryTeamMemberResults.getArray(&apos;records&apos;); 
+
+if (TeamMemberDetails[0] == undefined) 
+{ 
+
+} 
+
+else 
+{ 
+var lookupTeamMemberAssignId = TeamMemberDetails[0].Id; 
+} 
+
+if(lookupTeamMemberAssignId == null) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_AssignedToNameNotFound}&quot;); 
+} 
+
+else 
+{ 
+var query = &quot;Select Id, Owner__c, Status__c FROM Story__c WHERE (Status__c = &apos;{!$Label.FieldValue_StoryStatusProductBacklog}&apos; OR Status__c = &apos;{!$Label.FieldValue_StoryStatusInSprint}&apos;) AND Id IN (&quot;; 
+for (var n=0; n&lt;records.length; n++) 
+{ 
+query = query + &quot;&apos;&quot;+records[n]+&quot;&apos;&quot;; 
+if (n!=records.length-1) 
+{ 
+query = query + &quot;,&quot;; 
+} 
+} 
+query = query + &quot;)&quot;; 
+
+var queryResults = sforce.connection.query(query); 
+var objDetails = queryResults.getArray(&apos;records&apos;); 
+var updateRecords = []; 
+var objectIterator = new sforce.QueryResultIterator(queryResults); 
+
+while (objectIterator.hasNext()) 
+{ 
+var itemObj = objectIterator.next(); 
+itemObj.Owner__c = lookupTeamMemberAssignId; 
+updateRecords.push(itemObj); 
+} 
+
+sforce.connection.update(updateRecords); 
+
+if (records.length &gt; objDetails.length)
+{
+alert(objDetails.length + &quot; &quot; + &quot;{!$Label.ButtonAlert_ArticleOfThe}&quot; + &quot; &quot; + records.length + &quot; &quot; + &quot;{!$Label.ButtonAlert_SuccessAssignedAll}&quot; + &quot; &quot; + TeamMemberDetails[0].Name + &quot; &quot; + &quot;{!$Label.ButtonAlert_ArticleAsYouRequested}&quot; + &quot; &quot; + &quot;{!$Label.ButtonAlert_SuccessAssignedSome}&quot;);
+
+parent.location.href = url; 
+}
+
+else
+{
+alert(&quot;{!$Label.ButtonAlert_ArticleThe}&quot; + &quot; &quot; + records.length + &quot; &quot; + &quot;{!$Label.ButtonAlert_SuccessAssignedAll}&quot; + &quot; &quot; + TeamMemberDetails[0].Name + &quot; &quot; + &quot;{!$Label.ButtonAlert_ArticleAsYouRequested}&quot;);
+
+parent.location.href = url; 
+} 
+
+} 
+
+}
+
+}</url>
+</WebLink>

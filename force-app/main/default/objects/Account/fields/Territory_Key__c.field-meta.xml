@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Key__c</fullName>
+    <description>Territory_Key__c is built every day as part of the daily Invoiced Sales ETL. 
+Apex: account_Active_Sales
+Scheduled Apex: Invoiced_Sales_Maintenance_Scheduler</description>
+    <externalId>false</externalId>
+    <inlineHelpText>List of Territory Numbers that have Sales related to this Account.</inlineHelpText>
+    <label>Territory Key</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

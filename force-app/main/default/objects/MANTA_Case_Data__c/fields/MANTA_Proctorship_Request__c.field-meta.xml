@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MANTA_Proctorship_Request__c</fullName>
+    <externalId>false</externalId>
+    <label>MANTA Proctorship Request</label>
+    <referenceTo>MANTA_Proctorship_Request__c</referenceTo>
+    <relationshipLabel>MANTA Case Records</relationshipLabel>
+    <relationshipName>MANTA_Case_Datas</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

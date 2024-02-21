@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Contract_Team_View_Read_all</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contract Team View/Read all</label>
+        <sharedTo>
+            <group>Contracts_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

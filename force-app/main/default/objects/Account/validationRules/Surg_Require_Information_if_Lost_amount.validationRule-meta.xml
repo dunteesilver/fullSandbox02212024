@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surg_Require_Information_if_Lost_amount</fullName>
+    <active>false</active>
+    <description>If the Account At Risk is set to Lost</description>
+    <errorConditionFormula>AND(TEXT( Surgical_at_risk_status__c ) = &quot;Lost&quot;, isblank( Surgical_at_risk_amount__c ) )</errorConditionFormula>
+    <errorMessage>Please enter the amount lost on this account</errorMessage>
+</ValidationRule>

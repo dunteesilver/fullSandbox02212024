@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Director__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Oh Canada - Fix because Canada does not have an RSM just DIR 
+02Jan2018 - ESC
+*/
+if(AND(
+Role_Toggle__c = &quot;REP&quot;,
+TEXT(Parent_Territory__r.Role__c) = &quot;Sales Director&quot;
+),
+Parent_Territory__r.Director_Name__c,
+
+/* REP Special */
+if(AND(
+Role_Toggle__c = &quot;REP&quot;,
+NOT(ISBLANK(Parent_Territory__r.Director_Name__c))
+),
+Parent_Territory__r.Director_Name__c,
+
+/* RSM Regular */
+if(AND(
+Role_Toggle__c = &quot;RSM&quot;,
+ISBLANK(Director_Name__c)
+),
+Parent_Territory__r.Director_Name__c,
+
+/* RSM Special */
+if(AND(
+Role_Toggle__c = &quot;RSM&quot;,
+NOT(ISBLANK(Director_Name__c))
+),
+Director_Name__c,
+/* Director */
+if(Role_Toggle__c = &quot;DIR&quot;,Director_Name__c,
+/* Close out the IF */
+/* REP Regular */
+Parent_Territory__r.Parent_Territory__r.Director_Name__c
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Field used to Filter Sales and Territories by the Director.</inlineHelpText>
+    <label>Director</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

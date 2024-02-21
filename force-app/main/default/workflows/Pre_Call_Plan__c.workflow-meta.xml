@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Email_to_RSM_for_Pre_Call_Review</fullName>
+        <description>Send Email to RSM for Pre Call Review</description>
+        <protected>false</protected>
+        <recipients>
+            <field>RSMEmailAddress__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Pre_Call_Balance_Seller_Email_to_RSM</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_to_MSR_for_review_of_comments</fullName>
+        <description>Send to MSR for review of comments</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Createdbysemailadrress__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Pre_Call_Balance_Seller_Email_to_MSR</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Created_by_Email_Update</fullName>
+        <field>Createdbysemailadrress__c</field>
+        <formula>CreatedBy.Email</formula>
+        <name>Created by Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>MSR_Email_Uncheck</fullName>
+        <field>SendbacktoMSR__c</field>
+        <literalValue>0</literalValue>
+        <name>MSR Email Uncheck</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RSM_Email_Update</fullName>
+        <field>RSMEmailAddress__c</field>
+        <formula>CreatedBy.Manager_s_Email__c</formula>
+        <name>RSM Email Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Send_email_to_RSM_Field</fullName>
+        <field>SendEmailtoRSMforReview__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Send email to RSM Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Created by Email Update</fullName>
+        <actions>
+            <name>Created_by_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Pre_Call_Plan__c.Createdbysemailadrress__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Pre Call Balance Seller Email to RSM</fullName>
+        <actions>
+            <name>Send_Email_to_RSM_for_Pre_Call_Review</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Pre_Call_Plan__c.SendEmailtoRSMforReview__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>WFR will send email to created by&apos;s manager, which is supposed to be a RSM</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Uncheck_Send_email_to_RSM_Field</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RSM Comments Email</fullName>
+        <actions>
+            <name>Send_to_MSR_for_review_of_comments</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Pre_Call_Plan__c.SendbacktoMSR__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>MSR_Email_Uncheck</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RSM Email Update</fullName>
+        <actions>
+            <name>RSM_Email_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Pre_Call_Plan__c.RSMEmailAddress__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Pre_Call_Plan__c.RSMEmailAddress__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

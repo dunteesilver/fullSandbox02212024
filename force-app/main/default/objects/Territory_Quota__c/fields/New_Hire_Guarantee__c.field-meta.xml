@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Hire_Guarantee__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+/* True New Hire */
+AND(
+UPPER(Payee_ID__c) &lt;&gt; &quot;ALL&quot;,
+Empty_Quota__c = FALSE,
+Quota__c = 0
+),
+/* Filter out Unassigned */
+UPPER(Payee_ID__c) = &quot;UNASSIGNED&quot;,
+/* Filter out Previous Rep&apos;s */
+AND(
+UPPER(Payee_ID__c) &lt;&gt; &quot;ALL&quot;,
+Payee_ID__c &lt;&gt;  Territory_Master__r.Payee_Id__c  
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Filters out both New Hire Guarantee &apos;Zero&apos; quota months as well as Previous Sales Rep&apos;s and Quota assigned to &quot;UNASSIGNED&quot;</inlineHelpText>
+    <label>New Hire Guarantee</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

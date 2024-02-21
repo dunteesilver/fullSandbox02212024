@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_System__c</fullName>
+    <externalId>false</externalId>
+    <label>Source System</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GLOBAL</fullName>
+                <default>false</default>
+                <label>GLOBAL</label>
+            </value>
+            <value>
+                <fullName>ECC60</fullName>
+                <default>false</default>
+                <label>ECC60</label>
+            </value>
+            <value>
+                <fullName>SAP46C</fullName>
+                <default>false</default>
+                <label>SAP46C</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

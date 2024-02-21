@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Zero_and_Negative_values</fullName>
+    <active>true</active>
+    <errorConditionFormula>Units_with_Alleged_Issue__c &lt;= 0</errorConditionFormula>
+    <errorDisplayField>Units_with_Alleged_Issue__c</errorDisplayField>
+    <errorMessage>The Number should be greater that Zero</errorMessage>
+</ValidationRule>

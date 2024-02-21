@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Master_CL</fullName>
+    <fields>Sales_Rep_Name__c</fields>
+    <fields>Manager_Name__c</fields>
+    <fields>Name</fields>
+    <fields>Region_Name__c</fields>
+    <fields>Region_Number__c</fields>
+    <label>Territory Master CL</label>
+</CompactLayout>

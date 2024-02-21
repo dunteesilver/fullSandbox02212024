@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_LATAM_List_Price__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(List_Price__c &lt;&gt; Distributor_List__c, Sales_Org_Key__c = &quot;US103020&quot;),&quot;Mis-match&quot;,&quot;OK&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Check LATAM List Price</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

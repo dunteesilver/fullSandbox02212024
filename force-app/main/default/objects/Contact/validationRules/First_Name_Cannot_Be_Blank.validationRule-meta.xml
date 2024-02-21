@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Name_Cannot_Be_Blank</fullName>
+    <active>true</active>
+    <description>Enforce first name for Contacts.</description>
+    <errorConditionFormula>ISBLANK(FirstName)</errorConditionFormula>
+    <errorDisplayField>FirstName</errorDisplayField>
+    <errorMessage>First name cannot be blank.</errorMessage>
+</ValidationRule>

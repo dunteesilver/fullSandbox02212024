@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Baseline_Quota_to_date__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Quota for this month is prorated using the associated Run Rate */
+if(AND (Date__c = Business_Days__r.Date_Key__c, Quota_Attribute__c = &quot;BASELINE QUOTA&quot;),
+Quota__c * Business_Days__r.Run_Rate__c,
+/* Else if Quota is in the future then Zero Quota */
+if(AND (Date__c &gt; Business_Days__r.Date_Key__c, Quota_Attribute__c = &quot;BASELINE QUOTA&quot;),
+0,
+/* Else Previous Months are full quota */
+if(Quota_Attribute__c = &quot;BASELINE QUOTA&quot;,
+Quota__c,0
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Baseline Quota to date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>At_Risk_Business_Notification_to_Sales</fullName>
+        <description>At Risk Business Notification to  VP of Sales</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Vascular_Executive</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/At_Risk_Customer_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>At_Risk_Customer_Account_Arterials</fullName>
+        <description>At Risk Customer Account - Arterials</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>antje.jaedtke@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>matt.boretti@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/At_Risk_Customer_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>At_Risk_Customer_Account_CVC</fullName>
+        <description>At Risk Customer Account - CVC</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>matt.boretti@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shaun.hanna@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/At_Risk_Customer_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>At_Risk_Customer_Account_PICCs</fullName>
+        <description>At Risk Customer Account -PICCs</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hodemer@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jake.newman@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tom.kuhn@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/At_Risk_Customer_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>At_Risk_Customer_Account_VPS</fullName>
+        <description>At Risk Customer Account -VPS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>david.bigg@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jake.newman@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>madeleine.lyell@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/At_Risk_Customer_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Account_has_been_created_by_LatAm_User</fullName>
+        <description>New Account has been created by LatAm User</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>cris.gomide@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/CASE_NOTIFY_USER_OF_NEW_CASE2</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_PR_Sales_Region</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>US Exports</literalValue>
+        <name>Account - PR Sales Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Billing_City</fullName>
+        <field>BillingCity</field>
+        <formula>ShippingCity</formula>
+        <name>Account - Update Billing City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Billing_Country</fullName>
+        <field>BillingCountry</field>
+        <formula>ShippingCountry</formula>
+        <name>Account - Update Billing Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Billing_State</fullName>
+        <field>BillingState</field>
+        <formula>ShippingState</formula>
+        <name>Account - Update Billing State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Billing_Street</fullName>
+        <field>BillingStreet</field>
+        <formula>ShippingStreet</formula>
+        <name>Account - Update Billing Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Billing_Zip</fullName>
+        <field>BillingPostalCode</field>
+        <formula>ShippingPostalCode</formula>
+        <name>Account - Update Billing Zip</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Shipping_City</fullName>
+        <field>ShippingCity</field>
+        <formula>BillingCity</formula>
+        <name>Account - Update Shipping City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Shipping_Country</fullName>
+        <field>ShippingCountry</field>
+        <formula>BillingCountry</formula>
+        <name>Account - Update Shipping Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Shipping_State</fullName>
+        <field>ShippingState</field>
+        <formula>BillingState</formula>
+        <name>Account - Update Shipping State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Shipping_Street</fullName>
+        <field>ShippingStreet</field>
+        <formula>BillingStreet</formula>
+        <name>Account - Update Shipping Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_Update_Shipping_Zip</fullName>
+        <field>ShippingPostalCode</field>
+        <formula>BillingPostalCode</formula>
+        <name>Account - Update Shipping Zip</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_IDN_Region_Text_Field</fullName>
+        <description>Update IDN Region Test Field.</description>
+        <field>IDN_Region_Text__c</field>
+        <formula>IDN_Region_from_IDN_Acct__c</formula>
+        <name>Add IDN Region Text Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Brazil</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Brazil</literalValue>
+        <name>Sales Region - Brazil</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Chile</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Chile</literalValue>
+        <name>Sales Region - Chile</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Colombia</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Colombia</literalValue>
+        <name>Sales Region - Colombia</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Export_Carib</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>US Exports</literalValue>
+        <name>Sales Region - Export &amp; Carib</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Mexico</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Mexico</literalValue>
+        <name>Sales Region Mexico</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Northern_Cone</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Central America - North Cone</literalValue>
+        <name>Sales Region - Northern Cone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Southern_Cone</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Southern Cone</literalValue>
+        <name>Sales Region - Southern Cone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region_Venezuela</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Venezuela</literalValue>
+        <name>Sales Region - Venezuela</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Secondary_GPO_Fix</fullName>
+        <field>Secondary_GPO__c</field>
+        <name>Secondary GPO Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Silly_SAP_Workflow</fullName>
+        <field>SAP_Code__c</field>
+        <formula>SAP_Sold_To__c</formula>
+        <name>Silly SAP Workflow</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Timestamp_ECENTA_Field</fullName>
+        <description>Timestamp ECENTA Timestamp field with date/time of workflow rule trigger.</description>
+        <field>ECENTA_Timestamp__c</field>
+        <formula>LastModifiedDate</formula>
+        <name>Timestamp ECENTA Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_IDN_Region</fullName>
+        <description>Update IDN Region (Text) field on account</description>
+        <field>IDN_Region_Text__c</field>
+        <formula>IDN_Region_from_IDN_Acct__c</formula>
+        <name>Update IDN Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_IDN_Region_Text_Field</fullName>
+        <field>IDN_Region_Text__c</field>
+        <formula>IDN__r.IDN_Region_Text__c</formula>
+        <name>Update IDN Region Text Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Sales_Region_Brazil</fullName>
+        <field>Sales_Region__c</field>
+        <literalValue>Brazil</literalValue>
+        <name>Update Sales Region - Brazil</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account - Update Billing Address</fullName>
+        <actions>
+            <name>Account_Update_Billing_City</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Billing_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Billing_State</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Billing_Street</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Billing_Zip</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( 
+      AND( 
+            (Account_Record_Type_Name__c &lt;&gt; &quot;Prospect Customer&quot;), 
+            (Account_Record_Type_Name__c &lt;&gt; &quot;Associations&quot;)), 
+      OR( 
+            BillingCity &lt;&gt; ShippingCity, 
+            BillingCountry &lt;&gt; ShippingCountry, 
+            BillingState &lt;&gt; ShippingState, 
+            BillingPostalCode &lt;&gt; ShippingPostalCode, 
+            BillingStreet &lt;&gt; ShippingStreet 
+))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account data has changed</fullName>
+        <actions>
+            <name>Timestamp_ECENTA_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule to check for certain changes in account data to send accounts over to ECENTA.</description>
+        <formula>OR( ISCHANGED(BillingStreet),ISCHANGED(BillingCity),ISCHANGED(BillingState),ISCHANGED(BillingPostalCode),ISCHANGED(BillingCountry), ISCHANGED(ShippingStreet),ISCHANGED(ShippingCity),ISCHANGED(ShippingState),ISCHANGED(ShippingPostalCode),ISCHANGED(ShippingCountry), ISCHANGED( Type ), ISCHANGED( Main_GPO__c ), ISCHANGED( Secondary_GPO__c ), ISCHANGED( ERP_Active__c ), ISCHANGED( IDN__c ), ISCHANGED( Radiology__c ), ISCHANGED( Emergency__c ), ISCHANGED( Cath_Lab__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Association Account - Update Shipping Address</fullName>
+        <actions>
+            <name>Account_Update_Shipping_City</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Shipping_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Shipping_State</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Shipping_Street</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Account_Update_Shipping_Zip</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(         Account_Record_Type_Name__c =  &quot;Associations&quot;,        NOT(ISBLANK(BillingAddress)),        ISBLANK(ShippingAddress))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>LatAm Customer Creation Flag</fullName>
+        <actions>
+            <name>New_LatAm_Account</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>LatAm Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>TFX System Administrator</value>
+        </criteriaItems>
+        <description>Switched the Profile from &apos;System Administrator&apos; to &apos;TFX System Administrator&apos;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam - Sales Region - Brazil</fullName>
+        <actions>
+            <name>Update_Sales_Region_Brazil</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>BR,Brazil,Brasil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>BR,Brazil,Brasil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.SAP_Sold_To__c</field>
+            <operation>equals</operation>
+            <value>156268</value>
+        </criteriaItems>
+        <description>Change Account sales region to Brazil when country states the account is in Brazil</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam - Sales Region - Colombia</fullName>
+        <actions>
+            <name>Sales_Region_Colombia</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>CO,Colombia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>CO,Colombia</value>
+        </criteriaItems>
+        <description>Change Account sales region to Colombia when country states the account is in Colombia region</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam - Sales Region - Export %26 Carib</fullName>
+        <actions>
+            <name>Sales_Region_Export_Carib</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>BB,BM,BS,DO,HT,JM,PR,TT,US,USA,United States,United States of America</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>BB,BM,BS,DO,HT,JM,PR,TT,US,USA,United States,United States of America</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.SAP_Sold_To__c</field>
+            <operation>notEqual</operation>
+            <value>156268</value>
+        </criteriaItems>
+        <description>Change Account sales region to Export &amp; Carib when country states the account is in Export &amp; Carib region. Billing Country: BB,BM,BS,DO,HT,JM,PR,TT,US</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam - Sales Region - Mexico</fullName>
+        <actions>
+            <name>Sales_Region_Mexico</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>MX,Mexico</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>MX,Mexico</value>
+        </criteriaItems>
+        <description>Change Account sales region to Mexico when country states the account is in Mexico region</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam - Sales Region - Northern Cone</fullName>
+        <actions>
+            <name>Sales_Region_Northern_Cone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>CR,EC,GT,HN,NI,PA,PE,SR,SV,Guatemala,Costa Rica,Ecuador,Panama</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>CR,EC,GT,HN,NI,PA,PE,SR,SV,Guatemala,Costa Rica,Ecuador,Panama</value>
+        </criteriaItems>
+        <description>Change Account sales region to Northern Cone when country states the account is in Northern Cone region. Billing Country: CR,EC,GT,HN,NI,PA,PE,SR,SV</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam - Sales Region - Southern Cone</fullName>
+        <actions>
+            <name>Sales_Region_Southern_Cone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>AR,BO,CL,PY,UY,Chile</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>AR,BO,CL,PY,UY,Chile</value>
+        </criteriaItems>
+        <description>Change Account sales region to Southern Cone when country states the account is in Southern Cone region. Billing Country: AR,BO,CL,PY,UY</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam - Sales Region - Venezuela</fullName>
+        <actions>
+            <name>Sales_Region_Venezuela</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>VE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>VE</value>
+        </criteriaItems>
+        <description>Change Account sales region to Venezuela when country states the account is in Venezuela region</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales Region - Brazil</fullName>
+        <actions>
+            <name>Sales_Region_Brazil</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>BR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.SAP_Sold_To__c</field>
+            <operation>equals</operation>
+            <value>156268</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales Region - Chile</fullName>
+        <actions>
+            <name>Sales_Region_Chile</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>CL</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales Region - Colombia</fullName>
+        <actions>
+            <name>Sales_Region_Colombia</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>CO</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales Region - Mexico</fullName>
+        <actions>
+            <name>Sales_Region_Mexico</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>MX,Mexico,México</value>
+        </criteriaItems>
+        <description>Set the Sales Region to Mexico for Country code MX</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales Region - Puerto Rico</fullName>
+        <actions>
+            <name>Account_PR_Sales_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>PR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Sales_Region__c</field>
+            <operation>notEqual</operation>
+            <value>US Exports</value>
+        </criteriaItems>
+        <description>Set the Sales Region to Puerto Rico for Country code PR</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Secondary GPO Fix</fullName>
+        <actions>
+            <name>Secondary_GPO_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Fix issue with postal code showing in Secondary GPO field.</description>
+        <formula>NOT( ISNULL( TEXT(Secondary_GPO__c )) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Silly SAP Workflow</fullName>
+        <actions>
+            <name>Silly_SAP_Workflow</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>SAP_Code__c &lt;&gt;  SAP_Sold_To__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update IDN Region</fullName>
+        <actions>
+            <name>Add_IDN_Region_Text_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_IDN_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>WF to update IDN Region (Text) field on account to create criteria based sharing rules for corporate accounts.</description>
+        <formula>IDN_Region_from_IDN_Acct__c &lt;&gt; IDN_Region_Text__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update IDN Region Text</fullName>
+        <actions>
+            <name>Update_IDN_Region_Text_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update IDN Region Text field to match IDN lookup Account on Account records.
+/*NOT( ISBLANK(IDN__r.Name) )</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>New_LatAm_Account</fullName>
+        <assignedTo>siva.machineni@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>A new Latin America account has been created and requires your review.</description>
+        <dueDateOffset>10</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New LatAm Account</subject>
+    </tasks>
+</Workflow>

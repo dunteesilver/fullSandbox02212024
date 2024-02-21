@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UseofAvailableClinicalToolsDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Use of Available Clinical Tools Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Use_of_Available_Clinical_Tools__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Does not use clinical tools</fullName>
+                <default>false</default>
+                <label>Does not use clinical tools</label>
+            </value>
+            <value>
+                <fullName>Frequently requires assistance and instructions on the use of clinical tools</fullName>
+                <default>false</default>
+                <label>Frequently requires assistance and instructions on the use of clinical tools</label>
+            </value>
+            <value>
+                <fullName>Effectively utilizes and understands clinical tools</fullName>
+                <default>false</default>
+                <label>Effectively utilizes and understands clinical tools</label>
+            </value>
+            <value>
+                <fullName>Proficient in product development and instruction utilizing the available clinical tools</fullName>
+                <default>false</default>
+                <label>Proficient in product development and instruction utilizing the available clinical tools</label>
+            </value>
+            <value>
+                <fullName>Exceptional knowledge of the available clinical tools</fullName>
+                <default>false</default>
+                <label>Exceptional knowledge of the available clinical tools</label>
+            </value>
+            <value>
+                <fullName>Mentors others on the use of available clinical tools</fullName>
+                <default>false</default>
+                <label>Mentors others on the use of available clinical tools</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not use clinical tools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Frequently requires assistance and instructions on the use of clinical tools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Effectively utilizes and understands clinical tools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Proficient in product development and instruction utilizing the available clinical tools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Exceptional knowledge of the available clinical tools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Mentors others on the use of available clinical tools</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,24 @@
+<aura:component controller="TFX_MANTA_Handler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="showSetup" type="Boolean" default=""/>
+    
+    <article class="slds-align_absolute-center slds-card" style="width: 100%">
+        <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">
+            <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+            <br/><br/><br/>
+            <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_large">Setup Options</div>
+            
+            <lightning:layout class="slds-align_absolute-center">
+                <lightning:layoutItem>
+                    <aura:if isTrue="{!v.showSetup}">
+                        <lightning:button class="slds-size_12-of-12" variant="Brand" label="Trainers" onclick="{!c.navigateToTFX_MANTA_Proctors_Comp}" /><br/><br/>
+                    </aura:if>
+                    <lightning:button class="slds-size_12-of-12" variant="Brand" label="Physicians" onclick="{!c.navigateToTFX_MANTA_Physicians_Comp}" /><br/><br/> 
+                </lightning:layoutItem>
+            </lightning:layout>    
+        </div>
+    </article>
+    
+</aura:component>

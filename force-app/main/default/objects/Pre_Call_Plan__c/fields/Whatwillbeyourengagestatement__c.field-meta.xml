@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Whatwillbeyourengagestatement__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Insight (knowledge of their business you&apos;d like to explore); 
+Agenda (…to ask questions/learn more about..); 
+Outcome (value to the customer)</inlineHelpText>
+    <label>What will be your engage statement?</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

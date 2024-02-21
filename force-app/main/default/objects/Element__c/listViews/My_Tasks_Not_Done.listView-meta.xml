@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Tasks_Not_Done</fullName>
+    <columns>NAME</columns>
+    <columns>User_Story__c</columns>
+    <columns>Project__c</columns>
+    <columns>Status__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Description__c</columns>
+    <columns>Results__c</columns>
+    <columns>LOE__c</columns>
+    <columns>Owner__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Element__c.Task</value>
+    </filters>
+    <filters>
+        <field>IsOwner__c</field>
+        <operation>equals</operation>
+        <value>TRUE</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started,In Progress</value>
+    </filters>
+    <label>My Tasks Not Done</label>
+    <language>en_US</language>
+</ListView>

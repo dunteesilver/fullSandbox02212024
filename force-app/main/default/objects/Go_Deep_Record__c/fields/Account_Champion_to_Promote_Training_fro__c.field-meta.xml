@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Champion_to_Promote_Training_fro__c</fullName>
+    <description>Do you have a champion within account who will promote training from within?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do you have a champion within account who will promote training from within?</inlineHelpText>
+    <label>Account Champion to Promote Training fro</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

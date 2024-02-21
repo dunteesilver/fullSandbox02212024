@@ -1,0 +1,319 @@
+<apex:page controller="PP_User_Administration" sidebar="false" tabStyle="Pricing_Portal__tab" >
+    <style>
+        .green {
+        background-color: Lime;
+        }
+        .grey {
+        color: Gainsboro;
+        }
+    </style>
+
+    <div class="teleflex">
+        <!-- Call the Menu -->
+    	<apex:include id="menu" pageName="PP_Menu"/>
+        
+        <div class="contain-fluid">
+            <div class="row">
+			<!-- Checks to see if the user has 'Admin' -->
+                <apex:outputPanel rendered="{!va == TRUE}">
+
+                    <!-- User Edit -->
+                    <apex:outputPanel rendered="{!uid <> NULL}">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands32.png" alt="Contract Details"/>&nbsp;&nbsp;{!u.Name}</h6></div>
+                                <div class="panel-body">
+                                    <apex:form >
+                                        <table class="table">
+                                            <tr>
+                                                <td colspan="4" class="text-center">
+                                                    <apex:commandButton action="{!save}" styleClass="btn btn-primary btn-sm" value=" Save and Return "/>&nbsp;&nbsp;&nbsp;
+                                                    <apex:commandButton action="{!cancel}" styleClass="btn btn-primary btn-sm" value=" Cancel "/>&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr><td class="text-right">Name: </td><td><apex:outputField value="{!u.Name}"/></td><td class="text-right">Active Region</td><td><apex:inputField value="{!u.Active_Region__c}"/></td></tr>
+                                            <tr><td class="text-right">Pricing Portal Access: </td><td><apex:inputField value="{!u.Pricing_Portal_Access__c}"/></td><td class="text-right">US Teleflex/Arrow</td><td><apex:inputField value="{!u.US_Material__c }"/></td></tr>
+                                            <tr><td class="text-right">User Administration: </td><td><apex:inputField value="{!u.User_Administration__c}"/></td><td class="text-right">Canada Materials</td><td><apex:inputField value="{!u.CA_Material__c }"/></td></tr>
+                                            <tr><td class="text-right">View Margin: </td><td><apex:inputField value="{!u.View_Margin__c}"/></td><td class="text-right">Latin America Materials</td><td><apex:inputField value="{!u.LA_Material__c }"/></td></tr>
+                                            <tr><td class="text-right">Stationary Preference: </td><td><apex:inputField value="{!u.Stationary_Preference__c}"/></td><td class="text-right">Mexico Materials</td><td><apex:inputField value="{!u.MX_Material__c }"/></td></tr>
+
+                                            <tr><td colspan="2"><strong>US Teleflex/Arrow</strong></td><td colspan="2"><strong>Canada</strong></td></tr>
+                                            <tr><td class="text-right">US Division 10: </td><td><apex:inputField value="{!u.Division_10__c}"/></td><td class="text-right">CA Division 10: </td><td><apex:inputField value="{!u.CA_Division_10__c}"/></td></tr>
+                                            <tr><td class="text-right">US Division 20: </td><td><apex:inputField value="{!u.Division_20__c}"/></td><td class="text-right">CA Division 20: </td><td><apex:inputField value="{!u.CA_Division_20__c}"/></td></tr>
+                                            <tr><td class="text-right">US Division 30: </td><td><apex:inputField value="{!u.Division_30__c}"/></td><td class="text-right">CA Division 30: </td><td><apex:inputField value="{!u.CA_Division_30__c}"/></td></tr>
+                                            <tr><td class="text-right">US Division 40: </td><td><apex:inputField value="{!u.Division_40__c}"/></td><td class="text-right">CA Division 40: </td><td><apex:inputField value="{!u.CA_Division_40__c}"/></td></tr>
+                                            <tr><td class="text-right">US Division 50: </td><td><apex:inputField value="{!u.Division_50__c}"/></td><td class="text-right">CA Division 50: </td><td><apex:inputField value="{!u.CA_Division_50__c}"/></td></tr>
+                                            <tr><td class="text-right">US Division 60: </td><td><apex:inputField value="{!u.Division_60__c}"/></td><td class="text-right">CA Division 60: </td><td><apex:inputField value="{!u.CA_Division_60__c}"/></td></tr>
+
+                                            <tr><td colspan="2"><strong>Latin America</strong></td><td colspan="2"><strong>Mexico</strong></td></tr>
+                                            <tr><td class="text-right">LA Division 10: </td><td><apex:inputField value="{!u.LA_Division_10__c}"/></td><td class="text-right">MX Division 10: </td><td><apex:inputField value="{!u.MX_Division_10__c}"/></td></tr>
+                                            <tr><td class="text-right">LA Division 20: </td><td><apex:inputField value="{!u.LA_Division_20__c}"/></td><td class="text-right">MX Division 20: </td><td><apex:inputField value="{!u.MX_Division_20__c}"/></td></tr>
+                                            <tr><td class="text-right">LA Division 30: </td><td><apex:inputField value="{!u.LA_Division_30__c}"/></td><td class="text-right">MX Division 30: </td><td><apex:inputField value="{!u.MX_Division_30__c}"/></td></tr>
+                                            <tr><td class="text-right">LA Division 40: </td><td><apex:inputField value="{!u.LA_Division_40__c}"/></td><td class="text-right">MX Division 40: </td><td><apex:inputField value="{!u.MX_Division_40__c}"/></td></tr>
+                                            <tr><td class="text-right">LA Division 50: </td><td><apex:inputField value="{!u.LA_Division_50__c}"/></td><td class="text-right">MX Division 50: </td><td><apex:inputField value="{!u.MX_Division_50__c}"/></td></tr>
+                                            <tr><td class="text-right">LA Division 60: </td><td><apex:inputField value="{!u.LA_Division_60__c}"/></td><td class="text-right">MX Division 60: </td><td><apex:inputField value="{!u.MX_Division_60__c}"/></td></tr>
+
+                                            <tr><td colspan="2"><strong>Chile</strong></td></tr>
+                                            <tr><td class="text-right">CL Division 10: </td><td><apex:inputField value="{!u.CL_Division_10__c}"/></td></tr>
+                                            <tr><td class="text-right">CL Division 20: </td><td><apex:inputField value="{!u.CL_Division_20__c}"/></td></tr>
+                                            <tr><td class="text-right">CL Division 30: </td><td><apex:inputField value="{!u.CL_Division_30__c}"/></td></tr>
+                                            <tr><td class="text-right">CL Division 40: </td><td><apex:inputField value="{!u.CL_Division_40__c}"/></td></tr>
+                                            <tr><td class="text-right">CL Division 50: </td><td><apex:inputField value="{!u.CL_Division_50__c}"/></td></tr>
+                                            <tr><td class="text-right">CL Division 60: </td><td><apex:inputField value="{!u.CL_Division_60__c}"/></td></tr>
+
+                                            <tr>
+                                                <td colspan="4" class="text-center">
+                                                    <apex:commandButton action="{!save}" styleClass="btn btn-primary btn-sm" value=" Save and Return "/>&nbsp;&nbsp;&nbsp;
+                                                    <apex:commandButton action="{!cancel}" styleClass="btn btn-primary btn-sm" value=" Cancel "/>&nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </apex:form>
+                                </div>
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                    <!-- End User Edit -->
+
+                    <apex:outputPanel rendered="{!uid == NULL}" id="pbId">
+                    <apex:form >
+                      <apex:actionFunction name="refreshPageSize" action="{!refreshPageSize}" status="fetchStatus" reRender="pbId" />
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/people24.png" alt="Contract Details"/>&nbsp;&nbsp;Pricing Portal User Administration</h6></div>
+                                <div class="panel-body">
+                                     <table>
+                                        <tr>
+                                          <td style="padding: 15px;">
+                                            <a href="/a1K/e?retURL=%2Fapex%2FPP_User_administration" class="btn btn-primary btn-sm">New User</a>&nbsp;
+																						<apex:commandButton action="{!GroupCheck}" styleClass="btn btn-primary btn-sm" value=" Recalc Groups "/>
+                                          </td>
+
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            <apex:selectList value="{!size}" multiselect="false" size="1" onchange="refreshPageSize();" styleClass="">
+                                                <apex:selectOptions value="{!paginationSizeOptions}" />
+                                            </apex:selectList>&nbsp;
+                                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="First" action="{!setCon.first}" disabled="{!!setCon.hasPrevious}" title="First Page" styleClass="btn btn-primary btn-xs" />&nbsp;
+                                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="Previous" action="{!setCon.previous}" disabled="{!!setCon.hasPrevious}" title="Previous Page" styleClass="btn btn-primary btn-xs"/>&nbsp;
+                                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="Next" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page" styleClass="btn btn-primary btn-xs" />&nbsp;
+                                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="Last" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page" styleClass="btn btn-primary btn-xs" />&nbsp;
+                                            <apex:outputText >{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>noOfRecords, noOfRecords,
+                                                (setCon.pageNumber * size))} of {!noOfRecords}
+                                            </apex:outputText>
+																						<apex:outputPanel >
+								                                <apex:actionStatus id="fetchStatus" >
+								                                    <apex:facet name="start" >
+								                                        <img src="/img/loading.gif" />
+								                                    </apex:facet>
+								                                </apex:actionStatus>
+								                            </apex:outputPanel>
+                                          </td>
+                                        </tr>
+                                    </table><br/>
+
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <thead>
+                                            <!--
+                                            <tr>
+                                            <th colspan="7" class="text-center">&nbsp;</th>
+                                            <th colspan="6" class="text-center">Divisions</th>
+                                            <th colspan="3" class="text-center">Quote Settings</th>
+
+                                            </tr>
+                                            -->
+                                            <tr>
+                                                <th>&nbsp;</th>
+                                                <th>&nbsp;</th>
+                                                <th>Name</th>
+                                                <th>Business Unit</th>
+                                                <th class="text-center">Portal<br/>Access</th>
+                                                <th class="text-center">User<br/>Admin</th>
+                                                <th class="text-center">View<br/>Margin</th>
+                                                <th class="text-center" colspan="6">Teleflex US/Arrow</th>
+                                                <th class="text-center" colspan="6">Canada</th>
+                                                <th class="text-center" colspan="6">Latin America</th>
+                                                <th class="text-center" colspan="6">Mexico</th>
+                                                <th class="text-center" colspan="6">Chile</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <apex:variable value="{!1}" var="rowNum"/>
+                                            <apex:repeat value="{!ulist1}" var="userlist">
+                                                <tr>
+                                                    <td align="center"><apex:outputText value="{!FLOOR(rowNum)}"/></td>
+                                                    <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                                                    <td class="text-center"><a href="/apex/PP_User_Administration?id={!userlist.id}">Edit</a></td>
+                                                    <td class="text-nowrap">{!userlist.Name}</td>
+                                                    <td class="text-nowrap">{!userlist.Business_Unit__c}</td>
+                                                    <td class="text-center"><apex:outputField value="{!userlist.Pricing_Portal_Access__c}"/></td>
+                                                    <td class="text-center"><apex:outputField value="{!userlist.User_Administration__c}"/></td>
+                                                    <td class="text-center"><apex:outputField value="{!userlist.View_Margin__c}"/></td>
+
+                                                    <!--  US Teleflex/Arrow -->
+                                                    <td class="text-center {!if(userlist.Division_10__c, 'green', 'grey')}">
+                                                        10<br/>
+                                                        <apex:outputField value="{!userlist.Division_10__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.Division_20__c, 'green', 'grey')}">
+                                                        20<br/>
+                                                        <apex:outputField value="{!userlist.Division_20__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.Division_30__c, 'green', 'grey')}">
+                                                        30<br/>
+                                                        <apex:outputField value="{!userlist.Division_30__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.Division_40__c, 'green', 'grey')}">
+                                                        40<br/>
+                                                        <apex:outputField value="{!userlist.Division_40__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.Division_50__c, 'green', 'grey')}">
+                                                        50<br/>
+                                                        <apex:outputField value="{!userlist.Division_50__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.Division_60__c, 'green', 'grey')}">
+                                                        60<br/>
+                                                        <apex:outputField value="{!userlist.Division_60__c}"/>
+                                                    </td>
+                                                    <!-- End US Teleflex/Arrow -->
+                                                    <!-- Canada -->
+                                                    <td class="text-center {!if(userlist.CA_Division_10__c, 'green', 'grey')}">
+                                                        10<br/>
+                                                        <apex:outputField value="{!userlist.CA_Division_10__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CA_Division_20__c, 'green', 'grey')}">
+                                                        20<br/>
+                                                        <apex:outputField value="{!userlist.CA_Division_20__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CA_Division_30__c, 'green', 'grey')}">
+                                                        30<br/>
+                                                        <apex:outputField value="{!userlist.CA_Division_30__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CA_Division_40__c, 'green', 'grey')}">
+                                                        40<br/>
+                                                        <apex:outputField value="{!userlist.CA_Division_40__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CA_Division_50__c, 'green', 'grey')}">
+                                                        50<br/>
+                                                        <apex:outputField value="{!userlist.CA_Division_50__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CA_Division_60__c, 'green', 'grey')}">
+                                                        60<br/>
+                                                        <apex:outputField value="{!userlist.CA_Division_60__c}"/>
+                                                    </td>
+                                                    <!-- End Canada -->
+
+                                                    <!-- Latin America -->
+                                                    <td class="text-center {!if(userlist.LA_Division_10__c, 'green', 'grey')}">
+                                                        10<br/>
+                                                        <apex:outputField value="{!userlist.LA_Division_10__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.LA_Division_20__c, 'green', 'grey')}">
+                                                        20<br/>
+                                                        <apex:outputField value="{!userlist.LA_Division_20__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.LA_Division_30__c, 'green', 'grey')}">
+                                                        30<br/>
+                                                        <apex:outputField value="{!userlist.LA_Division_30__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.LA_Division_40__c, 'green', 'grey')}">
+                                                        40<br/>
+                                                        <apex:outputField value="{!userlist.LA_Division_40__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.LA_Division_50__c, 'green', 'grey')}">
+                                                        50<br/>
+                                                        <apex:outputField value="{!userlist.LA_Division_50__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.LA_Division_60__c, 'green', 'grey')}">
+                                                        60<br/>
+                                                        <apex:outputField value="{!userlist.LA_Division_60__c}"/>
+                                                    </td>
+                                                    <!-- End Latin America -->
+                                                    <!-- Mexico -->
+                                                    <td class="text-center {!if(userlist.MX_Division_10__c, 'green', 'grey')}">
+                                                        10<br/>
+                                                        <apex:outputField value="{!userlist.MX_Division_10__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.MX_Division_20__c, 'green', 'grey')}">
+                                                        20<br/>
+                                                        <apex:outputField value="{!userlist.MX_Division_20__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.MX_Division_30__c, 'green', 'grey')}">
+                                                        30<br/>
+                                                        <apex:outputField value="{!userlist.MX_Division_30__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.MX_Division_40__c, 'green', 'grey')}">
+                                                        40<br/>
+                                                        <apex:outputField value="{!userlist.MX_Division_40__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.MX_Division_50__c, 'green', 'grey')}">
+                                                        50<br/>
+                                                        <apex:outputField value="{!userlist.MX_Division_50__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.MX_Division_60__c, 'green', 'grey')}">
+                                                        60<br/>
+                                                        <apex:outputField value="{!userlist.MX_Division_60__c}"/>
+                                                    </td>
+                                                    <!-- End Mexico -->
+
+                                                    <!-- Chile -->
+                                                    <td class="text-center {!if(userlist.CL_Division_10__c, 'green', 'grey')}">
+                                                        10<br/>
+                                                        <apex:outputField value="{!userlist.CL_Division_10__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CL_Division_20__c, 'green', 'grey')}">
+                                                        20<br/>
+                                                        <apex:outputField value="{!userlist.CL_Division_20__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CL_Division_30__c, 'green', 'grey')}">
+                                                        30<br/>
+                                                        <apex:outputField value="{!userlist.CL_Division_30__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CL_Division_40__c, 'green', 'grey')}">
+                                                        40<br/>
+                                                        <apex:outputField value="{!userlist.CL_Division_40__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CL_Division_50__c, 'green', 'grey')}">
+                                                        50<br/>
+                                                        <apex:outputField value="{!userlist.CL_Division_50__c}"/>
+                                                    </td>
+                                                    <td class="text-center {!if(userlist.CL_Division_60__c, 'green', 'grey')}">
+                                                        60<br/>
+                                                        <apex:outputField value="{!userlist.CL_Division_60__c}"/>
+                                                    </td>
+                                                    <!-- End Chile -->
+                                                </tr>
+                                            </apex:repeat>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        </apex:form>
+
+                    </apex:outputPanel>
+                </apex:outputPanel>
+                 <apex:outputPanel rendered="{!va == FALSE}">
+                     You do not have access to this...
+                </apex:outputPanel>
+            </div>
+        </div>
+    </div>
+    <script>
+    $('th').click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc){rows = rows.reverse()}
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+    })
+    function comparer(index) {
+        return function(a, b) {
+            var valA = getCellValue(a, index), valB = getCellValue(b, index)
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+        }
+    }
+    function getCellValue(row, index){ return $(row).children('td').eq(index).html() }
+    </script>
+</apex:page>

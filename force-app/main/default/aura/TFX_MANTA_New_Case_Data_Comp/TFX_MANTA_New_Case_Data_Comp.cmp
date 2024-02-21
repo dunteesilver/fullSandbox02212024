@@ -1,0 +1,554 @@
+<aura:component
+  controller="TFX_MANTA_Handler"
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+  access="global"
+>
+  <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+  <aura:html tag="style"
+    >.toastMessage.forceActionsText{white-space : pre-line
+    !important;}</aura:html
+  >
+
+  <aura:attribute name="usrId" type="String" default="" />
+  <aura:attribute name="usrName" type="String" default="" />
+  <aura:attribute name="showEdit" type="String" />
+
+  <aura:attribute name="openReqId" type="String" />
+  <aura:attribute name="hospitalId" type="String" />
+  <aura:attribute name="hospital" type="String" />
+
+  <aura:attribute
+    name="newCaseDataObj"
+    type="sObject"
+    default="{ 
+                             'sobjectType': 'MANTA_Case_Data__c',
+                             'Hospital_Name__c': '',
+                             'Left_Femoral_Vessel_Size__c': '',
+                             'Deploying_Physician__c': '',
+                             'Case_Date__c': '',
+                             'MANTA_Lot_Number__c': '',
+                             'Post_Arteriogram_Taken__c': ''
+                             }"
+  />
+  <aura:attribute name="allPhysiciansLst" type="Contact" />
+  <aura:attribute name="allProctorsLst" type="List" />
+
+  <aura:attribute
+    name="femoralVesselSizeLst"
+    type="List"
+    default="['&lt;3.0 mm', '3.1 mm', '3.2 mm', '3.3 mm', '3.4 mm', '3.5 mm', '3.6 mm', '3.7 mm', '3.8 mm', '3.9 mm'
+                                                                     ,'4.0 mm', '4.1 mm', '4.2 mm', '4.3 mm', '4.4 mm', '4.5 mm', '4.6 mm', '4.7 mm', '4.8 mm', '4.9 mm'
+                                                                     ,'5.0 mm', '5.1 mm', '5.2 mm', '5.3 mm', '5.4 mm', '5.5 mm', '5.6 mm', '5.7 mm', '5.8 mm', '5.9 mm'
+                                                                     ,'6.0 mm', '6.1 mm', '6.2 mm', '6.3 mm', '6.4 mm', '6.5 mm', '6.6 mm', '6.7 mm', '6.8 mm', '6.9 mm'
+                                                                     ,'7.0 mm', '7.1 mm', '7.2 mm', '7.3 mm', '7.4 mm', '&gt;7.5 mm'
+                                                                     ]"
+  />
+  <aura:attribute
+    name="depthPlusOneMsurmtLst"
+    type="List"
+    default="['1', '1.5', '2', '2.5', '3', '3.5', '4', '4.5', '5', '5.5'
+                                                                      ,'6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5'
+                                                                      ]"
+  />
+  <aura:attribute
+    name="deviceLst"
+    type="List"
+    default="['AFX', 'Core Value', 'Endurant II', 'Evolut Pro', 'Evolut Pro+', 'Evolut R', 'Excluder C3', 'Impella', 'Lotus Edge', 'Ovation iX'
+                                                          ,'Sapien 3', 'TAG', 'Valiant Captiva', 'Valiant Navion', 'Zenith Alpha', 'Zenith Fenestrated', 'Zenith Flex'
+                                                          ]"
+  />
+  <aura:attribute
+    name="deviceSizeLst"
+    type="List"
+    default="['CP - 14F', '2.5 13F', '08 - 24 mm', '10 - 28 mm', '12 - 24 mm', '12 - 27 mm', '20 mm', '20 - 25 mm', '20 - 34 mm', '21 mm'
+                                                              ,'22 - 32 mm', '23 mm', '23 - 35 mm', '23 - 36 mm', '24 - 30 mm', '24 - 34 mm', '25 mm'
+                                                              ,'25 - 34 mm', '26 mm', '26 - 28 mm', '27 mm', '28 - 37 mm', '29 mm', '31 mm'
+                                                              ,'32 - 38 mm', '34 mm', '40 - 46 mm'
+                                                              ]"
+  />
+
+  <aura:attribute name="isLoading" type="Boolean" default="true" />
+
+  <aura:if isTrue="{!v.isLoading}">
+    <div class="slds-p-horizontal--small slds-align_absolute-center">
+      <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+        <lightning:spinner variant="brand" size="large" />
+      </div>
+    </div>
+  </aura:if>
+
+  <aura:attribute name="showConfirmDialog" type="boolean" default="false" />
+
+  <!--Popup Component Start-->
+
+  <aura:if isTrue="{!v.showConfirmDialog}">
+    <!--Modal Box Start-->
+    <div role="dialog" class="slds-modal slds-fade-in-open ">
+      <div class="slds-modal__container">
+        <!--Modal Box Header Start-->
+        <header class="slds-modal__header">
+          <h1 class="slds-text-heading--medium">Confirmation</h1>
+        </header>
+        <!--Modal Box Header End-->
+
+        <!--Modal Box Content Start-->
+        <div class="slds-modal__content slds-p-around--medium">
+          <center><b>Do you want to fill out a DER complaint form?</b></center>
+        </div>
+        <!--Modal Box Content End-->
+
+        <!--Modal Box Button Start-->
+        <footer class="slds-modal__footer">
+          <lightning:button
+            name="No"
+            label="No"
+            onclick="{!c.handleConfirmDialogNo}"
+          />
+          <lightning:button
+            variant="brand"
+            name="Yes"
+            label="Yes"
+            onclick="{!c.handleConfirmDialogYes}"
+          />
+        </footer>
+        <!--Modal Box Button End-->
+      </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open"></div>
+  </aura:if>
+  <!--Popup Component End-->
+
+  <ui:scrollerWrapper class="scrollerSize">
+    <article class="slds-align_absolute-center slds-card" style="width: 100%">
+      <div
+        class="slds-card__body slds-card__body_inner"
+        style="width: 40rem;margin: 2%"
+      >
+        <lightning:button
+          variant="Brand"
+          label="Back"
+          onclick="{!c.navigateToTFX_MANTA_Accepted_Reqs_Comp}"
+        />
+        <lightning:button
+          variant="success"
+          label="Save"
+          title="Success"
+          onclick="{! c.saveNewCaseData }"
+        />
+        <lightning:button label="Clear" onclick="{! c.clearForm }" />
+        <br /><br /><br />
+        <div class="slds-align_absolute-center slds-text-heading_medium"
+          >New Case Data</div
+        >
+
+        <lightning:input
+          type="date"
+          name="Case Date"
+          label="Case Date"
+          required="true"
+          value="{!v.newCaseDataObj.Case_Date__c}"
+        /><br />
+        <ui:inputCheckbox
+          aura:id="checkbox"
+          label="MANTA Not Used"
+          value="{!v.newCaseDataObj.MANTA_Not_Used__c}"
+        /><br />
+
+        <aura:if isTrue="{! v.newCaseDataObj.MANTA_Not_Used__c == true }">
+          <lightning:select
+            name="Reason MANTA Not Used"
+            label="Reason MANTA Not Used "
+            required="true"
+            value="{!v.newCaseDataObj.Reason_MANTA_Not_Used__c}"
+          >
+            <option value="">choose one...</option>
+            <option value="Calcium">Calcium</option>
+            <option value="Access site too high">Access site too high</option>
+            <option value="Access site too low">Access site too low</option>
+            <option value="Tortuosity">Tortuosity</option>
+            <option value="Depth too shallow">Depth too shallow</option>
+            <option value="Depth too deep">Depth too deep</option>
+            <option value="Procedure complications (non-MANTA related)"
+              >Procedure complications (non-MANTA related)</option
+            >
+            <option value="Other (explain in notes section)"
+              >Other (explain in notes section)</option
+            > </lightning:select
+          ><br />
+
+          <aura:set attribute="else">
+            <lightning:input
+              type="time"
+              name="Case Start Time"
+              label="Case Start Time"
+              value="{!v.newCaseDataObj.Case_Start_Time__c}"
+            /><br />
+            <lightning:input
+              name="hospital"
+              label="Hospital"
+              value="{!v.newCaseDataObj.Hospital_Name__c}"
+              readonly="true"
+            /><br />
+            <lightning:select
+              name="dplyPhyName"
+              label="Deploying Physician"
+              value="{!v.newCaseDataObj.Deploying_Physician__c}"
+              required="true"
+            >
+              <option value="">choose one...</option>
+              <aura:iteration items="{!v.allPhysiciansLst}" var="item">
+                <option
+                  value="{!item.Id}"
+                  selected="{!item.Id==v.newCaseDataObj.Physician__c}"
+                  >{!item.Salutation} {!item.Name}</option
+                >
+              </aura:iteration> </lightning:select
+            ><br />
+            <lightning:select
+              name="mantaTrainer"
+              label="MANTA Trainer"
+              value="{!v.newCaseDataObj.MANTA_Trainer__c}"
+              required="true"
+            >
+              <option value="">choose one...</option>
+              <aura:iteration items="{!v.allProctorsLst}" var="item">
+                <option
+                  value="{!item.Trainer__c}"
+                  selected="{!item.Trainer__c==v.newCaseDataObj.MANTA_Trainer__c}"
+                  >{!item.Trainer__r.Name}</option
+                >
+              </aura:iteration> </lightning:select
+            ><br />
+            <!--<lightning:select name="mantaTrainerinTraining" label="MANTA Trainer in Training" value="{!v.newCaseDataObj.MANTA_Trainer_in_Training__c}" >
+                            <option value="">choose one...</option>
+                            <aura:iteration items="{!v.allProctorsLst}" var="item">
+                                <option value="{!item.Trainer__c}" selected="{!item.Trainer__c==v.newCaseDataObj.MANTA_Trainer_in_Training__c}">{!item.Trainer__r.Name}</option>
+                            </aura:iteration>
+                        </lightning:select>-->
+            <lightning:recordEditForm objectApiName="MANTA_Case_Data__c">
+              <lightning:inputField
+                fieldName="MANTA_Trainer_in_Training__c"
+                value="{!v.newCaseDataObj.MANTA_Trainer_in_Training__c}"
+              />
+            </lightning:recordEditForm>
+            <br />
+            <lightning:select
+              name="CaseType"
+              label="Case Type"
+              required="true"
+              value="{!v.newCaseDataObj.Case_Type__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="TAVR">TAVR</option>
+              <option value="EVAR">EVAR</option>
+              <option value="VAD">VAD</option>
+              <option value="BAV">BAV</option>
+              <option value="Other">Other</option> </lightning:select
+            ><br />
+            <lightning:select
+              name="leftFemoralVesselSize"
+              label="Left Femoral Vessel Size"
+              value="{!v.newCaseDataObj.Left_Femoral_Vessel_Size__c}"
+            >
+              <option value="">choose one...</option>
+              <aura:iteration items="{!v.femoralVesselSizeLst}" var="item">
+                <option
+                  value="{!item}"
+                  selected="{!item==v.newCaseDataObj.Left_Femoral_Vessel_Size__c}"
+                  >{!item}</option
+                >
+              </aura:iteration> </lightning:select
+            ><br />
+            <lightning:select
+              name="rightFemoralVesselSize"
+              label="Right Femoral Vessel Size"
+              value="{!v.newCaseDataObj.Right_Femoral_Vessel_Size__c}"
+            >
+              <option value="">choose one...</option>
+              <aura:iteration items="{!v.femoralVesselSizeLst}" var="item">
+                <option
+                  value="{!item}"
+                  selected="{!item==v.newCaseDataObj.Right_Femoral_Vessel_Size__c}"
+                  >{!item}</option
+                >
+              </aura:iteration> </lightning:select
+            ><br />
+            <lightning:select
+              name="Tortuosity"
+              label="Tortuosity "
+              required="true"
+              value="{!v.newCaseDataObj.Tortuosity__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="None">None</option>
+              <option value="Little">Little</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Extreme">Extreme</option> </lightning:select
+            ><br />
+            <lightning:textarea
+              name="TortuosityComments"
+              label="Tortuosity Comments"
+              value="{!v.newCaseDataObj.Tortuosity_Comments__c }"
+              maxlength="32768"
+            /><br />
+            <lightning:select
+              name="Calcification"
+              label="Calcification"
+              required="true"
+              value="{!v.newCaseDataObj.Calcification__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="None">None</option>
+              <option value="Little">Little</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Extreme">Extreme</option> </lightning:select
+            ><br />
+            <lightning:select
+              name="CalcificationLocation"
+              label="Calcification Location"
+              value="{!v.newCaseDataObj.Calcification_Location__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Circumferential">Circumferential</option>
+              <option value="Anterior">Anterior</option>
+              <option value="Posterior">Posterior</option>
+              <option value="Lateral">Medial</option>
+              <option value="Lateral">Lateral</option>
+              <option value="Distal">Distal</option>
+              <option value="Proximal">Proximal</option> </lightning:select
+            ><br />
+            <lightning:select
+              name="PreArteriogramTaken"
+              label="Pre-Arteriogram Taken"
+              required="true"
+              value="{!v.newCaseDataObj.Pre_Arteriogram_Taken__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option> </lightning:select
+            ><br />
+            <lightning:select
+              name="UltrasoundGuidedAccessUsed"
+              label="Ultrasound Guided Access Used"
+              required="true"
+              value="{!v.newCaseDataObj.Ultrasound_Guided_Access_Used__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option> </lightning:select
+            ><br />
+            <lightning:select
+              name="depthPlusOneMsurmt"
+              label="Depth +1 Measurment"
+              value="{!v.newCaseDataObj.Depth_1_Measurment__c }"
+            >
+              <option value="">choose one...</option>
+              <aura:iteration items="{!v.depthPlusOneMsurmtLst}" var="item">
+                <option
+                  value="{!item}"
+                  selected="{!item==v.newCaseDataObj.Depth_1_Measurment}"
+                  >{!item}</option
+                >
+              </aura:iteration> </lightning:select
+            ><br />
+            <lightning:textarea
+              name="AdditionalAccessNotes"
+              label="Additional Access Notes"
+              value="{!v.newCaseDataObj.Additional_Access_Notes__c }"
+              maxlength="32768"
+            /><br />
+            <lightning:select
+              name="DeviceManufacturer"
+              label="Device Manufacturer"
+              value="{!v.newCaseDataObj.Device_Manufacturer__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Abiomed">Abiomed</option>
+              <option value="Boston Scientific">Boston Scientific</option>
+              <option value="Cook">Cook</option>
+              <option value="Edwards lifesciences">Edwards lifesciences</option>
+              <option value="Endologix">Endologix</option>
+              <option value="Medtronic">Gore</option>
+              <option value="EVAR">Medtronic</option>
+              <option value="Trivascular"
+                >Trivascular</option
+              > </lightning:select
+            ><br />
+            <lightning:select
+              name="device"
+              label="Device"
+              required="true"
+              value="{!v.newCaseDataObj.Device__c}"
+            >
+              <option value="">choose one...</option>
+              <aura:iteration items="{!v.deviceLst}" var="item">
+                <option
+                  value="{!item}"
+                  selected="{!item==v.newCaseDataObj.Device__c}"
+                  >{!item}</option
+                >
+              </aura:iteration>
+              <option value="Other">Other</option> </lightning:select
+            ><br />
+            <aura:if isTrue="{! v.newCaseDataObj.Device__c == 'Other' }">
+              <lightning:input
+                label="Other Device"
+                value="{! v.newCaseDataObj.Other_Device__c }"
+                maxlength="55"
+              /><br />
+            </aura:if>
+            <lightning:select
+              name="deviceSize"
+              label="Device Size"
+              value="{!v.newCaseDataObj.Device_Size__c}"
+            >
+              <option value="">choose one...</option>
+              <aura:iteration items="{!v.deviceSizeLst}" var="item">
+                <option
+                  value="{!item}"
+                  selected="{!item==v.newCaseDataObj.Device_Size__c}"
+                  >{!item}</option
+                >
+              </aura:iteration> </lightning:select
+            ><br />
+            <lightning:input
+              name="Heparin Total at End of Case"
+              label="Heparin Total at End of Case"
+              value="{!v.newCaseDataObj.Heparin_Total_at_End_of_Case__c}"
+              maxlength="255"
+            /><br />
+            <lightning:input
+              name="ACT Prior to MANTA Closure"
+              label="ACT Prior to MANTA Closure"
+              value="{!v.newCaseDataObj.ACT_Prior_to_MANTA_Closure__c}"
+              maxlength="255"
+            /><br />
+            <lightning:input
+              name="Blood Pressure Prior to MANTA Closure"
+              label="Blood Pressure Prior to MANTA Closure"
+              value="{!v.newCaseDataObj.Blood_Pressure_Prior_to_MANTA_Closure__c}"
+              maxlength="255"
+            /><br />
+            <lightning:select
+              name="Protamine Given"
+              label="Protamine Given"
+              value="{!v.newCaseDataObj.Protamine_Given__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option> </lightning:select
+            ><br />
+            <lightning:input
+              name="Amt. of Protamine Given"
+              label="Amt. of Protamine Given"
+              value="{!v.newCaseDataObj.Amt_of_Protamine_Given__c}"
+              maxlength="255"
+            /><br />
+            <lightning:input
+              name="Time Protamine was Given"
+              label="Time Protamine was Given"
+              value="{!v.newCaseDataObj.Time_Protamine_was_Given__c}"
+              maxlength="55"
+            /><br />
+            <lightning:select
+              name="Size_of_MANTA_Device_Used"
+              required="true"
+              label="Size of MANTA Device Used"
+              value="{!v.newCaseDataObj.Size_of_MANTA_Device_Used__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="14F MANTA">14F MANTA</option>
+              <option value="18F MANTA">18F MANTA</option>
+              <option value="One of each"
+                >One of each</option
+              > </lightning:select
+            ><br />
+            <lightning:input
+              name="MANTA_Lot_Number"
+              placeholder="Enter comma seperated values e.g: 123, 578"
+              required="true"
+              label="MANTA Lot Number"
+              value="{!v.newCaseDataObj.MANTA_Lot_Number__c}"
+              maxlength="255"
+            /><br />
+            <lightning:select
+              name="Wire_MANTA_Deployed_on"
+              label="Wire MANTA Deployed On"
+              value="{!v.newCaseDataObj.Wire_MANTA_Deployed_on__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Standard J Wire">Standard J Wire</option>
+              <option value="Amplatz Extra-Stiff APEX"
+                >Amplatz Extra-Stiff APEX</option
+              >
+              <option value="Amplatz Super Stiff">Amplatz Super Stiff</option>
+              <option value="Confida Brecker">Confida Brecker</option>
+              <option value="Lunderquist Extra-Stiff"
+                >Lunderquist Extra-Stiff</option
+              >
+              <option value="Meier">Meier</option>
+              <option value="Safari">Safari</option>
+              <option value="Other">Other</option> </lightning:select
+            ><br />
+            <lightning:textarea
+              name="Other_Wire_Used"
+              label="Other Wire Used"
+              value="{!v.newCaseDataObj.Other_Wire_Used__c }"
+              maxlength="32768"
+            /><br />
+            <lightning:input
+              name="Time_of_MANTA_Deployment"
+              label="Time of MANTA Deployment"
+              value="{!v.newCaseDataObj.Time_of_MANTA_Deployment__c}"
+              maxlength="55"
+            /><br />
+            <lightning:select
+              name="Post Arteriogram Taken"
+              label="Post Arteriogram Taken"
+              required="true"
+              value="{!v.newCaseDataObj.Post_Arteriogram_Taken__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option> </lightning:select
+            ><br />
+            <lightning:select
+              name="Micropuncture used for access?"
+              label="Micropuncture used for access?"
+              value="{!v.newCaseDataObj.Micropuncture_used_for_access__c}"
+            >
+              <option value="">choose one...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option> </lightning:select
+            ><br />
+            <lightning:select
+              name="Time to Hemostasis"
+              label="Time to Hemostasis"
+              value="{!v.newCaseDataObj.Time_to_Hemostasis__c}"
+              required="true"
+            >
+              <option value="">choose one...</option>
+              <option value="Immediate">Immediate</option>
+              <option value="Less and 1 minute">Less and 1 minute</option>
+              <option value="Less than 5 minutes">Less than 5 minutes</option>
+              <option value="10 or more">10 or more</option> </lightning:select
+            ><br />
+          </aura:set>
+        </aura:if>
+
+        <lightning:button
+          variant="Brand"
+          label="Back"
+          onclick="{!c.navigateToTFX_MANTA_Accepted_Reqs_Comp}"
+        />
+        <lightning:button
+          variant="success"
+          label="Save"
+          title="Success"
+          onclick="{! c.saveNewCaseData }"
+        />
+        <lightning:button label="Clear" onclick="{! c.clearForm }" />
+      </div>
+    </article>
+  </ui:scrollerWrapper>
+</aura:component>

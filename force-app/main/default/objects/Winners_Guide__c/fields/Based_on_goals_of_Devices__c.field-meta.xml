@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Based_on_goals_of_Devices__c</fullName>
+    <description>Based on evaluation goals determine # of devices</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Based on evaluation goals determine # of devices</inlineHelpText>
+    <label>Based on goals # of Devices</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

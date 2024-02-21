@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>You_Have_The_Necessary_Training_Product__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Do you have the necessary training product?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do you have the necessary training product?</inlineHelpText>
+    <label>You Have The Necessary Training Product?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

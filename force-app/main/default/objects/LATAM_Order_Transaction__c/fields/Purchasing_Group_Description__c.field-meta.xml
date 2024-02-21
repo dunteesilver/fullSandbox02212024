@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchasing_Group_Description__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+ Purchasing_Group__c, 
+&apos;A1&apos;,&apos;A1&apos;,
+&apos;A10&apos;,&apos;A10&apos;,
+&apos;A13&apos;,&apos;A13&apos;,
+&apos;A14&apos;,&apos;A14&apos;,
+&apos;A15&apos;,&apos;A15&apos;,
+&apos;A16&apos;,&apos;A16&apos;,
+&apos;A17&apos;,&apos;A17&apos;,
+&apos;A18&apos;,&apos;A18&apos;,
+&apos;A2&apos;,&apos;A2&apos;,
+&apos;A3&apos;,&apos;A3&apos;,
+&apos;A4&apos;,&apos;A4&apos;,
+&apos;A5&apos;,&apos;A5&apos;,
+&apos;A6&apos;,&apos;A6&apos;,
+&apos;A7&apos;,&apos;A7&apos;,
+&apos;A8&apos;,&apos;A8&apos;,
+&apos;A9&apos;,&apos;A9&apos;,
+&apos;FD1&apos;,&apos;FD1&apos;,
+&apos;G02&apos;,&apos;G02&apos;,
+&apos;G03&apos;,&apos;G03&apos;,
+&apos;IE6&apos;,&apos;IE6&apos;,
+&apos;K07&apos;,&apos;K07&apos;,
+&apos;KV&apos;,&apos;KV&apos;,
+&apos;MX1&apos;,&apos;MX1&apos;,
+&apos;MX2&apos;,&apos;MX2&apos;,
+&apos;MX5&apos;,&apos;MX5&apos;,
+&apos;PDS&apos;,&apos;PDS&apos;,
+&apos;PF2&apos;,&apos;PF2&apos;,
+&apos;PF3&apos;,&apos;PF3&apos;,
+&apos;PF4&apos;,&apos;PF4&apos;,
+&apos;PF7&apos;,&apos;PF7&apos;,
+&apos;S01&apos;,&apos;S01&apos;,
+&apos;S02&apos;,&apos;S02&apos;,
+&apos;S03&apos;,&apos;S03&apos;,
+&apos;S04&apos;,&apos;S04&apos;,
+&apos;S11&apos;,&apos;S11&apos;,
+&apos;SC4&apos;,&apos;SC4&apos;,
+&apos;SC5&apos;,&apos;SC5&apos;,
+&quot;Error&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Purchasing Group Description</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

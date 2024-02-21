@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2Identify_nerves_arteries_veins__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Able to identify nerves, arteries and veins</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Able to identify nerves, arteries and veins</inlineHelpText>
+    <label>Identify nerves/arteries/veins</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

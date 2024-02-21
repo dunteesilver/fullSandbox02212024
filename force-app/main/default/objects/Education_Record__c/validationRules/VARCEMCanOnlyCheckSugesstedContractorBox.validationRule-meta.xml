@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VARCEMCanOnlyCheckSugesstedContractorBox</fullName>
+    <active>true</active>
+    <description>Intended to restrict the checkbox being checked by anyone, but the RCSM</description>
+    <errorConditionFormula>AND(
+
+AND(
+NOT(ISPICKVAL(Stage__c, &quot;RCSM Review&quot;)),
+NOT(ISPICKVAL(Stage__c, &quot;CMA Vetting&quot;))),
+
+OR(RecordType.Name = &quot;Clinical Sales Program&quot;, RecordType.Name = &quot;CMA Program&quot;),
+
+CMAEmailhasbeenfired__c = False,
+
+OR( RequestClinicalEducationContractor__c = TRUE, RequestClinicalEducationContractor2__c = TRUE)
+
+)</errorConditionFormula>
+    <errorMessage>The RCSM or CMA will identify if a contractor is needed.
+CMA will review the final request and engage if necessary.</errorMessage>
+</ValidationRule>

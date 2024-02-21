@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Radiology__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check this box is account has a radiology department.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box is account has a radiology department.</inlineHelpText>
+    <label>Radiology</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

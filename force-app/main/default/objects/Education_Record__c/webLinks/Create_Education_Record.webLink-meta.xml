@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Education_Record</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Education Record</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+if({!OR(ISPICKVAL(Opportunity.StageName,&apos;Trial/Evaluation&apos;),ISPICKVAL(Opportunity.StageName,&apos;Closed Won&apos;))} ){ 
+
+var newER = new sforce.SObject(&quot;Education_Record__c&quot;); 
+
+newER.Name = &apos;Name&apos; 
+newER.Account_Facility__c = &apos;{!Opportunity.AccountId}&apos; 
+newER.Opportunity__c = &apos;{!Opportunity.Id}&apos; 
+newER.Hotel_Requested__c = &apos;NO&apos; 
+newER.RecordtypeID = &apos;012E000000095BM&apos;
+newER.Contact_Name__c = &apos;{!Opportunity.Primary_Contact_ID__c}&apos;
+
+var result = sforce.connection.create([newER]); 
+if(result[0].getBoolean(&quot;success&quot;)){ 
+window.location = &quot;/&quot; + result[0].id + &quot;/e&quot;; 
+}else{ 
+alert(&apos;Could not create record &apos;+result); 
+}
+
+ 
+} 
+else{ 
+alert(&quot;You cannot create Education Records if the probability is less than 75%&quot;); 
+window.location.reload(); 
+}</url>
+</WebLink>

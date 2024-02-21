@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Anesthesia_Canada_RSM_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Canada Anesthesia RSM Gilbert is also supporting Surgical MSRs</description>
+        <label>Anesthesia Canada RSM Sharing Rule</label>
+        <sharedTo>
+            <role>Anesthesia_RSM_Canada</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Surgical_MSR_Canada</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Sales_Director_Access_to_Visit_Summary</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>sharing rule so Vascular Sales Directors can view Visit Summaries that the RSM&apos;s fill out.</description>
+        <label>Visit Summary - VA Sales Director East</label>
+        <sharedTo>
+            <role>Vascular_DIR_East</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>Vascular_East</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Visit_Summary_VA_Sales_Director_West</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Visit Summary - VA Sales Director West</label>
+        <sharedTo>
+            <role>Vascular_DIR_West</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>Vascular_West</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

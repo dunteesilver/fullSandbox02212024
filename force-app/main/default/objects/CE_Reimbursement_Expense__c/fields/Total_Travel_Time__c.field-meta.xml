@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Travel_Time__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Putting a check in for legacy travel time before the 2018 changes went in */
+if(ISBLANK(Engagement_Type__c),
+Travel_Time__c  * TravelRate__c,
+/* Otherwise using the 2018 travel time calculations of half of the hourly rate - 02Jan2018 ESC */
+
+/* Hourly */
+if(
+AND(
+CONTAINS(Engagement_Type__c, &quot;Hour&quot;),
+Travel_Eligible__c = TRUE
+),
+ROUND((Reimbursement_Rate__c/2)*Travel_Time__c,2),
+
+/* Daily */
+if(
+AND(
+CONTAINS(Engagement_Type__c, &quot;Day&quot;),
+Travel_Eligible__c = TRUE,
+NOT(ISBLANK(TravelRate__c))
+),
+ROUND(TravelRate__c*Travel_Time__c,2),
+
+/* FALSE/Default */
+0
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total (Travel Time)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,3347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NA_Vascular_Sales</fullName>
+    <active>true</active>
+    <businessProcess>Teleflex Standard Lead Process</businessProcess>
+    <compactLayoutAssignment>Leads_Compact_LEx</compactLayoutAssignment>
+    <description>NA Vascular Sales</description>
+    <label>NA Vascular Sales</label>
+    <picklistValues>
+        <picklist>Attended__c</picklist>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YES</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Best_way_to_contact__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_Unit__c</picklist>
+        <values>
+            <fullName>Alternate Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anesthesia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional Capital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Latin America</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialty Markets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical Disposables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical Instruments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vascular</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contact_Local_Teleflex_Rep__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Credentials__c</picklist>
+        <values>
+            <fullName>CT Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certified Registered Nurse Anesthetists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doctor of Veterinary Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infection Control Personnel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Doctor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse Practitioner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%2FNone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician%27s Assistant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAD Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered Respiratory Therapist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DocMatterQualifier__c</picklist>
+        <values>
+            <fullName>Expert User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KOL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified Lead</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DocMatter__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DoesyourPROTallowforPHinsertion__c</picklist>
+        <values>
+            <fullName>Don%27t Know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Eloqua_Lead_Rating__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hospital_Position__c</picklist>
+        <values>
+            <fullName>Certified Registered Nurse Anesthetists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Circulating Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Materials Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Doctor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse Practitioner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician%27s Assistant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPD Instrument Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPD Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scrub Tech</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IAFinalLead__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IAInitial__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Clinical Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inside Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Chapter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCI%2FCTO Targeting Tool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Generated</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Seminar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teleflex Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telemarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Litmos__Primary__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Litmos__ProductInterest__c</picklist>
+        <values>
+            <fullName>GC1000 series</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC3000 series</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GC5000 series</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Medical_Specialty__c</picklist>
+        <values>
+            <fullName>Critical Care %2F Med Surg Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infection Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PACU Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICC %2F Vascular Nurse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Capt%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colonel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant Colonel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant Commander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lt%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sr%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Notify_of_Future_Webinars__c</picklist>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YES</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Position_Job_Title__c</picklist>
+        <values>
+            <fullName>Accounts Receivable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Administrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anesthesia Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anesthesia Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anesthesiologist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assistant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asst Chief</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bariatric Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bio Med</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buyer%2FPurchasing Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CFO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLABSI Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRD %28Clinical Resource Director%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRNA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSR Technician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV Nurse Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV team Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Captain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiologist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiopulmonary Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiopulmonary Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Category Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Supply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief Nursing Officer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief of CV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief of GYN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chief of General Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical Educator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical Suprevisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colon Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contracts%2FSupply Chain Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical Product Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director of Cardiopulmonary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director of Materials Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director of Nursing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director of Peri-Operative services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director of Purchasing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director of Surgical Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMS Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMS Educator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMT %2F BLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMT-I %2F AEMT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMT-P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENT Nurse Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENT Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ER Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education %26 Inservice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Educator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Assistant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow %E2%80%93 EM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow %E2%80%93 General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow %E2%80%93 Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow %E2%80%93 Transplant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow - Bariatric</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow - Cardiovascular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow - ENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow - FMIGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow - MIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fellow - Trauma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Firefighter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GYN surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Nurse Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Team Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IV Theraphy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infection Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instrument Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interim Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor %26 Delivery Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lieutenant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Material coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Materials Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Materials Manager%2FPurchaser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NICU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neonatologist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse %E2%80%93 ED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse %E2%80%93 ICU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse - OR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse Anesthetist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OB Anesthesia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OBGYN Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR Materials Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ortho%2FNeuro Nurse Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orthopedic Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orthro%2FNero Team Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outpatient Surgery Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner%2FCEO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PACU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paramedic %2F ALS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmacist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plastic Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portfolio Executive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchasing Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RT Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RT Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RT Supervisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiographer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiologist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rectal Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resident %E2%80%93 EM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resident %E2%80%93 IM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resident - Surgical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resource nurse Gen Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resource nurse Urology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory Therapist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory%2FStaff Therapist %28Tier 5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Risk Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robotic Bariatric Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robotic OBGYN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robotic Team Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robotics Nurse Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPD Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPD Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPD Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior Negotiator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supervisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Management Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urological Surgeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urology Nurse Coordinator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urology Team Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vascular Access Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XRay Technician</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_language__c</picklist>
+        <values>
+            <fullName>English %28American%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English %28Australian%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English %28New Zealand%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French %28Canada%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French %28France%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>German</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hebrew %28right to left%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Italian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japanese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korean</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portuguese %28Brazil%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simplified Chinese %28China%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish %28Latin America%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traditional Chinese %28Hong Kong%2FTaiwan%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Family_GPL__c</picklist>
+        <values>
+            <fullName>ANZ - Cardiac Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANZ - EZ-IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANZ - Non-TFX Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Access %28Cardiac%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Access %28Interventional%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Access %28Surgical%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Access %2B Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessories - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active Humidification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acute Dialysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acute Dialysis%C2%A0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adaptors%2FConnectors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aerosol Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Angioplasty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aortic Punch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arterials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aspiration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Ligation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bone Access %2B Biopsy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catheter-Extension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chest Drain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collection Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conduit Harvesting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coronary Angioplasty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dialysis Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drainage%2FCentesis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dressing%2FSecurement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dura%2FDerma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EZ-IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrosurgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Embolics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Embolization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endourology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fascial Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Filters%2FHMEs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guidewires</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gynecology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hemodyalysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hemostasis%2FBiologics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hemostatic Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Flow Nasal Cannula Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hydrophilic Intermittent Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAB Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAB Consoles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAB Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IABP Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR JACC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indwelling Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infant Nasal Cpap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intermittent Catheter Closed Systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Stapling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional Procedures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional Urology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intraosseous Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Bore Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ligation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCS Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male External Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple Product Families</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NIV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non TFX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OnControl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oxygen Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PTD Thrombectomy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PYNG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Percutaneous</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peripheral Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polaris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Port%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pulmonary Hygiene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiation safety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resuscitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Right Heart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Right Heart Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Several</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sheaths</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skin Stapling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialty Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stimpod</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Structural Heart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teleflex Overview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thoracic Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trans-Radial Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uncoated Intermittent Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uretheral Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urodynamic Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vein</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ventrain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visualization Naviga</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Family_LatAm__c</picklist>
+        <values>
+            <fullName>Airway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arterial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Venous Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ligation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skin Stapling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Family__c</picklist>
+        <values>
+            <fullName>Arterial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Venous Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EZ-IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICCs%2FMidline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_of_Interest_GPL__c</picklist>
+        <values>
+            <fullName>AC3 Optimus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASK Arterials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASK CVC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASK Hemodialysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASK Large Bore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASK MAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASK PSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Access Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Access Kits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accumed Wrist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acute Doble or Triple Lumen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Angio Assist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aortic Punch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow Percutaneous Sheaths</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow Trerotola PTD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arterial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoCAT2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoCAT2WAVE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoFill</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Babi%2EPlus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bandit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biopatch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cannon II Plus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Access Procedure Trays</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chest Drain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chocolate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CleanSweep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ClearConnect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conduit Harvesting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Containers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Control%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D-Stat Clamp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D-Stat Dry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D-Stat Flowable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLX Rhythm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disposable Temperature Probe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dura%2FDerma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EFX Suture Passer EFXSP2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Edge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electrosurgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endurance Basic%2FDevice Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ergo Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ergo Complete %E2%80%93 MAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ergo Complete %E2%80%93 PSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ErgoPack Complete - Hemodialysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expro Elite Snares</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G4 PICCs Non-DLX %28with G4 Nav%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gel-Bead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gel-Block</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gel-Flow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gentle-Lock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glidescope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greb Set</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Griplok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grunwald</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guardian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guardian Subglottic Suctioning Tube</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guideliner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High%2FMid Tier Endurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAB Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAB Pump Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAB Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMA Retractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR JACC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional Kits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intra-Aortic Balloon Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intra-Aortic Balloon Consoles AC3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Airway %28Other%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Flexible %2C LMA Flexible PreCurved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LPD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Langston</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy AGBA PI Midline %28MPK1A%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MADomizer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maxtec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microintroducer kits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minnie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple Products of Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nextstep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Ergo Hemodialysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-ErgoPack Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nursing JACC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optiseal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P47482</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI Midline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PI Midline %28Non-MPK1A%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICC Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICC Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICCs %28non-Navigation%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pelvic stabilizer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Piggy Back</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polaris Blades</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polaris Handles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pronto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pronto LP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pronto V3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pronto V4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pronto XL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quick Flash</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QuikClot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R350</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RA Catheters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RHYTHM ECG only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radial Sheaths</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rediguard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reprocessing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory Disposables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Right Angle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Several</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skin Stapling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Needle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Snares</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spectre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stimpod</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Straight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strait Set</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stylet G4 BSK - No PICCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supercross</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sympro Elite Snares</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thrombi-Gel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thrombi-Pad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ThrombiDisc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thrombix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tourniquets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Kits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trapliner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trocar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tru-Torque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turnpike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin Cath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin-Pass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin-Pass Torque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL-GRASP Grasping forceps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL-SCOPE Cystoscope 2%2C9 mm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL-SCOPE4 Cystoscope 4%2C0 mm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL-SHEATH Sheath 20 Fr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL-TRAY Cleaning and storage basket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL-VO Visual obturator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UL-WBRIDGE Working bridge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultra 8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultraflex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vari-Lase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VascBand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vein Hook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vein Procedure Pack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ventrian Kit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verathon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warrior</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wattson temporary pacing guidewire</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_of_Interest_LatAm__c</picklist>
+        <values>
+            <fullName>1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Lumen PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AKP1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active Humidification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adaptors %26 Connectors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aerosol Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow Midline with Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow PICC %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atomization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Polymer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoFuser Pain Pump</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cholangiography</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Circuits%2C Mask %26 Bags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Console</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Arterial %28ASK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Kits %28ASK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom PICC %28ASK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deknatel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Difficult Intubation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endobronchial Blockers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endotracheal Tubes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ensurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ErgoPack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Femoral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FlexTip Plus Epidural Catheter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexblock Continuous Catheter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR Arrow PICC %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR Arrow PICC with Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incentive Spirometers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intubation Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JACC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laryngeal Masks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laryngoscopes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy IR PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Nursing PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Pressure IR PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Pressure Nursing PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid-Tier Kits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Midline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oral %26 Nasal Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other CVCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oxygen Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI Arrowgard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI ErgoPack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passive Humidification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Ergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polymer Metal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resuscitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skin Stapling and removers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stimpod PNB Nerve Stimulator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StimuQuik ECHO PNB Needle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stimucath Continuous Catheter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stylet %28Bedside Kit%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sure Block Spinal Trays</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thermodilution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin Cath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS G4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS Rhythm ECG Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS Rhythm with Tip Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS pre-loaded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS pre-loaded Arrow PICC w%5C Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Valve</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vista</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XP1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eFx</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_of_Interest__c</picklist>
+        <values>
+            <fullName>1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Lumen PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AKP1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow Midline with Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow PICC %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow PICC with Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Console</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drivers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EFx Shield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Femoral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hydrophilic Nitinol Wire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR Arrow PICC %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR Arrow PICC with Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JACC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Protector %28without Cuff Pilot%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Unique EVO %28Cuff Pilot%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Unique EVO %28without Cuff Pilot%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Unique with Silicone %28Cuff Pilot%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Unique with Silicone%28w%2Fo Cuff Pilot%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy IR PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Nursing PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Pressure IR PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Pressure Nursing PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC Arrowgard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC ErgoPack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid-Tier Kits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Midline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other CVCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Pediatric CVCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICC Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI Arrowgard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI ErgoPack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Ergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sterile Needles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stylet %28Bedside Kit%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thermodilution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training %28Non%E2%80%90Sterile%29Product %26 Material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Bones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS G4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS Rhythm ECG Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS Rhythm with Tip Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS pre-loaded Arrow PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS pre-loaded Arrow PICC w%5C Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XP1A</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Qualified_Reason__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_Lead_is_Unqualified_Picklist__c</picklist>
+        <values>
+            <fullName>Contacted-No Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current Customer %E2%80%93 Already Using Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need Evidence Based Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested Presently</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Too High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Using Competitive Product</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requested__c</picklist>
+        <values>
+            <fullName>Access Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demonstration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-mail Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have Rep Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insertion Poster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Literature</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product Idea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samples</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whitepaper</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Session__c</picklist>
+        <values>
+            <fullName>3pm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noon</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Specific_Lead_Source__c</picklist>
+        <values>
+            <fullName>AACN 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AACN%2FNTI 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AAGL 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AANA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AAO 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AARC   2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACEP 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMN 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMTC 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANS 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>APAO 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>APIC 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ARN 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASATT 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASCO 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASCP 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASH 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASMBS 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AST 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ATACCC%2FMHSRS 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AVA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Association for Respiratory Care %28AARC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Society of Anesthesia Technologists %26 Technicians %28ASATT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Society of Anesthesiologists %28ASA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Association for Professionals in Infection Control and Epidemiology %28APIC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boston Abilities 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAEP 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAP 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHEST 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIDA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMS EXPO 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOCUS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HSCA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HTPG 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Houston Abilities 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IAHCSMM 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IARS 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDN Fall 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IL Abilities 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INS Fall 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National Association of Neonatal Nurses %28NANN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PBT 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PGA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Graduate Assembly %28PGA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAM 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SLS 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOMA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUNA 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Jose Abilities 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Society of Airway Management %28SAM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Society of Critical Care Medicine %28SCCM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring INS 2014 Booth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring INS 2014 Breakfast Symposium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spring INS 2014 Cadaver Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHC 2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VGM 2014</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WillthisreplacePolymerLigationSales__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

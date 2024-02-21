@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_material_structure_facilitated_le__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>5 = Very Satisfied
+4 = Satisfied
+3 = Neutral
+2 = Unsatisfied
+1 = Very Unsatisfied</inlineHelpText>
+    <label>Course material/structure facilitated le</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,1 @@
+<apex:page standardcontroller="Price_Quote__c" extensions="PP_Quote_Redirect" tabStyle="Price_Quote__c" showheader="false" action="{!redirect}"/>

@@ -1,0 +1,37 @@
+<apex:page >
+ <apex:sectionHeader title="Salesforce Tutorials" subtitle="Please Review the Following Videos !"/>
+ <a href="http://www.youtube.com/user/salesforce#grid/user/B39017CE69F42E50"><FONT SIZE="6" COLOR="#0033CC">Visit the Salesforce.com Channel on YouTube !!</FONT></a>
+ <table id="theVideos">
+ <tbody>
+    
+    <tr>
+    <td><object width="660" height="405"><param name="movie" value="http://www.youtube.com/v/puydh-ey_2k&hl=en_US&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/puydh-ey_2k&hl=en_US&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="360"></embed></object></td>
+      <td><object width="660" height="405"><param name="movie" value="http://www.youtube.com/v/EzE6haADxRc&hl=en_US&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/EzE6haADxRc&hl=en_US&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="360"></embed></object></td>
+       
+    </tr>
+      <tr>
+      <td> <object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/p8Y31F_tuEM&hl=en&fs=1&&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/p8Y31F_tuEM&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+            </td>
+            <td> <object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/3yVjb5zngl8&hl=en&fs=1&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/3yVjb5zngl8&hl=en&fs=1&color1=0x006699&color2=0x54abd6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+      </td>
+      </tr>
+      
+      <tr>
+      <td>
+      <object width="580" height="360"><param name="movie" value="http://www.youtube.com/v/9CXhw-uA8n0&hl=en&fs=1&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/9CXhw-uA8n0&hl=en&fs=1&color1=0x006699&color2=0x54abd6&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="360"></embed></object>
+      </td>
+      <td>
+      <object width="660" height="405"><param name="movie" value="http://www.youtube.com/v/ae_DKNwK_ms&hl=en_US&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ae_DKNwK_ms&hl=en_US&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="360"></embed></object>
+      </td>
+      </tr>
+      <tr>
+      <td> <object width="660" height="405"><param name="movie" value="http://www.youtube.com/v/Uo9R9nBVMEI&hl=en_US&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Uo9R9nBVMEI&hl=en_US&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+       </td>
+       <td> <object width="550" height="344"><param name="movie" value="http://www.youtube.com/v/J8eZaoGWZjA&hl=en&fs=1&&color1=0x006699&color2=0x54abd6"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/J8eZaoGWZjA&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+      </td> 
+      </tr>
+ 
+ </tbody>
+ </table>
+ 
+</apex:page>

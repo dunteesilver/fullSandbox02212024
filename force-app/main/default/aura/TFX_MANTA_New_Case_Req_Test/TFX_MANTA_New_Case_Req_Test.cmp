@@ -1,0 +1,55 @@
+<aura:component controller="TFX_MANTA_Utility_Handler">
+     <aura:handler name="init" value="{!this}" action="{!c.myAction}"/> 
+ <aura:html tag="style">.toastMessage.forceActionsText{white-space : pre-line !important;}</aura:html>   
+    
+    <aura:attribute name="backgroundImageURL" type="String" default=""/>
+    <aura:attribute name="usrId" type="String" default=""/>
+    <aura:attribute name="usrName" type="String" default=""/>
+    <aura:attribute name="showEdit" type="String" default=""/>
+    <aura:attribute name="caseDate" type="Date" default=""/>
+    
+    <aura:attribute name="hospitalAccObj" 
+                    type="sObject" 
+                    default="{ 'sobjectType': 'MANTA_Proctorship_Request__c',
+                             'Hospital__c': '',
+                             'Physician__c': ''}"
+                    />
+    <aura:attribute
+                    name="newReqObj"
+                    type="sObject"
+                    default="{ 'sobjectType': 'MANTA_Proctorship_Request__c',
+                             'Hospital__c': '',
+                             'Case_Date__c': '',
+							 'Physician__c': '',
+                             'Physician_NPI_Number__c': '',
+                             'Estimated_of_Cases__c': '',
+                             'Case_Type__c': '',
+                             'Status__c': 'Open (Not Accepted)',
+                             'Case_Initiator__c': '',
+                             'Notes__c': '',
+                             'Region__c': 'N/A',
+                             }"
+                    />
+    <aura:attribute name="allPhysiciansLst" type="Contact" />
+    
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+     <div class="slds-align_absolute-center slds-text-heading_medium">New Request</div>
+                
+                <lightning:recordEditForm objectApiName="MANTA_Proctorship_Request__c"                 >
+                    <lightning:inputField fieldName="Hospital__c" value="{!v.hospitalAccObj.Hospital__c}" onchange="{!c.getSelHospRgnAndPhys}" />
+                </lightning:recordEditForm>
+                <br/>
+                <lightning:input name="Region" label="Region" value="{!v.newReqObj.Region__c}" readonly="true" /><br/>
+    
+    
+    
+</aura:component>

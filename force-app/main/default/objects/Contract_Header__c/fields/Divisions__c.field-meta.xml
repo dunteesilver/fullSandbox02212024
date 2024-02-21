@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Divisions__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Division_10__c , &quot;10 &quot; , &quot;&quot; ) + IF( Division_20__c , &quot;20 &quot; , &quot;&quot; ) + IF( Division_30__c , &quot;30 &quot; , &quot;&quot; ) + IF( Division_40__c , &quot;40 &quot; , &quot;&quot; ) + IF( Division_50__c , &quot;50 &quot; , &quot;&quot; ) + IF( Division_60__c , &quot;60 &quot; , &quot;&quot; )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Divisions</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

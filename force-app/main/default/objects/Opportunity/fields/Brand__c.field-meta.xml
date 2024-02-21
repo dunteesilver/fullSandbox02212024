@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand__c</fullName>
+    <externalId>false</externalId>
+    <label>Brand</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arrow International (Teleflex Medical)</fullName>
+                <default>false</default>
+                <label>Arrow International (Teleflex Medical)</label>
+            </value>
+            <value>
+                <fullName>BioPatch</fullName>
+                <default>false</default>
+                <label>BioPatch</label>
+            </value>
+            <value>
+                <fullName>Galemed</fullName>
+                <default>false</default>
+                <label>Galemed</label>
+            </value>
+            <value>
+                <fullName>Gibeck</fullName>
+                <default>false</default>
+                <label>Gibeck</label>
+            </value>
+            <value>
+                <fullName>ICU Medical</fullName>
+                <default>false</default>
+                <label>ICU Medical</label>
+            </value>
+            <value>
+                <fullName>Intersurgical</fullName>
+                <default>false</default>
+                <label>Intersurgical</label>
+            </value>
+            <value>
+                <fullName>LMA Airway</fullName>
+                <default>false</default>
+                <label>LMA Airway</label>
+            </value>
+            <value>
+                <fullName>LMA MAD</fullName>
+                <default>false</default>
+                <label>LMA MAD</label>
+            </value>
+            <value>
+                <fullName>Mobile Medical</fullName>
+                <default>false</default>
+                <label>Mobile Medical</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Private Label</fullName>
+                <default>false</default>
+                <label>Private Label</label>
+            </value>
+            <value>
+                <fullName>Radpad (WIT)</fullName>
+                <default>false</default>
+                <label>Radpad (WIT)</label>
+            </value>
+            <value>
+                <fullName>Respironics (Phillips Healthcare)</fullName>
+                <default>false</default>
+                <label>Respironics (Phillips Healthcare)</label>
+            </value>
+            <value>
+                <fullName>Rusch Airways</fullName>
+                <default>false</default>
+                <label>Rusch Airways</label>
+            </value>
+            <value>
+                <fullName>Sage Products</fullName>
+                <default>false</default>
+                <label>Sage Products</label>
+            </value>
+            <value>
+                <fullName>Sheridan</fullName>
+                <default>false</default>
+                <label>Sheridan</label>
+            </value>
+            <value>
+                <fullName>Sontek</fullName>
+                <default>false</default>
+                <label>Sontek</label>
+            </value>
+            <value>
+                <fullName>Triarc Systems</fullName>
+                <default>false</default>
+                <label>Triarc Systems</label>
+            </value>
+            <value>
+                <fullName>Truphatek Laryngoscope</fullName>
+                <default>false</default>
+                <label>Truphatek Laryngoscope</label>
+            </value>
+            <value>
+                <fullName>UroLift</fullName>
+                <default>false</default>
+                <label>UroLift</label>
+            </value>
+            <value>
+                <fullName>Vidacare</fullName>
+                <default>false</default>
+                <label>Vidacare</label>
+            </value>
+            <value>
+                <fullName>Xavant</fullName>
+                <default>false</default>
+                <label>Xavant</label>
+            </value>
+            <value>
+                <fullName>Zefon</fullName>
+                <default>false</default>
+                <label>Zefon</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

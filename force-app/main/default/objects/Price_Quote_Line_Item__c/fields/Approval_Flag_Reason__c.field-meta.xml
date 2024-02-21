@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Flag_Reason__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Test the Material Status */
+IF(Material_Status_Check__c = 1,
+&quot;Material Not Saleable&quot;,
+IF(
+AND(
+OR(Sales_Price__c &lt; Cost_Check__c,Sales_Price__c &lt; Floor_Price__c),
+NOT(CONTAINS(Check_Business_Unit__c,&quot;Inst&quot;)),
+Eligible_Price__c &lt;&gt; Sales_Price__c,
+NOT(Exception__c)
+),
+&quot;Below Floor/Cost&quot;,
+/* Main Section */
+/* Pricing Tiers */
+if(
+AND(
+NOT(CONTAINS(Check_Business_Unit__c,&quot;Inst&quot;)),NOT(CONTAINS(Check_Business_Unit__c,&quot;Latin&quot;)),
+Eligible_Price__c &lt;&gt; Sales_Price__c,
+List_Price__c &lt;&gt; Sales_Price__c,
+Requested_Price__c &lt;&gt; Sales_Price__c
+),&quot;Sales Price = List, Contract, Pricing Tier&quot;,
+/* Sales Price is above Contract Price */
+IF(
+AND(
+!ISBLANK(Sales_Deal_Description__c),
+Sales_Price__c != Eligible_Price__c,
+NOT(Exception__c),
+NOT(CONTAINS(Check_Business_Unit__c,&quot;Inst&quot;))
+),&quot;Not Equal Eligible&quot;,
+/* REP/RSM-Sales Price above List Price */
+IF(
+AND(
+List_Price__c = 0,
+Eligible_Price__c &lt;&gt; Sales_Price__c,
+Sales_Price__c != RSM_Price__c,
+Sales_Price__c != Rep_Price__c
+),&quot;Price must = REP/RSM&quot;,
+/* These rules should cover 99% of Line Items */
+/* Sales Price is outside Rep Guidelines */
+IF(
+AND(
+Owner_Approval_Level__c = 1,
+Sales_Price__c &lt; Rep_Price__c,
+Eligible_Price__c &lt;&gt; Sales_Price__c,
+Sales_Price__c &lt;&gt; 0
+),&quot;Rep Guidelines&quot;,
+/* Sales Price is outside RSM Guidelines */
+IF(
+AND(
+Owner_Approval_Level__c = 2,
+Sales_Price__c &lt; RSM_Price__c,
+Eligible_Price__c &lt;&gt; Sales_Price__c,
+Sales_Price__c &lt;&gt; 0
+),&quot;RSM Guidelines&quot;,
+/* These are the exceptions that get sent to the RSM to sort out */
+/* REP BIDS - Sales Price is outside RSM Guidelines */
+IF(
+AND(
+Owner_Approval_Level__c = 2,
+Sales_Price__c &lt; RSM_Price__c,
+LEFT(Sales_Deal_Description__c,3) = &quot;[*]&quot;,
+LEFT(Sales_Deal_Description__c,7) != &quot;[*] EMS&quot;,
+Sales_Price__c &lt;&gt; 0
+),&quot;Below RSM-(REP BIDS/Advance Edit)&quot;,
+/* REP BIDS - Sales Price is outside Rep Guidelines */
+IF(
+AND(
+Owner_Approval_Level__c = 1,
+Sales_Price__c &lt; Rep_Price__c,
+LEFT(Sales_Deal_Description__c,3) = &quot;[*]&quot;,
+LEFT(Sales_Deal_Description__c,7) != &quot;[*] EMS&quot;,
+Sales_Price__c &lt;&gt; 0
+),&quot;Below Rep-(REP BIDS/Advance Edit)&quot;,
+/* Off Contract and List Price is Zero */
+IF(
+AND(
+Sales_Price__c = 0,
+NOT( Exception__c ),
+!ISBLANK(Material_Name_Text__c)
+),
+&quot;Sales Price Cannot be Zero&quot;,
+/* When RSM and Rep Price is Zero, Sales Price must Equal Eligible Price */
+IF(
+AND(
+Rep_Price__c = 0,
+RSM_Price__c = 0,
+Eligible_Price__c &lt;&gt; Sales_Price__c
+),&quot;When RSM/Rep Price is Zero, Sales Price must Equal Eligible Price&quot;,
+/* Sales Price is above List Price */
+IF(
+AND(
+Sales_Price__c &gt; List_Price__c
+),&quot;Above List Price&quot;,
+&quot;Ready&quot;
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <label>Approval Flag Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,39 @@
+<apex:page standardController="Account" extensions="account_Page_Helper" readOnly="true">
+    <head>
+        <style>
+            .odd { 
+            background-color: #ffffff;
+            }
+            .even {
+            background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <br/>&nbsp;
+    <apex:outputLink value="{!$Site.domain}/{!Account.Id}">Click to go Back to {!account.name}</apex:outputLink>
+    <br/>&nbsp;
+    <apex:pageBlock title="All {!myBU} Sales for {!Account.Name}">
+        <apex:pageBlockTable value="{!AllProductsbyBU}" var="m" rowClasses="even,odd">
+            
+            <apex:column value="{!prodMap[m].Material_Link__c}" headerValue="Material"/>  
+            <apex:column value="{!prodMap[m].Description}" headerValue="Product Description "/>
+            <apex:column headerValue="{!thisYear} YTD Sales">
+                <apex:outputText value="{0,number,#,##0.00}">{!prodMap[m].CurrencyIsoCode} $
+                    <apex:param value="{!salesMap['YTDALLbyBU'+m]}"/>
+                </apex:outputText>
+            </apex:column> 
+            <apex:column headerValue="{!lastYear} Total Sales">
+                <apex:outputText value="{0,number,#,##0.00}">{!prodMap[m].CurrencyIsoCode} $
+                    <apex:param value="{!salesMap['PYTDALLbyBU'+m]}"/>
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Growth!">
+                <apex:outputText value="{0,number,#,##0.00}">
+                    <apex:param value="{!IF(OR(salesMap['PYTDALLbyBU'+m] = 0,salesMap['YTDALLbyBU'+m] = 0),0,(salesMap['YTDALLbyBU'+m] - (salesMap['PYTDALLbyBU'+m] / 365 * (TODAY() - DATE(YEAR(TODAY()),1,1)))) / (salesMap['PYTDALLbyBU'+m] / 365 * (TODAY() - DATE(YEAR(TODAY()),1,1))))}"/>                
+                </apex:outputText>
+
+            
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

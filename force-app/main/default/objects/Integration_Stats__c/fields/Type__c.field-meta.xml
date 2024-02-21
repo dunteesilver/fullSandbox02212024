@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Database__c = &quot;SFDC Open Orders.csv&quot;,&quot;1 - Open Orders&quot;,
+if(RIGHT(Database__c,8) = &quot;item.csv&quot;,&quot;3 - Line Items&quot;,
+if(RIGHT(Database__c,8) = &quot;2016.csv&quot;,&quot;Last Year&quot;,
+if(RIGHT(Database__c,5) = &quot;P.csv&quot;,&quot;3 - Line Items&quot;,
+if(LEFT(Database__c,4) = &quot;SFDC&quot;,&quot;2 - Sales&quot;,
+if(LEFT(Database__c,3) = &quot;ICM&quot;,&quot;ICM&quot;,
+if(RIGHT(Database__c,9) = &quot;Ready.csv&quot;,&quot;ZPSA&quot;,
+if(LEFT(Database__c,4) = &quot;ZPSA&quot;,&quot;ZPSA&quot;,
+if(CONTAINS(Database__c,&quot;OEM&quot;),&quot;OEM&quot;,
+NULL
+)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

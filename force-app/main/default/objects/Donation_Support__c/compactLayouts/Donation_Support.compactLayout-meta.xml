@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Donation_Support</fullName>
+    <fields>Humanitarian_Donation__c</fields>
+    <fields>Category__c</fields>
+    <fields>Report_Value_in_USD__c</fields>
+    <fields>Report_Year__c</fields>
+    <label>Donation Support</label>
+</CompactLayout>

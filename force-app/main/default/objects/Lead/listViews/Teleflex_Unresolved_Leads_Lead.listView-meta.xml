@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Teleflex_Unresolved_Leads_Lead</fullName>
+    <columns>LEAD.LAST_NAME</columns>
+    <columns>LEAD.FIRST_NAME</columns>
+    <columns>LEAD.RECORDTYPE</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Zip_Code_Formstack_Affiliation__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>1/18/2022 12:00 AM</value>
+    </filters>
+    <label>Teleflex Unresolved Leads</label>
+    <queue>Teleflex_Unresolved_Leads</queue>
+    <sharedTo>
+        <role>Teleflex_Global_IT</role>
+    </sharedTo>
+</ListView>

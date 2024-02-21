@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Establish_check_points__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Establish check points/progress report meetings
+throughout the trial (e.g. monthly with decision
+makers/champion)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Establish check points/progress report meetings
+throughout the trial (e.g. monthly with decision
+makers/champion)</inlineHelpText>
+    <label>Establish check points</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

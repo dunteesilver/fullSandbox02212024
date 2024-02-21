@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_RT_to_SurgicalDeviceAndBariatrics</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Product_Family_GPL__c, &quot;Internal Stapling&quot;),
+
+ RecordType.Name &lt;&gt; &quot;Surgical Device &amp; Bariatrics&quot;
+
+)</errorConditionFormula>
+    <errorDisplayField>Product_Family_GPL__c</errorDisplayField>
+    <errorMessage>Since you have selected Internal Stapling as you Product Family. You will need to change the Record Type to Surgical Device &amp; Bariatric before selecting Internal Stapling as your PF. RT has its own Edit button not to be confused normal Edit</errorMessage>
+</ValidationRule>

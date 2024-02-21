@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approved_Contract_Pending_OPERA</fullName>
+        <description>Approved Contract Pending OPERA</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rebekah.tessitore@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Contract_Pending_OPERA</template>
+    </alerts>
+    <alerts>
+        <fullName>OPERA_Record_Approved</fullName>
+        <description>OPERA Record Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Request_Approved_OPERA</template>
+    </alerts>
+    <alerts>
+        <fullName>OPERA_Record_Rejected</fullName>
+        <description>OPERA Record Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Request_Rejected_OPERA</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved_Contract_Pending</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Approved - Contract Pending</literalValue>
+        <name>Approved - Contract Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approved</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Approved - Contract Attached</literalValue>
+        <name>Final Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OPERA_Complete</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>OPERA Complete</literalValue>
+        <name>OPERA Complete</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recalled</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_CEM</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Submitted for CEM</literalValue>
+        <name>Submitted for CEM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_OPERA_Core_Team</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Submitted for OPERA Core Team</literalValue>
+        <name>Submitted for OPERA Core Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_RCEM</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Submitted for RCEM</literalValue>
+        <name>Submitted for RCEM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_RSM</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Submitted for RSM</literalValue>
+        <name>Submitted for RSM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>OPERA Complete</fullName>
+        <actions>
+            <name>OPERA_Complete</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>OPERA__c.OPERA_Complete__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

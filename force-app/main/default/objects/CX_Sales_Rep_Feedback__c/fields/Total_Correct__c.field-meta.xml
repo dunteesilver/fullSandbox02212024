@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Correct__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Correct</label>
+    <summaryFilterItems>
+        <field>CX_Sales_Rep_Account__c.Yes__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CX_Sales_Rep_Account__c.CX_Sales_Rep_Feedback__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

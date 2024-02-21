@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VARecordsMustBeInNewStageUponCreation</fullName>
+    <active>false</active>
+    <description>To assure records aren&apos;t being marked as Confirmed without going through the Approval/Review Process</description>
+    <errorConditionFormula>AND(
+
+ISNEW(),
+
+ISPICKVAL(Business_Unit__c, &quot;VA&quot;),
+
+NOT(ISPICKVAL( Stage__c,&quot;NEW&quot; ))
+
+)</errorConditionFormula>
+    <errorDisplayField>Stage__c</errorDisplayField>
+    <errorMessage>New Records must go through the Review Process and should start out as &quot;New&quot;</errorMessage>
+</ValidationRule>

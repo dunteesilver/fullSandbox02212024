@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Filter__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+OR(
+/* No Profile */ 
+ISBLANK(Contractor_Profile__c), 
+
+/* No Reimbursement Rate */ 
+OR(ISBLANK(Reimbursement_Rate__c),Reimbursement_Rate__c = 0), 
+
+/* Missing Email */ 
+ISBLANK(Email__c)
+),
+TRUE, 
+
+/* All Good! */ 
+FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Filter</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

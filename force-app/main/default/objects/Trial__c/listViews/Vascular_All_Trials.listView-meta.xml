@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vascular_All_Trials</fullName>
+    <columns>NAME</columns>
+    <columns>Case_Count__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Phases_of_the_Trial__c</columns>
+    <columns>Primary_Surgeon__c</columns>
+    <columns>Product_SKU__c</columns>
+    <columns>Secondary_Surgeon__c</columns>
+    <columns>Trial_End_Date__c</columns>
+    <columns>Trial_Start_Date__c</columns>
+    <columns>Type_of_Case__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Trial__c.Vascular_Trial</value>
+    </filters>
+    <label>All</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Vascular_ALL</group>
+    </sharedTo>
+</ListView>

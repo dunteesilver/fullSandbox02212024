@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surpass_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field to track Surpass accounts</description>
+    <externalId>false</externalId>
+    <label>Surpass Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

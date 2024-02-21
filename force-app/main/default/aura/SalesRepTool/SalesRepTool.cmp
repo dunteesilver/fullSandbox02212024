@@ -1,0 +1,146 @@
+<aura:component controller="SAPSoapStubController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="itemSrchChkbox" type="Boolean" default="false"/>
+    <aura:attribute name="accSfId" type="String" />
+    <aura:attribute name="salesRepsList" type="List"/>
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="prodItem" type="String"/>
+    <aura:attribute name="prodCatVal" type="String"/>
+    <aura:attribute name="prodAreaVal" type="String"/>
+    <aura:attribute name="productsLst" type="List"/>
+    <aura:attribute name="productsAreaLst" type="List"/>
+    <aura:attribute name="prodInfoMap" type="Map" default="{ pageId : 'SFDC' }"/>
+    <aura:attribute name="isLoading" type="Boolean" />    
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    <div class="slds-box slds-align_absolute-center slds-card slds-size_8-of-12">
+        <div class="slds-m-around_x-small">
+            <div
+                 class="slds-text-heading_medium slds-text-align_center"
+                 style="color: #20a9c1;font-weight: bold"
+                 >Sales Rep Lookup Tool
+            </div>
+            <br/><br/>
+            <div
+                 class="slds-text-heading_small slds-text-align_left"
+                 style="color: #20a9c1;"
+                 >Teleflex sales representatives are assigned based on location and product category.
+            </div>
+            <br/>
+            <div
+                 class="slds-text-heading_small slds-text-align_left"
+                 style="color: #20a9c1;"
+                 >Please select hospital and product category OR Search as you type product name below to identify the corresponding Teleflex representative.  
+            </div>
+        </div>
+    </div>
+    <article class="slds-align_absolute-center slds-card slds-size_8-of-12">
+        <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">
+            <lightning:recordEditForm objectApiName="Sample_Request__c">
+                <lightning:inputField fieldName="Account__c" value="{!v.accSfId}" required="true"/>
+            </lightning:recordEditForm>
+            <ui:inputCheckbox
+                              aura:id="checkbox"
+                              label="Search with Item Number"
+                              value="{!v.itemSrchChkbox}"
+                              />
+            <aura:if isTrue="{! v.itemSrchChkbox == true }">
+                <lightning:recordEditForm objectApiName="Sample_Request_Line_Item__c">
+                    <lightning:inputField fieldName="Material__c" value="{!v.prodItem}" required="true"/>
+                </lightning:recordEditForm>
+                <aura:set attribute="else">
+                    <lightning:select aura:id="prodcat" name="prodcat" label="Product Category:" value="{!v.prodCatVal}" onchange="{!c.getProdArea}" disabled="{!v.prdDisabled}">
+                        <option text="Choose one..." value=""/>
+                        <aura:iteration items="{!v.productsLst}" var="forEachItemInLst">
+                            <option text="{!forEachItemInLst}" value="{!forEachItemInLst}" />
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:select aura:id="prodarea" name="prodarea" label="Product Area:" value="{!v.prodAreaVal}" disabled="{!v.prdDisabled}">
+                        <aura:iteration items="{!v.productsAreaLst}" var="forEachItemInLst">
+                            <option text="{!forEachItemInLst}" value="{!forEachItemInLst}" />
+                        </aura:iteration>
+                    </lightning:select>
+                </aura:set>
+            </aura:if>
+            <br/>
+            <center>
+                <lightning:button
+                                  variant="success"
+                                  label="SUBMIT"
+                                  onclick="{!c.fetchRealTimeData}"
+                                  />
+            </center>
+        </div>
+        
+    </article>
+    <!--data table starts here-->
+    <aura:if isTrue="{!not(empty(v.salesRepsList))}">
+        <article class="slds-align_absolute-center slds-card slds-card slds-size_8-of-12">
+            <table
+                   class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+                   >
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col" class="slds-cell-wrap">
+                            <div class="slds-truncate" title="Title">First Name</div>
+                        </th>
+                        <th scope="col" class="slds-cell-wrap">
+                            <div class="slds-truncate" title="Completed">Last Name</div>
+                        </th>
+                        <th scope="col" class="slds-cell-wrap">
+                            <div class="slds-truncate" title="Comments">Email</div>
+                        </th>
+                        <th scope="col" class="slds-cell-wrap">
+                            <div class="slds-truncate">Phone Number</div>
+                        </th>
+                        <th scope="col" class="slds-cell-wrap">
+                            <div class="slds-truncate">Phone Ext</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>            
+                    <aura:iteration items="{!v.salesRepsList}" var="item">
+                        <aura:if isTrue="{!not(empty(v.message))}">
+                            <tr class="slds-hint-parent">
+                                <td data-label="FIRST NAME"><div class="slds-cell-wrap slds-truncate">No Data Found</div></td>
+                                <td data-label="LAST NAME"><div class="slds-cell-wrap slds-truncate">No Data Found</div></td>
+                                <td data-label="EMAIL"><div class="slds-cell-wrap slds-truncate">No Data Found</div></td>
+                                <td data-label="PHONE"><div class="slds-cell-wrap slds-truncate">No Data Found</div></td>
+                                <td data-label="PHONE EXT"><div class="slds-cell-wrap slds-truncate">No Data Found</div></td>
+                            </tr>
+                            <aura:set attribute="else">
+                                <tr class="slds-hint-parent">
+                                    <td data-label="FIRST NAME"><div class="slds-cell-wrap slds-truncate">{!item.fname}</div></td>
+                                    <td data-label="LAST NAME"><div class="slds-cell-wrap slds-truncate">{!item.lname}</div></td>
+                                    <td data-label="EMAIL"><div class="slds-cell-wrap slds-truncate">{!item.email}</div></td>
+                                    <td data-label="PHONE"><div class="slds-cell-wrap slds-truncate">{!item.phone}</div></td>
+                                    <td data-label="PHONE EXT"><div class="slds-cell-wrap slds-truncate">{!item.phoneExt}</div></td>
+                                </tr>
+                            </aura:set>
+                        </aura:if>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </article>
+    </aura:if>
+    <br/><br/>
+    <div class="slds-box slds-align_absolute-center slds-card slds-size_8-of-12">
+        <div class="slds-m-around_x-small">
+            <div
+                 class="slds-text-heading_small slds-text-align_left"
+                 style="color: #20a9c1;"
+                 >The results provided are the same as what a customer would get on <a>myTeleflex.com</a>. If you find any sales rep contact info incorrect then <a href="https://tfxinc.sharepoint.com/sites/DigitalExperienceDX/SitePages/myTeleflex.com.aspx#sales-rep-resources">Click here!</a> to know the Change Notification Process, submit Change Form, and learn more about what myTeleflex.com offers your customers.  
+            </div>
+        </div>
+    </div>
+</aura:component>

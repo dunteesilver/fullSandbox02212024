@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="regionName" type="String" default="All"/>
+    <aura:attribute name="usrId" type="String" default=""/>
+    <aura:attribute name="usrName" type="String" default=""/>
+    <aura:attribute name="showEdit" type="String" default=""/>
+    
+    <aura:attribute name="regionLst" 
+                    type="List" 
+                    default="['Atlantic', 'East', 'Mid Atlantic', 'Great Lakes', 'Mid South', 'Ohio Valley', 'Southeast'                                        
+                             ,'Great Plains', 'Gulf States', 'Lone Star', 'Southwest', 'West', 'Central Plains'
+                             ]" />
+    <article class="slds-align_absolute-center slds-card" style="width: 100%">
+        <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">
+            <lightning:button variant="Success" label="Refresh" onclick="{!c.refreshPage}" />*Please "Refresh" this page before you choose any region.
+            <lightning:select name="regionFltr" value="{!v.regionName}" label="Region" onchange="{!c.getCalEvntsByRgn}" >
+                <option value="All">All</option>
+                <aura:iteration items="{!v.regionLst}" var="item">
+                    <option text="{!item}"></option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+    </article>
+</aura:component>

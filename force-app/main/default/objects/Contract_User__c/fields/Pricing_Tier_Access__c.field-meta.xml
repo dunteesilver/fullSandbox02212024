@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Tier_Access__c</fullName>
+    <defaultValue>1</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>1 = “Pricing Tier 1 - Rep&quot;
+2 = “Pricing Tier 2 - Manager&quot;
+3 = “Pricing Tier 3 - Director&quot;
+4 = “Pricing Tier 4 - VP&quot;</inlineHelpText>
+    <label>Pricing Tier Access</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,31 @@
+.THIS.slds-spinner_container {  
+  z-index: 10000;
+  position: fixed;   
+}
+
+/*.THIS .slds-textarea {
+    height:50px !important;
+}*/
+
+/*.THIS .slds-select {
+    width:150px !important;
+}*/
+
+/*@media print {
+    .THIS.divToPrint {
+        background-color: red;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0.35;
+        left: 0.17;
+        margin: 0;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .THIS.hideInPrint{
+        display: none;
+    }
+}*/

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Complete_for_Future_Education</fullName>
+    <active>true</active>
+    <description>This prevents users from marking records training complete if the confirmed end date is in the future.</description>
+    <errorConditionFormula>AND(
+$UserRole.Name &lt;&gt; &quot;Teleflex Global IT&quot;, 
+ISPICKVAL(Stage__c,&quot;Training Completed&quot;), 
+Ending_Date__c &gt; TODAY()
+)</errorConditionFormula>
+    <errorMessage>You cannot mark a training complete that is scheduled for a future date. Please update the Confirmed End Date if necessary or reach out to the Salesforce.com team for assistance.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anaesthetist</fullName>
+                <default>false</default>
+                <label>Anaesthetist</label>
+            </value>
+            <value>
+                <fullName>Biomedical Engineer</fullName>
+                <default>false</default>
+                <label>Biomedical Engineer</label>
+            </value>
+            <value>
+                <fullName>Business Manager</fullName>
+                <default>false</default>
+                <label>Business Manager</label>
+            </value>
+            <value>
+                <fullName>Cardiologist</fullName>
+                <default>false</default>
+                <label>Cardiologist</label>
+            </value>
+            <value>
+                <fullName>Cardiothoracic Surgeon</fullName>
+                <default>false</default>
+                <label>Cardiothoracic Surgeon</label>
+            </value>
+            <value>
+                <fullName>Chief Biomedical Engineer</fullName>
+                <default>false</default>
+                <label>Chief Biomedical Engineer</label>
+            </value>
+            <value>
+                <fullName>Chief Executive Officer</fullName>
+                <default>false</default>
+                <label>Chief Executive Officer</label>
+            </value>
+            <value>
+                <fullName>Chief Financial Officer</fullName>
+                <default>false</default>
+                <label>Chief Financial Officer</label>
+            </value>
+            <value>
+                <fullName>Chief Medical Officer</fullName>
+                <default>false</default>
+                <label>Chief Medical Officer</label>
+            </value>
+            <value>
+                <fullName>Chief Radiographer</fullName>
+                <default>false</default>
+                <label>Chief Radiographer</label>
+            </value>
+            <value>
+                <fullName>Clinical Nurse Consultant</fullName>
+                <default>false</default>
+                <label>Clinical Nurse Consultant</label>
+            </value>
+            <value>
+                <fullName>Clinical Nurse Educator</fullName>
+                <default>false</default>
+                <label>Clinical Nurse Educator</label>
+            </value>
+            <value>
+                <fullName>Clinical Nurse Manager</fullName>
+                <default>false</default>
+                <label>Clinical Nurse Manager</label>
+            </value>
+            <value>
+                <fullName>Clinical Nurse Specialist</fullName>
+                <default>false</default>
+                <label>Clinical Nurse Specialist</label>
+            </value>
+            <value>
+                <fullName>Community Nurse</fullName>
+                <default>false</default>
+                <label>Community Nurse</label>
+            </value>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>CSSD Officer</fullName>
+                <default>false</default>
+                <label>CSSD Officer</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Director of Nursing</fullName>
+                <default>false</default>
+                <label>Director of Nursing</label>
+            </value>
+            <value>
+                <fullName>General Manager</fullName>
+                <default>false</default>
+                <label>General Manager</label>
+            </value>
+            <value>
+                <fullName>Infection Control Co-ordinator</fullName>
+                <default>false</default>
+                <label>Infection Control Co-ordinator</label>
+            </value>
+            <value>
+                <fullName>Intensivist</fullName>
+                <default>false</default>
+                <label>Intensivist</label>
+            </value>
+            <value>
+                <fullName>Interventional Cardiologist</fullName>
+                <default>false</default>
+                <label>Interventional Cardiologist</label>
+            </value>
+            <value>
+                <fullName>Interventional Radiologist</fullName>
+                <default>false</default>
+                <label>Interventional Radiologist</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <label>Manager</label>
+            </value>
+            <value>
+                <fullName>Medical Director</fullName>
+                <default>false</default>
+                <label>Medical Director</label>
+            </value>
+            <value>
+                <fullName>Microbiologist</fullName>
+                <default>false</default>
+                <label>Microbiologist</label>
+            </value>
+            <value>
+                <fullName>Neurologist</fullName>
+                <default>false</default>
+                <label>Neurologist</label>
+            </value>
+            <value>
+                <fullName>Neurosurgeon</fullName>
+                <default>false</default>
+                <label>Neurosurgeon</label>
+            </value>
+            <value>
+                <fullName>Nurse Practioner</fullName>
+                <default>false</default>
+                <label>Nurse Practioner</label>
+            </value>
+            <value>
+                <fullName>Nurse Unit Manager</fullName>
+                <default>false</default>
+                <label>Nurse Unit Manager</label>
+            </value>
+            <value>
+                <fullName>Operating Theatre Manager</fullName>
+                <default>false</default>
+                <label>Operating Theatre Manager</label>
+            </value>
+            <value>
+                <fullName>Perfusionist</fullName>
+                <default>false</default>
+                <label>Perfusionist</label>
+            </value>
+            <value>
+                <fullName>Physician</fullName>
+                <default>false</default>
+                <label>Physician</label>
+            </value>
+            <value>
+                <fullName>Procurement Officer</fullName>
+                <default>false</default>
+                <label>Procurement Officer</label>
+            </value>
+            <value>
+                <fullName>Purchasing Officer</fullName>
+                <default>false</default>
+                <label>Purchasing Officer</label>
+            </value>
+            <value>
+                <fullName>Radiographer</fullName>
+                <default>false</default>
+                <label>Radiographer</label>
+            </value>
+            <value>
+                <fullName>Radiologist</fullName>
+                <default>false</default>
+                <label>Radiologist</label>
+            </value>
+            <value>
+                <fullName>Receptionist</fullName>
+                <default>false</default>
+                <label>Receptionist</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse</fullName>
+                <default>false</default>
+                <label>Registered Nurse</label>
+            </value>
+            <value>
+                <fullName>Registrar</fullName>
+                <default>false</default>
+                <label>Registrar</label>
+            </value>
+            <value>
+                <fullName>Respiratory Physician</fullName>
+                <default>false</default>
+                <label>Respiratory Physician</label>
+            </value>
+            <value>
+                <fullName>Respiratory Specalist</fullName>
+                <default>false</default>
+                <label>Respiratory Specalist</label>
+            </value>
+            <value>
+                <fullName>Specialist Anaesthetist</fullName>
+                <default>false</default>
+                <label>Specialist Anaesthetist</label>
+            </value>
+            <value>
+                <fullName>Stores Officer</fullName>
+                <default>false</default>
+                <label>Stores Officer</label>
+            </value>
+            <value>
+                <fullName>Surgeon</fullName>
+                <default>false</default>
+                <label>Surgeon</label>
+            </value>
+            <value>
+                <fullName>Technician</fullName>
+                <default>false</default>
+                <label>Technician</label>
+            </value>
+            <value>
+                <fullName>Test Data 3</fullName>
+                <default>false</default>
+                <label>Test Data 3</label>
+            </value>
+            <value>
+                <fullName>Ward Clerk</fullName>
+                <default>false</default>
+                <label>Ward Clerk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

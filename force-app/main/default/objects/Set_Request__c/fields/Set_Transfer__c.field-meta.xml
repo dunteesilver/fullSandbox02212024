@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Set_Transfer__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Set Transfer</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Set_Request__c.Product__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Product__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Set_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Set_Request__c</referenceTo>
+    <relationshipLabel>Set Requests</relationshipLabel>
+    <relationshipName>Set_Requests</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

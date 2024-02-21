@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Status_Description__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Material_Status_Numeric__c, 
+&quot;40&quot;,&quot;Saleable (40)&quot;, 
+&quot;20&quot;,&quot;Pre-Sales only (20)&quot;, 
+&quot;50&quot;,&quot;Limited Availability (50)&quot;, 
+&quot;60&quot;,&quot;Discont pend&apos;g stock (60)&quot;, 
+&quot;70&quot;,&quot;70-Archive (70)&quot;, 
+&quot;80&quot;,&quot;Obsolete-No Activity (80)&quot;, 
+&quot;90&quot;,&quot;Obsolete+Cred+Debit (90)&quot;, 
+&quot;99&quot;,&quot;Temp Stop Shipment (99)&quot;, 
+&quot;Z1&quot;,&quot;Constrained Product (Z1)&quot;, 
+&quot;Z2&quot;,&quot;Discontinued w/o replacement (Z2)&quot;, 
+&quot;Z3&quot;,&quot;Discontinued w replacement (Z3)&quot;, 
+&quot;Z4&quot;,&quot;Technical defect(Z4)&quot;, 
+&quot;Z5&quot;,&quot;Under Development (Z5)&quot;, 
+&quot;Z6&quot;,&quot;Pre-Sales Only (Z6)&quot;, 
+&quot;Z7&quot;,&quot;Limited Availability (Z7)&quot;, 
+&quot;Z8&quot;,&quot;Discontinued Pending Stock (Z8)&quot;, 
+&quot;Z9&quot;,&quot;Archive (Z9)&quot;,
+&quot;ZE&quot;,&quot;Awaiting GTIN Update (ZE)&quot;, 
+&quot;ZO&quot;,&quot;Obsolete-No Activity (ZO)&quot;, 
+&quot;ZR&quot;,&quot;Under R&amp;D Development (ZR)&quot;, 
+&quot;ZT&quot;,&quot;Temp Stop Shipment (ZT)&quot;, 
+&quot;ZU&quot;,&quot;ObsoleteWReplacement (ZU)&quot;, 
+NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Material Status Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

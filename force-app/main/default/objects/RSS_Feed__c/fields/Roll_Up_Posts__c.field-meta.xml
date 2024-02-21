@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Roll_Up_Posts__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>The Roll up posts flag determines the way in which posts are presented in your chatter feed, rss news items can be posted as individual chatter posts, or if this flag is checked then the rss news items will be posted into a single chatter feed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Roll up posts flag determines the way in which posts are presented in your chatter feed, rss news items can be posted as individual chatter posts, or if this flag is checked then the rss news items will be posted into a single chatter feed</inlineHelpText>
+    <label>Roll Up Posts</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

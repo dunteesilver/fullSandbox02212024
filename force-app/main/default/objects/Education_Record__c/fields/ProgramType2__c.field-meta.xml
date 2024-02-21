@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProgramType2__c</fullName>
+    <externalId>false</externalId>
+    <label>Program Type 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In-service</fullName>
+                <default>false</default>
+                <label>In-service</label>
+            </value>
+            <value>
+                <fullName>Product Training/Simulation</fullName>
+                <default>false</default>
+                <label>Product Training/Simulation</label>
+            </value>
+            <value>
+                <fullName>Case Coverage</fullName>
+                <default>false</default>
+                <label>Case Coverage</label>
+            </value>
+            <value>
+                <fullName>CEU</fullName>
+                <default>false</default>
+                <label>CEU</label>
+            </value>
+            <value>
+                <fullName>Didactic Dinner</fullName>
+                <default>false</default>
+                <label>Didactic Dinner</label>
+            </value>
+            <value>
+                <fullName>Proctorship</fullName>
+                <default>false</default>
+                <label>Proctorship</label>
+            </value>
+            <value>
+                <fullName>Tradeshow Sponsorship</fullName>
+                <default>false</default>
+                <label>Tradeshow Sponsorship</label>
+            </value>
+            <value>
+                <fullName>Product Development (Mktg/R&amp;D Only)</fullName>
+                <default>false</default>
+                <label>Product Development (Mktg/R&amp;D Only)</label>
+            </value>
+            <value>
+                <fullName>Evaluation</fullName>
+                <default>false</default>
+                <label>Evaluation</label>
+            </value>
+            <value>
+                <fullName>Implementation (no Eval Needed)</fullName>
+                <default>false</default>
+                <label>Implementation (no Eval Needed)</label>
+            </value>
+            <value>
+                <fullName>Implementation (Eval Complete)</fullName>
+                <default>false</default>
+                <label>Implementation (Eval Complete)</label>
+            </value>
+            <value>
+                <fullName>Follow-up Training</fullName>
+                <default>false</default>
+                <label>Follow-up Training</label>
+            </value>
+            <value>
+                <fullName>Speaker Program</fullName>
+                <default>false</default>
+                <label>Speaker Program</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

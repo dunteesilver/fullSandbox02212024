@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_CE_is_Educator_make_CEName_Mandatory</fullName>
+    <active>true</active>
+    <description>AND(
+TEXT( Clinical_Educator__c ) = &quot;CE&quot;,
+ISBLANK( Clinical_Educator_Name__c )
+)</description>
+    <errorConditionFormula>AND(
+TEXT(  Education_Record__r.Primary_Educator__c  ) = &quot;CE&quot;,
+ISBLANK( Clinical_Educator_Name__c )
+)</errorConditionFormula>
+    <errorDisplayField>Clinical_Educator_Name__c</errorDisplayField>
+    <errorMessage>If a CE was the primary Educator (Lab Detail) , you must select a CE Name from the field lookup.</errorMessage>
+</ValidationRule>

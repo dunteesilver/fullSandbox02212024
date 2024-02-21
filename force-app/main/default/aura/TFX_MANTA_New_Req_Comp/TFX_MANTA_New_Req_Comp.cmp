@@ -1,0 +1,90 @@
+<aura:component extensible="true"
+                controller="TFX_MANTA_Handler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/> 
+ <aura:html tag="style">.toastMessage.forceActionsText{white-space : pre-line !important;}</aura:html>   
+    
+    <aura:attribute name="backgroundImageURL" type="String" default=""/>
+    <aura:attribute name="usrId" type="String" default=""/>
+    <aura:attribute name="usrName" type="String" default=""/>
+    <aura:attribute name="showEdit" type="String" default=""/>
+    <aura:attribute name="caseDate" type="Date" default=""/>
+    
+    <aura:attribute name="hospitalAccObj" 
+                    type="sObject" 
+                    default="{ 'sobjectType': 'MANTA_Proctorship_Request__c',
+                             'Hospital__c': '',
+                             'Physician__c': ''}"
+                    />
+    <aura:attribute
+                    name="newReqObj"
+                    type="sObject"
+                    default="{ 'sobjectType': 'MANTA_Proctorship_Request__c',
+                             'Hospital__c': '',
+                             'Case_Date__c': '',
+							 'Physician__c': '',
+                             'Physician_NPI_Number__c': '',
+                             'Estimated_of_Cases__c': '',
+                             'Case_Type__c': '',
+                             'Status__c': 'Open (Not Accepted)',
+                             'Case_Initiator__c': '',
+                             'Notes__c': '',
+                             'Region__c': 'N/A',
+                             }"
+                    />
+    <aura:attribute name="allPhysiciansLst" type="Contact" />
+    
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    
+    
+    <ui:scrollerWrapper class="scrollerSize"> 
+        <article class="slds-align_absolute-center slds-card" style="width: 100%">
+            <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+                <lightning:button variant="success" label="Save" title="Success" onclick="{! c.saveNewReq }"/>
+                <lightning:button label="Cancel" onclick="{! c.clearForm }"/>
+                <br/><br/><br/>
+                <div class="slds-align_absolute-center slds-text-heading_medium">New Request</div>
+                
+                <lightning:recordEditForm objectApiName="MANTA_Proctorship_Request__c"                 >
+                    <lightning:inputField fieldName="Hospital__c" value="{!v.hospitalAccObj.Hospital__c}" onchange="{!c.getSelHospRgnAndPhys}" />
+                </lightning:recordEditForm>
+                <br/>
+                <lightning:input name="Region" label="Region" value="{!v.newReqObj.Region__c}" readonly="true" /><br/>
+                <lightning:input name="CaseDate" type="date" required="true" label="Case Date" value="{!v.newReqObj.Case_Date__c}" /><br/>
+                <lightning:select name="phyName" label="Physician" value="{!v.hospitalAccObj.Physician__c}" required="true" >
+                    <option value="">choose one...</option>
+                    <aura:iteration items="{!v.allPhysiciansLst}" var="item">
+                        <option value="{!item.Id}" selected="{!item.Id==v.hospitalAccObj.Physician__c}">{!item.Salutation} {!item.Name}</option>
+                    </aura:iteration>
+                </lightning:select><br/>
+                <lightning:input name="PhysicianNPINumber" label="Physician NPI Number" value="{!v.newReqObj.Physician_NPI_Number__c}" /><br/>
+                <lightning:input name="Estimated#ofCases" label="Estimated # of Cases" required="true" value="{!v.newReqObj.Estimated_of_Cases__c}" /><br/>
+                <lightning:select name="CaseType" label="Case Type" required="true" value="{!v.newReqObj.Case_Type__c}">
+                    <option value="">choose one...</option>
+                    <option value="TAVR">TAVR</option>
+                    <option value="EVAR">EVAR</option>
+                    <option value="Ventricular Assist Device">Ventricular Assist Device</option>
+                </lightning:select><br/>
+                <lightning:input name="Status" label="Status" readonly="true" value="{!v.newReqObj.Status__c}" /><br/>
+                <lightning:input name="CaseInitiator" label="Case Initiator" value="{!v.usrName}" readonly="true" /><br/>
+                <lightning:textarea name="Notes" label="Notes" value="{!v.newReqObj.Notes__c}" /><br/><br/><br/>
+                
+                
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+                <lightning:button variant="Success" label="Save" title="Success" onclick="{! c.saveNewReq }"/>
+                <lightning:button label="Cancel" onclick="{! c.clearForm }"/>
+            </div>
+        </article>
+    </ui:scrollerWrapper>    
+    
+</aura:component>

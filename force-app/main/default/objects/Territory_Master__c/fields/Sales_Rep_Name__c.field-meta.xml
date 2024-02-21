@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Rep_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Using Sales Rep (Active) */
+if(
+AND(
+Sales_Rep__r.IsActive = TRUE,
+Primary_Sales_Rep_Flip__c = FALSE,
+Force_Open_Territory_Name__c = FALSE
+),
+Sales_Rep__r.FirstName &amp; &quot; &quot; &amp; Sales_Rep__r.LastName &amp; &quot; (&quot; &amp; Territory_Number__c &amp; &quot;)&quot;,
+
+/* Using Secondary Sales Rep (Active) */
+if(
+AND(
+Primary_Territory_User__r.IsActive = TRUE,
+Force_Open_Territory_Name__c = FALSE
+),
+Primary_Territory_User__r.FirstName &amp; &quot; &quot; &amp; Primary_Territory_User__r.LastName &amp; &quot; (&quot; &amp; Territory_Number__c &amp; &quot;)&quot;,
+
+/* Sharing Key (Added this to support Ted and Larry to show up on sales extra check for bryan peters case */ 
+if(
+AND(
+NOT(ISBLANK(Sharing_Key__c)),
+Force_Open_Territory_Name__c = FALSE,
+(ISBLANK(Sales_Rep_Email__c)),(ISBLANK(Primary_Territory_User_Email__c))),
+Sharing_Key__c &amp; &quot; (&quot; &amp; Territory_Number__c &amp; &quot;)&quot;,
+ 
+
+/* Open Territory using Name */
+if(NOT(ISBLANK( Territory_Name__c )),
+&quot;~&quot; &amp; Territory_Name__c &amp; &quot; (&quot; &amp; Territory_Number__c &amp; &quot;)&quot;,
+
+/* Default */
+&quot;~Open (&quot; &amp; Territory_Number__c &amp; &quot;)&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Rep Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

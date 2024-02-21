@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verify_for_CRF</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  Lab_Type__c =&quot;Inservice Record&quot;,
+ Education_Record__r.Verify_for_CRF__c =FALSE,   
+ ISPICKVAL(Status__c , &quot;Submit CRF&quot;))</errorConditionFormula>
+    <errorMessage>Required values are missing - On the Education Record Detail, Select the Verify for CRF checkbox to view missing values</errorMessage>
+</ValidationRule>

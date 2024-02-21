@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Field is used by the LATAM busines unit to assist in determining the purpose of the Price Quote.</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Spa General Sales</fullName>
+                <default>false</default>
+                <label>Spa General Sales</label>
+            </value>
+            <value>
+                <fullName>Special Sales</fullName>
+                <default>false</default>
+                <label>Special Sales</label>
+            </value>
+            <value>
+                <fullName>Sales Per Each</fullName>
+                <default>false</default>
+                <label>Sales Per Each</label>
+            </value>
+            <value>
+                <fullName>ASK Agreement</fullName>
+                <default>false</default>
+                <label>ASK Agreement</label>
+            </value>
+            <value>
+                <fullName>Trade-in</fullName>
+                <default>false</default>
+                <label>Trade-in</label>
+            </value>
+            <value>
+                <fullName>Tender</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tender</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

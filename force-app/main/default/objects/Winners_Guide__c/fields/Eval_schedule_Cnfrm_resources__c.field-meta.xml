@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eval_schedule_Cnfrm_resources__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Evaluation schedule (confirm resources — RCSM, CSS, Contractor)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Evaluation schedule (confirm resources — RCSM, CSS, Contractor)</inlineHelpText>
+    <label>Eval schedule(Cnfrm resources)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

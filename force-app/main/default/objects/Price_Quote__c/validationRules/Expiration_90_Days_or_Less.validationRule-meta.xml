@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiration_90_Days_or_Less</fullName>
+    <active>true</active>
+    <description>Ensure that the expiration date is not set greater than 90 days from the creation of the Price Quote.
+
+Old Rule: Expiration_Date__c  &gt;  DATEVALUE(CreatedDate + 91)</description>
+    <errorConditionFormula>IF(BusinessUnit__c!=&apos;EMEA&apos;,Expiration_Date__c &gt; DATEVALUE(CreatedDate + 91),FALSE)</errorConditionFormula>
+    <errorMessage>The Expiration Date cannot be more than 90 Days from the date of Quote Creation</errorMessage>
+</ValidationRule>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IAProductofFocus1__c</fullName>
+    <externalId>false</externalId>
+    <label>Product of Focus 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>IABP / IABC</fullName>
+                <default>false</default>
+                <label>IABP / IABC</label>
+            </value>
+            <value>
+                <fullName>Manta</fullName>
+                <default>false</default>
+                <label>Manta</label>
+            </value>
+            <value>
+                <fullName>OnControl</fullName>
+                <default>false</default>
+                <label>OnControl</label>
+            </value>
+            <value>
+                <fullName>Catheter - GuideLiner</fullName>
+                <default>false</default>
+                <label>Catheter - GuideLiner</label>
+            </value>
+            <value>
+                <fullName>Trapliner</fullName>
+                <default>false</default>
+                <label>Trapliner</label>
+            </value>
+            <value>
+                <fullName>Catheter - Turnpike</fullName>
+                <default>false</default>
+                <label>Catheter - Turnpike</label>
+            </value>
+            <value>
+                <fullName>Guidewires</fullName>
+                <default>false</default>
+                <label>Guidewires</label>
+            </value>
+            <value>
+                <fullName>Radial Access - VascBand</fullName>
+                <default>false</default>
+                <label>Radial Access - VascBand</label>
+            </value>
+            <value>
+                <fullName>Catheter - Pronto</fullName>
+                <default>false</default>
+                <label>Catheter - Pronto</label>
+            </value>
+            <value>
+                <fullName>Snares</fullName>
+                <default>false</default>
+                <label>Snares</label>
+            </value>
+            <value>
+                <fullName>Sheath – Arrow</fullName>
+                <default>false</default>
+                <label>Sheath – Arrow</label>
+            </value>
+            <value>
+                <fullName>Catheter - Specialty Access</fullName>
+                <default>false</default>
+                <label>Catheter - Specialty Access</label>
+            </value>
+            <value>
+                <fullName>Drainage Products</fullName>
+                <default>false</default>
+                <label>Drainage Products</label>
+            </value>
+            <value>
+                <fullName>Electrophysiology Products</fullName>
+                <default>false</default>
+                <label>Electrophysiology Products</label>
+            </value>
+            <value>
+                <fullName>Hemostasis - Topical Patches</fullName>
+                <default>false</default>
+                <label>Hemostasis - Topical Patches</label>
+            </value>
+            <value>
+                <fullName>Radial Access - Other Radial Products</fullName>
+                <default>false</default>
+                <label>Radial Access - Other Radial Products</label>
+            </value>
+            <value>
+                <fullName>Vein Treatment - Other Products</fullName>
+                <default>false</default>
+                <label>Vein Treatment - Other Products</label>
+            </value>
+            <value>
+                <fullName>Vein Treatment - VariLase</fullName>
+                <default>false</default>
+                <label>Vein Treatment - VariLase</label>
+            </value>
+            <value>
+                <fullName>Non-covered product</fullName>
+                <default>false</default>
+                <label>Non-covered product</label>
+            </value>
+            <value>
+                <fullName>Ports - Arrow</fullName>
+                <default>false</default>
+                <label>Ports - Arrow</label>
+            </value>
+            <value>
+                <fullName>Access Products - Introducers</fullName>
+                <default>false</default>
+                <label>Access Products - Introducers</label>
+            </value>
+            <value>
+                <fullName>Access Products - SmartNeedle</fullName>
+                <default>false</default>
+                <label>Access Products - SmartNeedle</label>
+            </value>
+            <value>
+                <fullName>Catheter - ClosureFast</fullName>
+                <default>false</default>
+                <label>Catheter - ClosureFast</label>
+            </value>
+            <value>
+                <fullName>Catheters – Arrow</fullName>
+                <default>false</default>
+                <label>Catheters – Arrow</label>
+            </value>
+            <value>
+                <fullName>Embolization Products</fullName>
+                <default>false</default>
+                <label>Embolization Products</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

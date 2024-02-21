@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EngageEdDepFlushingClampingComp__c</fullName>
+    <description>Engage Education Department regarding flushing/clamping compliance
+Central Line Dressing products. (e.g. BioPatch®,Tegaderm™, Tegaderm™ CHG, etc.)
+PICC, Midline, Arterials
+Trial/Evaluation Stage
+Round Table with the Account/Clinical</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Engage Education Department regarding flushing/clamping compliance
+Central Line Dressing products. (e.g. BioPatch®,Tegaderm™, Tegaderm™ CHG, etc.)
+PICC, Midline, Arterials
+Trial/Evaluation Stage
+Round Table with the Account/Clinical</inlineHelpText>
+    <label>Engage Ed/Dep Flushing/Clamping Comp...</label>
+    <length>1000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

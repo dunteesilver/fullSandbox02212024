@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_User_Story_Must_Have_Sprint</fullName>
+    <active>true</active>
+    <description>Story with Status=In Sprint must have Sprint field populated.</description>
+    <errorConditionFormula>ISPICKVAL(Status__c , &quot;In Sprint&quot;) 
+&amp;&amp; 
+ISBLANK(Sprint__c)</errorConditionFormula>
+    <errorDisplayField>Sprint__c</errorDisplayField>
+    <errorMessage>You MUST select a Sprint to indicate this as a Story with Status of In Sprint</errorMessage>
+</ValidationRule>

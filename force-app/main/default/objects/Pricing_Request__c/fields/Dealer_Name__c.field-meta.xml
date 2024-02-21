@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dealer_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This lookup field allows you identify the Account information associated with this PRF.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the name of Dealer&apos;s Account?</inlineHelpText>
+    <label>Dealer Name</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Pricing Requests</relationshipLabel>
+    <relationshipName>Pricing_Requests</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

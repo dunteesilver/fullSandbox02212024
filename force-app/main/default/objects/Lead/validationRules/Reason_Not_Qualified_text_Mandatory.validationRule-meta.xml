@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Not_Qualified_text_Mandatory</fullName>
+    <active>true</active>
+    <description>Add Reason Not Qualified text field on leads so when a rep marks a lead as not qualified and chooses &quot;Other&quot; in the Reason Not Qualified, there is a text field where the rep can write specifically why it is not qualified.</description>
+    <errorConditionFormula>AND( 
+IsPickVal(Reason_Lead_is_Unqualified_Picklist__c,&quot;Other&quot;), 
+IsBlank(Reason_lead_is_Unqualified__c) 
+)</errorConditionFormula>
+    <errorDisplayField>Reason_lead_is_Unqualified__c</errorDisplayField>
+    <errorMessage>Please add a reason why this lead is unqualified.</errorMessage>
+</ValidationRule>

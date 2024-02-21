@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Affiliation__c</fullName>
+    <externalId>false</externalId>
+    <label>Affiliation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hospital ED/ICU/Rapid Response/Flight/Other</fullName>
+                <default>false</default>
+                <label>Hospital ED/ICU/Rapid Response/Flight/Other</label>
+            </value>
+            <value>
+                <fullName>EMS/Prehospital -  Ground or Air Ambulance</fullName>
+                <default>false</default>
+                <label>EMS/Prehospital -  Ground or Air Ambulance</label>
+            </value>
+            <value>
+                <fullName>Interventional Radiology/Oncology/Pathology</fullName>
+                <default>false</default>
+                <label>Interventional Radiology/Oncology/Pathology</label>
+            </value>
+            <value>
+                <fullName>Anesthesia/Pain Management</fullName>
+                <default>false</default>
+                <label>Anesthesia/Pain Management</label>
+            </value>
+            <value>
+                <fullName>Surgical</fullName>
+                <default>false</default>
+                <label>Surgical</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

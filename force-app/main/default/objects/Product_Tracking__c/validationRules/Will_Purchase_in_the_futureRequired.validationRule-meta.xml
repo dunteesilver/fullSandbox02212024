@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Will_Purchase_in_the_futureRequired</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL( Utilizing_product_del__c, &quot;No&quot;),
+  ISPICKVAL( Will_you_purchase_in_the_future__c ,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Will_you_purchase_in_the_future__c</errorDisplayField>
+    <errorMessage>If they are not utilizing the product, please enter &quot;Will you purchase in the future?&quot;</errorMessage>
+</ValidationRule>

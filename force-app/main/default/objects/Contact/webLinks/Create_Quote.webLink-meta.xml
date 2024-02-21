@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Quote</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Quote</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/connection.js&apos;)} 
+{!REQUIRESCRIPT(&apos;/soap/ajax/29.0/apex.js&apos;)}
+var connection = sforce.connection; 
+var sapCode = &quot;{!Account.SAP_Sold_To__c}&quot;;  
+if(&quot;{!Account.Id}&quot; != &quot;&quot;){
+    if({!Account.ERP_Active__c} || sapCode == &quot;&quot; ){
+        var str = sforce.apex.execute(&quot;PP_creatQuoteContact&quot;,&quot;creatQuoteContact&quot;,{cid:&quot;{!Contact.Id}&quot;}); 
+        window.open(str,&quot;_self&quot;)
+    }
+    else{
+        alert(&quot;This Account is not Active in SAP and is not a Prospect Account so you will not be able to Create a Quote...&quot;); 
+    }
+}
+else{
+    alert(&quot;Account Empty! Please associate this contact with an account before creating the Quote.&quot;);
+}</url>
+</WebLink>

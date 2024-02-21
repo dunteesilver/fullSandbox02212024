@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_Info_Required_FirstHotelStreet</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL(Hotel_Requested__c, &quot;Yes&quot;)  ,
+
+
+
+
+RecordType.Name != &quot;ANES/EMS Education Record&quot;,
+
+ ISBLANK (   First_Street_Address__c   ))</errorConditionFormula>
+    <errorDisplayField>First_Street_Address__c</errorDisplayField>
+    <errorMessage>Please fill in First Choice Hotel Street when Hotel is requested</errorMessage>
+</ValidationRule>

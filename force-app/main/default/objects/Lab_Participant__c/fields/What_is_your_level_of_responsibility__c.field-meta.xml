@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_is_your_level_of_responsibility__c</fullName>
+    <externalId>false</externalId>
+    <label>What is your level of responsibility</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Physician</fullName>
+                <default>false</default>
+                <label>Physician</label>
+            </value>
+            <value>
+                <fullName>Paramedic</fullName>
+                <default>false</default>
+                <label>Paramedic</label>
+            </value>
+            <value>
+                <fullName>Nurse</fullName>
+                <default>false</default>
+                <label>Nurse</label>
+            </value>
+            <value>
+                <fullName>Clinical Educator</fullName>
+                <default>false</default>
+                <label>Clinical Educator</label>
+            </value>
+            <value>
+                <fullName>NP/PA</fullName>
+                <default>false</default>
+                <label>NP/PA</label>
+            </value>
+            <value>
+                <fullName>Manager/Director</fullName>
+                <default>false</default>
+                <label>Manager/Director</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

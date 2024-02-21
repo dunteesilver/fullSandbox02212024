@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NIV_Sales_YTD__c</fullName>
+    <externalId>false</externalId>
+    <label>*NIV Sales YTD</label>
+    <summarizedField>VPS_Consumables__c.Sales__c</summarizedField>
+    <summaryFilterItems>
+        <field>VPS_Consumables__c.Product_Grouping_TXT__c</field>
+        <operation>equals</operation>
+        <value>NIV</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>VPS_Consumables__c.Current_Sales_2__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>VPS_Consumables__c.VPS_Contract__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

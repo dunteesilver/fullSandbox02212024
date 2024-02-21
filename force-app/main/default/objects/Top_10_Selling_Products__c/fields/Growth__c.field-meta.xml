@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Growth__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Sales_Prior_Year__c = 0, Sales_YTD__c, Sales_YTD__c - (Sales_Prior_Year__c / 365 * ( datevalue(CreatedDate) - DATE(YEAR(TODAY()),1,1))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Growth $</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

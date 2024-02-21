@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Tier_Access_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>Pricing_Tier_Access__c &lt;&gt; Pricing_Tier_Access_Debug__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Checked TRUE if Pricing Tier Access (Roll-Up of CM) is the same as Pricing Tier Access Debug (Looking at the GPO Ref)</inlineHelpText>
+    <label>Pricing Tier Access Check</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

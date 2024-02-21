@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cardiac_Therapy_Delay</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ RecordType.Name = &quot;Cardiac_Care&quot;, 
+ ISPICKVAL( Was_therapy_delayed_interrupted__c  , &quot;yes&quot;), 
+ ISBLANK(  How_long_was_the_delay_interruption__c  ))</errorConditionFormula>
+    <errorDisplayField>How_long_was_the_delay_interruption__c</errorDisplayField>
+    <errorMessage>If therapy was interrupted or delayed, please advise how long the interruption or delay was for.</errorMessage>
+</ValidationRule>

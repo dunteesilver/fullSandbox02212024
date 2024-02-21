@@ -1,0 +1,279 @@
+<apex:page docType="html-5.0" title="Create Contact" controller="PP_Create_Contact" sidebar="false" >
+    <!-- Call the Menu -->
+    <style type="text/css">
+        .form-group.required .control-label:after {
+        content:"*";
+        color:red;
+        }
+    </style>
+    
+    
+        <!-- DIV to Render the rest of the page in Bootstrap -->
+        <div class="teleflex">
+            <apex:include id="menu" pageName="PP_Menu"/>
+            <apex:variable value="{!if((CONTAINS(contractUserRec.Active_Sales_Org_Key__c , 'AU') || CONTAINS(contractUserRec.Active_Sales_Org_Key__c, 'NZ')),TRUE,FALSE)}" var="anzUser"/>
+            <apex:variable value="{!IF(contains($UserRole.Name,'EMEA') || emeaUserFlag,TRUE,FALSE)}" var="emeaUser"/>
+            <apex:form id="mainform" html-ng-non-bindable="true">
+            <apex:outputPanel title="" id="error">
+            </apex:outputPanel>
+            <apex:outputPanel id="contPannelId" rendered="{!NOT(displayPopup)}">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h6 class="panel-title"><img src="/img/icon/people24.png" alt="Select Contact"/>&nbsp;&nbsp;{!$Label.EMEA_Selected_Account}</h6>
+                    </div>
+
+                    <div class="panel-body" align="center">
+                        
+                        <apex:commandButton action="{!showPopup}" value="Create Contact" styleClass="btn btn-primary btn-sm" reRender="mainform"/><br/><br/>
+                        <table class="table table-striped table-hover table-bordered" id="conH">
+                            <tr>
+                                <td style="text-align:center;" width= "50%">
+                                    <apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Name__c.label}" />:
+                                    <apex:outputlink value="/{!accountInfo.id}" target="_blank"> {!accountInfo.Name} </apex:outputlink><br/>
+                                    <apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_SAP_Code__c .label}" />:
+                                    <apex:outputText value="{!accountInfo.SAP_Sold_To__c}"/><br/>
+                                    <apex:outputText rendered="{!soldToAccObj.SAP_Sold_To__c != NULL}">
+                                        <apex:outputLabel value="{!$ObjectType.Contract_Partnership__c.fields.Sale_to__c.label}" />:
+                                        <apex:outputText value="{!soldToAccObj.SAP_Sold_To__c}"/><br/>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!accountInfo.Main_GPO__c != NULL}">
+                                        <apex:outputLabel value="{!$ObjectType.Account.fields.Main_GPO__c.label}" />:&nbsp;
+                                        <apex:outputText value="{!accountInfo.Main_GPO__c}"/><br/>
+                                    </apex:outputText>
+                                </td>
+                                <td style="text-align:center;" width= "50%">
+
+                                    <apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Address__c.label}" />:
+                                    <apex:outputText value="{!accountInfo.ShippingStreet},"/><br/>
+                                    <apex:outputText value="{!accountInfo.ShippingCity},"/>&nbsp;
+                                    <apex:outputText value="{!accountInfo.ShippingState}"/>&nbsp;
+                                    <apex:outputText value="{!accountInfo.ShippingPostalCode}"/><br/>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </apex:outputPanel>
+
+            <apex:outputPanel id="tstpopup" rendered="{!displayPopUp}">
+                <apex:pageMessages ></apex:pageMessages>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h6 class="panel-title"><img src="/img/icon/people24.png" alt="Select Contact"/>&nbsp;&nbsp;{!$Label.EMEA_Create_Contact}</h6>
+                    </div>
+                    <div class="panel-body" align="center">
+                        <table class="table table-bordered" style="width:600px;">
+                            <tr>
+                              <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Salutation.label}" />&nbsp;</td>
+                              <td><apex:inputField styleClass="form-control" value="{!contactRec.Salutation}" /></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.FirstName.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                <td><apex:inputText styleClass="form-control" value="{!contactRec.FirstName}" /></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.LastName.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                <td><apex:inputText styleClass="form-control" value="{!contactRec.LastName}" /></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Title.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                <td><apex:inputfield styleClass="form-control" value="{!contactRec.Title}" /></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Email.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                <td><apex:inputField styleClass="form-control" value="{!contactRec.Email}"/></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Phone.label}" /></td>
+                                <td><apex:inputField styleClass="form-control" value="{!contactRec.Phone}"/></td>
+                            </tr>
+                            <tr>
+                                <apex:outputText rendered="{!!emeaUser}">
+                                    <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Credentials__c.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                    <td><apex:inputField styleClass="form-control" value="{!contactRec.Credentials__c}"/></td>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!emeaUser}">
+                                    <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.EMEA_Department__c.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                    <td><apex:inputField styleClass="form-control" value="{!contactRec.EMEA_Department__c}"/></td>
+                                </apex:outputText>
+                            </tr>
+                            <tr>
+                                <apex:outputText rendered="{!!anzUser && !emeaUser}">
+                                    <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Position_Job_Title__c.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                    <td class="text-right"><apex:inputField styleClass="form-control" value="{!contactRec.Position_Job_Title__c}" /></td>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!emeaUser}">
+                                    <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.EMEA_Position_Job_Title__c.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                    <td class="text-right"><apex:inputField styleClass="form-control" value="{!contactRec.EMEA_Position_Job_Title__c}" /></td>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!anzUser}">
+                                    <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Position_Job_Title_ANZ__c.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                    <td class="text-right"><apex:inputField styleClass="form-control" value="{!contactRec.Position_Job_Title_ANZ__c}" /></td>
+                                </apex:outputText>
+                            </tr>
+                            <tr>
+                                <td class="text-right"><apex:outputLabel value="{!$ObjectType.Contact.fields.Preferred_language__c.label}" />&nbsp;<font style="color:red;">*</font></td>
+                                <td><apex:inputField styleClass="form-control" value="{!contactRec.Preferred_language__c}"/></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    <apex:commandButton value="Create Contact and PQ / PRF" rendered="{!$CurrentPage.parameters.Id != NULL}" action="{!saveMethod}" styleClass="btn btn-primary btn-sm" reRender="tstpopup">&nbsp;&nbsp;&nbsp;
+                                        <apex:param name="soldTo" value="{!soldToAccObj.SAP_Sold_To__c}"/>
+                                        <apex:param name="soldToPriceListType" value="{!soldToAccObj.Price_List_Type__c}"/>
+                                    </apex:commandButton>
+                                    <!-- <apex:commandButton value="Create Contact and Quote" rendered="{!$CurrentPage.parameters.pqId != NULL}" action="{!saveMethod}" styleClass="btn btn-primary btn-sm" reRender="tstpopup"/>&nbsp;&nbsp;&nbsp;
+                                    <apex:commandButton value="Create Contact and PRF" rendered="{!$CurrentPage.parameters.prf != NULL}" action="{!saveMethod}" styleClass="btn btn-primary btn-sm" reRender="tstpopup"/>&nbsp;&nbsp;&nbsp; -->
+                                    <apex:commandButton value="Cancel" action="{!closePopup}" rerender="mainform" styleClass="btn btn-primary btn-sm" immediate="true"/>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+            </apex:outputPanel>
+            <apex:outputText rendered="{!myBuContacts.size > 0}">
+            <div class="panel panel-primary">
+                <div class="panel-heading">{!$Label.EMEA_My_Contacts}</div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered" id="conH">
+                      <thead>
+                        <tr>
+                            <th style="text-align:center;">{!$Label.EMEA_Select_Contact}</th>
+                            <th style="text-align:center;" class="nameSort"><apex:outputLabel value="{!$ObjectType.Contact.fields.Name.label}" /></th>
+                            <th style="text-align:center;"><apex:outputLabel value="{!$ObjectType.Contact.fields.Title.label}" /></th>
+                            <th style="text-align:center;"><apex:outputLabel value="{!$ObjectType.Contact.fields.Business_Unit1__c.label}" /></th>
+                            <th style="text-align:center;"><apex:outputLabel value="{!$ObjectType.Contact.fields.Email.label}" /></th>
+                            <th style="text-align:center;"><apex:outputLabel value="{!$ObjectType.Contact.fields.Phone.label}" /></th>
+                        </tr>
+                      </thead>
+                        <apex:repeat value="{!myBuContacts}" var="con">
+                        <tbody class="searchable">
+                            <tr>
+                                <td class="text-center">
+                                    <apex:outputText rendered="{!soldToAccObj.SAP_Sold_To__c != NULL}">
+                                        <apex:commandlink action="{!processSelectContact}" styleClass="btn btn-primary btn-sm" value="Select Contact">
+                                            <apex:param name="contId" value="{!con.Id}"/>
+                                            <apex:param name="soldTo" value="{!soldToAccObj.SAP_Sold_To__c}"/>
+                                            <apex:param name="soldToPriceListType" value="{!soldToAccObj.Price_List_Type__c}"/>
+                                        </apex:commandlink>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!soldToAccObj.SAP_Sold_To__c == NULL}">
+                                        <apex:commandlink action="{!processSelectContact}" styleClass="btn btn-primary btn-sm" value="Select Contact">
+                                            <apex:param name="contId" value="{!con.Id}"/>
+                                            <apex:param name="soldTo" value="{!strCust}"/>
+                                            <apex:param name="soldToPriceListType" value="{!accountInfo.Price_List_Type__c}"/>
+                                        </apex:commandlink>
+                                    </apex:outputText>
+                                </td>
+                                <td class="text-center"><a href="/{!con.Id}">{!con.Name}</a></td>
+                                <td class="text-center"><apex:outputText value="{!con.Title}"/></td>
+                                <td class="text-center"><apex:outputText value="{!con.Business_Unit1__c}"/></td>
+                                <td class="text-center"><apex:outputText value="{!con.Email}"/></td>
+                                <td class="text-center"><apex:outputText value="{!con.Phone}"/></td>
+                            </tr>
+                        </tbody>
+                        </apex:repeat>
+                    </table>
+                </div>
+            </div>
+          </apex:outputText>
+          <apex:outputText rendered="{!acctContacts.size > 0}">
+            <div class="panel panel-primary">
+                <div class="panel-heading">{!$Label.EMEA_Select_Contact}</div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered" id="conH">
+                      <thead>
+                        <tr>
+                            <th style="text-align:center;">{!$Label.EMEA_Select_Contact}</th>
+                            <th class="text-center"><apex:outputLabel value="{!$ObjectType.Contact.fields.Name.label}" /></th>
+                            <th class="text-center"><apex:outputLabel value="{!$ObjectType.Contact.fields.Title.label}" /></th>
+                            <th class="text-center"><apex:outputLabel value="{!$ObjectType.Contact.fields.Business_Unit1__c.label}" /></th>
+                            <th class="text-center"><apex:outputLabel value="{!$ObjectType.Contact.fields.Email.label}" /></th>
+                            <th class="text-center"><apex:outputLabel value="{!$ObjectType.Contact.fields.Phone.label}" /></th>
+                        </tr>
+                      </thead>
+                      <apex:repeat value="{!acctContacts}" var="con">
+                      <tbody class="searchable">
+                            <tr>
+                                <td class="text-center">
+                                    <apex:outputText rendered="{!soldToAccObj.SAP_Sold_To__c != NULL}">
+                                        <apex:commandlink action="{!processSelectContact}" styleClass="btn btn-primary btn-sm" value="Select Contact">
+                                            <apex:param name="contId" value="{!con.Id}"/>
+                                            <apex:param name="soldTo" value="{!soldToAccObj.SAP_Sold_To__c}"/>
+                                            <apex:param name="soldToPriceListType" value="{!soldToAccObj.Price_List_Type__c}"/>
+                                        </apex:commandlink>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!soldToAccObj.SAP_Sold_To__c == NULL}">
+                                        <apex:commandlink action="{!processSelectContact}" styleClass="btn btn-primary btn-sm" value="Select Contact">
+                                            <apex:param name="contId" value="{!con.Id}"/>
+                                            <apex:param name="soldTo" value="{!strCust}"/>
+                                            <apex:param name="soldToPriceListType" value="{!accountInfo.Price_List_Type__c}"/>
+                                        </apex:commandlink>
+                                    </apex:outputText>
+                                </td>
+                                <td class="text-center"><a href="/{!con.Id}">{!con.Name}</a></td>
+                                <td class="text-center"><apex:outputText value="{!con.Position_Job_Title__c}"/></td>
+                                <td class="text-center"><apex:outputText value="{!con.Business_Unit1__c}"/></td>
+                                <td class="text-center"><apex:outputText value="{!con.Email}"/></td>
+                                <td class="text-center"><apex:outputText value="{!con.Phone}"/></td>
+                            </tr>
+                        </tbody>
+                        </apex:repeat>
+                    </table>
+                </div>
+            </div>
+            </apex:outputText>
+            </apex:form>
+        </div>
+    <script>
+    $(document).ready(function(){
+      load();
+    });
+
+    $('th').click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        console.log('this.index ==== ' + $(this).index());
+        this.asc = !this.asc
+        if (!this.asc){rows = rows.reverse()}
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+    })
+    function comparer(index) {
+        return function(a, b) {
+          if(index == 1){
+            var valA = getCellText(a, index), valB = getCellText(b, index)
+            //console.log('valA = ' + valA + ' valB = ' + valB);
+            //console.log('localeCompare = ' + valA.localeCompare(valB));
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+          }
+          else{
+            var valA = getCellValue(a, index), valB = getCellValue(b, index)
+            //console.log('valA = ' + valA + ' valB = ' + valB);
+            //console.log('localeCompare = ' + valA.localeCompare(valB));
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+          }
+        }
+    }
+    function getCellValue(row, index){
+      console.log('row = ' + $(row).children('td').eq(index).html());
+      return $(row).children('td').eq(index).html()
+
+    }
+    function getCellText(row, index){
+      console.log('row = ' + $(row).children('td').eq(index).text());
+      return $(row).children('td').eq(index).text()
+    }
+
+    function load(){
+      $('[id$=filter]').keyup(function () {
+          var rex = new RegExp($(this).val(), 'i');
+          $('.searchable tr').hide();
+          $('.searchable tr').filter(function () {
+              return rex.test($(this).text());
+          }).show();
+      });
+    }
+    </script>
+</apex:page>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X800737_N_W_Florida</fullName>
+    <columns>NAME</columns>
+    <columns>Territory_Master__c</columns>
+    <columns>Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Territory_Master__c</field>
+        <operation>equals</operation>
+        <value>800737</value>
+    </filters>
+    <label>800737 N.W. Florida</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Vascular_MSR_Southeast</role>
+        <role>Vascular_RSM_Southeast</role>
+    </sharedTo>
+</ListView>

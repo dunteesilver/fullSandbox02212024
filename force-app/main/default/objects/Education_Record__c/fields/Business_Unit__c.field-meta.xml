@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <defaultValue>if(ISPICKVAL($User.Business_Unit__c, &quot;Alternate Care&quot;), &quot;Alternate Care&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Anesthesia&quot;), &quot;Anesthesia&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;EMS&quot;), &quot;EMS&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Interventional&quot;), &quot;Interventional&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Interventional Capital&quot;), &quot;Interventional Capital&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Respiratory&quot;), &quot;Respiratory&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Surgical Disposables&quot;), &quot;Surgical Disposables&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Surgical Instruments&quot;), &quot;Surgical Instruments&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Urology&quot;), &quot;Urology&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Vascular&quot;), &quot;Vascular&quot;,
+if(ISPICKVAL($User.Business_Unit__c, &quot;Latin America&quot;), &quot;Latin America&quot;,
+NULL
+)))))))))))</defaultValue>
+    <externalId>false</externalId>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>APAC</fullName>
+                <default>false</default>
+                <label>APAC</label>
+            </value>
+            <value>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+                <label>EMEA</label>
+            </value>
+            <value>
+                <fullName>EMS</fullName>
+                <default>false</default>
+                <label>EMS</label>
+            </value>
+            <value>
+                <fullName>IA</fullName>
+                <default>false</default>
+                <label>IA</label>
+            </value>
+            <value>
+                <fullName>Interventional Urology</fullName>
+                <default>false</default>
+                <label>Interventional Urology</label>
+            </value>
+            <value>
+                <fullName>LatAm</fullName>
+                <default>false</default>
+                <label>LatAm</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Surgical</fullName>
+                <default>false</default>
+                <label>Surgical</label>
+            </value>
+            <value>
+                <fullName>VA</fullName>
+                <default>false</default>
+                <label>VA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

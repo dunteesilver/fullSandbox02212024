@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Story_w_Sprint_no_Product_Backlog</fullName>
+    <active>true</active>
+    <description>Story with Sprint field populated must have Status=In Sprint, Complete, or Canceled (not Product Backlog)</description>
+    <errorConditionFormula>NOT(ISBLANK(Sprint__c))
+&amp;&amp;
+ISPICKVAL(Status__c , &quot;Product Backlog&quot;)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>You MUST either select a different Status OR clear the Sprint from this Story. A Story that is in the Product Backlog can not also be part of a Sprint.</errorMessage>
+</ValidationRule>

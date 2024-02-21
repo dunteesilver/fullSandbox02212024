@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_applies_dressing__c</fullName>
+    <description>Who applies dressing?
+
+Observation Day/Clinical
+Additional questions, IR ONLY:</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who applies dressing?
+
+Observation Day/Clinical
+Additional questions, IR ONLY:</inlineHelpText>
+    <label>Who applies dressing?</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

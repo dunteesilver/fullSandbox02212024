@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_for_Approval</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Submit for Approval</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/apex.js&quot;)}
+
+var url = parent.location.href;
+var oppy = new sforce.SObject(&quot;Opportunity&quot;);
+
+oppy.name = &quot;{!Price_Quote__c.Account_Name__c}-{!Price_Quote__c.Name}&quot;;
+alert(&quot;oppy.name&quot; + oppy.name);
+//oppy.CloseDate = &quot;{!Price_Quote__c.Expiration_Date__c}&quot;;
+//oppy.Create_Date__c = &quot;{!Price_Quote__c.Date__c}&quot;;
+oppy.Account = &quot;{!Price_Quote__c.Account_Name__c}&quot;;
+//oppy.Account = &quot;001E000000EAb03&quot;;
+alert(&quot;oppy.Account&quot; + oppy.Account);
+oppy.StageName = &quot;Financial Decision&quot;;
+alert(&quot;oppy.StageName&quot; + oppy.StageName);
+oppy.Amount = &quot;100000.00&quot;;
+alert(&quot;oppy.Amount&quot; + oppy.Amount);
+oppy.Primary_Contact__c = &quot;{!Price_Quote__c.Contact_Name__c}&quot;;
+alert(&quot;oppy.Primary_Contact__c&quot; + oppy.Primary_Contact__c);
+oppy.Product_Family__c = &quot;VasoNova&quot;;
+alert(&quot;oppy.Product_Family__c&quot; + oppy.Product_Family__c);
+
+var result = sforce.connection.create([oppy]); 
+alert(&quot;Im Here pass result created Opp&quot;);
+if(result[0].success == &apos;true&apos;){
+   alert(&quot;A new Opportunity with name &quot; + oppy.Name + &quot; was successfully created!&quot;);
+   parent.location.href = url; 
+}
+else{
+   alert(result[0].errors.message);  
+}</url>
+</WebLink>

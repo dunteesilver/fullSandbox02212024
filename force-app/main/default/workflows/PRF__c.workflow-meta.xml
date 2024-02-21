@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CC_Below_Director_Level_Appointed_Person</fullName>
+        <description>CC Below Director Level Appointed Person</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>brad.libertore@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/Approval_PRF_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Price_Alt_Care_PQ_PRF_Submission</fullName>
+        <description>Email to Price - Alt Care PRF Submission</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dave.price1@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/Approval_PRF_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>PRF_Approved_Email</fullName>
+        <ccEmails>dave.price1@teleflex.com</ccEmails>
+        <description>PRF Approved Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/PRF_Approved_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>PRF_Approved_Email_ANZ</fullName>
+        <description>PRF Approved Email ANZ</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>anzcommercial@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_PRF_Supa_ANZ</template>
+    </alerts>
+    <alerts>
+        <fullName>PRF_Approved_Email_Step_2</fullName>
+        <description>PRF Approved Email Step 2</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>javier.lopez@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/PRF_Approved_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>PRF_Approved_Email_to_LATAM_Customer_Service</fullName>
+        <ccEmails>la.cs@teleflex.com</ccEmails>
+        <description>PRF Approved Email to LATAM Customer Service</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/PRF_Approved_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>PRF_Empty_Sales_Org_Alert</fullName>
+        <description>PRF Empty Sales Org Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>duntee.silver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eric.clay@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Administrators/PRF_Empty_Sales_Org_Key</template>
+    </alerts>
+    <alerts>
+        <fullName>PRF_Rejected_Email</fullName>
+        <description>PRF Rejected Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/PRF_Rejection_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Status_to_New</fullName>
+        <field>Status__c</field>
+        <literalValue>New</literalValue>
+        <name>Change Status to New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PRF_Owner_Approval_Level</fullName>
+        <field>Owner_Approval_Level__c</field>
+        <formula>Workflow_Owner_Approval_Level__c</formula>
+        <name>PRF - Owner Approval Level</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PTA_Approved</fullName>
+        <field>Price_Tier_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>PTA - Approved!</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PTA_Approved_Access_Level</fullName>
+        <field>Pricing_Tier_Level__c</field>
+        <formula>Pricing_Tier_Level__c + 1</formula>
+        <name>PTA - Approved Access Level</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PTA_Declined</fullName>
+        <field>Price_Tier_Status__c</field>
+        <literalValue>Declined</literalValue>
+        <name>PTA - Declined</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pricing_Analysis_Approval_Page</fullName>
+        <field>Pricing_Analysis__c</field>
+        <formula>Workflow_Pricing_Analysis__c</formula>
+        <name>Pricing Analysis Approval Page</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RSM_Auto_Approval_Status_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting on Contracts Approval</literalValue>
+        <name>RSM Auto Approval Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_to_WFA</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting For RSM Approval</literalValue>
+        <name>Update status to WFA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Waiting_on_Contracts_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting on Contracts Approval</literalValue>
+        <name>Update to Waiting on Contracts Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Waiting_on_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting on Approval</literalValue>
+        <name>Waiting on Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Check Sales Org</fullName>
+        <actions>
+            <name>PRF_Empty_Sales_Org_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>PRF__c.Sales_Org_Key__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRF - Owner Approval Level</fullName>
+        <actions>
+            <name>PRF_Owner_Approval_Level</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(  ISNEW(),  ISCHANGED(OwnerId),  ISBLANK(Owner_Approval_Level__c)  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>RSM Auto Approval Status Update</fullName>
+        <actions>
+            <name>RSM_Auto_Approval_Status_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>PRF__c.Workflow_Owner_Approval_Level__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PRF__c.Approval_Level__c</field>
+            <operation>lessOrEqual</operation>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>PRF__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Waiting For RSM Approval</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales Analysis Approval Page</fullName>
+        <actions>
+            <name>Pricing_Analysis_Approval_Page</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>Pricing_Analysis__c &lt;&gt; Workflow_Pricing_Analysis__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

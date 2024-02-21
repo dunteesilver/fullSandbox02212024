@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NEWSpecific_components_involved</fullName>
+    <active>true</active>
+    <description>If &quot;Indicate specific components involved&quot; = Other then &quot;Specify &quot;other&quot; component&quot; is mandatory</description>
+    <errorConditionFormula>AND( 
+RecordType.Name = &quot;Vascular/Legacy Arrow Products&quot;, 
+ISPICKVAL(Indicate_specific_components_involved__c ,&quot;Other&quot;), 
+ISBLANK(Specify_other_component__c))</errorConditionFormula>
+    <errorDisplayField>Specify_other_component__c</errorDisplayField>
+    <errorMessage>If &quot;Indicate specific components involved&quot; = &quot;Other&quot; then &quot;Specify other component&quot; is mandatory</errorMessage>
+</ValidationRule>

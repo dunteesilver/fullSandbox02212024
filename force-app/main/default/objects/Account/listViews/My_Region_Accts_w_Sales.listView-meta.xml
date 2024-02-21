@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Region_Accts_w_Sales</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>SAP_Sold_To__c</columns>
+    <columns>ERP_Active__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>Active_Sales__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Region Accts w/ Sales</label>
+    <language>en_US</language>
+</ListView>

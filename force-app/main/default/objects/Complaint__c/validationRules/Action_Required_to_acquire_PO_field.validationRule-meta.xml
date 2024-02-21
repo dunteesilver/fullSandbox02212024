@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Required_to_acquire_PO_field</fullName>
+    <active>true</active>
+    <description>This field is required when &apos;Credit Requested&apos; is Yes Credit.</description>
+    <errorConditionFormula>AND((ISBLANK(TEXT(Action_Taken_to_Acquire_PO__c))),(ISPICKVAL(Replacement_or_Credit_Requested__c, &quot;Yes&quot;)))</errorConditionFormula>
+    <errorDisplayField>Action_Taken_to_Acquire_PO__c</errorDisplayField>
+    <errorMessage>This field is required when &apos;Credit Requested&apos; is Yes.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,22 @@
+<aura:component controller="case_Helper_Class" access="global"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:LightningQuickAction">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="Case" type="Case" />
+    <aura:attribute name="newWork" type="agf__ADM_Work__c"
+         default="{ 'sobjectType': 'agf__ADM_Work__c',
+                  	'agf__Subject__c':'',
+                  	'agf__Details__c':''
+                  }"/>
+
+	<!-- CREATE NEW WORK FORM -->
+    <div class="slds-box slds-theme_default">
+        <form class="slds-form--stacked">          
+            <lightning:input aura:id="workSubject" label="Subject" value="{!v.Case.Subject}" required="true"/>
+            <lightning:textarea aura:id="workDetails" label="Description" value="{!v.Case.Description}" required="true"/>
+            <br />
+            <lightning:button variant="destructive" label="Create Work" onclick="{! c.clickCreate }" />
+        </form>
+    </div>
+    <!-- / CREATE NEW WORK FORM -->
+</aura:component>

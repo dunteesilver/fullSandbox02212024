@@ -1,0 +1,153 @@
+<apex:page docType="html-5.0" id="thePage" controller="TP_Dashboard" readOnly="true">
+    <style type="text/css">
+        .SaturationBackground { background-color: DarkBlue; font-weight: bold; color: white;font-size:15px;} 
+        .SegmentationBackground { background-color: DarkSlateGrey; font-weight: bold; color: white;font-size:15px;} 
+        .APlusBackground { background-color: YellowGreen;font-size:15px;}
+        .ABackground { background-color: YellowGreen;font-size:15px;}
+        .BBackground { background-color: PaleGreen;font-size:15px;}
+        .CBackground { background-color: PaleVioletRed;font-size:15px;}
+        .MDBackground { background-color: LightGrey;font-size:15px;}
+        .VerticalDisplay { transform: rotate(180deg);writing-mode: vertical-rl;-webkit-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;font-size:15px;}
+        .rowHeight {height: 16%!Important;}
+    </style>
+    
+    <div>
+        
+        <div class="teleflex">
+            <div class="contain-fluid">
+                <div class="row">
+                    <!---<div class="slds-grid"></div>
+                    <div class="slds-scope"></div>
+                    <div class="slds-col"></div>--->
+
+                    
+                    
+                </div>
+            </div>
+        </div> <!-- End of 2nd Div Teleflex -->
+        
+        
+        <!-- Line Items -->
+        <apex:form id="itemsform" html-ng-non-bindable="true">
+            
+            <apex:outputPanel Styleclass="panel-body" id="panel1" layout="block">
+                <!-- <apex:pageMessages ></apex:pageMessages> -->
+                <table border="1" id="sortable" style="width:100%;height:550px">
+                    
+                    <thead style="height: 20%!Important;">
+                        <tr class="SaturationBackground">
+                            <th rowspan="2" colspan="2" style="width:20%"></th>
+                            <th colspan="3" style="width:80%"><center>Saturation Rate</center></th>
+                        </tr>
+                        <tr class="SaturationBackground">
+                            <th>Low</th>
+                            <th>Medium</th>
+                            <th>High</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody style="height: 80%!Important;">
+                        <tr class="rowHeight">
+                            <td  rowspan="5" class="SegmentationBackground" style="width:10%"><center><b class="VerticalDisplay">Account Segmentation</b></center></td>
+                            <td class="SegmentationBackground">A+</td>
+                            <td class="APlusBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A+')+'&sr='+URLENCODE('<33%')}">View All</a>
+                                <br/>
+                                ({!recssaturation33eachesAPlusTotal})
+                            </td>
+                            <td class="APlusBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A+')+'&sr='+URLENCODE('33%-66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation3366eachesAPlusTotal})
+                            </td>
+                            <td  class="APlusBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A+')+'&sr='+URLENCODE('>66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation66eachesAPlusTotal})
+                            </td>
+                        </tr>
+                        <tr class="rowHeight">
+                            <td class="SegmentationBackground">A</td>
+                            <td class="ABackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A')+'&sr='+URLENCODE('<33%')}">View All</a>
+                                <br/>
+                                ({!recssaturation33eachesATotal})
+                            </td>
+                            <td class="ABackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A')+'&sr='+URLENCODE('33%-66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation3366eachesATotal})
+                            </td>
+                            <td class="ABackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A')+'&sr='+URLENCODE('>66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation66eachesATotal})
+                            </td>
+                        </tr>
+                        <tr class="rowHeight">
+                            <td class="SegmentationBackground">B</td>
+                            <td class="BBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('B')+'&sr='+URLENCODE('<33%')}">View All</a>
+                                <br/>
+                                ({!recssaturation33eachesBTotal})
+                            </td>
+                            <td class="BBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('B')+'&sr='+URLENCODE('33%-66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation3366eachesBTotal})
+                            </td>
+                            <td class="BBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('B')+'&sr='+URLENCODE('>66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation66eachesBTotal})
+                            </td>
+                        </tr>
+                        <tr class="rowHeight">
+                            <td class="SegmentationBackground">C</td>
+                            <td class="CBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('C')+'&sr='+URLENCODE('<33%')}">View All</a>
+                                <br/>
+                                ({!recssaturation33eachesCTotal})
+                            </td>
+                            <td class="CBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('C')+'&sr='+URLENCODE('33%-66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation3366eachesCTotal})
+                            </td>
+                            <td class="CBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('C')+'&sr='+URLENCODE('>66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation66eachesCTotal})
+                            </td>
+                        </tr>
+                        <tr class="rowHeight">
+                            <td class="SegmentationBackground">MD</td>
+                            <td class="MDBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('MD')+'&sr='+URLENCODE('<33%')}">View All</a>
+                                <br/>
+                                ({!recssaturation33eachesMDTotal})
+                            </td>
+                            <td class="MDBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('MD')+'&sr='+URLENCODE('33%-66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation3366eachesMDTotal})
+                            </td>
+                            <td class="MDBackground">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('MD')+'&sr='+URLENCODE('>66%')}">View All</a>
+                                <br/>
+                                ({!recssaturation66eachesMDTotal})
+                            </td>
+                        </tr>
+                        <!-- END OF LINE ITEMS -->
+                    </tbody>
+                </table>
+                
+            </apex:outputPanel>
+            <!-- End Line Items -->
+            
+        </apex:form>
+        <!-- Dun's Form -->
+        
+    </div> <!-- End of Main Div Teleflex -->
+    <!-- End of Dun's Form -->
+</apex:page>

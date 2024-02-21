@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Education_Record__c</fullName>
+    <externalId>false</externalId>
+    <label>Education Record</label>
+    <referenceTo>Education_Record__c</referenceTo>
+    <relationshipLabel>Education Contractors</relationshipLabel>
+    <relationshipName>Education_Contractors</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

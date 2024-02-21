@@ -1,0 +1,136 @@
+<apex:page controller="PP_Sort_LineItemsCtrl" docType="html-5.0" id="thePage" title="Sort Line Items">
+    <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="{!URLFOR($Resource.TableDnD,'js/jquery.tablednd.js')}"></script>
+    <style>
+        #lineItem { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+        #lineItem tr { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+        #lineItem tr span { position: absolute; margin-left: -1.3em; }
+        tr.myDragClass td {
+            /*position: fixed;*/
+            color: yellow;
+            text-shadow: 0 0 10px black, 0 0 10px black, 0 0 8px black, 0 0 6px black, 0 0 6px black;
+            background-color: #999;
+            -webkit-box-shadow: 0 12px 14px -12px #111 inset, 0 -2px 2px -1px #333 inset;
+        }
+        tr.myDragClass td:first-child {
+            -webkit-box-shadow: 0 12px 14px -12px #111 inset, 12px 0 14px -12px #111 inset, 0 -2px 2px -1px #333 inset;
+        }
+        tr.myDragClass td:last-child {
+            -webkit-box-shadow: 0 12px 14px -12px #111 inset, -12px 0 14px -12px #111 inset, 0 -2px 2px -1px #333 inset;
+        }
+
+    </style>
+
+    <script>
+        /*$(function() {
+            $( "#lineItem" ).sortable();
+            $( "#lineItem" ).disableSelection();
+        });*/
+        jQuery(document).ready(function() {
+            jQuery("#dataTable").tableDnD({onDragClass: "myDragClass"});
+        });
+        
+        function saveSortedTable() {
+            var rows = document.getElementById("dataTable").getElementsByTagName("tr");
+            var rowIdsArray = [];
+            for (var i = 1; i < rows.length; i++) {
+                rowIdsArray.push(rows[i].id);
+            }
+            
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.PP_Sort_LineItemsCtrl.saveSortedRows}',rowIdsArray,
+                 function (result, event) {
+                     if(result == 'True') {
+                         window.location.assign("/apex/PP_Price_Quote?pqid={!strPriceQuote}");    
+                     }else{
+                     }
+                 },
+                 {escape: false}
+            );
+            
+        }
+        
+    </script>
+  <apex:include id="menu" pageName="PP_Menu"/>
+  <div class="teleflex">
+    <apex:form id="mainform">
+        <apex:outputPanel Styleclass="panel-body" id="panel1" layout="block">
+               <a class="btn btn-primary btn-sm" id="a-update" onclick="saveSortedTable()">Save</a>
+               <table class="table table-hover table-bordered" id="dataTable">   
+                   <tr class="nodrop">
+                       <th style="text-align:center;">Material Name</th>
+                       <th style="text-align:center;">Material<br/>Status</th>
+                       <th style="text-align:center;">Cross Reference<br/>Product</th> 
+                       <th style="text-align:center;">Description</th> 
+                       <th style="text-align:center;">#/SU</th>
+                       <th style="text-align:center;">SU</th>
+                       <th>Sales #</th> 
+                       <th style="text-align:center;">Sales Deal</th>
+                       <th style="text-align:center;">Condition</th>
+                       <th style="text-align:center;">Eligible<br/>Price</th>
+                       <th style="text-align:center;">Sales Price</th>
+                       <th style="text-align:center;">Qty</th>
+                       <th style="text-align:center;">Line Price</th>    
+                   </tr>
+                   
+                   <apex:repeat value="{!lstpriceQuoteLineItems}" var="row" id="repeatId">
+                       <tr id="{!row.priceQuoteLine.Id}">
+                           <td class="text-center" style="width: 150px;">
+                           <apex:outputText value="{!row.strMaterialnumber}" />
+                           <!--<table>
+                               <tr>
+                                   <td><apex:inputText value="{!row.strMaterialnumber}" id="autocomplete_textbox" styleClass="form-control form-inline" onkeyup="autoMaterialName(this.id)"/></td>
+                                   <td style="vertical-align:middle; width: 25px;">
+                                       <apex:outputLink value="/apex/PP_ProductSearch?pqId={!strPriceQuote}&rowIndex={!row.counterWrap}">
+                                           <img src="/s.gif" class="lookupIcon" onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"/>
+                                       </apex:outputLink>
+                                   </td>
+                               </tr>
+                               </table> -->
+                           </td>
+                           <td class="text-center" style="vertical-align:middle;"><apex:outputText value="{!row.strMaterialStatus}"/></td>
+                           <td class="text-center" style="width: 150px;">
+                           <apex:outputText value="{!row.strCrossReference}" />
+                           <!-- <table>
+                               <tr>
+                                   <td><apex:inputText value="{!row.strCrossReference}" styleClass="form-control" rendered="{!!row.showHidenField}"/><apex:inputText styleClass="form-control" rendered="{!row.showHidenField}"/></td>
+                                   <td style="vertical-align:middle; width: 25px;">
+                                       <apex:outputLink value="/apex/PP_CompProductSearch?pqId={!strPriceQuote}&rowIndex={!row.counterWrap}">
+                                           <img src="/s.gif" class="lookupIcon" onblur="this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"/>
+                                       </apex:outputLink>
+                                       
+                                   </td>
+                               </tr>
+                               </table> -->
+                               
+                               </td>
+                           <td class="text-center" style="vertical-align:middle;"><apex:outputText value="{!row.prod.Description}"/></td>
+                           <td class="text-center" style="vertical-align:middle;"><apex:outputText value="{!row.prod.Qty_Sales_Unit__c}"/></td>
+                           <td class="text-center" style="vertical-align:middle;"><apex:outputText value="{!row.prod.Sales_Unit__c}"/></td>
+                           <td class="text-center" style="vertical-align:middle;"><apex:outputText value="{!row.contractMaterial.Agreement__r.Agreement_Number__c}"/></td>
+                           <td width="200" class="text-center" style="vertical-align:middle;"><apex:outputText value="{!row.contractMaterial.Agreement__r.Description__c}"/></td>
+                           <td>&nbsp;</td>
+                           <td class="text-center" style="vertical-align:middle; width: 100px;">
+                               <apex:outputText value="{0, number, currency}">
+                                   <apex:param value="{!row.prod.Cost_Price__c}" />
+                               </apex:outputText>
+                           </td>
+                           <td class="text-center" style="width: 125px;"><apex:inputField value="{!row.priceQuoteLine.Sales_Price__c}" styleClass="form-control" onchange="processTotal();processChange('{!row.counterWrap}')"/></td>
+                           <td class="text-center" style="width: 75px;"><apex:inputField value="{!row.priceQuoteLine.Quantity__c}" onchange="processChange('{!row.counterWrap}')" styleClass="form-control"/></td>
+                           <td class="text-center" style="vertical-align:middle; width: 100px;">
+                               <apex:outputText value="{0, number, currency}">
+                                   <apex:param value="{!row.innerlineprices}" />
+                               </apex:outputText>
+                           </td>
+                           
+                       </tr>
+                   </apex:repeat>
+                   
+               </table>
+               <!-- <apex:commandlink value="Add Row" action="{!addRow}" styleClass="btn btn-primary" reRender="panel1"/>-->
+           </apex:outputPanel>
+    </apex:form>
+  </div>
+</apex:page>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Group_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Customer_Group__c = &quot;01&quot;, &quot;Buying Group/GPO&quot;,
+if(Customer_Group__c = &quot;02&quot;, &quot;Dist/Dlr Emg Med Svc&quot;,
+if(Customer_Group__c = &quot;03&quot;, &quot;Dist/Dlr Homecare&quot;,
+if(Customer_Group__c = &quot;04&quot;, &quot;Dist/Dlr Acute Care&quot;,
+if(Customer_Group__c = &quot;05&quot;, &quot;Dist/Dlr Kit Packer&quot;,
+if(Customer_Group__c = &quot;06&quot;, &quot;Dist/Dlr Nursing Hm&quot;,
+if(Customer_Group__c = &quot;07&quot;, &quot;Dist/Dlr Other&quot;,
+if(Customer_Group__c = &quot;08&quot;, &quot;Dist/Dlr Physician&quot;,
+if(Customer_Group__c = &quot;09&quot;, &quot;Dist/Dlr Third Party&quot;,
+if(Customer_Group__c = &quot;10&quot;, &quot;Dist/Dlr Veterinary&quot;,
+if(Customer_Group__c = &quot;11&quot;, &quot;Dist/Dlr Wholesaler&quot;,
+if(Customer_Group__c = &quot;12&quot;, &quot;Dom Dist for Export&quot;,
+if(Customer_Group__c = &quot;13&quot;, &quot;Emergency Med Svcs&quot;,
+if(Customer_Group__c = &quot;14&quot;, &quot;Government&quot;,
+if(Customer_Group__c = &quot;15&quot;, &quot;Health Insurance&quot;,
+if(Customer_Group__c = &quot;16&quot;, &quot;Hosp-Private&quot;,
+if(Customer_Group__c = &quot;17&quot;, &quot;Hosp-Public&quot;,
+if(Customer_Group__c = &quot;18&quot;, &quot;Hosp-Rehabilitation&quot;,
+if(Customer_Group__c = &quot;19&quot;, &quot;Hosp-University&quot;,
+if(Customer_Group__c = &quot;20&quot;, &quot;Hosp-Veteran Affairs&quot;,
+if(Customer_Group__c = &quot;21&quot;, &quot;Hosp/Ctr-Veterinary&quot;,
+if(Customer_Group__c = &quot;23&quot;, &quot;Industry/Competitor&quot;,
+if(Customer_Group__c = &quot;24&quot;, &quot;Institution&quot;,
+if(Customer_Group__c = &quot;25&quot;, &quot;Inter-company&quot;,
+if(Customer_Group__c = &quot;26&quot;, &quot;International/Export&quot;,
+if(Customer_Group__c = &quot;27&quot;, &quot;OEM House Account&quot;,
+if(Customer_Group__c = &quot;28&quot;, &quot;Nursing Home&quot;,
+if(Customer_Group__c = &quot;29&quot;, &quot;Orig Equip Mfg (OEM)&quot;,
+if(Customer_Group__c = &quot;30&quot;, &quot;Other&quot;,
+if(Customer_Group__c = &quot;31&quot;, &quot;Outpatient/Surg Ctr&quot;,
+if(Customer_Group__c = &quot;32&quot;, &quot;Patient/End-User&quot;,
+if(Customer_Group__c = &quot;33&quot;, &quot;Pharmacy&quot;,
+if(Customer_Group__c = &quot;34&quot;, &quot;Physician/Doctor&quot;,
+if(Customer_Group__c = &quot;35&quot;, &quot;Private Label NonOEM&quot;,
+if(Customer_Group__c = &quot;36&quot;, &quot;Sales and Marketing&quot;,
+if(Customer_Group__c = &quot;38&quot;, &quot;Sleep Lab&quot;,
+if(Customer_Group__c = &quot;39&quot;, &quot;Samples&quot;,
+if(Customer_Group__c = &quot;40&quot;, &quot;Canada&quot;,
+if(Customer_Group__c = &quot;41&quot;, &quot;Dental/Oral Surgery&quot;,
+&quot;&quot;
+))))))))))
+))))))))))
+))))))))))
+)))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Customer Group Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

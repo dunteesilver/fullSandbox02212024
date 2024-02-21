@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Influence_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>( ( 40 * ( Influence_Parent__r.Total_Records__c -  AIP_Rank__c ) ) + ( 25 * ( Influence_Parent__r.Total_Records__c -  PR_Rank__c ) ) + ( 20 * ( Influence_Parent__r.Total_Records__c -  ACD_Rank__c ) ) + ( 10 * ( Influence_Parent__r.Total_Records__c -  F_Rank__c ) ) + ( 5 * ( Influence_Parent__r.Total_Records__c -  CC_Rank__c ) ) / 100 ) / Influence_Parent__r.Total_Records__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Influence Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

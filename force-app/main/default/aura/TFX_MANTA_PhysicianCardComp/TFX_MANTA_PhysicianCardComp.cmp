@@ -1,0 +1,26 @@
+<aura:component controller="TFX_MANTA_Handler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="phyId" type="String" />
+    <aura:attribute name="phyName" type="String" />
+    <aura:attribute name="phyEmail" type="String" />
+    <aura:attribute name="phyPhone" type="String" />
+    
+    <ui:scrollerWrapper class="scrollerSize">   
+        <article class="slds-card">
+            <div class="slds-border_top slds-border_bottom slds-border_left slds-border_right">
+                <div class="slds-card__body slds-card__body_inner">
+                    <dl class="slds-list_horizontal slds-wrap">
+                        <dt class="slds-item_label slds-text-color_weak" >Physician Name:</dt>
+                        <dd class="slds-item_detail" >{!v.phyName}</dd>
+                        <dt class="slds-item_label slds-text-color_weak" >Physician Email:</dt>
+                        <dd class="slds-item_detail" >{!v.phyEmail}</dd> 
+                        <dt class="slds-item_label slds-text-color_weak" >Physician Phone:</dt>
+                        <dd class="slds-item_detail" >{!v.phyPhone}</dd> 
+                    </dl>
+                </div>
+            </div>
+        </article>
+    </ui:scrollerWrapper>   
+</aura:component>

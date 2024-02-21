@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CE_Hotel__c</fullName>
+    <externalId>false</externalId>
+    <label>CE Hotel</label>
+    <summarizedField>CE_Reimbursement_Expense__c.CE_Total_Hotel__c</summarizedField>
+    <summaryFilterItems>
+        <field>CE_Reimbursement_Expense__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Submit CRF, Submitted Manually (10/1/14 - 10/31/14), Approved for Payment</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CE_Reimbursement_Expense__c.Education_Record__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

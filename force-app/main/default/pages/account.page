@@ -1,0 +1,220 @@
+<apex:page title="Account: {!Account.Name}" standardController="Account" extensions="account_Page_Helper" readOnly="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js">
+    </script>
+    <style>
+        #stoplights{
+        -webkit-transform: rotate(90deg);
+        
+        -moz-transform: rotate(90deg);
+        
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+        }
+    </style>
+    <style type="text/css">
+        .pbTitle {
+        white-space: nowrap
+        }
+        .isbold {
+        font-weight: bold;
+        }
+        .odd { 
+        background-color: #ffffff;
+        }
+        .even {
+        background-color: #f2f2f2;
+        }
+    </style>
+    <apex:composition template="{!$Page.accountsTemplate}"> 
+        <apex:define name="TFHeader">
+            <apex:sectionHeader title="Account" subtitle="{!Account.Name}"/>
+            <chatter:feedWithFollowers entityId="{!Account.Id}"/>
+            <apex:outputPanel rendered="{!Account.ERP_Active__c = FALSE && Account.Account_Record_Type_Name__c = 'North American Customer'}">
+                <p style="color:red; font-size:24px; font-weight:bold; text-align:center;"><img id="stoplights" src="/img/samples/light_red.gif"/>This account is flagged as inactive<img id="stoplights" src="/img/samples/light_red.gif"/></p>
+            </apex:outputPanel>
+        </apex:define>
+        <apex:define name="TFDetail">
+            <apex:detail subject="{!account.Id}" relatedList="false"  relatedListHover="true" showChatter="false" inlineEdit="true" title="false"/>
+        </apex:define>
+        
+        <apex:define name="TFLowerRight">
+            <apex:pageBlock mode="detail" Title="Sales Summary by Year" rendered="{!graphData != NULL}">
+                <div id="ytdBAR" style="height: 250px;"></div>
+            </apex:pageBlock>
+            <apex:pageBlock mode="detail" Title="Sales Summary by Business Unit" rendered="{!SalesSummaryByBU.size > 0}">
+                <apex:pageBlockTable rows="10" value="{!SalesSummaryByBU}" var="bu" rowClasses="even,odd">
+                    <apex:column value="{!bu}" headerValue=" "/>  
+                    <apex:column headerValue="{!thisYear} YTD Sales">
+                        <apex:outputText value="{0,number,#,##0.00}"> $
+                            <apex:param value="{!salesMap[strYTD+bu]}"/>
+                        </apex:outputText>
+                    </apex:column> 
+                    <apex:column headerValue="{!lastYear} Total Sales">
+                        <apex:outputText value="{0,number,#,##0.00}"> $
+                            <apex:param value="{!salesMap[strPYTD+bu]}"/>
+                        </apex:outputText>
+                    </apex:column> 
+                </apex:pageBlockTable>
+                <apex:repeat value="{!SalesSummaryByBU}" var="bu">
+                </apex:repeat>
+            </apex:pageBlock>
+        </apex:define>
+        
+        <apex:define name="TFLowerLeft">
+            <apex:pageBlock mode="detail" Title="Last 12 Months of Sales" rendered="{!Graph != NULL}">
+                <div id="monthlySales" style="height: 250px;"></div>
+            </apex:pageBlock>
+                <apex:pageBlock title="{!myBU} Top 10" rendered="{!Top10byBU.size > 0}">
+                    <apex:pageBlockTable rows="10" value="{!Top10byBU}" var="m" rowClasses="even,odd">
+                        <apex:column value="{!prodMap[m].Material_Link__c}" headerValue="Material"/>  
+                        <apex:column value="{!prodMap[m].Description}" headerValue="Product Description "/>
+                        <apex:column headerValue="{!thisYear} YTD Sales">
+                            <apex:outputText value="{0,number,#,##0.00}">{!prodMap[m].CurrencyIsoCode} $
+                                <apex:param value="{!salesMap['YTDTOP10BU'+m]}"/>
+                            </apex:outputText>
+                        </apex:column> 
+                        <apex:column headerValue="{!lastYear} Total Sales">
+                            <apex:outputText value="{0,number,#,##0.00}">{!prodMap[m].CurrencyIsoCode} $
+                                <apex:param value="{!salesMap['PYTDTOP10BU'+m]}"/>
+                            </apex:outputText>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                <apex:outputLink value="{!$Site.domain}/apex/allProductsMyBU?id={!Account.Id}">Click to view all {!myBU} Products</apex:outputLink>
+            </apex:pageBlock>
+            
+            <!-- New Top 10 -->
+            <apex:pageBlock title="All Teleflex Top 10" rendered="{!Top10.size > 0}">
+                    <apex:pageBlockTable rows="10" value="{!Top10}" var="m" rowClasses="even,odd">
+                        <apex:column value="{!prodMap[m].Material_Link__c}" headerValue="Material"/>  
+                        <apex:column value="{!prodMap[m].Description}" headerValue="Product Description "/>
+                        <apex:column headerValue="{!thisYear} YTD Sales">
+                            <apex:outputText value="{0,number,#,##0.00}">{!prodMap[m].CurrencyIsoCode} $
+                                <apex:param value="{!salesMap['YTDTOP10'+m]}"/>
+                            </apex:outputText>
+                        </apex:column> 
+                        <apex:column headerValue="{!lastYear} Total Sales">
+                            <apex:outputText value="{0,number,#,##0.00}">{!prodMap[m].CurrencyIsoCode} $
+                                <apex:param value="{!salesMap['PYTDTOP10'+m]}"/>
+                            </apex:outputText>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                <!-- END New Stuff -->
+                <apex:outputLink value="{!$Site.domain}/apex/allProducts?id={!Account.Id}">Click to view all Teleflex Products</apex:outputLink>
+            </apex:pageBlock>
+        </apex:define>
+        <apex:define name="TFRelLists">
+            <apex:pageBlock title="Account Hierarchy">
+                <c:AccountHierarchyTree currentId="{!Account.id}" />
+            </apex:pageBlock>
+            <apex:pageBlock title="Account Team" rendered="{!atmCheck = true}">
+                <apex:pageBlockTable value="{!tsort}" var="atm">
+                    <apex:column value="{!repMap[atm]}" headerValue="Name"/>
+                    <apex:column value="{!atmMap[atm].Business_Unit__c}"/>
+                    <apex:column value="{!tSales[atm]}" headerValue="$"/>
+                    <apex:column value="{!atmMap[atm].Role__c}" headerValue="Team Role"/>
+                    <apex:column headerValue="Territory"><a href="/{!atmMap[atm].Id}">{!atmMap[atm].Name}</a></apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:pageBlock >
+                <apex:pageBlockSection columns="1" title="My BU Contacts" id="MBUCollapsed">
+                    <script>
+                    twistSection(document.getElementById("{!$Component.MBUCollapsed}").childNodes[1].childNodes[1]); 
+                    </script>
+                    <apex:pageBlockTable value="{!MyContacts}" var="mc" rendered="{!MyContacts.size > 0}">
+                        <apex:column headerValue="Name">
+                            <apex:outputLink value="{!URLFOR($Action.Contact.View,mc.Id)}">{!if(mc.Salutation != NULL,mc.Salutation + " ",NULL)}{!mc.Name}</apex:outputLink>
+                            <br/><apex:outputText >{!mc.Title}</apex:outputText>
+                        </apex:column>  
+<!--                        <apex:column value="{!mc.Title}"/>
+                        <apex:column value="{!mc.email}"/>
+                        <apex:column value="{!mc.Phone}"/>-->
+                        <!--<apex:column value="{!mc.Business_Unit1__c}"/>-->
+                        <apex:column headerValue="Contact Details">
+                            <apex:outputText rendered="{!mc.email != NULL}">{!mc.email}<br/></apex:outputText>
+                            {!mc.Phone}
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection columns="1" title="Other BU Contacts" id="OBUCollapsed">
+                    <script>
+                    twistSection(document.getElementById("{!$Component.OBUCollapsed}").childNodes[0].childNodes[0]); 
+                    </script>
+                    <apex:pageBlockTable value="{!Contacts}" var="oc" rendered="{!Contacts.size > 0}">
+                        <apex:column headerValue="Name">
+                            <apex:outputLink value="{!URLFOR($Action.Contact.View,oc.Id)}">{!if(oc.Salutation != NULL,oc.Salutation + " ",NULL)}{!oc.Name}</apex:outputLink>
+                            <br/><apex:outputText >{!oc.Title}</apex:outputText>
+                        </apex:column>
+                        <apex:column headerValue="Contact Details">
+                            <apex:outputText rendered="{!oc.email != NULL}">{!oc.email}<br/></apex:outputText>
+                            {!oc.Phone}
+                        </apex:column>
+                        <!-- Old Stuff
+                        <apex:column headerValue="Contact Name">
+                            <apex:outputLink value="{!URLFOR($Action.Contact.View,oc.Id)}">{!if(oc.Salutation != NULL,oc.Salutation + " ",NULL)}{!oc.Name}</apex:outputLink>
+                        </apex:column>
+                        <apex:column value="{!oc.Title}"/>
+                        <apex:column value="{!oc.email}"/>
+                        <apex:column value="{!oc.Phone}"/> -->
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:define>
+        
+        <apex:define name="TFLeftRelatedLists">
+            
+        </apex:define>
+        
+        <apex:define name="TFLowerSingle">
+        </apex:define>
+
+        <apex:define name="TFRelListsBottom">
+            <apex:relatedList list="OpenActivities"/>
+            <apex:relatedList list="ActivityHistories"/>
+            <apex:relatedList list="CombinedAttachments"/>
+            <apex:relatedList list="Opportunities" rendered="{!$UserRole.Name!=$Label.RenderOpportunityList}"/> 
+            <apex:relatedList rendered="{!$ObjectType.Price_Quote__c.accessible}" list="Price_Quotes__r"/>
+            <apex:relatedList rendered="{!$ObjectType.PRF__c.accessible}" list="PRF__r"/>
+            <apex:relatedList rendered="{!$ObjectType.Complaint__c.accessible}" list="Complaints__r"/>
+            <apex:relatedList rendered="{!$ObjectType.VPS__c.accessible}" list="VPS_Contracts__r"/>
+            <apex:relatedList rendered="{!$ObjectType.Education_Record__c.accessible}" list="Education_Records__r"/>
+             <apex:relatedList rendered="{!$ObjectType.OPERA__c.accessible}" list="OPERA__r"/>
+             <apex:relatedList rendered="{!$ObjectType.OPERA_Account_Link__c.accessible}" list="OPERA_Account_Links__r"/>
+<!--            <apex:relatedList rendered="{!$ObjectType.Legal_Asset__c.accessible}" list="Legal_Assets__r"/> -->
+            <apex:relatedList rendered="{!$ObjectType.Sample_Request__c.accessible}" list="Sample_Requests1__r"/>
+            
+        </apex:define>
+        
+    </apex:composition>
+    <script>
+    new Morris.Line({
+        element: 'monthlySales',
+        data: [ {!Graph} ],
+        xkey: 'month',
+        ykeys: ['YTD'],
+        labels: ['Sales'],
+        parseTime: false 
+    });
+    new Morris.Bar({
+        element: 'ytdBAR',
+        data: [ {!ytdgraphData} ],
+        xkey: 'year',
+        ykeys: ['Sales'],
+        labels: ['Sales'],
+        parseTime: false 
+    });
+    /* new Morris.Bar({
+        element: 'buBAR',
+        data: [ {!bugraphData} ],
+        xkey: 'BU',
+        ykeys: ['2015', '2016'],
+        labels: ['2015', '2016'],
+        parseTime: false 
+    }); */
+    
+    </script>
+</apex:page>

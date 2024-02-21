@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BelowGp__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Current_Gross_Profit__c * 100 &lt; 0, 1, 
+IF(Current_Gross_Profit__c * 100 &lt; 30, 2, 0
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>BelowGp</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

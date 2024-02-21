@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INTV_ISR_Teams__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Updated as per 2022 requirements AN Mar 31 2022 */
+CASE(Product__r.SubGroup__c,
+&quot;Port Accessories&quot;, &quot;Team1&quot;,
+&quot;GrebSet micro-introducer kit&quot;,&quot;Team1&quot;,
+&quot;StraitSet&quot;,&quot;Team1&quot;,
+&quot;Drainage Drainer centesis&quot;,&quot;Team1&quot;,
+&quot;Cavity Drainage &amp; Accessories&quot;,&quot;Team1&quot;,
+&quot;Paracentesis&quot;,&quot;Team1&quot;,
+&quot;Pneumothorax&quot;,&quot;Team1&quot;,
+&quot;Chronic Hemodialysis Catheters&quot;,&quot;Team1&quot;,
+&quot;Thoracentesis&quot;,&quot;Team1&quot;,NULL)
++
+CASE( Product__r.Name,
+&quot;8400&quot;,&quot;Team1&quot;,
+&quot;8401&quot;,&quot;Team1&quot;,
+&quot;8402&quot;,&quot;Team1&quot;,
+&quot;8403&quot;,&quot;Team1&quot;,
+&quot;8404&quot;,&quot;Team1&quot;,
+&quot;8420&quot;,&quot;Team1&quot;,
+&quot;8422&quot;,&quot;Team1&quot;,
+&quot;8423&quot;,&quot;Team1&quot;,
+&quot;8424&quot;,&quot;Team1&quot;, 
+&quot;78030&quot;,&quot;Team1&quot;,
+&quot;78040&quot;,&quot;Team1&quot;,
+&quot;78050&quot;,&quot;Team1&quot;,
+&quot;78060&quot;,&quot;Team1&quot;,
+NULL)
++
+CASE(Product__r.Group__c,
+&quot;Biologics&quot;, &quot;Team2&quot;,NULL)
++
+CASE(Product__r.SubGroup__c,
+&quot;Guidewires 0.025&quot;, &quot;Team2&quot;,
+&quot;Micro-HV Introducers&quot;, &quot;Team2&quot;,
+&quot;Vari-Lase&quot;, &quot;Team2&quot;,
+&quot;Vein Procedure Pack&quot;,&quot;Team2&quot;,
+&quot;Veinsite&quot;,&quot;Team2&quot;,
+&quot;OptiSeal&quot;,&quot;Team2&quot;,NULL)
++
+CASE(Product__r.SubGroup__c,
+&quot;Pacing&quot;, &quot;Team3&quot;,
+&quot;Wedge Pressure&quot;, &quot;Team3&quot;,
+&quot;Bermans&quot;, &quot;Team3&quot;,
+&quot;Termodilution&quot;,&quot;Team3&quot;,NULL)
++
+IF(Compensation_Profile__c = &apos;Interventional ISR CA&apos;,
+CASE( Product__r.SubGroup__c,
+&quot;D-Stat&quot;, &quot;Team4&quot;,
+&quot;Thoracentesis&quot;,&quot;Team4&quot;,
+&quot;Chronic Hemodialysis Catheters&quot;,&quot;Team4&quot;,
+&quot;Pneumothorax&quot;,&quot;Team4&quot;,
+&quot;Thrombix&quot;,&quot;Team4&quot;,
+&quot;Cavity Drainage &amp; Accessories&quot;,&quot;Team4&quot;,
+&quot;Paracentesis&quot;,&quot;Team4&quot;,
+&quot;GrebSet micro-introducer kit&quot;,&quot;Team4&quot;,
+&quot;OptiSeal&quot;,&quot;Team4&quot;,
+&quot;Drainage Drainer centesis&quot;,&quot;Team4&quot;,
+&quot;Port Accessories&quot;,&quot;Team4&quot;,
+&quot;Vari-Lase&quot;,&quot;Team4&quot;,
+&quot;Vein Procedure Pack&quot;,&quot;Team4&quot;,
+&quot;StraitSet&quot;,&quot;Team4&quot;,
+&quot;Embolics&quot;,&quot;Team4&quot;,
+&quot;Pacing&quot;,&quot;Team4&quot;,
+&quot;Wedge Pressure&quot;,&quot;Team4&quot;,
+&quot;Bermans&quot;,&quot;Team4&quot;,
+&quot;Thermodilution&quot;,&quot;Team4&quot;,NULL
+),
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>INTV ISR Teams</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

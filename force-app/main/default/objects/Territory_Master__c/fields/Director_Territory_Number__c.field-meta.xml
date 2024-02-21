@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Director_Territory_Number__c</fullName>
+    <description>Director__c &amp; &quot; (&quot; &amp; Director_Territory_Number_Workflow__c &amp; &quot;)&quot;</description>
+    <externalId>false</externalId>
+    <formula>/* AN April 2023 - Fixed the formula for Reps which report to director with out RSM&apos;s added concatenation on director name to add territory number as this was was causing the Joins to fail on cockpit.Also updated comments for better understanding. */
+/* AN July 14 2022 - Fixed the formula to address Open Director Territories and other Territory related stuff, Removed the reference to additional territory number and region number which was causing the Joins to fail on cockpit , Original formula field is backup and referenced in case 00030568  */
+/* Oh Canada - Fix because Canada does not have an RSM just DIR 
+02Jan2018 - ESC
+*/
+/* REP DIR Special (Rep&apos;s Reporting to Director, No RSM (2023 latam) */
+if(AND(
+Role_Toggle__c = &quot;REP&quot;,
+TEXT(Parent_Territory__r.Role__c) = &quot;Sales Director&quot;
+),
+Parent_Territory__r.Director_Name__c &amp; &quot; (&quot; &amp; Parent_Territory__r.Territory_Number__c &amp; &quot;)&quot;,
+
+/* REP Special (Reps*/
+if(AND(
+Role_Toggle__c = &quot;REP&quot;,
+NOT(ISBLANK(Parent_Territory__r.Director_Name__c))
+),
+Parent_Territory__r.Director_Name__c &amp; &quot; (&quot; &amp; Parent_Territory__r.Territory_Number__c &amp; &quot;)&quot;,
+
+
+/* REP Regular (Reps with normal role up to REP-&gt;RSM-&gt;DIR */
+if(AND(
+Role_Toggle__c = &quot;REP&quot;,
+ISBLANK(Director_Name__c)
+),
+Parent_Territory__r.Parent_Territory__r.Director_Name__c &amp; &quot; (&quot; &amp; Parent_Territory__r.Region_Number__c &amp; &quot;)&quot;,
+
+
+/* RSM Regular */
+if(AND(
+Role_Toggle__c = &quot;RSM&quot;,
+ISBLANK(Director_Name__c)
+),
+Parent_Territory__r.Director_Name__c &amp; &quot; (&quot; &amp; Parent_Territory__r.Territory_Number__c &amp; &quot;)&quot;,
+
+/* RSM Special for BU&apos;s which don&apos;t have DIR&apos;s */
+if(AND(
+Role_Toggle__c = &quot;RSM&quot;,
+NOT(ISBLANK(Director_Name__c))
+),
+Director_Name__c &amp; &quot; (&quot; &amp; Territory_Number__c &amp; &quot;)&quot;,
+
+/* Director */
+if(Role_Toggle__c = &quot;DIR&quot;,Director_Name__c ,
+/* Close out the IF */
+NULL
+))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used to join Invoiced Sales with Territory Quota on the Sales Cockpit.</inlineHelpText>
+    <label>Director Territory Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

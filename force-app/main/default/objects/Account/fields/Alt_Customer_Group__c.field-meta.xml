@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alt_Customer_Group__c</fullName>
+    <description>Used to display different customer group for accounts with exceptions. Field is used to fix issue with AT10 accounts in which the price list type is different from the customer group listed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to display different customer group for accounts with exceptions. Field is used to fix issue with AT10 accounts in which the price list type is different from the customer group listed.</inlineHelpText>
+    <label>Alt Customer Group</label>
+    <length>2</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_checking_so_that_time_fields_are_done</fullName>
+    <active>true</active>
+    <description>Checking all new time fields are done before saving</description>
+    <errorConditionFormula>AND(
+
+OR(ISPICKVAL(Stage__c, &quot;RCSM Review&quot;),
+ISPICKVAL(Stage__c, &quot;CMA Review&quot;),
+ISPICKVAL(Stage__c, &quot;Confirmed&quot;)
+),
+
+RecordType.Name = &quot;Clinical Sales Program&quot;,
+
+
+OR(
+ISNULL(Date_of_Event_Start__c), 
+ISNULL(Ending_Date__c),
+ISPICKVAL(VAStartTimePL__c ,&quot;&quot;),
+ISPICKVAL(VAEndTimePL__c, &quot;&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>You must have all date time fields filled in before you can proceed</errorMessage>
+</ValidationRule>

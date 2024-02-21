@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProctorshipType__c</fullName>
+    <externalId>false</externalId>
+    <label>Proctorship Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial Proctoring Request</fullName>
+                <default>false</default>
+                <label>Initial Proctoring Request</label>
+            </value>
+            <value>
+                <fullName>Case-Coverage - Post Proctoring</fullName>
+                <default>false</default>
+                <label>Case-Coverage - Post Proctoring</label>
+            </value>
+            <value>
+                <fullName>Peer-to-Peer Request</fullName>
+                <default>false</default>
+                <label>Peer-to-Peer Request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

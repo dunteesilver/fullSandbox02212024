@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Change</fullName>
+    <active>true</active>
+    <description>Ensures that a user does not change the Account on a Price Quote that already has line items.</description>
+    <errorConditionFormula>AND( 
+ISCHANGED( Account_Name__c ), 
+Line_Count__c &gt; 0 
+)</errorConditionFormula>
+    <errorMessage>You cannot change a quote Account name once line items have been added.</errorMessage>
+</ValidationRule>

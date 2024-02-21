@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>National_Pool_Set_is_Out_on_Lease</fullName>
+    <active>true</active>
+    <description>Do not allow a user to request a lot that is out on lease.</description>
+    <errorConditionFormula>AND( ISNEW(), NOT( ISPICKVAL( Status__c , &quot;Fulfilled&quot;) ) ,ISPICKVAL(National_Pool_Set__r.Status__c, &quot;Out on Lease&quot;)   )</errorConditionFormula>
+    <errorDisplayField>National_Pool_Set__c</errorDisplayField>
+    <errorMessage>This set is currently on lease with another rep. Please select an available set. If no set appears available, please contact Marketing for more information.</errorMessage>
+</ValidationRule>

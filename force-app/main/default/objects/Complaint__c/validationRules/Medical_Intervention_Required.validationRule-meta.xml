@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical_Intervention_Required</fullName>
+    <active>true</active>
+    <description>If Medical Intervention Required = Yes then please describe the medical intervention.</description>
+    <errorConditionFormula>AND( 
+RecordType.Name = &quot;Interventional – Legacy VSI Products&quot;, 
+ISPICKVAL( Medical_Intervention_Required__c, &quot;Yes&quot;), 
+ISBLANK( Describe_the_Medical_Intervention__c ))</errorConditionFormula>
+    <errorDisplayField>Medical_Intervention_Required__c</errorDisplayField>
+    <errorMessage>If &quot;Medical Intervention Required&quot; = Yes then please describe the medical intervention below.</errorMessage>
+</ValidationRule>

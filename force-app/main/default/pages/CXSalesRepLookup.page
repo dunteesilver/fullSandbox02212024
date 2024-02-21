@@ -1,0 +1,145 @@
+<!--/*********************************************************************
+* Description      : Visualforce page to fetch data from given account and sent account team contact details for business units with $ sales.
+* Test Class       : N/A
+* VisualForce      : CXSalesRepLookup.vfp
+* Author(s)        : Surya Arvan - surya.arvan@teleflex.com
+
+//initial version work item: W-023175 sprint: 2020.05
+**********************************************************************/-->
+<apex:page Controller="CustExpAccRepresentationTool">
+    
+    <html>
+        <style type="text/css">
+            table {
+            border-collapse: collapse;
+            width: 800px;
+            }
+            
+            th, td {
+            text-align: left;
+            padding: 8px;
+            }
+            th {
+            
+            }
+            tr:nth-child(even) {background-color: #f5f5f5;}
+            table {
+            border-collapse: collapse;
+            }
+            table td, table th {
+            border: 1px solid black;
+            }
+            table tr:first-child th {
+            border-top: 0;
+            }
+            table tr:last-child td {
+            border-bottom: 0;
+            }
+            table tr td:first-child,
+            table tr th:first-child {
+            border-left: 0;
+            }
+            table tr td:last-child,
+            table tr th:last-child {
+            border-right: 0;
+            }
+        </style>
+        
+        <div style="text-align: justify;">
+            <apex:outputText ><b>*This is being viewed as BETA version.</b></apex:outputText><br/><br/><br/>
+        </div> 
+        
+        <div>
+            <apex:outputLink value="{!$Site.domain}/{!relatedTo.Id}">Click to go Back to {!relatedTo.name}</apex:outputLink>
+        </div>     
+        <body style="width: 800px">
+            <apex:image style="width: 800px" id="header" value="https://teleflex--sandbox--c.documentforce.com/servlet/servlet.ImageServer?id=0152S00000D6XJ2&oid=00D0S0000009nah&lastMod=1586355941000"/><br/><br/>
+            
+            {!relatedTo.Name}<br/><br/>
+            Teleflex LLC Account# {!relatedTo.SAP_Sold_To__c}<br/><br/>
+            
+            <apex:outputText >{!relatedTo.ShippingStreet}</apex:outputText><br/>
+            <apex:outputText >{!relatedTo.ShippingCity}, {!relatedTo.ShippingState}, {!relatedTo.ShippingPostalCode}</apex:outputText><br/><br/>
+            
+            <apex:outputText >Please find the below representative coverage for your account as of {!MONTH(TODAY())}/{!DAY(TODAY())}/{!YEAR(TODAY())}:</apex:outputText><br/><br/>     
+            
+            <table>
+                <tr>
+                    <th>CATEGORY</th>
+                    <th>PRODUCT OVERVIEW</th>
+                    <th>REPRESENTATIVE</th>  
+                    <th>EMAIL</th>
+                    <th>PHONE</th> 
+                    <!--added for testing purpose to verify territory num is present in account territory key 
+                    <th>TERRITORY KEY</th>
+                    <th>TERRITORY NUM</th>-->
+                    
+                </tr>
+                
+                
+                <apex:repeat value="{!taObjLst}" var="ta">
+                    
+                    <!-- $ sign check -->
+                    <apex:repeat value="{!ta}" var="t" 
+                                 rendered="{!
+                                           IF(CONTAINS(relatedTo.Territory_Key__c, ta.Territory_Number__c), true, false)  }"> 
+                        
+                        <!-- business unit check -->
+                        <apex:repeat value="{!ta}" var="t1" 
+                                     rendered="{!
+                                               IF(CONTAINS(ta.Business_Unit__c, "Anesthesia"), true, false)
+                                               || IF(CONTAINS(ta.Business_Unit__c, "Alternate Care"), true, false)
+                                                || IF(CONTAINS(ta.Business_Unit__c, "EMS"), true, false)
+                                                 || IF(CONTAINS(ta.Business_Unit__c, "Interventional"), true, false)
+                                                  || IF(CONTAINS(ta.Business_Unit__c, "Interventional Capital"), true, false)
+                                                   || IF(CONTAINS(ta.Business_Unit__c, "Respiratory"), true, false)
+                                                    || IF(CONTAINS(ta.Business_Unit__c, "Surgical Disposables"), true, false)
+                                                     || IF(CONTAINS(ta.Business_Unit__c, "Surgical Instruments"), true, false)
+                                                      || IF(CONTAINS(ta.Business_Unit__c, "Surgical"), true, false)                                                                                                                                                                                                                                                                                                         
+                                                       || IF(CONTAINS(ta.Business_Unit__c, "Vascular"), true, false)
+                                                       }"> 
+                            <apex:repeat value="{!ta}" var="t2"
+                                         rendered="{!IF(ta.Territory__r.Sales_Rep__r.Name == "", false, true) 
+                                                                                               || IF(ta.Territory__r.Primary_Territory_User__r.Name == "", false, true)
+                                                                                                                                                         }">
+                                
+                                <tr>
+                                    <td><b>{!IF(ta.Business_Unit__c != "", ta.Business_Unit__c, "Teleflex")}</b></td>
+                                    <td>{!IF(ta.Business_Unit__c = 'Anesthesia','LMA® & Rüsch® Airway supplies & Arrow® Regional Anesthesia',
+                                        IF(ta.Business_Unit__c = 'EMS','Arrow® Intraosseous Vascular Access & Emergency Airway',
+                                        IF(ta.Business_Unit__c = 'Interventional','GuideLiner® Catheters',
+                                        IF(ta.Business_Unit__c = 'Interventional Capital','Arrow® Intra-Aortic Balloon Pumps',                                                
+                                        IF(ta.Business_Unit__c = 'Respiratory','Hudson RCI® Respiratory Supplies & ConchaTherm® Humidification',
+                                        IF(ta.Business_Unit__c = 'Surgical Disposables','Weck® Ligation, Percutaneous, & Fascial Closure',
+                                        IF(ta.Business_Unit__c = 'Surgical Instruments','Pilling® Surgical Instruments',
+                                        IF(ta.Business_Unit__c = 'Vascular','Arrow® CVC, PICC, & Arterial Lines',
+                                        'N/A'))))))))}
+                                    </td>
+                                    <td>{!IF(ta.Territory__r.Sales_Rep__r.Name != "", ta.Territory__r.Sales_Rep__r.Name, ta.Territory__r.Primary_Territory_User__r.Name)}</td> 
+                                    <td>{!IF(ta.Territory__r.Sales_Rep__r.Email != "", ta.Territory__r.Sales_Rep__r.Email, ta.Territory__r.Primary_Territory_User__r.Email)}</td>
+                                    <td>{!IF(ta.Territory__r.Sales_Rep__r.Phone != "", ta.Territory__r.Sales_Rep__r.Phone, ta.Territory__r.Primary_Territory_User__r.Phone)}</td>
+                                    <!--added for testing purpose to verify territory num is present in account territory key 
+                                    <td>{!relatedTo.Territory_Key__c}</td>
+                                    <td>{!ta.Territory__r.Territory_Number__c}</td> -->
+                                </tr>
+                            </apex:repeat>
+                        </apex:repeat>
+                    </apex:repeat>  
+                </apex:repeat> 
+            </table>
+            <br/><br/> 
+            <apex:outputText >To place orders, inquire about order status, or receive general information please contact our Customer </apex:outputText><br/>
+            <apex:outputText >Service team at <b>1-866-246-6990</b> <b>cs@teleflex.com</b></apex:outputText><br/><br/>
+            
+            
+            <apex:outputText >Need Clinical Support?  Please contact our Clinical Support hotline at <b>888-413-3094</b>.</apex:outputText><br/><br/>
+            
+            <apex:outputText >Need Product Repair?  Please visit the <a href="https://teleflex.com/usa/services/repair-service/">Teleflex Service site</a> for contact information.</apex:outputText><br/><br/>
+            <apex:outputText >Thank you for your business!</apex:outputText><br/><br/>
+            <apex:image style="width: 800px" id="footer" value="https://teleflex--sandbox--c.documentforce.com/servlet/servlet.ImageServer?id=0152S00000D6XJ1&oid=00D0S0000009nah&lastMod=1586355941000"/>
+        </body> 
+        
+    </html>
+    
+    
+</apex:page>

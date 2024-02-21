@@ -1,0 +1,131 @@
+<apex:page controller="PP_Price_Quote_Edit" tabStyle="Pricing_Portal__tab" sidebar="false">
+ 
+    <div class="teleflex">
+        <apex:include id="menu" pageName="PP_Menu"/>
+
+        <apex:outputPanel title="" id="error">
+            <apex:pageMessages ></apex:pageMessages>
+        </apex:outputPanel>
+        <!-- Customer Service Variables -->
+        <apex:variable var="csRemove" value="{!IF(LEFT($UserRole.Name,10) = 'Customer S',TRUE,FALSE)}"/>
+        <apex:variable var="latamRemove" value="{!IF(contains($UserRole.Name,'Latin America'),TRUE,FALSE)}"/>
+        <apex:variable var="showType" value="{!IF(contains($UserRole.Name,'Latin America') || contains($UserRole.Name,'Teleflex Global IT') || pq.BusinessUnit__c = 'Anesthesia' || pq.BusinessUnit__c = 'EMS',TRUE,FALSE)}"/>
+        <apex:variable var="emeaUser" value="{!IF(contains($UserRole.Name,'EMEA'),TRUE,FALSE)}"/>
+        <div class="contain-fluid">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands24.png" alt="Quote Details"/>&nbsp;&nbsp;{!pq.Price_Quote_Name__c }</h6></div>
+                        <div class="panel-body">
+                            <apex:form >
+                                <table class="table">
+                                    <tr>
+                                        <td class="text-right">Quote Description:</td>
+                                        <td><apex:inputTextArea cols="50" value="{!pq.Quote_Description__c}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Quote Expiration:</td>
+                                        <td><apex:inputField value="{!pq.Expiration_Date__c}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Customer Comments:</td>
+                                        <td><apex:inputTextArea cols="50" value="{!pq.Customer_comments__c}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Internal Comments:</td>
+                                        <td><apex:inputTextArea cols="50" value="{!pq.Internal_Comments_Only__c}"/></td>
+                                    </tr>
+                                    <apex:outputText rendered="{!!csRemove}">
+                                    <apex:outputText rendered="{!!emeaUser}">
+                                        <tr>
+                                            <td class="text-right">Opportunity:</td>
+                                            <td><apex:inputField style="width:400px" value="{!pq.Opportunity__c}"/></td>
+                                        </tr>
+									</apex:outputText>                                        
+                                    </apex:outputText>
+
+									<apex:outputText rendered="{!!emeaUser}">
+                                    <apex:outputText rendered="{!(!pq.InApproval__c && pq.PRF__c == NULL && pq.Status__c != 'Approved') && !csRemove}">
+                                      <tr>
+                                        <apex:outputText rendered="{!!latamRemove}">
+                                            <td class="text-right">One Time Purchase?:</td>
+                                        </apex:outputText>
+                                        <td>
+                                            <apex:inputCheckbox rendered="{!!latamRemove && !emeaUser}" value="{!pq.One_Time_Purchase__c}"/>
+                                            <apex:outputField rendered="{!latamRemove && emeaUser}" value="{!pq.One_Time_Purchase__c}"/>
+                                        </td>
+                                      </tr>
+                                    </apex:outputText>
+                                    </apex:outputText>
+                                    <!-- Added for LATAM -->
+                                    <apex:outputText rendered="{!showType}">
+                                        <tr>
+                                            <td class="text-right">Type:</td>
+                                            <td>
+                                                <apex:inputField id="typeId" value="{!pq.Type__c}" />
+                                                <script type="text/javascript">
+                                                var salesOrgKey = "{!pq.Sales_Org_Key__c}";
+                                                console.log('*** salesOrgKey *** ' + salesOrgKey);
+                                                $(document).ready( function () {
+                                                  if(salesOrgKey != 'CO1010'){
+                                                    console.log('*** In if *** ');
+                                                    $('option[value="ASK Agreement"]').remove();
+                                                  }
+                                                  
+                                                  if(salesOrgKey != 'US6010' && salesOrgKey != 'CA1010'){
+                                                  	$('option[value="Trade-in"]').remove();
+                                                  }
+                                                  
+                                                  if(salesOrgKey == 'US6010' || salesOrgKey == 'CA1010'){
+                                                  	$('option[value="ASK Agreement"]').remove();
+                                                    $('option[value="Spa General Sales"]').remove();
+                                                    $('option[value="Special Sales"]').remove();
+                                                    $('option[value="Sales Per Each"]').remove();
+                                                  }
+                                                });
+                                                </script>
+                                            </td>
+                                        </tr>
+                                    </apex:outputText>
+                                    
+                                    <!--<apex:outputText rendered="{!NOT((!pq.InApproval__c && pq.PRF__c == NULL && pq.Status__c != 'Approved') && !csRemove && !contains($UserRole.Name,'Latin America'))}">
+                                      <tr>
+                                        <td class="text-right">One Time Purchase?:</td>
+                                          <td><apex:outputField value="{!pq.One_Time_Purchase__c}"/></td>
+                                      </tr>
+                                    </apex:outputText>-->
+                                    <apex:outputText rendered="{!contains($UserRole.Name,'EMS') || contains($UserRole.Name,'Anesthesia Inside Sales') || contains($UserRole.Name,'Teleflex Global IT')}">
+                                        <tr>
+                                            <td class="text-right">Shipping:</td>
+                                            <td><apex:inputField value="{!pq.Shipping__c}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Tax:</td>
+                                            <td><apex:inputField value="{!pq.Tax__c}"/></td>
+                                        </tr>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!contains($UserRole.Name,'Capital') || contains($UserRole.Name,'Teleflex Global IT')}">
+                                        <tr>
+                                            <td class="text-right">Discount:</td>
+                                            <td><apex:inputField value="{!pq.Discount__c}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Discount Type:</td>
+                                            <td><apex:inputField value="{!pq.Discount_Type__c}"/></td>
+                                        </tr>
+                                    </apex:outputText>
+                                    <tr><td>&nbsp;</td>
+                                        <td>
+                                            <apex:commandButton action="{!save}" styleClass="btn btn-primary btn-sm" value=" Save "/>&nbsp;
+                                            <apex:commandButton action="{!cancel}" styleClass="btn btn-primary btn-sm" value=" Cancel "/>&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </apex:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:page>

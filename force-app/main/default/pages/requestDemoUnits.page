@@ -1,0 +1,49 @@
+<apex:page doctype="html-5.0" sidebar="true" showheader="true" standardController="Request_Demo_Unit__c" tabStyle="Request_Demo_Unit__c">
+<apex:include id="menu" pageName="vpsMenu"/>
+
+	<div class="teleflex">
+		<apex:form >
+		<div class="panel panel-primary">
+				<div class="panel-heading">
+						<h6 class="panel-title">Request Demo Unit</h6>
+				</div>
+				<div class="panel-body" align="center">
+					<table >
+						<tbody>
+						<tr>
+							<td class="text-right">
+								<h4><strong>Users:&nbsp;</strong></h4>
+							</td>
+							<td class="text-left">
+
+							<apex:inputField value="{!Request_Demo_Unit__c.User__c}"/>
+							</td>
+							<td class="text-right">
+								<h4><strong>Trainings:&nbsp;</strong></h4>
+							</td>
+							<td class="text-left">
+								<apex:selectlist id="selectedGPO" multiselect="true"  size="3" >
+									<apex:selectOptions value="{!Request_Demo_Unit__c.Trainings__c}"  />
+										<!-- <apex:actionSupport event="onchange" action="{!save}" rerender="dPanel"/> -->
+								</apex:selectlist>
+								<!--
+								<select multiple="" class="form-control">
+									<apex:selectOption value="{!Request_Demo_Unit__c.Trainings__c}" />
+				          <option value="{!Request_Demo_Unit__c.Trainings__c}"></option>
+				        </select>
+								-->
+							</td>
+						</tr>
+						<tr>
+							<td class="text-center" colspan="4">
+								<apex:commandButton action="{!save}" value="Save" styleClass="btn btn-primary"/>&nbsp;
+								<apex:commandButton action="{!cancel}" value="Cancel" styleClass="btn btn-primary"/>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+		</div>
+   </apex:form>
+ 	</div>
+</apex:page>

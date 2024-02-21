@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cnfrm_1_Radiologist_for_final_read__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Confirm one Radiologist, if possible, for final read?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirm one Radiologist, if possible, for final read?</inlineHelpText>
+    <label>Cnfrm 1 Radiologist, for final read?...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsOwner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Owner__r.Salesforce_User_ID__c = $User.Id, 
+&quot;TRUE&quot;, 
+&quot;FALSE&quot;)</formula>
+    <label>IsOwner</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

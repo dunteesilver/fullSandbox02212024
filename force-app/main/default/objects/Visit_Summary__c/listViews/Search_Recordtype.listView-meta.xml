@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Recordtype</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Visit_Summary__c.Anesthesia_Field_Visit</value>
+    </filters>
+    <label>Search Recordtype</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Teleflex_Global_IT</role>
+    </sharedTo>
+</ListView>

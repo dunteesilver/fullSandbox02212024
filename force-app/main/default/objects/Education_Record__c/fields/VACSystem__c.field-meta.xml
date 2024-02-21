@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VACSystem__c</fullName>
+    <externalId>false</externalId>
+    <formula>Text(Opportunity__r.VACSystem__c)</formula>
+    <inlineHelpText>VAC Sytem Selected on the Opportunity</inlineHelpText>
+    <label>VAC System</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

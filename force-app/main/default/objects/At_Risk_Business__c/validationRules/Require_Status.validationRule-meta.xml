@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Status</fullName>
+    <active>true</active>
+    <description>Status is required for all at risk businesses</description>
+    <errorConditionFormula>AND( Active__c = True, Text(Status__c) = &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>Select a Status for this At Risk Business</errorMessage>
+</ValidationRule>

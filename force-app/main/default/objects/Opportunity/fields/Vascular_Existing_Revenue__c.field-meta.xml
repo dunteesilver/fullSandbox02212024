@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vascular_Existing_Revenue__c</fullName>
+    <description>This value will used on upgrade opportunities, the value entered here is the existing revenue (current income) Teleflex sees on an annual basis.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the current annual amount being sold into this account (Teleflex&apos;s existing revenue). This number will be deducted in reports and dashboard when view the value.</inlineHelpText>
+    <label>Existing Revenue</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

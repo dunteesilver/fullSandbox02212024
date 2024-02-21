@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blooddrawculture__c</fullName>
+    <description>PICC, Endurance, Midline 
+Trial/Evaluation Stage
+Round Table with the Account/Clinical
+What is facility protocol/procedure for the following?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>PICC, Endurance, Midline 
+Trial/Evaluation Stage
+Round Table with the Account/Clinical
+What is facility protocol/procedure for the following?</inlineHelpText>
+    <label>Blood draw/culture</label>
+    <length>1000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

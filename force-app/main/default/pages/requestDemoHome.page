@@ -1,0 +1,4 @@
+<apex:page showHeader="true" sidebar="true" standardController="Request_Demo_Unit__c">
+	<apex:include pageName="vpsMenu"/>
+	<apex:enhancedList type="Request_Demo_Unit__c" height="500" rowsPerPage="50" id="requestList" />
+</apex:page>

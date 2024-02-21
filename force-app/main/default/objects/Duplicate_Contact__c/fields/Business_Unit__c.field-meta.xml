@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;Anesthesia/Respiratory&quot;), &quot;Anesthesia/Respiratory&quot; + BR() , NULL) +
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;OEM&quot;), &quot;OEM&quot; + BR() , NULL) +
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;Specialty&quot;), &quot;Specialty&quot; + BR() , NULL) +
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;Surgical&quot;), &quot;Surgical&quot; + BR() , NULL) +
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;Vascular&quot;), &quot;Vascular&quot; + BR() , NULL) +
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;Interventional Access&quot;), &quot;Interventional Access&quot; + BR() , NULL)+
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;EMS&quot;), &quot;EMS&quot; + BR() ,NULL)+
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;Urology&quot;), &quot;Urology&quot; + BR() ,NULL)+
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;Cardiac&quot;), &quot;Cardiac&quot; + BR() ,NULL)+
+IF(INCLUDES( Contact__r.Business_Unit1__c , &quot;LMA&quot;), &quot;LMA&quot;, NULL)</formula>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

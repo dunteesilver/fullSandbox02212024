@@ -1,0 +1,541 @@
+<apex:page showHeader="false" showQuickActionVfHeader="false" sidebar="false">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"/>
+
+<html>
+<head>
+    <title>Did you know?</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta property="og:title" content="Did you know?" />
+
+<!--[if gte mso 9]><xml>
+    <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+
+</head>
+  <body style="margin: 0;mso-line-height-rule: exactly;padding: 0;min-width: 100%;background-color: #fefefe">
+    <center class="wrapper" style="display: table;table-layout: fixed;width: 100%;min-width: 620px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;background-color: #fefefe">
+        <table class="header centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px">
+            <tbody><tr>
+                <td style="padding: 0;vertical-align: top">
+                    <table style="border-collapse: collapse;border-spacing: 0" align="right">
+                        <tbody><tr>
+                            <td class="preheader" style="padding: 0;vertical-align: top;padding-bottom: 16px;padding-top: 16px;text-align: right;width: 280px;letter-spacing: 0.01em;font-style: normal;line-height: 17px;font-weight: 400;font-size: 11px;color: #b9b9b9;font-family:Arial, Helvetica, sans-serif">
+                                <div class="spacer" style="font-size: 1px;line-height: 2px;width: 100%">&nbsp;</div>
+
+                                <!--<div class="webversion">No Images? <webversion>Click here</webversion></div>-->
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+            </tr></tbody>
+        </table>
+
+        <table class="border" style="border-collapse: collapse;border-spacing: 0;font-size: 1px;line-height: 1px;background-color: #dddee1;Margin-left: auto;Margin-right: auto" width="602">
+            <tbody><tr><td style="padding: 0;vertical-align: top">&#8203;</td></tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top">
+                    <table class="two-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;table-layout: fixed" >
+                        <tbody><tr>
+
+                            <td class="column first" style="padding: 0;vertical-align: top;text-align: left;width: 300px">
+                                <div><div class="column-top" style="font-size: 22px;line-height: 22px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 16px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #787878;font-size: 13px;font-family:Arial, Helvetica, sans-serif;line-height: 21px;Margin-bottom: 12px"><a style="text-decoration: none;color: #787878; border-bottom: none;" href="https://www.theinvisiblerisk.org/"><em>TheInvisibleRisk.org</em></a></p>
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 4px;line-height: 4px">&nbsp;</div>
+                            </td>
+
+                            <td class="column second" style="padding: 0;vertical-align: top;text-align: left;width: 300px">
+                                <div><div class="column-top" style="font-size: 18px;line-height: 18px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td style="padding: 0;vertical-align: top;font-size: 1px;width: 100%">&#8203;</td>
+
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 2px;padding-right: 5px; width: 25px; word-break: break-word;word-wrap: break-word">
+                                            <div class="image" style="font-size: 12px;Margin-bottom: 18px;mso-line-height-rule: at-least;color: #60666d;font-family:Arial, Helvetica, sans-serif" align="center">
+                                                <a href="https://www.facebook.com/theinvisiblerisk?fref=campaignEblast">
+                                                    <img style="border: 0;-ms-interpolation-mode: bicubic;display: block;max-width: 25px" src="https://teleflex.my.salesforce.com/servlet/servlet.ImageServer?id=015E0000006LM2T&oid=00DE0000000K31h"  width="25" height="25" alt="" />
+                                                </a>
+                                            </div>
+                                        </td>
+
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 2px;padding-right: 32px; width: 25px; word-break: break-word;word-wrap: break-word">
+                                            <div class="image" style="font-size: 12px;Margin-bottom: 18px;mso-line-height-rule: at-least;color: #60666d;font-family:Arial, Helvetica, sans-serif" align="center">
+                                                <a href="https://twitter.com/teleflex_anes">
+                                                    <img style="border: 0;-ms-interpolation-mode: bicubic;display: block;max-width: 25px" src="https://teleflex.my.salesforce.com/servlet/servlet.ImageServer?id=015E0000006LM2E&oid=00DE0000000K31h"  width="25" height="25" alt="" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 2px;line-height: 2px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffa300;table-layout: fixed">
+                        <tbody><tr>
+                            <td class="column" style="padding: 0;vertical-align: top;text-align: left; width: 600px;">
+
+                                <div class="image" style="font-size: 12px;Margin-bottom: 24px;mso-line-height-rule: at-least;color: #60666d;font-family:Arial, Helvetica, sans-serif" align="center">
+                                    <img class="gnd-corner-image gnd-corner-image-center gnd-corner-image-top" style="border: 0;-ms-interpolation-mode: bicubic;display: block;max-width: 740px" src="https://teleflex.my.salesforce.com/servlet/servlet.ImageServer?id=015E0000006L9eZ&oid=00DE0000000K31h" alt="" width="600" height="150" />
+                                </div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                            <h1 style="Margin-top: 0;color: #fff;font-weight: 400;font-size: 30px;Margin-bottom: 24px;font-family:Arial, Helvetica, sans-serif;line-height: 48px;text-align: center"><span style="color:#ffffff"><strong style="font-weight: bold">Did you know?</strong></span></h1>
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 8px;line-height: 8px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;table-layout: fixed">
+                        <tbody><tr>
+                            <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+                                <div><div class="column-top" style="font-size: 32px;line-height: 32px">&nbsp;</div></div>
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                            <h2 style="Margin-top: 0;color: #013073;font-weight: 700;font-size: 20px;Margin-bottom: 16px;font-family:Arial, Helvetica, sans-serif;line-height: 30px;text-align: center">Approximately 7 in 10 patients cared for by PACU nurses exhale waste anesthetic gas (WAG) above NIOSH recommended levels while in the PACU.<sup>1</sup></h2>
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 4px;line-height: 4px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;table-layout: fixed" >
+                        <tbody><tr>
+                            <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+
+                                <div><div class="column-top" style="font-size: 4px;line-height: 4px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                            <div class="divider" style="Margin-bottom: 6px">
+                                                <div class="border" style="font-size: 1px;line-height: 1px;background-color: #dddee1">&nbsp;</div>
+                                            </div>
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 8px;line-height: 8px">&nbsp;</div>
+
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;table-layout: fixed" >
+                        <tbody><tr>
+                            <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+                                <div><div class="column-top" style="font-size: 8px;line-height: 8px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                            <h2 style="Margin-top: 0;color: #4698cb;font-weight: 700;font-size: 18px;Margin-bottom: 24px;font-family:Arial, Helvetica, sans-serif;line-height: 24px;">Get to know these WAG-related guidelines and clinical research findings:</h2>
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 4px;line-height: 4px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+
+
+
+
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top">
+                    <table class="two-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;table-layout: fixed" >
+                        <tbody><tr>
+
+                            <td class="column first" style="padding: 0;vertical-align: top;text-align: left;width: 300px">
+                                <div><div class="column-top" style="font-size: 22px;line-height: 22px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 20px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #60666d;line-height: 20px;Margin-bottom: 0;font-size: 15px;font-family:Arial, Helvetica, sans-serif"><span style="color:#4698cb"><a href="https://www.theinvisiblerisk.org/documents/Step%201_NIOSH%20Guidelines.pdf" style="text-decoration:underline; border-bottom: none; color:#013073;">NIOSH Guidelines &mdash;</a></span></p>
+
+                                            <p style="Margin-top: 0;color: #000000;line-height: 20px;Margin-bottom: 21px;font-size: 15px;font-family:Arial, Helvetica, sans-serif">describe who’s affected by WAG exposure, as well as potential health consequences.</p>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 20px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #60666d;line-height: 20px;Margin-bottom: 0;font-size: 15px;font-family:Arial, Helvetica, sans-serif"><span style="color:#4698cb"><a href="https://www.osha.gov/dts/osta/anestheticgases/" style="text-decoration:underline; border-bottom: none; color:#013073;">OSHA Guidelines &mdash;</a></span></p>
+
+                                            <p style="Margin-top: 0;color: #000000;line-height: 20px;Margin-bottom: 21px;font-size: 15px;font-family:Arial, Helvetica, sans-serif">address healthcare worker exposure to WAG in the OR and the PACU.</p>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 4px;line-height: 4px">&nbsp;</div>
+                            </td>
+
+                            <td>
+                                <table style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td style="border-left: thin solid #b6b6b6; height: 160px;">&nbsp;&nbsp;&nbsp;</td>
+                                    </tr></tbody>
+                                </table>
+                            </td>
+
+                            <td class="column second" style="padding: 0;vertical-align: top;text-align: left;width: 299px">
+                                <div><div class="column-top" style="font-size: 18px;line-height: 18px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 20px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #60666d;line-height: 20px;Margin-bottom: 0;font-size: 15px;font-family:Arial, Helvetica, sans-serif"><span style="color:#4698cb"><a href="https://teleflex.my.salesforce.com/sfc/p/E0000000K31h/a/E0000000TQOJ/fygQks9LczBiZvy_DPA2UOc29QS7IhLbKlaIuQz2f_U" style="text-decoration:underline; border-bottom: none; color:#013073;">Clinical Bibliography &mdash;</a></span></p>
+
+                                            <p style="Margin-top: 0;color: #000000;line-height: 20px;Margin-bottom: 21px;font-size: 15px;font-family:Arial, Helvetica, sans-serif">provides an overview of guidelines and clinical studies related to WAG in the workplace.</p>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 20px;word-break: break-word;word-wrap: break-word">
+                                            <div style="font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#013073; font-weight:bold; display: inline-block; line-height: 19px; padding: 6px 17px 6px 17px;text-align: center; border:#013073 solid 2px; border-radius: 4px; decoration: none; text-transform:uppercase;">
+
+                                                <a href="https://teleflex.my.salesforce.com/sfc/p/E0000000K31h/a/E0000000TQOJ/fygQks9LczBiZvy_DPA2UOc29QS7IhLbKlaIuQz2f_U" style="text-decoration:none; color:#013073;">&nbsp;Download&nbsp;</a>
+                                            </div>
+                                        </td>
+
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 2px;line-height: 2px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;table-layout: fixed" >
+                        <tbody><tr>
+                            <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+
+                                <div><div class="column-top" style="font-size: 4px;line-height: 4px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                            <div class="divider" style="Margin-bottom: 24px">
+                                                <div class="border" style="font-size: 1px;line-height: 1px;background-color: #dddee1">&nbsp;</div>
+                                            </div>
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 8px;line-height: 8px">&nbsp;</div>
+
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="sidebar" style="border-collapse: collapse;border-spacing: 0;width: 600px;background-color: #ffffff;table-layout: fixed" >
+                        <tbody><tr>
+                            <td class="column first wider" style="padding: 0;vertical-align: top;text-align: left;width: 360px">
+
+                                <div class="image" style="font-size: 12px;Margin-bottom: 4px;mso-line-height-rule: at-least;color: #60666d;font-family:Arial, Helvetica, sans-serif" align="left">
+                                    <a style="text-decoration: none;color: #5c91ad" href="https://www.theinvisiblerisk.org/"><img class="gnd-corner-image gnd-corner-image-left gnd-corner-image-top gnd-corner-image-bottom" style="border: 0;-ms-interpolation-mode: bicubic;display: block;max-width: 300px" src="https://teleflex.my.salesforce.com/servlet/servlet.ImageServer?id=015E0000006L9fD&oid=00DE0000000K31h" alt="" width="300" height="52" /></a>
+                                </div>
+
+                                <div class="column-bottom" style="font-size: 6px;line-height: 6px">&nbsp;</div>
+                            </td>
+
+                            <td class="column second narrower" style="padding: 0;vertical-align: top;text-align: left;width: 240px">
+                                <div><div class="column-top" style="font-size: 14px;line-height: 14px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td style="padding: 0;vertical-align: top;font-size: 1px;width: 100%">&#8203;</td>
+
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 2px;padding-right: 5px; width: 25px; word-break: break-word;word-wrap: break-word">
+                                            <div class="image" style="font-size: 12px;Margin-bottom: 18px;mso-line-height-rule: at-least;color: #60666d;font-family:Arial, Helvetica, sans-serif" align="center">
+                                                <a href="https://www.facebook.com/theinvisiblerisk?fref=campaignEblast">
+                                                    <img style="border: 0;-ms-interpolation-mode: bicubic;display: block;max-width: 25px" src="https://teleflex.my.salesforce.com/servlet/servlet.ImageServer?id=015E0000006L9eF&oid=00DE0000000K31h" width="25" height="25" alt="" />
+                                                </a>
+                                            </div>
+                                        </td>
+
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 2px;padding-right: 32px; width: 25px; word-break: break-word;word-wrap: break-word">
+                                            <div class="image" style="font-size: 12px;Margin-bottom: 18px;mso-line-height-rule: at-least;color: #60666d;font-family:Arial, Helvetica, sans-serif" align="center">
+                                                <a href="https://twitter.com/teleflex_anes">
+                                                    <img style="border: 0;-ms-interpolation-mode: bicubic;display: block;max-width: 25px" src="https://teleflex.my.salesforce.com/servlet/servlet.ImageServer?id=015E0000006L9f8&oid=00DE0000000K31h" width="25" height="25" alt="" />
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 4px;line-height: 4px">&nbsp;</div>
+                            </td>
+
+
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr class="border" style="font-size: 4px;line-height: 4px;background-color: #ffa300;height: 1px">
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 3px;line-height: 3px;background-color: #dddee1;width: 1px">&#8203;</td>
+                <td style="padding: 0;vertical-align: top;line-height: 4px; width: 600px; background-color: #ffa300;">&#8203;</td>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 4px;line-height: 4px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+            </tr></tbody>
+
+
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="sidebar" style="border-collapse: collapse;border-spacing: 0;width: 600px;background-color: #013073;table-layout: fixed">
+                        <tbody><tr>
+                            <td class="column first narrower" style="padding: 0;vertical-align: top;text-align: left;width: 179px;">
+
+                                <div><div class="column-top" style="font-size: 24px;line-height: 24px">&nbsp;</div></div>
+
+                                <div class="image" style="font-size: 12px;Margin-bottom: 18px;mso-line-height-rule: at-least;color: #60666d;font-family:Arial, Helvetica, sans-serif" align="center">
+                                    <img style="border: 0;-ms-interpolation-mode: bicubic;display: block;max-width: 135px" src="https://teleflex.my.salesforce.com/servlet/servlet.ImageServer?id=015E0000006L9ee&oid=00DE0000000K31h" alt="" width="135" height="26" />
+                                </div>
+
+                                <div class="column-bottom" style="font-size: 4px;line-height: 4px">&nbsp;</div>
+                            </td>
+
+                            <td>
+                                <table style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td style="border-left: thin solid #b6b6b6; height: 40px;">&nbsp;</td>
+                                    </tr></tbody>
+                                </table>
+                            </td>
+
+                            <td class="column second wider" style="padding: 0;vertical-align: top;text-align: left;width: 420px">
+
+                                <div><div class="column-top" style="font-size: 18px;line-height: 18px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 20px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #60666d;line-height: 14px;Margin-bottom: 21px;font-size: 10px;font-family:Arial, Helvetica, sans-serif"><span style="color:#ffffff">TELEFLEX 3015 Carrington Mill Boulevard, Morrisville, NC 27560<br />Toll Free: <a href="" style="text-decoration:none;border:none;color:#ffffff;">866.246.6990</a> Phone: <a href="" style="text-decoration:none;border:none;color:#ffffff;">+1.919.544.8000</a><br /><a href="http://www.teleflex.com/en/usa/productAreas/respiratory/productGroups/oxygenTherapy/products/isogard-mask/index.html" target="_blank" style="color: #fff;">TELEFLEX.COM</a></span></p>
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 4px;line-height: 4px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #ffffff;table-layout: fixed" >
+                        <tbody><tr>
+                            <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+                                <div><div class="column-top" style="font-size: 16px;line-height: 16px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px;word-break: break-word;word-wrap: break-word">
+
+
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <div class="column-bottom" style="font-size: 8px;line-height: 8px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td class="border" style="padding: 0;vertical-align: top;font-size: 1px;line-height: 1px;background-color: #dddee1;width: 1px">&#8203;</td>
+            </tr></tbody>
+        </table>
+
+        <table class="centered" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto">
+            <tbody><tr>
+                <td>&#8203;</td>
+
+                <td style="padding: 0;vertical-align: top">
+                    <table class="one-col" style="border-collapse: collapse;border-spacing: 0;Margin-left: auto;Margin-right: auto;width: 600px;background-color: #838383; table-layout: fixed" >
+                        <tbody><tr>
+                            <td class="column" style="padding: 0;vertical-align: top;text-align: left">
+                                <div><div class="column-top" style="font-size: 16px;line-height: 16px">&nbsp;</div></div>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 20px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #464646;line-height: 14px;Margin-bottom: 2px;font-size: 10px; font-weight: 700; font-family:Arial, Helvetica, sans-serif"><span style="color:#464646">Reference:</span></p>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 20px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #464646;line-height: 14px;Margin-bottom: 8px;font-size: 10px;font-family:Arial, Helvetica, sans-serif"><span style="color:#464646">1. McGlothlin, J. Moenning, J., Cole, S. (2014, Aug). Evaluation and Control of Waste Anesthetic Gases in the Postanesthesia Care Unit. Journal of PeriAnesthesia Nursing, 29(4) 338</span></p>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+                                <table class="contents" style="border-collapse: collapse;border-spacing: 0;table-layout: fixed;width: 100%">
+                                    <tbody><tr>
+                                        <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 20px;word-break: break-word;word-wrap: break-word">
+
+                                            <p style="Margin-top: 0;color: #464646;line-height: 14px;Margin-bottom: 8px;font-size: 10px;font-family:Arial, Helvetica, sans-serif"><span style="color:#464646">Teleflex and ISO-Gard are trademarks or registered trademarks of Teleflex Incorporated or its affiliates. <br />©2015 Teleflex Incorporated. All rights reserved. MC-001309</span></p>
+                                        </td>
+                                    </tr></tbody>
+                                </table>
+
+
+                                <div class="column-bottom" style="font-size: 48px;line-height: 48px">&nbsp;</div>
+                            </td>
+                        </tr></tbody>
+                    </table>
+                </td>
+
+                <td>&#8203;</td>
+            </tr></tbody>
+        </table>
+
+    </center>
+</body></html>
+</apex:page>

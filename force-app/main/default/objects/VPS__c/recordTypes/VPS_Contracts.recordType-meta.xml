@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_Contracts</fullName>
+    <active>true</active>
+    <label>VPS Contracts</label>
+    <picklistValues>
+        <picklist>Agreement_Type__c</picklist>
+        <values>
+            <fullName>Addendum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Evaluation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Product__c</picklist>
+        <values>
+            <fullName>DLX-200-MTRB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLX-200-MTRB-R</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLX-200-SUB-MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLX-200-SUB-MTP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RHY-100-MTRB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS-G4C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS-G4C-R</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

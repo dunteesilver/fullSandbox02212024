@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_type_with_line_items</fullName>
+    <active>true</active>
+    <description>Not allow a user to update a Sample Request with line items to prevent the user from adding any &quot;Demo Only&quot; products to an evaluation Sample Request.</description>
+    <errorConditionFormula>AND(
+ISCHANGED( Type__c ), Qty_Sales_Unit_Rollup__c &gt; 0
+)</errorConditionFormula>
+    <errorDisplayField>Type__c</errorDisplayField>
+    <errorMessage>Sample Request type cannot be changed once line items are added.</errorMessage>
+</ValidationRule>

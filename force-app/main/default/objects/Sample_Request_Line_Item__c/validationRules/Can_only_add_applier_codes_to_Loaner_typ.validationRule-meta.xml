@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_only_add_applier_codes_to_Loaner_typ</fullName>
+    <active>true</active>
+    <description>Added this validation rule to try to eliminate the ability to order an applier without using the Loaner type.</description>
+    <errorConditionFormula>AND(CONTAINS(UPPER(Material_Description__c) , &quot;APPLIER&quot;), NOT(ISPICKVAL(Sample_Request__r.Type__c, &quot;Loaner&quot;) ),
+Sample_Request__r.Owner_Business_Unit__c &lt;&gt; &quot;Latin America&quot;  
+)</errorConditionFormula>
+    <errorMessage>Appliers can only be used with Loaner type.</errorMessage>
+</ValidationRule>

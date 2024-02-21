@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EntrepreneurialSpiritDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Entrepreneurial Spirit Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EntrepreneurialSpirit__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Approaches work and solves problems by continually looking for new or better ways to accomplish tasks, effectively balancing risks and rewards and constantly striving for operational excellence.</fullName>
+                <default>false</default>
+                <label>Approaches work and solves problems by continually looking for new or better ways to accomplish tasks, effectively balancing risks and rewards and constantly striving for operational excellence.</label>
+            </value>
+            <value>
+                <fullName>Embrace prudent risk taking</fullName>
+                <default>false</default>
+                <label>Embrace prudent risk taking</label>
+            </value>
+            <value>
+                <fullName>Anticipate recognize and act on opportunities for positive results or changes</fullName>
+                <default>false</default>
+                <label>Anticipate recognize and act on opportunities for positive results or changes</label>
+            </value>
+            <value>
+                <fullName>Initiate change &amp; innovation • Continually question and challenge to improve our products, services and ways of working</fullName>
+                <default>false</default>
+                <label>Initiate change &amp; innovation • Continually question and challenge to improve our products, services and ways of working</label>
+            </value>
+            <value>
+                <fullName>Seek to push standards and raise the bars for better performance every time</fullName>
+                <default>false</default>
+                <label>Seek to push standards and raise the bars for better performance every time</label>
+            </value>
+            <value>
+                <fullName>Embrace change and take reasonable risks; learn from both successes and failures.</fullName>
+                <default>false</default>
+                <label>Embrace change and take reasonable risks; learn from both successes and failures.</label>
+            </value>
+            <value>
+                <fullName>Discover new possibilities and challenge the status quo</fullName>
+                <default>false</default>
+                <label>Discover new possibilities and challenge the status quo</label>
+            </value>
+            <value>
+                <fullName>Take ownership &amp; be accountable • Aim to do the right things and make informed decisions to benefit short-term and long-term goals</fullName>
+                <default>false</default>
+                <label>Take ownership &amp; be accountable • Aim to do the right things and make informed decisions to benefit short-term and long-term goals</label>
+            </value>
+            <value>
+                <fullName>Hold self and team accountable to meet customer and business goals and be committed to stay the course from start to finish to deliver desired outcomes</fullName>
+                <default>false</default>
+                <label>Hold self and team accountable to meet customer and business goals and be committed to stay the course from start to finish to deliver desired outcomes</label>
+            </value>
+            <value>
+                <fullName>Be proactive and leverage on opportunities to grow and learn</fullName>
+                <default>false</default>
+                <label>Be proactive and leverage on opportunities to grow and learn</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Approaches work and solves problems by continually looking for new or better ways to accomplish tasks, effectively balancing risks and rewards and constantly striving for operational excellence.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Embrace prudent risk taking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Anticipate recognize and act on opportunities for positive results or changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Initiate change &amp; innovation • Continually question and challenge to improve our products, services and ways of working</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Seek to push standards and raise the bars for better performance every time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Embrace change and take reasonable risks; learn from both successes and failures.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Discover new possibilities and challenge the status quo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Take ownership &amp; be accountable • Aim to do the right things and make informed decisions to benefit short-term and long-term goals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Hold self and team accountable to meet customer and business goals and be committed to stay the course from start to finish to deliver desired outcomes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be creative, take risks &amp; use initiative</controllingFieldValue>
+            <valueName>Be proactive and leverage on opportunities to grow and learn</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

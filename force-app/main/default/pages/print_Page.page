@@ -1,0 +1,8 @@
+<apex:page standardController="Complaint__c" sidebar="false" title="{!Complaint__c.Name}" showHeader="false">
+    <apex:form >
+        <br/>&nbsp;&nbsp;&nbsp;
+        <apex:commandbutton value="<-- Click to Return to {!Complaint__c.Name}" action="/{!Complaint__c.Id}" />&nbsp;&nbsp;&nbsp;
+        <apex:commandButton onclick="window.print();" value="Print Complaint" />
+        <apex:detail subject="{!Complaint__c.Id}" relatedList="false" title="false"/> 
+    </apex:form>
+</apex:page>

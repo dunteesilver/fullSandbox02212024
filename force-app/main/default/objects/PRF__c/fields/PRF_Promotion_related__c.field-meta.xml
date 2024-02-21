@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PRF_Promotion_related__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Added at the request of Latam Business Unit.</description>
+    <externalId>false</externalId>
+    <label>PRF Promotion-related</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

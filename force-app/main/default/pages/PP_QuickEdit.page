@@ -1,0 +1,222 @@
+<apex:page docType="html-5.0" id="thePRF" TabStyle="Pricing_Portal__tab" controller="PP_PRF" tabStyle="Pricing_Portal__tab" sidebar="false">
+
+    <style>
+        .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+        border: none !important;
+        }
+        <!-- Used to surpress the 'Submit for Approval' button in the related list (21Oct2015/ESC) -->
+        input.btn[name="piSubmit"] {
+        display: none;
+        }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        initialize();
+    });
+    </script>
+    <div class="teleflex">
+        <!-- Call the Menu -->
+    	<apex:include id="menu" pageName="PP_Menu"/>
+        
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h6 class="panel-title"><img src="/img/icon/hands16.png" alt="PRF Details"/>&nbsp;&nbsp;Price Request Form&nbsp;(PRF)&nbsp;: {!prf.Name}&nbsp;
+                <apex:outputText rendered="{!$UserRole.Name = 'Teleflex Global IT'}">(<apex:outputLink value="{!URLFOR($Action.PRF__c.Delete,prf.Id)}">Delete</apex:outputLink>)</apex:outputText>
+              </h6>
+            </div>
+
+        </div><!-- End Panel -->
+				<table class="table borderless">
+						<tr>
+							<td>
+								<apex:outputLink value="/apex/PP_PRF?id={!prf.Id}">
+  								<h4>
+  								<strong>Back to PRF \ {!prf.Name} - {!prf.Account__r.Name}</strong>
+  								</h4>
+                </apex:outputLink>
+							</td>
+						</tr>
+				</table>
+        <!-- Begin Line Items -->
+        <apex:form id="itemsform">
+            <apex:actionFunction name="refreshlines" rerender="linePanel,itemsform,topbuttonpanel,topbuttonpanel2" onbeforedomupdate="return setFocus()" oncomplete="retainFocus(),initialize();"/>
+            <apex:variable var="RO" value="{!if(prf.Status__c == 'New' || prf.Status__c == 'Rejected',TRUE,FALSE)}"/>
+            <!-- PRF Line Items Begin -->
+            <apex:outputPanel Styleclass="panel-body" id="linePanel" layout="block">
+                <table class="table table-striped table-hover table-bordered">
+                    <tr>
+                        <th class="text-center" style="vertical-align:middle;">#</th>
+                        <th style="vertical-align:middle;">Material</th>
+												<!--
+                        <th style="vertical-align:middle;">Description</th>
+                        <th class="text-center" style="vertical-align:middle;">Sales Deal #</th>
+                        <th style="vertical-align:middle;">Sales Deal</th>
+												-->
+                        <th class="text-center" style="vertical-align:middle;">Requested<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">Curr</th>
+                        <th class="text-center" style="vertical-align:middle;">List<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">Rep<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">RSM<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">Eligible<br/>Price</th>
+
+                        <apex:outputText rendered="{!RO = TRUE}">
+                            <th class="text-center" style="vertical-align:middle;"><span data-toggle="tooltip" data-placement="top" title="Delete Line" class="glyphicon glyphicon-trash" aria-hidden="true" style="color:grey;"/></th>
+                        </apex:outputText>
+                    </tr>
+                    <apex:variable value="{!1}" var="rowNum"/>
+                    <apex:repeat value="{!PLI}" var="pl">
+                        <tr>
+                            <td align="center" style="width:25px;"><apex:outputText value="{!FLOOR(rowNum)}"/></td>
+                            <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                            <td class="text-nowrap" style="width:100px;"><a href="/apex/PP_Material_Info?id={!pl.Material_Name__r.Id}">{!pl.Material_Name__r.Name}</a></td>
+                            <td class="text-center" style="width:80px;">
+                                <apex:outputText rendered="{!RO = TRUE}">
+                                    <input size="10" value="{!pl.Requested_Price__c}" class="newPrice" tabindex="{!rowNum}"  data-id="{!pl.Id}" id="{!pl.Id}+.1" />
+                                </apex:outputText>
+                            </td>
+														<!--
+                            <td class="text-nowrap">{!pl.Product_Description__c}</td>
+                            <td class="text-center" style="vertical-align:middle;">
+                                <apex:outputText rendered="{!pl.Sales_Deal_Num__c != NULL}">
+                                    <a href="/apex/PP_Agreement_Detail?aid={!pl.Sales_Deal_Num__c}">{!pl.Sales_Deal_Num__c}</a>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!pl.Sales_Deal_Num__c == NULL}" value="-"/>
+                            </td>
+                            <td class="text-nowrap">
+                                <apex:outputText rendered="{!pl.Sales_Deal_Description__c != NULL}">
+                                    <a href="/apex/PP_Agreement_Detail?aid={!pl.Sales_Deal_Num__c}">{!pl.Sales_Deal_Description__c}</a>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!pl.Sales_Deal_Description__c == NULL}">
+                                    <center>-</center>
+                                </apex:outputText>
+                            </td>
+														-->
+                            <td class="text-center" style="vertical-align:middle; width:50px;">{!pl.CurrencyIsoCode}</td>
+                            <td class="text-center" style="vertical-align:middle; width:50px;">
+                                <apex:outputText value="{0,number,###0.00}">
+                                    <apex:param value="{!pl.List_Price__c}"/>
+                                </apex:outputText>
+                            </td>
+                            <td class="text-center" style="vertical-align:middle; width:50px;">
+                                <apex:outputText value="{0,number,###0.00}">
+                                    <apex:param value="{!pl.Rep_Price__c}"/>
+                                </apex:outputText>
+                            </td>
+                            <td class="text-center" style="vertical-align:middle; width:50px;">
+                                <apex:outputText value="{0,number,###0.00}">
+                                    <apex:param value="{!pl.RSM_Price__c}"/>
+                                </apex:outputText>
+                            </td>
+                            <td class="text-center" style="vertical-align:middle; width:50px;">
+                                <apex:outputText value="{0,number,###0.00}">
+                                    <apex:param value="{!pl.Eligible_Price__c}"/>
+                                </apex:outputText>
+                            </td>
+                            <apex:outputText rendered="{!RO = TRUE}">
+                                <td style="text-align:center; vertical-align:middle; width:10px">
+                                    <apex:commandLink action="{!removingRow}" html-data-toggle="tooltip" html-data-placement="top" title="Delete Line" reRender="linePanel,itemsform,topbuttonpanel" StyleClass="glyphicon glyphicon-trash" oncomplete="initialize();">
+                                        <apex:param name="itemId" value="{!pl.Id}"/>
+                                    </apex:commandLink>
+                                </td>
+                            </apex:outputText>
+                        </tr>
+                    </apex:repeat>
+
+
+                    <!-- PRF Line Items End -->
+
+                    <!-- Input Section
+                    <apex:outputText rendered="{!prf.Status__c == 'New' || prf.Status__c == 'Rejected'}">
+                        <tr>
+                            <td  colspan="16" class="col-s-4" style="vertical-align:middle;">
+                                <div class="form-inline">
+
+                                        <apex:commandLink action="{!msearch}" styleClass="btn btn-primary btn-sm">Material Search&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span></apex:commandLink>
+                                        <apex:inputText value="{!strProdSearch}" id="PRF_input" size="30" styleClass="form-control input-sm" html-placeholder="Enter Material..." onkeyup="autoMaterialName(event, '{!$Component.addBtnId}');" />
+                                        <apex:inputText value="{!requestedPrice}" size="20" id="price" styleClass="form-control input-sm" onkeyup="autoMaterialName(event, '{!$Component.addBtnId}');" html-placeholder="Enter Requested Price..." />
+
+                                        <apex:commandLink action="{!sapPrice}" reRender="linePanel,itemsform,topbuttonpanel" value="Add Line Item" styleClass="btn btn-success btn-sm" id="addBtnId" status="actStatusId" oncomplete="initialize();">
+                                            <apex:param name="prfId" value="{!prf.Id}"/>
+                                        </apex:commandLink>
+
+                                    <script>
+                                    document.getElementById('{!$Component.PRF_input}').focus();
+                                    </script>
+                                </div>
+                            </td>
+                        </tr>
+                    </apex:outputText>
+                    -->
+                </table>
+                <apex:pageMessages ></apex:pageMessages>
+
+								<table class="table borderless">
+										<tr>
+											<td>
+												<apex:outputLink value="/apex/PP_PRF?id={!prf.Id}">
+  												<h4>
+  												<strong>Back to PRF \ {!prf.Name} - {!prf.Account__r.Name}</strong>
+  												</h4>
+                        </apex:outputLink>
+											</td>
+										</tr>
+								</table>
+            </apex:outputPanel>
+        </apex:form>
+
+    </div>
+
+    <script type="text/javascript">
+    // Auto Scroll Script - http://jsfiddle.net/CbqFv/
+    // From this post: http://stackoverflow.com/questions/454202/creating-a-textarea-with-auto-resize
+    var observe;
+    if (window.attachEvent) {
+        observe = function (element, event, handler) {
+            element.attachEvent('on'+event, handler);
+        };
+    }
+    else {
+        observe = function (element, event, handler) {
+            element.addEventListener(event, handler, false);
+        };
+    }
+    // End Auto Scroll Script
+
+    //logic to update price jquery
+    function initialize(){
+        //update pricing
+        $('[data-toggle="tooltip"]').tooltip();
+				$('.newPrice').first().focus();
+        $('.newPrice').change(function() {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.PP_PRF.updatePrice}',
+                $(this).attr('data-id'),$(this).val(),
+                function(result, event){
+                    console.log(result.Id + ' updated');
+                    //refreshlines();
+                });
+        });
+
+    }
+    //price update logic
+
+    //logic to add tie enter button to add line items
+    function autoMaterialName(e, btnId) {
+        e = e || window.event;
+        if (e.keyCode == 13) {
+            document.getElementById(btnId).click();
+        }
+    }
+
+    // Focus Script
+    // https://developer.salesforce.com/forums/?id=906F000000099KSIAY
+    var elementId = null;
+    function setFocus(){
+        elementId = document.activeElement.id;
+    }
+    function retainFocus(){
+        document.getElementById(elementId).focus();
+        document.getElementById(elementId).select();
+    }
+    </script>
+</apex:page>

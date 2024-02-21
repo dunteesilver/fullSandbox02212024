@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Date_after_Create_Date</fullName>
+    <active>false</active>
+    <description>Rule implemented on 1/17/17: Close date cannot be prior to Creation Date.</description>
+    <errorConditionFormula>AND(
+Create_Date__c &gt; DATE(2017,1,17),
+CloseDate  &lt;  Create_Date__c)</errorConditionFormula>
+    <errorDisplayField>CloseDate</errorDisplayField>
+    <errorMessage>Your close date must be after the date your opportunity was created.</errorMessage>
+</ValidationRule>

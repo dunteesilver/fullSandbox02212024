@@ -1,0 +1,241 @@
+<apex:page standardController="Lead" extensions="customLeadConversion,convertUnqualifiesRedirect">
+
+    <script type="text/javascript">
+        function checkContact(){
+            var econtact = "{!Lead.Contact__c}";
+            var msg = 'Are you sure you would like to convert this lead? This cannot be undone.';
+            if(econtact == ''){
+                msg = '***No existing contact selected*** \n\n' + msg;
+            }
+            return confirm(msg);
+        }
+    </script>
+
+    <apex:composition template="{!$Page.accountsTemplate}">
+
+        <apex:define name="TFHeader">
+            <apex:sectionHeader title="Lead" subtitle="{!Lead.Name}"/>
+        </apex:define>
+        <apex:define name="TFDetail">
+            <apex:pageBlock title="Lead Detail" mode="mainDetail" >
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!edit}" id="editButton" value="Edit"/>
+                    <apex:commandButton action="{!delete}" id="deleteButton" value="Delete"/>
+                    <apex:commandButton value="Clone" id="cloneButton" action="{!URLFOR($Action.Lead.edit, Lead.id, [clone='1'])}"/>
+                    <!--<apex:commandButton action="{!URLFOR($Action.Lead.Convert, Lead.id)}" id="ConvertButton1" value="Convert1"/>-->
+                    <apex:commandButton action="{!doConvert}" id="ConvertButton" value="Convert" onclick="return checkContact();"/>
+                    <apex:commandButton action="{!unqualify}" id="unQualifyButton" value="Unqualify" onClick="return confirm('Are you sure?')" />
+                    <apex:commandButton action="{!save}" id="saveButton" value="Save" style="display: none;"/>
+                    <apex:commandButton onclick="resetInlineEdit()" id="cancelButton" value="Cancel" style="display:none;"/>
+                    <apex:commandButton id="bsharkbutton" value="Brainshark Presentation" onclick="window.open('{!URLFOR($Action.Lead.BrainSharkTest, Lead.Id)}');"/>
+
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Lead.iD}" rendered="false" />
+                    <apex:outputField value="{!Lead.Name}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.OwnerId}">
+                        <apex:outputLink value="/{!Lead.Id}/a?retURL={!Lead.Id}"><br/>[Change]</apex:outputLink>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Company}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Status}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.RecordTypeId}">
+                        <apex:outputLink value="{!$Site.Domain}/setup/ui/recordtypeselect.jsp?id={!left(Lead.Id,15)}&retURL=%2F{!left(Lead.Id,15)}"><br/>[Change]</apex:outputLink>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Reason_Lead_is_Unqualified_Picklist__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Title}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Reason_lead_is_Unqualified__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.LeadSource}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Credentials__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Specific_Lead_Source__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Email}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Rating}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Phone}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.MobilePhone}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.DoNotCall}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.HasOptedOutofEmail}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Interest_Rating__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Department__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Medical_Specialty__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Hospital_Position__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Customer_Number__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Do_Not_Create_Opportunity__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Description}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!lead.DoNotCall}" >
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!lead.HasOptedOutOfEmail}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:define>
+
+        <apex:define name="TFLowerSingle">
+            <apex:pageBlock title="Existing Records">
+                <apex:pageblocksection >
+                    <apex:outputField value="{!Lead.Contact__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Account__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Existing_Opportunity__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                </apex:pageblocksection>
+            </apex:pageBlock>
+            <apex:pageBlock title="Additional Information">
+                <apex:pageblocksection >
+                    <apex:outputField value="{!Lead.Lead_Taken_By__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Literature__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.What_Brought_You_to_the_Booth__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Contact_Method__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                </apex:pageblocksection>
+            </apex:pageBlock>
+            <apex:pageBlock title="Address Information">
+                <apex:pageblocksection >
+                    <apex:outputField value="{!Lead.Address_Full__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Website}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:pageblocksection />
+                    <apex:outputField value="{!Lead.IDN__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Territory_Number__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                </apex:pageblocksection>
+            </apex:pageBlock>
+            <apex:pageBlock title="Product Details">
+                <apex:pageblocksection >
+                    <!--
+                    <apex:outputField value="{!Lead.Business_Unit__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Product_Family__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Product_of_Interest__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    -->
+                    <apex:outputField value="{!Lead.Business_Unit__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Product_Family_GPL__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Product_of_Interest_GPL__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Lead.Course_Attended__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, convertButton, cloneButton, bsharkbutton, unQualifyButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:pageblocksection />
+
+                    <apex:pageblocksection />
+                </apex:pageblocksection>
+            </apex:pageBlock>
+        </apex:define>
+
+        <apex:define name="TFRelLists">
+                <apex:relatedList list="EmailStatuses"/>
+                <apex:relatedList list="CampaignMembers" rendered="{!or(ispickval($User.Business_Unit__c,'Vascular'),ispickval($User.Business_Unit__c,'Cross BU'))}"/>
+        </apex:define>
+
+        <apex:define name="TFRelListsBottom">
+            <apex:relatedList list="OpenActivities"/>
+            <apex:relatedList list="ActivityHistories"/>
+            <apex:relatedList list="BRNSHRK__R00N50000001I5fwEAC__r"/>
+            <apex:relatedList list="BRNSHRK__R00N50000001IGl3EAG__r"/>
+        </apex:define>
+
+    </apex:composition>
+    <script>
+        function addLoadEvent(func)
+        {
+          var oldonload = window.onload;
+          if (typeof window.onload != 'function')
+          {
+             window.onload = func;
+          }
+          else
+          {
+              window.onload = function()
+              {
+                if (oldonload)
+                {
+                   oldonload();
+                }
+                func();
+              }
+           }
+        }
+
+        addLoadEvent(function(){
+            checkStatus();
+        });
+        function checkStatus(){
+            var status = "{!Lead.Status}";
+            if(status == 'Qualified'){
+                alert("The status has now been set to qualified. Please populate the existing account, contact and opportunity, where applicable and click Convert to convert this lead to an opportunity.");
+            }
+        }
+    </script>
+</apex:page>

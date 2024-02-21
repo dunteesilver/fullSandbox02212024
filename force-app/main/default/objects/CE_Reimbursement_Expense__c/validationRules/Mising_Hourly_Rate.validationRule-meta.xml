@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mising_Hourly_Rate</fullName>
+    <active>false</active>
+    <description>Disabled for the new 2018 reimbursement process 18Jan2018 - ESC
+Hello Future!</description>
+    <errorConditionFormula>ISNULL(Clinical_Educator_Name__r.Hourly_Rate__c )</errorConditionFormula>
+    <errorMessage>In order to create an education record, The Clinical Contact must have an hourly rate.   Please contact Clinical Affairs.</errorMessage>
+</ValidationRule>

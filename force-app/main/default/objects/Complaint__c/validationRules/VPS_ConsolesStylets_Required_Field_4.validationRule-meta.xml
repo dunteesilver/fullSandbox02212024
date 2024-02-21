@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_ConsolesStylets_Required_Field_4</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ISPICKVAL(  Is_this_complaint_regarding_VPS_Consoles__c , &quot;Yes&quot;),NOT(ISPICKVAL( Is_the_complaint_related_to__c, &quot;Rhythm&quot;)),
+ISBLANK(TEXT((    Procedure_discontinued_due_to_the_issue__c    )))
+)</errorConditionFormula>
+    <errorDisplayField>Procedure_discontinued_due_to_the_issue__c</errorDisplayField>
+    <errorMessage>This field is required when the complaint is regarding VPS Consoles/Stylets</errorMessage>
+</ValidationRule>

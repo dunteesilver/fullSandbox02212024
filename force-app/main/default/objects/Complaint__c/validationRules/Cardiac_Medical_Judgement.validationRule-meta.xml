@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cardiac_Medical_Judgement</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  
+RecordType.Name  = &quot;Cardiac_Care&quot;, 
+ISPICKVAL( Did_device_cause_contribute_to_death_inj__c , &quot;no&quot;), 
+ISBLANK(  If_no_who_made_the_medical_judgement__c ))</errorConditionFormula>
+    <errorDisplayField>If_no_who_made_the_medical_judgement__c</errorDisplayField>
+    <errorMessage>If the device did not cause or contribute to the death or injury, please advise who made that medical judgement.</errorMessage>
+</ValidationRule>

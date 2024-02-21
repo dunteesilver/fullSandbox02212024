@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X12_Month_Account_Saturation_Laryngoscop__c</fullName>
+    <externalId>false</externalId>
+    <formula>Rolling_12_Month_Sales_Laryngoscope__c/Estimated_Potential_Laryngoscopes_Spend__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>12 Month Account Saturation Laryngoscope</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

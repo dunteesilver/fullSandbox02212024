@@ -1,0 +1,69 @@
+<apex:page title="CRF: {!er.Name}" controller="Education_Record_Update" showHeader="False" tabStyle="Account">
+    <html>
+        <head>
+            <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+            
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+            <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+            
+            <style type="text/css">
+                div.body {
+                margin: 0px 15px 0px 15px;
+                }
+                .panel {
+                margin-bottom: 0px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="teleflex body">
+                <div class="panel-body">
+                    <img style="max-height:28px;max-width:350px;" src="/servlet/servlet.ImageServer?id={!logoId}&oid={!OrgId}"/>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">Clinical Education Expenses Portal - Welcome!</h6>
+                    </div>
+                    <div class="panel-body">
+                        <apex:pageMessages />
+                        <table style="margin-bottom: 0px; border: none;">
+                            <tr>
+                                <td colspan="2">
+                                    <p>Welcome&nbsp;<apex:outputField value="{!crf.Clinical_Educator_Name__c}"/> to our Clinical Education Expenses Portal and thank you for providing education on behalf of Teleflex.</p>
+                                    <p>Please follow these instructions to receive your reimbursement:</p>
+                                    <ul>
+                                        <li>Step 1: Enter Expenses</li>
+                                        <li>Step 2: Attach Receipts, if applicable</li>
+                                        <li>Step 3: Attach Roster, if applicable (Required for Inservices)</li>
+                                        <li>Step 4: Submit for Approval</li>
+                                    </ul>
+                                    <!-- Roster could be not required for Labs-->
+                                    
+                                    <p>Once submitted, you will not be able to make changes. Please reach out to your CEM if changes are needed.</p>
+                                    <p>Reimbursement Status:&nbsp;<apex:outputLabel style="font-weight: bold; font-size: 16px;" value="{!crf.Status__c}" /></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-6" style="vertical-align: middle; margin: 0px;">
+                                    <center>
+                                        <apex:form >
+                                            <apex:commandButton action="/ClinicalEducation/Education_Record_CEPublic?id={!crf.id}" value="Click to Start Expense Request" id="theButton" rendered="{!crf.Status__c = 'New'}" styleClass="btn btn-primary btn-sm" />
+                                            <apex:commandButton action="/ClinicalEducation/Education_Record_CEPublic?id={!crf.id}" value="Review your Reimbursement Information" id="theButton1" rendered="{!crf.Status__c <> 'New'}" styleClass="btn btn-primary btn-sm" />
+                                        </apex:form>
+                                    </center>
+                                </td>
+                                <td class="col-md-6">&nbsp;</td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+                <div class="alert alert-danger" style="vertical-align: middle; margin: 0px;">
+                    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;<strong>All Invoices should be submitted <u>within 3 days</u> of Inservice, Lab, etc. Please refer to agreement for additional info.</strong>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+                </div>
+            </div>
+        </body>
+    </html>
+</apex:page>

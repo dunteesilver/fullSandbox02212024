@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclusion_Type__c</fullName>
+    <description>Used to handle exclusions/inclusions for customers/products.</description>
+    <externalId>false</externalId>
+    <label>Exclusion Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ZA01</fullName>
+                <default>false</default>
+                <label>ZA01</label>
+            </value>
+            <value>
+                <fullName>ZB01</fullName>
+                <default>false</default>
+                <label>ZB01</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

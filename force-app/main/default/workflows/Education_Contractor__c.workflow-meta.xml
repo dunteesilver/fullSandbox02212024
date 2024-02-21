@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>No_Travel_Required_Email_to_Contractor</fullName>
+        <description>CE - No Travel Required - Email to Contractor</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CE_CE_Travel_No_Required_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Travel_Required</fullName>
+        <description>CE - Travel Required - Email to Contractor</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CE_CE_Travel_Required_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_CE_No_Travel_Required_Email_to_Contractor</fullName>
+        <description>VA - CE - No Travel Required - Email to Contractor</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>rebekah.tessitore@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_CE_CE_Travel_No_Required_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_CE_Travel_Required_Email_to_Contractor</fullName>
+        <description>VA -CE - Travel Required - Email to Contractor</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>rebekah.tessitore@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_CE_CE_Travel_Required_VF</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Fired_Workflow</fullName>
+        <description>checks the box to indicate workflow has been fired once.</description>
+        <field>Notification_Workflow_Fired__c</field>
+        <literalValue>1</literalValue>
+        <name>CE - Fired Workflow</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Type_of_Notification</fullName>
+        <field>travel_email_sent__c</field>
+        <literalValue>Travel</literalValue>
+        <name>Type of Notification</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Type_of_Notification2</fullName>
+        <field>travel_email_sent__c</field>
+        <literalValue>Non-Travel</literalValue>
+        <name>Type of Notification2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CE - EC No Travel Required Notification</fullName>
+        <actions>
+            <name>No_Travel_Required_Email_to_Contractor</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Fired_Workflow</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Type_of_Notification2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  Notification_Workflow_Fired__c = FALSE,  Education_Record__r.RecordType.Name = &quot;Live Education Program Request&quot;, Approval_Status__c =&quot;Approved&quot;, Travel_Required__c = FALSE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CE - EC Travel Required Notification</fullName>
+        <actions>
+            <name>Travel_Required</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Fired_Workflow</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Type_of_Notification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  Notification_Workflow_Fired__c = FALSE,  Education_Record__r.RecordType.Name = &quot;Live Education Program Request&quot;, Approval_Status__c = &quot;Approved&quot;, Travel_Required__c = TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA - CE - EC No Travel Required Notification</fullName>
+        <actions>
+            <name>VA_CE_No_Travel_Required_Email_to_Contractor</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Fired_Workflow</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Type_of_Notification2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  Notification_Workflow_Fired__c = FALSE,  OR( Education_Record__r.RecordType.Name = &quot;CMA Program&quot;, Education_Record__r.RecordType.Name =&quot;Clinical Sales Program&quot;) ,   Approval_Status__c =&quot;Approved&quot;,  Travel_Required__c = FALSE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA-CE - EC Travel Required Notification</fullName>
+        <actions>
+            <name>VA_CE_Travel_Required_Email_to_Contractor</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Fired_Workflow</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Type_of_Notification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  Notification_Workflow_Fired__c = FALSE,   OR( Education_Record__r.RecordType.Name = &quot;CMA Program&quot;, Education_Record__r.RecordType.Name =&quot;Clinical Sales Program&quot;) ,  Approval_Status__c = &quot;Approved&quot;, Travel_Required__c = TRUE )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

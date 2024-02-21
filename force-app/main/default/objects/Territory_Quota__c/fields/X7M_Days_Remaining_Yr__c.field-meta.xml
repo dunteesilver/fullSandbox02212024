@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X7M_Days_Remaining_Yr__c</fullName>
+    <description>Created to support 7 Month calendar for Anesthesia and EMS</description>
+    <externalId>false</externalId>
+    <formula>Business_Days__r.DAYS_LEFT_IN_7M_OVERALL__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>7M Days Remaining Yr</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

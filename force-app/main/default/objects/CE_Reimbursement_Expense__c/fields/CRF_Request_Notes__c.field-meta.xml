@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRF_Request_Notes__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Other_Fee1__c =0,&quot;&quot;, &quot;Other 1 - &quot;&amp;Other_Fee1_Detail__c&amp;&quot;: $&quot;&amp;  TEXT(Total_Other1__c )&amp; BR()  )&amp;  
+ IF(  Other_Fee2__c =0,&quot;&quot;, &quot;Other 2 - &quot;&amp;Other_Fee2_Detail__c&amp;&quot;: $&quot;&amp;  TEXT(Total_Other2__c )&amp; BR()  )&amp; 
+ IF(  Other_Fee3__c =0,&quot;&quot;, &quot;Other 3 - &quot;&amp;Other_Fee3_Detail__c&amp;&quot;: $&quot;&amp;  TEXT(Total_Other3__c )&amp; BR() )&amp; 
+ IF(  Other_Fee4__c =0,&quot;&quot;, &quot;Other 4 - &quot;&amp;Other_Fee4_Detail__c&amp;&quot;: $&quot;&amp;  TEXT(Total_Other4__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Request Notes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

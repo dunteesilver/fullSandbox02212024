@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gudieliner</fullName>
+                <default>false</default>
+                <label>Gudieliner</label>
+            </value>
+            <value>
+                <fullName>Turnpike</fullName>
+                <default>false</default>
+                <label>Turnpike</label>
+            </value>
+            <value>
+                <fullName>On Control</fullName>
+                <default>false</default>
+                <label>On Control</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

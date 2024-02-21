@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_the_Complaint_Related_to_is_Rhythm</fullName>
+    <active>true</active>
+    <description>If the Complaint Related to equals &apos;Rhythm&apos; then Was Blue Bullseye Obtained (G4/Flybook)? is not required.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Is_the_complaint_related_to__c, &quot;Rhythm&quot;),NOT(ISBLANK(TEXT(( Was_Blue_Bullseye_Obtained__c ))))
+)</errorConditionFormula>
+    <errorDisplayField>Was_Blue_Bullseye_Obtained__c</errorDisplayField>
+    <errorMessage>This field is not required If the Complaint Related to equals &apos;Rhythm&apos;</errorMessage>
+</ValidationRule>

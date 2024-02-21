@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>if_will_you_purchase_enter_how_many_mont</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Will_you_purchase_in_the_future__c , &quot;Yes&quot;),
+ OR(
+  ISNULL( How_many_months_until_order__c),
+  ISNULL(How_much_do_plan_to_order__c)
+ )
+)</errorConditionFormula>
+    <errorDisplayField>Will_you_purchase_in_the_future__c</errorDisplayField>
+    <errorMessage>If you select that Customer will purchase in the future, please enter how many months and how much do they plan to order</errorMessage>
+</ValidationRule>

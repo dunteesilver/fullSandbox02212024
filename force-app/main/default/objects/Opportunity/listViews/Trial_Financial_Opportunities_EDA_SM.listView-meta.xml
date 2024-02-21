@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trial_Financial_Opportunities_EDA_SM</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Product_Family_GPL__c</columns>
+    <columns>Product_of_Interest_GPL__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>Owner_Region__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Days_to_Close__c</columns>
+    <columns>Manager__c</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>Qty_Eaches__c</columns>
+    <columns>Trial_Scheduled__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Record_Type_Name__c</field>
+        <operation>equals</operation>
+        <value>Anesthesia &amp; EMS Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>contains</operation>
+        <value>Financial Decision,Trial/Evaluation</value>
+    </filters>
+    <filters>
+        <field>Business_Unit_GPL__c</field>
+        <operation>equals</operation>
+        <value>Anesthesia,Respiratory</value>
+    </filters>
+    <filters>
+        <field>Product_Family_GPL__c</field>
+        <operation>equals</operation>
+        <value>Active Humidification,Aerosol Therapy,Airway,Anesthesia Capital,Filters/HMEs,Hemostatic Products,LMA,Oxygen Therapy,Pain Management,Polaris,Resuscitation,Sheaths</value>
+    </filters>
+    <filters>
+        <field>Opportunity_Last_Update_Days__c</field>
+        <operation>lessThan</operation>
+        <value>90</value>
+    </filters>
+    <label>Trial-Financial Opportunities EDA-SM</label>
+</ListView>

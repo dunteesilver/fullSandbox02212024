@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3_My_PRF_s_waiting_on_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Agreement_Type__c</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Owner_Full_Name__c</columns>
+    <columns>Owner_Business_Unit__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Waiting on Approval,Waiting on Contracts Approval</value>
+    </filters>
+    <label>4. My PRF&apos;s - Waiting on Contracts</label>
+    <language>en_US</language>
+</ListView>

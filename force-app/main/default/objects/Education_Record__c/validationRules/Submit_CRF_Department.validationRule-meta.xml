@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_CRF_Department</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(   RecordType.Name  =&quot;Inservice Record&quot;,
+ Verify_for_CRF__c = TRUE,
+ISNULL(   Department_a__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Department_a__c</errorDisplayField>
+    <errorMessage>Department must be entered in order to submit a CRF</errorMessage>
+</ValidationRule>

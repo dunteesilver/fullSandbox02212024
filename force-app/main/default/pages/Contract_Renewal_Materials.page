@@ -1,0 +1,1326 @@
+<apex:page sidebar="false"
+    showHeader="false" applyBodyTag="false" applyHtmlTag="false"
+    docType="html-5.0" standardController="Contract_Renewal_Item__c" extensions="Contract_Renewal_Controller">
+    <html ng-app="myApp" ng-controller="myCtrl" class="ng-cloak">
+    <head>
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], .ng-cloak{
+        display: none !important;
+        }
+
+        .needsText {
+            border-style: solid;
+            border-width: 2px;
+            border-color: red;
+        }
+
+        body { padding-top: 70px; }
+        th {
+        text-align: center;
+        vertical-align:middle ;
+        }
+
+        /* Used to surpress the 'Submit for Approval' button in the related list (21Oct2015/ESC) */
+        input.btn[name="piSubmit"] {
+        display: none;
+        }
+
+        /* Remove Approval History Header */
+        .pbHeader {
+        display: none;
+        }
+
+        .l {
+           text-align: left;
+           }
+
+           #tfx th{
+           text-align: center;
+           vertical-align: center;
+           vertical-align: bottom;
+           }
+
+           #tfx td{
+           text-align: center;
+           vertical-align: center;
+           vertical-align: middle;
+           }
+
+        .table-xtra-condensed > thead > tr > th,
+        .table-xtra-condensed > tbody > tr > th,
+        .table-xtra-condensed > tfoot > tr > th,
+        .table-xtra-condensed > thead > tr > td,
+        .table-xtra-condensed > tbody > tr > td,
+        .table-xtra-condensed > tfoot > tr > td {
+        padding: 1px;
+        }
+
+        /* Below handles status column colors */
+        .green{
+             background-color: #90EE90;
+        }
+
+        .red{
+            background-color: #CC3333;
+        }
+
+        .thirdColor{
+            background-color: #CCFF66;
+        }
+
+        .fourthColor{
+            background-color: #0099FF;
+        }
+
+        .white{
+             background-color: White;
+        }
+
+        .redText{
+             color: #CC3333;
+        }
+
+        .boldRedText{
+             color: #CC3333;
+             font-weight: bold;
+        }
+
+        .orangeCustom{
+            background-color: #FFDAB9;
+        }
+        /* Above handles status column colors */
+
+        /* Below handles invalid Request Price border color */
+        .invalidPrice{
+          border-color: red;
+        }
+
+        .priceGood{
+          border-color: grey;
+        }
+        /* Above handles invalid Request Price border color */
+
+        th { cursor: pointer; cursor: hand; }
+
+        /* handles cursor change over links */
+        a:hover {
+             cursor: pointer;
+             text-decoration: none;
+        }
+
+        #pageLink a.active {
+            background-color: darkblue;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        #pageLink a:hover:not(.active){
+          color: darkblue;
+          background-color: #ddd;
+          border-radius: 5px;
+          text-decoration: none;
+        }
+
+        #pageLink a {
+            color: darkblue;
+            display: inline-block;
+            float: left;
+            padding: 4px 8px;
+        }
+
+        #pageLink {
+            display: inline-block;
+        }
+
+    </style>
+     <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+     <apex:includescript value="/soap/ajax/34.0/connection.js"> </apex:includescript>
+     <apex:includescript value="/soap/ajax/34.0/apex.js"> </apex:includescript>
+     <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+     <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+     <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+     <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/libs/FileSaver/FileSaver.min.js')}"/>
+     <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/tableExport.min.js')}"/>
+
+     <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.js"></script>
+
+    <script>
+    var app = angular.module('myApp',['ngMessages','ngRoute']);
+
+    app.controller('myCtrl', ['$scope','$q','filterFilter', function($scope,$q,filterFilter){
+        $scope.contract = {!contract};
+        $scope.materials = {!materials};
+        $scope.canView = {!canView}; //controls action bar security;
+        $scope.directorView = {!directorView}; //controls viewing security;
+        $scope.needReason = false;
+        $scope.needLineNote = false;
+        $scope.gettingRecords = false;
+        $scope.sortBy = '';
+        $scope.sortReverse = false;
+        $scope.fetchMoreRecords = {!fetchMoreRecords};
+        $scope.prevStatus = $scope.contract[0].Status__c;
+        //pagination variables
+        $scope.currentPage = 0;
+        $scope.pageSize = 100;
+        $scope.search = '';
+        $scope.pageList = [];
+
+        $scope.headerStatus = ['New', 'Do Not Renew', 'Contract Audit', 'Sales Review', 'Ready for Renew'];
+        $scope.actionStatuses = [{Status:'New', disabled: false},
+                                {Status:'Do Not Renew', disabled: false},
+                                {Status:'Contract Audit', disabled: false},
+                                {Status:'Sales Review', disabled: false},
+                                {Status:'Ready for Renew', disabled: true},
+                                {Status:'Pending Approval', disabled: true},
+                                {Status:'Renewal Complete', disabled: false},
+                                ];
+        $scope.currStatus = $scope.contract[0].Status__c;
+        $scope.InApproval = $scope.contract[0].In_Approval__c;
+        $scope.contractsRepDropdown = ['Renew','Renew, Standard Increase',
+                                   'Renew, Larger Than Standard Increase To Meet Guidelines',
+                                   'Renew, No Increase','Renew, Recent Addition - No Increase',
+                                   'Renew, Other - See Notes','Do Not Renew',
+                                   'Do Not Renew, Lack of Sales','Do Not Renew, Discontinued',
+                                   'Do Not Renew, Renewal Price Above List',
+                                   'Do Not Renew, Lower Contract Pricing Available',
+                                   'Do Not Renew, Other - See Notes'
+                                   ];
+
+        //handle class applied to each line
+        $scope.appliedClass = function(m){
+
+              /* Old Way
+             if(m.Material_Status__c == '40' || m.Material_Status__c == '20' || m.Material_Status__c == '50' ||
+                ){
+                  return 'green';
+             }
+             else if(m.Material_Status__c == 'Z4' || m.Material_Status__c == 'Z5' ||
+                    m.Material_Status__c == 'Z9' || m.Material_Status__c == 'Z0' ||
+                    m.Material_Status__c == 'ZU' || m.Material_Status__c == 'ZO'){
+                  return 'secondColor';
+             }
+             else if(m.Material_Status__c == 'Z1' || m.Material_Status__c == 'Z2' ||
+                    m.Material_Status__c == 'Z3' || m.Material_Status__c == 'Z7' ||
+                    m.Material_Status__c == 'Z8'){
+                  return 'thirdColor';
+             }
+             else if(m.Material_Status__c == 'Z6' || m.Material_Status__c == 'ZR'){
+                  return 'fourthColor';
+             }
+             else{
+                  return 'white';
+             }
+             //return color;
+             */
+
+             //new Color Scheme
+             if(m.Material_Status__c == '40' || m.Material_Status__c == '20' || m.Material_Status__c == '50' ||
+                m.Material_Status__c == '99' || m.Material_Status__c == 'Z1' || m.Material_Status__c == 'Z5' ||
+                m.Material_Status__c == 'Z6' || m.Material_Status__c == 'Z7' || m.Material_Status__c == 'ZR' ||
+                m.Material_Status__c == 'ZT'){
+                  return 'green';
+             }
+             else if(m.Material_Status__c == '60' || m.Material_Status__c == '70' || m.Material_Status__c == '80' ||
+                     m.Material_Status__c == '90' || m.Material_Status__c == 'Z2' || m.Material_Status__c == 'Z3' ||
+                     m.Material_Status__c == 'Z4' || m.Material_Status__c == 'Z8' || m.Material_Status__c == 'Z9' ||
+                     m.Material_Status__c == 'ZO' || m.Material_Status__c == 'ZU'){
+                  return 'red';
+             }
+             else{
+               return 'white';
+             }
+        };
+
+        //handle color change of recently added materials to a contract
+        $scope.recentlyAdded = function(m){
+          console.log('*** In recentlyAdded ***');
+          console.log('*** m.Product__r.ASK_Custom_Kit__c *** ' + m.Product__r.ASK_Custom_Kit__c);
+          //logic to check valid from date
+          //var fromDate = new Date(m.Valid_From__c);
+          //var currDate = new Date();
+          //var dateDiff = (currDate.getMonth() - fromDate.getMonth() ) + (12 * (currDate.getFullYear() - fromDate.getFullYear()));
+
+          if( m.Recently_Added__c < 6 ){
+            console.log('*** m.Default_Per_Increase__c *** ' + m.Default_Per_Increase__c);
+            if(m.Default_Per_Increase__c != 0){
+              $scope.defaultPercent(m);
+            }
+          }
+        };
+        //end of recentalyAdded
+
+        //handle color change of below 30% GP
+        /*
+        $scope.belowGp = function(m){
+          console.log('*** In belowGp ***');
+          //logic to check valid from date
+          if( m.Current_Gross_Profit__c < 0 ){
+            console.log('***  Red ***');
+            return 'boldRedText';
+          }
+          else if( m.Current_Gross_Profit__c < 30 ){
+            console.log('*** Bold Red ***');
+            return 'redText';
+          }
+        };
+        */
+        //end of belowGp
+
+        //handle color change for custom kits
+        $scope.customKit = function(m){
+          console.log('*** In customKit ***');
+          //logic to check valid from date
+          if( m.Product__r.ASK_Custom_Kit__c  ){
+            return 'orangeCustom';
+          }
+        };
+        //end of customKit
+
+        //handle number formatting for input fields
+        $scope.formatNumber = function(m){
+
+          //function to round number
+          m.Requested_Renewal_Price__c = parseFloat(twoDecimal(m.Requested_Renewal_Price__c));
+          console.log('*** m.Requested_Renewal_Price__c *** ' + m.Requested_Renewal_Price__c);
+
+
+        };
+
+        //start of checkall checkboxes
+        $scope.toggleAll = function() {
+         console.log('Executing toggleAll AngularJS Function');
+         console.log('*** $scope.selectedAll *** ' + $scope.selectedAll);
+          var toggleStatus = $scope.selectedAll;
+          angular.forEach($scope.filterList, function(value,index){
+            console.log('*** $scope.selectedAll *** ' + $scope.selectedAll);
+            value.checked = toggleStatus;
+          });
+        };
+        //end of check all checkboxes
+
+        //handle class applied to each line
+        $scope.priceIssue = function(m){
+
+             if(m.Requested_Renewal_Price__c > m.Product__r.List_Price__c){
+                  return 'invalidPrice';
+             }
+             //return color;
+        };
+
+        //update default percentage to 0 if recently added
+        //start calculations
+        $scope.defaultPercent = function(m){
+          console.log('*** Updating default percent to 0% ***');
+            m.Default_Per_Increase__c = 0.00;
+            var inputPercent = m.Default_Per_Increase__c;
+            //console.log('*** IN requestedPercent *** ');
+            //console.log('*** m.Id *** ' + m.Id);
+            //console.log('*** inputPercent *** ' + inputPercent);
+            //console.log('*** m.Requested_Renewal_Price__c *** ' + m.Requested_Renewal_Price__c);
+            //console.log('*** m.Requested_Increase__c *** ' + m.Requested_Increase__c);
+            var rrp = (m.Current_Price__c * (m.Default_Per_Increase__c/100) ) + m.Current_Price__c;
+            m.Default_Per_Increase__c = roundNumber(inputPercent,2);
+            m.Default_Renewal_Price__c = roundNumber(rrp,2);
+            //start remote function call
+            Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.Contract_Renewal_Controller.updateDefaultPricePercent}',
+                    m.Id,roundNumber(rrp,2),roundNumber(inputPercent,2),
+                    function(result, event){
+                        //$scope.materials = result;
+                            //console.log(result.Id + ' updated');
+                            //priceQuotePanel();
+                            //$scope.$applyAsync();
+                    });
+            //end remote function call
+            return m.Default_Renewal_Price__c;
+        };
+        //end of update default percentage
+
+        //start calculations
+        $scope.requestedPercent = function(m){
+            var inputPercent = m.Requested_Increase__c;
+            //console.log('*** IN requestedPercent *** ');
+            //console.log('*** m.Id *** ' + m.Id);
+            //console.log('*** inputPercent *** ' + inputPercent);
+            //console.log('*** m.Requested_Renewal_Price__c *** ' + m.Requested_Renewal_Price__c);
+            //console.log('*** m.Requested_Increase__c *** ' + m.Requested_Increase__c);
+            var rrp = (m.Current_Price__c * (m.Requested_Increase__c/100) ) + m.Current_Price__c;
+            m.Requested_Increase__c = roundNumber(inputPercent,2);
+            m.Requested_Renewal_Price__c = roundNumber(rrp,2);
+            //start remote function call
+            Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.Contract_Renewal_Controller.updatePricePercent}',
+                    m.Id,roundNumber(rrp,2),roundNumber(inputPercent,2),
+                    function(result, event){
+                        //$scope.materials = result;
+                            //console.log(result.Id + ' updated');
+                            //priceQuotePanel();
+                            //$scope.$applyAsync();
+                    });
+            //end remote function call
+            return m.Requested_Renewal_Price__c;
+        };
+
+        $scope.requestedPrice = function(m){
+            //console.log('*** IN requestedPrice *** ');
+            //console.log('*** m.Requested_Renewal_Price__c *** ' + m.Requested_Renewal_Price__c);
+            console.log('*** m.Requested_Increase__c *** ' + m.Requested_Increase__c);
+            var inputPrice = m.Requested_Renewal_Price__c;
+            var incrDollar = m.Requested_Renewal_Price__c - m.Current_Price__c;
+
+            //round(incrDollar, 2);
+            var divDollar = (incrDollar/m.Current_Price__c) * 100
+            m.Requested_Increase__c = roundNumber(divDollar,2);
+            //console.log('*** m.Requested_Increase__c *** ' + m.Requested_Increase__c);
+            console.log('*** divDollar *** ' + roundNumber(divDollar,2));
+            console.log('*** inputPrice *** ' + roundNumber(inputPrice,2));
+            m.Requested_Renewal_Price__c = roundNumber(inputPrice,2);
+            //start remote function call
+            Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.Contract_Renewal_Controller.updatePricePercent}',
+                    m.Id,roundNumber(inputPrice,2),roundNumber(divDollar,2),
+                    function(result, event){
+                        //$scope.materials = result;
+                            //console.log(result.Id + ' updated');
+                            //priceQuotePanel();
+                            //$scope.$applyAsync();
+                    });
+            //end remote function call
+            return m.Requested_Increase__c;
+        };
+        //end calculations
+
+        //start of updateNotes function
+        $scope.updateNotes = function(c){
+            console.log('*** IN updateNotes *** ');
+            console.log('*** c.Contract_Notes__c *** ' + c.Contract_Notes__c);
+            Visualforce.remoting.Manager.invokeAction(
+               '{!$RemoteAction.Contract_Renewal_Controller.updateNotes}',
+               c.Id,c.Contract_Notes__c,
+               function(result, event){
+                   //$scope.materials = result;
+                       //console.log(result.Id + ' updated');
+                       //priceQuotePanel();
+                       //$scope.$applyAsync();
+               });
+            //end remote function call
+
+            return c.Contract_Notes__c;
+        };
+        //end of updateNotes function
+
+        //start of updateNewNumber function
+        $scope.updateNewNumber = function(c){
+            console.log('*** IN updateNewNumber *** ');
+            console.log('*** c.New_Agreement_Number__c *** ' + c.New_Agreement_Number__c);
+            if(c.New_Agreement_Number__c != undefined){
+                 Visualforce.remoting.Manager.invokeAction(
+               '{!$RemoteAction.Contract_Renewal_Controller.updateNewNumber}',
+               c.Id,c.New_Agreement_Number__c,
+               function(result, event){
+                   //$scope.materials = result;
+                       //console.log(result.Id + ' updated');
+                       //priceQuotePanel();
+                       //$scope.$applyAsync();
+               });
+            //end updateNewNumber remote function call
+            }//end if statement
+
+            return c.Contract_Notes__c;
+        };
+        //end of updateNotes function
+
+        //start of updateDetails function
+        $scope.updateDetails = function(m){
+            console.log('*** IN updateDetails *** ');
+            console.log('*** m.Detail_Notes__c *** ' + m.Detail_Notes__c);
+            if(m.Detail_Notes__c != undefined || m.Detail_Notes__c != '' || m.Detail_Notes__c != NULL){
+                Visualforce.remoting.Manager.invokeAction(
+               '{!$RemoteAction.Contract_Renewal_Controller.updateDetails}',
+               m.Id,m.Detail_Notes__c,
+               function(result, event){
+                   //$scope.materials = result;
+                       //console.log(result.Id + ' updated');
+                       //priceQuotePanel();
+                       //$scope.$applyAsync();
+            });
+            //end remote function call
+            }
+
+            return m.Detail_Notes__c;
+        };
+        //end of updateDetails function
+
+        //set header status
+        $scope.setHeaderStatus = function(a){
+            var deferred = $q.defer();
+            $scope.noLineNote = [];
+            console.log('*** IN setHeaderStatus *** ');
+            //console.log('*** $scope.contract.id *** ' + $scope.contract[0].Id );
+            console.log('*** $scope.prevStatus *** ' + $scope.prevStatus );
+            //console.log('*** $scope.contract[0].Status__c *** ' + $scope.contract[0].Status__c );
+            console.log('*** Status *** ' + a);
+            //console.log('*** c.Contract_Notes__c *** ' + c.Contract_Notes__c);
+            if(a == 'Sales Review'){
+                angular.forEach($scope.materials,function(value,index){
+                  console.log('*** IN setHeaderStatus angular.forEach *** ');
+                  //console.log('*** value *** ' + value.Id);
+                  //console.log('*** value.Material_Line_Note__c *** ' + value.Material_Line_Note__c);
+                   if(value.Material_Line_Note__c === '' || value.Material_Line_Note__c === undefined || value.Material_Line_Note__c === null){
+                     console.log('*** IN setHeaderStatus angular.forEach if *** ');
+                     $scope.noLineNote.push($scope.materials[index].Id);
+                   }//end of value.checked
+                 });//end of angular.forEach
+                 console.log('*** $scope.noLineNote.length *** ' + $scope.noLineNote.length);
+
+                 //validate that line notes have been made before changing to Sales Review
+                if($scope.noLineNote.length > 0 ){
+                  console.log('*** IN setHeaderStatus $scope.noLineNote.length > 0 if *** ');
+                  $scope.needLineNote = true;
+                  $scope.contract[0].Status__c = $scope.prevStatus;
+                }//end of validation if
+                else{
+                  console.log('*** IN setHeaderStatus $scope.noLineNote.length > 0 else *** ');
+                  $scope.needLineNote = false;
+                  Visualforce.remoting.Manager.invokeAction(
+                          '{!$RemoteAction.Contract_Renewal_Controller.setContractStatus}',
+                          $scope.contract[0].Id,a,
+                          function(result, event){
+                              $scope.$apply(function(){
+                                  //$scope.statusView = a;
+                                  //$scope.updateValue(c);
+                                  $scope.currStatus = a;
+                              });//end of scope.apply
+                          });
+                          //$scope.statusView = a;
+                          //end of function(result,event)
+                  //end remote function call
+                }//end of validation else
+            }
+            else{
+              console.log('*** IN setHeaderStatus $scope.noLineNote.length > 0 else *** ');
+              $scope.needLineNote = false;
+              Visualforce.remoting.Manager.invokeAction(
+                      '{!$RemoteAction.Contract_Renewal_Controller.setContractStatus}',
+                      $scope.contract[0].Id,a,
+                      function(result, event){
+                          $scope.$apply(function(){
+                              //$scope.statusView = a;
+                              //$scope.updateValue(c);
+                              $scope.currStatus = a;
+                          });//end of scope.apply
+                      });
+                      //$scope.statusView = a;
+                      //end of function(result,event)
+              //end remote function call
+            }//end of outter else
+
+            //return a;
+            };
+        //end of set header status
+
+     //set material line note
+        $scope.materialLineNote = function(lineId,note){
+            var deferred = $q.defer();
+            console.log('*** IN materialLineNote *** ');
+            console.log('*** lineId *** ' + lineId);
+            console.log('*** note *** ' + note);
+            //console.log('*** c.Contract_Notes__c *** ' + c.Contract_Notes__c);
+            Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.Contract_Renewal_Controller.materialLineNote}',
+                    lineId,note,
+                    function(result, event){
+                        $scope.$apply(function(){
+                            //$scope.statusView = a;
+                            //$scope.updateValue(c);
+                    //$scope.currStatus = a;
+                        });//end of scope.apply
+                    });
+                    //$scope.statusView = a;
+                    //end of function(result,event)
+            //end remote function call
+            return note;
+            };
+        //end of set material line note
+
+        //submit for approval
+        $scope.subApp = function(c){
+            $scope.noNotes = [];
+            angular.forEach($scope.filterList,function(value,index){
+                console.log('In subApp for each loop');
+                //console.log('*** value.Approval_Flag__c *** ' + value.Approval_Flag__c);
+                //console.log('*** value.Detail_Notes__c *** ' + value.Detail_Notes__c);
+               if(value.Approval_Flag__c > 0 && (value.Detail_Notes__c == '' || value.Detail_Notes__c == undefined || value.Detail_Notes__c === null) ){
+                 console.log('index: ' + index + ' value: ' + value.Id + ' value.checked: ' + value.checked);
+                 $scope.noNotes.push($scope.filterList[index].Id);
+               }//end of value.checked
+               else if(value.Requested_Renewal_Price__c > value.Product__r.List_Price__c){
+                 console.log('index: ' + index + ' value: ' + value.Id + ' value.checked: ' + value.checked);
+                 $scope.noNotes.push($scope.filterList[index].Id);
+               }
+             });//end of angular.forEach
+            console.log('*** c.Id *** ' + c.Id);
+
+            if($scope.noNotes.length > 0){
+                console.log('In if for $scope.noNotes.length');
+                $scope.needReason = true;
+                $scope.noNotes = [];
+            }
+            else{
+                console.log('In else for $scope.noNotes.length');
+                $scope.needReason = false;
+                $scope.noNotes = [];
+                //start remote function call
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.Contract_Renewal_Controller.submitApproval}',
+                    c.Id,
+                    function(result, event){
+                        //refresh page to show updated approval related list
+                        window.location.reload();
+                    });
+                //end remote function call
+            }
+            //location.reload();
+            return c.Id;
+        };
+        //end submit for approval
+
+        //controls pagination when searching
+         $scope.$watch('search', function (term) {
+            $scope.pageList = [];
+              //var obj = { Name:term };
+              $scope.filterList = filterFilter($scope.materials, term);
+              $scope.currentPage = 0;
+          });
+          //end of pagination controller function
+
+          //both functions below handle sorting
+          $scope.sort = {
+              column: '',
+              ascending: false
+          };
+
+          $scope.changeSorting = function(column) {
+            var sort = $scope.sort;
+            //var iconName = '';
+            $scope.sortBy = column;
+            console.log('*** $scope.sortBy *** ' + $scope.sortBy);
+            if ($scope.sortReverse) {
+              sort.column = column;
+              console.log('*** $scope.sortBy if *** ' + $scope.sortBy);
+              $scope.sortReverse = false;
+                sort.ascending = !sort.ascending;
+            } else {
+                sort.column = column;
+                $scope.sortReverse = true;
+                sort.ascending = !sort.ascending;
+            }
+          };
+          //both functions above handle sorting
+
+          //get more materials
+          $scope.getMoreMaterials = function(){
+            $scope.gettingRecords = true;
+            console.log('*** $scope.gettingRecords *** ' + $scope.gettingRecords);
+            var deferred = $q.defer();
+            $scope.usedIds = [];
+            //console.log('*** $scope.materials.length before *** ' + $scope.materials.length);
+            console.log('*** Adding More Materials ***');
+            angular.forEach($scope.filterList,function(value,index){
+              console.log('*** value.Id ' + value.Id + ' value.Product__r.Name: ' + value.Product__r.Name + ' '  + index + ' ***');
+              //if(value.Id === undefined){
+                //console.log('*** value.Name *** ' + value.Name + ' ' + value[index]);
+                //$scope.filterList.splice(index, 1);
+              //}
+              $scope.usedIds.push(value.Id);
+            });
+
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.Contract_Renewal_Controller.getMoreMaterials}',
+                $scope.contract[0].Id,$scope.usedIds,
+                function(result, event){
+                    if(event.status){
+                        deferred.resolve(result, event);
+
+                    }
+                    else{
+                        deferred.reject(event);
+                    }
+             });
+             deferred.promise.then(function (result, event) {
+                 // now do stuff
+                 console.log('*** $scope.filterList.length before *** ' + $scope.filterList.length);
+                 console.log('*** result.length *** ' + result.length);
+                 if(result.length > 0 && result.length < 2000){
+                   console.log('*** result.length > 0 &&  result.length < 2000 ***');
+                   $scope.fetchMoreRecords = false;
+                   angular.forEach(result,function(value,index){
+                     $scope.filterList.push(value);
+                     $scope.usedIds = [];
+                   });
+                   //$scope.filterList.push(result);
+                   console.log('*** $scope.filterList.length after *** ' + $scope.filterList.length);
+                 }
+                 else if(result.length == 2000){
+                   console.log('*** result.length == 2000 ***');
+                   $scope.fetchMoreRecords = true;
+                   angular.forEach(result,function(value,index){
+                     $scope.filterList.push(value);
+                     $scope.usedIds = [];
+                   });
+                 }
+                 else{
+                   console.log('*** result.length === 0 ***');
+                   $scope.fetchMoreRecords = false;
+                  $scope.usedIds = [];
+
+                 }
+             });
+            //$scope.materials = $scope.materials.concat($scope.addMaterials);
+            //$scope.filterList.push($scope.materials);
+            //console.log('*** $scope.materials.length after *** ' + $scope.materials.length);
+            //console.log('*** $scope.filterList.length after *** ' + $scope.filterList.length);
+            $scope.gettingRecords = false;
+            $scope.numberOfPages();
+          };
+          //end of get more materials
+
+          //function to update status
+             $scope.updateContractRecom = function(status){
+                 var deferred = $q.defer();
+                 console.log('*** status *** ' + status);
+                 angular.forEach($scope.filterList,function(value,index){
+                     if(value.checked){
+                         Visualforce.remoting.Manager.invokeAction(
+                         '{!$RemoteAction.Contract_Renewal_Controller.updateContractRecom}',
+                         value.Id,status,
+                         function(result, event){
+                             if(event.status){
+                                 deferred.resolve(result, event);
+                             }
+                             else{
+                                 deferred.reject(event);
+                             }
+                      });//end of remote action
+                      deferred.promise.then(function (result, event) {
+                          // now do stuff
+                          console.log('*** result.Material_Line_Note__c *** ' + result.Material_Line_Note__c);
+                          $scope.filterList[index].Material_Line_Note__c = result.Material_Line_Note__c;
+                          value.checked = false;
+                          $scope.selectedAll = false;
+                      });//end of deferred promise
+                     }//end of if
+
+                 });//end of angular.forEach
+
+               };
+              //end of function to update status
+
+          //export table file
+          /*
+          $scope.exportData = function () {
+            var fileName = '{!fname}'+'.csv';
+            console.log('*** fileName *** ' + fileName);
+              var blob = new Blob([document.getElementById('tfx').innerHTML], {
+                  type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+              });
+              saveAs(blob, fileName);
+          };
+          */
+          //export table to file
+
+          //format ng-model currency fields
+          /*
+          http://stackoverflow.com/questions/26486696/angularjs-get-formatted-date-in-ng-model
+          $scope.$watch('Requested_Renewal_Price__c', function (newValue) {
+              $scope.materials.Requested_Renewal_Price__c = $filter('currency')(newValue, 'yyyy/MM/dd');
+          });
+          */
+          //end of format ng-model currency fields
+
+          //pagination attempt (http://stackoverflow.com/questions/11581209/pagination-on-a-list-using-ng-repeat)
+          $scope.numberOfPages=function(){
+            console.log('*** In numberOfPages ***');
+            $scope.pageList = [];
+            var numPages = Math.ceil($scope.filterList.length/$scope.pageSize);
+            //console.log('*** numPages *** ' + numPages);
+            if($scope.pageList.length == 0){
+              for (var i=0; i<=numPages; i++) {
+                 $scope.pageList.push(i);
+             }
+           }//end of if
+           console.log('*** $scope.pageList *** ' + $scope.pageList);
+            return numPages;
+          };
+          //end of pagination attempt
+
+        //handles hyperlink pagination
+        $scope.pageLink = function(page){
+          console.log('*** page *** ' + page);
+          //$scope.currentPage = 0;
+
+          $scope.currentPage = page-1;
+          //$scope.currentPage = parseInt($scope.currentPage,10);
+          console.log('*** $scope.currentPage *** ' + $scope.currentPage);
+          return $scope.currentPage;
+        };
+
+        $scope.clearSearch = function(){
+          $scope.search = '';
+        };
+
+        //function to export to excel
+        $scope.exportData = function () {
+          //http://stackoverflow.com/questions/21680768/export-to-xls-using-angularjs
+            var blob = new Blob([document.getElementById('exportable').innerHTML], {
+                type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+            });
+            saveAs(blob, "Report.xls");
+        };
+        //end of function to export to excel
+
+    }]);//end of controller
+
+     //needed for pagination
+   app.filter('start', function() {
+    return function(input, start) {
+        if (!input || !input.length) { return; }
+        start = +start; //parse to int
+        return input.slice(start);
+    }
+  });
+   //end of needed for pagination
+
+    function roundNumber(number, precision){
+      console.log('*** number *** ' + number);
+        precision = Math.abs(parseFloat(precision)) || 0;
+        var multiplier = Math.pow(10, precision);
+        var newNumb = Math.round(number * multiplier) / multiplier
+        //console.log('*** newNumb *** ' + newNumb);
+        newNumb.toFixed(2);
+        console.log('*** newNumb after fixed *** ' + newNumb);
+        return newNumb;
+    }
+
+    function twoDecimal(num) {
+      console.log('*** num before *** ' + num);
+      var n;
+
+      n = parseFloat(num).toFixed(2);
+      //num.toFixed(2);
+      console.log('*** n after *** ' + n);
+      return n;
+        //document.getElementById("demo").innerHTML = n;
+    }
+    </script>
+
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+            <!-- Start of teleflex way -->
+          <div class="teleflex">
+          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+              <div class="container-fluid">
+                <a href="#" class="navbar-brand">Contract Renewal </a>
+                <!-- <a><input class="form-control" size="10" html-placeholder="Search..." type="text" ng-model="searchText" id="searchText" ng-change="fetchContracts()"/></a> -->
+
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="/home/home.jsp">Salesforce.com</a></li>
+                    <li class="dropdown" ng-show="canView">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contract Recommendations <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li ng-repeat="value in contractsRepDropdown"><a href="#" ng-click="updateContractRecom(value)">{{ value }}</a></li>
+                      </ul>
+                    </li>
+                    <li><a ng-href="/apex/Contract_Renewal_Accounts?Id={{ contract[0].Id }}">Accounts</a></li>
+                  </ul>
+                </div>
+              </div>
+          </nav>
+          </div>
+          <!-- End of teleflex way -->
+
+            <!-- start of table stuff -->
+            <div class="teleflex">
+            <div class="teleflex"> <!-- 2nd class teleflex -->
+                <div class="contain-fluid"> <!-- 1st class contain-fluid -->
+                    <!-- <div class="row"> -->
+
+                    <!-- Start of Back to Previous Page / Search -->
+                    <div class="container col-md-12">
+                    <div class="btn-group">
+                        <a class="btn btn-primary btn-sm">Back</a>
+                        <a href="#" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li style="margin-left: 0px;">
+                                <a href="/apex/Contract_Renewal_Home">Back to Contract Renewal List</a>
+                            </li>
+                            <li style="margin-left: 0px;">
+                                <a href="/apex/Contract_Renewal_Home?search={{ contract[0].Agreement_Number__c }}">Back to Contract {{ contract[0].Agreement_Number__c }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                  </div><br /><br />
+                  <!-- End of Back to Previous Page / Search -->
+
+                      <div class="container table-responsive col-md-6">
+                          <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Contract Information</h3>
+                        </div>
+                        <div class="panel-body">
+                          <table class="table" ng-repeat="c in contract" id="tableHeader">
+                              <tr>
+                              <td >Contract #:</td><td >{{ c.Agreement_Number__c }}</td>
+                              <td >Sales Org:</td><td >{{ c.Sales_Org__c }}</td>
+                              </tr>
+                              <tr>
+                              <td >Name:</td><td >{{ c.Contract_Description__c }}</td>
+                              </tr>
+                              <tr>
+                                <td >Status:</td>
+                                <td >
+                                <select ng-model="c.Status__c" ng-change="setHeaderStatus(c.Status__c)">
+                                  <option ng-repeat="value in actionStatuses" ng-disabled="value.disabled" >{{ value.Status }}</option>
+                                </select>
+                                </td>
+                                <td >Distr Channel:</td><td >{{ c.Distribution_Channel__c }}</td>
+                              </tr>
+                              <tr>
+                                <td>Owner:</td><td>{{ c.Owner.Name }}</td>
+                                <td>Sales Manager:</td><td>{{ c.Sales_Manager__r.Name }}</td>
+                              </tr>
+                              <tr>
+                                <td>New Agreement Number:</td>
+                                <td ng-show="canView"><input type="text" ng-model="c.New_Agreement_Number__c" ng-blur="updateNewNumber(c)"/></td>
+                                <td ng-show="!canView">{{ c.New_Agreement_Number__c }}</td>
+                                <td>Sales Rep:</td><td>{{ c.Sales_Rep__r.Name }}</td>
+                              </tr>
+                              <tr>
+                                <td >Contract Notes:</td>
+                                <td>
+                                <textarea rows="3" cols="25" ng-model="c.Contract_Notes__c" ng-trim="true" ng-blur="updateNotes(c)" />
+                                <td >Condition Type:</td><td >{{ c.Condition__c }}</td>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan="4">
+                                    <center>
+                                        <button ng-click="subApp(c)" class="btn btn-primary" type="submit" ng-disabled="currStatus == 'Pending Approval' || currStatus != 'Sales Review' || $scope.contract[0].In_Approval__c">Submit For Approval</button>
+                                        <br/><br/>
+                                        <div ng-show="needReason" style="color:red;">
+                                            Please review areas outlined in red below.  If decreases were made, notes Sale's Notes are needed.<br/>
+                                            If Requested Price is red, please adjust so that it is equal or lower than List Price.
+                                        </div>
+                                        <div ng-show="needLineNote" style="color:red;">
+                                            Please fill in "Contract's Recommendations" for all line items on this contract before changing <br/>
+                                            the Status to "Sales Review".  Please review red areas under Contract's Recommendations.
+                                        </div>
+                                    </center>
+                                </td>
+                              </tr>
+                          </table>
+                        </div><!-- end of panel body div -->
+                      </div><!-- end of panel default div -->
+                    </div> <!-- end of class container -->
+                                <!-- </div>  end of class row -->
+                        </div> <!-- end of class container fluid -->
+                </div> <!-- end of class teleflex inner -->
+            </div> <!-- end of class teleflex outter -->
+            <!-- end of table stuff -->
+
+            <!-- start of approval related list -->
+            <div class="teleflex" >
+              <div class="col-md-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Approval Information</h3>
+                  </div>
+                  <div class="panel-body">
+                    <apex:outputPanel >
+                    <apex:relatedList list="ProcessSteps" subject="{!$CurrentPage.parameters.contractId}" /><br />
+                    </apex:outputPanel>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end of approval related list -->
+
+            <!-- start of list of materials -->
+            <div class="teleflex">
+               <div class="teleflex">
+                <!-- <div class="row"> -->
+                <div class="col-md-12">
+                  <div class="tex-left">
+                    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <span>Page {{ currentPage+1 }} of {{ numberOfPages() }}</span>
+                    <button ng-disabled="currentPage >= filterList.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>&nbsp;&nbsp;
+                    <button ng-show="fetchMoreRecords" ng-disabled="gettingRecords" ng-click="getMoreMaterials()" class="btn btn-primary">
+                        Get More Records
+                    </button>
+                    <button ng-disabled="search == ''" ng-click="clearSearch()" class="btn btn-primary">
+                        Clear Search
+                    </button>
+                    <!--
+                    <apex:outputLink onclick="$('[id$=tfx]').tableExport({type:'excel', fileName: '{!fname}', excelstyles:['border-bottom', 'border-top', 'border-left', 'border-right']});return false;" Styleclass="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download Excel</apex:outputLink>
+                    &nbsp;&nbsp;<br/>&nbsp;
+                  -->
+                    <button ng-click="exportData()" class="btn btn-primary" style="float: right;">
+                      <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download to Excel
+                    </button>
+                  </div><br/>
+
+                  <div class="fixed-header" id="pageLink" >
+                    <a href="" ng-class="{'active': page == currentPage+1}" ng-model="currentPage" ng-repeat="page in pageList" ng-click="pageLink(page)" ng-if="$index > 0">
+                      {{ page }}
+                    </a>
+                  </div><br />
+                    <!--
+                    <div class="text-right">
+                        <button ng-click="exportData()">Export</button>
+                    </div>
+                    -->
+                    <div class="table-responsive">
+                    <input class="form-control" type="text" placeholder="Global Search..." ng-model="search" />
+
+                    <table class="table table-bordered table-condensed tablesorter bootstrap-popup" data-toggle="table" id="tfx">
+                      <thead class="header">
+                      <tr class="tablesorter-headerRow">
+                        <!-- Contracts Does Not Want This
+                        <th ng-click="changeSorting($index)">#
+                          <span ng-show="sortBy == '$index' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == '$index' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        -->
+                        <th class="text-center">
+                          <input type="checkbox" class="checkAll" ng-model="selectedAll" ng-click="toggleAll()" />
+                        </th>
+                        <th ng-click="changeSorting('Product__r.Name')">Material<br/>Name
+                          <span ng-show="sortBy == 'Product__r.Name' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.Name' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th>
+                         <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Material Status"/>
+                        </th>
+                        <th ng-click="changeSorting('Product__r.Description')">Description
+                          <span ng-show="sortBy == 'Product__r.Description' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.Description' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Valid_From__c')">Valid From
+                          <span ng-show="sortBy == 'Valid_From__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Valid_From__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Valid_To__c')">Valid To
+                          <span ng-show="sortBy == 'Valid_To__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Valid_To__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Product__r.Class__c')">Product<br/>Class
+                          <span ng-show="sortBy == 'Product__r.Class__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.Class__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Product__r.Product_Line_Text__c')">Product<br/>Line
+                          <span ng-show="sortBy == 'Product__r.Product_Line_Text__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.Product_Line_Text__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Current_Price__c')">Current<br/>Contract<br/>Price
+                          <span ng-show="sortBy == 'Current_Price__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Current_Price__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Sales__c')">12 Month<br/>Sales
+                          <span ng-show="sortBy == 'Sales__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Sales__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-show="directorView" ng-click="changeSorting('Product__r.Cost_Formula__c')">Cost
+                          <span ng-show="sortBy == 'Product__r.Cost_Formula__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.Cost_Formula__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-show="directorView" ng-click="changeSorting('Current_Gross_Profit__c')">Current<br/>GP
+                          <span ng-show="sortBy == 'Current_Gross_Profit__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Current_Gross_Profit__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Product__r.List_Price__c')">List<br/>Price
+                          <span ng-show="sortBy == 'Product__r.List_Price__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.List_Price__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Product__r.Floor_Price__c')">Floor<br/>Price
+                          <span ng-show="sortBy == 'Product__r.Floor_Price__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.Floor_Price__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-show="directorView" ng-click="changeSorting('Current_Price_with_30_GP__c')">Price w/<br/>30% GP
+                          <span ng-show="sortBy == 'Current_Price_with_30_GP__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Current_Price_with_30_GP__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Default_Per_Increase__c')">Default<br/>% Increase
+                          <span ng-show="sortBy == 'Default_Per_Increase__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Default_Per_Increase__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Default_Renewal_Price__c')">Default<br/>Renewal<br/>Price
+                          <span ng-show="sortBy == 'Default_Renewal_Price__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Default_Renewal_Price__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-show="directorView" ng-click="changeSorting('Default_Gross_Profit__c')">Renewal<br/>Price GP
+                          <span ng-show="sortBy == 'Default_Gross_Profit__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Default_Gross_Profit__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Requested_Increase__c')">Requested<br/>% Increase
+                          <span ng-show="sortBy == 'Requested_Increase__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Requested_Increase__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Requested_Renewal_Price__c')">Requested<br/>Price
+                          <span ng-show="sortBy == 'Requested_Renewal_Price__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Requested_Renewal_Price__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th style="width:30px;"></th>
+                        <th ng-show="directorView" ng-click="changeSorting('Requested_Price_GP__c')">Requested<br/>Price GP
+                          <span ng-show="sortBy == 'Requested_Price_GP__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Requested_Price_GP__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Sales__c')">Sales at<br/>Standard<br/>Increase
+                          <span ng-show="sortBy == 'Sales__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Sales__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Sales__c')">Sales at<br/>Requested<br/>Increase
+                          <span ng-show="sortBy == 'Sales__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Sales__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Material_Line_Note__c')">Contract's<br/>Recommendations
+                          <span ng-show="sortBy == 'Material_Line_Note__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Material_Line_Note__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        <th ng-click="changeSorting('Detail_Notes__c')">Sale's<br/>Notes
+                          <span ng-show="sortBy == 'Detail_Notes__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Detail_Notes__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+
+                        <!--
+                        <th ng-show="directorView" ng-click="changeSorting('Product__r.Last_Year_ASP__c')">ASP
+                          <span ng-show="sortBy == 'Product__r.Last_Year_ASP__c' && !sortReverse" class="glyphicon glyphicon-sort-by-attributes"></span>
+                          <span ng-show="sortBy == 'Product__r.Last_Year_ASP__c' && sortReverse" class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        </th>
+                        -->
+                      </tr>
+                    </thead>
+                      <!-- ******************** Start of Editable UI ******************** -->
+                      <tbody>
+                      <form name="form">
+                      <tr ng-repeat="m in filterList | filter:search | start:currentPage*pageSize | limitTo:pageSize | orderBy:sort.column:sort.ascending track by m.Id" ng-hide="m.Contract_Renewal__r.In_Approval__c" ng-class="{'green': m.Recently_Added__c < 6, 'orangeCustom': m.Product__r.ASK_Custom_Kit__c}" ng-init="recentlyAdded(m)">
+                        <!-- <td>{{ $index + 1 }}</td> -->
+                        <td class="text-center" style="vertical-align: middle;"><input type="checkbox" ng-model="m.checked" /></td>
+                        <td>{{ m.Product__r.Name }}</td>
+                        <td ng-class="appliedClass(m)">
+                         <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="{{ m.Material_Status_Description__c}}"/>
+                        </td>
+                        <td>{{ m.Product__r.Description }}</td>
+                        <td>{{ m.Valid_From__c | date : 'MM/dd/yyyy' }}</td>
+                        <td>{{ m.Valid_To__c | date : 'MM/dd/yyyy' }}</td>
+                        <td>{{ m.Product__r.Class__c }}</td>
+                        <td>{{ m.Product__r.Product_Line_Text__c }}</td>
+                        <td>${{ m.Current_Price__c | number:2 }}</td>
+                        <td>${{ m.Sales__c | number:2 }}</td>
+                        <td ng-show="directorView">${{ m.Product__r.Cost_Formula__c | number:2 }}</td>
+                        <td ng-show="directorView" ng-class="{'boldRedText': m.BelowGp__c == 1, 'redText': m.BelowGp__c == 2}">{{ m.Current_Gross_Profit__c | number:2 }}%</td>
+                        <td>${{ m.Product__r.List_Price__c | number:2 }}</td>
+                        <td>${{ m.Product__r.Floor_Price__c | number:2 }}</td>
+                        <td ng-show="directorView">${{ m.Current_Price_with_30_GP__c | number:2 }}</td>
+                        <td>{{ m.Default_Per_Increase__c | number:2 }}%</td>
+                        <td>${{ m.Default_Renewal_Price__c | number:2 }}</td>
+                        <td ng-show="directorView">{{ m.Default_Gross_Profit__c | number:2 }}%</td><!-- Renewal Price GP -->
+
+                        <td>
+                          <input type="number"  style="width:75px" ng-hide="m.Contract_Renewal__r.In_Approval__c" ng-model="m.Requested_Increase__c" ng-change="requestedPercent(m)" id="myPercent" step="0.00"/>
+                          <!-- <input ng-show="m.Requested_Increase__c < m.Default_Per_Increase__c" style="box-shadow: 0 0 3px red;" type="number" ng-model="m.Requested_Increase__c" ng-blur="requestedPercent(m)" id="myPercent" /> -->
+                        </td>
+                        <td>
+                          <input type="currency" style="width:75px" ng-class="formatNumber(m)" ng-hide="m.Contract_Renewal__r.In_Approval__c" ng-model="m.Requested_Renewal_Price__c" ng-change="requestedPrice(m)" id="myPrice" step="0.00"/>
+                        </td>
+                        <td style="width:30px;" ng-show="m.Requested_Increase__c >= m.Default_Per_Increase__c">
+                          <span class="glyphicon glyphicon-ok-sign" aria-hidden="true" style="color:green;"/>
+                        </td>
+                        <td style="width:30px;" ng-show="m.Requested_Increase__c < m.Default_Per_Increase__c">
+                          <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red;"/>
+                        </td>
+                        <td ng-show="directorView">{{ m.Requested_Price_GP__c | number:2 }}%</td>
+                        <td>${{ m.Sales__c * m.Default_Per_Increase__c/100 + m.Sales__c | number:2 }}</td>
+                        <td>${{ m.Sales__c * m.Requested_Increase__c/100 + m.Sales__c | number:2 }}</td>
+
+
+
+                        <td>
+                        <select style="width: 150px;" ng-disabled="!canView" ng-model="m.Material_Line_Note__c" ng-change="materialLineNote(m.Id,m.Material_Line_Note__c)"
+                         ng-class="{'needsText': needLineNote && (m.Material_Line_Note__c == '' || m.Material_Line_Note__c == undefined) }">
+                            <option ng-repeat="value in contractsRepDropdown"  >{{ value }}</option>
+                        </select>
+                       </td>
+                        <td>
+                            <textarea rows="3" cols="25" ng-disabled="canView" ng-model="m.Detail_Notes__c" ng-trim="true" ng-blur="updateDetails(m)"
+                              ng-class="{'needsText': m.Requested_Increase__c < m.Default_Per_Increase__c && (m.Detail_Notes__c == '' || m.Detail_Notes__c == null || m.Detail_Notes__c == undefined)}"/>
+                         </td>
+                         <!--
+                         <apex:outputText rendered="{!directorView}">
+                           <td ng-hide="m.Product__r.Last_Year_ASP__c == '' || m.Product__r.Last_Year_ASP__c == null">${{ m.Product__r.Last_Year_ASP__c | number:2 }}</td>
+                           <td ng-show="m.Product__r.Last_Year_ASP__c == '' || m.Product__r.Last_Year_ASP__c == null">-</td>
+                         </apex:outputText>
+                         -->
+                      </tr>
+                      </form>
+                      <!-- ******************** End of Editable UI ******************** -->
+
+                      <!-- ******************** Start of locked down UI ******************** -->
+                      <tr ng-repeat="m in filterList | filter:search | start:currentPage*pageSize | limitTo:pageSize | orderBy:sort.column:sort.ascending" ng-show="m.Contract_Renewal__r.In_Approval__c" ng-class="{'green': m.Recently_Added__c < 6, 'orangeCustom': m.Product__r.ASK_Custom_Kit__c}" ng-init="recentlyAdded(m)">
+                        <!-- <td>{{ $index + 1 }}</td> -->
+                        <td>{{ m.Product__r.Name }}</td>
+                        <td ng-class="appliedClass(m)">
+                         <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="{{ m.Material_Status_Description__c}}"/>
+                        </td>
+                        <td>{{ m.Product__r.Description }}</td>
+                        <td>{{ m.Valid_From__c | date : 'MM/dd/yyyy' }}</td>
+                        <td>{{ m.Valid_To__c | date : 'MM/dd/yyyy' }}</td>
+                        <td>{{ m.Product__r.Product_Class__c }}</td>
+                        <td>{{ m.Product__r.Product_Line_Text__c }}</td>
+                        <td>${{ m.Current_Price__c | number:2 }}</td>
+                        <td>${{ m.Sales__c | number:2 }}</td>
+                        <td ng-show="directorView">${{ m.Product__r.Cost_Formula__c | number:2 }}</td>
+                        <td ng-show="directorView" ng-class="{'boldRedText': m.BelowGp__c == 1, 'redText': m.BelowGp__c == 2}">{{ m.Current_Gross_Profit__c | number:2 }}%</td>
+                        <td>${{ m.Product__r.List_Price__c | number:2 }}</td>
+                        <td>${{ m.Product__r.Floor_Price__c | number:2 }}</td>
+                        <td ng-show="directorView">${{ m.Current_Price_with_30_GP__c | number:2 }}</td>
+                        <td>{{ m.Default_Per_Increase__c | number:2 }}%</td>
+                        <td>${{ m.Default_Renewal_Price__c | number:2 }}</td>
+                        <td ng-show="directorView">{{ m.Default_Gross_Profit__c | number:2 }}%</td><!-- Renewal Price GP -->
+                        <td>{{ m.Requested_Increase__c }}</td>
+                        <td>{{ m.Requested_Renewal_Price__c }}</td>
+                        <td style="width:30px;" ng-show="m.Requested_Increase__c >= m.Default_Per_Increase__c">
+                          <span class="glyphicon glyphicon-ok-sign" aria-hidden="true" style="color:green;"/>
+                        </td>
+                        <td style="width:30px;" ng-show="m.Requested_Increase__c < m.Default_Per_Increase__c">
+                          <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red;"/>
+                        </td>
+                        <td ng-show="directorView">{{ m.Requested_Price_GP__c | number:2 }}%</td>
+                        <td>${{ m.Sales__c * m.Default_Per_Increase__c/100 + m.Sales__c | number:2 }}</td>
+                        <td>${{ m.Sales__c * m.Requested_Increase__c/100 + m.Sales__c | number:2 }}</td>
+                        <td>{{ m.Material_Line_Note__c }}</td>
+                        <td>{{ m.Detail_Notes__c }}</td>
+                         <!--
+                         <apex:outputText rendered="{!directorView}">
+                           <td ng-hide="m.Product__r.Last_Year_ASP__c == '' || m.Product__r.Last_Year_ASP__c == null">${{ m.Product__r.Last_Year_ASP__c | number:2 }}</td>
+                           <td ng-show="m.Product__r.Last_Year_ASP__c == '' || m.Product__r.Last_Year_ASP__c == null">-</td>
+                         </apex:outputText>
+                         -->
+                      </tr>
+                      <!-- ******************** End of locked down UI ******************** -->
+                    </tbody>
+                    </table>
+
+                  </div>
+                  <div class="text-left">
+                    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <span>Page {{ currentPage+1 }} of {{ numberOfPages() }}</span>
+                    <button ng-disabled="currentPage >= filterList.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                    &nbsp;&nbsp;
+                    <button ng-show="fetchMoreRecords" ng-click="getMoreMaterials()" class="btn btn-primary">
+                        Get More Records
+                    </button>
+
+                    <button ng-click="exportData()" class="btn btn-primary" style="float: right;">
+                      <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download to Excel
+                    </button>
+                  </div><br />
+
+                  <div class="fixed-header" id="pageLink">
+                    <a href="" ng-class="{'active': page == currentPage+1}" ng-model="currentPage" ng-repeat="page in pageList" ng-click="pageLink(page)" ng-if="$index > 0">
+                      {{ page }}
+                    </a>
+                  </div><br />
+
+                  </div>
+                <!-- </div> end of class row -->
+                </div>
+            </div><!-- end of panel teleflex div -->
+            <!-- end of list of materials -->
+
+            <!-- Below is the exportable version of the data.  Created this as styling was causing an issue with exporting to excel -->
+            <div id="exportable" ng-hide="true">
+              <table>
+                <thead class="header">
+                  <tr class="tablesorter-headerRow">
+                    <th>Material Name</th>
+                    <th>Description</th>
+                    <th>Valid From</th>
+                    <th>Valid To</th>
+                    <th>Product Class</th>
+                    <th>Product Line</th>
+                    <th>Current Contract Price</th>
+                    <th>12 Month Sales</th>
+                    <th ng-show="directorView">Cost</th>
+                    <th ng-show="directorView">Current GP</th>
+                    <th>List Price</th>
+                    <th>Floor Price</th>
+                    <th ng-show="directorView">Price w/30% GP</th>
+                    <th>Default % Increase</th>
+                    <th>Default Renewal Price</th>
+                    <th ng-show="directorView">Renewal Price GP</th>
+                    <th>Requested % Increase</th>
+                    <th>Requested Price</th>
+                    <th ng-show="directorView">Requested Price GP</th>
+                    <th>Sales at Standard Increase</th>
+                    <th>Sales at Requested Increase</th>
+                    <th>Contract's Recommendations</th>
+                    <th>Sale's Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="m in filterList | filter:search | start:currentPage*pageSize | limitTo:pageSize | orderBy:sort.column:sort.ascending" ng-show="m.Contract_Renewal__r.In_Approval__c" ng-class="{'green': m.Recently_Added__c < 6, 'orangeCustom': m.Product__r.ASK_Custom_Kit__c}" ng-init="recentlyAdded(m)">
+                    <td>{{ m.Product__r.Name }}</td>
+                    <td>{{ m.Product__r.Description }}</td>
+                    <td>{{ m.Valid_From__c | date : 'MM/dd/yyyy' }}</td>
+                    <td>{{ m.Valid_To__c | date : 'MM/dd/yyyy' }}</td>
+                    <td>{{ m.Product__r.Product_Class__c }}</td>
+                    <td>{{ m.Product__r.Product_Line_Text__c }}</td>
+                    <td>${{ m.Current_Price__c | number:2 }}</td>
+                    <td>${{ m.Sales__c | number:2 }}</td>
+                    <td ng-show="directorView">${{ m.Product__r.Cost_Formula__c | number:2 }}</td>
+                    <td ng-show="directorView">{{ m.Current_Gross_Profit__c | number:2 }}%</td>
+                    <td>${{ m.Product__r.List_Price__c | number:2 }}</td>
+                    <td>${{ m.Product__r.Floor_Price__c | number:2 }}</td>
+                    <td ng-show="directorView">${{ m.Current_Price_with_30_GP__c | number:2 }}</td>
+                    <td>{{ m.Default_Per_Increase__c | number:2 }}%</td>
+                    <td>${{ m.Default_Renewal_Price__c | number:2 }}</td>
+                    <td ng-show="directorView">{{ m.Default_Gross_Profit__c | number:2 }}%</td><!-- Renewal Price GP -->
+                    <td>{{ m.Requested_Increase__c }}</td>
+                    <td>{{ m.Requested_Renewal_Price__c }}</td>
+                    <td ng-show="directorView">{{ m.Requested_Price_GP__c | number:2 }}%</td>
+                    <td>${{ m.Sales__c * m.Default_Per_Increase__c/100 + m.Sales__c | number:2 }}</td>
+                    <td>${{ m.Sales__c * m.Requested_Increase__c/100 + m.Sales__c | number:2 }}</td>
+                    <td>{{ m.Material_Line_Note__c }}</td>
+                    <td>{{ m.Detail_Notes__c }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Above is the exportable version of the data.  Created this as styling was causing an issue with exporting to excel -->
+</body>
+<script>
+//table sorter stuff
+</script>
+</html>
+</apex:page>

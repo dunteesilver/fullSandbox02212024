@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Fiscal_Quarter_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Updated to support 2023 sales\Quota - AN Feb 10 2023*/
+/* Updated to support 2022 sales\Quota - AN Feb 17 2022*/
+
+/* 2023 */
+if(TODAY() &gt; DATEVALUE(&quot;2023-10-02&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2023-07-03&quot;), 3,
+if(TODAY() &gt; DATEVALUE(&quot;2023-04-03&quot;), 2,
+if(TODAY() &gt; DATEVALUE(&quot;2023-01-01&quot;), 1,
+
+/* 2022 */
+if(TODAY() &gt; DATEVALUE(&quot;2022-09-26&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2022-06-27&quot;), 3,
+if(TODAY() &gt; DATEVALUE(&quot;2022-03-28&quot;), 2,
+if(TODAY() &gt; DATEVALUE(&quot;2022-01-01&quot;), 1,
+0
+))))
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Fiscal Quarter Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

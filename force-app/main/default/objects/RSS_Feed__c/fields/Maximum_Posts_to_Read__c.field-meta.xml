@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_Posts_to_Read__c</fullName>
+    <defaultValue>20</defaultValue>
+    <description>The number of posts value determines how many newss items can be read from the rss feed, 
+a value of 0 here indicates that ALL posts will be read</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of posts value determines how many newss items can be read from the rss feed, 
+a value of 0 here indicates that ALL posts will be read</inlineHelpText>
+    <label>Maximum Posts to Read</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

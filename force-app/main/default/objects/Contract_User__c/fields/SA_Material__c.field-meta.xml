@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SA_Material__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>South Africa sales org access.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>South Africa sales org access.</inlineHelpText>
+    <label>SA Material</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

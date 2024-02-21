@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VACourseType2__c</fullName>
+    <externalId>false</externalId>
+    <label>Course Type 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Acute HD Training Program</fullName>
+                <default>false</default>
+                <label>Acute HD Training Program</label>
+            </value>
+            <value>
+                <fullName>Arterial</fullName>
+                <default>false</default>
+                <label>Arterial</label>
+            </value>
+            <value>
+                <fullName>Arterial Training Program</fullName>
+                <default>false</default>
+                <label>Arterial Training Program</label>
+            </value>
+            <value>
+                <fullName>Bedside Precepting</fullName>
+                <default>false</default>
+                <label>Bedside Precepting</label>
+            </value>
+            <value>
+                <fullName>Care and Maintenance</fullName>
+                <default>false</default>
+                <label>Care and Maintenance</label>
+            </value>
+            <value>
+                <fullName>Catheter Technology: Evidence-based Risk Reduction Strategy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Catheter Technology: Evidence-based Risk Reduction Strategy</label>
+            </value>
+            <value>
+                <fullName>Clinical Education</fullName>
+                <default>false</default>
+                <label>Clinical Education</label>
+            </value>
+            <value>
+                <fullName>Conference Support</fullName>
+                <default>false</default>
+                <label>Conference Support</label>
+            </value>
+            <value>
+                <fullName>Consult</fullName>
+                <default>false</default>
+                <label>Consult</label>
+            </value>
+            <value>
+                <fullName>Content Development</fullName>
+                <default>false</default>
+                <label>Content Development</label>
+            </value>
+            <value>
+                <fullName>CVC</fullName>
+                <default>false</default>
+                <label>CVC</label>
+            </value>
+            <value>
+                <fullName>CVC/PSI/MAC Training Program</fullName>
+                <default>false</default>
+                <label>CVC/PSI/MAC Training Program</label>
+            </value>
+            <value>
+                <fullName>Device Selection in the ICU</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Device Selection in the ICU</label>
+            </value>
+            <value>
+                <fullName>Endurance EDU Program</fullName>
+                <default>false</default>
+                <label>Endurance EDU Program</label>
+            </value>
+            <value>
+                <fullName>JACC Training Program</fullName>
+                <default>false</default>
+                <label>JACC Training Program</label>
+            </value>
+            <value>
+                <fullName>Midline Fundamentals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Midline Fundamentals</label>
+            </value>
+            <value>
+                <fullName>Midline Training Program</fullName>
+                <default>false</default>
+                <label>Midline Training Program</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>PICC Fundamentals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PICC Fundamentals</label>
+            </value>
+            <value>
+                <fullName>PICC Training Program</fullName>
+                <default>false</default>
+                <label>PICC Training Program</label>
+            </value>
+            <value>
+                <fullName>Pre-loaded PICC w/ G4 Training Program</fullName>
+                <default>false</default>
+                <label>Pre-loaded PICC w/ G4 Training Program</label>
+            </value>
+            <value>
+                <fullName>Pre-loaded PICC w/ Rhythm Training Program</fullName>
+                <default>false</default>
+                <label>Pre-loaded PICC w/ Rhythm Training Program</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Fundamentals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ultrasound Fundamentals</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Arterial Catheter Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Arterial Catheter Insertion</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided CVC Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided CVC Insertion</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Midline Fundamentals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ultrasound Guided Midline Fundamentals</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Peripheral</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Peripheral</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Peripheral Access Program</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Peripheral Access Program</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided PICC/Midline Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided PICC/Midline Insertion</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided PICC Fundamentals</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided PICC Fundamentals</label>
+            </value>
+            <value>
+                <fullName>VPS G4 Training Program</fullName>
+                <default>false</default>
+                <label>VPS G4 Training Program</label>
+            </value>
+            <value>
+                <fullName>VPS Rhythm Training Program</fullName>
+                <default>false</default>
+                <label>VPS Rhythm Training Program</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AnesEMS_needs_2B_created_by_button</fullName>
+    <active>false</active>
+    <description>Anes/EMS needs to be created by the global action</description>
+    <errorConditionFormula>AND(
+ RecordType.Name = &quot;ANES/EMS Education Record&quot;,
+ CreatedbyAccountTRButton__c = FALSE
+)</errorConditionFormula>
+    <errorMessage>Please create your education record from the button on the Account</errorMessage>
+</ValidationRule>

@@ -1,0 +1,49 @@
+<aura:component 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/> 
+    
+    <aura:html tag="style">.toastMessage.forceActionsText{white-space : pre-line !important;}</aura:html>   
+    
+    <aura:attribute name="usrId" type="String" default=""/>
+    <aura:attribute name="usrName" type="String" default=""/>
+    <aura:attribute name="showEdit" type="String" default=""/>
+    
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    <ui:scrollerWrapper class="scrollerSize"> 
+        <article class="slds-align_absolute-center slds-card" style="width: 100%">
+            <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+                <lightning:button label="Cancel" onclick="{! c.clearForm }"/>
+                <div class="slds-align_absolute-center slds-text-heading_medium">Demo Request</div>
+                
+                <lightning:recordEditForm objectApiName="MANTA_Demo_Request__c" 
+                                          aura:id="demoRequestForm"
+                                          onsubmit="{!c.handleSubmit}"
+                                          onsuccess="{!c.handleSuccess}"
+                                          >
+                    <lightning:messages />
+                    <lightning:inputField fieldName="Representative__c" required="true" />
+                    <lightning:inputField fieldName="Region__c" required="true" />
+                    <lightning:inputField fieldName="Demos_Needed__c" required="true" />
+                    <lightning:inputField fieldName="Account_Number__c" required="true" />
+                    <lightning:button type="submit" name="Submit" label="submit" class="slds-m-top_medium"/>
+                </lightning:recordEditForm>
+                
+                <div class="slds-align_absolute-center slds-text-heading_xx-small">*For additional requests please email MANTA@teleflex.com</div>
+                
+            </div>
+        </article>
+    </ui:scrollerWrapper>    
+    
+</aura:component>

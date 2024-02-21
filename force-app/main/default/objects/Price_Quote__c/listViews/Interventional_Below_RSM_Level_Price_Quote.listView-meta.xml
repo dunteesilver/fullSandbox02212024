@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interventional_Below_RSM_Level_Price_Quote</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Interventional Below RSM Level</label>
+    <queue>Interventional_Below_RSM_Level</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

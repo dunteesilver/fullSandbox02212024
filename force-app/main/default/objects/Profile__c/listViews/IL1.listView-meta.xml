@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IL1</fullName>
+    <columns>NAME</columns>
+    <columns>First_Name__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>CEM__c</columns>
+    <columns>Mailing_City__c</columns>
+    <columns>Mailing_State__c</columns>
+    <columns>Phone_Number__c</columns>
+    <columns>E_mail_Address__c</columns>
+    <columns>Last_Update__c</columns>
+    <columns>Field_of_Expertise__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Mailing_State__c</field>
+        <operation>equals</operation>
+        <value>IL</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Profile__c.Contractor</value>
+    </filters>
+    <label>IL</label>
+    <language>en_US</language>
+</ListView>

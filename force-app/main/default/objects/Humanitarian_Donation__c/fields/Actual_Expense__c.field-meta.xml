@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Expense__c</fullName>
+    <externalId>false</externalId>
+    <formula>Product_In_Kind__c + Lifecycle_Product__c+Other_Category__c+Shipping__c+Technician_s__c</formula>
+    <inlineHelpText>This is a total of all report values for Donation Support records associated to this record.</inlineHelpText>
+    <label>Actual Expense</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

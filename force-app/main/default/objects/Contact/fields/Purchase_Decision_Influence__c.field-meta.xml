@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchase_Decision_Influence__c</fullName>
+    <externalId>false</externalId>
+    <label>Purchasing Influence</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primary Decision Maker</fullName>
+                <default>false</default>
+                <label>Primary Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Key Influencer</fullName>
+                <default>false</default>
+                <label>Key Influencer</label>
+            </value>
+            <value>
+                <fullName>Product Champion</fullName>
+                <default>false</default>
+                <label>Product Champion</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

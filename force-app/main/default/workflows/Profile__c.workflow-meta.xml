@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Clinical_Contact_Last_Training_Update</fullName>
+        <description>Clinical Contact: Last Training Update</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>karen.hust@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Clinical_Contact_Last_Update</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_Expiration</fullName>
+        <description>Contract Expiration</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Clinical_Contract_Expire</template>
+    </alerts>
+    <alerts>
+        <fullName>Contractor_Record_Transitioned</fullName>
+        <description>Contractor Record Transitioned</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amy.bardin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>amy.mills@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Requesting_RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Contractor_Profile_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Deactivated_CE_Notice</fullName>
+        <description>Deactivated CE Notice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.michaud@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>karen.hust@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kelli.thomas@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CE_Deactivated_Clinical_Educator</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Clinical_Educator</fullName>
+        <description>New Clinical Educator</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>karen.hust@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kelli.thomas@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CE_New_Clinical_Educator</template>
+    </alerts>
+    <alerts>
+        <fullName>Profile_Hold_Notification</fullName>
+        <description>Profile Hold Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CMA_Contractor_Hold_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Profile_Rejected</fullName>
+        <description>Profile Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amy.bardin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>amy.mills@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Requesting_RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Profile_Onboarding_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Profiles_Contract_Notification</fullName>
+        <description>Profiles - Contract Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amy.bardin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>amy.mills@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Requesting_RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Profile_Onboarding_Final_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Test_Email</fullName>
+        <description>Test Email</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Clinical_Contract_Expire</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>BU_update_txt_field</fullName>
+        <field>Business_Unit_TXT__c</field>
+        <formula>Profile_Business_Unit__c</formula>
+        <name>BU update txt field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Heather_Suhor</fullName>
+        <field>OwnerId</field>
+        <lookupValue>heather.suhor@teleflex.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Owner = Heather Suhor</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Profile_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Profile Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Profile_Name_Update</fullName>
+        <field>Name</field>
+        <formula>FullName__c</formula>
+        <name>Profile - Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Profile_Recalled</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Profile Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Profile_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Profile Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sent_for_Approval</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Vetting</literalValue>
+        <name>Sent for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Internal_Resource_Email</fullName>
+        <field>E_mail_Address__c</field>
+        <formula>Sales_Rep__r.Email</formula>
+        <name>Update Internal Resource Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>BU Copy</fullName>
+        <actions>
+            <name>BU_update_txt_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Profile__c.Profile_Business_Unit__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Copies Business Unit  (formula) to Bu/Region(picklist0 so that it can be used in object permissions.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CMA - Profile Hold Notification</fullName>
+        <actions>
+            <name>Profile_Hold_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Used to notify responsible CEM and Jennifer Miller when a contractor is put on hold.</description>
+        <formula>AND(
+ISCHANGED(Status__c),
+ISPICKVAL(Status__c,&quot;Hold&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cinical Contact%3A Contract Expires in 30 days</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Profile__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <description>Educator or Adviser - Contract Expires in 30 days</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Expiration</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Profile__c.Contract_Expiration_Date__c</offsetFromField>
+            <timeLength>-30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Clinical Contact training %3E 6Mo</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Profile__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Profile__c.Last_Update__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Profile__c.Last_Update__c</offsetFromField>
+            <timeLength>180</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Clinical Contact%3A Change owner to Hust</fullName>
+        <actions>
+            <name>Owner_Heather_Suhor</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Profile__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Educator,Clinical Advisor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Profile__c.OwnerId</field>
+            <operation>notEqual</operation>
+            <value>Heather Suhor</value>
+        </criteriaItems>
+        <description>Changes owner to Heather Suhor for all Clinical Educators</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contractor Record Created</fullName>
+        <actions>
+            <name>Contractor_Record_Transitioned</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED(Record_Type__c), RecordType.DeveloperName = &quot;Contractor&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Internal Resource Email</fullName>
+        <actions>
+            <name>Update_Internal_Resource_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Profile__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>TFX - Internal Resource</value>
+        </criteriaItems>
+        <description>copies Internal Resource Email from related user</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Deactivated Clinical Educator Notice</fullName>
+        <actions>
+            <name>Deactivated_CE_Notice</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Profile__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Inactive (Permanent)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Profile__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Educator</value>
+        </criteriaItems>
+        <description>Deactivated Clinical Educator Notice</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>New Clinical Educator Notice</fullName>
+        <actions>
+            <name>New_Clinical_Educator</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Profile__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Profile__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Educator</value>
+        </criteriaItems>
+        <description>New Clinical Educator Notice</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Profile - Name Update</fullName>
+        <actions>
+            <name>Profile_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>Name &lt;&gt; FullName__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

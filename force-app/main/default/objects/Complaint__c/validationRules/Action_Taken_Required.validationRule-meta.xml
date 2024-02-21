@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Taken_Required</fullName>
+    <active>true</active>
+    <description>(&lt;&gt; Legacy VSI Products) Action take to Acquire Lot # is required</description>
+    <errorConditionFormula>AND($RecordType.Name &lt;&gt; &quot;Interventional – Legacy VSI &amp; Manta Products&quot;,$RecordType.Name &lt;&gt; &quot;Manta&quot;) &amp;&amp;  ispickval(Lot_Number_Action_Taken__c,&apos;&apos;)</errorConditionFormula>
+    <errorDisplayField>Lot_Number_Action_Taken__c</errorDisplayField>
+    <errorMessage>Action Taken to Acquire Lot Number Required</errorMessage>
+</ValidationRule>

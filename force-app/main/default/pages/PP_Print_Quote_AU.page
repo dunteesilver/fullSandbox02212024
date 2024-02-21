@@ -1,0 +1,362 @@
+<apex:page controller="PP_Print_Quote" sidebar="false" applyBodyTag="false" applyHtmlTag="false" renderAs="{!r}" showHeader="false" language="{!$CurrentPage.parameters.lang}">
+    <head>
+        <style type="text/css" media="print">
+            @page
+            {
+            <!-- size: 8.5in 11in;/* width height */ -->
+            size: letter;
+
+            padding-top: 5px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+            @top-left { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 0px;position: running(header); }
+            div.footer { display: block; padding: 5px; position: running(footer); }
+
+            .page-break { display:block; page-break-before:always; }
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+
+            <!-- Remove footer from last page -->
+            div.lastPage {
+            page: lastPage; 
+            /* This assigns the name, basically, if this class appears, then this is a "lastPage" page*/
+            }
+            
+            .lastPage {
+            display: none;
+            }
+            
+            @bottom-center {
+            content: ''; 
+            /* displays nothing at the bottom of the page if you have a page rule for 
+            this zone on other pages */
+            }
+        </style>
+        <style type="text/css">
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 10px;
+            padding: 10px;
+            }
+
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            td {
+            <!-- font-family: Arial Unicode MS; -->
+            font-family:"Sans-Serif";
+            font-size: 10px;
+            padding: 2px;
+            }
+            th {
+            font-family:"Sans-Serif";
+            font-size: 10px;
+            padding: 2px;
+            font-weight: bold;
+            }
+            .isbold {
+            font-weight: bold;
+            }
+            .fl {
+            font-weight: bold;
+            text-align: right;
+            }
+            .topline {
+            border-top-style: solid;
+            }
+            .bottomline {
+            border-bottom-style: solid;
+            border-width: 1px;
+            }
+            .qlogo {
+            max-height: 200px;
+            max-width: 500px;
+            }
+
+            .border {
+            padding:1px;
+            border:1px solid black;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            
+        </style>
+    </head>
+    <div class="header">
+        <table width="100%" border="0">
+            <tr>
+                <td align="left" style="padding:20px;"><apex:image width="200" url="/servlet/servlet.ImageServer?id=015E0000006LhY8&oid={!OrgId}"/></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- Contact -->
+    <div class="content">
+        <apex:variable value="{!if(pq.Template__c ='Standard' || pq.Template__c = NULL,TRUE,FALSE)}" var="StandardTemplate"/>
+        <table width="100%" border="0">
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Cutomer}"/>:&nbsp;</td>
+                <td>{!pq.Account_Name__r.Name}&nbsp;</td>
+                <apex:outputText >
+                    <td colspan="2" class="fl">Teleflex Medical Australia</td>
+                </apex:outputText>
+            </tr>
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Address}"/>:&nbsp;</td>
+                <td>{!pq.Account_Name__r.BillingStreet}&nbsp;</td>
+                <apex:outputText >
+                    <td colspan="2" class="fl">Level 4, 197 Coward Street</td>
+                </apex:outputText>
+            </tr>
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Location}"/>:&nbsp;</td>
+                <td>{!pq.Account_Name__r.BillingCity}, {!pq.Account_Name__r.BillingState} {!pq.Account_Name__r.BillingPostalCode}&nbsp;</td>
+                <apex:outputText >
+                    <td colspan="2" class="fl">Mascot, NSW, Australia</td>
+                </apex:outputText>
+            </tr>
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Cutomer}"/>&nbsp;#:&nbsp;</td>
+                <td>{!pq.Account_Name__r.SAP_Sold_To__c}&nbsp;</td>
+                <apex:outputText >
+                    <td colspan="2" class="fl">Cust. Service 1300 360 226</td>
+                </apex:outputText>
+            </tr>
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Attn}"/>:&nbsp;</td>
+                <td>
+                    <apex:outputText rendered="{!pq.Contact_Name__r.salutation != NULL}" escape="false" value="{!pq.Contact_Name__r.salutation}&nbsp;"/>{!pq.Contact_Name__r.name}&nbsp;
+                </td>
+                <apex:outputText >
+                    <td colspan="2" class="fl">Email: austcs@teleflex.com</td>
+                </apex:outputText>
+            </tr>
+            <tr>
+                <td class="fl"></td>
+                <td></td>
+                <apex:outputText >
+                    <td colspan="2" class="fl">Website: www.teleflex.com.au</td>
+                </apex:outputText>
+            </tr>
+            <tr>
+                <td class="fl"></td>
+                <td></td>
+                <apex:outputText >
+                    <td colspan="2" class="fl">ABN: 74 096 142 675</td>
+                </apex:outputText>
+            </tr>
+            <apex:outputText rendered="{!userRegion = 'Canada'}">
+              <tr>
+                <td class="fl"></td>
+                <td></td>
+                <td colspan="2" class="fl">NOTE: Applicable taxes will apply.</td>
+              </tr>
+            </apex:outputText>
+
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Phone}"/>:&nbsp;</td>
+                <td>{!pq.Contact_Name__r.phone}&nbsp;</td><td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Committed}"/>:&nbsp;</td>
+                <td>
+                    <apex:outputText value="{0,date,long}">
+                        <apex:param value="{!pq.Commit_Date__c}" />
+                    </apex:outputText>&nbsp;
+                </td>
+                <td class="fl" align="right"><apex:outputText value="{!$Label.PP_Print_Quote_Expiration}"/>:&nbsp;
+                    <apex:outputText value="{0,date,long}">
+                        <apex:param value="{!pq.Expiration_Date__c}" />
+                    </apex:outputText>&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="fl"><apex:outputText value="{!$Label.PP_Print_Quote_Quote}"/>&nbsp;#:&nbsp;</td>
+                <td>{!pq.name}&nbsp;</td>
+                <td class="fl" align="right">
+                    <apex:outputText value="{!$Label.PP_Print_Quote_Description}"/>:&nbsp;
+                    <apex:outputField value="{!pq.Quote_Description__c}"/>&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="fl">
+                    <apex:outputText value="{!$Label.PP_Print_Quote_Representative}"/>:&nbsp;
+                </td>
+                <td width="50%">{!pq.Owner_Full_Name__c}</td>
+                <td class="fl" align="right">
+                    <apex:outputText value="{!$Label.PP_Print_Quote_Email}"/>:&nbsp;{!pq.Owner_Email__c}
+                </td>
+            </tr>
+            <tr>
+                <td class="fl">
+                    <apex:outputText value="{!$Label.PP_Print_Quote_Telephone}"/>:&nbsp;
+                </td>
+                <td>{!pq.Owner_Phone__c}</td>
+                <td class="fl" align="right">
+                    <apex:outputText value="{!$Label.PP_Print_Quote_Mobile}"/>:&nbsp;{!pq.Owner_Cell__c}
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <table width="100%" tableborder="0" Style="font-size:10px">
+            <tr>
+                <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><apex:outputText value="{!$Label.PP_Print_Quote_Material}"/></th>
+                <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center>Sales Org</center></th>
+                <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center><apex:outputText value="{!$Label.PP_Print_Quote_Brand}"/></center></th>
+                <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center><apex:outputText value="{!$Label.PP_Print_Quote_Description}"/></center></th>
+                <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center>#/SU</center></th>
+                <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center>SUoM</center></th>
+
+                <apex:outputText rendered="{!pq.Show_List_Price__c = TRUE}">
+                    <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center>&nbsp;<apex:outputText value="{!$Label.PP_Print_Quote_List_Price}"/><br/>({!pq.CurrencyIsoCode})</center></th>
+                </apex:outputText>
+                <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center>&nbsp;
+                    <!-- Sales Price -->
+                    <apex:outputText value="{!$Label.PP_Print_Quote_SalesPrice}"/><br/>({!pq.CurrencyIsoCode})</center></th>
+                <apex:outputText rendered="{!StandardTemplate}">
+                    <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center>Qty</center></th>
+                    <apex:outputText rendered="{!pq.Type__c == 'Sales Per Each'}">
+                        <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center><apex:outputText value="Price Per Each"/><br/>({!pq.CurrencyIsoCode})</center></th>
+                        <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center><apex:outputText value="Total Price Per Each"/><br/>({!pq.CurrencyIsoCode})</center></th> 
+                    </apex:outputText>
+                    <apex:outputText rendered="{!pq.Type__c != 'Sales Per Each'}">
+                        <th style="border-bottom-style:solid;border-width:1px;" class="bottomline"><center>&nbsp;<apex:outputText value="{!$Label.PP_Print_Quote_Total_Price}"/><br/>({!pq.CurrencyIsoCode})</center></th>
+                    </apex:outputText>
+                </apex:outputText>
+            </tr>
+            <apex:repeat value="{!pqli}" var="li">
+                <apex:variable value="{!if(li.Material_Name__r.Sales_Org__c == 'US30','Arrow',if(li.Material_Name__r.Sales_Org__c == 'US10','TFX','') )}" var="salesOrgName"/>
+                <apex:variable value="bottomline" rendered="{!pq.Show_Images__c = FALSE || (li.Material_Name__r.Low_Res_Image__c = NULL && pq.Show_Images__c = TRUE)}" var="bottomline"/>
+                <apex:variable value="" rendered="{!AND(li.Material_Name__r.Low_Res_Image__c <> NULL, pq.Show_Images__c = TRUE)}" var="bottomline"/>
+                <apex:variable value="{!if(li.IsBold__c == TRUE,'isbold','')}" var="isbold"/>
+                <apex:variable var="bl" value="{!if(pq.Show_Images__c = FALSE || (li.Material_Name__r.Low_Res_Image__c = NULL && pq.Show_Images__c = TRUE),'border-bottom-style:solid;border-width:1px;white-space:nowrap;','')}"/>
+
+                <tr>
+                    <td style="{!bl} width:10%" class="{!bottomline} {!isbold}" >{!li.Material_Name__r.name}</td>
+                    <td style="{!bl}" class="{!bottomline} {!isbold}"><center>{!salesOrgName}</center></td>
+                    <td style="{!bl}" class="{!bottomline} {!isbold}"><center>{!li.Material_Name__r.Brand_Name__c}</center></td>
+                    <td style="border-bottom-style:solid;border-width:1px" class="{!bottomline} {!isbold}">{!li.Product_Description__c}</td>
+                    <td style="{!bl}" class="{!bottomline} {!isbold}"><center>{!li.Material_Name__r.Qty_Sales_Unit__c}</center></td>
+                    <td style="{!bl}" class="{!bottomline} {!isbold}"><center>{!li.Material_Name__r.Sales_Unit__c}</center></td>
+                    <apex:outputText rendered="{!pq.Show_List_Price__c = TRUE}">
+                        <td style="{!bl}" class="{!bottomline} {!isbold}"><center>&nbsp;
+                            <apex:outputField value="{!li.Material_Name__r.List_Price__c}"/>
+                            </center></td>
+                    </apex:outputText>
+                    <!-- Old Style
+                    <td style="{!bl}" class="{!bottomline} {!isbold}"><center>&nbsp;
+                        <apex:outputText value="{0, number, currency}">
+                            <apex:param value="{!li.Sales_Price__c}" />
+                        </apex:outputText>
+                        </center>
+                    </td>
+                    <apex:outputText rendered="{!StandardTemplate}">
+                        <td style="{!bl}" class="{!bottomline} {!isbold}"><center>{!li.Quantity__c}</center></td>
+                        <td style="{!bl}" class="{!bottomline} {!isbold}"><center>&nbsp;
+                            <apex:outputText value="{0, number, currency}">
+                                <apex:param value="{!li.Extended_Price__c}" />
+                            </apex:outputText>
+                            </center>
+                        </td>
+                    </apex:outputText>
+-->
+                    <td style="{!bl}" class="{!bottomline} {!isbold}">
+                        <center>&nbsp;
+                            <apex:outputText rendered="{!!li.Do_Not_Show_Zero_Pricing__c }">
+                                {!li.Sales_Price__c}
+                            </apex:outputText>
+                        </center>
+                    </td>
+                    <apex:outputText rendered="{!StandardTemplate}">
+                        <td style="{!bl}" class="{!bottomline} {!isbold}"><center>{!li.Quantity__c}</center></td>
+                        <apex:outputText rendered="{!pq.Type__c == 'Sales Per Each'}">
+                            <td style="{!bl}" class="{!bottomline} {!isbold}">
+                                <center>&nbsp;{!li.Price_Per_Each__c}
+                                
+                                </center>
+                            </td>
+                            <td style="{!bl}" class="{!bottomline} {!isbold}">
+                                <center>&nbsp;{!li.Total_Price_Per_Each__c}
+                                
+                                </center>
+                            </td>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!pq.Type__c != 'Sales Per Each'}">
+                            <td style="{!bl}" class="{!bottomline} {!isbold}">
+                                <center>&nbsp;{!li.Extended_Price__c}
+                                <!-- <apex:outputField value="{!li.Extended_Price__c}" /> -->
+                                </center>
+                            </td>
+                        </apex:outputText>
+                    </apex:outputText>
+                </tr>
+                <apex:outputText rendered="{!AND(pq.Show_Images__c = TRUE, li.Material_Name__r.Low_Res_Image__c <> NULL)}">
+                    <tr><td style="border-bottom-style:solid;border-width:1px;" class="bottomline" colspan="9" align="center"><div>
+                        <apex:image styleClass="border" url="{!li.Material_Name__r.Low_Res_Image__c}" />
+                        </div></td></tr>
+                </apex:outputText>
+            </apex:repeat>
+        </table><br/>
+        <apex:outputText rendered="{!StandardTemplate}">
+            <table width="100%">
+                <tr>
+                    <apex:outputText rendered="{!pq.Type__c != 'Sales Per Each'}">
+                        <td class="fl" align="right" width="100%">Grand Total:&nbsp;</td>
+                    </apex:outputText>    
+                        <td style="border-bottom-style:solid;border-width:1px;" class="bottomline text-nowrap">
+                            <apex:outputText rendered="{!pq.Type__c != 'Sales Per Each'}">{!pq.CurrencyIsoCode}&nbsp;</apex:outputText>
+                            <apex:outputText value="{0,number,#,##0.00}" rendered="{!pq.Type__c != 'Sales Per Each'}">
+                                <apex:param value="{!pq.Grand_Total__c}" />
+                            </apex:outputText>
+                        </td>
+                </tr>
+            </table>
+        </apex:outputText>
+        <br/>&nbsp;
+        <apex:outputPanel rendered="{!pq.Customer_comments__c != NULL}">
+            <table align="center" width="400px">
+                <tr><th style="padding: 5px;"><center>Comments</center></th></tr>
+                <tr>
+                    <td class="border" style="padding: 5px;">
+                        <apex:outputField value="{!pq.Customer_comments__c}"/>
+                    </td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+
+    </div>
+    <!-- End Header -->
+    <div class="footer"><center>Page <span class="pagenumber"/> of <span class="pagecount"/></center>
+    </div>
+    <!--
+    <div class="footer">
+        <table width="100%" align="right" style="padding:50px;">
+            <tr>
+                <td style="width: 250px;">&nbsp;</td>
+                <td>Page <span class="pagenumber"/> of <span class="pagecount"/></td>
+                <td align="right" style="width: 275px;"><img style="max-height:28px;" src="{!sm[pq.Stationary__c].Footer__c}" height="28px"/></td>
+            </tr>
+        </table>
+    </div>
+    -->
+    
+    <!-- Start: Terms and Conditions -->
+    <div class="page-break">
+        <table>
+            <!-- <apex:iframe frameborder="true" scrolling="true" src="{!$Site.Domain}/servlet/servlet.FileDownload?file={!Document1}"/> -->
+            <!-- <apex:image width="95%" url="/servlet/servlet.FileDownload?id=0810t0000000hKI"/> -->
+            <apex:image width="95%" url="{!$Resource.AustraliaTermsConditions1}"/>
+            <apex:image width="95%" url="{!$Resource.AustraliaTermsConditions2}"/>
+        </table>
+    </div>
+    <!-- End: Terms and Conditions -->
+</apex:page>

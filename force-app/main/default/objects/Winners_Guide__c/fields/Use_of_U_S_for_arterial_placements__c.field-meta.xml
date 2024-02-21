@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_of_U_S_for_arterial_placements__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Current policy and procedure include use of U/S for arterial placements?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Current policy and procedure include use of U/S for arterial placements?</inlineHelpText>
+    <label>Use of U/S for arterial placements?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

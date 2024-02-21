@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Education_Plan_to_RCEM_for_approval__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Send Education Plan to RCEM for approval</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Send Education Plan to RCEM for approval</inlineHelpText>
+    <label>Send Education Plan to RCEM for approval</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,360 @@
+<!-- Page: -->
+<apex:page id="thePage">
+    
+    <style>
+        #atar td{
+        color:#013073;
+        font-size:14px;
+        font-weight: bold;
+        }
+        .centerContent h1{
+            color: rgb(0, 48, 115);
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 23px;
+            font-weight: bold;
+            height: 25px;
+            line-height: 25px;
+            margin-bottom: 20px;
+            margin-left: 0px;
+            margin-right: -25px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            text-align: left;
+            width: 535px;
+        }
+        .centerContent h3{
+            color: rgb(75, 75, 75);
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            height: 18px;
+            line-height: 18px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            text-align: left;
+            text-decoration: none;
+            width: 510px;
+        }
+        .centerContent h4{
+            color: rgb(75, 75, 75);
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            height: 16px;
+            line-height: 16px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            width: 510px;
+        }
+        .centerContent a{
+            color: rgb(33, 89, 182);
+            display: inline;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: normal;
+            height: auto;
+            line-height: 16px;
+            text-decoration: none;
+            width: auto;
+        }
+        .activeTab {
+            background-color: 86,161,213;
+            color: #013073;
+            background-image:none;
+            border-top:2px solid rgb(86,161,213);
+            font-size:14px;
+        }
+        .inactiveTab {
+            background-color: white;
+            color:#013073;
+            background-image:none;
+            font-size:14px;
+        }
+        .firstFour {
+            color:#013073;
+            background-image:none;
+            font-size:14px;
+            font-weight: bold;
+        }
+        .secondFour {
+            color:green;
+            background-image:none;
+            font-size:14px;
+            font-weight: bold;
+        }
+        .innerContent {
+            background-color:white;
+        }
+        .arrowHeader {
+            width:100%;
+            height:65px;
+            border-bottom: 1px solid #7daed6;
+            margin-bottom:10px;
+        }
+        .arrowTop-border {
+            width:100%;
+            height:13px;
+            background-image: URL("{!$Resource.topBorderFill}");
+        }
+        #arrowColorsTopRight {
+            position:absolute;
+            right:10px;
+        }
+        #arrowHeaderText {
+            color:rgb(86,161,213);
+            position:absolute;
+            left:10px;
+            top:35px;
+            font-size:30px;
+            font-family: Helvetica, Arial, sans-serif;
+            margin-top:0px;
+            margin-bottom:0px;
+        }
+        #arrowLogoTopRight {
+            position:absolute;
+            right:30px;
+            top:30px;
+            width:95px;
+        }
+        .arrowFooter {
+            margin-top:10px;
+            height:30px;
+            width:100%;
+            background-color: #013073;
+        }
+        #teleflexLogoBottomLeft {
+            margin-top:9px;
+            margin-left:9px;
+        }
+    </style>
+
+    <script>
+        
+        function insertProductTraining(){
+            var tabSource = document.getElementById('tabSource');
+            var prodTraining = document.getElementById('prodTraining');
+            var prodTraining1 = document.getElementById('prodTraining1');
+            var tmp = tabSource.innerHTML;
+            tabSource.innerHTML = '';
+            if(prodTraining){
+                prodTraining.innerHTML=tmp;
+            }
+        }
+
+
+        function addLoadEvent(func)
+        {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function')
+            {
+                window.onload = func;
+            }
+            else
+            {
+                window.onload = function()
+                {
+                    if (oldonload)
+                    {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+
+        addLoadEvent(function()
+        {
+            insertProductTraining();
+        });
+
+    </script>
+    
+    <apex:tabPanel switchType="server" selectedTab="training" id="theTabPanel" activeTabClass="activeTab" inactiveTabClass="inactiveTab" contentClass="innerContent">
+        
+        <apex:tab label="Training Video's" name="training" id="tabOne">
+            <div id="prodTraining" style="margin-top:10px;">
+            </div>
+          </apex:tab>
+        <!--
+        <apex:tab label="Clinical Education" name="name2" id="tabTwo">
+        Video!
+            <iframe src="https://player.vimeo.com/video/162882113" width="500" height="281" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+        
+        </apex:tab>
+        -->
+    </apex:tabPanel>
+    
+    <!-- Start of 1st Tabsource -->
+    <div id="tabSource" style="display:none;">
+        <apex:tabPanel switchType="client" selectedTab="AM" id="cvcTabPanel" activeTabClass="activeTab" inactiveTabClass="inactiveTab" contentClass="innerContent">
+            <apex:tab label="Airway Management" name="AM" id="amTab" styleClass="firstFour">
+                <table id="atar">
+                    <tr>
+                        <td style="min-width: 450px;">
+                            <h3>LMA</h3>
+                            <ul>
+                                <li>LMA® Protector™</li>
+                                <ul>
+                                <li><apex:outputLink target="theFrame" value="https://player.vimeo.com/video/172905253">Jaw Thrust Maneuver</apex:outputLink></li>
+                                <li><apex:outputLink target="theFrame" value="https://player.vimeo.com/video/169146327">Cuff Pilot &amp; Endotest</apex:outputLink></li>
+                                </ul>
+                                <li>LMA® Unique with Silicone™</li>
+                                <ul>
+                                <li><apex:outputLink target="theFrame" value="https://player.vimeo.com/video/169146326">CuffPressures - Inflated vs. Non</apex:outputLink></li>
+                                <li><apex:outputLink target="theFrame" value="https://player.vimeo.com/video/169146327">Cuff Pilot &amp; Endotest</apex:outputLink></li>
+                                </ul>                                
+                                <li>LMA® Unique Evo™</li>
+                                <ul>
+                                <li><apex:outputLink target="theFrame" value="https://player.vimeo.com/video/169146327">Cuff Pilot &amp; Endotest</apex:outputLink></li>
+                                </ul>
+                                <li>LMA® Supreme™</li>
+                            </ul>
+                            <h3>Rusch® Single Use Laryngoscopes</h3>
+                            <ul>
+                                <li>DispoLED®</li>
+                                <li>Green Rusch Lite®</li>
+                                <li>DispGrip®</li>
+                                <li>EquipLite®</li>
+                                <li>TruLite®</li>
+                                <ul>
+                                <li><apex:outputLink target="theFrame" value="https://player.vimeo.com/video/172905255">Rusch TruLite vs. Flexicare BrightBlade Pro</apex:outputLink></li>
+                                </ul>
+                                <li>Airtraq®</li>
+                            </ul>
+                            
+                            
+                            <h3>Atomization</h3>
+                            <ul>
+                                <li>MADgic®</li>
+                                <li>MADomizer®</li>
+                                <li>MAD Nasal™</li>
+                            </ul>
+                            
+                            <h3>Endotracheal Tubes</h3>
+                            <ul>
+                                <li>Rusch</li>
+                                <li>Sheridan</li>                    
+                            </ul>
+                            
+                            <h3>One Lung Ventilation</h3>
+                            <ul>
+                                <li>EZ Blocker™</li>
+                                <li>Sher-I-Bronch®</li>                    
+                            </ul>
+                            
+                            <h3>Other</h3>
+                        </td>
+                        <td>
+                            <center>
+                                <apex:iframe id="theFrame" width="640" height="360" frameborder="false" html-webkitallowfullscreen="true" html-mozallowfullscreen="true" html-allowfullscreen="true"/>                            
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+                
+            </apex:tab>
+            <apex:tab label="Pain Management" name="PM" id="pmTab" styleClass="firstFour">
+                <table id="atar">
+                    <tr>
+                        <td style="min-width: 350px;"><h3>Pain Pumps</h3>
+                            <ul>
+                            <li>Autofuser®</li>
+                                <ul>
+                                <li><apex:outputLink target="theFrame2" value="https://player.vimeo.com/video/172905252">Positioning AutoFuser Pain Pump Against On-Q Pain Pump</apex:outputLink></li>
+                                <li><apex:outputLink target="theFrame2" value="https://player.vimeo.com/video/169146325">AmbuPump</apex:outputLink></li>
+                                </ul>
+                            </ul>
+                            
+                            <h3>Epidurals</h3>
+                            <ul>
+                                <li>FlexTip-Plus®</li>
+                                <li>TheraCath®</li>
+                            </ul>
+                            
+                            <h3>Peripheral Nerve Blocks</h3>
+                            <ul>
+                                <li>FlexBlock®</li>
+                                <li>StimuCath®</li>
+                            </ul>
+                            
+                            <h3>Incisional Catheters</h3>
+                            <ul>
+                                <li>MOOG®</li>
+                                <li>Pajunk Infiltralong®</li>
+                            </ul>
+
+                            <h3>Other</h3>
+                        </td>
+                        <td>
+                            <center>
+                                <apex:iframe id="theFrame2" width="640" height="360" frameborder="false" html-webkitallowfullscreen="true" html-mozallowfullscreen="true" html-allowfullscreen="true"/>                            
+                            </center>
+                        </td>
+                    
+                    </tr></table>
+                
+
+            </apex:tab>
+            <apex:tab label="Emergency Medicine" name="EM" id="emTab" styleClass="firstFour">
+                <table id="atar">
+                <tr>
+                    <td style="min-width: 350px;">
+                        <h3>Vascular Access</h3>
+                        <ul>
+                            <li>EZ-IO®</li>
+                            <ul>
+                                <li><apex:outputLink target="theFrame3" value="https://player.vimeo.com/video/169147697">Quichtrach Insertion</apex:outputLink></li>
+                                <li><apex:outputLink target="theFrame3" value="https://player.vimeo.com/video/172905254">Proximal Tibia Arrow EZ-IO</apex:outputLink></li>
+                            </ul>
+                        </ul>
+                        
+                        <h3>Airway Management</h3>
+                        <ul>
+                            <li>LMA® Supreme™</li>
+                            <li>LMA® Unique EVO™</li>
+                            <li>Quicktrach®</li>
+                            <li>Airtraq®</li>
+                            <li>LMA® Fastrach™</li>
+                            <li>DispoLED®</li>
+                            <li>Green Rusch Lite®</li>
+                            <li>TruLite®</li>
+                        </ul>
+                        
+                        <h3>Atomization</h3>
+                        <ul>
+                            <li>MAD Nasal™</li>
+                        </ul>
+                        <h3>Other</h3>
+                    </td>
+                    <td>
+                        <center>
+                            <apex:iframe id="theFrame3" width="640" height="360" frameborder="false" html-webkitallowfullscreen="true" html-mozallowfullscreen="true" html-allowfullscreen="true"/>                            
+                        </center>
+                    </td>
+                    
+                </tr></table>
+            </apex:tab>
+        </apex:tabPanel>
+    </div>
+    <!-- End of 1st Tabsource -->
+    
+    
+</apex:page>

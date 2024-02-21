@@ -1,0 +1,84 @@
+<apex:page controller="PP_Agreement_Detail" 
+           contentType="{!rxls}"
+           renderAs="{!rpdf}"
+           applyBodyTag="false" 
+           sidebar="false" 
+           showHeader="false"
+           readOnly="true"
+           cache="true">
+    <head>
+        <style type="text/css">
+            table {
+            border-collapse: collapse;
+            }
+            table, td, th {
+            border: 1px solid black;
+            }
+            br {
+            mso-data-placement:same-cell;
+            }
+            span {
+            white-space:nowrap;
+            }
+            body { font-family: Arial Unicode MS; }
+            .text{
+            mso-number-format:"\@";/*force text*/
+            }
+        </style>
+    </head>
+    <apex:variable var="emeaUser" value="{!IF(contains($UserRole.Name,'EMEA'),TRUE,FALSE)}"/>
+    <table style="width:100%;">
+        <tr>
+            <th align="center">Material Number</th>
+            <th align="center">Description</th>
+            <th align="center">SU</th>
+            <th align="center">#SU</th>
+            <th align="center"><center>
+                <span>{!ad.Description__c}
+                    <br/>
+                    {!ad.Agreement_Number__c}
+                    <br/>
+                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                        <apex:param value="{!ad.Valid_From__c}" />
+                    </apex:outputText>&nbsp;to&nbsp;
+                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                        <apex:param value="{!ad.Valid_To__c}" />
+                    </apex:outputText><br/>
+                </span></center>
+                </th>
+        </tr>
+        <!-- Build out the data -->
+        <apex:repeat value="{!plist}" var="p" id="theRepeatmaterial">
+            <tr>
+                <td class="text">{!p.Product__r.Name}</td>
+                <td>{!p.Product__r.Description}</td>
+                <td align="center">{!p.Product__r.Sales_Unit__c}</td>
+                <td align="center">{!p.Product__r.Qty_Sales_Unit__c}</td>
+                <td align="center">
+                    <apex:outputText value="{0,number,#,##0.00}" rendered="{!!emeaUser}">$ 
+                        <apex:param value="{!p.Price__c}"/>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!emeaUser}">
+                       {!p.CurrencyIsoCode} {!p.Price__c}
+                    </apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+        <apex:repeat value="{!plist2}" var="p" id="theRepeatmaterial2">
+            <tr>
+                <td class="text">{!p.Product__r.Name}</td>
+                <td>{!p.Product__r.Description}</td>
+                <td align="center">{!p.Product__r.Sales_Unit__c}</td>
+                <td align="center">{!p.Product__r.Qty_Sales_Unit__c}</td>
+                <td align="center">
+                    <apex:outputText value="{0,number,#,##0.00}" rendered="{!!emeaUser}">$ 
+                        <apex:param value="{!p.Price__c}"/>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!emeaUser}">
+                        {!p.CurrencyIsoCode} {!p.Price__c}
+                    </apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+    </table>
+</apex:page>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The name of the product family associated with this opportunity.</inlineHelpText>
+    <label>Product Family Old</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Access</fullName>
+                <default>false</default>
+                <label>Access</label>
+            </value>
+            <value>
+                <fullName>Acute</fullName>
+                <default>false</default>
+                <label>Acute</label>
+            </value>
+            <value>
+                <fullName>Aerosol Therapy</fullName>
+                <default>false</default>
+                <label>Aerosol Therapy</label>
+            </value>
+            <value>
+                <fullName>Airway</fullName>
+                <color>#A53711</color>
+                <default>false</default>
+                <label>Airway</label>
+            </value>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Arterial</fullName>
+                <color>#E27001</color>
+                <default>false</default>
+                <label>Arterial</label>
+            </value>
+            <value>
+                <fullName>Auto Ligation</fullName>
+                <default>false</default>
+                <label>Auto Ligation</label>
+            </value>
+            <value>
+                <fullName>Automatization</fullName>
+                <default>false</default>
+                <label>Automatization</label>
+            </value>
+            <value>
+                <fullName>Cardiac</fullName>
+                <default>false</default>
+                <label>Cardiac</label>
+            </value>
+            <value>
+                <fullName>Caregiver Safety</fullName>
+                <default>false</default>
+                <label>Caregiver Safety</label>
+            </value>
+            <value>
+                <fullName>Central Venous Access</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>Central Venous Access</label>
+            </value>
+            <value>
+                <fullName>Chest Drainage</fullName>
+                <default>false</default>
+                <label>Chest Drainage</label>
+            </value>
+            <value>
+                <fullName>Dialysis Access</fullName>
+                <default>false</default>
+                <label>Dialysis Access</label>
+            </value>
+            <value>
+                <fullName>Endurance</fullName>
+                <default>false</default>
+                <label>Endurance</label>
+            </value>
+            <value>
+                <fullName>EZ-IO</fullName>
+                <color>#999999</color>
+                <default>false</default>
+                <label>EZ-IO</label>
+            </value>
+            <value>
+                <fullName>Fascial closure</fullName>
+                <default>false</default>
+                <label>Fascial closure</label>
+            </value>
+            <value>
+                <fullName>General Specialties</fullName>
+                <default>false</default>
+                <label>General Specialties</label>
+            </value>
+            <value>
+                <fullName>IAB</fullName>
+                <default>false</default>
+                <label>IAB</label>
+            </value>
+            <value>
+                <fullName>Instruments</fullName>
+                <default>false</default>
+                <label>Instruments</label>
+            </value>
+            <value>
+                <fullName>Interventional Procedures</fullName>
+                <default>false</default>
+                <label>Interventional Procedures</label>
+            </value>
+            <value>
+                <fullName>IR JACC</fullName>
+                <default>false</default>
+                <label>IR JACC</label>
+            </value>
+            <value>
+                <fullName>Ligation</fullName>
+                <default>false</default>
+                <label>Ligation</label>
+            </value>
+            <value>
+                <fullName>LMA</fullName>
+                <default>false</default>
+                <label>LMA</label>
+            </value>
+            <value>
+                <fullName>Minilap</fullName>
+                <default>false</default>
+                <label>Minilap</label>
+            </value>
+            <value>
+                <fullName>OnControl</fullName>
+                <default>false</default>
+                <label>OnControl</label>
+            </value>
+            <value>
+                <fullName>Other (Third Party)</fullName>
+                <default>false</default>
+                <label>Other (Third Party)</label>
+            </value>
+            <value>
+                <fullName>Oxygen Therapy</fullName>
+                <default>false</default>
+                <label>Oxygen Therapy</label>
+            </value>
+            <value>
+                <fullName>Pain Management</fullName>
+                <color>#66E9BD</color>
+                <default>false</default>
+                <label>Pain Management</label>
+            </value>
+            <value>
+                <fullName>Passive Humidification</fullName>
+                <default>false</default>
+                <label>Passive Humidification</label>
+            </value>
+            <value>
+                <fullName>Percuvance</fullName>
+                <default>false</default>
+                <label>Percuvance</label>
+            </value>
+            <value>
+                <fullName>PICCs/Midline</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>PICCs/Midline</label>
+            </value>
+            <value>
+                <fullName>Port(s)</fullName>
+                <default>false</default>
+                <label>Port(s)</label>
+            </value>
+            <value>
+                <fullName>Pulmonary Hygiene</fullName>
+                <default>false</default>
+                <label>Pulmonary Hygiene</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Right Heart</fullName>
+                <default>false</default>
+                <label>Right Heart</label>
+            </value>
+            <value>
+                <fullName>Sheaths</fullName>
+                <default>false</default>
+                <label>Sheaths</label>
+            </value>
+            <value>
+                <fullName>Suture</fullName>
+                <default>false</default>
+                <label>Suture</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>VPS</fullName>
+                <color>#A845DC</color>
+                <default>false</default>
+                <label>VPS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

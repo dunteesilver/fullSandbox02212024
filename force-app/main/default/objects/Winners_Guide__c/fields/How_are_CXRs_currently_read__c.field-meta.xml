@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_are_CXRs_currently_read__c</fullName>
+    <description>How are CXRs currently read?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How are CXRs currently read?</inlineHelpText>
+    <label>How are CXRs currently read?</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

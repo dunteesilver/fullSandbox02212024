@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assumption</fullName>
+                <default>false</default>
+                <label>Assumption</label>
+            </value>
+            <value>
+                <fullName>Benefit</fullName>
+                <default>false</default>
+                <label>Benefit</label>
+            </value>
+            <value>
+                <fullName>Code</fullName>
+                <default>false</default>
+                <label>Code</label>
+            </value>
+            <value>
+                <fullName>Dependency</fullName>
+                <default>false</default>
+                <label>Dependency</label>
+            </value>
+            <value>
+                <fullName>Design</fullName>
+                <default>false</default>
+                <label>Design</label>
+            </value>
+            <value>
+                <fullName>Out of Scope</fullName>
+                <default>false</default>
+                <label>Out of Scope</label>
+            </value>
+            <value>
+                <fullName>Release Notes</fullName>
+                <default>false</default>
+                <label>Release Notes</label>
+            </value>
+            <value>
+                <fullName>Wish List</fullName>
+                <default>false</default>
+                <label>Wish List</label>
+            </value>
+            <value>
+                <fullName>Task</fullName>
+                <default>false</default>
+                <label>Task</label>
+            </value>
+            <value>
+                <fullName>Test</fullName>
+                <default>false</default>
+                <label>Test</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

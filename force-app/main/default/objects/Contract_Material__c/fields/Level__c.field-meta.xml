@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Level__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Exceptions */
+/* Price Equals one of the Tiers and the Tiers equal themselves */
+if(
+AND(
+OR(
+Rep_Price__c = RSM_Price__c,
+RSM_Price__c = Director_Price__c,
+Director_Price__c = VP_Price__c
+),
+OR(
+Price__c = Rep_Price__c,
+Price__c = RSM_Price__c,
+Price__c = Director_Price__c,
+Price__c = VP_Price__c
+)
+),
+Level_Fix__c,
+
+/* Price is between REP and List but RSM and REP equal each other contract is set for RSM */
+if(
+AND(
+Rep_Price__c = RSM_Price__c,
+Price__c &gt;= RSM_Price__c
+),
+Level_Fix__c,
+
+/* Normal */
+/* Rep Level */
+if(
+OR(
+Price__c &gt;= Rep_Price__c,
+AND(
+Price__c &lt;= List_Price__c,
+Price__c &gt;= Rep_Price__c
+)),
+1,
+/* RSM Level */
+if(
+OR(
+Price__c &gt;= RSM_Price__c,
+AND(
+Price__c &lt;= List_Price__c,
+Price__c &gt;= RSM_Price__c
+)),
+2,
+/* DIR Level */
+if(
+OR(
+Price__c &gt;= Director_Price__c,
+AND(
+Price__c &lt;= List_Price__c,
+Price__c &gt;= Director_Price__c 
+)),
+3,
+/* VP Level */
+if(
+OR(
+Price__c &gt;= VP_Price__c,
+AND(
+Price__c &lt;= List_Price__c,
+Price__c &gt;= VP_Price__c 
+)),
+4,
+Level_Fix__c
+))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Level</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

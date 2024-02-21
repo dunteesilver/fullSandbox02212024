@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Converted_to_Account_Contact_Only__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+IsConverted=TRUE,
+NOT(ISBLANK(ConvertedAccountId)),
+NOT(ISBLANK(ConvertedContactId)),
+ISBLANK(ConvertedOpportunityId))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Converted to Account/Contact Only</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

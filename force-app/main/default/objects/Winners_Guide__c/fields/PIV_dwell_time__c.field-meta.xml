@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PIV_dwell_time__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>PIV dwell time (clinically indicated or dwell hours, e.g. 72/96 hrs)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>PIV dwell time (clinically indicated or dwell hours, e.g. 72/96 hrs)</inlineHelpText>
+    <label>PIV dwell time</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

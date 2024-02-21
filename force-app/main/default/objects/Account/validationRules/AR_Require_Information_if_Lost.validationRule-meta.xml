@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AR_Require_Information_if_Lost</fullName>
+    <active>false</active>
+    <description>If the Account At Risk is set to Lost</description>
+    <errorConditionFormula>AND(TEXT( A_R_at_risk_status__c )  = &quot;Lost&quot;, Text( A_R_At_Risk_Competitor__c ) = &quot;&quot;)</errorConditionFormula>
+    <errorMessage>Please enter the competitor this account was lost to.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Flag_Reason_Beta__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Test the Material Status */ 
+IF(Material_Status_Check__c = 1, 
+&quot;Material is not Saleable&quot;, 
+
+/* Main Section */ 
+/* These rules should cover 99% of Line Items */ 
+
+/* Pricing Tiers */ 
+if( 
+AND( 
+Check_Sales_Org_Key__c = &quot;US103010&quot;, 
+Check_Business_Unit__c &lt;&gt; &quot;Surgical Instruments&quot;, 
+Eligible_Price__c &lt;&gt; Requested_Price__c,
+List_Price__c &lt;&gt; Requested_Price__c,
+Requested_Price_PT__c &lt;&gt; Requested_Price__c
+),&quot;Requested Price should be List, on Contract, or a Pricing Tier&quot;, 
+
+/* Requested Price is outside RSM Guidelines */ 
+IF( 
+AND( 
+List_Price__c != 0, 
+Eligible_Price__c &lt;&gt; Requested_Price__c, 
+Requested_Price__c &lt; RSM_Price__c
+),&quot;Requested Price is outside RSM Guidelines&quot;, 
+
+/* Requested Price is outside Rep Guidelines */ 
+IF( 
+AND( 
+List_Price__c != 0, 
+Eligible_Price__c &lt;&gt; Requested_Price__c, 
+Requested_Price__c &lt; Rep_Price__c, 
+Owner_Approval_Level__c = 1 
+),&quot;Requested Price is outside Rep Guidelines&quot;, 
+
+/* These are the exceptions that get sent to the RSM to sort out */ 
+
+/* REP BIDS - Requested Price is outside RSM Guidelines */ 
+IF( 
+AND( 
+Owner_Approval_Level__c = 2, 
+Requested_Price__c &lt; RSM_Price__c, 
+LEFT(Sales_Deal_Description__c,3) = &quot;[*]&quot; 
+),&quot;Contract Price is Below RSM Price - Still Needs Approval. (REP BIDS/Advance Edit)&quot;, 
+
+/* REP BIDS - Requested Price is outside Rep Guidelines */ 
+IF( 
+AND( 
+Owner_Approval_Level__c = 1, 
+Requested_Price__c &lt; Rep_Price__c, 
+LEFT(Sales_Deal_Description__c,3) = &quot;[*]&quot; 
+),&quot;Contract Price is Below Rep Price - Still Needs Approval. (REP BIDS/Advance Edit)&quot;, 
+
+
+/* Off Contract and List Price is Zero */ 
+IF( 
+AND( 
+Requested_Price__c = 0, 
+List_Price__c = 0 
+),&quot;Off Contract and List Price is Zero&quot;, 
+
+/* When RSM and Rep Price is Zero, Requested Price must Equal List Price or Require Approval */ 
+IF( 
+AND( 
+Rep_Price__c = 0, 
+RSM_Price__c = 0, 
+ISBLANK(Sales_Deal_Description__c), 
+List_Price__c &lt;&gt; Requested_Price__c 
+),&quot;When RSM and Rep Price is Zero, Requested Price must Equal List Price or Require Approval&quot;, 
+
+/* Requested Price is above Contract Price */ 
+IF( 
+AND( 
+!ISBLANK(Sales_Deal_Description__c), 
+Requested_Price__c &gt; Eligible_Price__c 
+),&quot;Requested Price is above Contract Price&quot;, 
+
+/* Requested Price is above List Price */ 
+IF( 
+AND( 
+List_Price__c != 0, 
+Requested_Price__c &gt; List_Price__c, 
+Eligible_Price__c &lt;&gt; Requested_Price__c 
+),&quot;Requested Price is above List Price&quot;, 
+
+/* When List is Zero, Requested Price has to equal Rep Pricing */ 
+IF( 
+AND( 
+List_Price__c = 0, 
+Requested_Price__c != Rep_Price__c, 
+ISBLANK(Sales_Deal_Description__c) 
+),&quot;When List is Zero, Requested Price has to equal Rep Pricing&quot;, 
+&quot;Ready&quot; 
+) 
+) 
+) 
+)
+)
+) 
+) 
+) 
+) 
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Flag Reason Beta</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

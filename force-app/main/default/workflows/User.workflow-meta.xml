@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>EMEA_New_Hire_Welcome_Email</fullName>
+        <description>EMEA - New Hire Welcome Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Manager_s_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Administrators/EMEA_Welcome_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Hire_Welcome_Email</fullName>
+        <description>New Hire Welcome Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Manager_s_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Administrators/Welcome_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>New_User_Notification_for_SteepRock_Setup</fullName>
+        <description>New User Notification for SteepRock Setup</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/New_User_Notification_for_SteepRock_Setup</template>
+    </alerts>
+    <alerts>
+        <fullName>Rule_User_Inactivity_75_day_temp</fullName>
+        <ccEmails>LESLIE.COLLINS@TELEFLEX.COM</ccEmails>
+        <description>Rule User Inactivity 75 day temp</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/User_Deactivation_Inactivity_75_Day_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Deactivated_Email_notification</fullName>
+        <ccEmails>Leslie.collins@teleflex.com</ccEmails>
+        <description>User Deactivated: Email notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/User_Deactivated_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Deactivation_Inactivity_75_Days</fullName>
+        <ccEmails>Leslie.Collins@teleflex.com</ccEmails>
+        <description>User Deactivation: Inactivity 75 Days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/User_Deactivation_Inactivity_75_Day_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Deactivation_Inactivity_85_Days</fullName>
+        <ccEmails>Leslie.Collins@teleflex.com</ccEmails>
+        <description>User Deactivation: Inactivity 85 Days</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/User_Deactivation_Inactivity_85_Day_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Login</fullName>
+        <description>Email notification of inactive logins</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Teleflex_Global_IT</recipient>
+            <type>roleSubordinates</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/User_Deactivation_Inactivity_85_Day_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_Notification_User_has_been_created</fullName>
+        <description>VA Notification User has been created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fred.sorino@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Notification_of_VA_user_created</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_Manager_s_Email_to_User</fullName>
+        <field>Manager_s_Email__c</field>
+        <formula>Manager.Email</formula>
+        <name>Add Manager&apos;s Email to User</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Remove_Checkbox</fullName>
+        <field>Send_Welcome_email__c</field>
+        <literalValue>0</literalValue>
+        <name>Remove Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_User_Region_to_Inside_Sales</fullName>
+        <description>Set User Region to Inside Sales</description>
+        <field>Region__c</field>
+        <literalValue>Inside Sales</literalValue>
+        <name>Set User Region to Inside Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Deactivate_Date</fullName>
+        <field>Deactivate_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Deactivate Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Deactivation_Update_User_Notes</fullName>
+        <description>Updates the notes field on the user record to state the user was deactivated due to an auto process</description>
+        <field>Notes__c</field>
+        <formula>&quot;User was deactivated due to a automatic process that deactivates users after 90 days of inactivity&quot;</formula>
+        <name>User Deactivation: Update User Notes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Deactiviation_Auto_uncheck_Active</fullName>
+        <description>Automatically deactivates users that have not logged in within the past 90 days.</description>
+        <field>IsActive</field>
+        <literalValue>0</literalValue>
+        <name>User Deactiviation: Auto uncheck Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>EMEA - Send Welcome Email To New Users</fullName>
+        <actions>
+            <name>EMEA_New_Hire_Welcome_Email</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Remove_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( ISPICKVAL(Business_Unit__c, &quot;EMEA&quot;) ,Profile.Name &lt;&gt; &quot;Chatter External User&quot;, IsActive = TRUE, OR(ISNEW(),IsChanged(IsActive),Send_Welcome_email__c= TRUE))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Manager%27s Email on User Object</fullName>
+        <actions>
+            <name>Add_Manager_s_Email_to_User</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Manager_s_Email__c &lt;&gt; Manager.Email</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Welcome Email To New Users</fullName>
+        <actions>
+            <name>New_Hire_Welcome_Email</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Remove_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  NOT(ISPICKVAL(Business_Unit__c, &quot;EMEA&quot;)), Profile.Name &lt;&gt; &quot;Chatter External User&quot;, IsActive = TRUE, OR(ISNEW(),IsChanged(IsActive),Send_Welcome_email__c= TRUE))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set User Region to Inside Sales</fullName>
+        <actions>
+            <name>Set_User_Region_to_Inside_Sales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.UserRoleId</field>
+            <operation>contains</operation>
+            <value>Inside Sales</value>
+        </criteriaItems>
+        <description>Set User Region to Inside Sales</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Deactivate Date</fullName>
+        <actions>
+            <name>Update_Deactivate_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+ISCHANGED(IsActive),
+IsActive = FALSE
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>User Deactivation Final</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.Email</field>
+            <operation>contains</operation>
+            <value>@teleflex.com</value>
+        </criteriaItems>
+        <description>Sends an alert for users that have not logged in recently</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>User_Deactivation_Update_User_Notes</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>User_Deactiviation_Auto_uncheck_Active</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>User.LastLoginDate</offsetFromField>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>User_Deactivated_Email_notification</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>User.LastLoginDate</offsetFromField>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>User Deactivation%3A Alert 75 Day Inactivity</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.Email</field>
+            <operation>contains</operation>
+            <value>@teleflex.com</value>
+        </criteriaItems>
+        <description>Sends an alert for users that have not logged in within the last 75 days *FIRST ALERT*</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>User_Deactivation_Inactivity_75_Days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>User.LastLoginDate</offsetFromField>
+            <timeLength>75</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>User Deactivation%3A Alert 85 Day Inactivity</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.Email</field>
+            <operation>contains</operation>
+            <value>@teleflex.com</value>
+        </criteriaItems>
+        <description>Sends an alert for users that have not logged in the last 85 days *SECOND ALERT*</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>User_Deactivation_Inactivity_85_Days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>User.LastLoginDate</offsetFromField>
+            <timeLength>85</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>User Inactivity 75 day temp</fullName>
+        <actions>
+            <name>Rule_User_Inactivity_75_day_temp</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.LastLoginDate</field>
+            <operation>notEqual</operation>
+            <value>LAST 75 DAYS</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA Notification User has been created</fullName>
+        <actions>
+            <name>VA_Notification_User_has_been_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Vascular</value>
+        </criteriaItems>
+        <description>This is intended to notify Jen Miller that Vascu</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blocked_Reason__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://teleflex.my.salesforce.com/sfc/p/E0000000K31h/a/440000001LRC/eeqjt61Q8RlUeGJy4XUbxaRNZsSN_kHRrPRgBGuDLhU&quot;, 
+
+if(NOT(ISBLANK(Order_Delivery_Block_Reason__c)), Order_Delivery_Block_Reason__c &amp; BR(), NULL) &amp; 
+if(NOT(ISBLANK(Schedule_Line_Block_Reason__c)), Schedule_Line_Block_Reason__c &amp; BR(), NULL) &amp; 
+if(NOT(ISBLANK(Status_Credit_Check_Reason__c)), Status_Credit_Check_Reason__c, NULL) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Blocked Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Competitive_Product_Expertise_Req</fullName>
+    <active>true</active>
+    <description>If the user select Other for Competitive Product Expertise require the user to describe the other product.</description>
+    <errorConditionFormula>and(Text(Competitive_Product_Expertise__c) = &quot;Other&quot;,  Other_Product_Expertise__c = &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>Other_Product_Expertise__c</errorDisplayField>
+    <errorMessage>Specify product expertise</errorMessage>
+</ValidationRule>

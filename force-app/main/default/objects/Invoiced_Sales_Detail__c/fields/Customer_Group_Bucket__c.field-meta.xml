@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Group_Bucket__c</fullName>
+    <description>Created to support EMS Customer group bucketing sales to quota percent.</description>
+    <externalId>false</externalId>
+    <formula>IF( AND( Compensation_Type__c  = &quot;EZIO&quot;, Compensation_Profile__c = &quot;EMISR&quot;), &quot;EZIO&quot;,
+IF(
+AND( OR(Account__r.Customer_Group__c = &quot;02&quot;, Account__r.Customer_Group__c = &quot;13&quot;), Compensation_Type__c  = &quot;EZIO&quot;), &quot;EM EZIO&quot;,
+IF( Compensation_Type__c  = &quot;EZIO&quot;, &quot;HOSP EZIO&quot;, Compensation_Type__c
+)
+)
+)</formula>
+    <label>Customer Group Bucket</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

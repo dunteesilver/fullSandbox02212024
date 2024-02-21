@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surg_Disp_Will_replace_Poly_Amount_Req</fullName>
+    <active>true</active>
+    <description>Surgical Disposables Will this replace Polymer Ligation Sales is required.  When POI = AE-05.  Will this replace Polymer Ligation Sales is required</description>
+    <errorConditionFormula>AND(
+
+ ISPICKVAL(Product_of_Interest_GPL__c, &quot;AE-05&quot;),
+
+ ISPICKVAL(willthisreplacepolymerligationSales__c ,&quot;&quot;)
+
+
+)</errorConditionFormula>
+    <errorDisplayField>willthisreplacepolymerligationSales__c</errorDisplayField>
+    <errorMessage>Please select whether or not this AE-05 Opportunity will replace Polymer Ligations</errorMessage>
+</ValidationRule>

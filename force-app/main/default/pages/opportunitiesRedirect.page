@@ -1,0 +1,1 @@
+<apex:page standardController="Opportunity" extensions="OpportunityRedirect" tabStyle="Opportunity" showheader="true" action="{!redirect}" />

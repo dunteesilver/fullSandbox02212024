@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRF_Type_of_Inservice__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;PPT - Insertion, Care &amp; Removal&quot;) , &quot;PPT - Insertion, Care &amp; Removal&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;No PPT - Insertion, Care &amp; Removal&quot;) , &quot;No PPT - Insertion, Care &amp; Removal&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Hands On Practice&quot;) , &quot;Hands On Practice&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Brief Inservice/Demo (no PPT)&quot;) , &quot;Brief Inservice/Demo (no PPT)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Care &amp; Removal Inservice&quot;) , &quot;Care &amp; Removal Inservice&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Cadaver Lab (Local)&quot;) , &quot;Cadaver Lab (Local)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Cadaver Lab (National)&quot;) , &quot;Cadaver Lab (National)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Cadaver Lab (Regional)&quot;) , &quot;Cadaver Lab (Regional)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES( Education_Record__r.Type_of_In_Service__c , &quot;Cadaver Lab (Military)&quot;) , &quot;Cadaver Lab (Military)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Speaking Engagement&quot;) , &quot;Speaking Engagement&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Conference/Booth&quot;) , &quot;Conference/Booth&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Preceptorship&quot;) , &quot;Preceptorship&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Research&quot;) , &quot;Research&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Education&quot;) , &quot;Education&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Other&quot;) , &quot;Other&quot;,&quot; &quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Type of Inservice</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

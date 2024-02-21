@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <description>For Latin America Product Family choices. Only Latin America should see this.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose a Business Unit to see the Product Families for that Business Unit.</inlineHelpText>
+    <label>Business Unit Old</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Interventional Capital</fullName>
+                <default>false</default>
+                <label>Interventional Capital</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Surgical</fullName>
+                <default>false</default>
+                <label>Surgical</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Vascular</fullName>
+                <default>false</default>
+                <label>Vascular</label>
+            </value>
+            <value>
+                <fullName>Interventional</fullName>
+                <default>false</default>
+                <label>Interventional</label>
+            </value>
+            <value>
+                <fullName>LMA</fullName>
+                <default>false</default>
+                <label>LMA</label>
+            </value>
+            <value>
+                <fullName>Vidacare</fullName>
+                <default>false</default>
+                <label>Vidacare</label>
+            </value>
+            <value>
+                <fullName>AEMS</fullName>
+                <default>false</default>
+                <label>AEMS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

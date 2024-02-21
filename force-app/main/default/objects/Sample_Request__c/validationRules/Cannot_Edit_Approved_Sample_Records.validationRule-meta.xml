@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Approved_Sample_Records</fullName>
+    <active>true</active>
+    <description>Validation rule to lock a record after approved.  The record is unlocked via Approval to allow transfer of stock between users at the line item level.</description>
+    <errorConditionFormula>AND(
+TEXT(Status__c) = &apos;Ready&apos;,
+NOT( ISCHANGED( Qty_Sales_Unit_Rollup__c ) ),
+NOT( ISCHANGED(  Samples_Per_Clinician_Max__c  ) )
+)</errorConditionFormula>
+    <errorMessage>An approved record cannot be edited.</errorMessage>
+</ValidationRule>

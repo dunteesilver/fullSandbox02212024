@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Customer_Service_Respiratory</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Customer Service &gt; Respiratory</label>
+        <sharedTo>
+            <roleAndSubordinates>Respiratory_President</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Customer_Service_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Respiratory_Customer_Service</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Respiratory &gt; Customer Service</label>
+        <sharedTo>
+            <roleAndSubordinates>Customer_Service_Manager</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Respiratory_President</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_will_they_documnt_final_tip_placmnt__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>How will they document final tip placement?</inlineHelpText>
+    <label>How will they documnt final tip placmnt?</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

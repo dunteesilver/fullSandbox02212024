@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Goals__c</fullName>
+    <description>(e.g. Infection Reduction — min 90 days/max 180 days; ease of use i.e. minimal # of PICCs). (e.g. Transitioning to a midline to reduce CLABSI rate and/or reduce occlusions. If customer is evaluating, ensure minimal # of midlines to establish ease of use).
+PICC, Midline
+Value Proposition Stage
+Define Successful Trial/Evaluation Goals</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(e.g. Infection Reduction ... i.e. minimal # of PICCs). (e.g. Transitioning to a midline to reduce CLABSI ... to establish ease of use).
+PICC, Midline
+Value Proposition Stage
+Define Successful Trial/Evaluation Goals</inlineHelpText>
+    <label>*Customer Goals</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

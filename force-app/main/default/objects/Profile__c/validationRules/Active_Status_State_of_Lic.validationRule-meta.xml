@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Status_State_of_Lic</fullName>
+    <active>false</active>
+    <description>Requests fields to be populated when the status is active</description>
+    <errorConditionFormula>AND( ISPICKVAL( Status__c , &quot;Active&quot;), RecordType.Name &lt;&gt;&quot;ACE&quot;, RecordType.Name &lt;&gt;&quot;TFX - Internal Resource&quot;,  ISBLANK(State_of_License__c) )</errorConditionFormula>
+    <errorDisplayField>State_of_License__c</errorDisplayField>
+    <errorMessage>The State of License field needs a value when Status=Active</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TAM_Target__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created for Anesthesia BU as part of TAM project where the Reps can check this field to identify if it is a TAM target.</description>
+    <externalId>false</externalId>
+    <label>TAM Target</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

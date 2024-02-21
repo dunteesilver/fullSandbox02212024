@@ -1,0 +1,16 @@
+<apex:page controller="territory_User_ShowAccounts" readOnly="true">
+    <apex:pageBlock title="{!userName} and {!userName2} ">
+        <apex:pageblocktable value="{!Accounts}" var="a">
+            <apex:column value="{!a.Account__r.name}"/>
+            <apex:column value="{!a.Account__r.SAP_Sold_To__c}"/>
+            <apex:column value="{!a.Account__r.Billing_Address_Full__c}"/>
+            <apex:column value="{!a.Territory_Master__r.Region_Name__c}"/>
+            <apex:column value="{!a.Territory_Master__r.Region_Number__c}"/>
+            <apex:column value="{!a.Territory_Master__r.Territory_Name__c}"/>
+            <apex:column value="{!a.Territory_Master__c}"/>
+            <apex:column value="{!a.Territory_Master__r.Business_Unit__c}"/>
+            <apex:column value="{!a.Name}"/>
+            
+        </apex:pageblocktable>
+    </apex:pageBlock>
+</apex:page>

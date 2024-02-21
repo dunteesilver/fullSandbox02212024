@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_Closed_Notification_for_Users_and_SFDC_team</fullName>
+        <description>Case Closed: Notification for Users and SFDC team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contact</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Creator</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>madhav.arepalli@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shante.demary@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>siva.machineni@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/Case_has_been_closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Created_New_Account_Data_Case_Entered_Case_Team</fullName>
+        <description>Case Created: New Account Data Case Entered- Case Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contact</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Creator</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/A_New_Case_Has_Been_Created_DMO</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Created_New_Case_Entered_Case_Team</fullName>
+        <description>Case Created: New Case Entered- Case Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contact</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Creator</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/A_New_Case_Has_Been_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Created_New_Sales_Comp_Case_Entered_Case_Team</fullName>
+        <description>Case Created: New Sales Comp Case Entered- Case Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contact</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Creator</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/A_New_Case_Has_Been_Created_Sales_Comp</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Created_User_Case_Entered_DMO</fullName>
+        <description>Case Created: User Case Entered- DMO</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>DMO</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.gordon@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/Sales_Comp_Case_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Created_User_Case_Entered_SFDC_Admin</fullName>
+        <description>Case Created: User Case Entered- SFDC Admin</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.gordon@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/SFDC_Team_Case_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Created_User_Case_Entered_Sales_Comp_Team</fullName>
+        <description>Case Created: User Case Entered- Sales Comp Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Comp_ICM</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.gordon@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/Sales_Comp_Case_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_email_Case_Closed</fullName>
+        <description>Case email: Case Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.gordon@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eric.clay@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>leslie.collins@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shante.demary@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/Closed_Case_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_email_New_Case_Entered</fullName>
+        <description>Case email: New Case Entered</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.gordon@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shante.demary@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/New_Case_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>DMO_Case_Closed</fullName>
+        <description>DMO Case Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contact</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Creator</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>DMO</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/Case_has_been_closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Notifies_the_case_creator_whenever_a_new_case_was_submitted_successfully</fullName>
+        <description>Notifies the case creator whenever a new case was submitted successfully</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>scott.rogers@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/CASE_NOTIFY_USER_OF_NEW_CASE2</template>
+    </alerts>
+    <alerts>
+        <fullName>Qualtrics_Test</fullName>
+        <ccEmails>surya.arvan@teleflex.com</ccEmails>
+        <description>Qualtrics Test</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>surya.arvan@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Testing_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Comp_Case_Closed</fullName>
+        <description>Sales Comp Case Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Contact</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Creator</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Comp_ICM</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/Case_has_been_closed</template>
+    </alerts>
+    <alerts>
+        <fullName>VSS_VPS_Case_Needs_Update</fullName>
+        <ccEmails>vss@teleflex.com</ccEmails>
+        <description>VSS/VPS Case Needs Update</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Templates/VSS_VPS_Case_Update_Needed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Case_New_Case_After_Trigger_Tickle</fullName>
+        <field>New_Case_After_Trigger_Tickle__c</field>
+        <literalValue>1</literalValue>
+        <name>Case - New Case After Trigger Tickle</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Strip_out_FW</fullName>
+        <field>Subject</field>
+        <formula>TRIM(RIGHT(Subject, LEN(Subject)-3))</formula>
+        <name>Case - Strip out FW:</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reminder_Email_Sent</fullName>
+        <description>Will set the Reminder Email Sent checkbox on the case object to TRUE.  Field is not on page layout, created for support purposes.</description>
+        <field>Reminder_Email_Sent__c</field>
+        <literalValue>1</literalValue>
+        <name>Reminder Email Sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VPS_VSS_Default_Subject</fullName>
+        <field>Subject</field>
+        <formula>CaseNumber + &quot; - &quot; +
+TEXT(Type) + &quot; - &quot; + 
+TEXT(Inquiry_Subject__c) + &quot; - &quot; + 
+TEXT(Origin) + &quot; - &quot; + 
+TEXT(Product_Category__c)</formula>
+        <name>VPS/VSS Default Subject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Qualtrics_Vascular_VPS_Cases_Survey</fullName>
+        <apiVersion>55.0</apiVersion>
+        <description>This OB is used to send Qualtrics survey from VPS/VSS case record.</description>
+        <endpointUrl>https://iad1.qualtrics.com/triggers/api/v1/event?eventType=SalesforceOutboundMessage&amp;s=SV_3TYtYRaoBCPDTrE&amp;u=UR_bCsvGeQF4FJnGQJ&amp;t=OC_3PpWOIdHThpvTNf&amp;b=teleflexmedical</endpointUrl>
+        <fields>AccountId</fields>
+        <fields>Account_Vs_Rep_Inquiry__c</fields>
+        <fields>AssetId</fields>
+        <fields>BusinessHoursId</fields>
+        <fields>Business_Unit__c</fields>
+        <fields>CaseNumber</fields>
+        <fields>Case_Age__c</fields>
+        <fields>Case_Category__c</fields>
+        <fields>Case_Created_By_Flow__c</fields>
+        <fields>Case_Resolution__c</fields>
+        <fields>Case_Type__c</fields>
+        <fields>ClosedDate</fields>
+        <fields>Comments</fields>
+        <fields>Complaint_Contact_Email__c</fields>
+        <fields>Complaint_Contact__c</fields>
+        <fields>Complaint__c</fields>
+        <fields>Complexity__c</fields>
+        <fields>Configuration_Setup__c</fields>
+        <fields>ContactEmail</fields>
+        <fields>ContactFax</fields>
+        <fields>ContactId</fields>
+        <fields>ContactMobile</fields>
+        <fields>ContactPhone</fields>
+        <fields>Contact_Business_Unit__c</fields>
+        <fields>Contact_Email__c</fields>
+        <fields>Contact_Email_user__c</fields>
+        <fields>Contact_Phone__c</fields>
+        <fields>Contact__c</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>Created_By_Business_Unit__c</fields>
+        <fields>Created_By_Role__c</fields>
+        <fields>Critical_Project__c</fields>
+        <fields>CurrencyIsoCode</fields>
+        <fields>Days_Since_Open__c</fields>
+        <fields>Delivery_Month__c</fields>
+        <fields>Description</fields>
+        <fields>Effort_Level__c</fields>
+        <fields>Effort_Size__c</fields>
+        <fields>HasCommentsUnreadByOwner</fields>
+        <fields>HasSelfServiceComments</fields>
+        <fields>Id</fields>
+        <fields>Impact__c</fields>
+        <fields>Incident__c</fields>
+        <fields>Inquiry_Subject__c</fields>
+        <fields>Interaction_Time__c</fields>
+        <fields>Internal_Case_Notes__c</fields>
+        <fields>IsClosed</fields>
+        <fields>IsClosedOnCreate</fields>
+        <fields>IsDeleted</fields>
+        <fields>IsEscalated</fields>
+        <fields>IsSelfServiceClosed</fields>
+        <fields>IsVisibleInSelfService</fields>
+        <fields>Language</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>LastReferencedDate</fields>
+        <fields>LastViewedDate</fields>
+        <fields>Litmos__EngineeringReqNumber__c</fields>
+        <fields>Litmos__PotentialLiability__c</fields>
+        <fields>Litmos__Product__c</fields>
+        <fields>Litmos__SLAViolation__c</fields>
+        <fields>MasterRecordId</fields>
+        <fields>New_Case_After_Trigger_Tickle__c</fields>
+        <fields>Next_Action_Owner__c</fields>
+        <fields>Next_Action__c</fields>
+        <fields>Open_Close_Status__c</fields>
+        <fields>Origin</fields>
+        <fields>Original_Description__c</fields>
+        <fields>Original_ETA__c</fields>
+        <fields>Original_Subject__c</fields>
+        <fields>Other_Inquiry__c</fields>
+        <fields>Other_Product_Category__c</fields>
+        <fields>OwnerId</fields>
+        <fields>ParentId</fields>
+        <fields>Priority</fields>
+        <fields>Priority__c</fields>
+        <fields>Product_Category__c</fields>
+        <fields>Product_Lot__c</fields>
+        <fields>Product_Serial__c</fields>
+        <fields>Product__c</fields>
+        <fields>Reason</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Release__c</fields>
+        <fields>Remedy_Incident__c</fields>
+        <fields>Reminder_Email_Sent__c</fields>
+        <fields>Requested_Date__c</fields>
+        <fields>Requesting_Business__c</fields>
+        <fields>RunOnce__c</fields>
+        <fields>SourceId</fields>
+        <fields>Sprint__c</fields>
+        <fields>Status</fields>
+        <fields>Subject</fields>
+        <fields>SuppliedCompany</fields>
+        <fields>SuppliedEmail</fields>
+        <fields>SuppliedName</fields>
+        <fields>SuppliedPhone</fields>
+        <fields>Survey_Contact_Email_Secondary__c</fields>
+        <fields>Survey_Contact_Secondary__c</fields>
+        <fields>Survey_Final_Calculated_Email__c</fields>
+        <fields>Survey_Final_Calculated_FirstName__c</fields>
+        <fields>Survey_Final_Calculated_LastName__c</fields>
+        <fields>SystemModstamp</fields>
+        <fields>Type</fields>
+        <fields>URL_of_the_record__c</fields>
+        <fields>Updated_ETA__c</fields>
+        <fields>Urgency__c</fields>
+        <fields>User_Business_Unit__c</fields>
+        <fields>User_Deactivated__c</fields>
+        <fields>User_Key__c</fields>
+        <fields>Username_Temp__c</fields>
+        <fields>agf__ADM_Work__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>surya.arvan@teleflex.com</integrationUser>
+        <name>Qualtrics Vascular VPS Cases Survey</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>CASE%3A  UPDATE RECORD TYPE TO CM</fullName>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Feature Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Reason</field>
+            <operation>equals</operation>
+            <value>Functionality not working properly,New business requirement</value>
+        </criteriaItems>
+        <description>Updates the record type to Change Management whenever a new business requirement is submitted.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>CASE%3A NOTIFY USER OF NEW CASE</fullName>
+        <actions>
+            <name>Notifies_the_case_creator_whenever_a_new_case_was_submitted_successfully</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Teleflex User Support,Teleflex Change Management</value>
+        </criteriaItems>
+        <description>Notifies the user whenever a new case was created successfully.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case - New Case After Trigger Tickle</fullName>
+        <actions>
+            <name>Case_New_Case_After_Trigger_Tickle</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Field Update</description>
+        <formula>New_Case_After_Trigger_Tickle__c = FALSE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case - Strip out FW%3A</fullName>
+        <actions>
+            <name>Case_Strip_out_FW</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Field Update</description>
+        <formula>BEGINS(lower(Subject), &quot;fw:&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Email Notification%3A Case Closed</fullName>
+        <actions>
+            <name>Case_Closed_Notification_for_Users_and_SFDC_team</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CreatedById</field>
+            <operation>notEqual</operation>
+            <value>Global IT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>notEqual</operation>
+            <value>Sales Compensation,Account Data,VPS Tech Support,VSS Support</value>
+        </criteriaItems>
+        <description>Used to notify case team and owner when a case is closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Email Notification%3A Email Team Case Closed</fullName>
+        <actions>
+            <name>Case_email_Case_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CreatedById</field>
+            <operation>equals</operation>
+            <value>Global IT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>VSS/VPS Case</value>
+        </criteriaItems>
+        <description>Fires email when Global IT case is closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Email Notification%3A Email Team Case Opened</fullName>
+        <actions>
+            <name>Case_email_New_Case_Entered</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>VSS/VPS Case</value>
+        </criteriaItems>
+        <description>Fires email when case is opened from email to case.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>DMO Case Closed</fullName>
+        <actions>
+            <name>DMO_Case_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CreatedById</field>
+            <operation>notEqual</operation>
+            <value>Global IT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Account Data</value>
+        </criteriaItems>
+        <description>notification to case team and owner when case is closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Qualtrics Vascular VPS Cases Survey</fullName>
+        <actions>
+            <name>Qualtrics_Test</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>VSS/VPS Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed – Complaint Submitted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed – Resolved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Survey_Final_Calculated_Email__c</field>
+            <operation>notContain</operation>
+            <value>teleflex.com</value>
+        </criteriaItems>
+        <description>Qualtrics Vascular VPS Cases Survey - Is triggered from VPS CASE in SF</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Qualtrics_Vascular_VPS_Cases_Survey</name>
+                <type>OutboundMessage</type>
+            </actions>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Sales Comp Case Closed</fullName>
+        <actions>
+            <name>Sales_Comp_Case_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.CreatedById</field>
+            <operation>notEqual</operation>
+            <value>Global IT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Sales Compensation</value>
+        </criteriaItems>
+        <description>notification to case team and owner when case is closed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VPS%2FVSS Default Subject</fullName>
+        <actions>
+            <name>VPS_VSS_Default_Subject</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>VSS/VPS Case</value>
+        </criteriaItems>
+        <description>Updates Subject on VPS/VSS cases with Type+Inquiry Subject+Case Origin+Product Category</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VSS%2FVPS Case Update</fullName>
+        <actions>
+            <name>VSS_VPS_Case_Needs_Update</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Reminder_Email_Sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>VSS/VPS Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Days_Since_Open__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>3</value>
+        </criteriaItems>
+        <description>Send email to the owner of the case if the status is In Progress 72 hours after creation of the case.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

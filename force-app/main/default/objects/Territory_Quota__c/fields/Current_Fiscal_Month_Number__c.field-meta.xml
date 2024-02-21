@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Fiscal_Month_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Updated to support 2023 sales\Quota - AN Feb 10 2023*/
+/* Updated to support 2022 sales\Quota - AN Feb 17 2022*/
+
+
+/* 2023 */
+if(TODAY() &gt; DATEVALUE(&quot;2023-12-04&quot;), 12,
+if(TODAY() &gt; DATEVALUE(&quot;2023-11-06&quot;), 11,
+if(TODAY() &gt; DATEVALUE(&quot;2023-10-02&quot;), 10,
+if(TODAY() &gt; DATEVALUE(&quot;2023-09-05&quot;), 9,
+if(TODAY() &gt; DATEVALUE(&quot;2023-08-07&quot;), 8,
+if(TODAY() &gt; DATEVALUE(&quot;2023-07-03&quot;), 7,
+if(TODAY() &gt; DATEVALUE(&quot;2023-06-05&quot;), 6,
+if(TODAY() &gt; DATEVALUE(&quot;2023-05-08&quot;), 5,
+if(TODAY() &gt; DATEVALUE(&quot;2023-04-03&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2023-03-06&quot;), 3,
+if(TODAY() &gt; DATEVALUE(&quot;2023-02-06&quot;), 2,
+if(TODAY() &gt; DATEVALUE(&quot;2023-01-01&quot;), 1,
+
+
+/* 2022 */
+if(TODAY() &gt; DATEVALUE(&quot;2022-11-28&quot;), 12,
+if(TODAY() &gt; DATEVALUE(&quot;2022-10-31&quot;), 11,
+if(TODAY() &gt; DATEVALUE(&quot;2022-09-26&quot;), 10,
+if(TODAY() &gt; DATEVALUE(&quot;2022-08-29&quot;), 9,
+if(TODAY() &gt; DATEVALUE(&quot;2022-08-01&quot;), 8,
+if(TODAY() &gt; DATEVALUE(&quot;2022-06-27&quot;), 7,
+if(TODAY() &gt; DATEVALUE(&quot;2022-05-31&quot;), 6,
+if(TODAY() &gt; DATEVALUE(&quot;2022-05-02&quot;), 5,
+if(TODAY() &gt; DATEVALUE(&quot;2022-03-28&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2022-02-28&quot;), 3,
+if(TODAY() &gt; DATEVALUE(&quot;2022-01-31&quot;), 2,
+if(TODAY() &gt; DATEVALUE(&quot;2022-01-01&quot;), 1,
+0
+))))))))))))
+))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Fiscal Month Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

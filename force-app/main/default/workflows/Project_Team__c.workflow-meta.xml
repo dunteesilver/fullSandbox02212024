@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Project_Team_Member_Name</fullName>
+        <description>Updates the ProjectTeam.Name field to match the TeamMember.Name</description>
+        <field>Name</field>
+        <formula>Team_Member__r.Name</formula>
+        <name>Project Team Member Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>SCRUM Project Team Name</fullName>
+        <actions>
+            <name>Project_Team_Member_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Team_Member__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Renames the ProjectTeam.Name upon record creation.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

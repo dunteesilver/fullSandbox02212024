@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_Case_89_with_prticptng_clinicians__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>VPS G4™ Device evaluation – Review Case 89 with participating clinicians</description>
+    <externalId>false</externalId>
+    <inlineHelpText>VPS G4™ Device evaluation – Review Case 89 with participating clinicians</inlineHelpText>
+    <label>Review Case 89 with prticptng clinicians</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

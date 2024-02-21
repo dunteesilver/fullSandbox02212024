@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>More_info_requested__c</fullName>
+    <externalId>false</externalId>
+    <label>5. More info requested?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Biomedical Training Classes</fullName>
+                <default>false</default>
+                <label>Biomedical Training Classes</label>
+            </value>
+            <value>
+                <fullName>Service Plans</fullName>
+                <default>false</default>
+                <label>Service Plans</label>
+            </value>
+            <value>
+                <fullName>Preventative Maintenance Options</fullName>
+                <default>false</default>
+                <label>Preventative Maintenance Options</label>
+            </value>
+            <value>
+                <fullName>Ordering Replacement Parts</fullName>
+                <default>false</default>
+                <label>Ordering Replacement Parts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

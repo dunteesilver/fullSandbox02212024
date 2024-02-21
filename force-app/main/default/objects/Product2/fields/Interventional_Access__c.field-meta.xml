@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interventional_Access__c</fullName>
+    <description>Do not use - ignore this field.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do not use - ignore this field.</inlineHelpText>
+    <label>Interventional Access</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

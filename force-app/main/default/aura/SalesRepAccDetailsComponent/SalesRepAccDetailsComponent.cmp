@@ -1,0 +1,99 @@
+<aura:component
+  controller="SalesRepAccDetails"
+  implements="lightning:isUrlAddressable,lightning:hasPageReference,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+  access="global"
+>
+  <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+  <aura:attribute
+    name="cxSalesRepAccountList"
+    access="PUBLIC"
+    type="list"
+    default="object[]"
+  />
+    <aura:attribute name="draftValues" type="Object" default="object[]" />
+    <aura:attribute name="mycols" type="list" />
+    <aura:attribute name="errors" type="String" />
+
+  <div class="slds-m-around_xx-large">
+    <div class="slds-box slds-theme_default">
+      <!--<p>Key: {!v.pageReference.state.c__surveykey}</p>-->
+        <p
+        >Hello <strong>{!v.cxSalesRepAccountList[0].salesRepName}</strong>,
+          We have choose hundred random customers and found you are associated with them.<br/> 
+        Please validate your customer details below by checking either YES or NO and in case of NO fill in Sales Rep name of that customer if you know. Thank you!</p
+      ><br /><br />
+      <div>
+        <lightning:datatable
+          data="{! v.cxSalesRepAccountList }"
+          columns="{! v.mycols }"
+          keyField="cxsrAccId"
+          hideCheckboxColumn="true"
+          draftValues="{! v.draftValues }"
+          onsave="{! c.saveSalesRepFeedback }"
+          errors="{! v.errors }"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- second comment 
+    <aura:attribute name="salesRepAccWarpper1Lst" access="PUBLIC" type="list" default="object[]" />
+    <aura:attribute name="draftValues" type="Object" default="object[]"/>
+    <aura:attribute name="mycols" type="list" />
+    
+    <p>Hello <strong>{!v.salesRepAccWarpper1Lst[0].salesRepName}</strong>, Please
+        validate your customer details below. Thank you!</p>
+    
+   <lightning:datatable data="{! v.salesRepAccWarpper1Lst }"
+                        columns="{! v.mycols }"
+                        keyField="accName"
+                        hideCheckboxColumn="true"
+                        draftValues="{! v.draftValues }"
+                        onsave="{! c.handleSaveEdition }"
+                        />
+    -->
+  <!-- first comment
+  <aura:attribute name="salesRepAccWarpperObj" type="Object" />
+  <aura:attribute name="message" type="String" />
+    
+  <div class="slds-m-around_xx-large">
+    <div class="slds-box slds-theme_default">
+      <aura:if isTrue="{!not(empty(v.message))}"> 
+          <p>{!v.message}</p>
+           <aura:set attribute="else">
+      <aura:if isTrue="{!not(empty(v.salesRepAccWarpperObj.salesRepName))}">
+        <p>Hello <strong>{!v.salesRepAccWarpperObj.salesRepName}</strong>, Please
+        validate your customer details below. Thank you!</p>
+        <aura:set attribute="else"> No information found. </aura:set>
+      </aura:if>
+      <aura:if isTrue="{!not(empty(v.salesRepAccWarpperObj.salesRepAccSet))}">
+          <br/><br/>
+          <p><strong>Customers (Accounts)</strong></p>
+        <aura:iteration
+          items="{!v.salesRepAccWarpperObj.salesRepAccSet}"
+          var="accName">
+            <p><ul>{!accName}</ul></p>
+        </aura:iteration>
+      </aura:if>
+ 
+        <br/><br/>
+      <p
+        >Are below listed Customers(Accounts) having sales associated to you?</p
+      >
+        <ui:inputRadio name="others" aura:id="r0" label="Yes" change="{!c.onGroup}" />
+     <ui:inputRadio name="others" aura:id="r1" label="No"  change="{!c.onGroup}"/>
+        <lightning:textarea style="width : 30%"
+        aura:id="textarea"
+        value="{!v.salesRepAccWarpperObj.salesRepFeedback}"
+        placeholder="Are there any customers missing from your list?"
+                          /><br/>
+        <lightning:button
+                variant="brand"
+                label="Submit"
+                onclick="{!c.saveSalesRepFeedback}"
+            />
+               </aura:set>
+        </aura:if>
+    </div>
+  </div>
+-->
+</aura:component>

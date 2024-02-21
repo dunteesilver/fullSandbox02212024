@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PrimaryreasonDCpriortolengthof__c</fullName>
+    <description>Primary reason D/C prior to length of therapy (Care and Main., Med Adm, Catheter length too short, Kinking)
+Endurance
+Needs Analysis
+Vetting</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Primary reason D/C prior to length of therapy (Care and Main., Med Adm, Catheter length too short, Kinking)
+Endurance
+Needs Analysis
+Vetting</inlineHelpText>
+    <label>Primary reason D/C prior to length...</label>
+    <length>1000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

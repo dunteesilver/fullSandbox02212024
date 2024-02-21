@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eloqua_Duplicate_Lead_Check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Since &quot;Email Address&quot; is the unique ID in Eloqua, we need a way to keep the data clean in Eloqua - There are multiple lead records to a single email address in SFDC. This &quot;Duplicate Lead&quot; field allows us to pull in the data to the right Eloqua tables</description>
+    <externalId>false</externalId>
+    <label>Eloqua Duplicate Lead Check</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clinicians_can_only_get_5_samples</fullName>
+    <active>true</active>
+    <description>Validation rule to enforce number of clinicians to samples to only 5.</description>
+    <errorConditionFormula>IF(
+AND(
+TEXT( Sample_Request__r.Type__c )= &quot;Disposable/Single Use Product Evaluation&quot;, 
+OR(Samples_Per_Clinician__c &gt; 5, Samples_Per_Clinician__c = 0), NOT( ISNEW() ), ISBLANK(Exception__c) )
+ , TRUE, FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Number_of_Clinicians__c</errorDisplayField>
+    <errorMessage>Samples Per Clinician field must calculate to 5 if the Quantity or Qty/Sales Unit is more than 5.  Please set number of clinicians to an acceptable quantity.</errorMessage>
+</ValidationRule>

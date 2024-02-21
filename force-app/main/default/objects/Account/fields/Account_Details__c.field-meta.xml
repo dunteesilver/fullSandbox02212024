@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Details__c</fullName>
+    <externalId>false</externalId>
+    <formula>SAP_Sold_To__c &amp; &quot; - &quot; &amp; 
+BillingStreet &amp; &quot; &quot; &amp; 
+BillingCity &amp; &quot; &quot; &amp; 
+BillingState &amp; &quot; &quot; &amp;
+BillingPostalCode &amp; &quot; &quot; &amp;
+BillingCountry</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

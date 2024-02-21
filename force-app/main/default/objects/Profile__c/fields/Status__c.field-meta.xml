@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Onboarding – For new CEs not yet available to conduct training.
+Active – CE is available
+Hold – CE is currently inactive but in good standing for future business
+Inactive – CE is not eligible for future training</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>true</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Hold</fullName>
+                <default>false</default>
+                <label>Hold</label>
+            </value>
+            <value>
+                <fullName>Inactive (Permanent)</fullName>
+                <default>false</default>
+                <label>Inactive (Permanent)</label>
+            </value>
+            <value>
+                <fullName>Active - NDA</fullName>
+                <default>false</default>
+                <label>Active - NDA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

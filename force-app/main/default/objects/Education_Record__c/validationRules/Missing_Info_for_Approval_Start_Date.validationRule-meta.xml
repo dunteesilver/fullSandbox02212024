@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Info_for_Approval_Start_Date</fullName>
+    <active>true</active>
+    <description>Need Confirmed Dates, Educator and Hotel</description>
+    <errorConditionFormula>AND( RecordType.Name =&quot;Education Program Request&quot;  ,
+(RecordType.DeveloperName != &quot;Clinical Sales Program&quot; || RecordType.DeveloperName != &quot;CMA Program&quot;),
+ OR(Course_Type__c =&quot;Live Training&quot;,Course_Type__c =&quot;Speaker Program&quot;),
+ISPICKVAL( Stage__c , &quot;confirmed&quot;),
+OR(ISBLANK( Date_of_Event_Start__c ),ISBLANK( Start_Time__c),ISBLANK( Clinical_Educator__r.Id )))</errorConditionFormula>
+    <errorMessage>In order to approve, please enter a value for the Confirmed Start Date and Start Time</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patients_Current_Condition_Required</fullName>
+    <active>true</active>
+    <description>Not VSI Record Type - if &quot;How the product was being used&quot; = During use on a patient then Patient&apos;s Current Condition is mandatory Updated 7/31/18 Case 14885</description>
+    <errorConditionFormula>AND( 
+RecordType.Name &lt;&gt; &quot;Interventional – Legacy VSI Products&quot;, 
+ispickval(How_the_product_was_being_used__c,&quot;During use on a patient&quot;), 
+
+isblank(text(Patients_Current_Condition__c)) 
+)</errorConditionFormula>
+    <errorDisplayField>Patients_Current_Condition__c</errorDisplayField>
+    <errorMessage>Patient&apos;s Current Condition Required</errorMessage>
+</ValidationRule>

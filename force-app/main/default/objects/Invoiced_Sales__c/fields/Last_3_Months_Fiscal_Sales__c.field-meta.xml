@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_3_Months_Fiscal_Sales__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+Business_Days__r.Date_Key__c !=  Date__c,
+Date__c  &gt;= ADDMONTHS(Business_Days__r.Date_Key__c,-3)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last 3 Months Fiscal Sales</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

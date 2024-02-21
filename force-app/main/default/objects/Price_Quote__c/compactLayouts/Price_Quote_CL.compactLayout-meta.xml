@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Quote_CL</fullName>
+    <fields>Account_Name_Text__c</fields>
+    <fields>Business_Unit__c</fields>
+    <fields>Sales_Org_Key__c</fields>
+    <fields>Grand_Total__c</fields>
+    <label>Price Quote CL</label>
+</CompactLayout>

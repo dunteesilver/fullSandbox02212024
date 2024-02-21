@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upgrade__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>From Single use to a kit or from a Basic Kit to a Standardixed Kit</inlineHelpText>
+    <label>Upgrade</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standardized Kit</fullName>
+                <default>false</default>
+                <label>Standardized Kit</label>
+            </value>
+            <value>
+                <fullName>Upgraded Kit</fullName>
+                <default>false</default>
+                <label>Upgraded Kit</label>
+            </value>
+            <value>
+                <fullName>No Upgrade or downgrade</fullName>
+                <default>false</default>
+                <label>No Upgrade or downgrade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

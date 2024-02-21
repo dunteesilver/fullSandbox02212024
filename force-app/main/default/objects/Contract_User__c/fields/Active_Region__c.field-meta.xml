@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Region__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This only drives material visibility</inlineHelpText>
+    <label>Active Region</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AT - Austria</fullName>
+                <default>false</default>
+                <label>AT - Austria</label>
+            </value>
+            <value>
+                <fullName>AU - Australia</fullName>
+                <default>false</default>
+                <label>AU - Australia</label>
+            </value>
+            <value>
+                <fullName>BE - Belgium</fullName>
+                <default>false</default>
+                <label>BE - Belgium</label>
+            </value>
+            <value>
+                <fullName>BR - Brazil</fullName>
+                <default>false</default>
+                <label>BR - Brazil</label>
+            </value>
+            <value>
+                <fullName>CA - Canada</fullName>
+                <default>false</default>
+                <label>CA - Canada</label>
+            </value>
+            <value>
+                <fullName>CL - Chile</fullName>
+                <default>false</default>
+                <label>CL - Chile</label>
+            </value>
+            <value>
+                <fullName>CO - Colombia</fullName>
+                <default>false</default>
+                <label>CO - Colombia</label>
+            </value>
+            <value>
+                <fullName>CZ - Czech</fullName>
+                <default>false</default>
+                <label>CZ - Czech</label>
+            </value>
+            <value>
+                <fullName>DE - Germany</fullName>
+                <default>false</default>
+                <label>DE - Germany</label>
+            </value>
+            <value>
+                <fullName>ES - Spain</fullName>
+                <default>false</default>
+                <label>ES - Spain</label>
+            </value>
+            <value>
+                <fullName>IE - Ireland</fullName>
+                <default>false</default>
+                <label>IE - Ireland</label>
+            </value>
+            <value>
+                <fullName>LA - Latin America</fullName>
+                <default>false</default>
+                <label>LA - Latin America</label>
+            </value>
+            <value>
+                <fullName>MX - Mexico</fullName>
+                <default>false</default>
+                <label>MX - Mexico</label>
+            </value>
+            <value>
+                <fullName>NL - Netherlands</fullName>
+                <default>false</default>
+                <label>NL - Netherlands</label>
+            </value>
+            <value>
+                <fullName>NZ - New Zealand</fullName>
+                <default>false</default>
+                <label>NZ - New Zealand</label>
+            </value>
+            <value>
+                <fullName>PL - Poland</fullName>
+                <default>false</default>
+                <label>PL - Poland</label>
+            </value>
+            <value>
+                <fullName>PT - Portugal</fullName>
+                <default>false</default>
+                <label>PT - Portugal</label>
+            </value>
+            <value>
+                <fullName>SK - Slovakia</fullName>
+                <default>false</default>
+                <label>SK - Slovakia</label>
+            </value>
+            <value>
+                <fullName>UK - United Kingdom</fullName>
+                <default>false</default>
+                <label>UK - United Kingdom</label>
+            </value>
+            <value>
+                <fullName>US - Teleflex</fullName>
+                <default>true</default>
+                <label>US - Teleflex</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

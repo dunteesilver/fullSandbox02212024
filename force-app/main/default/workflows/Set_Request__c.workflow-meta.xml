@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Approved_for_Set_Request</fullName>
+        <description>Email Approved for Set Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>National_Pool/Request_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Denied_for_Set_Request</fullName>
+        <description>Email Denied for Set Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>National_Pool/Request_Denied</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_reminder_of_RGA_and_return_address</fullName>
+        <description>Email reminder of RGA # and return address</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>National_Pool/Return_Information</template>
+    </alerts>
+    <alerts>
+        <fullName>X45_day_Fulfilled_Notice</fullName>
+        <description>45 day Fulfilled Notice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>natalie.chetney@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>National_Pool/X45_day_Fulfilled_Notice</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Set_Locked</fullName>
+        <field>Locked__c</field>
+        <literalValue>1</literalValue>
+        <name>Set Locked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_NPS_Status_to_Available</fullName>
+        <description>Update NPS Status to Available when a Set is Denied or Returned.</description>
+        <field>Status__c</field>
+        <literalValue>Available</literalValue>
+        <name>Update NPS Status to Available</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>National_Pool_Set__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_NPS_Status_to_Pending</fullName>
+        <description>Update NPS Status to reflect status of Set Request</description>
+        <field>Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Update NPS Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>National_Pool_Set__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_NPS_Status_to_Pending_Return</fullName>
+        <description>Update NPS Status to Pending Return when Set Request Returned.</description>
+        <field>Status__c</field>
+        <literalValue>Pending Return</literalValue>
+        <name>Update NPS Status to Pending Return</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>National_Pool_Set__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Denied</fullName>
+        <field>Status__c</field>
+        <literalValue>Denied</literalValue>
+        <name>Update Status to Denied</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Fulfilled</fullName>
+        <field>Status__c</field>
+        <literalValue>Fulfilled</literalValue>
+        <name>Update Status to Fulfilled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Update Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>45 day Fulfilled Notice</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Set_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Fulfilled</value>
+        </criteriaItems>
+        <description>Email Natalie Chetney when a Set Request has been fulfilled for 45 days.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X45_day_Fulfilled_Notice</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>45</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Set Locked</fullName>
+        <actions>
+            <name>Set_Locked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Set_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Returned,Denied</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update NPS Status to Available</fullName>
+        <actions>
+            <name>Update_NPS_Status_to_Available</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Set_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Returned</value>
+        </criteriaItems>
+        <description>When Set Requests are Returned, update National Pool Set to available.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update NPS Status to Pending</fullName>
+        <actions>
+            <name>Update_NPS_Status_to_Pending</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Set_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </criteriaItems>
+        <description>Update NPS Status of National Pool Set to Pending when a Set Request is requested and pending.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update NPS Status to Pending Return</fullName>
+        <actions>
+            <name>Email_reminder_of_RGA_and_return_address</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_NPS_Status_to_Pending_Return</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Set_Request__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Return</value>
+        </criteriaItems>
+        <description>Update NPS Status to Pending Return when Set Request Pending Return.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

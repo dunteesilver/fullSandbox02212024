@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Centurion_Hit_List</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Account__c</columns>
+    <columns>Age_in_Days__c</columns>
+    <columns>On_Multiple_Lists__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Opportunity_Amount__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Strategic_Initiative_Name__c</field>
+        <operation>equals</operation>
+        <value>Centurion Hit List</value>
+    </filters>
+    <label>Centurion Hit List</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+    </sharedTo>
+</ListView>

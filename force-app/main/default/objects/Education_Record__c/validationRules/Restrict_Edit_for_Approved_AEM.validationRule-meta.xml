@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Edit_for_Approved_AEM</fullName>
+    <active>true</active>
+    <description>Validation rule only allows Clinical Team AEM and Administrators to edit approved AEM Inservice Record.</description>
+    <errorConditionFormula>AND( 
+NOT($Profile.Id = &quot;00eE0000000ag8W&quot;), 
+NOT($Profile.Id = &quot;00eE0000000j4Vk&quot;), 
+NOT($Profile.Id = &quot;00eE0000001A9ij&quot;),
+NOT($Profile.Id = &quot;00eE0000000j5Qg&quot;),
+NOT($Profile.Id = &quot;00eE0000000j5Tp&quot;),
+RecordType.Name = &quot;Inservice Record&quot;, 
+ISPICKVAL(Approval_Status__c, &quot;Approved&quot;))</errorConditionFormula>
+    <errorMessage>Please reach out to your Clinical Specialist to edit an approved record.</errorMessage>
+</ValidationRule>

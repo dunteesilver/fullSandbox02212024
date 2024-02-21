@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MakeItFun__c</fullName>
+    <externalId>false</externalId>
+    <label>Make It Fun</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Be collaborative &amp; friendly</fullName>
+                <default>false</default>
+                <label>Be collaborative &amp; friendly</label>
+            </value>
+            <value>
+                <fullName>Show appreciation</fullName>
+                <default>false</default>
+                <label>Show appreciation</label>
+            </value>
+            <value>
+                <fullName>Make your work place a better place</fullName>
+                <default>false</default>
+                <label>Make your work place a better place</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

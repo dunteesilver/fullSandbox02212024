@@ -1,0 +1,45 @@
+<apex:page controller="territory_Account_ShowUsers" >
+    <apex:pageBlock title="{!accountName}">
+        <apex:pageblocktable value="{!Users}" var="u">
+            <apex:column value="{!u.User__c}"/>
+            <apex:column value="{!u.Regional_Manager__c}"/>
+            <apex:column value="{!u.Territory_Master__r.Business_Unit__c}"/>
+            <apex:column value="{!u.Territory_Master__c}"/>
+            
+            <apex:column value="{!u.Territory_Master__r.Territory_Name__c}"/>
+            <apex:column value="{!u.Territory_Master__r.Region_Name__c}"/>
+            <apex:column value="{!u.Territory_Master__r.Region_Number__c}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Related Territories">
+        <apex:pageblocktable value="{!Territories}" var="t">
+            <apex:column value="{!t.Territory_Master__c}"/>
+            <apex:column value="{!t.Territory_Master__r.Territory_Name__c}"/>
+            <apex:column value="{!t.Territory_Master__r.Business_Unit__c}"/>
+            <apex:column value="{!t.Territory_Master__r.Region_Name__c}"/>
+            <apex:column value="{!t.Territory_Master__r.Region_Number__c}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Related Account Team Members">
+        <apex:pageblocktable value="{!AccountTeamMembers}" var="atm">
+            <apex:column value="{!atm.UserId}"/>    
+            <apex:column value="{!atm.TeamMemberRole}"/>
+            <apex:column value="{!atm.AccountAccessLevel}"/>
+            <apex:column value="{!atm.AccountId}"/>
+        </apex:pageblocktable>
+    </apex:pageBlock>
+    <apex:pageBlock title="Related Account Shares">
+        <apex:pageblocktable value="{!AccountShares}" var="as">
+            <apex:column value="{!as.UserOrGroupId}"/>  
+            <apex:column value="{!as.RowCause}"/>
+            <apex:column value="{!as.AccountAccessLevel}"/>
+            <apex:column value="{!as.OpportunityAccessLevel}"/>
+            <apex:column value="{!as.ContactAccessLevel}"/>
+            <apex:column value="{!as.AccountId}"/>
+            <apex:column value="{!as.IsDeleted}"/>
+            
+        </apex:pageblocktable>
+    </apex:pageBlock>
+
+    
+</apex:page>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Family_Registered__c</fullName>
+    <externalId>false</externalId>
+    <label>Family Registered</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Access</fullName>
+                <default>false</default>
+                <label>Access</label>
+            </value>
+            <value>
+                <fullName>Airway</fullName>
+                <default>false</default>
+                <label>Airway</label>
+            </value>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Arterial</fullName>
+                <default>false</default>
+                <label>Arterial</label>
+            </value>
+            <value>
+                <fullName>Central Venous Access</fullName>
+                <default>false</default>
+                <label>Central Venous Access</label>
+            </value>
+            <value>
+                <fullName>Instruments</fullName>
+                <default>false</default>
+                <label>Instruments</label>
+            </value>
+            <value>
+                <fullName>Ligation</fullName>
+                <default>false</default>
+                <label>Ligation</label>
+            </value>
+            <value>
+                <fullName>Pain Management</fullName>
+                <default>false</default>
+                <label>Pain Management</label>
+            </value>
+            <value>
+                <fullName>PICCs</fullName>
+                <default>false</default>
+                <label>PICCs</label>
+            </value>
+            <value>
+                <fullName>Pleur Evac</fullName>
+                <default>false</default>
+                <label>Pleur Evac</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Stapling</fullName>
+                <default>false</default>
+                <label>Stapling</label>
+            </value>
+            <value>
+                <fullName>Suture</fullName>
+                <default>false</default>
+                <label>Suture</label>
+            </value>
+            <value>
+                <fullName>VasoNova</fullName>
+                <default>false</default>
+                <label>VasoNova</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

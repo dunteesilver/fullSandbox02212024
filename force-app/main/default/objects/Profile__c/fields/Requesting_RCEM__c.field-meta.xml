@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requesting_RCEM__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This indicates the RCEM that is requesting that the contractor be set up.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the name of the RCEM who has requested that this contractor be set up.</inlineHelpText>
+    <label>Requesting RCEM</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Profiles</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

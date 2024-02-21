@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_RSM_Quota</fullName>
+    <active>true</active>
+    <label>IA RSM Quota</label>
+    <picklistValues>
+        <picklist>Product_Family__c</picklist>
+        <values>
+            <fullName>Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Airway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arterial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Venous Access</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ligation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain Mangement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skin Stapling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VasoNova</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

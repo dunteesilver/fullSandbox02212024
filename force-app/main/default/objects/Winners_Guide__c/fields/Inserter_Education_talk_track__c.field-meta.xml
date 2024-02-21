@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inserter_Education_talk_track__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Inserter Education talk track (customize template for account – no hospital approval needed)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Inserter Education talk track (customize template for account – no hospital approval needed)</inlineHelpText>
+    <label>Inserter Education talk track</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

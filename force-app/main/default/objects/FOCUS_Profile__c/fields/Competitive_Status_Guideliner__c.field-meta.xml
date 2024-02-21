@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Status_Guideliner__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitive Status Guideliner</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Competitive Threat</fullName>
+                <default>true</default>
+                <label>No Competitive Threat</label>
+            </value>
+            <value>
+                <fullName>Competitive Eval - Guidezilla</fullName>
+                <default>false</default>
+                <label>Competitive Eval - Guidezilla</label>
+            </value>
+            <value>
+                <fullName>Competitive Eval - Telescope</fullName>
+                <default>false</default>
+                <label>Competitive Eval - Telescope</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Guidezilla</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Guidezilla</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Telescope</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Telescope</label>
+            </value>
+            <value>
+                <fullName>Shared Shelf - Guidezilla &amp; Telescope</fullName>
+                <default>false</default>
+                <label>Shared Shelf - Guidezilla &amp; Telescope</label>
+            </value>
+            <value>
+                <fullName>Lost Business to Guidezilla</fullName>
+                <default>false</default>
+                <label>Lost Business to Guidezilla</label>
+            </value>
+            <value>
+                <fullName>Lost Business to Telescope</fullName>
+                <default>false</default>
+                <label>Lost Business to Telescope</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

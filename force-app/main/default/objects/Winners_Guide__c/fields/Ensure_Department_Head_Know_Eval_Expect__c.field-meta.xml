@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Department_Head_Know_Eval_Expect__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ensure Department Heads know about the
+evaluation and what to expect</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ensure Department Heads know about the
+evaluation and what to expect</inlineHelpText>
+    <label>Ensure Department Head Know Eval&amp;Expect</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

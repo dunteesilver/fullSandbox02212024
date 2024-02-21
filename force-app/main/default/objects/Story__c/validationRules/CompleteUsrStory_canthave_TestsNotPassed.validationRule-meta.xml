@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompleteUsrStory_canthave_TestsNotPassed</fullName>
+    <active>true</active>
+    <description>Story with Status=Complete must not have any TESTS with Status that does not equal Passed (or Canceled)</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Complete&quot;) 
+&amp;&amp; 
+Tests_Not_Validated__c &gt; 0</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>You can not tag this Story as Complete until all related TESTS have Passed.</errorMessage>
+</ValidationRule>

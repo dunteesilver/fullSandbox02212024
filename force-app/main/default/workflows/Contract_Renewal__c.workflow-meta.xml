@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_an_Email_for_Sales_Review</fullName>
+        <description>Send an Email for Sales Review</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/Sales_Review_Contract_Renewal_Process_A</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Status_to_Sales_Review</fullName>
+        <field>Status__c</field>
+        <literalValue>Sales Review</literalValue>
+        <name>Change Status to Sales Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_In_Approval_checkbox</fullName>
+        <field>In_Approval__c</field>
+        <literalValue>1</literalValue>
+        <name>Check In Approval checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Renewal_Business_Unit_Update</fullName>
+        <field>Business_Unit__c</field>
+        <formula>TEXT(Owner:User.Business_Unit__c)</formula>
+        <name>Contract Renewal Business Unit Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Renewal_Update_Status_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Ready for Renew</literalValue>
+        <name>Contract Renewal Update Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Renewal_Update_Status_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Contract Renewal Update Status Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Renewal_Update_Status_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Sales Review</literalValue>
+        <name>Contract Renewal Update Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_In_Approval_checkbox</fullName>
+        <field>In_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck In Approval checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contract Renewal Process - Business Unit Update</fullName>
+        <actions>
+            <name>Contract_Renewal_Business_Unit_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(   ISCHANGED( Owner__c ),   ISNULL(Business_Unit__c  )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Renewal Process - Sales Assignment</fullName>
+        <actions>
+            <name>Send_an_Email_for_Sales_Review</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Change_Status_to_Sales_Review</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND (ISCHANGED(Status__c),        ISPICKVAL(Status__c,&quot;Sales Review&quot;)   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

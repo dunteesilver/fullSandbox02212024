@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tender_Number_Required_wTender</fullName>
+    <active>true</active>
+    <description>If Tender is selected from the Status Picklist then this field is required.</description>
+    <errorConditionFormula>IsPickVal(Status__c,&quot;Tender&quot;) &amp;&amp;  Tender_Number__c = &quot;&quot;</errorConditionFormula>
+    <errorDisplayField>Tender_Number__c</errorDisplayField>
+    <errorMessage>The Tender Number is required when Tender is selected.</errorMessage>
+</ValidationRule>

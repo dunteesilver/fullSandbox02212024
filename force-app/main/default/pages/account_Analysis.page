@@ -1,0 +1,44 @@
+<apex:page showHeader="true" standardController="Account" sidebar="true">
+    <apex:variable value="{!Account.Name+' ('+Account.SAP_Sold_To__c+')'}" var="ulink"/>
+    <p>
+        <b><a href="/{!Account.Id}">{!ulink}</a></b>
+    </p>
+
+<wave:dashboard dashboardId="0FK44000000blpjGAA"
+                showTitle="false"
+                showSharing="false" 
+                height="1800px"
+                openLinksInNewWindow="false" 
+                filter="{'datasets':{
+                        'Sales_Cockpit_0_53':[{'fields':['Account__c.Id'], 'filter':{'operator': 'matches', 'values':['{!Account.Id}']}}],
+                        'Invoiced_Sales_Detail':[{'fields':['Account__c.Id'], 'filter':{'operator': 'matches', 'values':['{!Account.Id}']}}],
+                        'Open_Orders_0_52':[{'fields':['Account__c.Id'], 'filter':{'operator': 'matches', 'values':['{!Account.Id}']}}]
+                        }}"
+                />
+    
+<!--  
+Open_Orders_0_52
+Invoiced_Sales_Detail
+Account__c.Id
+
+filter="{'datasets':{'Sales_Cockpit_0_53':[{'fields':['Account__c.Id'], 'filter':{'operator': 'matches', 'values':['{!Account.Id}']}}]},
+{'Invoiced_Sales_Detail':[{'fields':['Account__c.Id'], 'filter':{'operator': 'matches', 'values':['{!Account.Id}']}}]}
+}" 
+
+Does not work
+filter="{ 'Sales_Cockpit_0_53': {'Account__c.Id': ['{!Account.Id}']}, 
+                'Invoiced_Sales_Detail': {'Account__c.Id': ['{!Account.Id}']} }"
+
+This Works:
+filter="{'datasets':{'Sales_Cockpit_0_53':[{'fields':['Account_Name__c'], 'filter':{'operator': 'matches', 'values':['{!ulink}']}}]}}" 
+filter="{'datasets':{'Sales_Cockpit_0_53':[{'fields':['Account__c.Id'], 'filter':{'operator': 'matches', 'values':['{!Account.Id}']}}]}}" 
+
+Simple: 0FKn00000004D86GAE
+Dash: 0FKn00000004D81GAE
+filter="{'Sales_Cockpit_0_53': {'Account_Name__c': ['{!ulink}']}}"
+filter="{'Sales_Cockpit_0_53': {'Account__c': ['{!Account.Id}']}}"
+
+filter="{'Sales_Cockpit_0_53': {'Account_Name__c': ['{!JSENCODE(ulink)}']}}"
+{ 'Sales_Cockpit_0_53': {'Account__c.Id': ['!{!Account.Id}']}}-->
+<!--                 filter="{'Sales_Cockpit_0_53': {'Account__c.Id': ['{!Account.Id}']}}"  -->
+</apex:page>

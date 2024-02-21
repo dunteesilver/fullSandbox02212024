@@ -1,0 +1,215 @@
+<apex:page StandardController="Lab_Participant__c" extensions="EmailLabAttendeesController" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" renderas="PDF" >
+    <head>
+        <style type="text/css">
+            @page{
+            size: A4 landscape;
+            }
+            #box {
+            position:relative;
+            width:950px;
+            height:670px;
+            margin:10px auto;
+            }
+            #box div {
+            position:absolute;
+            width:100%;
+            height:100%;
+            text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <img src="{!URLFOR($Resource.Lab_certificate_background)}" alt="" style="position:absolute;width:100%;height:100%;"/>
+            <div>
+                <table Style="{!'width:100%; height:100%; background-position: center; background-repeat: no-repeat; background-size: contain;background-image:url('+$Resource.Lab_certificate_background+')'}">
+                    <tr style="height: 220px;">
+                        <td colspan="4">
+                        </td>
+                    </tr>
+                    
+                    <tr rendered="{!$CurrentPage.parameters.certType=='EZIO'}">
+                        <td style="width:9%;">
+                            &nbsp;
+                        </td>
+                        
+                        <td colspan="2">
+                            <apex:outputPanel rendered="{!$CurrentPage.parameters.certType=='EZIO'}">
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 15pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    <u>{!Lab_Participant__c.Lab__r.Name}</u>
+                                </span>
+                                <br/>
+                                <br/>
+                            </apex:outputPanel>   
+                            <span style="font-family: Arial, Helvetica, sans-serif;font-size: 12pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                {!if($CurrentPage.parameters.certType == 'EZIO', 'Arrow® EZ-IO®', '')}
+                                {!if($CurrentPage.parameters.certType == 'EZIO', 'Intraosseous Vascular Access Device Course', '')}
+                            </span>
+                            <apex:outputPanel rendered="{!$CurrentPage.parameters.certType=='EZIO'}">
+                                <br/>
+                                <br/>
+                                <br/>
+                            </apex:outputPanel>
+                        </td>
+                        <td style="width:7%;">
+                         &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:9%;">
+                            &nbsp;
+                        </td>
+                        
+                        <td>
+                            <span style="font-family: Arial, Helvetica, sans-serif;font-size: 10pt;margin-block-start: 0px;margin-block-end: 0px; width:100%">
+                                Teleflex hereby verifies that the following individual has attended the {!$CurrentPage.parameters.certType} course:
+                            </span>
+                            <br/>
+                            <!--EZIO-->
+                            <apex:outputPanel rendered="{!$CurrentPage.parameters.certType=='EZIO'}">
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 17pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    {!Lab_Participant__c.Full_Name__c},{!Lab_Participant__c.Title__c}
+                                </span>
+                                <br/>
+                                <br/>
+                                <apex:image url="{!$Resource.Lab_Signature}" width="150" height="26"/>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;border-top: 1px solid black;">
+                                    Dan Smith, Vice President
+                                </span>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;">
+                                    Clinical Medical AffairsTeleflex Incorported
+                                </span>
+                                <br/>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 11pt;border-bottom: 1px solid black;">
+                                    {!MONTH(TODAY())}/{!DAY(TODAY())}/{!YEAR(TODAY())}- {!Lab_Participant__c.Mailing_City__c}, {!Lab_Participant__c.Mailing_State__c}
+                                </span>
+                                <br/> 
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;">
+                                    Program Date,Location
+                                </span>
+                            </apex:outputPanel>
+                            
+                            <!--Hemorrhage-->
+                            <apex:outputPanel rendered="{!$CurrentPage.parameters.certType=='Hemorrhage'}">
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 14pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    {!Lab_Participant__c.Lab__r.Name}
+                                </span>
+                                <br/>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 14pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    {!Lab_Participant__c.Full_Name__c} and {!Lab_Participant__c.Title__c}
+                                </span>
+                                <br/>
+                                <br/><br/>
+                                <apex:image url="{!$Resource.Lab_Signature}" width="150" height="26"/>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;border-top: 1px solid black;">
+                                    Dan Smith, Vice President
+                                </span>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;">
+                                    Clinical Medical AffairsTeleflex Incorported
+                                </span>
+                                <br/>
+                                <br/>
+                            </apex:outputPanel>
+                            
+                            <!--Interventional-->
+                            <apex:outputPanel rendered="{!$CurrentPage.parameters.certType=='Interventional'}">
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 14pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                     {!Lab_Participant__c.Lab__r.Name}
+                                </span>
+                                <br/>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 14pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    {!Lab_Participant__c.Full_Name__c} / {!Lab_Participant__c.Title__c}
+                                </span>
+                                <br/>
+                                <br/><br/><br/>
+                                <apex:image url="{!$Resource.Interventional_Lab_Signature}" width="150" height="26"/>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;border-top: 1px solid black;">
+                                    Dr. Amy Bardin, Ed.D, RRT, FAARC, VA-BCTM 
+                                </span>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;">
+                                    Vice President, Clinical and Medical Affairs, Vascular and Interventional
+                                </span>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;">
+                                    Director, Medical Affairs, Vascular
+                                </span>
+                                <br/>
+                                <br/>
+                            </apex:outputPanel>
+                            <apex:outputText value="{0, date, MM/dd/yyyy}">
+                                        <apex:param value="{!Lab_Participant__c.Lab__r.Lab_Date__c}"/> 
+                                    </apex:outputText>
+                            
+                        </td>    
+                        <td style="width:35%;">
+                            <!--EZIO-->
+                            <apex:outputPanel rendered="{!$CurrentPage.parameters.certType=='EZIO'}">
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;vertical-align: top;">
+                                    Teleflex LLC.
+                                    <br/>
+                                    3015 Carrington Mill Blvd,
+                                    Morrisville, NC 27560
+                                </span>
+                                <br/>
+                                <br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;vertical-align: top;">
+                                    <b>{!if($CurrentPage.parameters.certType == 'EZIO', 'This program has been approved by the American Association of Critical-Care Nurses (AACN), for 1.00 CERPs, Synergy CERP Category A, File Number 23210.
+                                        Approval refers to recognition of continuing education only and does not imply AACN approval or endorsement of the content of this educational activity, or the products mentioned.
+                                        ', 'This program has been approved by the American Association of Critical-Care Nurses (AACN), for 1.00 CERPs, Synergy CERP Category A, File Number 23211.
+                                        Approval refers to recognition of continuing education only and does not imply AACN approval or endorsement of the content of this educational activity, or the products mentioned')}</b>
+                                </span>
+                                <br/>
+                            </apex:outputPanel>
+                            
+                            <!--Hemorrhage / Interventional-->
+                            <apex:outputPanel rendered="{!OR($CurrentPage.parameters.certType=='Hemorrhage', $CurrentPage.parameters.certType=='Interventional')}">
+                                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                <span style="font-family: Arial, Helvetica, sans-serif;font-size: 8pt;">
+                                    Teleflex LLC.
+                                    <br/>
+                                    3015 Carrington Mill Blvd, Morrisville, NC 27560
+                                </span>
+                                <br/>
+                                <br/>
+                                <br/>
+                            </apex:outputPanel>
+                             
+                        </td>
+                        
+                        <td style="width:7%;">
+                            &nbsp;
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td colspan="4">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div style="padding-left:60px;padding-top:10px;">
+                                <p style="font-family: Arial, Helvetica, sans-serif;font-size: 6pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    Granting this certificate does not imply or certify competency of the recipient with regard to the use of the products covered in this training. Further, this certificate does not reflect scope
+                                </p>
+                                <p style="font-family: Arial, Helvetica, sans-serif;font-size: 6pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    of practice or prescription clearance by county, state, federal or international licensing authorities.  Teleflex, and the Teleflex logo are trademarks or registered trademarks of Teleflex, and the
+                                </p>
+                                <p style="font-family: Arial, Helvetica, sans-serif;font-size: 6pt;margin-block-start: 0px;margin-block-end: 0px;">
+                                    Teleflex logo are trademarks or registered trademarks of Teleflex Incorporated or its affiliates, in the U.S. and/or other countries. © 2019 Teleflex Incorporated. All rights reserved.  MC-005629
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</apex:page>

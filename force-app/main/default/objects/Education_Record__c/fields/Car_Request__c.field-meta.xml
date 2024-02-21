@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Car_Request__c</fullName>
+    <externalId>false</externalId>
+    <label>Car Transportation Request</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Car Rental Requested</fullName>
+                <default>false</default>
+                <label>Car Rental Requested</label>
+            </value>
+            <value>
+                <fullName>Contractor driving personal vehicle</fullName>
+                <default>false</default>
+                <label>Contractor driving personal vehicle</label>
+            </value>
+            <value>
+                <fullName>Sales Rep providing transportation</fullName>
+                <default>false</default>
+                <label>Sales Rep providing transportation</label>
+            </value>
+            <value>
+                <fullName>Taxi/Public Transportation</fullName>
+                <default>false</default>
+                <label>Taxi/Public Transportation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

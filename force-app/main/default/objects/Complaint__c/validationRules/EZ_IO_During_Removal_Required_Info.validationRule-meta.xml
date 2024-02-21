@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EZ_IO_During_Removal_Required_Info</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+ISPICKVAL( When_the_problem_was_encountered__c , &quot;EZ-IO During Removal&quot;), 
+OR( 
+ISBLANK(TEXT( Was_operator_aware_proper_removal_tecnii__c )), 
+ISBLANK(TEXT( Leur_lock_syringe__c )), 
+ISBLANK(TEXT( Did_clinician_pull_straight_up_removal__c )), 
+ISBLANK(TEXT( Was_X_ray_other_imagery_done__c )), 
+ISBLANK(TEXT( Was_catheter_successfully_removed__c )) 
+) 
+)</errorConditionFormula>
+    <errorDisplayField>EZ_IO_Complaint_Type__c</errorDisplayField>
+    <errorMessage>Please fill the required information in the EZ-IO Driver Related only Section</errorMessage>
+</ValidationRule>

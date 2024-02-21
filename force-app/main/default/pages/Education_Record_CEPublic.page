@@ -1,0 +1,548 @@
+<apex:page cache="false" title="CRF: {!er.Name}" controller="Education_Record_Update" showHeader="False" tabStyle="Account">
+
+    <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+    <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+    <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+    
+    <html>
+        <head>
+            <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+            
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+            <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+            
+            <style type="text/css">
+                div.body {
+                margin: 0px 15px 0px 15px;
+                }
+                .panel {
+                margin-bottom: 0px;
+                }
+                .r {
+                text-align: right;
+                }
+                #crf td{
+                vertical-align: middle;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="teleflex body">
+                <!-- Page/Form for New Status-->    
+                <!-- <apex:outputText rendered="{!OR(crf.Status__c = 'New',crf.Status__c = 'Save')}"> -->
+                <apex:variable var="CMA" value="{!if(contains(er.RecordType.Name,'CMA'),TRUE,FALSE)}"/>
+                <apex:variable var="CADLAB" value="{!if(contains(er.Type_of_In_Service__c,'Cadaver Lab'),TRUE,FALSE)}"/>
+                <apex:variable var="canEdit" value="{!if(OR(crf.Status__c = 'New',crf.Status__c = 'Save'),TRUE,FALSE)}"/>
+
+                    <apex:form >
+                        <div class="panel-body">
+                            <img style="max-height:28px;max-width:350px;" src="/servlet/servlet.ImageServer?id={!logoId}&oid={!OrgId}"/>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Clinical Education Expenses Portal - Enter Expenses</h6>
+                            </div>
+                            <div class="panel-body">
+                                <apex:pageMessages />
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">Education Program Information</h6>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table class="table table-bordered table-condensed table-striped" id="crf">
+
+                                            <tr>
+                                                <td class="col-md-2 r">
+                                                    <apex:outputLabel value="Date of Event (Start):"/>
+                                                </td>
+                                                <td class="col-md-4">
+                                                    <apex:outputField value="{!er.Date_of_Event_Start__c}"/>
+                                                </td>
+                                                <td class="col-md-2 r">
+                                                    <apex:outputLabel value="Date of Event (End):"/>
+                                                </td>
+                                                <td class="col-md-4">
+                                                    <apex:outputField value="{!er.Ending_Date__c}"/>
+                                                </td>
+                                            </tr>
+                                            <!-- START Inservice -->
+                                            <apex:outputText rendered="{!!CMA}">
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Name of Program:"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!er.Program__r.name}"/>
+                                                    </td>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Primary Product:" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!er.Primary_Product__c}"/>
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Account/Facility/Event:" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!er.Account_Facility__r.Name}"/>
+                                                    </td>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Additional Product (s):"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!er.SecondaryProduct__c}" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Contact Name:" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!er.Contact_Name__r.FirstName}"/>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Number of Attendees:" />&nbsp;<font style="color:red;">*</font>                                                    </td>
+                                                    <td>
+                                                        <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!er.TotalofAttendees__c}" required="true" />
+                                                        <apex:outputField rendered="{!!canEdit}" styleClass="form-control" value="{!er.TotalofAttendees__c}"/>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="How did the training go:"  />&nbsp;<font style="color:red;">*</font>
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!er.How_did_the_training_go__c}" required="true" />
+                                                        <apex:outputField rendered="{!!canEdit}" styleClass="form-control" value="{!er.How_did_the_training_go__c}"/>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Inservice Summary:"  />&nbsp;<font style="color:red;">*</font>
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputTextarea style="height: 100px;" rendered="{!canEdit}" styleClass="form-control" rows="4" value="{!er.How_did_the_training_go_Explain__c}" required="true" />
+                                                        <apex:outputField style="height: 100px;" rendered="{!!canEdit}" value="{!er.How_did_the_training_go_Explain__c}"/>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </apex:outputText>
+                                            <!-- END Inservice -->
+                                            <!-- START CMA -->
+                                            <apex:outputText rendered="{!CMA}">
+                                                
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Name of Program:"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!er.Name}"/>
+                                                    </td>
+                                                    <!--
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Total Days that you assisted:" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputField value="{!crf.T_days__c}"  />
+                                                    </td>-->
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Notes:" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputField rendered="{!canEdit}" value="{!crf.Notes__c}"  />
+                                                        <apex:outputField rendered="{!!canEdit}" value="{!crf.Notes__c}"  />
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                            </apex:outputText>
+                                            <!-- END CMA -->
+                                            <!-- START Cadivar Lab -->
+                                            <apex:outputText rendered="{!CADLAB}">
+                                                <!-- <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Total Lab Days:" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!er.Total_Lab_Days__c}"  />
+                                                    </td>
+                                                    <td class="r">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr> -->
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Did you assist as a Pain Management Lead?" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputField rendered="{!canEdit}" value="{!crf.Pain__c}" />
+                                                        <apex:outputField rendered="{!!canEdit}" value="{!crf.Pain__c}" />
+                                                    </td>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Did you assist as an Oncontrol Lead?" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputField rendered="{!canEdit}" value="{!crf.Oncontrol__c}" />
+                                                        <apex:outputField rendered="{!!canEdit}" value="{!crf.Oncontrol__c}" />
+                                                    </td>
+                                                </tr>
+                                            </apex:outputText>
+                                            <!-- END Cadivar Lab -->
+                                            <!--
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Confirm your email address" />&nbsp;<font style="color:red;">*</font>
+                                                </td>
+                                                <td colspan="3">
+                                                    <apex:inputField rendered="{!canEdit}" value="{!crf.CE_Contractor_Email__c}" required="true"/>
+                                                    <apex:outputField rendered="{!!canEdit}" value="{!crf.CE_Contractor_Email__c}" />
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr> 
+-->
+                                        </table>
+                                        <center>
+                                            <apex:commandButton action="/ClinicalEducation/Education_Record_Instructions?id={!crf.id}" value="Welcome Page" id="previous" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                                            <apex:commandButton action="{!submit}" value="Submit for Approval" rendered="{!OR(crf.Status__c = 'New',crf.Status__c = 'Save')}" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                                            <apex:commandButton action="{!saveRefresh}" value="Save/Refresh" id="saveRefresh" rendered="{!OR(crf.Status__c = 'New',crf.Status__c = 'Save')}" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                                            <apex:commandButton action="{!save}" value="Save and Go to Next Step" id="theButton" rendered="{!OR(crf.Status__c = 'New',crf.Status__c = 'Save')}" styleClass="btn btn-primary btn-sm"/>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">Expenses Report</h6>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table class="table table-bordered table-condensed table-striped" id="crf">  
+                                            <tr>
+                                                <td class="col-md-2 r"><b>Engagement Type:</b>
+                                                </td>
+                                                <td class="col-md-4">
+                                                    <apex:outputField value="{!crf.Engagement_Type__c}"/>
+                                                </td>
+                                                <td class="col-md-2 r">&nbsp;</td>
+                                                <td class="col-md-4">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r"><b>Reimbursement Rate:</b>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.Reimbursement_Rate__c}"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Grand Total:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.Grand_Total_Reimbursement__c}" />
+                                                </td>
+                                            </tr> 
+                                            <tr>
+                                                <td class="r"><b>
+                                                    Time Worked:</b>
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Time_Worked__c}"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Time_Worked__c}"/>
+                                                </td>
+                                                <td class="r"><b>
+                                                    Total (Time Worked):</b>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.Total_Time_Worked__c}"/>
+                                                </td>
+                                            </tr>
+                                              <tr>
+                                                <td class="r"><b>
+                                                   Presentation Preparation Time Worked:</b>
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.PresentationPrepTime__c}"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.PresentationPrepTime__c}"/>
+                                                </td>
+                                                <td class="r"><b>
+                                                    Total (Presentation Preparation Time Worked):</b>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.TotalPresentation__c}"/>
+                                                </td>
+                                            </tr>
+                                            <apex:outputText rendered="{!crf.Travel_Eligible__c == TRUE}">
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Number of Travel hours:" onmouseover="Please enter 10 hours if was 1 day"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Travel_Time__c}" label="How many travel hours?"/>
+                                                        <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Travel_Time__c}" label="How many travel hours?"/>
+                                                    </td>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Total Travel Time Reimbursement" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!crf.Total_Travel_Time__c}" />
+                                                    </td>
+                                                </tr>
+                                            </apex:outputText>
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Miles or KM if traveled by car:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Mileage__c}"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Mileage__c}"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Mileage Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.T_Mil__c}" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Transportation Expenses (parking, tolls, taxi, etc): " />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Ground_Transportation__c}"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Ground_Transportation__c}"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Transportation Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.T_Tran__c}" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Airfare Expenses (paid by you):"/>
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Airline_Ticket__c}" label="How much for Airfare?"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Airline_Ticket__c}" label="How much for Airfare?"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Airfare Expenses (paid by you):" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.T_Air__c}" />
+                                                </td>
+                                            </tr> 
+                                            <!-- CMA Record Type Only --> 
+                                            <apex:outputText rendered="{!CMA}">
+                                                <tr>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="CMA Airfare Expenses (paid by CMA):"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.CMA_Travel__c }" label="How much for Airfare?"/>
+                                                        <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.CMA_Travel__c }" label="How much for Airfare?"/>
+                                                    </td>
+                                                    <td class="r">
+                                                        <apex:outputLabel value="Total CMA Airfare Expenses (paid by CMA):"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputField value="{!crf.CMA_Travel__c}" />
+                                                    </td>
+                                                </tr> 
+                                            </apex:outputText>
+                                            <!-- END CMA Record Type Only --> 
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Meal Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Meals__c}" label="How much for Meals?" />
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Meals__c}" label="How much for Meals?" />
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Meal Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.T_Meals__c}" />
+                                                </td>
+                                            </tr> 
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Hotel Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Hotel__c}" label="How much for Hotel?"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Hotel__c}" label="How much for Hotel?"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Hotel Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.T_Hotel__c}" />
+                                                </td>
+                                            </tr> 
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="If you used eggs, Egg Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Eggs__c}" label="How much for Hotel?"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Eggs__c}" label="How much for Hotel?"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Eggs Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.T_Eggs__c}" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Other Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Other_Fee1__c}" label="Extra Expense 1"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Other_Fee1__c}" label="Extra Expense 1"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Other Expenses 1:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.Total_Other1__c}" />
+                                                </td>
+                                            </tr> 
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Please Describe:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Other_Fee1_Detail__c}" />
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Other_Fee1_Detail__c}" />
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Other Expenses:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Other_Fee2__c}" label="Extra Expense 1"/>
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Other_Fee2__c}" label="Extra Expense 1"/>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Total Other Expenses 2:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.Total_Other2__c}" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Please Describe:" />
+                                                </td>
+                                                <td>
+                                                    <apex:inputText rendered="{!canEdit}" styleClass="form-control" value="{!crf.Other_Fee2_Detail__c}" />
+                                                    <apex:outputText rendered="{!!canEdit}" styleClass="form-control" value="{!crf.Other_Fee2_Detail__c}" />
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                </td>
+                                                <td class="r">
+                                                    <apex:outputLabel value="Grand Total:" />
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!crf.Grand_Total_Reimbursement__c}" />
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                        </table>
+                                        <center>
+                                            <apex:commandButton action="/ClinicalEducation/Education_Record_Instructions?id={!crf.id}" value="Welcome Page" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                                            <apex:commandButton action="{!submit}" value="Submit for Approval" rendered="{!OR(crf.Status__c = 'New',crf.Status__c = 'Save')}" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                                            <apex:commandButton action="{!saveRefresh}" value="Save/Refresh" rendered="{!OR(crf.Status__c = 'New',crf.Status__c = 'Save')}" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                                            <apex:commandButton action="{!save}" value="Save and Go to Next Step" rendered="{!OR(crf.Status__c = 'New',crf.Status__c = 'Save')}" styleClass="btn btn-primary btn-sm"/>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </apex:form>
+                
+                
+                <!--</apex:outputText>-->
+            </div>
+        </body>
+    </html>
+    
+    
+
+
+    <script type="text/javascript">
+    $j = jQuery.noConflict();
+    
+    $j(document).ready(function(){
+        // hide new note button
+        $j("input[name=newNote]").hide();
+        $j("input[name=attachFile]").hide();
+        $j("input[name=viewAll]").hide();
+    });
+    
+    </script>
+    
+</apex:page>

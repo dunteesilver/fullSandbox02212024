@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Territory_Master_Region_Name_Comma_Fix</fullName>
+        <field>Region_Name__c</field>
+        <formula>SUBSTITUTE( Region_Name__c , &apos;&quot;&apos;, &apos;&apos;)</formula>
+        <name>Territory Master - Region Name Comma Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_Master_TerrName_Comma_Fix</fullName>
+        <field>Territory_Name__c</field>
+        <formula>SUBSTITUTE(Territory_Name__c, &apos;&quot;&apos;, &apos;&apos;)</formula>
+        <name>Territory Master - TerrName Comma Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Territory Master - Comma Fix</fullName>
+        <actions>
+            <name>Territory_Master_Region_Name_Comma_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Territory_Master_TerrName_Comma_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(
+CONTAINS(Region_Name__c, &apos;&quot;&apos;),
+CONTAINS( Territory_Name__c, &apos;&quot;&apos;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

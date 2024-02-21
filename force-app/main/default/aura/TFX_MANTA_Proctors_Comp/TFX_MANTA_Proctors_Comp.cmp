@@ -1,0 +1,48 @@
+<aura:component controller="TFX_MANTA_Handler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="selectedId" type="String" />
+    <aura:attribute name="allProctorsLst" type="String" />
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    <ui:scrollerWrapper class="scrollerSize">  
+        <article class="slds-align_absolute-center slds-card" style="width: 100%">
+            <div class="slds-card__body slds-card__body_inner" style="width: 30rem;margin: 2%">
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+                <br/><br/><br/>
+                <div class="slds-align_absolute-center slds-text-heading_medium">Trainers</div><br/>
+                <lightning:button class="slds-float_right" variant="Brand" label="Add Trainer" onclick="{!c.navigateToTFX_MANTA_AddProctorComp}" /><br/><br/><br/>          
+                    <lightning:recordEditForm objectApiName="MANTA_Master__c"                 >
+                        <lightning:messages />
+                        <lightning:inputField fieldName="Trainer__c" value="{!v.selectedId}" onchange="{!c.srchProctorById}"/>
+                    </lightning:recordEditForm>
+                <br/>
+                
+                <aura:iteration items="{!v.allProctorsLst}" var="item">
+                    <c:TFX_MANTA_ProctorCardComp
+                                                 recId="{!item.Id}"
+                                                 procId="{!item.Trainer__r.Id}" 
+                                                 procName="{!item.Trainer__r.Name}" 
+                                                 procEmail="{!item.Trainer__r.Email}" 
+                                                 procRegion="{!item.Trainer__r.Region__c}"
+                                                 procAdmnAcss="{!item.isAdminAccess__c}"
+                                                 procIsActive="{!item.isActive__c}"
+                                                 />
+                    <br/>
+                </aura:iteration>
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" /> 
+            </div>
+        </article>
+    </ui:scrollerWrapper>   
+</aura:component>

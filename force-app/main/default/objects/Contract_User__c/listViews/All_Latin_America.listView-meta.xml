@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Latin_America</fullName>
+    <columns>NAME</columns>
+    <columns>User__c</columns>
+    <columns>US_Material__c</columns>
+    <columns>Active_Region__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Pricing_Portal_Access__c</columns>
+    <columns>LA_Material__c</columns>
+    <columns>CA_Material__c</columns>
+    <columns>CL_Material__c</columns>
+    <columns>CO_Material__c</columns>
+    <columns>MX_Material__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>Latin America</value>
+    </filters>
+    <label>All Latin America</label>
+</ListView>

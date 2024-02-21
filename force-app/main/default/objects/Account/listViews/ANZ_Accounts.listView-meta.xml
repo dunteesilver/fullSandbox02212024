@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ANZ_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>SAP_Sold_To__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.SITE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ANZ_Account__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>ANZ Accounts</label>
+    <sharedTo>
+        <group>ANZ_Users</group>
+    </sharedTo>
+</ListView>

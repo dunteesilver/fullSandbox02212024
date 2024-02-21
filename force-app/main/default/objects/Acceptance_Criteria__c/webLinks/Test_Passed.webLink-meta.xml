@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Passed</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Test Passed</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var url = parent.location.href; 
+var elementObj = new sforce.SObject(&quot;Acceptance_Criteria__c&quot;); 
+elementObj.Id = &apos;{!Acceptance_Criteria__c.Id}&apos;; 
+var status = &apos;{!Acceptance_Criteria__c.Status__c}&apos;; 
+
+if (status == &quot;{!$Label.FieldValue_ElementStatusPassed}&quot;) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_TestAlreadyPassed}&quot;) 
+} 
+
+else 
+if (status == &quot;{!$Label.FieldValue_ElementStatusFailed}&quot;) 
+{ 
+var okay = confirm(&quot;{!$Label.ButtonConfirm_TestAlreadyFailedConfirmPass}&quot;); 
+
+if (okay == true) 
+{ 
+elementObj.Status__c = &quot;{!$Label.FieldValue_ElementStatusPassed}&quot;; 
+var result = sforce.connection.update([elementObj]); 
+
+if (result[0].success==&apos;false&apos;) 
+{ 
+alert(result[0].errors.message); 
+} 
+
+else 
+{ 
+parent.location.href = url; 
+} 
+}
+}
+
+else
+{ 
+elementObj.Status__c = &quot;{!$Label.FieldValue_ElementStatusPassed}&quot;; 
+var result = sforce.connection.update([elementObj]); 
+
+if (result[0].success==&apos;false&apos;) 
+{ 
+alert(result[0].errors.message); 
+} 
+
+else 
+{ 
+parent.location.href = url; 
+} 
+
+}</url>
+</WebLink>

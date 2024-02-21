@@ -1,0 +1,477 @@
+<apex:page controller="PP_Menu" cache="false" lightningStyleSheets="true" tabStyle="Pricing_Portal__tab" language="{!userLang}">
+<html ng-app="myApp" ng-controller="myCtrl" >
+    <head>
+        <!-- Start Scripts -->
+        <meta name="viewport" content="width=device-width, intial-scale=1" /> 
+        <apex:includescript value="/soap/ajax/34.0/connection.js"> </apex:includescript>
+        <apex:includescript value="/soap/ajax/34.0/apex.js"> </apex:includescript>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+        <apex:includeLightning />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+        </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js">
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap-tpls.js">
+        </script>
+        
+        <!-- END Scripts -->
+        <style>
+            <!-- This Fixes the left gap on the bootstrap navigation drop down menu's -->
+            .fixli {
+            margin-left: 0px;
+            }
+            
+            @media (min-width: 1366px) {
+              .teleflex .navbar-collapse {
+                width: auto;
+                border-top: 0;
+                -webkit-box-shadow: none;
+                        box-shadow: none;
+              }
+              .teleflex .navbar-collapse.collapse {
+                display: block !important;
+                height: auto !important;
+                padding-bottom: 0;
+                overflow: visible !important;
+              }
+              .teleflex .navbar-collapse.in {
+                overflow-y: visible;
+              }
+              .navbar-fixed-top .teleflex .navbar-collapse,
+              .navbar-static-top .teleflex .navbar-collapse,
+              .navbar-fixed-bottom .teleflex .navbar-collapse {
+                padding-left: 0;
+                padding-right: 0;
+              }
+            }
+            .teleflex .navbar-fixed-top .navbar-collapse,
+            .teleflex .navbar-fixed-bottom .navbar-collapse {
+              max-height: 1366px;
+            }
+            @media (max-device-width: 1366px) and (orientation: landscape) {
+              .teleflex .navbar-fixed-top .navbar-collapse,
+              .teleflex .navbar-fixed-bottom .navbar-collapse {
+                max-height: 1366px;
+              }
+            }
+            .teleflex .container > .navbar-header,
+            .teleflex .container-fluid > .navbar-header,
+            .teleflex .container > .navbar-collapse,
+            .teleflex .container-fluid > .navbar-collapse {
+              margin-right: -15px;
+              margin-left: -15px;
+            }
+            @media (min-width: 1366px) {
+              .teleflex .container > .navbar-header,
+              .teleflex .container-fluid > .navbar-header,
+              .teleflex .container > .navbar-collapse,
+              .teleflex .container-fluid > .navbar-collapse {
+                margin-right: 0;
+                margin-left: 0;
+              }
+            }
+            
+            <!-- Multi column attempt http://www.dynamicdrive.com/dynamicindex1/efluidmenu/suppliment.htm -->
+            ul.multicolumn {
+                width: 1200px !important;
+                left: 100px;
+                margin-bottom: 20px;
+                overflow: hidden;
+            }
+            
+            ul.multicolumn li {
+                float: left;
+                display: inline;
+            }
+            
+            ul.multicolumn li {
+                width: 50%;
+                width: 33%; /* for 3 columns */
+                width: 25%; /* for 4 columns */
+            }
+            
+            /* EMEA changes below */
+            .pricingPortalStyling{
+                color: white;
+
+            }
+
+            .pricingPortalStylingHtml{
+                color: white;
+
+            }
+        </style>
+
+        <script>
+        var app = angular.module('myApp',['ui.bootstrap']);
+
+         //start of controller
+         app.controller('myCtrl',['$scope','$location',function($scope,$location){
+            var urlString = $location.absUrl();
+
+            $scope.showActive = function(){
+                if(urlString.indexOf("PP_PRF") >= 0 || urlString.indexOf("PP_Price_Quote") >= 0 ){
+                  console.log('*** In if for URL check *** ');
+                  return false;
+                }
+                else{
+                  console.log('*** In else for URL check *** ');
+                  return true;
+                }
+
+            };
+
+        }]);
+        </script>
+    </head>
+    <body>
+        <div class="teleflex">
+        <apex:variable value="{!IF(contains($UserRole.Name,'EMEA'),TRUE,FALSE)}" var="emeaUser"/>
+        <apex:outputPanel id="theFrame1"><apex:iframe html-style="visibility:hidden;" frameborder="false" scrolling="false" height="0" width="0" src="{!iframeSource}" /></apex:outputPanel>
+        <nav class="teleflex navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <apex:outputText rendered="{!!emeaUser}">
+                        <a class="navbar-brand" data-placement="top" href="/">Home</a>
+                    </apex:outputText>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navigationbar">
+                    <ul class="nav navbar-nav">
+                        <!--
+                        <li>
+                            <a class="navbar-brand" data-placement="top" href="/">Home</a>
+                        </li>
+                        
+                        <li>
+                            <a data-placement="top" href="/apex/PP_GPO_Matrix">Pricing Portal</a>
+                        </li>
+                        -->
+                        <apex:outputText rendered="{!!emeaUser}">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{!$Label.Pricing_Portal_Tab}<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="fixli"><a href="/apex/PP_GPO_Matrix">Pricing Portal Home Page</a></li>
+                                <li class="fixli"><a href="/apex/PP_ProductSearch">Material Search</a></li>
+                                <li class="fixli"><a href="/apex/PP_CompProductSearch">Competitor Material Search</a></li>
+                            </ul>
+                        </li>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!emeaUser}">
+                            <li><a href="/apex/PP_GPO_Matrix">{!$Label.Pricing_Portal_Tab}</a></li>
+                        </apex:outputText>
+                        <!--<li class="dropdown">
+                            <div  id="GPODropdownContainer" />
+                        </li> -->
+                        
+                        <!-- CHANGED TO LWC START-->
+                        <apex:outputText rendered="{!gpodropdown.size > 0}">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">GPO Matrix <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <apex:repeat value="{!gpodropdown}" var="gpo">
+                                        <li class="fixli"><a href="/apex/PP_GPO_Matrix?oid={!gpo.Key__c}&pqId={!ActiveQuote.Id}">{!gpo.name}</a></li>
+                                    </apex:repeat>
+                                </ul>
+                            </li>
+                        </apex:outputText> 
+                        <!-- CHANGED TO LWC END-->
+                        <!--<li class="dropdown">
+                            <div  id="IDNDropdownContainer" />
+                        </li> -->
+                        <!-- CHANGED TO LWC START-->
+                        <apex:outputText rendered="{!idndropdown.size > 0}">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">IDN Matrix <span class="caret"></span></a>
+                                <ul class="dropdown-menu multicolumn" role="menu">
+                                    <apex:repeat value="{!idndropdown}" var="idn">
+                                        <li class="fixli"><a href="/apex/PP_IDN_Matrix?oid={!idn.Key__c}">{!idn.name}</a></li>
+                                    </apex:repeat>
+                                </ul>
+                            </li>
+                        </apex:outputText>
+                        <!-- CHANGED TO LWC END-->
+
+                        <li><a href="/apex/PP_Price_Lookup">{!$Label.Price_Lookup_Tab}</a></li>
+                        <apex:outputText rendered="{!!emeaUser}">
+                            <li><a href="/apex/PP_Margin_Calculator">{!$Label.Margin_Calculator_Tab}</a></li>
+                        </apex:outputText>
+                        <!-- Quote -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{!$Label.Price_Quote_Tab}<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="fixli">
+                                  <apex:outputLink value="/apex/PP_SelectAccount?gs=off">Create Quote</apex:outputLink>
+                                  <!-- <a href="/apex/PP_SelectAccount?gs=off">Create Quote</a> -->
+                                </li>
+                                <li class="fixli"><a href="/apex/PP_Quote_Listview?gs=off">View Quotes</a></li>
+                                <!-- Active Quote -->
+                                <apex:outputText rendered="{!QuoteList.size > 0}">
+                                    <li class="nav-divider fixli"></li>
+                                    <li class="fixli"><a href="/apex/PP_Price_Quote?pqid={!ActiveQuote.Id}">Active Quote:&nbsp;{!ActiveQuote.Price_Quote_Name_Alt__c}</a></li>
+                                </apex:outputText>
+                                <!-- Recent Quotes -->
+                                <apex:outputText rendered="{!QuoteList.size > 0}">
+                                    <li class="nav-divider fixli"></li>
+                                    <li class="fixli"><a href="/apex/PP_Quote_Listview">Recent Quotes</a></li>
+                                    <li class="nav-divider fixli"></li>
+                                    <apex:repeat value="{!QuoteList}" var="rq">
+                                        <li class="fixli"><a href="/apex/PP_Price_Quote?pqid={!rq.Id}">{!rq.Price_Quote_Name_Alt__c}&nbsp;({!rq.Sales_Org_Key__c})</a></li>
+                                    </apex:repeat>
+                                </apex:outputText>
+                            </ul>
+                        </li>
+                        <!-- PRF -->
+                        <apex:outputText rendered="{!!emeaUser}">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PRF <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="fixli">
+                                  <apex:outputLink value="/apex/PP_SelectAccount?gs=off&prf=yes">Create PRF</apex:outputLink>
+                                  <!-- <a href="/apex/PP_SelectAccount?gs=off&prf=yes">Create PRF</a> -->
+                                </li>
+                                <li class="fixli"><a href="/apex/PP_PRF_Listview">View PRFs</a></li>
+
+                                <!-- Recent PRF's-->
+                                <apex:outputText rendered="{!PRFList.size > 0}">
+                                    <li class="nav-divider fixli"></li>
+                                    <li class="fixli"><a href="/apex/PP_PRF_Listview">Recent PRFs</a></li>
+                                    <li class="nav-divider fixli"></li>
+                                    <apex:repeat value="{!PRFList}" var="prf">
+                                        <li class="fixli"><a href="/apex/PP_PRF?id={!prf.Id}">{!prf.PRF_Name_Alt__c}&nbsp;({!prf.Sales_Org_Key__c})</a></li>
+                                    </apex:repeat>
+                                </apex:outputText>
+                            </ul>
+                        </li>
+                    </apex:outputText>
+                        <!-- Sample Request -->
+                        <apex:outputText rendered="{!!emeaUser}">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sample Request <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="fixli">
+                                        <apex:outputLink value="https://home.teleflex.com/webfolders/TrainingMatrix/files/Samples_Request_SFDC/index.html">
+                                        Sample Request Training
+                                        </apex:outputLink>
+                                    </li>
+                                    <li class="fixli">
+                                    <!-- Surya comment code for testing lightning component render. -->
+                                    <apex:outputLink value="/apex/Sample_Requests?gs=off">Create Sample Request</apex:outputLink>
+                                        
+                                    <!-- <apex:outputLink value="/apex/Create_Sample_Request_VF">Create Sample Request</apex:outputLink> 
+                                        <apex:outputLink value="/apex/Create_Sample_Request_VF?salesOrg={!salesPrefix}">Create Sample Request</apex:outputLink> -->
+                                    <!-- User for Blackout Period
+                                    <apex:outputLink value="/apex/Sample_Requests2">Create Sample Request</apex:outputLink>
+                                    -->
+                                    </li>
+                                    
+                                    <!-- Surya comment code for testing lightning component render. -->
+                                    <li class="fixli"><a href="/apex/PP_Sample_Request_Listview?gs=off">View Sample Requests</a></li>
+                                    
+                                    <!-- <li class="fixli"><a href="/apex/View_Sample_Reqs_VF">View Sample Requests</a></li> -->
+                                    <!-- User for Blackout Period
+                                    <li class="fixli"><a href="/apex/Sample_Requests2">View Sample Requests</a></li>
+                                    -->
+                                    <apex:outputText rendered="{!sampleRequestList.size > 0}">
+                                        <li class="nav-divider fixli"></li>
+                                        <li class="fixli"><a href="/apex/PP_Sample_Request_Listview">Recent Sample Requests</a></li>
+                                        <li class="nav-divider fixli"></li>
+                                        <apex:repeat value="{!sampleRequestList}" var="sr">
+                                            <li class="fixli"><a href="/{!sr.Id}">{!sr.Name} - {!sr.Territory_Number__c} - {!sr.Type__c}&nbsp;({!sr.Status__c})&nbsp;({!sr.Sales_Org_Key__c})</a></li>
+                                        </apex:repeat>
+                                    </apex:outputText>
+                                </ul>
+                            </li>
+                            <li><a href="https://askproductplatform.com/login">ASK Platform</a></li>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!emeaUser || $UserRole.Name = 'Teleflex Global IT' }">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Training Materials<span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="fixli">
+                                        <apex:outputLink value="https://teleflex.my.salesforce.com/sfc/p/E0000000K31h/a/7V000000xX4F/tH7Dh44gOnLI4oBxsd7nVHYSmfMZ38NMlFgf5Q1CrGc">FAQs</apex:outputLink>
+                                    </li>
+                                    <li class="fixli">
+                                        <apex:outputLink value="https://tfxinc-my.sharepoint.com/personal/michael_wannagot_teleflex_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmichael%5Fwannagot%5Fteleflex%5Fcom%2FDocuments%2F1%20Pricing%20Portal%20%2D%20Customer%20Lookup%2Emp4&referrer=OfficeHome%2EWeb&referrerScenario=RecentVideo%2EView&CT=1686664622254&OR=OWA-NT&CID=332855e1-3894-a051-9932-b902507b4c38">
+                                            Customer Lookup
+                                        </apex:outputLink>
+                                    </li>
+                                    <li class="fixli">
+                                        <apex:outputLink value="https://tfxinc-my.sharepoint.com/personal/michael_wannagot_teleflex_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmichael%5Fwannagot%5Fteleflex%5Fcom%2FDocuments%2F2%20Pricing%20Portal%20%2D%20Product%20Lookup%2Emp4&referrer=OfficeHome%2EWeb&referrerScenario=RecentVideo%2EView&CT=1686664658888&OR=OWA-NT&CID=eac615a6-fe5b-9c68-97a8-8374b5b1fb98">
+                                            Product Lookup
+                                        </apex:outputLink>
+                                    </li>
+                                    <li class="fixli">
+                                        <apex:outputLink value="https://tfxinc-my.sharepoint.com/personal/michael_wannagot_teleflex_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmichael%5Fwannagot%5Fteleflex%5Fcom%2FDocuments%2F3%20Pricing%20Portal%20%2D%20Price%20Lookup%2Emp4&referrer=OfficeHome%2EWeb&referrerScenario=RecentVideo%2EView&CT=1686664717720&OR=OWA-NT&CID=31a1e958-749a-49b7-546b-bda3e7d8acdd">
+                                            Price Lookup
+                                        </apex:outputLink>
+                                    </li>
+                                    <li class="fixli">
+                                        <apex:outputLink value="https://tfxinc-my.sharepoint.com/personal/michael_wannagot_teleflex_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmichael%5Fwannagot%5Fteleflex%5Fcom%2FDocuments%2F4%20Pricing%20Portal%20%2D%20Create%20Quote%20Not%20Requiring%20Approval%2Emp4&referrer=OfficeHome%2EWeb&referrerScenario=RecentVideo%2EView&CT=1686664761985&OR=OWA-NT&CID=ef7a1ba4-a9bc-0429-56a3-c55827cd8fb1">
+                                            Create a Quote Not Requiring Approval
+                                        </apex:outputLink>
+                                    </li>
+                                    <li class="fixli">
+                                        <apex:outputLink value="https://tfxinc-my.sharepoint.com/personal/michael_wannagot_teleflex_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fmichael%5Fwannagot%5Fteleflex%5Fcom%2FDocuments%2F5%20Pricing%20Portal%20%2D%20Create%20Quote%20Requiring%20Approval%2Emp4&referrer=OfficeHome%2EWeb&referrerScenario=RecentVideo%2EView&CT=1686664775501&OR=OWA-NT&CID=1d34be32-4c64-287d-4bfd-baefe7e6f1a5">
+                                            Create a Quote Requiring Approval
+                                        </apex:outputLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://teleflex.lightning.force.com/lightning/o/ProcessInstanceWorkitem/list?filterName=00BE0000001kluhMAA" target="_blank">
+                                    <apex:outputText rendered="{!numberOfApprovals.size > 0}">
+                                        Items to Approve&nbsp;<strong>({!numberOfApprovals.size})</strong>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!numberOfApprovals.size = 0}">
+                                        Items to Approve
+                                    </apex:outputText>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://teleflex--c.vf.force.com/flow/Create_a_Case" target="_blank">
+                                    Get Support?
+                                </a>
+                            </li>
+                        </apex:outputText>
+                        <!-- Last One -->
+                    </ul>
+                    <!--
+                    <ul class="nav navbar-nav navbar-right">
+                        <apex:outputText rendered="{!adminaccess}">
+                            <li><a href="/apex/PP_User_Administration" style="font-size: 16px;">Admin</a></li>
+                        </apex:outputText>
+                        <li><a href="/sfc/#version?selectedDocumentId=069E0000001JBs6" style="font-size: 16px;">Help</a></li>
+                    </ul>-->
+                </div>
+            </div>
+        </nav>
+        </div>
+        
+        
+        <div class="teleflex" id="bodyDiv">
+            <!-- START Global Search -->
+            <apex:outputPanel rendered="{!gs}">
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    <div style="display:flex;">
+                                        <div style="padding-top: 15px;">
+                                            <apex:form styleClass="form-inline" html-ng-non-bindable="true">
+                                                <span class="glyphicon glyphicon-search"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <apex:inputText html-placeholder="Search Customers, Materials, Contracts..." size="40" value="{!searchStr}" id="ppsearch" label="Search" styleClass="form-control"/>&nbsp;&nbsp;
+                                                <apex:commandButton value="{!$Label.Pricing_Portal_Search_Button}" action="{!getURL}" styleClass="btn btn-primary" />&nbsp;&nbsp;&nbsp;
+                                                <apex:inputText html-placeholder="Type here to filter results..." size="20" label="Filter" id="filter" styleClass="form-control"/>
+                                            </apex:form>
+                                        </div>
+                                        <!-- <div  id="ActiveSalesOrgContainer" /> -->
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div><!-- end div col -->
+                    
+                    <!-- CHANGED TO LWC START-->
+                    <div class="col-lg-3">
+                        <table class="table table-bordered">
+                            <tr>
+                                <apex:outputText rendered="{!SOlist.size > 1}">
+                                    <td align="left" style="vertical-align: middle; margin: 0px;" ng-if="showActive()">
+                                        <apex:form rendered="{!SOlist.size > 1}" styleClass="form-inline" id="salesOrg" html-ng-non-bindable="true"><h5>{!$Label.Active_Sales_Org}&nbsp;:&nbsp;</h5>
+                                            <apex:selectList rendered="{!SOlist.size > 1}" styleClass="form-control" value="{!salesOrg}" multiselect="false" size="1">
+                                                <apex:selectOptions value="{!SOlist}"/>
+                                                <apex:actionSupport event="onchange" action="{!reloadIframe}" reRender="theFrame" oncomplete="parent.location.reload();" />
+                                            </apex:selectList>
+                                        </apex:form>
+                                    </td>
+                                </apex:outputText>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <!-- earlier here <div  id="ActiveSalesOrgContainer" /> -->
+                    
+                    <!-- CHANGED TO LWC END-->
+                    <!--
+                    <table class="table table-bordered">
+                        <apex:form styleClass="form-inline" html-ng-non-bindable="true">
+                            <div class="col-md-4">
+                                <span class="glyphicon glyphicon-search"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <apex:inputText html-placeholder="Search Customers, Materials, Contracts..." size="20" value="{!searchStr}" id="ppsearch" label="Search" styleClass="form-control"/>&nbsp;&nbsp;
+                            </div>
+                            <div class="col-md-4">
+                                <apex:commandButton value="Pricing Portal Search" action="{!getURL}" styleClass="btn btn-primary" />&nbsp;&nbsp;&nbsp;
+                                <apex:inputText html-placeholder="Type here to filter results..." size="20" label="Filter" id="filter" styleClass="form-control"/>
+                            </div>
+                        </apex:form>
+                        <apex:form rendered="{!SOlist.size > 1}" styleClass="form-inline" id="salesOrg" html-ng-non-bindable="true"><h4>Active Sales Org&nbsp;:&nbsp;</h4>
+                            <div class="col-md-4">
+                                <apex:selectList rendered="{!SOlist.size > 1}" styleClass="form-control" value="{!salesOrg}" multiselect="false" size="1">
+                                    <apex:selectOptions value="{!SOlist}"/>
+                                    <apex:actionSupport event="onchange" action="{!reloadIframe}" reRender="theFrame" oncomplete="parent.location.reload();" />
+                                </apex:selectList>
+                            </div>
+                        </apex:form>
+                    </table>
+                    -->
+                    <!--
+                    <div class="col-md-3">
+                        
+                    </div>
+                    <div class="col-md-3">
+                        
+                    </div>
+                    -->
+                </div><!--end div row -->
+                
+            </apex:outputPanel>
+    
+            <!-- END Global Search -->
+            <script>
+            $(document).ready( function(){
+                // Start of code to enable/disable filter if unavailable //
+                if($('tbody').find('.searchable').length > 0){
+                  console.log('*** found searchable!!!!! ***');
+                    $('[id$=filter]').prop('disabled',false);
+                }
+                else{
+                  //second check for Lightning Experience
+                  var x = document.getElementsByClassName("searchable");
+                  if(x.length > 0){
+                    $('[id$=filter]').prop('disabled',false);
+                  }
+                  else{
+                    $('[id$=filter]').prop('disabled',true);
+                  }
+                }
+                // End of code to enable/disable filter if unavailable //
+    
+                $('[data-toggle="tooltip"]').tooltip();
+    
+                // Script to pre-populate the search URL
+                $("input[name*='ppsearch']" ).val( "{!srch}" ); // This Fixes the vertical scroll issue. - ESC - 31Aug2016 - https://api.jquery.com/attribute-contains-selector/
+    
+                //$("#ppsearch2").html("Test!");
+                $('link[rel="shortcut icon"]').attr('href','https://teleflex.my.salesforce.com/resource/1432692142000/Favicon');
+            });
+            </script>
+
+        </div><!-- End of Teleflex id="bodyDiv" -->
+    </body>
+    </html>
+</apex:page>

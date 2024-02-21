@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waiting_on_RSM_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Agreement_Type__c</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Owner_Full_Name__c</columns>
+    <columns>Owner_Business_Unit__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Waiting For RSM Approval</value>
+    </filters>
+    <label>3. My PRF&apos;s - Waiting For RSM</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>All_Internal_Users</group>
+    </sharedTo>
+</ListView>

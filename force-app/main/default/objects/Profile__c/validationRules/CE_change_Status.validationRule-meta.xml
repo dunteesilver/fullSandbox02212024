@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CE_change_Status</fullName>
+    <active>false</active>
+    <description>Limit the role of who change the status for CE</description>
+    <errorConditionFormula>AND( ISCHANGED( Status__c ),
+RecordTypeId =&quot;012E0000000RUXa&quot;,
+$Profile.Id  &lt;&gt; &quot;00eE0000000lT3Q&quot;,
+$Profile.Id  &lt;&gt; &quot;00eE0000000j5Tp&quot;)</errorConditionFormula>
+    <errorMessage>Please contact Clinical Affairs to change the status for all CE&apos;s</errorMessage>
+</ValidationRule>

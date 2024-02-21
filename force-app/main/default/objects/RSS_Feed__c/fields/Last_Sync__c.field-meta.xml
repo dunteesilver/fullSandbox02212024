@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Sync__c</fullName>
+    <description>The last sync field shows the last date and time a feed post was added to this rss feed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The last sync field shows the last date and time a feed post was added to this rss feed.</inlineHelpText>
+    <label>Last Sync</label>
+    <summarizedField>RSS_Feed_Posts__c.CreatedDate</summarizedField>
+    <summaryForeignKey>RSS_Feed_Posts__c.RSS_Feed__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

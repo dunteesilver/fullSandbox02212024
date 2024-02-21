@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Sample_Investigation_is_Blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Return_Quantity_for_Investigation__c&gt;0,
+ISPICKVAL(Type_of_Sample_For_Investigation__c,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Type_of_Sample_For_Investigation__c</errorDisplayField>
+    <errorMessage>If the &quot;Return Quantity for Investigation&quot; is more than 0, then the &quot;Type of Sample for Investigation&quot; is required.</errorMessage>
+</ValidationRule>

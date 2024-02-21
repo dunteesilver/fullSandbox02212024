@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserStory_complete_cant_chg_Task_Status</fullName>
+    <active>true</active>
+    <description>For Element.RecordType = Task when the related Story.Status = Complete:
+
+Prevents user from changing the Task Status from Done back to In Progress or Not Started.</description>
+    <errorConditionFormula>RecordType.Name == &quot;Task&quot;
+&amp;&amp;
+ISPICKVAL(User_Story__r.Status__c , &quot;Complete&quot;)
+&amp;&amp;
+ISPICKVAL(PRIORVALUE(Status__c) , &quot;Done&quot;) 
+&amp;&amp;
+OR(
+ISPICKVAL(Status__c , &quot;In Progress&quot;)
+,
+ISPICKVAL(Status__c , &quot;Not Started&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>The related Story has already been marked as Complete, so you can not revert this Task to an undone Status UNLESS you first change the Story Status back to In Sprint.
+
+Click Cancel or change Status back to Done to continue.</errorMessage>
+</ValidationRule>

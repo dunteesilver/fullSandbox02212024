@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cardiac_Insertion_Site_Verification</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+ RecordType.Name  = &quot;Cardiac_Care&quot;, 
+ISPICKVAL(  Was_another_IAB_inserted__c  , &quot;yes&quot;), 
+ISPICKVAL(  If_yes_was_the_same_insertion_site_used__c,&quot;None&quot;))</errorConditionFormula>
+    <errorDisplayField>If_yes_was_the_same_insertion_site_used__c</errorDisplayField>
+    <errorMessage>If another IAB was inserted, please advise if the same insertion site was used.</errorMessage>
+</ValidationRule>

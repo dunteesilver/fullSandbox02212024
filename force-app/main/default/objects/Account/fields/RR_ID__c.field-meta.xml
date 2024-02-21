@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RR_ID__c</fullName>
+    <description>Use in the Latin America Sales Target Report</description>
+    <externalId>false</externalId>
+    <formula>IF(SAP_Sold_To__c != NULL, SAP_Sold_To__c,
+IF(LatAm_Account_Code__c != NULL, LatAm_Account_Code__c,
+&quot;&quot;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RR_ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

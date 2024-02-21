@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_a_EMS_EZIO_Teleflex_Academy_Record</fullName>
+    <active>false</active>
+    <description>Users must select &quot;Yes&quot; for &quot;Add to Teleflex Academy?&quot; field if business unit is EMS and product is EZIO!</description>
+    <errorConditionFormula>AND(   ISPICKVAL(Business_Unit__c, &quot;EMS&quot;) ,ISPICKVAL( Primary_Product__c , &quot;EZ-IO&quot;),
+ISPICKVAL( Add_to_Teleflex_Academy__c , &quot;NO&quot;)
+) &amp;&amp;
+OR(
+ RecordType.DeveloperName  = &quot;Inservice_Record&quot;,RecordType.DeveloperName = &quot;Education_Record&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Add_to_Teleflex_Academy__c</errorDisplayField>
+    <errorMessage>Users must select &quot;Yes&quot; for &quot;Add to Teleflex Academy?&quot; field if business unit is EMS and product is EZIO!</errorMessage>
+</ValidationRule>

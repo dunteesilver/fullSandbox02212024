@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cnfrm_Policy_and_Proc_to_eliminate_CXR__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Confirm Policy and Procedure has been initiated to eliminate CXR, or is in draft form (provide sample policy and assistance if needed)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirm Policy and Procedure has been initiated to eliminate CXR, or is in draft form (provide sample policy and assistance if needed)</inlineHelpText>
+    <label>Cnfrm Policy and Proc. to eliminate CXR</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

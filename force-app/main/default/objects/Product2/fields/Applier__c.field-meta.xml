@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applier__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Added to identify products for Sample Request Loaner.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Added to identify products for Sample Request Loaner.</inlineHelpText>
+    <label>Applier</label>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

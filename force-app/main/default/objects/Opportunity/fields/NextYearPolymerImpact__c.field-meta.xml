@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NextYearPolymerImpact__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(AmountofPolymerLost__c == null, AmountofPolymerLost__c == 0 ),
+0,
+IF(
+AND( NOT( One_Time_Sale__c ),YEAR(CloseDate) - YEAR( Today() ) = 1 ),
+(AmountofPolymerLost__c/365) * ( DATE(YEAR(CloseDate),12,31) - DATE(YEAR(CloseDate),MONTH(CloseDate),DAY(CloseDate) ) ),
+IF(
+AND( One_Time_Sale__c,YEAR(CloseDate) - YEAR( Today() ) = 1 ),
+AmountofPolymerLost__c,
+CarryOverPolymerAmmount__c
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Next Year Polymer Impact</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

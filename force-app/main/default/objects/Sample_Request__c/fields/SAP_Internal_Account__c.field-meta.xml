@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SAP_Internal_Account__c</fullName>
+    <description>Shelley and I determined that the formula used to determine the SAP Internal Account number (territory #) was useless because the people who are processing the sample requests already know what account to use so we are not going to update this formula. Case 14247 LEC</description>
+    <externalId>false</externalId>
+    <formula>Case(
+Account__r.Sales_Region__c , 
+&apos;Mexico&apos;, &apos;800617 - TFX:400274 - Arrow:401135&apos;, 
+&apos;Brazil&apos;, &apos;800618 - TFX:400275 - Arrow:401136&apos;, 
+&apos;Central America - North Cone&apos;, &apos;800621 - TFX:400278 - Arrow:401139&apos;, 
+&apos;Southern Cone&apos;, &apos;800620 - TFX:400277 - Arrow:401138&apos;, 
+&apos;Caribbean&apos;, &apos;800619 - TFX:400276 - Arrow:401137&apos;, 
+&apos;US Exports&apos;, &apos;800619 - TFX:400276 - Arrow:401137&apos;,
+&apos;Colombia&apos;, &apos;801059 - TFX:400278 - Arrow:401139&apos;, 
+&apos;Chile&apos;, &apos;800541 - TFX:401914&apos;,
+/* This is the Default - Should always be last */
+&apos;800622 - TFX:400279 - Arrow:401140&apos;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SAP Internal Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Associate_Sales_Rep__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>this is not visible to any users or on the page layout at this time.  Alexandra Eller will let us know when to make it live.  Has been approved by CE teams.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is only needed if a sales rep and an associate sales rep will both be on hand for the training.</inlineHelpText>
+    <label>Associate Sales Rep (if applicable)</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Education_Records3</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

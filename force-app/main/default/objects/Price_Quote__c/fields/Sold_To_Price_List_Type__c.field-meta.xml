@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sold_To_Price_List_Type__c</fullName>
+    <description>Field holds price list type for sold to account associated with main account on price quote header.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field holds price list type for sold to account associated with main account on price quote header.</inlineHelpText>
+    <label>Sold To Price List Type</label>
+    <length>2</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

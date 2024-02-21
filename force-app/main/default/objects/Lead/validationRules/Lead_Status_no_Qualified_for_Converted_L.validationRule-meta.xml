@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Status_no_Qualified_for_Converted_L</fullName>
+    <active>false</active>
+    <description>disable this Rule if you want your Package to Deploy. - ESC</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(Status, &quot;Qualified&quot;), 
+NOT(ISCHANGED(IsConverted)) 
+)</errorConditionFormula>
+    <errorMessage>If a lead is qualified, it needs to be converted. Once the lead is converted, the status automatically updates to Qualified.</errorMessage>
+</ValidationRule>

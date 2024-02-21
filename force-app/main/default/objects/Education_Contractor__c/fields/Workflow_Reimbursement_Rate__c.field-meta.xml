@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workflow_Reimbursement_Rate__c</fullName>
+    <description>This gets copied over to the Reimbursement Rate field.</description>
+    <externalId>false</externalId>
+    <formula>if(ISPICKVAL(Engagement_Type__c, &quot;Onboarding/Prof. Development (Hour)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Onboarding_Prof_Development_Hour__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Inservice (Hour)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Inservice_Hour__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Product Implementation (Hour)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Product_Implementation_Hour__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Speaking Engagements (Hour)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Speaking_Engagements_Hour__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Conference Support (Hour)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Conference_Support_Hour__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Consulting (Hour)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Consulting_Hour__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Procedural Program - Physician (Day)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Procedural_Program_Physician_Day__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Procedural Program - MD Prof. Dev (Day)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Procedural_Program_MD_Prof_Dev_Day__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Procedural Program - Lead (Day)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Procedural_Program_Lead_Day__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Procedural Program - Faculty (Day)&quot;), Contractor_Profile__r.Pay_Rate_Card__r.Procedural_Program_Faculty_Day__c,
+if(ISPICKVAL(Engagement_Type__c, &quot;Procedural Program - Prof. Dev (Day)&quot;),  Contractor_Profile__r.Pay_Rate_Card__r.Procedural_Program_Prof_Dev_Day__c,
+0.0
+)))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This gets copied over to the Reimbursement Rate field.</inlineHelpText>
+    <label>Workflow Reimbursement Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

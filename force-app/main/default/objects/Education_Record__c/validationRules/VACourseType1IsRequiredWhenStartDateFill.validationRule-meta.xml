@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VACourseType1IsRequiredWhenStartDateFill</fullName>
+    <active>true</active>
+    <description>VA Course Type is Required when Start Date is filled in</description>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK(Date_of_Event_Start__c)) ,
+
+RecordType.Name = &quot;Clinical Sales Program&quot;,
+
+ISBLANK(TEXT( VACourseType1__c ))
+)</errorConditionFormula>
+    <errorDisplayField>VACourseType1__c</errorDisplayField>
+    <errorMessage>Please Select the appropriate Course Type for this Training Record</errorMessage>
+</ValidationRule>

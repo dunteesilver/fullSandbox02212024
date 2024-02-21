@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Fiscal_Quarter_Sales__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+Current_Fiscal_Quarter_Number__c =  Fiscal_Quarter_Number__c,
+YEAR(Date__c) = YEAR(TODAY())
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Added YEAR(Date__c) = YEAR(TODAY())  to the formula - 20July2018 ESC</inlineHelpText>
+    <label>Current Fiscal Quarter Sales</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

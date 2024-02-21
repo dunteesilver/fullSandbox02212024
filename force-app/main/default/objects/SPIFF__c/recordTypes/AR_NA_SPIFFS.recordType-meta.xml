@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AR_NA_SPIFFS</fullName>
+    <active>true</active>
+    <description>A&amp;R SPIFFS</description>
+    <label>AR NA SPIFFS</label>
+    <picklistValues>
+        <picklist>Business_Unit__c</picklist>
+        <values>
+            <fullName>Anesthesia%2FRespiratory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cross BU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vascular</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Family__c</picklist>
+        <values>
+            <fullName>Airway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_of_Interest__c</picklist>
+        <values>
+            <fullName>1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Lumen PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AE5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AKP1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active Humidification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adaptors %26 Connectors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aerosol Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow PICC %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow PICC with Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atomization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AutoFuser Pain Pump</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cholangiography</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Circuits%2C Mask %26 Bags</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Console</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Arterial %28ASK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Kits %28ASK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom PICC %28ASK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deknatel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Difficult Intubation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EFx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endobronchial Blockers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endotracheal Tubes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Femoral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FlexTip Plus Epidural Catheter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexblock Continuous Catheter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR Arrow PICC %28A5%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR Arrow PICC with Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incentive Spirometers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intubation Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JACC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laryngeal Masks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laryngoscopes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy IR PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Nursing PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Pressure IR PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy Pressure Nursing PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC Arrowgard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC ErgoPack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAC Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid-Tier Kits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Midline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oral %26 Nasal Airways</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other CVCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Pediatric CVCs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oxygen Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PICC Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI Arrowgard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI ErgoPack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSI Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passive Humidification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Ergo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polymer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pressure PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resuscitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stimpod PNB Nerve Stimulator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StimuQuick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StimuQuik ECHO PNB Needle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stimucath Continuous Catheter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stylet %28Bedside Kit%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sure Block Spinal Trays</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thermodilution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin Cath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS G4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS pre-loaded Arrow PICC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS pre-loaded Arrow PICC w%5C Chlorag%2Bard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vista</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>X1A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XP1A</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terms_and_Conditions__c</picklist>
+        <values>
+            <fullName>Order Shipped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Made</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase Order Received</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

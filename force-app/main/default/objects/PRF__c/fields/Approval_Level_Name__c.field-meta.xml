@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Level_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Approval_Level__c = 1,&quot;REP Level&quot;, 
+if(Approval_Level__c = 2,&quot;RSM Level&quot;, 
+if(Approval_Level__c = 3,&quot;Director Level&quot;, 
+if(Approval_Level__c = 4,&quot;VP Level&quot;, 
+&quot;&quot; 
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Level Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

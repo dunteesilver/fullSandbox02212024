@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_Event_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If the exact Event Date is not known, fill in the Estimated Event Date field. Do not fill in both the Event Date and the Estimated Event Date fields- only one field should be used.</inlineHelpText>
+    <label>Estimated Event Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

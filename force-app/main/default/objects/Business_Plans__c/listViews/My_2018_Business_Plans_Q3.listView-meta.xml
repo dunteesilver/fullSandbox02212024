@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_2018_Business_Plans_Q3</fullName>
+    <columns>NAME</columns>
+    <columns>Annual_Target__c</columns>
+    <columns>Latest_Forecast__c</columns>
+    <columns>Q3_Actual__c</columns>
+    <columns>Q3_Comments__c</columns>
+    <columns>Q3_Confidence_Level__c</columns>
+    <columns>Q3_Latest_Forecast__c</columns>
+    <columns>Q3_Target__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Business_Plans__c.Latin_American_Business_Plan_2</value>
+    </filters>
+    <filters>
+        <field>Year__c</field>
+        <operation>equals</operation>
+        <value>2018</value>
+    </filters>
+    <label>My 2018 Business Plans Q3</label>
+    <language>en_US</language>
+</ListView>

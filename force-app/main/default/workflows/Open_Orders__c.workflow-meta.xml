@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Open_Order_on_Constraint_Final_Approval_Email</fullName>
+        <ccEmails>Ship@teleflex.com</ccEmails>
+        <description>Open Order on Constraint Final Approval Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Open_Order_Templates/Open_Orders_on_Constraint_Final_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Open_Order_on_Constraint_Rejection_Email</fullName>
+        <description>Open Order on Constraint Rejection Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Open_Order_Templates/Open_Orders_on_Constraint_Rejection_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Open_Orders_Acct_Material_Key</fullName>
+        <field>Account_Material_Key__c</field>
+        <formula>Account__c &amp; &quot;-&quot; &amp; Product__c</formula>
+        <name>Open Orders - Acct Material Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Open_Orders_Business_Unit</fullName>
+        <field>Business_Unit__c</field>
+        <formula>TEXT(Territory__r.Business_Unit__c)</formula>
+        <name>Open Orders - Business Unit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Open_Orders_Compensation_Profile</fullName>
+        <field>Compensation_Profile__c</field>
+        <formula>TEXT(Territory__r.Compensation_Profile__c)</formula>
+        <name>Open Orders - Compensation Profile</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Open_Orders_Future_Orders_Total_Fix</fullName>
+        <field>Future_Order_Total__c</field>
+        <formula>0</formula>
+        <name>Open Orders - Future Orders Total Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Open_Orders_Material_Key</fullName>
+        <field>Material_Key__c</field>
+        <formula>Product__r.Material_Key__c</formula>
+        <name>Open Orders - Material Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Open_Orders_SAP_Code</fullName>
+        <field>SAP_Code__c</field>
+        <formula>Account__r.SAP_Code__c</formula>
+        <name>Open Orders - SAP Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Open_Orders_Territory_Number</fullName>
+        <field>Territory_Number__c</field>
+        <formula>Territory__r.Territory_Number__c</formula>
+        <name>Open Orders - Territory Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Waiting_for_Approval</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Waiting for Approval</literalValue>
+        <name>Update Status to Waiting for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Open Orders - Acct Material Key</fullName>
+        <actions>
+            <name>Open_Orders_Acct_Material_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Open_Orders__c.Account_Material_Key__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Open Orders - Business Unit</fullName>
+        <actions>
+            <name>Open_Orders_Business_Unit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Open_Orders__c.Business_Unit__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Open Orders - Compensation Profile</fullName>
+        <actions>
+            <name>Open_Orders_Compensation_Profile</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Open_Orders__c.Compensation_Profile__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Open Orders - Future Orders Total Fix</fullName>
+        <actions>
+            <name>Open_Orders_Future_Orders_Total_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Open_Orders__c.Future_Order_Total__c</field>
+            <operation>greaterThan</operation>
+            <value>&quot;USD 1,000,000,000,000,000&quot;</value>
+        </criteriaItems>
+        <description>9,999,999,999,999,999.99
+This number is throwing the Wave ETL: 1,417,520,364,884,463.20
+Fixing it the old fashion way...workflow.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Open Orders - Material Key</fullName>
+        <actions>
+            <name>Open_Orders_Material_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Open_Orders__c.Material_Key__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Open Orders - SAP Code</fullName>
+        <actions>
+            <name>Open_Orders_SAP_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Open_Orders__c.SAP_Code__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Open Orders - Territory Number</fullName>
+        <actions>
+            <name>Open_Orders_Territory_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( ISBLANK(Territory_Number__c), Territory_Number__c &lt;&gt;  Territory__r.Territory_Number__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

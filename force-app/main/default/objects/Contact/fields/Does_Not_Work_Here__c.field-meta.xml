@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Does_Not_Work_Here__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check this box if the contact no longer works at the company or is aged with no activity in the last 3 years.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box if a contact no longer works at this customer or is aged with no activity in the last 3 years.. We recommend changing the account if they simply switch facilities.</inlineHelpText>
+    <label>Inactive</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

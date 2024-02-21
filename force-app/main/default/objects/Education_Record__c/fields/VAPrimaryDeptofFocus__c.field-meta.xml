@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAPrimaryDeptofFocus__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary Dept. of Focus</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Critical Care</fullName>
+                <default>false</default>
+                <label>Critical Care</label>
+            </value>
+            <value>
+                <fullName>Emergency Department</fullName>
+                <default>false</default>
+                <label>Emergency Department</label>
+            </value>
+            <value>
+                <fullName>Interventional Radiology</fullName>
+                <default>false</default>
+                <label>Interventional Radiology</label>
+            </value>
+            <value>
+                <fullName>Medical Doctor</fullName>
+                <default>false</default>
+                <label>Medical Doctor</label>
+            </value>
+            <value>
+                <fullName>Mobile Team/Company</fullName>
+                <default>false</default>
+                <label>Mobile Team/Company</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Paramedic/EMT</fullName>
+                <default>false</default>
+                <label>Paramedic/EMT</label>
+            </value>
+            <value>
+                <fullName>Pediatrics, Other</fullName>
+                <default>false</default>
+                <label>Pediatrics</label>
+            </value>
+            <value>
+                <fullName>Vascular Access</fullName>
+                <default>false</default>
+                <label>Vascular Access</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

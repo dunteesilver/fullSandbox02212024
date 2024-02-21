@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zip_Code_Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LEFT(Zip_Code_Formstack_Affiliation__c, 3) = &quot;Hos&quot;, &quot;Vascular&quot;, 
+IF(LEFT(Zip_Code_Formstack_Affiliation__c, 2) = &quot;ED&quot;, &quot;Vascular&quot;, 
+IF(LEFT(Zip_Code_Formstack_Affiliation__c, 3) = &quot;EMS&quot;, &quot;EMS&quot;, 
+IF(LEFT(Zip_Code_Formstack_Affiliation__c, 3) = &quot;Int&quot;, &quot;Interventional Access&quot;, 
+IF(LEFT(Zip_Code_Formstack_Affiliation__c, 3) = &quot;Ane&quot;, &quot;Anesthesia&quot;, 
+IF(LEFT(Zip_Code_Formstack_Affiliation__c, 3) = &quot;Sur&quot;, &quot;Surgical Instruments&quot;, 
+&quot;&quot; 
+))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Zip Code Business Unit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,81 @@
+<apex:page controller="PP_Contract_Detail"
+           contentType="{!rxls}"
+           renderAs="{!rpdf}"
+           sidebar="false"
+           showHeader="false"
+           cache="true"
+           readOnly="true">
+    <!-- Main Table -->  
+    <head>
+        <style type="text/css">
+            table {
+            border-collapse: collapse;
+            }
+            
+            table, td, th {
+            border: 1px solid black;
+            }
+            body { font-family: Arial Unicode MS; }
+            span {
+            white-space:nowrap;
+            mso-data-placement:same-cell;
+            }
+            .text-wrap {
+            /* wrap long text and urls */
+            white-space: pre; /* CSS 2.0 */
+            white-space: pre-wrap; /* CSS 2.1 */
+            white-space: pre-line; /* CSS 3.0 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            white-space: -moz-pre-wrap; /* Mozilla */
+            word-wrap: break-word; /* IE 5+ */
+            }
+            br {
+            mso-data-placement:same-cell;
+            }
+            .text{
+            mso-number-format:"\@";/*force text*/
+            }
+        </style>
+    </head>
+    <table>
+        <tr>
+            <th align="center">#</th>
+            <th align="center" width="125">Material Number</th>
+            <th align="center" width="250">Description</th>
+            <th align="center">SU</th>
+            <th align="center">#SU</th>
+            <apex:repeat value="{!contractHeaders}" var="ch">
+                <th width="250"><center>
+                    <span>
+                    {!ch.Description__c}
+                    <br/> 
+                    {!ch.Agreement_Number__c}
+                    <br/>
+                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                        <apex:param value="{!ch.Valid_From__c}" />
+                    </apex:outputText>&nbsp;to&nbsp;
+                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                        <apex:param value="{!ch.Valid_To__c}" />
+                    </apex:outputText><br/>
+                    {!ch.Contract_Detail__c}
+                    </span></center>
+                </th>
+            </apex:repeat>
+        </tr>
+        
+        <!-- Start Product List -->
+        <apex:variable value="{!1}" var="rowNum"/>
+        <apex:repeat value="{!plist}" var="pl">
+            <tr>
+                <td align="center"><apex:outputText value="{!FLOOR(rowNum)}"/></td>
+                <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                <td class="text">{!pl.Name}</td>
+                <td>{!pl.Description}</td>
+                <td align="center"><center>{!pl.Sales_Unit__c}</center></td>
+                <td align="center"><center>{!pl.Qty_Sales_Unit__c}</center></td>
+                <apex:outputText escape="false" value="{!htmlMap[pl.Name]}"/>
+            </tr>
+        </apex:repeat>
+    </table>
+</apex:page>

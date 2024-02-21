@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_Contracts</fullName>
+    <active>true</active>
+    <label>VPS Contracts</label>
+    <picklistValues>
+        <picklist>Part_Number__c</picklist>
+        <values>
+            <fullName>RHY-100-MTRB %E2%80%93 VPS Rhythm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RHY-100-MTRB-R - VPS Rhythm Refurbished</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS-G4C-R -G4 Refurbished</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_Status__c</picklist>
+        <values>
+            <fullName>Returned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>With Rep</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,249 @@
+<apex:page controller="PP_CompProductSearch" tabStyle="Pricing_Portal__tab">
+
+    <style>
+        .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+        border: none !important;
+        }
+    </style>
+    <div class="teleflex">
+        <!-- Call the Menu -->
+    	<apex:include id="menu" pageName="PP_Menu"/>
+        <!-- Start Search Bar Here -->
+        <div class="panel panel-primary" >
+            <div class="panel-heading">
+                <h6 class="panel-title"><img src="/img/icon/products24.png" alt="Products"/>&nbsp;&nbsp;Cross Reference Search</h6>
+            </div>
+            <table class="table table-bordered">
+                <tr style="text-align:center;">
+                    <td>
+                        <apex:form styleClass="form-inline">
+                            <span class="glyphicon glyphicon-search"/>&nbsp;&nbsp;&nbsp;
+                            <apex:inputText value="{!compEntry}" id="product" style="width: 200px;" styleClass="form-control" html-placeholder="Competitor Product Code..."/>&nbsp;&nbsp;&nbsp;
+                            <script>
+                            var Search = "{!$Component.product}";
+                            </script>
+                            <apex:commandButton value="Cross Reference Search" action="{!getURL}" styleClass="btn btn-primary"/>&nbsp;&nbsp;
+                            <!--Siva-03 Nov 2018--- Added command button instead of anchor tag-->
+                            <apex:commandButton value="Clear" action="{!clearSearch}" styleClass="btn btn-primary"/>
+                            <!--<a class="btn btn-primary" href="/apex/PP_Price_Quote?pqid={!recId}">Clear</a>-->&nbsp;&nbsp;&nbsp;
+                            <input label="Filter" id="filter" style="width: 200px;" type="text" class="form-control" placeholder="Type here to filter results..." />
+                        </apex:form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- End Start Search Bar -->
+        <!-- <div class="input-group"> <span class="input-group-addon">Filter</span>
+
+          <input id="filter" type="text" class="form-control" placeholder="Type here..." />
+        </div> -->
+        <!--Added by Siva on 15 Nov. 2018 to render the search results when search string is entered-->
+        <apex:outputPanel id="pbId" rendered="{!compEntry != '' && compEntry != null}">
+        <apex:outputPanel title="" id="errors">
+            <apex:pageMessages ></apex:pageMessages>
+        </apex:outputPanel>
+        <table class="table borderless">
+          <apex:outputText rendered="{!IF(recId != NULL, true, false)}">
+            <tr>
+              <td>
+              <apex:outputLink value="/apex/{!if(recType = 'PRF', 'PP_PRF?id='+recId, 'PP_Price_Quote?pqid='+recId)}"><h4>
+              <strong>{!recType} \ {!recName}</strong>
+                  </h4></apex:outputLink>
+              </td>
+            </tr>
+          </apex:outputText>
+        </table>
+
+            <apex:form >
+                <apex:actionFunction name="refreshPageSize" action="{!refreshPageSize}" status="fetchStatus" reRender="pbId" oncomplete="load();"/>
+                <!-- Results Start Here -->
+                <div class="panel panel-primary" >
+                    <div class="panel-heading">
+                        <h6 class="panel-title"><img src="/img/icon/products24.png" alt="Products"/>&nbsp;&nbsp;Search Results</h6>
+                    </div>
+                    <div class="panel-body">
+                      <table class="table table-striped table-hover table-bordered" id="conM">
+                        <thead>
+                          <tr>
+                              <th style="text-align:center;">Action</th>
+                              <th class="text-center">Competitor Product Code</th>
+                              <th class="text-center">Competitor Product Description</th>
+                              <th class="text-center">Competitor Name</th>
+                              <th class="text-center">TFX Product</th>
+                              <th class="text-center">Percent Match</th>
+                              <th class="text-center">Sales Org</th>
+                              <th class="text-center">List Price(s)</th>
+                              <th class="text-center">RSM Price</th>
+                              <th class="text-center">Rep Price</th>
+                          </tr>
+                        </thead>
+                        <tbody class="searchable">
+                          <apex:repeat value="{!CompProduct}" var="compProds">
+                                <!--Siva-03 Nov 2018---Added class "searchableRows" on the row for enable disable filter box -->
+                                <tr class="text-center searchableRows">
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          <!-- <input type="button" value="{!strProd}" styleClass="btn btn-primary" action="{!getURL}"/> -->
+                                          <!-- <a href="/apex/PP_Create_Quote1?pid={!compProds.name}">ADD</a> -->
+                                          <apex:outputText rendered="{!IF(recId != NULL, true, false)}">
+                                            <apex:commandlink value="Add" action="{!sapPrice}" styleClass="btn btn-primary" rerender="errors,errors1" status="actStatusId">
+                                                <apex:param name="prdsrchVal" value="{!compProds.Product__c}"/>
+                                                <apex:param name="compsrchVal" value="{!compProds.Id}"/>
+                                            </apex:commandlink>
+                                          </apex:outputText>
+                                      </td>
+                                      <td class="col-md-1" style="text-align:center; vertical-align:middle;">
+                                          <a href="/apex/PP_Material_Info?pid={!compProds.TFX_Product__c}">
+                                            <apex:outputText value="{!compProds.Competitor_Product_Code__c}" id="prodName"/>
+                                          </a>
+                                      </td>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          <apex:outputText value="{!compProds.Competitor_Product_Description__c}" />
+                                      </td>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          <apex:outputText value="{!compProds.Competitor_Name__c}" />
+                                      </td>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          <apex:outputText value="{!compProds.TFX_Product__c}" />
+                                      </td>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          <apex:outputText value="{!compProds.Percent_Match__c}" />
+                                      </td>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          <apex:outputText value="{!compProds.Product__r.Sales_Org__c}" />
+                                      </td>
+                                      <apex:variable var="hospitalList" value="{!IF(compProds.Product__r.List_Price__c != NULL,compProds.Product__r.List_Price__c,0.00)}"/>
+                                      <apex:variable var="distributorList" value="{!IF(compProds.Product__r.Distributor_List__c != NULL,compProds.Product__r.Distributor_List__c,0.00)}"/>
+                                      <apex:variable var="altSiteList" value="{!IF(compProds.Product__r.Alt_Site_List__c != NULL,compProds.Product__r.Alt_Site_List__c,0.00)}"/>
+                                      <!-- Start Handle List Price View -->
+                                      <apex:outputText rendered="{!IF(recSales_Org_Key = 'US6010' || recSales_Org_Key = 'US103010',true,false)}">
+                                        <td class="col-md-1" style="text-align:center; vertical-align:middle;">
+                                          <table>
+                                          <tr>
+                                            <td class="text-left"><b>Hospital:&nbsp;</b></td>
+                                            <td class="text-right">{!formatListPrices[compProds.Id]}</td>
+                                          </tr>
+                                          <tr >
+                                            <td class="text-left"><b>Distributor:&nbsp;</b></td>
+                                            <td class="text-right">{!formatDistributorPrices[compProds.Id]}</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="text-left"><b>Alt. Site:&nbsp;</b></td>
+                                            <td class="text-right">{!formatAltSitePrices[compProds.Id]}</td>
+                                          </tr>
+                                          </table>
+                                        </td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!IF(recSales_Org_Key != 'US6010' && recSales_Org_Key != 'US103010',true,false)}">
+                                        <td class="col-md-1" style="text-align:center; vertical-align:middle;">
+                                            {!formatListPrices[compProds.Id]}
+                                        </td>
+                                      </apex:outputText>
+                                      <!-- End Handle List Price View -->
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          {!formatRsmPrices[compProds.Id]}
+                                      </td>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                          {!formatRepPrices[compProds.Id]}
+                                      </td>
+                                  </tr>
+
+                          </apex:repeat>
+                          </tbody>
+                      </table>
+                      <!-- Start Pagenation Grid -->
+                      <apex:panelGrid columns="13">
+                          <apex:selectList value="{!size}" multiselect="false" size="1" onchange="refreshPageSize();" styleClass="">
+                              <apex:selectOptions value="{!paginationSizeOptions}"/>
+                          </apex:selectList>&nbsp;
+                          <apex:commandButton status="fetchStatus" reRender="pbId" value="First" action="{!setCon.first}" disabled="{!!setCon.hasPrevious}" title="First Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                          <apex:commandButton status="fetchStatus" reRender="pbId" value="Previous" action="{!setCon.previous}" disabled="{!!setCon.hasPrevious}" title="Previous Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                          <apex:commandButton status="fetchStatus" reRender="pbId" value="Next" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                          <apex:commandButton status="fetchStatus" reRender="pbId" value="Last" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                          <apex:outputText >{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>noOfRecords, noOfRecords,
+                              (setCon.pageNumber * size))} of {!noOfRecords}
+                          </apex:outputText>
+                          <apex:outputPanel >
+                              <apex:actionStatus id="fetchStatus" >
+                                  <apex:facet name="start" >
+                                      <img src="/img/loading.gif" />
+                                  </apex:facet>
+                              </apex:actionStatus>
+                          </apex:outputPanel>
+                      </apex:panelGrid>
+                    </div>
+                </div>
+
+                <apex:outputText rendered="{!IF(recId != NULL, true, false)}">
+                  <apex:outputLink value="/apex/{!if(recType = 'PRF', 'PP_PRF?id='+recId, 'PP_Price_Quote?pqid='+recId)}">
+                  <h4>
+                    <strong>Bact to {!recType} \ {!recName}</strong>
+                  </h4>
+                  </apex:outputLink>
+                </apex:outputText>
+            </apex:form>
+            </apex:outputPanel>
+            <apex:outputPanel title="" id="errors1">
+                    <apex:pageMessages ></apex:pageMessages>
+            </apex:outputPanel>
+    </div>
+
+    <apex:actionstatus id="actStatusId">
+        <apex:facet name="start">
+            <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                 height: 100%;opacity:0.65;width:100%;">
+                <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                    <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." />
+                    <span class="waitingDescription">Getting Contract(s)...</span>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionstatus>
+
+    <script>
+    $('th').click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc){rows = rows.reverse()}
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+    })
+    function comparer(index) {
+        return function(a, b) {
+            var valA = getCellValue(a, index), valB = getCellValue(b, index)
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+        }
+    }
+    function getCellValue(row, index){ return $(row).children('td').eq(index).html() }
+
+    //function to handle filter
+    $(document).ready(function () {
+              //Start Siva-03 Nov 2018---  Start of code to enable/disable filter if unavailable //
+              if($('tbody').find('.searchableRows').length > 0){
+                  console.log('*** found searchable!!!!! ***');
+                    $('[id$=filter]').prop('disabled',false);
+                }
+                else{
+                  //second check for Lightning Experience
+                  var x = document.getElementsByClassName("searchableRows");
+                  if(x.length > 0){
+                    $('[id$=filter]').prop('disabled',false);
+                  }
+                  else{
+                    $('[id$=filter]').prop('disabled',true);
+                  }
+                }
+                //End Siva-03 Nov 2018--- End of code to enable/disable filter if unavailable //
+      load();
+    });
+
+    function load(){
+      $('[id$=filter]').keyup(function () {
+          var rex = new RegExp($(this).val(), 'i');
+          $('.searchable tr').hide();
+          $('.searchable tr').filter(function () {
+              return rex.test($(this).text());
+          }).show();
+      });
+    }
+    </script>
+</apex:page>

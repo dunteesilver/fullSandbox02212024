@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Level_Description__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* These rules should cover 99% of Line Items */
+
+/* Blank Line Item  */
+IF(
+Quantity__c = 0
+,&quot;Blank Line&quot;,
+
+/* Sales Price is outside RSM Guidelines  */
+IF(
+AND(
+List_Price__c != 0,
+Eligible_Price__c &lt;&gt;  Sales_Price__c, 
+Sales_Price__c &lt; RSM_Price__c
+),&quot;Sales Price is outside RSM Guidelines&quot;,
+
+/* Sales Price is outside Rep Guidelines  */
+IF(
+AND(
+List_Price__c != 0,
+Eligible_Price__c &lt;&gt;  Sales_Price__c, 
+Sales_Price__c &lt; Rep_Price__c
+),&quot;Sales Price is outside Rep Guidelines&quot;,
+
+/* These are the exceptions that get sent to the RSM to sort out */
+
+/* Off Contract and List Price is Zero */
+IF(
+AND(
+Sales_Price__c = 0,
+List_Price__c = 0
+),&quot;Off Contract and List Price is Zero&quot;,
+
+/* When RSM and Rep Price is Zero, Sales Price must Equal Sales Price or Require Approval  */
+IF(
+AND(
+Rep_Price__c = 0, 
+RSM_Price__c = 0, 
+ISBLANK(Sales_Deal_Description__c),
+List_Price__c &lt;&gt;  Sales_Price__c
+),&quot;When RSM and Rep Price is Zero, Sales Price must Equal Sales Price or Require Approval&quot;,
+
+/* Sales Price is above Contract Price  */
+IF(
+AND(
+!ISBLANK(Sales_Deal_Description__c),
+Sales_Price__c &gt; Eligible_Price__c
+),&quot;Sales Price is above Contract Price&quot;,
+
+/* Sales Price is above List Price  */
+IF(
+AND(
+List_Price__c != 0,
+Sales_Price__c &gt; List_Price__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c
+),&quot;Sales Price is above List Price&quot;,
+
+/* When List is Zero, Sales Price has to equal Rep Pricing  */
+IF(
+AND(
+List_Price__c = 0,
+Sales_Price__c != Rep_Price__c,
+ISBLANK(Sales_Deal_Description__c)
+),&quot;When List is Zero, Sales Price has to equal Rep Pricing&quot;,
+
+&quot;&quot;
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Level Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

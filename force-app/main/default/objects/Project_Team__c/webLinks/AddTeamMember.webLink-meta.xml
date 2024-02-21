@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AddTeamMember</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Add Team Member to Project</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var projectcustomid = &apos;{!$Setup.CustomIDs__c.Project_Team_Project__c}&apos;; 
+
+if (projectcustomid.length == 0) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_CustomSettingsNotSetup}&quot;);
+} 
+
+else 
+{ 
+function redirect() 
+{ 
+parent.frames.location.replace(&apos;/{!$ObjectType.Project_Team__c}/e?CF&apos; + projectcustomid + &apos;={!Project__c.Name}&amp;CF&apos; + projectcustomid + &apos;_lkid={!Project__c.Id}&amp;Name=1001&amp;retURL=%2F{!Project__c.Id}&amp;saveURL=%2F{!Project__c.Id}&apos;); 
+} 
+
+redirect(); 
+}</url>
+</WebLink>

@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <aura:attribute name="contactName" type="String" />
+    <aura:attribute name="role" type="String" />
+    <aura:attribute name="title" type="String" /> 
+    <aura:attribute name="email" type="String" />
+    
+    <div class="wg-cr-table" style="width: 30rem;">
+        <article class="slds-tile">
+            <h3 class="slds-tile__title slds-truncate" title="Winners Guide Members"><a href="javascript:void(0);">Winners Guide Members</a></h3>
+            <div class="slds-tile__detail">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Contact Name:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Description for first label">{!v.contactName}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">Role:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Description for second label">{!v.role}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Third Label">Title:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Description for Third label">{!v.title}</dd>  
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Third Label">Email:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Description for Third label">{!v.email}</dd> 
+                </dl>
+            </div>
+        </article>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patients_Current_Condition</fullName>
+    <active>false</active>
+    <description>Remove this rule -----  Interventional (VSI): If When did the Event Occur = During Use on a Patient then please describe patient&apos;s current condition</description>
+    <errorConditionFormula>AND( 
+RecordType.Name = &quot;Interventional – Legacy VSI &amp; Manta Products&quot;, 
+ISPICKVAL( When_did_the_event_occur__c, &quot;During use on a patient&quot;), 
+ISBLANK(TEXT((Patients_Current_Condition__c))))</errorConditionFormula>
+    <errorDisplayField>Patients_Current_Condition__c</errorDisplayField>
+    <errorMessage>If &quot;When did the Event Occur&quot; = &quot;During Use on a Patient&quot; then please describe patient&apos;s current condition in &quot;Patient&apos;s Current Condition&quot; above</errorMessage>
+</ValidationRule>

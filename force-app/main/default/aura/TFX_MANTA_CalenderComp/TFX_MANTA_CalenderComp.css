@@ -1,0 +1,15 @@
+.THIS .fc-time{
+   display : none;
+}
+
+.THIS .fc-list-heading-main{
+   display : none;
+}
+
+.THIS .fc-list-heading-alt{
+   float : left;
+}
+
+.THIS.scrollerSize {
+    height: 100%;
+}

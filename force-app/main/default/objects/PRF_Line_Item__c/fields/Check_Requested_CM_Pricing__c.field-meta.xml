@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Requested_CM_Pricing__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+NOT(ISBLANK( Requested_Pricing_CM__c )),
+Requested_Price_PT__c &gt; 0,
+Requested_Price_PT__c &lt;&gt; Requested_Price__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Check Requested CM Pricing</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

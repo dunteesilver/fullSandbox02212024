@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRF_GL__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL( CurrencyIsoCode,&quot;CAD&quot;), 
+CASE( Education_Record__r.Business_Unit__c , 
+&quot;VA&quot;, &quot;610800/500320&quot;, 
+&quot;Respiratory&quot;, &quot;610800/500182&quot;, 
+&quot;Surgical&quot;, &quot;610800/500183&quot;, 
+&quot;Anesthesia&quot;, &quot;610800/500181&quot;, 
+&quot;IA&quot;,&quot;610800/500322&quot;, 
+&quot;EMS&quot;,&quot;610800/500321&quot;, 
+&quot;CMA&quot;,&quot;610800/500320&quot;, 
+&quot;n/a&quot;) , 
+IF(AND(NOT(ISPICKVAL(Education_Record__r.Primary_Product__c,&quot;EZ-IO&quot;)),ISPICKVAL(Education_Record__r.Business_Unit__c ,&quot;VA&quot;)), &quot;609301&quot;, 
+CASE( Education_Record__r.Business_Unit__c , 
+&quot;VA&quot;, &quot;610800/500140&quot;, 
+&quot;Respiratory&quot;, &quot;610800/500182&quot;, 
+&quot;Surgical&quot;, &quot;610800/500183&quot;, 
+&quot;Anesthesia&quot;, &quot;610800/500181&quot;, 
+&quot;IA&quot;,&quot;610800/500142&quot;, 
+&quot;EMS&quot;,&quot;610800/500141&quot;, 
+&quot;CMA&quot;,&quot;610800/500140&quot;, 
+&quot;n/a&quot;) 
+))</formula>
+    <label>GL#</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

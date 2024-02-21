@@ -1,0 +1,3 @@
+<design:component>
+    <design:attribute name="requiredField" label="Required field value" />
+</design:component>

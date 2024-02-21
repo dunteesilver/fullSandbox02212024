@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Area_Name__c</fullName>
+    <description>The name of the group or health district the hospital belongs to below the state level, eg: Sydney LHD, Metro North Hospitals Board etc.</description>
+    <externalId>false</externalId>
+    <label>Group Area Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Healthecare</fullName>
+                <default>false</default>
+                <label>Healthecare</label>
+            </value>
+            <value>
+                <fullName>Healthscope</fullName>
+                <default>false</default>
+                <label>Healthscope</label>
+            </value>
+            <value>
+                <fullName>NSW - Central Coast LHD</fullName>
+                <default>false</default>
+                <label>NSW - Central Coast LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - Hunter New England LHD</fullName>
+                <default>false</default>
+                <label>NSW - Hunter New England LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - Mid North Coast LHD</fullName>
+                <default>false</default>
+                <label>NSW - Mid North Coast LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - South Eastern Sydney LHD</fullName>
+                <default>false</default>
+                <label>NSW - South Eastern Sydney LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - Southern LHD</fullName>
+                <default>false</default>
+                <label>NSW - Southern LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - South West Sydney LHD</fullName>
+                <default>false</default>
+                <label>NSW - South West Sydney LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - Sydney LHD</fullName>
+                <default>false</default>
+                <label>NSW - Sydney LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - Western NSW LHD</fullName>
+                <default>false</default>
+                <label>NSW - Western NSW LHD</label>
+            </value>
+            <value>
+                <fullName>NSW - Western Sydney</fullName>
+                <default>false</default>
+                <label>NSW - Western Sydney</label>
+            </value>
+            <value>
+                <fullName>QLD - Metro North Hospitals Board</fullName>
+                <default>false</default>
+                <label>QLD - Metro North Hospitals Board</label>
+            </value>
+            <value>
+                <fullName>QLD - Metro South Hospitals Board</fullName>
+                <default>false</default>
+                <label>QLD - Metro South Hospitals Board</label>
+            </value>
+            <value>
+                <fullName>Ramsay</fullName>
+                <default>false</default>
+                <label>Ramsay</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

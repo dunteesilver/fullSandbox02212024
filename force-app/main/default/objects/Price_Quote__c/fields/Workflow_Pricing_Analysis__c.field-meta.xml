@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workflow_Pricing_Analysis__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/apex/PP_ApprovalLayout?gs=off&amp;pqId=&quot;&amp;Id, Account_Name_Text__c &amp; &quot; (&quot; &amp;  Account_SAP_Code__c &amp; &quot;)&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Workflow Pricing Analysis</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

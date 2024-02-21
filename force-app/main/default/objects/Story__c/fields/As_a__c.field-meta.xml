@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>As_a__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Roles are defined in the &quot;Roles&quot; tab at the top. If you cannot find one, please check that tab and add one if necessary.</inlineHelpText>
+    <label>As a</label>
+    <referenceTo>Role__c</referenceTo>
+    <relationshipLabel>Stories</relationshipLabel>
+    <relationshipName>Stories</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

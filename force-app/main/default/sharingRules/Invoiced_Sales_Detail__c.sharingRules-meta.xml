@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Chris_Booms</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Chris Booms</label>
+        <sharedTo>
+            <role>Vascular_KAM_Pacific</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sharing_Key__c</field>
+            <operation>equals</operation>
+            <value>Chris Booms</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Gilbert_Boucher</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Gilbert Boucher</label>
+        <sharedTo>
+            <role>Anesthesia_RSM_Canada</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sharing_Key__c</field>
+            <operation>equals</operation>
+            <value>Gilbert Boucher</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Detail_Region_2</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Detail Region 2</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_2</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 2</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Detail_Region_9</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Detail Region 9</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_9</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 9</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Canada</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Canada</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Canada</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Region_10</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Region 10</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_10</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Region_11</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Region 11</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_WestCorporate_Sales_Manager_Region_11</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 11</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Region_12</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Region 12</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_12</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 12</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Region_3</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Region 3</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_3</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 3</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Region_4</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Region 4</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_4</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 4</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Region_5</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Region 5</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_5</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 5</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Details_Region_8</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales Details - Region 8</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_8</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 8</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_1</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 1</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_1</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 1</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_6</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 6</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_6</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 6</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_7</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 7</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_7</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 7</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>X800246_800245_Ted_Diamond</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>800246,800245 -Ted Diamond</label>
+        <sharedTo>
+            <role>Vascular_MSR_Canada_Region_2</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sharing_Key__c</field>
+            <operation>equals</operation>
+            <value>Ted Diamond</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>X800247_800249_Larry_Corscadden</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>800247,800249 -Larry Corscadden</label>
+        <sharedTo>
+            <role>Vascular_MSR_Canada_Region_1</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sharing_Key__c</field>
+            <operation>equals</operation>
+            <value>Larry Corscadden</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>sharing_Rule_for_Ellen_Penchuk</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>sharing Rule for Ellen Penchuk</label>
+        <sharedTo>
+            <group>Ellen_Penchuk</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sharing_Key__c</field>
+            <operation>equals</operation>
+            <value>Ellen Penchuk</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

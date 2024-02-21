@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vascular_International_Leads_Lead</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Vascular - International Leads</label>
+    <queue>Vascular_International_Leads</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Hospital</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Target_Profile_CL</compactLayoutAssignment>
+    <label>Pre-Hospital</label>
+    <picklistValues>
+        <picklist>Adult_Trauma_Center_Level__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approved_Insertion_Sites__c</picklist>
+        <values>
+            <fullName>Distal Femur %28pediatrics%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proximal Humerus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proximal%2FDistal Tibia</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Atomization_Being_Used__c</picklist>
+        <values>
+            <fullName>Accuspray</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DART</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bid_Renewal_Month__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Budget_Renewal_Month__c</picklist>
+        <values>
+            <fullName>April</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>August</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>December</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>January</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>July</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>June</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>March</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>May</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>November</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>October</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>September</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Budget_Situation__c</picklist>
+        <values>
+            <fullName>Budget Constrained</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budget Sensitive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open budget</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Code_Cart_Policy_Ranking__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Status__c</picklist>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Target</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ED_Nurse_Protocol__c</picklist>
+        <values>
+            <fullName>Nurse protocol in place%2C nurses insert IOs often%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ED_Policy_Ranking__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hemostatic_Being_Used__c</picklist>
+        <values>
+            <fullName>Blood Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Celox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chito Gauze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NAR Gauze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QC CG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QC EMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Std Gauze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TXA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ICU_Policy_Ranking__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IO_Pain_Protocol__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IO_Product_Being_Used__c</picklist>
+        <values>
+            <fullName>BD System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BIG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EZ-IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FAST1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jamshidi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NIO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TALON</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IO_in_RRT_Equipment__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IO_in_Sepsis_Protocol__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IO_on_Crash_Cart__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lidocaine_Protocol_in_Place__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location_of_C__c</picklist>
+        <values>
+            <fullName>Burn %E2%80%93 Locked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burn %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burn %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burn - Unlocked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Locked Cabinet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Pyxis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Unlocked Cabinet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flight Team %E2%80%93 Stocked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Locked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU - Unlocked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misc %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Code Cart %28in-room%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Preference Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Shelf%2FCabinet %28in-room%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Trauma Cart %28in-room%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Locked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Pyxis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay - Unlocked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location_of_C_in_OR__c</picklist>
+        <values>
+            <fullName>Cart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pyxis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shelf</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location_of_EZ_IO_in_Hospital__c</picklist>
+        <values>
+            <fullName>ED %E2%80%93 Cart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Clean Utility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Locked Office%2FRoom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Nurses Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Pyxis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Unlocked Office%2FRoom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED - Wall Box</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Cart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Clean Utility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Locked Office%2FRoom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Nurses Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Pyxis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Unlocked Office%2FRoom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Wall Box</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RRT %E2%80%93 EZ-IO in Go-Bag</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RRT %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RRT %E2%80%93 Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RRT %E2%80%93 Yellow Bag in Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma %E2%80%93 Cart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma %E2%80%93 Locked Office%2FRoom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma %E2%80%93 Nurses Station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma %E2%80%93 Unlocked Office%2FRoom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma %E2%80%93 Wall Box</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma - Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location_of_QCNI__c</picklist>
+        <values>
+            <fullName>ED %E2%80%93 Cart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Locked Cabinet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Pyxis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ED %E2%80%93 Unlocked Cabinet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flight Team %E2%80%93 Stocked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Locked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICU - Unlocked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misc %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Code Cart %28in-room%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Shelf%2FCabinet %28in-room%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OR %E2%80%93 Trauma Cart %28in-room%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Locked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Not Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Other %28add notes%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay %E2%80%93 Pyxis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trauma Bay - Unlocked Cabinet%2FCart</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Nurse_Protocol_for_IO__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pediatric_Trauma_Center_Level__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pelvic_Stabilizatio_nBeiin__c</picklist>
+        <values>
+            <fullName>Bedsheet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T-POD C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T-POD R</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Protocol_Ranking__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quarterly_Review_Completed__c</picklist>
+        <values>
+            <fullName>Q1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RRT_Code_Team_Nurse_Protocol__c</picklist>
+        <values>
+            <fullName>Only docs can insert IO%2C nurse policy not in place</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RRT_Policy_Ranking__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Restocking_for_EMS__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Restocking_through_Hospital__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SGA_Product_Being_Used__c</picklist>
+        <values>
+            <fullName>Air-Q</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Combitube</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I-Gel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>King LT Airway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Supreme Airway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LMA Unique Airway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No SGA being used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stnd_Code_Carts__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Teaching_Status__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trauma_Policy_Ranking__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VL_Product_Being_Used__c</picklist>
+        <values>
+            <fullName>Airtraq System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C-Mac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glidescope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I-View</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intubrite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>King Vision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>McGrath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No VL being used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>primarily_a_Transport_Service__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

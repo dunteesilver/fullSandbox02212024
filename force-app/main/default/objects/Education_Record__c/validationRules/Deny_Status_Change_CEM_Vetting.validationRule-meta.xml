@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deny_Status_Change_CEM_Vetting</fullName>
+    <active>true</active>
+    <description>CEM and RCEM can change to CEM Vetting</description>
+    <errorConditionFormula>AND(NOT($User.ProfileId =&quot;00eE0000000ag8W&quot;),
+NOT($User.ProfileId =&quot;00eE0000000QqJ8&quot;),
+NOT($User.ProfileId =&quot;00eE0000000j5Qg&quot;),
+ISPICKVAL( Stage__c , &quot;CEM Vetting&quot;),ISCHANGED(Stage__c)
+)</errorConditionFormula>
+    <errorMessage>Status can only be changed to CEM Verring by a CEM or RCEM</errorMessage>
+</ValidationRule>

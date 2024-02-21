@@ -1,0 +1,271 @@
+<apex:page controller="homeRankings" sidebar="false" showHeader="false">
+
+<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->
+
+<style>
+.container {
+    width:100%;
+    height:110px;
+    text-align:center;
+    margin: 0 auto;
+    overflow:visible;
+}
+
+#widget {
+    //display:none;
+}
+
+<apex:outputText rendered="{!rookie == false}">
+.internal {
+    padding: 0px 0px 0px 0px;
+    width:33%;
+    height:110px;
+    float:left;
+    text-align:center;
+}
+</apex:outputText>
+
+<apex:outputText rendered="{!rookie == true || manager == true}">
+.internal {
+    padding: 0px 0px 0px 0px;
+    width:25%;
+    height:110px;
+    float:left;
+    text-align:center;
+}
+</apex:outputText>
+
+<apex:outputText rendered="{!VP == true}">
+.internal {
+    padding: 0px 0px 0px 0px;
+    width:16.66%;
+    height:110px;
+    float:left;
+    text-align:center;
+}
+</apex:outputText>
+
+</style>
+<!--<apex:pageblock rendered="{!ranking == 99999}" mode="mainDetail">
+No ranking information available.
+</apex:pageblock>-->
+<apex:pageblock rendered="{!ranking != 99999}" mode="mainDetail">
+    <div class="container" id="widget">
+        <apex:outputPanel rendered="{!VP == true}">
+            <apex:outputPanel rendered="{!rank1VP != null}">
+                <div class="internal">
+                    <b>Your Rank 1 RSM</b><br/>
+                    <apex:outputLink value="/{!rank1idVP}" target="_blank">
+                        <apex:image url="{!URLFOR($Resource.trophies, '1st.png')}" width="50" height="50"/>
+                    </apex:outputLink>
+                    
+                    <br/>
+                    {!rank1VP}
+                    <br/>
+                    {!round(rank1pctVP,1)}% to Quota
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!rank2VP != null}">
+                <div class="internal">
+                    <b>Your Rank 2 RSM</b><br/>
+                    <apex:outputLink value="/{!rank2idVP}" target="_blank">
+                        <apex:image url="{!URLFOR($Resource.trophies, '2nd.png')}" width="50" height="50"/>
+                    </apex:outputLink>
+                    
+                    <br/>
+                    {!rank2VP}
+                    <br/>
+                    {!round(rank2pctVP,1)}% to Quota
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!rank3VP != null}">
+                <div class="internal">
+                    <b>Your Rank 3 RSM</b><br/>
+                    <apex:outputLink value="/{!rank3idVP}" target="_blank">
+                        <apex:image url="{!URLFOR($Resource.trophies, '3rd.png')}" width="50" height="50"/>
+                    </apex:outputLink>
+                    
+                    <br/>
+                    {!rank3VP}
+                    <br/>
+                    {!round(rank3pctVP,1)}% to Quota
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!rank1 != null}">
+                <div class="internal">
+                    <b>Your Rank 1 Rep</b><br/>
+                    <apex:outputLink value="/{!rank1id}" target="_blank">
+                        <apex:image url="{!URLFOR($Resource.trophies, '1st.png')}" width="50" height="50"/>
+                    </apex:outputLink>
+                    
+                    <br/>
+                    {!rank1}
+                    <br/>
+                    {!round(rank1pct,1)}% to Quota
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!rank2 != null}">
+                <div class="internal">
+                    <b>Your Rank 2 Rep</b><br/>
+                    <apex:outputLink value="/{!rank2id}" target="_blank">
+                        <apex:image url="{!URLFOR($Resource.trophies, '2nd.png')}" width="50" height="50"/>
+                    </apex:outputLink>
+                    
+                    <br/>
+                    {!rank2}
+                    <br/>
+                    {!round(rank2pct,1)}% to Quota
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!rank3 != null}">
+                <div class="internal">
+                    <b>Your Rank 3 Rep</b><br/>
+                    <apex:outputLink value="/{!rank3id}" target="_blank">
+                        <apex:image url="{!URLFOR($Resource.trophies, '3rd.png')}" width="50" height="50"/>
+                    </apex:outputLink>
+                    
+                    <br/>
+                    {!rank3}
+                    <br/>
+                    {!round(rank3pct,1)}% to Quota
+                </div>
+            </apex:outputPanel>
+        </apex:outputPanel>
+            <apex:outputPanel rendered="{!VP == false}">
+            <div class="internal">
+            <b>Your National Ranking</b><br/>
+            <apex:outputLink value="/{!quotaId}" target="_blank">
+                <apex:image url="{!URLFOR($Resource.trophies, '1st.png')}" width="50" height="50" rendered="{!ranking == 1}"/>
+                <apex:image url="{!URLFOR($Resource.trophies, '2nd.png')}" width="50" height="50" rendered="{!ranking == 2}"/>
+                <apex:image url="{!URLFOR($Resource.trophies, '3rd.png')}" width="50" height="50" rendered="{!ranking == 3}"/>
+                <apex:image url="{!$Resource.thumbsUp}" width="50" height="50" rendered="{!ranking > 3}"/>
+            </apex:outputLink>
+            
+            <br/>
+            You are rank #{!round(ranking,0)}!
+            <br/>
+            {!round(pctQuota,1)}% to Quota as of {!effectiveMonth}
+            </div>
+            
+            <apex:outputPanel rendered="{!manager}">
+                <apex:outputPanel rendered="{!rank1 != null}">
+                    <div class="internal">
+                        <b>Your Rank 1 Rep</b><br/>
+                        <apex:outputLink value="/{!rank1id}" target="_blank">
+                            <apex:image url="{!URLFOR($Resource.trophies, '1st.png')}" width="50" height="50"/>
+                        </apex:outputLink>
+                        
+                        <br/>
+                        {!rank1}
+                        <br/>
+                        {!round(rank1pct,1)}% to Quota as of {!effectiveMonth}
+                    </div>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!rank2 != null}">
+                    <div class="internal">
+                        <b>Your Rank 2 Rep</b><br/>
+                        <apex:outputLink value="/{!rank2id}" target="_blank">
+                            <apex:image url="{!URLFOR($Resource.trophies, '2nd.png')}" width="50" height="50"/>
+                        </apex:outputLink>
+                        
+                        <br/>
+                        {!rank2}
+                        <br/>
+                        {!round(rank2pct,1)}% to Quota as of {!effectiveMonth}
+                    </div>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!rank3 != null}">
+                    <div class="internal">
+                        <b>Your Rank 3 Rep</b><br/>
+                        <apex:outputLink value="/{!rank3id}" target="_blank">
+                            <apex:image url="{!URLFOR($Resource.trophies, '3rd.png')}" width="50" height="50"/>
+                        </apex:outputLink>
+                        
+                        <br/>
+                        {!rank3}
+                        <br/>
+                        {!round(rank3pct,1)}% to Quota as of {!effectiveMonth}
+                    </div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+            <apex:outputPanel rendered="{!manager == false}">
+                <apex:outputPanel rendered="{!rookie}">
+                <div class="internal">
+                <b>Rookie Rank</b><br/>
+                <apex:outputLink value="/{!quotaId}" target="_blank">
+                    <apex:image url="{!URLFOR($Resource.trophies, '1st.png')}" width="50" height="50" rendered="{!rookieRank == 1}"/>
+                    <apex:image url="{!URLFOR($Resource.trophies, '2nd.png')}" width="50" height="50" rendered="{!rookieRank == 2}"/>
+                    <apex:image url="{!URLFOR($Resource.trophies, '3rd.png')}" width="50" height="50" rendered="{!rookieRank == 3}"/>
+                    <apex:image url="{!$Resource.thumbsUp}" width="50" height="50" rendered="{!rookieRank > 3}"/>
+                </apex:outputLink>
+                
+                <br/>
+                You are rank #{!round(rookieRank,0)} out of {!round(rookiesSize,0)}!
+                <br/>
+                as of {!effectiveMonth}
+                </div>
+                </apex:outputPanel>
+                
+                <div class="internal">
+                <b>Opportunities Won (YTD)</b><br/>
+                <apex:outputLink value="/006/o" target="_blank">
+                    <apex:image url="{!URLFOR($Resource.trophies, '1st.png')}" width="50" height="50" rendered="{!wonOppRank == 1}"/>
+                    <apex:image url="{!URLFOR($Resource.trophies, '2nd.png')}" width="50" height="50" rendered="{!wonOppRank == 2}"/>
+                    <apex:image url="{!URLFOR($Resource.trophies, '3rd.png')}" width="50" height="50" rendered="{!wonOppRank == 3}"/>
+                    <apex:image url="{!$Resource.thumbsdown}" width="50" height="50" rendered="{!wonOppRank == 0}"/>
+                    <apex:image url="{!$Resource.thumbsUp}" width="50" height="50" rendered="{!wonOppRank > 3}"/>
+                </apex:outputLink>
+                
+                <br/>
+                <apex:outputPanel rendered="{!wonOppSize > 0}">
+                    You are rank #{!round(wonOppRank,0)}!
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!wonOppSize == 0}">
+                    You haven't won any opportunities!
+                </apex:outputPanel>
+                
+                <br/>
+                <apex:outputText value="{0,number,$#,###} "> <apex:param value="{!wonOppValue}" /> </apex:outputText>
+                of
+                <apex:outputText value=" {0,number,$#,###}"> <apex:param value="{!totalOppValue}" /> </apex:outputText>
+                </div>
+                
+                
+                <div class="internal">
+                <b>Lead Conversion (YTD)</b><br/>
+                <apex:outputLink value="/00Q/o" target="_blank">
+                    <apex:image url="{!URLFOR($Resource.trophies, '1st.png')}" width="50" height="50" rendered="{!convertedLeadRank == 1}"/>
+                    <apex:image url="{!URLFOR($Resource.trophies, '2nd.png')}" width="50" height="50" rendered="{!convertedLeadRank == 2}"/>
+                    <apex:image url="{!URLFOR($Resource.trophies, '3rd.png')}" width="50" height="50" rendered="{!convertedLeadRank == 3}"/>
+                    <apex:image url="{!$Resource.thumbsdown}" width="50" height="50" rendered="{!convertedLeadRank == 0}"/>
+                    <apex:image url="{!$Resource.thumbsUp}" width="50" height="50" rendered="{!convertedLeadRank > 3}"/>
+                </apex:outputLink>
+                
+                <br/>
+                <apex:outputPanel rendered="{!convertedLeadCount > 0}">
+                    You are rank #{!round(convertedLeadRank,0)}!
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!convertedLeadCount == 0}">
+                    You haven't converted any leads!
+                </apex:outputPanel>
+                <br/>
+                {!convertedLeadCount} of {!totalConvertedLeads}
+                </div>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    
+    </div>
+</apex:pageblock>
+
+<script>
+    jQuery.noconflict();
+    jQuery(document).ready(function() {
+        $("#widget").show('drop');
+    });
+   
+</script>
+
+</apex:page>

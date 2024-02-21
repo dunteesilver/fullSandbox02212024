@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation_Profile__c</fullName>
+    <externalId>false</externalId>
+    <label>Compensation Profile</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Alt Care</fullName>
+                <default>false</default>
+                <label>Alt Care</label>
+            </value>
+            <value>
+                <fullName>Alt Care ISR</fullName>
+                <default>false</default>
+                <label>Alt Care ISR</label>
+            </value>
+            <value>
+                <fullName>Alt Care Urology</fullName>
+                <default>false</default>
+                <label>Alt Care Urology</label>
+            </value>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Canada</fullName>
+                <default>false</default>
+                <label>Anesthesia Canada</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Military Rep</fullName>
+                <default>false</default>
+                <label>Anesthesia Military Rep</label>
+            </value>
+            <value>
+                <fullName>Australia\NZ</fullName>
+                <default>false</default>
+                <label>Australia\NZ</label>
+            </value>
+            <value>
+                <fullName>DTAC IS</fullName>
+                <default>false</default>
+                <label>DTAC IS</label>
+            </value>
+            <value>
+                <fullName>EM</fullName>
+                <default>false</default>
+                <label>EM</label>
+            </value>
+            <value>
+                <fullName>EMISR</fullName>
+                <default>false</default>
+                <label>EMISR</label>
+            </value>
+            <value>
+                <fullName>Interventional</fullName>
+                <default>false</default>
+                <label>Interventional</label>
+            </value>
+            <value>
+                <fullName>Interventional Access Canada</fullName>
+                <default>false</default>
+                <label>Interventional Access Canada</label>
+            </value>
+            <value>
+                <fullName>Interventional Capital</fullName>
+                <default>false</default>
+                <label>Interventional Capital</label>
+            </value>
+            <value>
+                <fullName>Interventional ISR</fullName>
+                <default>false</default>
+                <label>Interventional ISR</label>
+            </value>
+            <value>
+                <fullName>Interventional ISR CA</fullName>
+                <default>false</default>
+                <label>Interventional ISR CA</label>
+            </value>
+            <value>
+                <fullName>INTV Coronary</fullName>
+                <default>false</default>
+                <label>INTV Coronary</label>
+            </value>
+            <value>
+                <fullName>INTV MCS</fullName>
+                <default>false</default>
+                <label>INTV MCS</label>
+            </value>
+            <value>
+                <fullName>INTV Structural Heart</fullName>
+                <default>false</default>
+                <label>INTV Structural Heart</label>
+            </value>
+            <value>
+                <fullName>Latin America</fullName>
+                <default>false</default>
+                <label>Latin America</label>
+            </value>
+            <value>
+                <fullName>Military</fullName>
+                <default>false</default>
+                <label>Military</label>
+            </value>
+            <value>
+                <fullName>Military Rep</fullName>
+                <default>false</default>
+                <label>Military Rep</label>
+            </value>
+            <value>
+                <fullName>National Accounts</fullName>
+                <default>false</default>
+                <label>National Accounts</label>
+            </value>
+            <value>
+                <fullName>New Zealand</fullName>
+                <default>false</default>
+                <label>New Zealand</label>
+            </value>
+            <value>
+                <fullName>Resp/Uro/AltCare - Canada</fullName>
+                <default>false</default>
+                <label>Resp/Uro/AltCare - Canada</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Respiratory Inside Sales</fullName>
+                <default>false</default>
+                <label>Respiratory Inside Sales</label>
+            </value>
+            <value>
+                <fullName>SBM Pain Management</fullName>
+                <default>false</default>
+                <label>SBM Pain Management</label>
+            </value>
+            <value>
+                <fullName>Surgical Bariatrics</fullName>
+                <default>false</default>
+                <label>Surgical Bariatrics</label>
+            </value>
+            <value>
+                <fullName>Surgical Canada</fullName>
+                <default>false</default>
+                <label>Surgical Canada</label>
+            </value>
+            <value>
+                <fullName>Surgical Disposables</fullName>
+                <default>false</default>
+                <label>Surgical Disposables</label>
+            </value>
+            <value>
+                <fullName>Surgical Inside Sales</fullName>
+                <default>false</default>
+                <label>Surgical Inside Sales</label>
+            </value>
+            <value>
+                <fullName>Surgical Instruments</fullName>
+                <default>false</default>
+                <label>Surgical Instruments</label>
+            </value>
+            <value>
+                <fullName>Tactical</fullName>
+                <default>false</default>
+                <label>Tactical</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Vascular</fullName>
+                <default>false</default>
+                <label>Vascular</label>
+            </value>
+            <value>
+                <fullName>Vascular ASR</fullName>
+                <default>false</default>
+                <label>Vascular ASR</label>
+            </value>
+            <value>
+                <fullName>Vascular Canada</fullName>
+                <default>false</default>
+                <label>Vascular Canada</label>
+            </value>
+            <value>
+                <fullName>Vascular KAMs</fullName>
+                <default>false</default>
+                <label>Vascular KAMs</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

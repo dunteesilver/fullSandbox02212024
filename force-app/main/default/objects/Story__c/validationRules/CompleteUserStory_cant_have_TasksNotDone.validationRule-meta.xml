@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompleteUserStory_cant_have_TasksNotDone</fullName>
+    <active>true</active>
+    <description>Story with Status=Complete must not have any Tasks Not Done.</description>
+    <errorConditionFormula>ISPICKVAL(Status__c, &quot;Complete&quot;) 
+&amp;&amp; 
+Tasks_Not_Done__c &gt; 0</errorConditionFormula>
+    <errorDisplayField>Status__c</errorDisplayField>
+    <errorMessage>You can not tag this Story as Complete until all related TASKS have been marked as Done.</errorMessage>
+</ValidationRule>

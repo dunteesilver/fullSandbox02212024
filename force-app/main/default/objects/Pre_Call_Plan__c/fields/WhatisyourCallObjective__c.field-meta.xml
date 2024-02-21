@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WhatisyourCallObjective__c</fullName>
+    <externalId>false</externalId>
+    <label>What is your Call Objective?</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advancement of Sale</fullName>
+                <default>false</default>
+                <label>Advancement of Sale</label>
+            </value>
+            <value>
+                <fullName>Contract Discussion</fullName>
+                <default>false</default>
+                <label>Contract Discussion</label>
+            </value>
+            <value>
+                <fullName>Generate new business</fullName>
+                <default>false</default>
+                <label>Generate new business</label>
+            </value>
+            <value>
+                <fullName>Discuss Complaint</fullName>
+                <default>false</default>
+                <label>Discuss Complaint</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

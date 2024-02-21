@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>List_error_messages_if_applicable__c</fullName>
+    <externalId>false</externalId>
+    <label>List error messages (if applicable)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DAM Module</fullName>
+                <default>false</default>
+                <label>DAM Error</label>
+            </value>
+            <value>
+                <fullName>ECG Short</fullName>
+                <default>false</default>
+                <label>ECG Short Error</label>
+            </value>
+            <value>
+                <fullName>10V Dropout</fullName>
+                <default>false</default>
+                <label>10V Dropout Error</label>
+            </value>
+            <value>
+                <fullName>Pulser Over Voltage</fullName>
+                <default>false</default>
+                <label>Pulser Over Voltage Error</label>
+            </value>
+            <value>
+                <fullName>StartUp Repair</fullName>
+                <default>false</default>
+                <label>StartUp Repair Error</label>
+            </value>
+            <value>
+                <fullName>System Failure Alarm</fullName>
+                <default>false</default>
+                <label>System Failure Alarm</label>
+            </value>
+            <value>
+                <fullName>Power Supply Failure</fullName>
+                <default>false</default>
+                <label>Power Supply Failure</label>
+            </value>
+            <value>
+                <fullName>Software Image Failure</fullName>
+                <default>false</default>
+                <label>Software Image Failure</label>
+            </value>
+            <value>
+                <fullName>Watchdog Failure</fullName>
+                <default>false</default>
+                <label>Watchdog Failure</label>
+            </value>
+            <value>
+                <fullName>12C Communication Failure</fullName>
+                <default>false</default>
+                <label>I2C Communication Failure</label>
+            </value>
+            <value>
+                <fullName>Failure to connect to electronic module</fullName>
+                <default>false</default>
+                <label>Failure to connect to electronic module</label>
+            </value>
+            <value>
+                <fullName>Other ECG Error</fullName>
+                <default>false</default>
+                <label>Other ECG Error</label>
+            </value>
+            <value>
+                <fullName>Voltage Error</fullName>
+                <default>false</default>
+                <label>Voltage Error</label>
+            </value>
+            <value>
+                <fullName>Battery Error</fullName>
+                <default>false</default>
+                <label>Battery Error</label>
+            </value>
+            <value>
+                <fullName>Power Error</fullName>
+                <default>false</default>
+                <label>Power Error</label>
+            </value>
+            <value>
+                <fullName>Coil Gain Failure</fullName>
+                <default>false</default>
+                <label>Coil Gain Failure</label>
+            </value>
+            <value>
+                <fullName>DSP Communication Error</fullName>
+                <default>false</default>
+                <label>DSP Communication Error</label>
+            </value>
+            <value>
+                <fullName>Database Error</fullName>
+                <default>false</default>
+                <label>Database Error</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Communication Failure</fullName>
+                <default>false</default>
+                <label>Ultrasound Communication Failure</label>
+            </value>
+            <value>
+                <fullName>Power On Self-Test (POST) Error</fullName>
+                <default>false</default>
+                <label>Power On Self-Test (POST) Error</label>
+            </value>
+            <value>
+                <fullName>Printer Error</fullName>
+                <default>false</default>
+                <label>Printer Error</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

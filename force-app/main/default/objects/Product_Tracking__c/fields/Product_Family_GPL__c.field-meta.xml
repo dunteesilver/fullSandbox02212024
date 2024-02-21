@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family_GPL__c</fullName>
+    <description>New field based on Global Pick List Values</description>
+    <externalId>false</externalId>
+    <label>Product Family</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Unit_GPL__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Product_Family_GPL</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Active Humidification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Adaptors/Connectors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Aerosol Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Filters/HMEs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>High Flow Nasal Cannula Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Infant Nasal Cpap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>NIV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Oxygen Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Pulmonary Hygiene</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Resuscitation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Airway</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>EZ-IO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>LMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Pain Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>PYNG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Access (Interventional)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Accessories - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Acute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Aspiration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Dialysis Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Catheter-Extension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Guidewires</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Hemostasis/Biologics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Interventional Procedures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>IR JACC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Specialty Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>OnControl</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Port(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <controllingFieldValue>Interventional Capital</controllingFieldValue>
+            <valueName>Right Heart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Trans-Radial Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Vein</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Capital</controllingFieldValue>
+            <valueName>Access (Cardiac)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Capital</controllingFieldValue>
+            <valueName>Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Access (Surgical)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Auto Ligation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Fascial Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Ligation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Percutaneous</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Suture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Instruments</controllingFieldValue>
+            <valueName>Instruments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Collection Devices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Endourology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Gynecology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Hydrophilic Intermittent Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Indwelling Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Intermittent Catheter Closed Systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Male External Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Uncoated Intermittent Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Uretheral Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Urodynamic Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Acute Dialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Arterials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Central Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Intraosseous Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Other Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Peripheral Access</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

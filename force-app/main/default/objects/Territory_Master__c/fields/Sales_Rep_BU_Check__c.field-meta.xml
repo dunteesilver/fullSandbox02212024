@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Rep_BU_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+AND(
+Primary_Sales_Rep_Flip__c = FALSE,
+TEXT(Business_Unit__c) &lt;&gt; TEXT(Sales_Rep__r.Business_Unit__c),
+NOT(ISBLANK(Sales_Rep__c))
+),TRUE,
+if(
+AND(
+TEXT(Business_Unit__c) &lt;&gt; TEXT(Primary_Territory_User__r.Business_Unit__c),
+NOT(ISBLANK(Primary_Territory_User__c))
+)
+,TRUE, 
+FALSE
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Rep BU Check</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

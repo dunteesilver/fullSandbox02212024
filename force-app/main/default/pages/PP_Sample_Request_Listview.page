@@ -1,0 +1,7 @@
+<apex:page sidebar="false" readOnly="true" cache="false" tabStyle="Pricing_Portal__tab" title="View Sample Requests">
+    
+     <!-- Call the Menu -->   
+    <apex:include id="menu" pageName="PP_Menu"/>
+    
+    <apex:ListViews type="Sample_Request__c" id="AccountList" />
+</apex:page>

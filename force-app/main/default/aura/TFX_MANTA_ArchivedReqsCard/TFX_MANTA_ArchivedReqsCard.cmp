@@ -1,0 +1,56 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="openReqName" type="String" />
+    <aura:attribute name="openReqId" type="String" />
+    <aura:attribute name="caseDate" type="String" />
+    <aura:attribute name="hospitalId" type="String" />
+    <aura:attribute name="hospital" type="String" />
+    <aura:attribute name="region" type="String" />
+    <aura:attribute name="physician" type="String" /> 
+    <aura:attribute name="physicianId" type="String" />
+    <aura:attribute name="physicianNPINum" type="String" />
+    <aura:attribute name="caseType" type="String" />
+    <aura:attribute name="numOfCases" type="String" />
+    <aura:attribute name="caseInitiator" type="String" />
+    <aura:attribute name="caseInitID" type="String" />
+    <aura:attribute name="daysOpen" type="String" />
+    <aura:attribute name="notes" type="String" />
+    <aura:attribute name="status" type="String" />
+    <aura:attribute name="usrId" type="String" />
+    <aura:attribute name="usrName" type="String" />
+    <aura:attribute name="showEdit" type="String" />
+    
+    <article class="slds-card">
+        <div class="slds-border_top slds-border_bottom slds-border_left slds-border_right">
+            <div class="slds-card__body slds-card__body_inner">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak" >Request Name:</dt>
+                    <dd class="slds-item_detail" >{!v.openReqName}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Case Date:</dt>
+                    <dd class="slds-item_detail" >{!v.caseDate}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Status:</dt>
+                    <dd class="slds-item_detail">{!v.status}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Hospital:</dt>
+                    <dd class="slds-item_detail" >{!v.hospital}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Region:</dt>
+                    <dd class="slds-item_detail" >{!v.region}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Physician:</dt>
+                    <dd class="slds-item_detail" >{!v.physician}</dd> 
+                    <dt class="slds-item_label slds-text-color_weak" >Type of Case:</dt>
+                    <dd class="slds-item_detail" >{!v.caseType}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Estimated # of Cases:</dt>
+                    <dd class="slds-item_detail" >{!v.numOfCases}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Case Initiator:</dt>
+                    <dd class="slds-item_detail" >{!v.caseInitiator}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Days Open:</dt>
+                    <dd class="slds-item_detail" >{!v.daysOpen}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Notes:</dt>
+                    <dd class="slds-item_detail">{!v.notes}</dd>
+                </dl>
+            </div>
+        </div>
+    </article>
+    
+</aura:component>

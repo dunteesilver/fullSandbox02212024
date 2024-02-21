@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ANZStamp__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>To help with Lead Logic for In Discussion or Not In Discussion  Lead Flow &apos;22</description>
+    <externalId>false</externalId>
+    <inlineHelpText>To help with Lead Logic for In Discussion or Not In Discussion  Lead Flow &apos;22</inlineHelpText>
+    <label>ANZ Stamp</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

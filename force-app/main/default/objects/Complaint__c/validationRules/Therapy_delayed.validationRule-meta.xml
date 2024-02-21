@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Therapy_delayed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(How_the_product_was_being_used__c, &quot;During use on a patient&quot;),
+ISPICKVAL(Was_therapy_delayed_interrupted__c,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Was_therapy_delayed_interrupted__c</errorDisplayField>
+    <errorMessage>This field is required</errorMessage>
+</ValidationRule>

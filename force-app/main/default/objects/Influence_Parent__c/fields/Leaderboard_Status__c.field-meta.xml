@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leaderboard_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>How should the results of this Snapshot appear on the Leaderboard on the My Chatter Influence page?</inlineHelpText>
+    <label>Leaderboard Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Display Global Ranks and ChatterRanks</fullName>
+                <default>true</default>
+                <label>Display Global Ranks and ChatterRanks</label>
+            </value>
+            <value>
+                <fullName>Display ChatterRanks Only</fullName>
+                <default>false</default>
+                <label>Display ChatterRanks Only</label>
+            </value>
+            <value>
+                <fullName>Display Global Ranks Only</fullName>
+                <default>false</default>
+                <label>Display Global Ranks Only</label>
+            </value>
+            <value>
+                <fullName>No Leaderboard</fullName>
+                <default>false</default>
+                <label>No Leaderboard</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

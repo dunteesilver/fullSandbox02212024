@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EZ_IO_Driver_Related_Only_1</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ ISPICKVAL(  EZ_IO_Complaint_Type__c, &quot;EZ-IO Driver Related only&quot;),
+ ISBLANK(TEXT(Insertion_site_involved_during_issue__c))
+)</errorConditionFormula>
+    <errorDisplayField>Insertion_site_involved_during_issue__c</errorDisplayField>
+    <errorMessage>Please fill the required information in the EZ-IO Driver Related only Section</errorMessage>
+</ValidationRule>

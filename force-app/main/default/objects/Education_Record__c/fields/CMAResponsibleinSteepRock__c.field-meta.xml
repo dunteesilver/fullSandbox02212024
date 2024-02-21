@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CMAResponsibleinSteepRock__c</fullName>
+    <externalId>false</externalId>
+    <label>CMA Responsible in SteepRock</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Amber Anderson</fullName>
+                <default>false</default>
+                <label>Amber Anderson</label>
+            </value>
+            <value>
+                <fullName>Amy Bardin</fullName>
+                <default>false</default>
+                <label>Amy Bardin</label>
+            </value>
+            <value>
+                <fullName>Amy Mills</fullName>
+                <default>false</default>
+                <label>Amy Mills</label>
+            </value>
+            <value>
+                <fullName>April Martin</fullName>
+                <default>false</default>
+                <label>April Martin</label>
+            </value>
+            <value>
+                <fullName>Brandon Burney</fullName>
+                <default>false</default>
+                <label>Brandon Burney</label>
+            </value>
+            <value>
+                <fullName>Brian Spence</fullName>
+                <default>false</default>
+                <label>Brian Spence</label>
+            </value>
+            <value>
+                <fullName>Donna Crawford</fullName>
+                <default>false</default>
+                <label>Donna Crawford</label>
+            </value>
+            <value>
+                <fullName>Eileen Peterson</fullName>
+                <default>false</default>
+                <label>Eileen Peterson</label>
+            </value>
+            <value>
+                <fullName>Eric Reyer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Eric Reyer</label>
+            </value>
+            <value>
+                <fullName>Erin Hill</fullName>
+                <default>false</default>
+                <label>Erin Hill</label>
+            </value>
+            <value>
+                <fullName>Gary Klimek</fullName>
+                <default>false</default>
+                <label>Gary Klimek</label>
+            </value>
+            <value>
+                <fullName>Heather Wear</fullName>
+                <default>false</default>
+                <label>Heather Wear</label>
+            </value>
+            <value>
+                <fullName>Jaclyn Smith</fullName>
+                <default>false</default>
+                <label>Jaclyn Smith</label>
+            </value>
+            <value>
+                <fullName>Jim Blosser</fullName>
+                <default>false</default>
+                <label>Jim Blosser</label>
+            </value>
+            <value>
+                <fullName>JoAnna Webb</fullName>
+                <default>false</default>
+                <label>JoAnna Webb</label>
+            </value>
+            <value>
+                <fullName>Joshua Nuelken</fullName>
+                <default>false</default>
+                <label>Joshua Nuelken</label>
+            </value>
+            <value>
+                <fullName>Katherine Renteria</fullName>
+                <default>false</default>
+                <label>Katherine Renteria</label>
+            </value>
+            <value>
+                <fullName>Keiler Brown</fullName>
+                <default>false</default>
+                <label>Keiler Brown</label>
+            </value>
+            <value>
+                <fullName>Kelli Thomas</fullName>
+                <default>false</default>
+                <label>Kelli Thomas</label>
+            </value>
+            <value>
+                <fullName>Kelly Pulley</fullName>
+                <default>false</default>
+                <label>Kelly Pulley</label>
+            </value>
+            <value>
+                <fullName>Kent McCain</fullName>
+                <default>false</default>
+                <label>Kent McCain</label>
+            </value>
+            <value>
+                <fullName>Kersten Conley</fullName>
+                <default>false</default>
+                <label>Kersten Conley</label>
+            </value>
+            <value>
+                <fullName>Kim Oliver</fullName>
+                <default>false</default>
+                <label>Kim Oliver</label>
+            </value>
+            <value>
+                <fullName>Lexia Parker</fullName>
+                <default>false</default>
+                <label>Lexia Parker</label>
+            </value>
+            <value>
+                <fullName>Megan Contino</fullName>
+                <default>false</default>
+                <label>Megan Contino</label>
+            </value>
+            <value>
+                <fullName>Michelle Pickrel</fullName>
+                <default>false</default>
+                <label>Michelle Pickrel</label>
+            </value>
+            <value>
+                <fullName>Nadine Weller</fullName>
+                <default>false</default>
+                <label>Nadine Weller</label>
+            </value>
+            <value>
+                <fullName>Rebekah Tessitore</fullName>
+                <default>false</default>
+                <label>Rebekah Tessitore</label>
+            </value>
+            <value>
+                <fullName>Sean Allen</fullName>
+                <default>false</default>
+                <label>Sean Allen</label>
+            </value>
+            <value>
+                <fullName>Terri Camp</fullName>
+                <default>false</default>
+                <label>Terri Camp</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

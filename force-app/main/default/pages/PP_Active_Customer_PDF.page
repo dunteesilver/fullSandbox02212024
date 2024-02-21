@@ -1,0 +1,82 @@
+<apex:page controller="PP_Active_Customer" renderAs="pdf" applyBodyTag="false">
+    <head>
+        <style type="text/css" media="print">
+            @page {
+            @top-center {
+            content: element(header);
+            }
+            @bottom-left {
+            content: element(footer);
+            }
+            }
+            
+            div.header {
+            padding: 10px;
+            position: running(header);
+            }
+            div.footer {
+            display: block;
+            padding: 5px;
+            position: running(footer);
+            }
+            
+            .pagenumber:before {
+            content: counter(page);
+            }
+            .pagecount:before {
+            content: counter(pages);
+            }
+        </style>    
+        <style type="text/css">
+            body { font-family: Arial Unicode MS; }
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            td, th {
+            font-family: Helvetica;
+            font-size: 10px;
+            padding: 1px;
+            }
+            table, td, th {
+            border: 1px solid black;
+            }
+        </style>
+    </head>
+    <div class="header">
+        <div>Teleflex Medical - Active Customers: {!CH.Agreement_Number__c} : {!CH.Description__c}</div>
+    </div>
+    <div class="footer">
+        <div><center>Page <span class="pagenumber"/> of <span class="pagecount"/></center></div>
+    </div>
+    
+    <div class="content">
+        <table width="100%">
+            <tr>
+                <th align="center">Customer Number</th>
+                <th align="center">Customer Name</th>
+                <th align="center">Address</th>
+                <th align="center">City</th>
+                <th align="center">State</th>
+                <th align="center">Zip</th>
+                <th align="center">Country</th>
+                <th align="center">Customer Group</th> 
+                <th align="center">Condition</th>   
+            </tr>
+            <!-- Build out the data -->
+            <apex:repeat value="{!ActiveCustomers}" var="contractCustomer" id="theRepeatmaterial">
+                <tr>
+                    <td style="text-align:center;"><apex:outputText value="{!contractCustomer.Account__r.SAP_Sold_To__c}"/></td>
+                    <td style="text-align:center;"><apex:outputText value="{!contractCustomer.Account__r.Name}"/></td>
+                    <td style="text-align:center;"><apex:outputText value="{!contractCustomer.Account__r.BillingStreet}"/></td>
+                    <td style="text-align:center;"><apex:outputText value="{!contractCustomer.Account__r.BillingCity}"/></td>
+                    <td style="text-align:center;"><apex:outputText value="{!contractCustomer.Account__r.BillingState}"/></td>
+                    <td style="text-align:center;"><apex:outputText value="{!contractCustomer.Account__r.BillingPostalCode}"/></td>
+                    <td style="width:10%;word-wrap: break-word;text-align:center;"><apex:outputText value="{!contractCustomer.Account__r.BillingCountry}"/></td>
+                    <td style="width:10%;word-wrap: break-word;text-align:center;"><apex:outputText value="{!contractCustomer.Customer_Group_Name__c}"/> (<apex:outputText value="{!contractCustomer.Customer_Group__c}"/>)</td>
+                    <td style="text-align:center;"><apex:outputText value="{!contractCustomer.Condition__c}"/></td>
+                </tr>
+            </apex:repeat>
+        </table>
+    </div>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DLX_Ultrasound_Probe_Only__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Specifies products available for Vascular Bundles.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specifies products available for Vascular Bundles.</inlineHelpText>
+    <label>DLX Ultrasound Probe Only</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

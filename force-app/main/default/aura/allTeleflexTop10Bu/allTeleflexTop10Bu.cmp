@@ -1,0 +1,45 @@
+<aura:component controller="SalesController" access="global"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="salesObj" type="SalesController"/>
+    <aura:attribute name="salesObjTop" type="SalesController"/>
+    <aura:attribute name="salesObjTopBu" type="SalesController"/>
+    <aura:attribute name="salesMapPrevTop" type="list" />
+    <aura:attribute name="salesMapCurrTop" type="list" />
+    <aura:attribute name="matMap" type="list" />
+    <table>
+        <tr>
+        <lightning:card title="{!v.salesObjTopBu.bu + ' Top 10'}" variant="base" iconName="custom:custom18" class="slds-p-around_medium">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer"  id="dtable">
+                <thead>
+                <tr class="slds-text-title_caps slds-border_bottom">
+                    <th><strong>Material</strong></th>
+                    <th><strong>Material Description</strong></th>
+                    <th class="slds-text-align_center"><strong>{!v.salesObj.thisYear}</strong></th>
+                    <th class="slds-text-align_center"><strong>{!v.salesObj.lastYear}</strong></th>
+                </tr>
+                </thead>
+                <tbody>
+                <aura:iteration items="{!v.salesMapCurrTop}" var="sMapCurr"  >
+                	<tr class="slds-text-title_caps" id="drow">
+                        <td><ui:outputText value="{!sMapCurr.key}"/></td>
+                        <aura:iteration items="{!v.matMap}" var="m"  >
+                            <aura:if isTrue="{!m.key == sMapCurr.key}">
+                        		<td class="slds-cell-wrap">{!m.value}</td>
+                            </aura:if>
+                        </aura:iteration>
+                        <td><ui:outputCurrency value="{!sMapCurr.value}"/></td>
+                        <aura:iteration items="{!v.salesMapPrevTop}" var="sMapPrev"  >
+                            <aura:if isTrue="{!sMapCurr.key == sMapPrev.key}">
+                                <td><ui:outputCurrency value="{!sMapPrev.value}"/></td>
+                            </aura:if>
+                        </aura:iteration>
+                    </tr>
+                </aura:iteration>
+                </tbody>
+            </table>
+        </lightning:card>
+        </tr>
+    </table>
+</aura:component>

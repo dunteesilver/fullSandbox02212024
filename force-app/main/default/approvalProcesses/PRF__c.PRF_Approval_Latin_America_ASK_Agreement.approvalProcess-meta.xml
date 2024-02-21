@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Commercial_Operations</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Teleflex_Global_IT</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Account__c</field>
+        <field>Agreement_Type__c</field>
+        <field>Current_Annual_Purchases__c</field>
+        <field>Eligible_Distributor__c</field>
+        <field>Estimated_Annual_Purchases__c</field>
+        <field>Requisition_Date__c</field>
+        <field>Sales_Org_Key__c</field>
+        <field>Territory__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>judy.hunt@teleflex.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Contracts Final Approval</label>
+        <name>Contracts_Final_Approval</name>
+    </approvalStep>
+    <description>Approval Process for LATAM ASK Agreements</description>
+    <emailTemplate>Pricing_Portal/Approval_PRF_Supa</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( Line_Count__c &gt; 0, NOT(ISPICKVAL(Status__c, &apos;Approved&apos;)), Business_Unit__c = &apos;Latin America&apos;, ISPICKVAL(Agreement_Type__c, &apos;ASK Agreement&apos;),
+Sales_Org_Key__c = &apos;CO1010&apos;
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>PRF_Approved_Email</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>PRF_Rejected_Email</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Waiting_on_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>PRF Approval Latin America ASK Agreement</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>10</processOrder>
+    <recallActions>
+        <action>
+            <name>Change_Status_to_New</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

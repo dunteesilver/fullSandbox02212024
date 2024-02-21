@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Picc_Fundamental_Validation</fullName>
+    <active>true</active>
+    <description>Products only available for Picc Fundamental live training</description>
+    <errorConditionFormula>AND(OR(  ISPICKVAL(Product_Kits_Required__c , &quot;Yes&quot;) ,ISPICKVAL(Course_Material_Needed__c  , &quot;Yes&quot;) ), Program__c &lt;&gt;&quot;PICC Fundamentals&quot;,  Course_Type__c &lt;&gt;&quot;Live Training&quot;)</errorConditionFormula>
+    <errorDisplayField>Product_Kits_Required__c</errorDisplayField>
+    <errorMessage>Products and Course Material are currently available for PICC Fundamental Live Training Only</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContactRolefromLead__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Information came over from Lead and should be applied to the Role on the Contact Role Object</inlineHelpText>
+    <label>Contact Role from Lead</label>
+    <length>300</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>2</visibleLines>
+</CustomField>

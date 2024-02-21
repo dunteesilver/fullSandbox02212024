@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Instruction__c</fullName>
+    <defaultValue>&quot;Please complete as much detail as possible to assist in the account vetting process. (All RED fields are required.) An OPERA account contract will not be completed if required details are missing.&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Instruction</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

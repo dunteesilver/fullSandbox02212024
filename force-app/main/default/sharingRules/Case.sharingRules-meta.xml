@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Modify_All_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Modify All Cases</label>
+        <sharedTo>
+            <group>Modify_All_Cases</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Sales_Comp_ICM_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing Sales Comp ICM Cases with their team.</description>
+        <label>Sales Comp ICM Cases</label>
+        <sharedTo>
+            <group>Sales_Comp_ICM</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Sales_Comp_ICM</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VSS_VPS_Cases_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing Rule so Bo and Michele can see each others cases.</description>
+        <label>VSS/VPS Cases Sharing</label>
+        <sharedTo>
+            <group>VPS_VSS_TEam</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VPS_VSS_TEam</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Marketing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Vascular Marketing</label>
+        <sharedTo>
+            <role>Vascular_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Vascular_Marketing</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>View_All_Cases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>View All Cases</label>
+        <sharedTo>
+            <group>View_All_Cases</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

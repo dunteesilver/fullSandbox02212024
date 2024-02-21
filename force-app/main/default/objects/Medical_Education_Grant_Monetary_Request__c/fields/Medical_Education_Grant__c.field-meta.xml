@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical_Education_Grant__c</fullName>
+    <externalId>false</externalId>
+    <label>Medical Education Grant</label>
+    <referenceTo>Medical_Education_Grant__c</referenceTo>
+    <relationshipLabel>Medical Education Grant Monetary Request</relationshipLabel>
+    <relationshipName>Medical_Education_Grant_Monetary_Request</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

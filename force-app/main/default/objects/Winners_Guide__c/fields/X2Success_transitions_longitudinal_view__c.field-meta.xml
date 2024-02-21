@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2Success_transitions_longitudinal_view__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Successfully transitions probe to longitudinal view</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Successfully transitions probe to longitudinal view</inlineHelpText>
+    <label>Success transitions longitudinal view</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

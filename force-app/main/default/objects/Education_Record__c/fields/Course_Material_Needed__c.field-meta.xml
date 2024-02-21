@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course_Material_Needed__c</fullName>
+    <externalId>false</externalId>
+    <label>Course Material Needed?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Primary_Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>FlexTip</controllingFieldValue>
+            <controllingFieldValue>FlexBlock</controllingFieldValue>
+            <controllingFieldValue>StimuCath</controllingFieldValue>
+            <controllingFieldValue>StimuQuik</controllingFieldValue>
+            <controllingFieldValue>UltraQuik</controllingFieldValue>
+            <controllingFieldValue>StimuQuik ECHO</controllingFieldValue>
+            <controllingFieldValue>Pleur-evac</controllingFieldValue>
+            <controllingFieldValue>CVC/PSI/MAC</controllingFieldValue>
+            <controllingFieldValue>Arterials</controllingFieldValue>
+            <controllingFieldValue>VPS</controllingFieldValue>
+            <controllingFieldValue>LMA Supreme</controllingFieldValue>
+            <controllingFieldValue>Chlorag+ard/A5 PICC</controllingFieldValue>
+            <controllingFieldValue>MAC</controllingFieldValue>
+            <controllingFieldValue>Midlines</controllingFieldValue>
+            <controllingFieldValue>OnControl</controllingFieldValue>
+            <controllingFieldValue>General</controllingFieldValue>
+            <controllingFieldValue>Percuvance</controllingFieldValue>
+            <controllingFieldValue>PICC</controllingFieldValue>
+            <controllingFieldValue>Rusch Quicktrach</controllingFieldValue>
+            <controllingFieldValue>TALON</controllingFieldValue>
+            <controllingFieldValue>Percutaneous</controllingFieldValue>
+            <controllingFieldValue>Acute HD</controllingFieldValue>
+            <controllingFieldValue>AutoFuser</controllingFieldValue>
+            <controllingFieldValue>CVC</controllingFieldValue>
+            <controllingFieldValue>EZ-IO</controllingFieldValue>
+            <controllingFieldValue>JACC</controllingFieldValue>
+            <controllingFieldValue>Laryngoscopy</controllingFieldValue>
+            <controllingFieldValue>Weck® Auto Endo5® Automatic Ligating Clip Applier</controllingFieldValue>
+            <controllingFieldValue>LMA MAD Nasal</controllingFieldValue>
+            <controllingFieldValue>ISO-Gard</controllingFieldValue>
+            <controllingFieldValue>Rusch AirTraq</controllingFieldValue>
+            <valueName>No</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chlorag+ard/A5 PICC</controllingFieldValue>
+            <controllingFieldValue>PICC</controllingFieldValue>
+            <valueName>Yes</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

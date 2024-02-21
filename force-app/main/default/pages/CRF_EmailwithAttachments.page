@@ -1,0 +1,126 @@
+<apex:page standardController="CE_Reimbursement_Expense__c" showHeader="false" renderAs="PDF">
+<html><head>
+<style>
+    td {
+        font-family: arial,verdana,sans-serif;
+        font-size: 11px;
+    }
+    p {
+        font-family: arial,verdana,sans-serif;
+        font-size: 11px;
+    }
+    th {
+        font-family: arial,verdana,sans-serif;
+        font-size: 11px;
+        background: #CCCCCC;
+        border-width: 1px;
+        text-align: center;
+    }
+    table {
+        border:1px solid #CCCCCC;
+    }
+    table.noborder {
+        border:0px;
+    }
+   .trborder {
+        border:1px solid #CCCCCC;
+    }
+    .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+    }
+</style></head><body>
+<apex:variable value="https://teleflex--sandbox.cs42.my.salesforce.com/" var="baseurl"/>
+<table width="800" cellspacing="0" cellpadding="5">
+<tr>
+    <td colspan="1"><img src="https://teleflex--sandbox--c.cs42.content.force.com/servlet/servlet.ImageServer?id=015E0000006LhY8&oid=00D560000000kUI"/>
+    </td>
+    <td align="right"><img src="https://teleflex--sandbox--c.cs42.content.force.com/servlet/servlet.ImageServer?id=01556000000DMdR&oid=00D560000000kUI"/>
+    </td>
+</tr>
+<tr>
+    <td colspan="2">
+        <table width="100%"><tr><td><center>
+        Approval for CRF: <a href="{!baseurl}{!CE_Reimbursement_Expense__c.id}">{!CE_Reimbursement_Expense__c.Name}</a>
+        </center>
+        </td></tr></table>
+    </td>
+</tr>
+<tr>
+    <td align="left" valign="top" colspan="1">
+        <p>Action Required: The following CRF has been submitted to you for your approval.</p>
+        <p>To approve or reject this item, reply to this email with the word APPROVE, APPROVED, YES, REJECT, REJECTED, or NO (not case sensitive) in the first line of the email message, or click this link to review:</p>
+        <p><a href="{!baseurl}{!CE_Reimbursement_Expense__c.id}">{!CE_Reimbursement_Expense__c.Name}</a></p>
+        <p>If replying via email you can also add comments on the second line. These comments will be stored with the approval request in Salesforce.</p>
+    </td>
+    <td colspan="1" valign="top" width="350" align="right">
+        <table align="right" width="350" class="noborder">
+            <tr>
+                <td width="33%">
+                <b>
+              </b><br/>
+                <table width="100%">
+                <tr><td>
+                    Education Record
+                </td></tr>
+                <tr><td class="text-nowrap">
+                    {!CE_Reimbursement_Expense__c.Education_Record__r.Name}
+                </td></tr>
+                <tr><td class="text-nowrap">
+                    {!CE_Reimbursement_Expense__c.Education_Record__r.Account_Facility__r.Name}
+                </td></tr></table>
+                </td>
+
+            </tr>
+            <tr>
+                <td width="33%" colspan="2">
+                <b>Details</b><br/>
+                <table width="100%" style="border-collapse: collapse;">
+                    <tr class="trborder"><td align="right">Requisition Date:&nbsp;</td>
+                    <td><apex:outputText value="{0,date,MM/dd/yyyy}">
+                        <apex:param value="{!CE_Reimbursement_Expense__c.CreatedDate}" />
+                    </apex:outputText></td></tr>
+                    <tr class="trborder">
+                        <td align="right">Program Name:&nbsp;</td>
+                        <td>{!CE_Reimbursement_Expense__c.Education_Record__r.Program__r.name}</td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td colspan="2">
+        <table border="1" cellspacing="0" cellpadding="2" width="100%">
+            <tr>
+                <th>Concept</th>
+                <th>Number</th>
+                <th>Total</th>
+                </tr>
+                <tr>
+                    <td align="center">Inservice Hours</td>
+                    <td class="text-nowrap"><center>{!CE_Reimbursement_Expense__c.Inservice_Hours__c}</center></td>
+                    <td>{!CE_Reimbursement_Expense__c.Total_In_Service_Hours__c}</td>
+                </tr>
+
+        </table>
+
+    </td>
+</tr>
+</table>
+<p>Link to review the Reimbursement Information {!CE_Reimbursement_Expense__c.Link_to_CE_Portal__c}</p>
+
+<!-- <apex:repeat value="{!CE_Reimbursement_Expense__c.Attachments}" var="a">
+<p><a href="{!URLFOR($Action.Attachment.Download, a)}">{!a.Name}</a> ({!a.BodyLength} B)</p> 
+</apex:repeat> -->
+
+
+<hr/>
+<p>&copy; 2016 Teleflex Incorporated. All rights reserved.</p>
+</body></html>
+
+
+
+
+</apex:page>

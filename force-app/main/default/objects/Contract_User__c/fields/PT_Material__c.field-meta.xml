@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PT_Material__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Portugal sales org access.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Portugal sales org access.</inlineHelpText>
+    <label>PT Material</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

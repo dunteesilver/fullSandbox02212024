@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Price_Quote_Opp</fullName>
+    <availability>online</availability>
+    <description>Used just on the Opportunity Related List</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Price Quote</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/35.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/35.0/apex.js&quot; )}
+
+//disable button to avoid double clicks
+var createBtn = document.getElementsByName(&quot;create_price_quote&quot;);
+
+var connection = sforce.connection;
+
+//if(&quot;{!Opportunity.Price_Quote__c}&quot; == &apos;&apos;){
+  createBtn[0].value=&quot;Please wait...&quot;;
+  createBtn[0].disabled=true;
+  var newQuote= new sforce.SObject(&quot;Price_Quote__c&quot;);
+  newQuote.Account_Name__c=&quot;{!Opportunity.AccountId}&quot;;
+  newQuote.Contact_Name__c = &quot;{!Opportunity.Primary_ContactId__c}&quot;;
+  newQuote.Opportunity__c=&quot;{!Opportunity.Id}&quot;;
+  newQuote.One_Time_Purchase__c=&quot;{!Opportunity.One_Time_Sale__c}&quot;;
+  result = sforce.connection.create([newQuote]);
+
+  if(result[0].success == &quot;true&quot;){
+    //alert(&quot;Price Quote was successfully created... &quot;);
+    //window.location.reload();
+    window.location.assign(&quot;/&quot; + result[0].id); 
+  }   
+  else{
+    alert(&quot;Something went wrong... Error: &quot; + result[0].errors.message);
+    window.location.reload();
+  }
+
+//}</url>
+</WebLink>

@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_of_Interest__c</fullName>
+    <description>List of Products</description>
+    <externalId>false</externalId>
+    <label>Product of Interest</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Product_Family__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1A</fullName>
+                <default>false</default>
+                <label>1A</label>
+            </value>
+            <value>
+                <fullName>X1A</fullName>
+                <default>false</default>
+                <label>X1A</label>
+            </value>
+            <value>
+                <fullName>XP1A</fullName>
+                <default>false</default>
+                <label>XP1A</label>
+            </value>
+            <value>
+                <fullName>P1A</fullName>
+                <default>false</default>
+                <label>P1A</label>
+            </value>
+            <value>
+                <fullName>AKP1A</fullName>
+                <default>false</default>
+                <label>AKP1A</label>
+            </value>
+            <value>
+                <fullName>Pediatric Ergo</fullName>
+                <default>false</default>
+                <label>Pediatric Ergo</label>
+            </value>
+            <value>
+                <fullName>Custom Kits (ASK)</fullName>
+                <default>false</default>
+                <label>Custom Kits (ASK)</label>
+            </value>
+            <value>
+                <fullName>MAC ErgoPack</fullName>
+                <default>false</default>
+                <label>MAC ErgoPack</label>
+            </value>
+            <value>
+                <fullName>MAC Arrowgard</fullName>
+                <default>false</default>
+                <label>MAC Arrowgard</label>
+            </value>
+            <value>
+                <fullName>MAC Other</fullName>
+                <default>false</default>
+                <label>MAC Other</label>
+            </value>
+            <value>
+                <fullName>PSI ErgoPack</fullName>
+                <default>false</default>
+                <label>PSI ErgoPack</label>
+            </value>
+            <value>
+                <fullName>PSI Arrowgard</fullName>
+                <default>false</default>
+                <label>PSI Arrowgard</label>
+            </value>
+            <value>
+                <fullName>PSI Other</fullName>
+                <default>false</default>
+                <label>PSI Other</label>
+            </value>
+            <value>
+                <fullName>SWG</fullName>
+                <default>false</default>
+                <label>SWG</label>
+            </value>
+            <value>
+                <fullName>Trauma</fullName>
+                <default>false</default>
+                <label>Trauma</label>
+            </value>
+            <value>
+                <fullName>Thermodilution</fullName>
+                <default>false</default>
+                <label>Thermodilution</label>
+            </value>
+            <value>
+                <fullName>Twin Cath</fullName>
+                <default>false</default>
+                <label>Twin Cath</label>
+            </value>
+            <value>
+                <fullName>Other Pediatric CVCs</fullName>
+                <default>false</default>
+                <label>Other Pediatric CVCs</label>
+            </value>
+            <value>
+                <fullName>Other CVCs</fullName>
+                <default>false</default>
+                <label>Other CVCs</label>
+            </value>
+            <value>
+                <fullName>Arrow PICC with Chlorag+ard</fullName>
+                <default>false</default>
+                <label>Arrow PICC with Chlorag+ard</label>
+            </value>
+            <value>
+                <fullName>IR Arrow PICC with Chlorag+ard</fullName>
+                <default>false</default>
+                <label>IR Arrow PICC with Chlorag+ard</label>
+            </value>
+            <value>
+                <fullName>Arrow PICC (A5)</fullName>
+                <default>false</default>
+                <label>Arrow PICC (A5)</label>
+            </value>
+            <value>
+                <fullName>IR Arrow PICC (A5)</fullName>
+                <default>false</default>
+                <label>IR Arrow PICC (A5)</label>
+            </value>
+            <value>
+                <fullName>Legacy Nursing PICC</fullName>
+                <default>false</default>
+                <label>Legacy Nursing PICC</label>
+            </value>
+            <value>
+                <fullName>Legacy IR PICC</fullName>
+                <default>false</default>
+                <label>Legacy IR PICC</label>
+            </value>
+            <value>
+                <fullName>Legacy Pressure IR PICC</fullName>
+                <default>false</default>
+                <label>Legacy Pressure IR PICC</label>
+            </value>
+            <value>
+                <fullName>Legacy Pressure Nursing PICC</fullName>
+                <default>false</default>
+                <label>Legacy Pressure Nursing PICC</label>
+            </value>
+            <value>
+                <fullName>Pressure PICC</fullName>
+                <default>false</default>
+                <label>Pressure PICC</label>
+            </value>
+            <value>
+                <fullName>3 Lumen PICC</fullName>
+                <default>false</default>
+                <label>3 Lumen PICC</label>
+            </value>
+            <value>
+                <fullName>Custom PICC (ASK)</fullName>
+                <default>false</default>
+                <label>Custom PICC (ASK)</label>
+            </value>
+            <value>
+                <fullName>Midline</fullName>
+                <default>false</default>
+                <label>Midline</label>
+            </value>
+            <value>
+                <fullName>Radial</fullName>
+                <default>false</default>
+                <label>Radial</label>
+            </value>
+            <value>
+                <fullName>Femoral</fullName>
+                <default>false</default>
+                <label>Femoral</label>
+            </value>
+            <value>
+                <fullName>Custom Arterial (ASK)</fullName>
+                <default>false</default>
+                <label>Custom Arterial (ASK)</label>
+            </value>
+            <value>
+                <fullName>Stylet (Bedside Kit)</fullName>
+                <default>false</default>
+                <label>Stylet (Bedside Kit)</label>
+            </value>
+            <value>
+                <fullName>Console</fullName>
+                <default>false</default>
+                <label>Console</label>
+            </value>
+            <value>
+                <fullName>VPS pre-loaded Arrow PICC w\ Chlorag+ard</fullName>
+                <default>false</default>
+                <label>VPS pre-loaded Arrow PICC w\ Chlorag+ard</label>
+            </value>
+            <value>
+                <fullName>VPS pre-loaded Arrow PICC</fullName>
+                <default>false</default>
+                <label>VPS pre-loaded Arrow PICC</label>
+            </value>
+            <value>
+                <fullName>Oxygen Therapy</fullName>
+                <default>false</default>
+                <label>Oxygen Therapy</label>
+            </value>
+            <value>
+                <fullName>Aerosol Therapy</fullName>
+                <default>false</default>
+                <label>Aerosol Therapy</label>
+            </value>
+            <value>
+                <fullName>Active Humidification</fullName>
+                <default>false</default>
+                <label>Active Humidification</label>
+            </value>
+            <value>
+                <fullName>Resuscitation</fullName>
+                <default>false</default>
+                <label>Resuscitation</label>
+            </value>
+            <value>
+                <fullName>Incentive Spirometers</fullName>
+                <default>false</default>
+                <label>Incentive Spirometers</label>
+            </value>
+            <value>
+                <fullName>Passive Humidification</fullName>
+                <default>false</default>
+                <label>Passive Humidification</label>
+            </value>
+            <value>
+                <fullName>Adaptors &amp; Connectors</fullName>
+                <default>false</default>
+                <label>Adaptors &amp; Connectors</label>
+            </value>
+            <value>
+                <fullName>Laryngoscopes</fullName>
+                <default>false</default>
+                <label>Laryngoscopes</label>
+            </value>
+            <value>
+                <fullName>Endotracheal Tubes</fullName>
+                <default>false</default>
+                <label>Endotracheal Tubes</label>
+            </value>
+            <value>
+                <fullName>Endobronchial Blockers</fullName>
+                <default>false</default>
+                <label>Endobronchial Blockers</label>
+            </value>
+            <value>
+                <fullName>Laryngeal Masks</fullName>
+                <default>false</default>
+                <label>Laryngeal Masks</label>
+            </value>
+            <value>
+                <fullName>Oral &amp; Nasal Airways</fullName>
+                <default>false</default>
+                <label>Oral &amp; Nasal Airways</label>
+            </value>
+            <value>
+                <fullName>Atomization</fullName>
+                <default>false</default>
+                <label>Atomization</label>
+            </value>
+            <value>
+                <fullName>Difficult Intubation</fullName>
+                <default>false</default>
+                <label>Difficult Intubation</label>
+            </value>
+            <value>
+                <fullName>Emergency Products</fullName>
+                <default>false</default>
+                <label>Emergency Products</label>
+            </value>
+            <value>
+                <fullName>Circuits, Mask &amp; Bags</fullName>
+                <default>false</default>
+                <label>Circuits, Mask &amp; Bags</label>
+            </value>
+            <value>
+                <fullName>Intubation Accessories</fullName>
+                <default>false</default>
+                <label>Intubation Accessories</label>
+            </value>
+            <value>
+                <fullName>FlexTip Plus Epidural Catheter</fullName>
+                <default>false</default>
+                <label>FlexTip Plus Epidural Catheter</label>
+            </value>
+            <value>
+                <fullName>AutoFuser Pain Pump</fullName>
+                <default>false</default>
+                <label>AutoFuser Pain Pump</label>
+            </value>
+            <value>
+                <fullName>Sure Block Spinal Trays</fullName>
+                <default>false</default>
+                <label>Sure Block Spinal Trays</label>
+            </value>
+            <value>
+                <fullName>Flexblock Continuous Catheter</fullName>
+                <default>false</default>
+                <label>Flexblock Continuous Catheter</label>
+            </value>
+            <value>
+                <fullName>Stimucath Continuous Catheter</fullName>
+                <default>false</default>
+                <label>Stimucath Continuous Catheter</label>
+            </value>
+            <value>
+                <fullName>StimuQuik ECHO PNB Needle</fullName>
+                <default>false</default>
+                <label>StimuQuik ECHO PNB Needle</label>
+            </value>
+            <value>
+                <fullName>Stimpod PNB Nerve Stimulator</fullName>
+                <default>false</default>
+                <label>Stimpod PNB Nerve Stimulator</label>
+            </value>
+            <value>
+                <fullName>AE5</fullName>
+                <default>false</default>
+                <label>AE5</label>
+            </value>
+            <value>
+                <fullName>Cholangiography</fullName>
+                <default>false</default>
+                <label>Cholangiography</label>
+            </value>
+            <value>
+                <fullName>Vista</fullName>
+                <default>false</default>
+                <label>Vista</label>
+            </value>
+            <value>
+                <fullName>eFx</fullName>
+                <default>false</default>
+                <label>eFx</label>
+            </value>
+            <value>
+                <fullName>Valve</fullName>
+                <default>false</default>
+                <label>Valve</label>
+            </value>
+            <value>
+                <fullName>Deknatel</fullName>
+                <default>false</default>
+                <label>Deknatel</label>
+            </value>
+            <value>
+                <fullName>Instruments</fullName>
+                <default>false</default>
+                <label>Instruments</label>
+            </value>
+            <value>
+                <fullName>Skin Stapling</fullName>
+                <default>false</default>
+                <label>Skin Stapling</label>
+            </value>
+            <value>
+                <fullName>JACC</fullName>
+                <default>false</default>
+                <label>JACC</label>
+            </value>
+            <value>
+                <fullName>Mid-Tier Kits</fullName>
+                <default>false</default>
+                <label>Mid-Tier Kits</label>
+            </value>
+            <value>
+                <fullName>PICC Other</fullName>
+                <default>false</default>
+                <label>PICC Other</label>
+            </value>
+            <value>
+                <fullName>VPS G4</fullName>
+                <default>false</default>
+                <label>VPS G4</label>
+            </value>
+            <value>
+                <fullName>StimuQuick</fullName>
+                <default>false</default>
+                <label>StimuQuick</label>
+            </value>
+            <value>
+                <fullName>Metal</fullName>
+                <default>false</default>
+                <label>Metal</label>
+            </value>
+            <value>
+                <fullName>Polymer</fullName>
+                <default>false</default>
+                <label>Polymer</label>
+            </value>
+            <value>
+                <fullName>ENT</fullName>
+                <default>false</default>
+                <label>ENT</label>
+            </value>
+            <value>
+                <fullName>CVT</fullName>
+                <default>false</default>
+                <label>CVT</label>
+            </value>
+            <value>
+                <fullName>Ortho</fullName>
+                <default>false</default>
+                <label>Ortho</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Foley Catheters</fullName>
+                <default>false</default>
+                <label>Foley Catheters</label>
+            </value>
+            <value>
+                <fullName>Bladder Catheters without Balloon</fullName>
+                <default>false</default>
+                <label>Bladder Catheters without Balloon</label>
+            </value>
+            <value>
+                <fullName>Bladder Catherization Set</fullName>
+                <default>false</default>
+                <label>Bladder Catherization Set</label>
+            </value>
+            <value>
+                <fullName>Suprapublic Urine Drainage</fullName>
+                <default>false</default>
+                <label>Suprapublic Urine Drainage</label>
+            </value>
+            <value>
+                <fullName>Urine Collectors</fullName>
+                <default>false</default>
+                <label>Urine Collectors</label>
+            </value>
+            <value>
+                <fullName>Ureteral Catheters</fullName>
+                <default>false</default>
+                <label>Ureteral Catheters</label>
+            </value>
+            <value>
+                <fullName>Ureteral Stents</fullName>
+                <default>false</default>
+                <label>Ureteral Stents</label>
+            </value>
+            <value>
+                <fullName>Nephrostomy</fullName>
+                <default>false</default>
+                <label>Nephrostomy</label>
+            </value>
+            <value>
+                <fullName>Stone Extractors</fullName>
+                <default>false</default>
+                <label>Stone Extractors</label>
+            </value>
+            <value>
+                <fullName>Measuring Catheters and Urodynamics</fullName>
+                <default>false</default>
+                <label>Measuring Catheters and Urodynamics</label>
+            </value>
+            <value>
+                <fullName>Special Products</fullName>
+                <default>false</default>
+                <label>Special Products</label>
+            </value>
+            <value>
+                <fullName>Manual Metal</fullName>
+                <default>false</default>
+                <label>Manual Metal</label>
+            </value>
+            <value>
+                <fullName>Manual Polymer</fullName>
+                <default>false</default>
+                <label>Manual Polymer</label>
+            </value>
+            <value>
+                <fullName>Auto Polymer</fullName>
+                <default>false</default>
+                <label>Auto Polymer</label>
+            </value>
+            <value>
+                <fullName>AGB+</fullName>
+                <default>false</default>
+                <label>AGB+</label>
+            </value>
+            <value>
+                <fullName>Ergopack</fullName>
+                <default>false</default>
+                <label>Ergopack</label>
+            </value>
+            <value>
+                <fullName>Pressure Injectable</fullName>
+                <default>false</default>
+                <label>Pressure Injectable</label>
+            </value>
+            <value>
+                <fullName>Pediatric</fullName>
+                <default>false</default>
+                <label>Pediatric</label>
+            </value>
+            <value>
+                <fullName>MAC</fullName>
+                <default>false</default>
+                <label>MAC</label>
+            </value>
+            <value>
+                <fullName>PSI</fullName>
+                <default>false</default>
+                <label>PSI</label>
+            </value>
+            <value>
+                <fullName>Interventional Sets</fullName>
+                <default>false</default>
+                <label>Interventional Sets</label>
+            </value>
+            <value>
+                <fullName>Mid-Line</fullName>
+                <default>false</default>
+                <label>Mid-Line</label>
+            </value>
+            <value>
+                <fullName>VPS Pre-Loaded</fullName>
+                <default>false</default>
+                <label>VPS Pre-Loaded</label>
+            </value>
+            <value>
+                <fullName>Acute Hemodialysis</fullName>
+                <default>false</default>
+                <label>Acute Hemodialysis</label>
+            </value>
+            <value>
+                <fullName>Acute Hemodialysis AGB+</fullName>
+                <default>false</default>
+                <label>Acute Hemodialysis AGB+</label>
+            </value>
+            <value>
+                <fullName>Chronic Hemodialysis Catheters</fullName>
+                <default>false</default>
+                <label>Chronic Hemodialysis Catheters</label>
+            </value>
+            <value>
+                <fullName>Embolectomy</fullName>
+                <default>false</default>
+                <label>Embolectomy</label>
+            </value>
+            <value>
+                <fullName>Thrombectomy</fullName>
+                <default>false</default>
+                <label>Thrombectomy</label>
+            </value>
+            <value>
+                <fullName>Cavity Drainage and Accessories</fullName>
+                <default>false</default>
+                <label>Cavity Drainage and Accessories</label>
+            </value>
+            <value>
+                <fullName>Thoracenthesis</fullName>
+                <default>false</default>
+                <label>Thoracenthesis</label>
+            </value>
+            <value>
+                <fullName>Pneumothorax</fullName>
+                <default>false</default>
+                <label>Pneumothorax</label>
+            </value>
+            <value>
+                <fullName>Paracenthesis</fullName>
+                <default>false</default>
+                <label>Paracenthesis</label>
+            </value>
+            <value>
+                <fullName>Liver Biopsy</fullName>
+                <default>false</default>
+                <label>Liver Biopsy</label>
+            </value>
+            <value>
+                <fullName>Angioplasty</fullName>
+                <default>false</default>
+                <label>Angioplasty</label>
+            </value>
+            <value>
+                <fullName>SAF PSI Sheats</fullName>
+                <default>false</default>
+                <label>SAF PSI Sheats</label>
+            </value>
+            <value>
+                <fullName>CVC</fullName>
+                <default>false</default>
+                <label>CVC</label>
+            </value>
+            <value>
+                <fullName>AutoCat2 Series</fullName>
+                <default>false</default>
+                <label>AutoCat2 Series</label>
+            </value>
+            <value>
+                <fullName>AutoCat2 Series Transport</fullName>
+                <default>false</default>
+                <label>AutoCat2 Series Transport</label>
+            </value>
+            <value>
+                <fullName>Refurbished</fullName>
+                <default>false</default>
+                <label>Refurbished</label>
+            </value>
+            <value>
+                <fullName>Fiber Optic Balloons</fullName>
+                <default>false</default>
+                <label>Fiber Optic Balloons</label>
+            </value>
+            <value>
+                <fullName>Conventional Balloons</fullName>
+                <default>false</default>
+                <label>Conventional Balloons</label>
+            </value>
+            <value>
+                <fullName>Electrophysiology</fullName>
+                <default>false</default>
+                <label>Electrophysiology</label>
+            </value>
+            <value>
+                <fullName>Bermans</fullName>
+                <default>false</default>
+                <label>Bermans</label>
+            </value>
+            <value>
+                <fullName>Wedge Pressure</fullName>
+                <default>false</default>
+                <label>Wedge Pressure</label>
+            </value>
+            <value>
+                <fullName>Pacing</fullName>
+                <default>false</default>
+                <label>Pacing</label>
+            </value>
+            <value>
+                <fullName>Sheaths</fullName>
+                <default>false</default>
+                <label>Sheaths</label>
+            </value>
+            <value>
+                <fullName>Transradial</fullName>
+                <default>false</default>
+                <label>Transradial</label>
+            </value>
+            <value>
+                <fullName>Chlorag+ard</fullName>
+                <default>false</default>
+                <label>Chlorag+ard</label>
+            </value>
+            <value>
+                <fullName>LMA</fullName>
+                <default>false</default>
+                <label>LMA</label>
+            </value>
+            <value>
+                <fullName>Tracheostomy</fullName>
+                <default>false</default>
+                <label>Tracheostomy</label>
+            </value>
+            <value>
+                <fullName>Airway</fullName>
+                <default>false</default>
+                <label>Airway</label>
+            </value>
+            <value>
+                <fullName>Intubation</fullName>
+                <default>false</default>
+                <label>Intubation</label>
+            </value>
+            <value>
+                <fullName>Laryngeal Mask Airways</fullName>
+                <default>false</default>
+                <label>Laryngeal Mask Airways</label>
+            </value>
+            <value>
+                <fullName>Laryngoscopy</fullName>
+                <default>false</default>
+                <label>Laryngoscopy</label>
+            </value>
+            <value>
+                <fullName>Monitored Anestheisa Care</fullName>
+                <default>false</default>
+                <label>Monitored Anestheisa Care</label>
+            </value>
+            <value>
+                <fullName>One-Lung Ventilation</fullName>
+                <default>false</default>
+                <label>One-Lung Ventilation</label>
+            </value>
+            <value>
+                <fullName>Wound Irrigation</fullName>
+                <default>false</default>
+                <label>Wound Irrigation</label>
+            </value>
+            <value>
+                <fullName>Humidification</fullName>
+                <default>false</default>
+                <label>Humidification</label>
+            </value>
+            <value>
+                <fullName>Bladder Management</fullName>
+                <default>false</default>
+                <label>Bladder Management</label>
+            </value>
+            <value>
+                <fullName>Endo-&amp; Special Urology</fullName>
+                <default>false</default>
+                <label>Endo-&amp; Special Urology</label>
+            </value>
+            <value>
+                <fullName>Diagnostics</fullName>
+                <default>false</default>
+                <label>Diagnostics</label>
+            </value>
+            <value>
+                <fullName>Gastroenterology</fullName>
+                <default>false</default>
+                <label>Gastroenterology</label>
+            </value>
+            <value>
+                <fullName>General Surgery</fullName>
+                <default>false</default>
+                <label>General Surgery</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Thermodilution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Electrophysiology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Bermans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Wedge Pressure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Pacing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Right Heart</controllingFieldValue>
+            <valueName>Transradial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Tracheostomy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Airway</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Intubation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Laryngeal Mask Airways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Laryngoscopy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Monitored Anestheisa Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>One-Lung Ventilation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Wound Irrigation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Bladder Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Endo-&amp; Special Urology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Specialties</controllingFieldValue>
+            <valueName>Diagnostics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Specialties</controllingFieldValue>
+            <valueName>Gastroenterology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>General Specialties</controllingFieldValue>
+            <valueName>General Surgery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VasoNova</controllingFieldValue>
+            <valueName>Stylet (Bedside Kit)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VasoNova</controllingFieldValue>
+            <valueName>Console</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VasoNova</controllingFieldValue>
+            <valueName>VPS G4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Oxygen Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Aerosol Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Active Humidification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Resuscitation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Incentive Spirometers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Passive Humidification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Adaptors &amp; Connectors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Atomization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Laryngoscopes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Endotracheal Tubes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Endobronchial Blockers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Laryngeal Masks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Oral &amp; Nasal Airways</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Difficult Intubation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Emergency Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Circuits, Mask &amp; Bags</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Airway</controllingFieldValue>
+            <valueName>Intubation Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>FlexTip Plus Epidural Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>AutoFuser Pain Pump</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>Sure Block Spinal Trays</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>Flexblock Continuous Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>Stimucath Continuous Catheter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>StimuQuik ECHO PNB Needle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>Stimpod PNB Nerve Stimulator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pain Management</controllingFieldValue>
+            <valueName>StimuQuick</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bladder Management</controllingFieldValue>
+            <valueName>Foley Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bladder Management</controllingFieldValue>
+            <valueName>Bladder Catheters without Balloon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bladder Management</controllingFieldValue>
+            <valueName>Bladder Catherization Set</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bladder Management</controllingFieldValue>
+            <valueName>Suprapublic Urine Drainage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bladder Management</controllingFieldValue>
+            <valueName>Urine Collectors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology &amp; Special</controllingFieldValue>
+            <valueName>Ureteral Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology &amp; Special</controllingFieldValue>
+            <valueName>Ureteral Stents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology &amp; Special</controllingFieldValue>
+            <valueName>Nephrostomy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology &amp; Special</controllingFieldValue>
+            <valueName>Stone Extractors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology &amp; Special</controllingFieldValue>
+            <valueName>Measuring Catheters and Urodynamics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Endourology &amp; Special</controllingFieldValue>
+            <valueName>Special Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>Acute Hemodialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>Acute Hemodialysis AGB+</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>Chronic Hemodialysis Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>Embolectomy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dialysis Access</controllingFieldValue>
+            <valueName>Thrombectomy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Cholangiography</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Cavity Drainage and Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Thoracenthesis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Pneumothorax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Paracenthesis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Liver Biopsy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Procedures</controllingFieldValue>
+            <valueName>Angioplasty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Sheaths</controllingFieldValue>
+            <valueName>SAF PSI Sheats</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Large Bore CVCs</controllingFieldValue>
+            <valueName>CVC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Access</controllingFieldValue>
+            <valueName>Vista</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>ENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>CVT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>Ortho</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Instruments</controllingFieldValue>
+            <valueName>General</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ligation</controllingFieldValue>
+            <valueName>Manual Metal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ligation</controllingFieldValue>
+            <valueName>Manual Polymer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ligation</controllingFieldValue>
+            <valueName>Auto Polymer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Stapling</controllingFieldValue>
+            <valueName>Skin Stapling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suture</controllingFieldValue>
+            <valueName>Valve</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Suture</controllingFieldValue>
+            <valueName>Deknatel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <valueName>SWG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <valueName>JACC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <valueName>AGB+</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <controllingFieldValue>PICCs</controllingFieldValue>
+            <valueName>Ergopack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <valueName>Pressure Injectable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <valueName>Pediatric</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <valueName>MAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Venous Access</controllingFieldValue>
+            <valueName>PSI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PICCs</controllingFieldValue>
+            <valueName>Interventional Sets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PICCs</controllingFieldValue>
+            <valueName>Mid-Line</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PICCs</controllingFieldValue>
+            <valueName>VPS Pre-Loaded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PICCs</controllingFieldValue>
+            <valueName>Chlorag+ard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Arterial</controllingFieldValue>
+            <valueName>Radial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Arterial</controllingFieldValue>
+            <valueName>Femoral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IABP</controllingFieldValue>
+            <valueName>AutoCat2 Series</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IABP</controllingFieldValue>
+            <valueName>AutoCat2 Series Transport</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IABP</controllingFieldValue>
+            <valueName>Refurbished</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAB</controllingFieldValue>
+            <valueName>Fiber Optic Balloons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IAB</controllingFieldValue>
+            <valueName>Conventional Balloons</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

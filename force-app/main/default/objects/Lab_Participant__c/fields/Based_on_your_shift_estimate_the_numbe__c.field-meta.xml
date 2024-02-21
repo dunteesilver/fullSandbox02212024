@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Based_on_your_shift_estimate_the_numbe__c</fullName>
+    <externalId>false</externalId>
+    <label>Based on your shift, estimate the  numbe</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0</fullName>
+                <default>false</default>
+                <label>0</label>
+            </value>
+            <value>
+                <fullName>1-5</fullName>
+                <default>false</default>
+                <label>1-5</label>
+            </value>
+            <value>
+                <fullName>6-10</fullName>
+                <default>false</default>
+                <label>6-10</label>
+            </value>
+            <value>
+                <fullName>10-20</fullName>
+                <default>false</default>
+                <label>10-20</label>
+            </value>
+            <value>
+                <fullName>21+</fullName>
+                <default>false</default>
+                <label>21+</label>
+            </value>
+            <value>
+                <fullName>Unable to estimate</fullName>
+                <default>false</default>
+                <label>Unable to estimate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Evaulation_Number__c</fullName>
+    <description>Displays actual quantity of product intended for evaluation.
+
+Actual_Evaulation_Number__c / Number_of_Clinicians__c</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ISBLANK(Exception__c),
+( Qty_Sales_Unit__c *  Quantity__c )  - Field_Sales_Stock__c,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Displays actual quantity of product intended for evaluation.</inlineHelpText>
+    <label>Actual Evaulation Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Next_Step_Info</fullName>
+    <active>false</active>
+    <description>Requires Next Step, Next Step Date, and Current Status unless the Opportunity is closed</description>
+    <errorConditionFormula>AND 
+(RecordType.Id =&quot;012E0000000R4Cz&quot;, (IsClosed=FALSE),
+OR( 
+(ISBLANK(NextStep)), 
+(ISBLANK(Next_Step_Date__c)), 
+(ISBLANK(Current_Status__c))))</errorConditionFormula>
+    <errorMessage>Please enter the Next Step, Next Step Date, and Current Status of the Opportunity</errorMessage>
+</ValidationRule>

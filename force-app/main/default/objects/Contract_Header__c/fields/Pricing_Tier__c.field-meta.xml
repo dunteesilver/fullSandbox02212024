@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Tier__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+Sub_Group__c = &quot;8&quot;,
+OR(
+RIGHT(GPO_Contract_Ref__c,2) = &quot;-D&quot;,
+RIGHT(GPO_Contract_Ref__c,2) = &quot;-M&quot;,
+RIGHT(GPO_Contract_Ref__c,2) = &quot;-R&quot;,
+AND(RIGHT(GPO_Contract_Ref__c,2) = &quot;-N&quot;, Sales_Org__c = &quot;CA10&quot;),
+RIGHT(GPO_Contract_Ref__c,3) = &quot;-VP&quot;
+),
+Owner__c = &quot;123310&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Filters Contracts based on Group 8, GPO Ref ending in -R, -M, or -D and the owner being 123310 / Teleflex</inlineHelpText>
+    <label>Pricing Tier</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

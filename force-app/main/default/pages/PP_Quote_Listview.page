@@ -1,0 +1,8 @@
+<apex:page sidebar="false" readOnly="true" cache="true" tabStyle="Pricing_Portal__tab" title="View Price Quotes" standardController="Price_Quote__c" recordSetVar="Price_Quotes__r">
+    
+    <!-- Call the Menu -->    
+    <apex:include id="menu" pageName="PP_Menu"/>
+    
+    <apex:ListViews type="Price_Quote__c" id="AccountList" />
+    
+</apex:page>

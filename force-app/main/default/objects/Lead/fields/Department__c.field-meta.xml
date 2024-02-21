@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department__c</fullName>
+    <externalId>false</externalId>
+    <label>Department</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Administration</fullName>
+                <default>false</default>
+                <label>Administration</label>
+            </value>
+            <value>
+                <fullName>Anaesthetic Department</fullName>
+                <default>false</default>
+                <label>Anaesthetic Department</label>
+            </value>
+            <value>
+                <fullName>Apherisis UNit</fullName>
+                <default>false</default>
+                <label>Apherisis UNit</label>
+            </value>
+            <value>
+                <fullName>Biomedical Engineering</fullName>
+                <default>false</default>
+                <label>Biomedical Engineering</label>
+            </value>
+            <value>
+                <fullName>Cancer Care Centre</fullName>
+                <default>false</default>
+                <label>Cancer Care Centre</label>
+            </value>
+            <value>
+                <fullName>Cardiology</fullName>
+                <default>false</default>
+                <label>Cardiology</label>
+            </value>
+            <value>
+                <fullName>Cardio Thoracic Intensive Care Nurse Unit</fullName>
+                <default>false</default>
+                <label>Cardio Thoracic Intensive Care Nurse Unit</label>
+            </value>
+            <value>
+                <fullName>Cardio Thoracic Surgery</fullName>
+                <default>false</default>
+                <label>Cardio Thoracic Surgery</label>
+            </value>
+            <value>
+                <fullName>Childrens Ward</fullName>
+                <default>false</default>
+                <label>Childrens Ward</label>
+            </value>
+            <value>
+                <fullName>Community Health</fullName>
+                <default>false</default>
+                <label>Community Health</label>
+            </value>
+            <value>
+                <fullName>Coronary Angiography Unit</fullName>
+                <default>false</default>
+                <label>Coronary Angiography Unit</label>
+            </value>
+            <value>
+                <fullName>Coronary Care Unit</fullName>
+                <default>false</default>
+                <label>Coronary Care Unit</label>
+            </value>
+            <value>
+                <fullName>Critical Care Unit</fullName>
+                <default>false</default>
+                <label>Critical Care Unit</label>
+            </value>
+            <value>
+                <fullName>Day Surgery</fullName>
+                <default>false</default>
+                <label>Day Surgery</label>
+            </value>
+            <value>
+                <fullName>Department of Defence</fullName>
+                <default>false</default>
+                <label>Department of Defence</label>
+            </value>
+            <value>
+                <fullName>Dialysis Unit</fullName>
+                <default>false</default>
+                <label>Dialysis Unit</label>
+            </value>
+            <value>
+                <fullName>Education Department</fullName>
+                <default>false</default>
+                <label>Education Department</label>
+            </value>
+            <value>
+                <fullName>Emergency Department</fullName>
+                <default>false</default>
+                <label>Emergency Department</label>
+            </value>
+            <value>
+                <fullName>Endovascular Suite</fullName>
+                <default>false</default>
+                <label>Endovascular Suite</label>
+            </value>
+            <value>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+                <label>Equipment</label>
+            </value>
+            <value>
+                <fullName>General Surgery</fullName>
+                <default>false</default>
+                <label>General Surgery</label>
+            </value>
+            <value>
+                <fullName>Haematology Department</fullName>
+                <default>false</default>
+                <label>Haematology Department</label>
+            </value>
+            <value>
+                <fullName>High Dependency Unit</fullName>
+                <default>false</default>
+                <label>High Dependency Unit</label>
+            </value>
+            <value>
+                <fullName>Hospital In The Home</fullName>
+                <default>false</default>
+                <label>Hospital In The Home</label>
+            </value>
+            <value>
+                <fullName>Infection Control</fullName>
+                <default>false</default>
+                <label>Infection Control</label>
+            </value>
+            <value>
+                <fullName>Intensive Care Unit</fullName>
+                <default>false</default>
+                <label>Intensive Care Unit</label>
+            </value>
+            <value>
+                <fullName>Labour Ward</fullName>
+                <default>false</default>
+                <label>Labour Ward</label>
+            </value>
+            <value>
+                <fullName>Materials Management</fullName>
+                <default>false</default>
+                <label>Materials Management</label>
+            </value>
+            <value>
+                <fullName>Maternity</fullName>
+                <default>false</default>
+                <label>Maternity</label>
+            </value>
+            <value>
+                <fullName>Medical Imaging</fullName>
+                <default>false</default>
+                <label>Medical Imaging</label>
+            </value>
+            <value>
+                <fullName>Medical retrieval Service</fullName>
+                <default>false</default>
+                <label>Medical retrieval Service</label>
+            </value>
+            <value>
+                <fullName>Neonatal Intensive Care Unit</fullName>
+                <default>false</default>
+                <label>Neonatal Intensive Care Unit</label>
+            </value>
+            <value>
+                <fullName>Nephrology</fullName>
+                <default>false</default>
+                <label>Nephrology</label>
+            </value>
+            <value>
+                <fullName>Neurology</fullName>
+                <default>false</default>
+                <label>Neurology</label>
+            </value>
+            <value>
+                <fullName>Neurosurgery</fullName>
+                <default>false</default>
+                <label>Neurosurgery</label>
+            </value>
+            <value>
+                <fullName>Nuclear Medicine</fullName>
+                <default>false</default>
+                <label>Nuclear Medicine</label>
+            </value>
+            <value>
+                <fullName>Nursing Administration</fullName>
+                <default>false</default>
+                <label>Nursing Administration</label>
+            </value>
+            <value>
+                <fullName>Occupational Health and Safety</fullName>
+                <default>false</default>
+                <label>Occupational Health and Safety</label>
+            </value>
+            <value>
+                <fullName>Oncology</fullName>
+                <default>false</default>
+                <label>Oncology</label>
+            </value>
+            <value>
+                <fullName>Operating Theatres</fullName>
+                <default>false</default>
+                <label>Operating Theatres</label>
+            </value>
+            <value>
+                <fullName>Orthopaedics</fullName>
+                <default>false</default>
+                <label>Orthopaedics</label>
+            </value>
+            <value>
+                <fullName>Paediatric Ward</fullName>
+                <default>false</default>
+                <label>Paediatric Ward</label>
+            </value>
+            <value>
+                <fullName>Pain Management</fullName>
+                <default>false</default>
+                <label>Pain Management</label>
+            </value>
+            <value>
+                <fullName>Palliative Care</fullName>
+                <default>false</default>
+                <label>Palliative Care</label>
+            </value>
+            <value>
+                <fullName>Perfusion Department</fullName>
+                <default>false</default>
+                <label>Perfusion Department</label>
+            </value>
+            <value>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Physiotherapy</fullName>
+                <default>false</default>
+                <label>Physiotherapy</label>
+            </value>
+            <value>
+                <fullName>Procurement and Supply Unit</fullName>
+                <default>false</default>
+                <label>Procurement and Supply Unit</label>
+            </value>
+            <value>
+                <fullName>Radiology</fullName>
+                <default>false</default>
+                <label>Radiology</label>
+            </value>
+            <value>
+                <fullName>Recovery</fullName>
+                <default>false</default>
+                <label>Recovery</label>
+            </value>
+            <value>
+                <fullName>Rehabilitation Unit</fullName>
+                <default>false</default>
+                <label>Rehabilitation Unit</label>
+            </value>
+            <value>
+                <fullName>Renal Department</fullName>
+                <default>false</default>
+                <label>Renal Department</label>
+            </value>
+            <value>
+                <fullName>Respiratory Unit</fullName>
+                <default>false</default>
+                <label>Respiratory Unit</label>
+            </value>
+            <value>
+                <fullName>Special Care Unit</fullName>
+                <default>false</default>
+                <label>Special Care Unit</label>
+            </value>
+            <value>
+                <fullName>Surgical Ward</fullName>
+                <default>false</default>
+                <label>Surgical Ward</label>
+            </value>
+            <value>
+                <fullName>Tenders and Contracts</fullName>
+                <default>false</default>
+                <label>Tenders and Contracts</label>
+            </value>
+            <value>
+                <fullName>Vascular access Team</fullName>
+                <default>false</default>
+                <label>Vascular access Team</label>
+            </value>
+            <value>
+                <fullName>Warehouse &amp; Distribution</fullName>
+                <default>false</default>
+                <label>Warehouse &amp; Distribution</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_BUs_Record_Type</fullName>
+    <active>true</active>
+    <label>All BU&apos;s Record Type</label>
+    <picklistValues>
+        <picklist>Howdidthemeetingcomeabout__c</picklist>
+        <values>
+            <fullName>Contract Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled Visit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WhatisyourCallObjective__c</picklist>
+        <values>
+            <fullName>Advancement of Sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Discussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discuss Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generate new business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

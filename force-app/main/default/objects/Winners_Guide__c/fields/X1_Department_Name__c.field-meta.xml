@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_Department_Name__c</fullName>
+    <description>Arterials
+Needs Analysis Stage
+Inserter</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Arterials
+Needs Analysis Stage
+Inserter</inlineHelpText>
+    <label>#1 Department Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

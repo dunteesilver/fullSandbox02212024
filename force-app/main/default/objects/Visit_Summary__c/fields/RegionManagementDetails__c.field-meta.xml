@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RegionManagementDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Region Management Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RegionManagement__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Does not work collaboratively with Sales Rep to define clinical priorities within Region</fullName>
+                <default>false</default>
+                <label>Does not work collaboratively with Sales Rep to define clinical priorities within Region</label>
+            </value>
+            <value>
+                <fullName>Does not understand regions performance and goals</fullName>
+                <default>false</default>
+                <label>Does not understand regions performance and goals</label>
+            </value>
+            <value>
+                <fullName>Does not communicate with Sales Team (scheduled calls, pre-call planning etc)</fullName>
+                <default>false</default>
+                <label>Does not communicate with Sales Team (scheduled calls, pre-call planning etc)</label>
+            </value>
+            <value>
+                <fullName>Does not develop strong relationships/champions with current and new customers</fullName>
+                <default>false</default>
+                <label>Does not develop strong relationships/champions with current and new customers</label>
+            </value>
+            <value>
+                <fullName>Works collaboratively with Sales Rep to define clinical priorities within Region</fullName>
+                <default>false</default>
+                <label>Works collaboratively with Sales Rep to define clinical priorities within Region</label>
+            </value>
+            <value>
+                <fullName>Understands regions performance and goals</fullName>
+                <default>false</default>
+                <label>Understands regions performance and goals</label>
+            </value>
+            <value>
+                <fullName>Communicate well with Sales Team, rarely requires prompting and/or follow-up</fullName>
+                <default>false</default>
+                <label>Communicate well with Sales Team, rarely requires prompting and/or follow-up</label>
+            </value>
+            <value>
+                <fullName>Develops strong relationships/champions with current and new customers</fullName>
+                <default>false</default>
+                <label>Develops strong relationships/champions with current and new customers</label>
+            </value>
+            <value>
+                <fullName>Constantly works collaboratively with Sales Rep to define current and new clinical priorities within Region</fullName>
+                <default>false</default>
+                <label>Constantly works collaboratively with Sales Rep to define current and new clinical priorities within Region</label>
+            </value>
+            <value>
+                <fullName>Fully understands regions performance and goals</fullName>
+                <default>false</default>
+                <label>Fully understands regions performance and goals</label>
+            </value>
+            <value>
+                <fullName>Proactively communicates with Sales Team</fullName>
+                <default>false</default>
+                <label>Proactively communicates with Sales Team</label>
+            </value>
+            <value>
+                <fullName>Demonstrates deep relationships and mentors current and new customers leading to KOL’s</fullName>
+                <default>false</default>
+                <label>Demonstrates deep relationships and mentors current and new customers leading to KOL’s</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not work collaboratively with Sales Rep to define clinical priorities within Region</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not understand regions performance and goals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not communicate with Sales Team (scheduled calls, pre-call planning etc)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not develop strong relationships/champions with current and new customers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Works collaboratively with Sales Rep to define clinical priorities within Region</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Understands regions performance and goals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Communicate well with Sales Team, rarely requires prompting and/or follow-up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Develops strong relationships/champions with current and new customers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Constantly works collaboratively with Sales Rep to define current and new clinical priorities within Region</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Fully understands regions performance and goals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Proactively communicates with Sales Team</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Demonstrates deep relationships and mentors current and new customers leading to KOL’s</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

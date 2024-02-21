@@ -1,0 +1,97 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" renderAs="pdf" applyHtmlTag="false" applyBodyTag="false" standardController="Pricing_Request__c">
+<apex:stylesheet value="{!$Resource.PRF_CSS}"/>
+<html>
+ <head>
+ <style type="text/CSS">
+ @page {
+ size:landscape;
+ @bottom-right {
+ content: "Page " counter(page) " of " counter(pages);
+ }
+ }
+ .text-area {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+}
+.heading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+}
+.table-heading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    color: #FFF;
+    background-color: #000;
+    font-weight: bold;
+}
+ </style>
+ </head>
+ <body>
+        <apex:image value="{!URLFOR($Resource.PRF_CSS, 'Teleflex-corp-clr-72.jpg')}"/>
+        <font face="arial" size="2">
+        <h1 class="heading">Latin America Pricing Request</h1>
+ <table width="65%" border="1" cellspacing="2" cellpadding="2">
+  <tr>
+    <td class="text-area">Pricing Request Number: {!Pricing_Request__c.Name}</td>
+    <td class="text-area">Country Manager: {!Pricing_Request__c.Country_Manager__r.FirstName} {!Pricing_Request__c.Country_Manager__r.LastName}</td>
+  </tr>
+  <tr>
+    <td class="text-area">Dealer Name: {!Pricing_Request__c.Dealer_Name__r.Name}</td>
+    <td class="text-area">Dealer Number: {!Pricing_Request__c.Dealer_Account_Number__c}</td>
+  </tr>
+  <tr>
+    <td class="text-area">Status: {!Pricing_Request__c.Status__c}</td>
+    <td class="text-area">Tender Number: {!Pricing_Request__c.Tender_Number__c}</td>
+  </tr>
+  <tr>
+    <td class="text-area">Approved by: {!Pricing_Request__c.Approved_By__c}</td>
+    <td class="text-area">Approval Date:&nbsp;<apex:outputField value="{!Pricing_Request__c.Approval_Date__c}"/>
+        <!--<apex:outputText value=" {0,date,MMM d, yyyy 'at' HH:mm:ss z}">
+                        <apex:param value="{!Pricing_Request__c.Approval_Date__c}"/>
+                    </apex:outputText>--></td>
+  </tr>
+ </table>
+ 
+ <table width="65%" border="1" cellspacing="2" cellpadding="2">
+  <tr>
+    <td class="text-area">Comments: {!Pricing_Request__c.Comments__c}</td>
+  </tr>
+ </table>
+ 
+       <b class="text-area">Requested Products</b>
+          <table border="1" >
+            <tr > 
+               <th class="table-heading">Product Code</th>
+               <th class="table-heading">Product Description</th>
+               <th class="table-heading">Req. Volume (SU)</th>
+               <th class="table-heading">Req. Price per SU</th>
+               <th class="table-heading">Local Market Price (USD)</th>
+               <th class="table-heading">Current Contract Price (or last)</th>
+               <th class="table-heading">Current Volume (SU)</th>
+               <th class="table-heading">Revised Price Per SU</th>
+               <th class="table-heading">Revised Annual Est. Qty (SU)</th>
+               <th class="table-heading">Revised Revenue Potential</th>
+            </tr>
+            <apex:repeat var="cx" value="{!Pricing_Request__c.Product_Requests__r}">
+              <tr>
+                <td class="text-area">{!cx.Products__r.Name}</td>
+                <td class="text-area">{!cx.Product_Description__c}</td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Requested_SU_Volume__c}"/></apex:outputPanel></td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Requested_Price_per_SU__c}"/></apex:outputPanel></td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Local_Market_Price__c}"/></apex:outputPanel></td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Current_Contract_Price_or_last__c}"/></apex:outputPanel></td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Current_SU_Volume__c}"/></apex:outputPanel></td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Revised_Price_Per_SU__c}"/></apex:outputPanel></td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Revised_Annual_Est_QTY_SU__c}"/></apex:outputPanel></td>
+                <td class="text-area"><apex:outputPanel layout="block" style="text-align:right;"><apex:outputField value="{!cx.Revised_Revenue_Potential__c}"/></apex:outputPanel></td>
+              </tr>
+            </apex:repeat>                 
+          </table>
+          <p />
+        </font>
+      </body>
+    </html>    
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page >
+ <flow:interview name="Create_a_Case" finishLocation="{!URLFOR('/')}"/>
+</apex:page>

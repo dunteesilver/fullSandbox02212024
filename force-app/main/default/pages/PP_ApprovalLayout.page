@@ -1,0 +1,523 @@
+<apex:page docType="html-5.0" id="thePage" title="Price Quote: #{!pq.Price_Quote_Name__c}" standardController="Price_Quote__c" extensions="PP_Price_Quote" sidebar="false"
+       cache="false" action="{!helperMethod}">
+    <head>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.css')}"/>
+
+        <apex:stylesheet value="{!UrlFor($Resource.tablesorter,'/tablesorter-master/dist/css/theme.bootstrap.min.css')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.widgets.min.js')}"/>
+
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/libs/FileSaver/FileSaver.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/tableExport.min.js')}"/>
+    </head>
+    <style type="text/css">
+
+        .accountIntCtrls {
+        display:none;
+        }
+        .accountOutCtrls {
+        display:block;
+        }
+
+        .contactIntCtrls {
+        display:none;
+        }
+        .contactOutCtrls {
+        display:block;
+        }
+        <!-- Used to surpress the 'Submit for Approval' button in the related list (21Oct2015/ESC) -->
+        input.btn[name="piSubmit"] {
+        display: none;
+        }
+
+        .dropdown-menu > .disabled{
+        cursor: not-allowed;
+        }
+
+        /* The real magic ;) */
+        .dropdown-menu > .disabled > a{
+        pointer-events: none;
+        }
+
+        .morecontent span {
+        display: none;
+        }
+        .bRelatedList .relatedProcessHistory .extraRow td.actionColumn .actionLink, .bRelatedList .relatedProcessHistory .extraRow td, .bRelatedList .relatedProcessHistory .extraRow th{
+            color:black;
+        }
+        
+        <!-- **************************************** Pricing Tier Matrix ******************************************************* -->
+
+        table.fs10 td, table.fs10 th{
+        font-size: 11px;
+        vertical-align: middle !important;
+        text-align:center !important;
+        padding: 5px !important;
+        }
+
+        table.fs10a td, table.fs10a th{
+        font-size: 11px;
+        vertical-align: middle !important;
+        padding: 5px !important;
+        }
+
+        .tinyMan{
+        width: 20px !important;
+        padding: 5px !important;
+        }
+
+        #approval {
+            font-family: Courier New;
+            font-size:  12px;
+        }
+        <!-- **************************************** END Pricing Tier Matrix ******************************************************* -->
+    </style>
+
+    <div class="teleflex">
+        <apex:include id="menu" pageName="PP_Menu"/>
+         <apex:variable var="emeaUser" value="{!IF(contains($UserRole.Name,'EMEA') || pq.BusinessUnit__c = 'EMEA',TRUE,FALSE)}"/>
+        <!-- DIV to Render the rest of the page in Bootstrap -->
+        <div class="contain-fluid">
+            <div class="row">
+                <!-- Column One -->
+                <div class="col-md-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><h3 class="panel-title">Approve/Reject Approval Request</h3></div>
+                        <div class="panel-body">
+                            <apex:outputLink value="/apex/PP_Price_Quote?pqId={!pq.Id}"><h5>
+                                <strong>Back to Quote {!pq.Price_Quote_Name__c}</strong>
+                                </h5></apex:outputLink>
+                            <apex:outputPanel id="approvalPanel">
+                            <table class="table table-hover table-condensed">
+                                <tr>
+                                    <td width="150" class="text-right text-nowrap">Quote:</td>
+                                    <td><a href="/apex/PP_Price_Quote?pqid={!pq.Id}">#{!pq.Price_Quote_Name__c}</a></td>
+                                </tr>
+                                <tr>
+                                    <td width="150" class="text-right">Account:</td>
+                                    <td><a href="/apex/PP_Customer_Details?id={!pq.Account_Name__r.Id}"><b>{!pq.Account_Name__r.Name}</b></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Address:</td>
+                                    <td>{!pq.Account_Name__r.BillingStreet},&nbsp;{!pq.Account_Name__r.BillingCity},&nbsp;{!pq.Account_Name__r.BillingState}&nbsp;{!pq.Account_Name__r.BillingPostalCode}&nbsp;{!pq.Account_Name__r.BillingCountry}</td>
+                                </tr>
+                                <tr>
+                                    <td width="150" class="text-right">Owner Name:</td>
+                                    <td><a href="/{!pq.Owner_ID__c}"><b>{!pq.Owner_Full_Name__c}</b> / {!pq.Owner_Business_Unit__c}</a></td>
+                                </tr>
+                                <apex:form >
+                                  <apex:actionFunction name="disableApprove" action="{!Approve}"/>
+                                  <apex:actionFunction name="disableReject" action="{!Reject}"/>
+                                  
+                                    <tr>
+                                        <td class="text-right"><h4><strong>Comments:&nbsp;</strong></h4></td>
+                                        <td class="text-left"><apex:inputTextArea label="Comments" value="{!appComments}" rows="3" cols="100" /></td><br /><br />
+                                    </tr>
+                                  
+                                    <tr class="text-center">
+                                        <apex:variable var="approved_button" value="{!if( (pq.Status__c = 'Approved' || pq.Status__c = 'PRF In Process'),'disabled',
+                                        if((pq.Status__c != 'Approved' || pq.Status__c != 'PRF In Process') && (pq.Owner_ID__c = LEFT($User.Id,15) && $UserRole.Name != 'Teleflex Global IT' ),'disabled',
+                                        if(NOT(isApprover) , 'disabled' , '' ) ) )}"/>
+
+                                        <td class="text-center" colspan="2">
+                                            <apex:commandButton value="Approve" id="approveBtn" action="{!Approve}" styleClass="btn btn-primary {!approved_button}" reRender="approvalPanel" status="actStatusId" onclick="disableApprove()"/>&nbsp;
+                                            <apex:commandButton value="Reject" id="rejectBtn" action="{!Reject}" styleClass="btn btn-danger {!approved_button}" reRender="approvalPanel" status="actStatusId" onclick="disableReject()"/>&nbsp;
+                                        <!--  
+                                          <apex:commandButton value="Approve" action="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!wrkId}" styleClass="btn btn-primary" />&nbsp;
+                                          <apex:commandButton value="Reject" action="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!wrkId}" styleClass="btn btn-danger" />&nbsp;
+                                        -->
+                                        </td>
+                                    </tr>
+                                    <apex:actionstatus id="actStatusId">
+                                        <apex:facet name="start">
+                                            <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                                                 height: 100%;opacity:0.65;width:100%;">
+                                                <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                                                    <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." />
+                                                    <span class="waitingDescription">Loading...</span>
+                                                </div>
+                                            </div>
+                                        </apex:facet>
+                                    </apex:actionstatus>
+                                </apex:form>
+                            </table>
+                            </apex:outputPanel>
+                        </div>
+                    </div>
+                </div> <!-- End of Customer Detail Box -->
+                <!-- End Column One -->
+                <!-- Column Two -->
+                <div class="col-md-4"> <!-- Start of Price Quote Box -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <apex:outputText rendered="{!isLocked}">
+                                <span data-toggle="tooltip" data-placement="top" title="Record Locked!" class="glyphicon glyphicon-lock"></span>
+                            </apex:outputText>
+                            <h3 class="panel-title">Price Quote: {!pq.CurrencyIsoCode} ${!round(grandTotal,2)}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-hover table-condensed">
+                                <tr>
+                                    <td width="150" class="text-right">Status:</td>
+                                    <td>{!pq.Status__c}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right text-nowrap">Expiration Date:</td>
+                                    <td><apex:outputField value="{!pq.Expiration_Date__c}"/></td>
+                                </tr>
+                                <apex:outputText rendered="{!pq.Quote_Description__c != NULL}">
+                                    <tr><td class="text-right text-nowrap">Quote Description:</td><td>{!pq.Quote_Description__c}</td></tr>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!pq.Internal_Comments_Only__c != NULL}">
+                                    <tr><td class="text-right text-nowrap">Internal Only Comments:</td><td><apex:outputField value="{!pq.Internal_Comments_Only__c}"/></td></tr>
+                                </apex:outputText>
+                                <tr><td class="text-right text-nowrap">Created Date:</td><td><apex:outputField value="{!pq.CreatedById}"/>,&nbsp;<apex:outputField value="{!pq.CreatedDate}"/></td></tr>
+                                <tr><td class="text-right text-nowrap">Last Modified Date:</td><td><apex:outputField value="{!pq.LastModifiedById}"/>,&nbsp;<apex:outputField value="{!pq.LastModifiedDate}"/></td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div> <!-- End of Price Quote Box -->
+                <!-- End Column Two -->
+            </div>
+        </div>
+        <!-- End of 2nd Div Teleflex -->
+
+        <!-- Line Items -->
+        <apex:outputText rendered="{!CheckInit}"/>
+        &nbsp;
+        <div class="contain-fluid">
+            <div class="row">
+                <!-- Column One -->
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h6 class="panel-title"><img src="/img/icon/cash24.png" alt="Line Items"/>&nbsp;&nbsp;Approval Items</h6>
+                        </div>
+                    </div>
+                    <!--<div class="panel-body">-->
+
+                    <!-- Line Item Button Bar -->
+                    <a href="myAnchor" id="myAnchor"/>
+
+                    <!-- Start of Approved Layout -->
+                    <!-- Line Item Entry -->
+                    <!-- Locked -->
+                    <apex:variable value="{!if($UserRole.Name="Teleflex Global IT" || $User.Approval_Level__c >= 3 || $UserRole.Name = 'Commercial Operations',TRUE,FALSE)}" var="ulevel"/>
+                    <!-- <button type="button" onclick="$('#approval').tableExport({type:'excel', excelstyles:['border-bottom', 'border-top', 'border-left', 'border-right']});return false;" class="btn btn-primary btn-sm">Download Excel (Beta)</button>
+                    <a href="#" class="btn btn-primary btn-sm" onclick="$('#approval').tableExport({type:'excel', excelstyles:['border-bottom', 'border-top', 'border-left', 'border-right']});return false;">Download Excel</a>-->
+                    <table class="table table-striped table-hover table-bordered table-condensed" id="approval" style="font-size:12px;">
+                        <thead>
+                            <tr class="tablesorter-stickyHeader">
+                                <th rowspan="2" class="text-center col-md-1" style="width: 25px; vertical-align:middle;text-align:center;" data-priority="critical">&nbsp;</th>
+                                <th rowspan="2" class="text-center col-xs-1" style="width: 50px;text-align:center; vertical-align:middle;">Material</th>
+                                <th rowspan="2" class="text-center col-sm-1" style="text-align:center; width: 250px; vertical-align:middle;">Description</th>
+                                <th rowspan="2" class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Brand</th>
+                                <apex:outputText rendered="{!ulevel}">
+                                    <th rowspan="2" class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;">Gross<br/>Profit %</th>
+                                    <th rowspan="2" class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;">Current<br /> Year Cost</th>
+                                    <th rowspan="2" style="text-align:center; vertical-align:middle;">Previous<br /> Year ASP</th>
+                                </apex:outputText>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">List Price</th>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Rep Price</th>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">RSM Price</th>
+                                <apex:outputText rendered="{!ulevel}">
+                                    <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Director Price</th>
+                                     <apex:outputText rendered="{!!emeaUser}">
+                                    <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">VP Price</th>
+                                    <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Floor Price</th>
+                                     </apex:outputText>
+                                     <apex:outputText rendered="{!emeaUser}">
+                                         <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Floor Price/GM Price</th>
+                                           </apex:outputText>
+                                </apex:outputText>
+                                <apex:repeat value="{!tierHeaderNames}" var="tl">
+                                      <th colspan="{!tierLevels[tl]}" style="text-align:center; vertical-align:middle;">{!tl}</th>
+                                </apex:repeat>
+                                <th rowspan="2" style="text-align:center; vertical-align:middle;">{!$ObjectType.Price_Quote_Line_Item__c.fields.Eligible_Price__c.label}</th>
+                                <th rowspan="2" style="text-align:center; vertical-align:middle;">Requested<br/>Sales<br/>Price</th>
+                                <th rowspan="2" style="text-align:center; vertical-align:middle;">Qty</th>
+                                <apex:outputText rendered="{!pq.Type__c != 'Sales Per Each'}">
+                                    <th rowspan="2" style="text-align:center; vertical-align:middle;">Line<br/>Price<br/>Total</th>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!pq.Type__c = 'Sales Per Each'}">
+                                    <th rowspan="2" style="text-align:center; vertical-align:middle;">Price<br/>Per Each<br/>Total</th>
+                                </apex:outputText>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Price Check</th>
+                                <apex:outputText rendered="{!ulevel}">
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min Contract Price</th>
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min Contract Agreement</th>
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min GPO Price</th>
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min GPO Agreement</th>
+                                </apex:outputText>
+                            </tr>
+                            <tr>
+                                <apex:repeat value="{!tierHeaderList}" var="th">
+                                    <th style="text-align:center; vertical-align:middle;">
+                                        <apex:outputText value="T{!right(th,1)}" />
+                                    </th>
+                                </apex:repeat>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:variable value="{!1}" var="rowNum"/>
+                            <apex:repeat value="{!LineItems}" var="r">
+                                <apex:outputText rendered="{!r.Material_Name__r.Name != NULL}">
+                                <tr>
+                                    <td class="col-md-1" align="center" style="width: 25px; vertical-align:middle;"><apex:outputText value="{!rowNum}"/></td>
+                                    <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">{!r.Material_Name__r.Name}</td>
+                                    <td style="vertical-align:middle;" class="more">{!r.Product_Description__c}</td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">{!r.Material_Name__r.Brand_Name__c} - {!r.Material_Name__r.Brand__c}</td>
+                                    <apex:outputText rendered="{!ulevel}">
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText value="{0, number, 00.00%}" rendered="{!r.Material_Name__r.Cost__c != NULL && r.Material_Name__r.Cost__c != 0}">
+                                                <apex:param value="{!margins[r]/100}" />
+                                            </apex:outputText>
+                                            <apex:outputText value="-" rendered="{!r.Material_Name__r.Cost__c == NULL || r.Material_Name__r.Cost__c == 0}"/>
+                                        </td>
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText rendered="{!r.Material_Name__r.Cost_Formula__c != 0}" value="{0, number, ###,###,###,##0.00}" >
+                                                <apex:param value="{!r.Material_Name__r.Cost_Formula__c}" />
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!r.Material_Name__r.Cost_Formula__c = 0}" value="-"/>
+                                        </td>
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText rendered="{!r.Material_Name__r.Last_Year_ASP__c != NULL}" value="{0, number, ###,###,###,##0.00}" >
+                                                <apex:param value="{!r.Material_Name__r.Last_Year_ASP__c}" />
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!r.Material_Name__r.Last_Year_ASP__c = NULL}" value="-"/>
+                                        </td>
+                                    </apex:outputText>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                        <apex:outputText rendered="{!r.List_Price__c != NULL}" value="{0, number, ###,###,###,##0.00}" >
+                                            <apex:param value="{!r.List_Price__c}" />
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!r.List_Price__c == NULL}" >-</apex:outputText>
+                                    </td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                        <apex:outputText rendered="{!r.Rep_Price__c != NULL}" value="{0, number, ###,###,###,##0.00}" >
+                                            <apex:param value="{!r.Rep_Price__c}" />
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!r.Rep_Price__c == NULL}" >-</apex:outputText>
+                                    </td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                        <apex:outputText rendered="{!r.RSM_Price__c != NULL}" value="{0, number, ###,###,###,##0.00}" >
+                                            <apex:param value="{!r.RSM_Price__c}" />
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!r.RSM_Price__c == NULL}" >-</apex:outputText>
+                                    </td>
+                                    <apex:outputText rendered="{!ulevel}">
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText rendered="{!r.Material_Name__r.Director_Price__c != NULL}" value="{0, number, ###,###,###,##0.00}" >
+                                                <apex:param value="{!r.Material_Name__r.Director_Price__c}" />
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!r.Material_Name__r.Director_Price__c == NULL}" >-</apex:outputText>
+                                        </td>
+                                        <apex:outputText rendered="{!!emeaUser}">
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText rendered="{!r.Material_Name__r.VP_Price__c != NULL}" value="{0, number, ###,###,###,##0.00}" >
+                                                <apex:param value="{!r.Material_Name__r.VP_Price__c}" />
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!r.Material_Name__r.VP_Price__c == NULL}" >-</apex:outputText>
+                                        </td>
+                                        </apex:outputText>
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText rendered="{!r.Material_Name__r.Floor_Price__c != NULL}" value="{0, number, ###,###,###,##0.00}" >
+                                                <apex:param value="{!r.Material_Name__r.Floor_Price__c}" />
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!r.Material_Name__r.Floor_Price__c == NULL}" >-</apex:outputText>
+                                        </td>
+                                    </apex:outputText>
+                                    <!-- Pricing Matrix -->
+                                    <apex:repeat value="{!tierHeaderList}" var="th">
+                                        <apex:variable var="mname" value="{!th}-{!r.Material_Name_Text__c}" />
+                                        <apex:variable var="selected" value="{!if(r.Requested_Pricing__r.Agreement_Number__c = tierMap[mname].Name || r.Sales_Deal__r.Agreement_Number__c = tierMap[mname].Name,TRUE,FALSE)}" />
+                                        <apex:variable var="PTSelected" value="{!if(r.Sales_Deal__r.Agreement_Number__c = tierMap[mname].Name && r.Eligible_Price__c = tierMap[mname].Price,'#40ff00',
+                                                                               if(r.Requested_Pricing__r.Agreement_Number__c = tierMap[mname].Name && r.Sales_Price__c = tierMap[mname].Price,'#ffa300',''))}" />
+                                        
+                                        <!-- {!r.Requested_Pricing__r.Agreement_Number__c} = {!tierMap[mname].Name} - {!r.Sales_Deal__r.Agreement_Number__c} = {!tierMap[mname].Name} -->
+                                        <!-- No Pricing Tier -->
+                                        <apex:outputText rendered="{!tierMap[mname].Price = 0}">
+                                            <td class="text-center" style="text-align:center; vertical-align:middle;">-</td>
+                                        </apex:outputText>
+                                        <!-- Selected -->
+                                        <apex:outputText rendered="{!tierMap[mname].Price != 0}">
+                                            <td class="text-center" style="text-align:center; vertical-align:middle;">${!tierMap[mname].Price}</td>
+                                        </apex:outputText> 
+                                    </apex:repeat>
+                                    <!-- END Pricing Matrix -->
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">{!r.Eligible_Price__c}</td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">{!r.Sales_Price__c}</td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">{!r.Quantity__c}</td>
+                                    <apex:outputText rendered="{!pq.Type__c != 'Sales Per Each'}">
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">{!r.Extended_Price__c}</td>
+                                        <td class="text-center col-sm-1" style="vertical-align:middle; background-color: {!
+                                                                       IF(priceCheck[r] == 'Good','LawnGreen',
+                                                                       IF(priceCheck[r] == NULL, 'white','OrangeRed'))}">
+                                            {!priceCheck[r]}
+                                        </td>    
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!pq.Type__c = 'Sales Per Each'}">
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">${!r.Total_Price_Per_Each__c }</td>
+                                        <td class="text-center col-sm-1" style="vertical-align:middle; background-color: {!
+                                                                       IF(priceCheck[r] == 'Good','LawnGreen',
+                                                                       IF(priceCheck[r] == NULL, 'white','OrangeRed'))}">
+                                            {!priceCheck[r]}
+                                        </td>    
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!ulevel}">
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                          <apex:outputText rendered="{!minContract[r.Material_Name__c] != 0}" value="{0, number, ###,###,###,##0.00}" >
+                                              <apex:param value="{!minContract[r.Material_Name__c]}" />
+                                          </apex:outputText>
+                                          <apex:outputText rendered="{!minContract[r.Material_Name__c] == 0}" >No Contract</apex:outputText>
+                                      </td>
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                          <apex:outputText rendered="{!minContractAgree[r.Material_Name__c] != ' '}">{!minContractAgree[r.Material_Name__c]}</apex:outputText>
+                                          <apex:outputText rendered="{!minContractAgree[r.Material_Name__c] == ' '}" >No Contract</apex:outputText>
+                                      </td>
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                          <apex:outputText rendered="{!minGpo[r.Material_Name__c] != 0}" value="{0, number, ###,###,###,##0.00}" >
+                                              <apex:param value="{!minGpo[r.Material_Name__c]}" />
+                                          </apex:outputText>
+                                          <apex:outputText rendered="{!minGpo[r.Material_Name__c] == 0}" >No Contract</apex:outputText>
+                                      </td>
+                                      <td style="vertical-align:middle;">
+                                          <apex:outputText rendered="{!minGpoAgree[r.Material_Name__c] != ' '}">{!minGpoAgree[r.Material_Name__c]}</apex:outputText>
+                                          <apex:outputText rendered="{!minGpoAgree[r.Material_Name__c] == ' '}" >No Contract</apex:outputText>
+                                      </td>
+                                    </apex:outputText>
+                                </tr>
+                                </apex:outputText>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+
+                    <!-- End Line Items -->
+                    <!-- End of Approved Layout -->
+
+                    <!-- End of Second Rendering of Buttons -->
+
+                    <!-- Dun's Form -->
+
+                    <!-- Approval History Related List -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h6 class="panel-title"><img src="/img/icon/cash24.png" alt="Line Items"/>&nbsp;&nbsp;Related Lists</h6>
+                        </div>
+                    </div>
+
+                    <apex:outputPanel >
+                        <apex:relatedList list="ProcessSteps" subject="{!$CurrentPage.parameters.pqid}" /><br />
+                    </apex:outputPanel>
+                    <!-- Approval History Related List -->
+
+                </div>
+            </div>
+        </div>
+    </div><!-- End of Main Div Teleflex -->
+    <!-- End of Dun's Form -->
+    <script>
+    $(function(){
+
+        $('table').tablesorter({
+            theme: 'bootstrap',
+            //showProcessing: true,
+            widthFixed: true,
+            headerTemplate : '{content} {icon}', // new in v2.7. Needed to add the bootstrap icon!
+
+            selectorHeaders: '> thead th, > thead td',
+            widgets: ['zebra', 'stickyHeaders', 'uitheme'],
+
+            widgetOptions: {
+
+                // css class name applied to the sticky header row (tr)
+                stickyHeaders : 'tablesorter-stickyHeader',
+
+                // adding zebra striping, using content and default styles - the ui css removes the background from default
+                // even and odd class names included for this demo to allow switching themes
+                //zebra   : ["ui-widget-content even", "ui-state-default odd"],
+                zebra : ["even", "odd"],
+                // reset filters button
+                filter_reset : ".reset",
+
+                // extra css class name (string or array) added to the filter element (input or select)
+                filter_cssFilter: "form-control",
+
+                // reset filters button
+                //filter_reset : ".reset",
+
+                // change default uitheme icons - find the full list of icons here: http://jqueryui.com/themeroller/ (hover over them for their name)
+                // default icons: ["ui-icon-arrowthick-2-n-s", "ui-icon-arrowthick-1-s", "ui-icon-arrowthick-1-n"]
+                // ["up/down arrow (cssHeaders/unsorted)", "down arrow (cssDesc/descending)", "up arrow (cssAsc/ascending)" ]
+                //uitheme : ["ui-icon-carat-2-n-s", "ui-icon-carat-1-s", "ui-icon-carat-1-n"]
+            }
+
+        });
+        $.extend($.tablesorter.themes.bootstrap
+                 // change default jQuery uitheme icons - find the full list of icons
+                 // here: http://jqueryui.com/themeroller/ (hover over them for their name)
+                 ,{table: 'ui-widget ui-widget-content ui-corner-all'        // table classes
+                   ,header: 'ui-widget-header ui-corner-all ui-state-default' // header classes
+                   ,icons: 'ui-icon'               // icon class added to the <i> in the header
+                   ,sortNone: 'ui-icon-carat-2-n-s'
+                   ,sortAsc: 'ui-icon-carat-1-n'
+                   ,sortDesc: 'ui-icon-carat-1-s'
+                   ,active: 'ui-state-active'       // applied when column is sorted
+                   ,hover: 'ui-state-hover'         // hover class
+                   ,filterRow: ''
+                   ,even: 'ui-widget-content'       // even row zebra striping
+                   ,odd: 'ui-state-default'         // odd row zebra striping
+                  });
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var showChar = 50;
+        var ellipsestext = "...";
+        var moretext = "more";
+        var lesstext = "less";
+        $('.more').each(function() {
+            var content = $(this).html();
+            var short = '';
+            var long = '';
+
+            if(content.length > showChar) {
+                short = content.substr(0, showChar);
+                long = content.substr(showChar, content.length - showChar);
+                console.log('short *** ' + short);
+                var html = short + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + long + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+                $(this).html(html);
+            }//end if
+
+        });//end of more each
+
+        $('.morelink').click(function(){
+            if($(this).hasClass("less")) {
+                $(this).removeClass("less");
+                $(this).html(moretext);
+            } else {
+                $(this).addClass("less");
+                $(this).html(lesstext);
+            }
+            $(this).parent().prev().toggle();
+            $(this).prev().toggle();
+            return false;
+        });
+
+        //disable approve button onclick
+        $('[id$=approveBtn]').click(function(){
+            $('[id$=approveBtn]').attr("disabled", true);
+          disableApprove();
+        });
+
+        //disable reject button onclick
+        $('[id$=rejectBtn]').click(function(){
+            $('[id$=rejectBtn]').attr("disabled", true);
+          disableReject();
+        });
+    });
+    </script>
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Edit_on_AN_EMS_Rep_CEM_approved</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Profile.Id = &quot;00eE0000000j4Vk&quot;),
+AND(
+RecordType.Name = &quot;REP/CEM Provided Training&quot;,
+ISPICKVAL(Approval_Status__c, &quot;Approved&quot;),
+$User.Approval_Level__c &lt; 2),
+OR(ISPICKVAL(Business_Unit__c,&quot;EMS&quot;),ISPICKVAL(Business_Unit__c,&quot;Anesthesia&quot;))
+)</errorConditionFormula>
+    <errorMessage>Please contact your RSM to make adjustments to an approved record.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_Program_Details_2</fullName>
+    <active>false</active>
+    <description>Rule to assure all fields in Program Detail 2 are filled in once started</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Stage__c, &quot;CEM Review&quot;),ISPICKVAL(Stage__c, &quot;RCEM Review&quot;)),
+
+RecordType.Name = &quot;Clinical Sales Program&quot;,
+ 
+OR(
+ISBLANK(TEXT(VATrainerType2__c)),
+
+ISBLANK(TEXT(VAProduct2__c)), 
+ISBLANK(TEXT(VACourseType2__c)),  
+ISBLANK(TEXT(VAPreWork2__c)) 
+)
+)</errorConditionFormula>
+    <errorMessage>Please fill in all important fields for Program Details 2</errorMessage>
+</ValidationRule>

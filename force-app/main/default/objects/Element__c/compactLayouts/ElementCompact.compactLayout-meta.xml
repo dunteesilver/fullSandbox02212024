@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ElementCompact</fullName>
+    <fields>Name</fields>
+    <fields>Type__c</fields>
+    <fields>Status__c</fields>
+    <fields>User_Story__c</fields>
+    <fields>IsClosed__c</fields>
+    <fields>Owner__c</fields>
+    <label>Element Compact</label>
+</CompactLayout>

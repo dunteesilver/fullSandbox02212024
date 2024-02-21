@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cant_go_back_from_In_Discussion</fullName>
+    <active>true</active>
+    <description>Can not change Lead Status from In Discussion to New or Contacted</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(PRIORVALUE (Status ), &quot;In Discussion&quot;) ,  
+
+OR(
+
+ISPICKVAL(Status, &quot;New&quot;),
+
+ISPICKVAL(Status, &quot;Contacted&quot;)
+
+)  
+
+)</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>Please Unqualify or Qualify/Convert this Lead you cannot go back to New or Contacted</errorMessage>
+</ValidationRule>

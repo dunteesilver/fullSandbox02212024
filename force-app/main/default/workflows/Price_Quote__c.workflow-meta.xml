@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CC_Below_Director_Level_Appointed_Person</fullName>
+        <description>CC Below Director Level Appointed Person</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mark.reis@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/Approval_Price_Quote_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>EMEA_PP_Approval_Notification</fullName>
+        <ccEmails>emeapricingteam@teleflex.com</ccEmails>
+        <description>EMEA Price Quote Approval Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal_Emails/PP_Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_Price_Alt_Care_PQ_Submission</fullName>
+        <description>Email to Price - Alt Care PQ Submission</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>dave.price1@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/Approval_Price_Quote_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>PP_Approval_Notification</fullName>
+        <description>Price Quote Approval Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal_Emails/PP_Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Price_Quote_Approval_Notification_ANZ</fullName>
+        <description>Price Quote Approval Notification ANZ</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>anzcommercial@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Approval_Price_Quote_Supa_ANZ</template>
+    </alerts>
+    <alerts>
+        <fullName>Price_Quote_Approved_without_Approval_Process</fullName>
+        <description>Price Quote Approved without Approval Process</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>duntee.silver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/Price_Quote_Approved_without_Approval_Process</template>
+    </alerts>
+    <alerts>
+        <fullName>Price_Quote_Rejection_Email</fullName>
+        <description>Price Quote Rejection Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Pricing_Portal/Price_Quote_Rejection_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Price_Quote_Sales_Org_Check</fullName>
+        <description>Price Quote - Sales Org Check</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>duntee.silver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eric.clay@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Administrators/Price_Quote_Empty_Sales_Org_Key</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Completed_Approval_Process</fullName>
+        <field>Completed_Approval_Process__c</field>
+        <literalValue>1</literalValue>
+        <name>Completed Approval Process</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Empty_Sales_Org_Tickle</fullName>
+        <field>IsTickled__c</field>
+        <literalValue>1</literalValue>
+        <name>Empty Sales Org Tickle</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Owner_Approval_Level</fullName>
+        <field>Owner_Approval_Level__c</field>
+        <formula>Workflow_Owner_Approval_Level__c</formula>
+        <name>Owner Approval Level</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PP_Update_Business_Unit_Field</fullName>
+        <field>BusinessUnit__c</field>
+        <formula>TEXT(Owner:User.Business_Unit__c)</formula>
+        <name>PP - Update Business Unit Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PTA_Approved</fullName>
+        <field>Price_Tier_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>PTA - Approved!</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PTA_Approved_Access_Level</fullName>
+        <field>Pricing_Tier_Level__c</field>
+        <formula>Pricing_Tier_Level__c + 1</formula>
+        <name>PTA - Approved Access Level</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PTA_Declined</fullName>
+        <field>Price_Tier_Status__c</field>
+        <literalValue>Declined</literalValue>
+        <name>PTA - Declined</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Commit_Date</fullName>
+        <field>Commit_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Update Commit Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Status: Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_In_Progress</fullName>
+        <field>Status__c</field>
+        <literalValue>In Progress</literalValue>
+        <name>Update Status to In Progress</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_field_to_Rejected_RSM</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update field to Rejected RSM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_to_Approved</fullName>
+        <description>Update status of Price Quote to Approved.</description>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_to_Rejected</fullName>
+        <description>Update status of Price Quote to Rejected.</description>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_status_to_WFA</fullName>
+        <description>Update status of Price Quote to Waiting for Approval (WFA).</description>
+        <field>Status__c</field>
+        <literalValue>Waiting For RSM Approval</literalValue>
+        <name>Update status to WFA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Waiting_on_Contracts_Approval</fullName>
+        <description>Update status to Waiting on Contracts Approval once record is approved by RSM.</description>
+        <field>Status__c</field>
+        <literalValue>Waiting for Contracts Approval</literalValue>
+        <name>Update to Waiting on Contracts Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Waiting_on_Approval</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting on Approval</literalValue>
+        <name>Waiting on Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Check Sales Org Key</fullName>
+        <actions>
+            <name>Price_Quote_Sales_Org_Check</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Empty_Sales_Org_Tickle</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Price_Quote__c.Sales_Org_Key__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Owner Approval Level</fullName>
+        <actions>
+            <name>Owner_Approval_Level</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( 
+ISNEW(), 
+ISCHANGED(OwnerId), 
+ISBLANK(Owner_Approval_Level__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>PP - Update Business Unit Field</fullName>
+        <actions>
+            <name>PP_Update_Business_Unit_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Updates the BusinessUnit__c field to match BU of Price Quote Owner.</description>
+        <formula>OR(
+Owner_Business_Unit__c &lt;&gt; BusinessUnit__c,
+ISBLANK(BusinessUnit__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Price Quote Approved without Approval Process</fullName>
+        <actions>
+            <name>Price_Quote_Approved_without_Approval_Process</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+ISCHANGED( Status__c ),
+ISPICKVAL(Status__c, &quot;Approved&quot;), 
+Completed_Approval_Process__c = FALSE,
+ Approval_Level__c &gt; Workflow_Owner_Approval_Level__c 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Contains(Program__r.Name, &quot;Opera&quot;),
+
+
+HYPERLINK(&quot;https://teleflex.my.salesforce.com/06944000003b1AW?retUrl=%2F_ui%2Fcore%2Fchatter%2Ffiles%2FFileTabPage&quot;, &quot;OPERA PROGRAM --- Please download the file and attach to the Education Record upon completion&quot;), &quot; &quot; )</formula>
+    <label>Program Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

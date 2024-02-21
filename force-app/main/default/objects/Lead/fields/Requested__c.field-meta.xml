@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested__c</fullName>
+    <externalId>false</externalId>
+    <label>Requested</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Access Card</fullName>
+                <default>false</default>
+                <label>Access Card</label>
+            </value>
+            <value>
+                <fullName>Demonstration</fullName>
+                <default>false</default>
+                <label>Demonstration</label>
+            </value>
+            <value>
+                <fullName>Insertion Poster</fullName>
+                <default>false</default>
+                <label>Insertion Poster</label>
+            </value>
+            <value>
+                <fullName>Whitepaper</fullName>
+                <default>false</default>
+                <label>Whitepaper</label>
+            </value>
+            <value>
+                <fullName>E-mail Info</fullName>
+                <default>false</default>
+                <label>E-mail Info</label>
+            </value>
+            <value>
+                <fullName>Have Rep Call</fullName>
+                <default>false</default>
+                <label>Have Rep Call</label>
+            </value>
+            <value>
+                <fullName>Literature</fullName>
+                <default>false</default>
+                <label>Literature</label>
+            </value>
+            <value>
+                <fullName>Clinical Support</fullName>
+                <default>false</default>
+                <label>Clinical Support</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Samples for Evaluation</fullName>
+                <default>false</default>
+                <label>Samples for Evaluation</label>
+            </value>
+            <value>
+                <fullName>Contact for Purchase</fullName>
+                <default>false</default>
+                <label>Contact for Purchase</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>New Product Idea</fullName>
+                <default>false</default>
+                <label>New Product Idea</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Samples</fullName>
+                <default>false</default>
+                <label>Samples</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

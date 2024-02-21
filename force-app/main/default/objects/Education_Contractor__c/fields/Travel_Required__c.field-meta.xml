@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Required__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+ISPICKVAL( Education_Record__r.Hotel_Requested__c , &quot;Yes&quot;), 
+ISPICKVAL( Education_Record__r.Travel_Type_Requested__c ,&quot;Flight&quot;), 
+ISPICKVAL(Education_Record__r.Travel_Type_Requested__c,&quot;Train&quot;), 
+ISPICKVAL(Education_Record__r.Car_Request__c,&quot;Car Rental Requested&quot;), 
+ISPICKVAL(Education_Record__r.Car_Request__c,&quot;Taxi/Public Transportation&quot;))</formula>
+    <label>Travel Required</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

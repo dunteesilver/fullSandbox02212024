@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>All products are eligible under &quot;Field Sales Stock&quot; type when creating sample records but certain products are only available for certain sample request types.  Check the product record of the product that is trying to be added to see if it is eligible for samples.  Under section &quot;System Information&quot; on a product record, you will see the fields Single Use Demo, Multi-Use Demo, Eaches, and Applier.  These fields have a &quot;i&quot; that you can hover over to get more information about what the field means.</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Disposable/Single Use Demo Product (i.e., Not for Human Use)</fullName>
+                <default>false</default>
+                <label>Disposable/Single Use Demo Product (i.e., Not for Human Use)</label>
+            </value>
+            <value>
+                <fullName>Multi-Use Product Demo (i.e., Surgical Instrumentation)</fullName>
+                <default>false</default>
+                <label>Multi-Use Product Demo (i.e., Surgical Instrumentation)</label>
+            </value>
+            <value>
+                <fullName>Disposable/Single Use Product Evaluation</fullName>
+                <default>false</default>
+                <label>Disposable/Single Use Product Evaluation</label>
+            </value>
+            <value>
+                <fullName>Disposable/Single Use Product Evaluation - Eaches</fullName>
+                <default>false</default>
+                <label>Disposable/Single Use Product Evaluation - Eaches</label>
+            </value>
+            <value>
+                <fullName>Field Sales Stock (i.e., future saleable unit)</fullName>
+                <default>false</default>
+                <label>Field Sales Stock (i.e., future saleable unit)</label>
+            </value>
+            <value>
+                <fullName>Loaner</fullName>
+                <default>false</default>
+                <label>Loaner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

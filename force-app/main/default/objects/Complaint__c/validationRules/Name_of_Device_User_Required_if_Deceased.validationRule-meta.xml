@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_of_Device_User_Required_if_Deceased</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    RecordTypeId != &quot;012E0000000oSA3&quot;,
+    RecordTypeId != &quot;0121g000000CiGH&quot;,
+    ISPICKVAL( Patients_Current_Condition__c , &apos;Deceased&apos;),
+    ISBLANK( Name_of_Device_User__c )
+)</errorConditionFormula>
+    <errorDisplayField>Name_of_Device_User__c</errorDisplayField>
+    <errorMessage>Please enter the name of the device user when the current condition of patient is deceased.</errorMessage>
+</ValidationRule>

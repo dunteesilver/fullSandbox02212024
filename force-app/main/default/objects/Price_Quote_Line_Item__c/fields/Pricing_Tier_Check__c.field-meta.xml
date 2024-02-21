@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Tier_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Sales_Price__c = List_Price__c, &quot;List Price&quot;,
+if(Sales_Price__c = Eligible_Price__c, &quot;Eligible Price&quot;,
+if(Sales_Price__c = Requested_Price__c, &quot;Requested Price&quot;,
+&quot;Sales Price Needs Fixing&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pricing Tier Check</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HDYrlyVolume__c</fullName>
+    <description>Current Manufacture HD/Yrly Volume</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Current Manufacture HD/Yrly Volume</inlineHelpText>
+    <label>HD/Yrly Volume</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

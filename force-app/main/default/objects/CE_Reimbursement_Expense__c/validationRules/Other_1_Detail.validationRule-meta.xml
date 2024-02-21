@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_1_Detail</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+   AND(
+       Other_Fee1__c &gt; 0,  
+       ISBLANK(Other_Fee1_Detail__c)
+   ),
+   AND(
+       Other_Fee2__c &gt; 0,  
+       ISBLANK(Other_Fee2_Detail__c)
+   ),
+   AND(
+       Other_Fee3__c &gt; 0,  
+       ISBLANK(Other_Fee3_Detail__c)
+   ),
+   AND(
+       Other_Fee4__c &gt; 0,  
+       ISBLANK(Other_Fee4_Detail__c)
+   )
+)</errorConditionFormula>
+    <errorMessage>Other Detail needs to be populated when there is an Other fee</errorMessage>
+</ValidationRule>

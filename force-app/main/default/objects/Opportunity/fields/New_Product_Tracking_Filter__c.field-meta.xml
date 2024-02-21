@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Product_Tracking_Filter__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Checked True if a New Product Tracking record is related to the opportunity */
+NOT(ISBLANK(New_Product_Tracking__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>New Product Tracking Filter</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

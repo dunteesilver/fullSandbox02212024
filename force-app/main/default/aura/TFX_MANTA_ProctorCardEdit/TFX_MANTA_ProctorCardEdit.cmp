@@ -1,0 +1,56 @@
+<aura:component 
+                controller="TFX_MANTA_Handler"
+                implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="recId" type="String" />
+    <aura:attribute name="procId" type="String" />
+    <aura:attribute name="procName" type="String" />
+    <aura:attribute name="procEmail" type="String" />
+    <aura:attribute name="procAdmnAcss" type="Boolean" /> 
+    <aura:attribute name="procIsActive" type="Boolean" />
+
+    
+    <aura:attribute
+                    name="editProcObj"
+                    type="sObject"
+                    default="{ 'sobjectType': 'MANTA_Master__c',
+                             'Id': '',
+                             'Trainer__c': '',
+                             'isAdminAccess__c': '',
+                             'isActive__c': ''
+                             }"
+                    />
+    <ui:scrollerWrapper class="scrollerSize">      
+        <article class="slds-align_absolute-center slds-card" style="width: 100%">
+            <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+                <br/><br/><br/>
+                <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_small">Trainer Edit</div>
+                
+                
+                <dl class="slds-list_horizontal slds-wrap slds-p-around_small">
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Trainer Name:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.procName}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Trainer Email:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >{!v.procEmail}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Admin Access:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >
+                    <ui:inputCheckbox aura:id="checkbox" value="{!v.procAdmnAcss}" />
+                    </dd> 
+                    <dt class="slds-item_label slds-text-color_weak slds-p-around_small" >Active:</dt>
+                    <dd class="slds-item_detail slds-p-around_small" >
+                    <ui:inputCheckbox aura:id="checkbox" value="{!v.procIsActive}" />
+                    </dd> 
+                </dl>
+                <lightning:layout class="slds-align_absolute-center">
+                    <lightning:layoutItem>
+                        <lightning:button variant="Brand" label="Back" onclick="{!c.navigateToTFX_MANTA_Proctors_Comp}" />
+                        <lightning:button variant="Brand" label="Confirm" onclick="{!c.confirmEditProctor}" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </article>
+    </ui:scrollerWrapper>    
+</aura:component>

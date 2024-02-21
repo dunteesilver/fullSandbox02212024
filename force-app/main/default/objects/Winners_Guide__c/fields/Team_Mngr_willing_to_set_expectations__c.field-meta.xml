@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_Mngr_willing_to_set_expectations__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is Team Manager willing to set/manage appropriate expectations with team during evaluation (i.e. controlling vocal
+competitive supporters)?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is Team Manager willing to set/manage appropriate expectations with team during evaluation (i.e. controlling vocal
+competitive supporters)?</inlineHelpText>
+    <label>Team Mngr willing to set expectations?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

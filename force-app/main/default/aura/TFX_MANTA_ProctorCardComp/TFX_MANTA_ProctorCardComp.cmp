@@ -1,0 +1,35 @@
+<aura:component controller="TFX_MANTA_Handler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="recId" type="String" />
+    <aura:attribute name="procId" type="String" />
+    <aura:attribute name="procName" type="String" />
+    <aura:attribute name="procEmail" type="String" />
+    <aura:attribute name="procRegion" type="String" />
+    <aura:attribute name="procAdmnAcss" type="String" />
+    <aura:attribute name="procIsActive" type="Boolean" />
+
+    
+    <article class="slds-card">
+        <div class="slds-border_top slds-border_bottom slds-border_left slds-border_right">
+            <div class="slds-card__body slds-card__body_inner">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak" >Trainer Name:</dt>
+                    <dd class="slds-item_detail" >{!v.procName}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Trainer Email:</dt>
+                    <dd class="slds-item_detail" >{!v.procEmail}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Trainer Region:</dt>
+                    <dd class="slds-item_detail" >{!v.procRegion}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Admin Access:</dt>
+                    <dd class="slds-item_detail" ><ui:outputCheckbox  aura:id="checkbox" value="{!v.procAdmnAcss}" /></dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Active:</dt>
+                    <dd class="slds-item_detail" ><ui:outputCheckbox  aura:id="checkbox" value="{!v.procIsActive}" />
+                    <lightning:button class="slds-float--right" variant="Brand" label="Edit" onclick="{!c.navigateToTFX_MANTA_ProctorCardEdit}" />
+                    </dd> 
+                </dl>
+            </div>
+        </div>
+    </article>
+    
+</aura:component>

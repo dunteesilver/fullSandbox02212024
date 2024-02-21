@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AmountofPolymerLost__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Dollar Amount of Polymer that wil be replaced by Auto Ligation in the next 12 months</inlineHelpText>
+    <label>Amount of Polymer Lost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

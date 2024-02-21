@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sprint_Name_must_be_Unique</fullName>
+    <active>true</active>
+    <description>The Sprint.Name field must be unique across all Projects.</description>
+    <errorConditionFormula>Name = VLOOKUP($ObjectType.Sprint__c.Fields.Name ,
+$ObjectType.Sprint__c.Fields.Name , 
+Name) 
+&amp;&amp; 
+Id &lt;&gt; VLOOKUP($ObjectType.Sprint__c.Fields.Id ,
+$ObjectType.Sprint__c.Fields.Name , 
+Name )</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>The Name you entered has already been used on another Sprint. Please change the name of the Sprint to save this record.</errorMessage>
+</ValidationRule>

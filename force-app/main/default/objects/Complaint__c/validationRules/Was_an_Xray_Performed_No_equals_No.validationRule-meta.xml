@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Was_an_Xray_Performed_No_equals_No</fullName>
+    <active>true</active>
+    <description>Please don not enter  &apos;Describe X-ray findings&apos; if &apos;Was an X-ray performed?&apos; is &apos;No&apos;.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Was_an_X_ray_performed__c , &quot;No&quot;),NOT(ISBLANK( Describe_X_ray_findings__c ))
+)</errorConditionFormula>
+    <errorDisplayField>Describe_X_ray_findings__c</errorDisplayField>
+    <errorMessage>This field is not required if &apos;Was an X-ray performed?&apos; is &apos;No&apos;.</errorMessage>
+</ValidationRule>

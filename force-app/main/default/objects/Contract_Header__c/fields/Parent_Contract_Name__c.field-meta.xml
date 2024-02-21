@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Contract_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+OR(
+RIGHT(GPO_Contract_Ref__c,2) = &quot;-T&quot;,
+RIGHT(GPO_Contract_Ref__c,2) = &quot;-R&quot;,
+RIGHT(GPO_Contract_Ref__c,2) = &quot;-M&quot;,
+RIGHT(GPO_Contract_Ref__c,2) = &quot;-D&quot;
+),
+UPPER(TRIM(LEFT(Description__c,LEN(Description__c)-2))),
+NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Parent Contract Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

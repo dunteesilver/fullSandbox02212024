@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitive Product</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corsair Pro</fullName>
+                <default>true</default>
+                <label>Corsair Pro</label>
+            </value>
+            <value>
+                <fullName>Corsair Pro XS</fullName>
+                <default>false</default>
+                <label>Corsair Pro XS</label>
+            </value>
+            <value>
+                <fullName>Mamba</fullName>
+                <default>false</default>
+                <label>Mamba</label>
+            </value>
+            <value>
+                <fullName>Teleport</fullName>
+                <default>false</default>
+                <label>Teleport</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

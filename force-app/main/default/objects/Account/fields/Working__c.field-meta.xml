@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Working__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to flag accounts in list views which are considered call worthy.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag this box if you are currently working this account.</inlineHelpText>
+    <label>Working</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

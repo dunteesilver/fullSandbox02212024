@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Cardiac</fullName>
+                <default>false</default>
+                <label>Cardiac</label>
+            </value>
+            <value>
+                <fullName>Interventional Access</fullName>
+                <default>false</default>
+                <label>Interventional Access</label>
+            </value>
+            <value>
+                <fullName>LMA</fullName>
+                <default>false</default>
+                <label>LMA</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Specialty Markets</fullName>
+                <default>false</default>
+                <label>Specialty Markets</label>
+            </value>
+            <value>
+                <fullName>Surgical Disposables</fullName>
+                <default>false</default>
+                <label>Surgical Disposables</label>
+            </value>
+            <value>
+                <fullName>Surgical Instruments</fullName>
+                <default>false</default>
+                <label>Surgical Instruments</label>
+            </value>
+            <value>
+                <fullName>Surgical Percuvance</fullName>
+                <default>false</default>
+                <label>Surgical Percuvance</label>
+            </value>
+            <value>
+                <fullName>Teleflex Total</fullName>
+                <default>false</default>
+                <label>Teleflex Total</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Vascular</fullName>
+                <default>false</default>
+                <label>Vascular</label>
+            </value>
+            <value>
+                <fullName>Vidacare</fullName>
+                <default>false</default>
+                <label>Vidacare</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

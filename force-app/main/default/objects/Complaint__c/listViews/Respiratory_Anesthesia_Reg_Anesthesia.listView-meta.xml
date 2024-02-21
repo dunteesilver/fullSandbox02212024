@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Respiratory_Anesthesia_Reg_Anesthesia</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Contact_Name__c</columns>
+    <columns>Contact_Email__c</columns>
+    <columns>Estimated_Event_Date__c</columns>
+    <columns>Event_Date__c</columns>
+    <columns>Units_with_Alleged_Issue__c</columns>
+    <columns>Lot_Number_Action_Taken__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Complaint__c.Anesthesia,Complaint__c.Regional_Anesthesia</value>
+    </filters>
+    <label>Anesthesia/Reg Anesthesia Complaints</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Anesthesia_President</roleAndSubordinates>
+        <roleAndSubordinates>Customer_Advocacy</roleAndSubordinates>
+    </sharedTo>
+</ListView>

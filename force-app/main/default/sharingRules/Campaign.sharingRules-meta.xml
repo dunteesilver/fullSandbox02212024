@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Anesthesia</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Anesthesia</label>
+        <sharedTo>
+            <roleAndSubordinates>Anesthesia_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Anesthesia,EMS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Interventional_Campaign_Sharing</fullName>
+        <accessLevel>All</accessLevel>
+        <label>Interventional Campaign Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>Interventional_Executive</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Interventional,Interventional Capital</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Latin_America</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Latin America</label>
+        <sharedTo>
+            <roleAndSubordinates>Latin_America_Executive</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Latin America</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>National_Accounts_Corporate_Sales</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>National Accounts/Corporate Sales</label>
+        <sharedTo>
+            <roleAndSubordinates>Respiratory_President_Corporate_Accounts_VP</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>National Accounts/Corporate Sales</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Respiratory_Campaign_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Marketing was unable to see their campaigns</description>
+        <label>Respiratory Campaign Access</label>
+        <sharedTo>
+            <roleAndSubordinates>Respiratory_Marketing</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Respiratory</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Respiratory_Campaigns2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Respiratory Campaigns</label>
+        <sharedTo>
+            <roleAndSubordinates>Surgical_Latin_America_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Surgical,Latin America</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Vascular</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular</label>
+        <sharedTo>
+            <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vascular</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>ANZ_Marketing_View_All</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ANZ Marketing View All</label>
+        <sharedTo>
+            <group>ANZ_Marketing_View_All_Leads_Campaigns</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TFX_ANZ_Managing_Director</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>ANZ_Marketing_View_EditAll</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ANZ Marketing View &amp; EditAll</label>
+        <sharedTo>
+            <group>ANZ_Marketing_View_Edit_all_Camp_Leads</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TFX_ANZ_Managing_Director</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Interventional</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Interventional</label>
+        <sharedTo>
+            <roleAndSubordinates>Interventional_Executive</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Interventional_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Presidents</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Presidents</label>
+        <sharedTo>
+            <group>Presidents</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Respiratory</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Respiratory</label>
+        <sharedTo>
+            <roleAndSubordinates>Respiratory_President_Corporate_Accounts_VP</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Respiratory_President_Corporate_Accounts_VP</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

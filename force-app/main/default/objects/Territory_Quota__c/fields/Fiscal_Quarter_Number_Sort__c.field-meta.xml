@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Quarter_Number_Sort__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Updated to support 2023 sales\Quota - AN Feb 10 2023*/
+/* Updated to support 2022 sales\Quota - AN Feb 17 2022*/
+
+
+/* 2023 */
+if(AND(Date__c &gt;= DATEVALUE(&quot;2023-01-01&quot;),Date__c &lt; DATEVALUE(&quot;2023-04-01&quot;)),&quot;1&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2023-04-01&quot;),Date__c &lt; DATEVALUE(&quot;2023-07-01&quot;)),&quot;2&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2023-07-01&quot;),Date__c &lt; DATEVALUE(&quot;2023-10-01&quot;)),&quot;3&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2023-10-01&quot;),Date__c &lt;= DATEVALUE(&quot;2024-01-01&quot;)),&quot;4&quot;,
+
+/* 2022 */
+if(AND(Date__c &gt;= DATEVALUE(&quot;2022-01-01&quot;),Date__c &lt; DATEVALUE(&quot;2022-03-29&quot;)),&quot;1&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2022-03-29&quot;),Date__c &lt; DATEVALUE(&quot;2022-06-28&quot;)),&quot;2&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2022-06-28&quot;),Date__c &lt; DATEVALUE(&quot;2022-09-27&quot;)),&quot;3&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2022-09-27&quot;),Date__c &lt;= DATEVALUE(&quot;2022-12-31&quot;)),&quot;4&quot;,
+NULL
+))))
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fiscal Quarter Number Sort</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

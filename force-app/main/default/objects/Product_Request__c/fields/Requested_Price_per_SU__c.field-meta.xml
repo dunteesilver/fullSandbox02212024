@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Price_per_SU__c</fullName>
+    <description>Requested price per sales unit.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the requested price per sales unit?</inlineHelpText>
+    <label>Requested Price per SU</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Commercial_Operations</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Director_Corporate_Accounts_Canada</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>Respiratory_President_Corporate_Accounts_VP</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Account_Name__c</field>
+        <field>Commit_Date__c</field>
+        <field>Expiration_Date__c</field>
+        <field>Status__c</field>
+        <field>Internal_Comments_Only__c</field>
+        <field>Customer_comments__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Owner_Approval_Level__c &lt; Approval_Level__c, Owner_Approval_Level__c &lt; 2,
+OR(CONTAINS( Owner:User.UserRole.Name , &quot;Chile&quot;),
+CONTAINS( Owner:User.UserRole.Name , &quot;Colombia&quot;),
+CONTAINS( Owner:User.UserRole.Name , &quot;Mexico&quot;) )  )</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Route to Managers</label>
+        <name>Route_to_Managers</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>diana.karlsson@teleflex.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Owner_Approval_Level__c &lt; Approval_Level__c, Owner_Approval_Level__c &lt; 2)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Handle Other Latin Records</label>
+        <name>Handle_Other_Latin_Records</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>diana.karlsson@teleflex.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <formula>AND(Owner_Approval_Level__c &lt; Approval_Level__c, Owner_Approval_Level__c &lt; 3, Approval_Level__c &gt;=3 )</formula>
+        </entryCriteria>
+        <label>Below RSM</label>
+        <name>Below_RSM</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>Approval Matrix Process for Latin America SBU</description>
+    <emailTemplate>Pricing_Portal/Approval_Price_Quote_Supa</emailTemplate>
+    <enableMobileDeviceAccess>true</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( Line_Count__c  &gt; 0,  NOT(ISPICKVAL(Status__c, &apos;Approved&apos;)),  Owner_Business_Unit__c  = &apos;Latin America&apos;)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Completed_Approval_Process</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>PP_Approval_Notification</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Commit_Date</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Price_Quote_Rejection_Email</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Waiting_on_Approval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>PQ Approval Latin America New v1.1</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>Update_Status_to_In_Progress</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,215 @@
+<apex:page controller="take5AssetController" showHeader="false" sidebar="false" docType="html-5.0">
+<script>
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
+
+function whosUser(){
+    var runningUser = getURLParameter('uid');
+    if(runningUser == null){
+        runningUser = '{!$User.Id}';
+    }
+    return runningUser;
+}
+
+function getUser() {
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.take5AssetController.queryUser}',
+        whosUser(),
+        function(result, event){
+            if (event.status) {
+                var greetText = document.getElementById('greetingText');
+                    greetText.innerHTML += 'Welcome, ' + result['FirstName'] + '! ';
+                var greetIMG = document.getElementById('greetingIMG');
+                    greetIMG.innerHTML = '<apex:image value="'+result['SmallPhotoUrl']+'"/>';
+                if(getURLParameter('uid')!=null){
+                    document.getElementById('doneButton').style.display = 'inline';
+                }
+            }
+        }, 
+        {escape: true}
+    );
+
+}
+
+function tellme(take5id, name, url) {
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.take5AssetController.updateTake5}',
+        whosUser(),
+        take5id,
+        name,
+        function(result, event){
+            
+            if (event.status) {
+                var checkID = document.getElementById('check' + take5id);
+                    checkID.innerHTML = '<apex:image value="{!$Resource.Checkbox_Checked18}"/>';
+                    window.location.href=url;
+
+            }
+        }, 
+        {escape: true}
+    );
+
+}
+
+function checkBoxes(){
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.take5AssetController.queryTake5}',
+        whosUser(),
+        function(result, event){
+            if(event.status) {
+                for(var i = 0; i != result.length; i++) {
+                    var checkID = document.getElementById('check' + result[i]['Take_5_Attachment__c']);
+                    if(checkID){
+                        checkID.innerHTML = '<apex:image value="{!$Resource.Checkbox_Checked18}"/>';
+                    }
+                    
+                }
+            }
+        }, 
+        {escape: true}
+    );
+}
+function addLoadEvent(func) 
+{ 
+  var oldonload = window.onload; 
+  if (typeof window.onload != 'function') 
+  { 
+   window.onload = func; 
+ } 
+ else
+ { 
+  window.onload = function()  
+  { 
+    if (oldonload) 
+    { 
+     oldonload(); 
+   } 
+   func(); 
+ } 
+} 
+} 
+
+addLoadEvent(function(){
+    checkBoxes();
+    getUser();
+});
+</script>
+<style>
+
+#greeting img {
+    height:24px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#assets tr {
+    line-height:20px;
+}
+
+.take5links a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+html, body {
+height: 100%;
+}
+body {
+  background-image:url('{!$Resource.Teleflex_NAKO_2013_Top}');
+  background-position:left top;
+  background-repeat:no-repeat;
+}
+
+* {
+margin: 0;
+}
+
+</style>
+
+<apex:pagemessages />
+   <!--<apex:pageBlock mode="mainDetail">
+   <apex:pageBlockTable value="{!Notes}" var="use" >
+      <apex:column value="{!use.Id}"/>
+      <apex:column headerValue="Name">
+         <apex:outputLink value="{!use.Body}">{!use.Title}</apex:outputLink>
+      </apex:column>
+   </apex:pageBlockTable>
+   <apex:pageBlockTable value="{!Atts}" var="use" >
+      <apex:column value="{!use.Id}"/>
+      <apex:column headerValue="Name">
+         <apex:outputLink target="_blank" value="{!URLFOR($Action.Attachment.Download, use.Id)}">{!use.Name}</apex:outputLink>
+      </apex:column>
+   </apex:pageBlockTable>
+ </apex:pageBlock>-->
+ <div id="logo">
+ <!--<apex:image value="{!$Resource.Teleflex_NAKO_2013_Top}"/>-->
+ 
+    
+ </div>
+<div id="greeting" style="position:fixed;right:0;top:0;font-size:20px;vertical-align:text-top;margin-top:5px;margin-right:5px;">
+    <div id="greetingIMG" style="float:right;margin-left:5px;"></div>
+    <div id="greetingText" style="float:right;margin-top:3px;"></div>
+</div>
+ <div class="take5links" style="text-align:left;display:block;width:100%;overflow:scroll;margin-bottom:100px;">
+    <div style="margin-top:25px;margin-bottom:25px;text-align:center;color:#013073;font-size:102px;margin-left:auto;margin-right:auto;">
+          <!--<apex:image style="margin-right:-20px;" value="{!$Resource.tbug}"/><b>ake 5 with IT</b>-->
+          <apex:image style="margin-left:auto;margin-right:auto;" value="{!$Resource.Take5basic}"/>
+        </div>
+     <!--<p style="float:right;">For every module below you complete, you will be entered into a daily raffle for an Amazon.com gift card in the amount of $200, $300, $400 or $500!*</p>-->
+     <apex:outputPanel rendered="{!Eligible == true}">
+     <table id="assets" style="width:400px;display:block;margin-left:auto;margin-right:auto;">
+     <apex:repeat value="{!Atts}" var="use">
+        <tr>
+            <td style="width:384px;">
+                <apex:outputLink onclick="tellme('{!use.Id}','{!use.Name}', '{!URLFOR($Action.Attachment.Download, use.Id)}')" target="" value="#">{!use.Name}</apex:outputLink>  
+            </td>
+            <td style="width:16px;">
+                <apex:outputLink onclick="tellme('{!use.Id}','{!use.Name}', '{!URLFOR($Action.Attachment.Download, use.Id)}')" value="#">
+                    <span id="check{!use.Id}">
+                        <apex:image value="{!$Resource.Checkbox_Unchecked18}"/>
+                    </span> 
+                </apex:outputLink>
+            </td>
+            <!--<embed src="{!URLFOR($Action.Attachment.Download, use.Id)}" style="width:400px; height:300px;">
+            </embed>-->
+        </tr>
+     </apex:repeat>
+     <apex:repeat value="{!Notes}" var="use">
+        <tr>
+            <td style="width:384px;">
+                <apex:outputLink onclick="tellme('{!use.Id}','{!use.Title}', '{!use.Body}')" target="" value="#">{!use.Title}</apex:outputLink>  
+            </td>
+            <td style="width:16px;">
+                <apex:outputLink onclick="tellme('{!use.Id}','{!use.Title}', '{!use.Body}')" target="" value="#">
+                    <span id="check{!use.Id}">
+                        <apex:image value="{!$Resource.Checkbox_Unchecked18}"/>
+                    </span>
+                </apex:outputLink>
+            </td>
+        </tr>
+     </apex:repeat>
+     </table>
+     </apex:outputPanel>
+     <apex:outputPanel rendered="{!eligible == false}">
+     <div style="width:300px;margin-left:auto;margin-right:auto;text-align:center;">
+        <b>It seems you aren't eligible for any Take 5s :'(</b>
+     </div>
+     </apex:outputPanel>
+     <div style="width:400px;margin-left:auto;margin-right:auto;text-align:center;">
+        
+        <button id="doneButton" style="width:300px;margin-top:10px;display:none;" onclick="location.href='{!$Site.Domain}/apex/Take_5'">I'm done. I'll let someone else Take 5 <apex:outputText rendered="{!eligible == true}"> :)</apex:outputText><apex:outputText rendered="{!eligible == false}"> :'(</apex:outputText></button>
+
+        <p align="justify" style="margin-top:50px;">For each module you complete, you will be entered into a raffle for an Amazon Gift Card. One winner per day.  Complete the modules early in the week for the most chances to win every day.</p>
+        <!--<p align="justify" style="margin-top:50px;">For every module you complete, you will be entered into a daily raffle for an Amazon.com gift card in the amount of $200, $300, $400 or $500! One module equals one entry; multiple views of the same module will not enter you more than once.</p>-->
+     </div>
+ </div>
+ 
+<script>
+</script>
+<div style="position:fixed;right:0;bottom:0;height:218px;">
+    <apex:image style="z-index:99999;" value="{!$Resource.Teleflex_NAKO_2013_BottomR}"/>
+</div>
+</apex:page>

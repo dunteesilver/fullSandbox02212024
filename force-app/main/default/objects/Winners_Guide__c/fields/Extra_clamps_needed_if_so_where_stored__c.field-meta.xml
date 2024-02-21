@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extra_clamps_needed_if_so_where_stored__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Are extra clamps needed; if so where they will be stored?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Are extra clamps needed; if so where they will be stored?</inlineHelpText>
+    <label>Extra clamps needed; if so where stored?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

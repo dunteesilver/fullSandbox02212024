@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_of_Action_TurnPike__c</fullName>
+    <externalId>false</externalId>
+    <label>Stage of Action TurnPike</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>APLOC Declined</fullName>
+                <default>false</default>
+                <label>APLOC Declined</label>
+            </value>
+            <value>
+                <fullName>APLOC Signed</fullName>
+                <default>false</default>
+                <label>APLOC Signed</label>
+            </value>
+            <value>
+                <fullName>Ascension</fullName>
+                <default>false</default>
+                <label>Ascension</label>
+            </value>
+            <value>
+                <fullName>Commitment In-Process</fullName>
+                <default>false</default>
+                <label>Commitment In-Process</label>
+            </value>
+            <value>
+                <fullName>HPG Access</fullName>
+                <default>false</default>
+                <label>HPG Access</label>
+            </value>
+            <value>
+                <fullName>HPG Committed</fullName>
+                <default>false</default>
+                <label>HPG Committed</label>
+            </value>
+            <value>
+                <fullName>No Action Required</fullName>
+                <default>false</default>
+                <label>No Action Required</label>
+            </value>
+            <value>
+                <fullName>Status Unknown</fullName>
+                <default>false</default>
+                <label>Status Unknown</label>
+            </value>
+            <value>
+                <fullName>TEA At Risk</fullName>
+                <default>false</default>
+                <label>TEA At Risk</label>
+            </value>
+            <value>
+                <fullName>TEA Secure</fullName>
+                <default>false</default>
+                <label>TEA Secure</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pre_Type_Of_Patients_Using_EZ_IO_Now__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Pre: What types of patients are you using EZ-IO on currently? List: CA, trauma, sepsis, burns, IV drug users, shock, respiratory illnes, post partum hemorrhage</inlineHelpText>
+    <label>Pre:Type Of Patients Using EZ-IO Now?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CA</fullName>
+                <default>false</default>
+                <label>CA</label>
+            </value>
+            <value>
+                <fullName>Trauma</fullName>
+                <default>false</default>
+                <label>Trauma</label>
+            </value>
+            <value>
+                <fullName>Sepsis</fullName>
+                <default>false</default>
+                <label>Sepsis</label>
+            </value>
+            <value>
+                <fullName>Burns</fullName>
+                <default>false</default>
+                <label>Burns</label>
+            </value>
+            <value>
+                <fullName>IV Drug Users</fullName>
+                <default>false</default>
+                <label>IV Drug Users</label>
+            </value>
+            <value>
+                <fullName>Shock</fullName>
+                <default>false</default>
+                <label>Shock</label>
+            </value>
+            <value>
+                <fullName>Respiratory Illness</fullName>
+                <default>false</default>
+                <label>Respiratory Illness</label>
+            </value>
+            <value>
+                <fullName>Post Partum Hemorrhage</fullName>
+                <default>false</default>
+                <label>Post Partum Hemorrhage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

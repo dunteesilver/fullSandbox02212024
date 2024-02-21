@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Attempt_IO_in_Approved_status__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Post: Will you attempt IO in an approved situation?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Post: Will you attempt IO in an approved situation?</inlineHelpText>
+    <label>Post:Attempt IO in Approved status?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

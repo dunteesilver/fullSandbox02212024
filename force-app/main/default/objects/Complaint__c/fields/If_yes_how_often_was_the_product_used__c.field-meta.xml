@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_yes_how_often_was_the_product_used__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If re-sterilized/reprocessed, how often was the product used prior to alleged issue? This field is required if you answer yes to prior question.</inlineHelpText>
+    <label>If yes, how often was the product used?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

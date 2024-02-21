@@ -1,0 +1,52 @@
+<aura:component 
+                controller="TFX_MANTA_Handler" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <ltng:require styles="{!$Resource.fullcalendar_css}"
+                  scripts="{!join(',',
+                           $Resource.jquery_min_js,
+                           $Resource.moment_min_js,
+                           $Resource.fullcalendar_js
+                           )}"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    
+    <aura:attribute name='Objectlist' type='Object[]'/>
+    <aura:attribute name="buttonstate" type="Boolean" default="false"/>
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    <aura:attribute name="usrId" type="String" default="true" />
+    <aura:attribute name="usrName" type="String" default="true" />
+    <aura:attribute name="showEdit" type="String" default="true" />
+    <aura:attribute name="regionName" type="String" default=""/>
+    
+    
+    <article class="slds-align_absolute-center slds-card" style="width: 100%">
+        <div class="slds-card__body slds-card__body_inner" style="width: 40rem;margin: 2%">    
+            <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+            
+            <lightning:button variant="Brand" label="Select Region" onclick="{!c.navigateToTFX_MANTA_Calendar_Bridge_Comp}" />
+            
+            <lightning:buttonStateful
+                                      labelWhenOff="List View"
+                                      labelWhenOn="Grid View"
+                                      state="{!v.buttonstate}"
+                                      onclick="{!c.handleClick }"/>
+        </div>
+    </article>
+    
+    <div id="calendar" class="slds-card">
+        <aura:if isTrue="{!v.isLoading}">
+            <div class="slds-p-horizontal--large slds-align_absolute-center">
+                <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading" >
+                    <lightning:spinner variant="brand" size="large"/>
+                </div>   
+            </div>
+        </aura:if> 
+        
+    </div>
+    <div id="listcalendar" class="slds-card">
+        
+    </div>
+    
+    
+</aura:component>

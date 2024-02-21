@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_CA_CE_without_hourly_rate</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>CEM__c</columns>
+    <columns>Hourly_Rate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Profile__c.Clinical_Educator,Profile__c.Clinical_Advisor</value>
+    </filters>
+    <filters>
+        <field>Hourly_Rate__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>*Active CA/CE without hourly rate</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Clinical_Affairs_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

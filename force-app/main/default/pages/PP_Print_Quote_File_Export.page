@@ -1,0 +1,408 @@
+<apex:page controller="PP_Print_Quote"
+           showHeader="false" 
+           contentType="{!pdfFileName}"
+           language="{!custLang}"><!--  -->
+<head>
+    <style type="text/css" media="print">
+        <apex:outputText rendered="{!pq.Quote_Template__c = 'PP_Print_Quote_Cardiac'}">
+            @page 
+            {
+            <!-- size: 8.5in 11in;/* width height */ -->
+            size: letter;
+            
+            padding-top: 30px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            @top-center { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 0px; position: running(header); }
+            div.footer { display: block; padding: 25px; position: running(footer); }
+            
+            .page-break { display:block; page-break-before:always; }            
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+        </apex:outputText>
+        <apex:outputText rendered="{!pq.Quote_Template__c = 'PP_Print_Quote_EMS'}">
+            @page {
+            size: 8.5in 11in;/* width height */
+            }
+            
+            @page
+            {
+            margin-top: 50px;
+            margin-bottom: 250px;
+<!--            padding-bottom: 30px;-->
+            @top-center { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+
+            div.header { padding: 10px; position: running(header); }
+            div.footer { display: block; padding: 5px; position: running(footer); }
+
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+        </apex:outputText>
+        <apex:outputText rendered="{!pq.Quote_Template__c = 'PP_Print_Quote_CS'}">
+            @page {
+            size: 8.5in 11in;/* width height */
+            }
+            
+            @page
+            {
+            margin-top: 50px;
+            margin-bottom: 200px;
+            @top-center { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 10px; position: running(header); }
+            div.footer { display: block; padding: 0px; position: running(footer); }
+            
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+        </apex:outputText>
+        <apex:outputText rendered="{!pq.Quote_Template__c = 'PP_Print_Quote_TFX'}">
+            @page 
+            {
+            size: letter;
+            
+            padding-top: 40px;
+            margin-top: 15px;
+            margin-bottom: 50px;
+            
+            @top-center { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 10px;position: running(header); }
+            div.footer { display: block; padding: 5px; position: running(footer); }
+            
+            .page-break { display:block; page-break-before:always; }            
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+        </apex:outputText>
+    </style>     
+    <style type="text/css">
+        
+        <apex:outputText rendered="{!pq.Quote_Template__c != 'PP_Print_Quote_CS' && pq.Quote_Template__c != 'PP_Print_Quote_EMEA'}">
+            .c{
+            text-align: center; 
+            }
+            .isbold {
+            font-weight: bold;
+            }
+            .fl {
+            font-weight: bold;
+            text-align: right;
+            }
+            .r {
+            text-align: right;
+            }
+            .va {
+            vertical-align: text-top; 
+            }
+            .rline {
+            border-right-color: black;
+            border-right-style: solid;
+            border-width: 1px;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            .topline {
+            border-top-style: solid;
+            }
+            .bgc{
+            background-color: #f0f0f5;
+            }
+            .qlogo {
+            max-height: 28px;
+            max-width: 500px;
+            }
+            .border {
+            padding:1px;
+            border:1px solid black;
+            .bl {
+            border-bottom: 2px solid black;
+            }
+            .noborders {
+            border-left: 0px solid black;
+            border-right: 0px solid black;
+            }
+            .tborder{
+            border:1px solid black;
+            }
+            
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 10px;
+            padding: 1px;
+            }
+            #tbs {
+            padding:10px;
+            border:1px solid black;
+            }
+            #qhdr td{
+            padding:5px;
+            font-family:"Sans-Serif";
+            font-size: 12px;
+            }
+            #tbs th{
+            padding:5px;
+            border:1px solid black; 
+            font-family:"Sans-Serif"; 
+            font-size: 11px;
+            font-weight: bold;
+            background-color:#777;
+            color:#FFF;
+            }
+            #tbs td{
+            padding:4px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            vertical-align: text-top; 
+            }
+            #tbs td.bline{
+            padding:10px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: 1px solid #f0f0f5;
+            }
+            
+            #qhpr th{
+            padding:5px;
+            height:40px;
+            border:1px solid black;
+            font-family:"Sans-Serif";
+            font-size: 11px;
+            font-weight: bold;
+            background-color:#0D2B68;
+            color:#FFF;
+            }
+            #qhpr td{
+            padding:5px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            }
+            #qhpr td.bline{
+            padding:7px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: thick single #D0D0D0;
+            }
+            #qhpr td.noline{
+            padding:7px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: none;
+            }
+            
+            
+            td {
+            <!-- font-family: Arial Unicode MS; -->
+            font-family:"Sans-Serif"; 
+            font-size: 12px;
+            padding: 2px;
+            }
+            th {
+            font-family:"Sans-Serif"; 
+            font-size: 10px;
+            padding: 2px;
+            font-weight: bold;
+            background-color: grey;
+            }
+            
+        </apex:outputText>
+        <apex:outputText rendered="{!pq.Quote_Template__c = 'PP_Print_Quote_CS'}">
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            .bgc{
+            background-color: #f0f0f5;
+            }
+            .border {
+            padding:1px;
+            border:1px solid black;
+            }
+            .isbold {
+            font-weight: bold;
+            }
+            .fl {
+            font-weight: bold;
+            text-align: right;
+            }
+            .r {
+            text-align: right;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+        <!-- Customer Service -->
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 12px;
+            padding: 1px;
+            }
+            td {
+            font-family:"Sans-Serif";
+            font-size: 10px;
+            padding: 5px;
+            }
+          
+            #qhdr td{
+            padding:5px;
+            font-family:"Sans-Serif";
+            font-size: 12px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            }
+            
+            #qhpr table{
+            border: 1px solid #ddd !important;
+            }
+            
+            #qhpr th{
+            padding:5px;
+            height:40px;
+            border:1px solid black;
+            font-family:"Sans-Serif";
+            font-size: 11px;
+            font-weight: bold;
+            background-color:#0D2B68;
+            color:#FFF;
+            }
+            #qhpr td{
+            padding:5px;
+            border: 1px solid #D0D0D0;
+            }
+        </apex:outputText>
+        <apex:outputText rendered="{!pq.Quote_Template__c = 'PP_Print_Quote_EMEA'}">
+            @page
+            {
+            <!-- size: 8.5in 11in;/* width height */ -->
+            size: letter;
+
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-bottom: 50px;
+
+            @top-left { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 0px; }
+            div.footer { display: block; padding: 5px; position: running(footer); }
+
+            .page-break { display:block; page-break-before:always; }
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+
+            @page :first{
+                .header{
+                    display: block;
+                }
+            }
+
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 10px;
+            padding: 10px;
+            }
+            
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            
+            div.indentNum{
+                text-indent: 25px;
+            }
+            div.bottomMessage{
+                font-size: 12px;
+            }
+            div.header{
+            /*background-color: #ADD8E6;*/
+            	margin-bottom: 20px;
+            }
+            div.accountInfo{
+            /*background-color: light gray;*/
+            	margin-top: 40px;
+            }
+            div.content{
+            /*background-color: yellow;*/
+            	margin-top: 30px;
+            }
+            .sapTextClass{
+            	vertical-align: text-top;
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+            #sapText{
+            	vertical-align: text-top;
+                border: solid thin;
+            }
+            .quotationTable{
+            	border: 2px solid black;
+                border-spacing: 0;
+                margin-top: 50px;
+                font-weight: bold;
+            }
+            .quotationTable th{
+                font-weight: bold;
+            }
+            .rowheaders{
+            	background-color: silver;
+                text-align: left;
+                padding: 0px 0px 10px 0px;
+                border-bottom: 2px solid black;
+            }
+            .isbold{
+                font-weight: bold;
+            }
+            .paymentTerms{
+                border-spacing: 0;
+                font-weight: bold;
+                border-top: 2px solid black;
+                border-bottom: 2px solid black;
+                border-left: 2px solid black;
+            }
+            .paymentTerms th{
+                font-weight: bold;
+                border-right: 2px solid black;
+                border-bottom: 2px solid black;
+                border-spacing: 0;
+            }
+            .rowheaders2{
+                border-spacing: 0;
+                background-color: silver;
+                border-block: 2px solid black;
+            }
+            .paymentTerms td{
+                border-right: 2px solid black;
+                border-spacing: 0;
+            }
+        </apex:outputText>
+        }
+    </style>
+    </head>
+    <body>
+        <!-- Here comes another page with a content to be converted to PDF -->
+        <apex:include pageName="{!qURL}"/>
+    </body>
+</apex:page>

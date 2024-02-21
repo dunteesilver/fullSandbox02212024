@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Teleflex Country Manager for this PRF.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who is the Country Manager for this PRF?</inlineHelpText>
+    <label>Country Manager</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Pricing_Requests</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reinforce_purpose_of_TipTracker_Stylet__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Reinforce purpose of NaviCurve™ Stylet/VPS G4™ Stylet as sensor, not  stiffening wire</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reinforce purpose of NaviCurve™ Stylet/VPS G4™ Stylet as sensor, not  stiffening wire</inlineHelpText>
+    <label>Reinforce purpose of Navicure/VPS G4</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

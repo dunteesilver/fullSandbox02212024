@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Lead_Source_Required</fullName>
+    <active>false</active>
+    <description>Must include a Lead Source Comment that is available for all Lead Source selected (Open Text field)</description>
+    <errorConditionFormula>AND(Text(LeadSource) = &quot;Other&quot;, Other_Lead_Source__c = &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>LeadSource</errorDisplayField>
+    <errorMessage>Specify Other Lead Source</errorMessage>
+</ValidationRule>

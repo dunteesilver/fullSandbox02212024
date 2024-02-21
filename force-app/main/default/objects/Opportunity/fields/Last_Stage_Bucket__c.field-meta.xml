@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Stage_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(RecordType.Name = &quot;Vascular Standard&quot;,
+ CASE(Last_Stage__c, 
+&quot;Qualified Prospect&quot;, &quot;10% - Target.&quot;,
+&quot;Target.&quot;, &quot;10% - Target.&quot;,
+&quot;Pre Budget Approval&quot;, &quot;10% - Pre Budget Approval&quot;,
+&quot;Needs Analysis&quot;, &quot;20% - Needs Analysis&quot;,
+&quot;Financial Decision&quot;, &quot;30% - Value Proposition&quot;,
+&quot;Value Proposition&quot;, &quot;30% - Value Proposition&quot;,
+&quot;Post Budget Approval&quot;, &quot;50% - Trial/Evaluation.&quot;,
+&quot;Trial/Evaluation.&quot;, &quot;50% - Trial/Evaluation.&quot;,
+&quot;Financial Decision.&quot;, &quot;75% - Financial Decision.&quot;,
+&quot;Trial/Evaluation&quot;, &quot;75% - Financial Decision.&quot;,
+&quot;Budget Allocated&quot;, &quot;90% - Budget Allocated&quot;,
+&quot;Target.&quot;, &quot;10% - Target.&quot;,
+NULL
+),
+CASE(Last_Stage__c, 
+&quot;Qualified Prospect&quot;, &quot;10% - Qualified Prospect&quot;,
+&quot;Target.&quot;, &quot;10% - Target.&quot;,
+&quot;Pre Budget Approval&quot;, &quot;10% - Pre Budget Approval&quot;,
+&quot;Needs Analysis&quot;, &quot;20% - Needs Analysis&quot;,
+&quot;Financial Decision&quot;, &quot;30% - Financial Decision&quot;,
+&quot;Value Proposition&quot;, &quot;30% - Value Proposition&quot;,
+&quot;Post Budget Approval&quot;, &quot;50% - Post Budget Approval&quot;,
+&quot;Trial/Evaluation.&quot;, &quot;50% - Trial/Evaluation.&quot;,
+&quot;Financial Decision.&quot;, &quot;75% - Financial Decision.&quot;,
+&quot;Trial/Evaluation&quot;, &quot;75% - Financial Decision.&quot;,
+&quot;Budget Allocated&quot;, &quot;90% - Budget Allocated&quot;,
+&quot;Target.&quot;, &quot;10% - Target.&quot;,
+NULL
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last Stage Bucket</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

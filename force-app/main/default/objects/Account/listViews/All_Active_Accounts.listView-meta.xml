@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ERP_Active__c</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>SAP_Sold_To__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STREET</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_ZIP</columns>
+    <columns>Main_GPO__c</columns>
+    <columns>Primary_GPO_IDN__c</columns>
+    <columns>Secondary_GPO__c</columns>
+    <columns>Customer_Group_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ERP_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>SAP_Sold_To__c</field>
+        <operation>equals</operation>
+        <value>150602</value>
+    </filters>
+    <label>All Active Accounts</label>
+    <sharedTo>
+        <role>Teleflex_Global_IT</role>
+    </sharedTo>
+</ListView>

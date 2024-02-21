@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDF_Pricing_Request</fullName>
+    <availability>online</availability>
+    <description>Create a PDF of this Pricing Request.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>PDF Pricing Request</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var status = &quot;{!Pricing_Request__c.Approval_Status__c}&quot;;
+if(status == &apos;Released&apos; || status == &apos;Approved&apos;){
+url=&apos;https://teleflex.my.salesforce.com/apex/btnPricingRequestPDF?id={!Pricing_Request__c.Id}&apos;;
+window.open(url,&apos;Pricing Request PDF&apos;, &quot;height=600,width=600&quot;);
+}else{
+alert(&apos;Pricing Request must be Released or Approved to generate a PDF&apos;);
+}</url>
+</WebLink>

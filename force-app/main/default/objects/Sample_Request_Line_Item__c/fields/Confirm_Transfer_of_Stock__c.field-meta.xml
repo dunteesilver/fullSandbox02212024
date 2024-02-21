@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_Transfer_of_Stock__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field is used to confirm transfer of field stock to another person.  Only the person the stock is being transferred to can check this box.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field is used to confirm transfer of field stock to another person.  Only the person the stock is being transferred to can check this box.</inlineHelpText>
+    <label>Confirm Transfer of Stock</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

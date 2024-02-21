@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Story__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;As a &quot; &amp; As_a__r.Name &amp; &quot; I want to &quot; &amp; I_want_to__c &amp; &quot; so that &quot; &amp; So_that__c</formula>
+    <label>Story</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

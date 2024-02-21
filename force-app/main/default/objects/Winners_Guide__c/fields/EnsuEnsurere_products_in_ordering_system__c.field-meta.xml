@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EnsuEnsurere_products_in_ordering_system__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ensure all product and accessory items are put
+into the hospital ordering system (e.g. Monitor bundle, T-piece, PICCs preloaded with NaviCurve Stylet, or VPS G4 Stylets, Ultrasound probes(s), Cart, Printer etc.)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ensure all product and accessory items are put
+into the hospital ordering system (e.g. Monitor bundle, T-piece, PICCs preloaded with NaviCurve Stylet, or VPS G4 Stylets, Ultrasound probes(s), Cart, Printer etc.)</inlineHelpText>
+    <label>Ensure products in ordering system</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

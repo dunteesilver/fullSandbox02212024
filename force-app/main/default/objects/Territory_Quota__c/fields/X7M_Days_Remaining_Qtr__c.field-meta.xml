@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X7M_Days_Remaining_Qtr__c</fullName>
+    <description>Created to support 7M Anesthesia and EMS calendar</description>
+    <externalId>false</externalId>
+    <formula>Business_Days__r.DAYS_LEFT_IN_7M_QUARTER__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>7M Days Remaining Qtr</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

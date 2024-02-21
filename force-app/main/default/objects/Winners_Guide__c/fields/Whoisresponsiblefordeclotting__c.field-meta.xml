@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Whoisresponsiblefordeclotting__c</fullName>
+    <description>Trial/Evaluation Stage
+Round Table with the Account/Clinical
+
+Who is responsible for declotting (VAT, Unit Staff or IR)?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who is responsible for declotting (VAT, Unit Staff or IR)?
+
+Trial/Evaluation Stage
+Round Table with the Account/Clinical</inlineHelpText>
+    <label>Who is responsible for declotting?</label>
+    <length>1000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

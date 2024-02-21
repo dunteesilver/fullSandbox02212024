@@ -1,0 +1,25 @@
+<apex:page controller="complaints_update" >
+    <apex:form >
+        <apex:pageBlock title="Compliant: {!complaints.Name} - {!complaints.Product_List__r.Name} - {!complaints.Product_Description__c}">
+            <table>
+                <td align="right">Status:</td>
+                <td>
+                    <apex:selectList value="{!complaints.Status__c}" size="1">
+                        <apex:selectOption itemValue="Rejected" itemLabel="Rejected" />
+                    </apex:selectList> 
+                </td>
+                <tr>
+                    <td align="right">Reject Reason:</td>
+                    <td><apex:inputField value="{!complaints.Rejection_Reason__c}"/></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <apex:commandButton action="{!save}" value=" Save "/>&nbsp;
+                        <apex:commandButton action="{!cancel}" value=" Cancel "/>&nbsp;
+                    </td>
+                </tr>
+            </table>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

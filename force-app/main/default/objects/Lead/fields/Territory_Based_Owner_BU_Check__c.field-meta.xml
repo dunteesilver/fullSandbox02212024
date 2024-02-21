@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Based_Owner_BU_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Business_Unit__c) &lt;&gt;  Territory_Based_Owner_BU__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Territory Based Owner BU Check</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

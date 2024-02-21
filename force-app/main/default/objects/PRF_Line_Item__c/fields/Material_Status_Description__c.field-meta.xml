@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Status_Description__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Material_Status__c, 
+/* Saleable Status - ESC - 05Jul2016 */ 
+&quot;40&quot;,&quot;40 Saleable&quot;, 
+&quot;60&quot;,&quot;60 Discont pend&apos;g stock&quot;, 
+&quot;Z1&quot;,&quot;Z1 Constrained Product&quot;, 
+&quot;Z8&quot;,&quot;Z8 Discontinued Pending Stock&quot;,
+&quot;ZE&quot;,&quot;ZE Awaiting GTIN Update (ZE)&quot;, 
+/* The Rest */ 
+&quot;01&quot;,&quot;01 Discontinued w/o replacement&quot;, 
+&quot;02&quot;,&quot;02 Discontinued w replacement&quot;, 
+&quot;03&quot;,&quot;03 Technical defect&quot;, 
+&quot;04&quot;,&quot;04 Test Part&quot;, 
+&quot;11&quot;,&quot;11 Under Development&quot;, 
+&quot;20&quot;,&quot;20 Pre-Sales only&quot;, 
+&quot;50&quot;,&quot;50 Limited Availability&quot;, 
+&quot;70&quot;,&quot;70 Archive&quot;, 
+&quot;80&quot;,&quot;80 Obsolete-No Activity&quot;, 
+&quot;90&quot;,&quot;90 Obsolete+Cred+Debit&quot;, 
+&quot;99&quot;,&quot;99 Temp Stop Shipment&quot;, 
+&quot;Z2&quot;,&quot;Z2 Discontinued w/o replacement&quot;, 
+&quot;Z3&quot;,&quot;Z3 Discontinued w replacement&quot;, 
+&quot;Z4&quot;,&quot;Z4 Technical defect&quot;, 
+&quot;Z5&quot;,&quot;Z5 Under Development&quot;, 
+&quot;Z6&quot;,&quot;Z6 Pre-Sales Only&quot;, 
+&quot;Z7&quot;,&quot;Z7 Limited Availability&quot;, 
+&quot;Z9&quot;,&quot;Z9 Archive&quot;, 
+&quot;ZM&quot;,&quot;ZM Moved To Sa/Org US10&quot;, 
+&quot;ZO&quot;,&quot;ZO Obsolete-No Activity&quot;, 
+&quot;ZQ&quot;,&quot;ZQ Insufficient License&quot;, 
+&quot;ZR&quot;,&quot;ZR Under R&amp;D Development&quot;, 
+&quot;ZT&quot;,&quot;ZT Temp Stop Shipment&quot;, 
+&quot;ZU&quot;,&quot;ZU Obsolete w Replacement&quot;, 
+&quot;Unknown Status&quot; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Material Status Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

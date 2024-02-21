@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Can_only_transfer_from_Field_Sales_Stock</fullName>
+    <active>true</active>
+    <description>You can only transfer from &quot;Field Sales Stock&quot;.  Meaning you cannot order extra inventory just to transfer to another person.</description>
+    <errorConditionFormula>NOT( ISNEW() ) &amp;&amp; Transferred_Stock__c &gt; 0 &amp;&amp; OR( Field_Sales_Stock__c = 0, ISBLANK(Field_Sales_Stock__c), Transferred_Stock__c &gt; Field_Sales_Stock__c )</errorConditionFormula>
+    <errorDisplayField>Transferred_Stock__c</errorDisplayField>
+    <errorMessage>You can only transfer stock that you have in the &quot;Field Sales Stock&quot; field.</errorMessage>
+</ValidationRule>

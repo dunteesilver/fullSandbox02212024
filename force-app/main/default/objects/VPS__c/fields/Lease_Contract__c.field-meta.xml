@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lease_Contract__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>manual field to be filled out by contract specialist or add as Subscription.  For Judy&apos;s use only</inlineHelpText>
+    <label>Lease Contract # or Subscription</label>
+    <length>20</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

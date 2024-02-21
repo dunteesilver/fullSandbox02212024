@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory__c</fullName>
+    <externalId>false</externalId>
+    <label>Territory</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Unit__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>10HO - National Hardware</fullName>
+                <default>false</default>
+                <label>10HO - National Hardware</label>
+            </value>
+            <value>
+                <fullName>10RT - National Retail</fullName>
+                <default>false</default>
+                <label>10RT - National Retail</label>
+            </value>
+            <value>
+                <fullName>10TR - National Trade</fullName>
+                <default>false</default>
+                <label>10TR - National Trade</label>
+            </value>
+            <value>
+                <fullName>12RT - NSW Retail</fullName>
+                <default>false</default>
+                <label>12RT - NSW Retail</label>
+            </value>
+            <value>
+                <fullName>12TR - NSW Trade</fullName>
+                <default>false</default>
+                <label>12TR - NSW Trade</label>
+            </value>
+            <value>
+                <fullName>13RT - VIC Retail</fullName>
+                <default>false</default>
+                <label>13RT - VIC Retail</label>
+            </value>
+            <value>
+                <fullName>13TR - VIC Trade</fullName>
+                <default>false</default>
+                <label>13TR - VIC Trade</label>
+            </value>
+            <value>
+                <fullName>14RT - QLD Retail</fullName>
+                <default>false</default>
+                <label>14RT - QLD Retail</label>
+            </value>
+            <value>
+                <fullName>14TR - QLD Trade</fullName>
+                <default>false</default>
+                <label>14TR - QLD Trade</label>
+            </value>
+            <value>
+                <fullName>15RT - SA Retail</fullName>
+                <default>false</default>
+                <label>15RT - SA Retail</label>
+            </value>
+            <value>
+                <fullName>15TR - SA Trade</fullName>
+                <default>false</default>
+                <label>15TR - SA Trade</label>
+            </value>
+            <value>
+                <fullName>16RT - WA Retail</fullName>
+                <default>false</default>
+                <label>16RT - WA Retail</label>
+            </value>
+            <value>
+                <fullName>16TR - WA Trade</fullName>
+                <default>false</default>
+                <label>16TR - WA Trade</label>
+            </value>
+            <value>
+                <fullName>18RT - International/Emergency Retail</fullName>
+                <default>false</default>
+                <label>18RT - International/Emergency Retail</label>
+            </value>
+            <value>
+                <fullName>18TR - International/Emergency Trade</fullName>
+                <default>false</default>
+                <label>18TR - International/Emergency Trade</label>
+            </value>
+            <value>
+                <fullName>31IN - Fishers Industrial</fullName>
+                <default>false</default>
+                <label>31IN - Fishers Industrial</label>
+            </value>
+            <value>
+                <fullName>31RS - Fishers Reseller</fullName>
+                <default>false</default>
+                <label>31RS - Fishers Reseller</label>
+            </value>
+            <value>
+                <fullName>4201 - ACT</fullName>
+                <default>false</default>
+                <label>4201 - ACT</label>
+            </value>
+            <value>
+                <fullName>4202 - South Eastern Sydney</fullName>
+                <default>false</default>
+                <label>4202 - South Eastern Sydney</label>
+            </value>
+            <value>
+                <fullName>4203 - Southern NSW</fullName>
+                <default>false</default>
+                <label>4203 - Southern NSW</label>
+            </value>
+            <value>
+                <fullName>4204 - South Western Sydney</fullName>
+                <default>false</default>
+                <label>4204 - South Western Sydney</label>
+            </value>
+            <value>
+                <fullName>4205 - Western NSW</fullName>
+                <default>false</default>
+                <label>4205 - Western NSW</label>
+            </value>
+            <value>
+                <fullName>4206 - Western Syd LHN</fullName>
+                <default>false</default>
+                <label>4206 - Western Syd LHN</label>
+            </value>
+            <value>
+                <fullName>4207 - Northern Sydney</fullName>
+                <default>false</default>
+                <label>4207 - Northern Sydney</label>
+            </value>
+            <value>
+                <fullName>4208 - Hunter New England</fullName>
+                <default>false</default>
+                <label>4208 - Hunter New England</label>
+            </value>
+            <value>
+                <fullName>4209 - Northern NSW</fullName>
+                <default>false</default>
+                <label>4209 - Northern NSW</label>
+            </value>
+            <value>
+                <fullName>4211 - Resellers</fullName>
+                <default>false</default>
+                <label>4211 - Resellers</label>
+            </value>
+            <value>
+                <fullName>4212 - Packers</fullName>
+                <default>false</default>
+                <label>4212 - Packers</label>
+            </value>
+            <value>
+                <fullName>4213 - Overseas</fullName>
+                <default>false</default>
+                <label>4213 - Overseas</label>
+            </value>
+            <value>
+                <fullName>4214 - Illawarra Shoalhaven</fullName>
+                <default>false</default>
+                <label>4214 - Illawarra Shoalhaven</label>
+            </value>
+            <value>
+                <fullName>4215 - Murrumbidgee</fullName>
+                <default>false</default>
+                <label>4215 - Murrumbidgee</label>
+            </value>
+            <value>
+                <fullName>4216 - Sydney</fullName>
+                <default>false</default>
+                <label>4216 - Sydney</label>
+            </value>
+            <value>
+                <fullName>4217 - Central Coast</fullName>
+                <default>false</default>
+                <label>4217 - Central Coast</label>
+            </value>
+            <value>
+                <fullName>4218 - Nepean Blue Mountains</fullName>
+                <default>false</default>
+                <label>4218 - Nepean Blue Mountains</label>
+            </value>
+            <value>
+                <fullName>4219 - Far West</fullName>
+                <default>false</default>
+                <label>4219 - Far West</label>
+            </value>
+            <value>
+                <fullName>4220 - Mid North Coast</fullName>
+                <default>false</default>
+                <label>4220 - Mid North Coast</label>
+            </value>
+            <value>
+                <fullName>4221 - Sydney Childrens Hospitals</fullName>
+                <default>false</default>
+                <label>4221 - Sydney Childrens Hospitals</label>
+            </value>
+            <value>
+                <fullName>4222 - St Vincents Health</fullName>
+                <default>false</default>
+                <label>4222 - St Vincents Health</label>
+            </value>
+            <value>
+                <fullName>4301 - Bayside Health</fullName>
+                <default>false</default>
+                <label>4301 - Bayside Health</label>
+            </value>
+            <value>
+                <fullName>4302 - Eastern Health</fullName>
+                <default>false</default>
+                <label>4302 - Eastern Health</label>
+            </value>
+            <value>
+                <fullName>4303 - Melbourne &amp; Western Health</fullName>
+                <default>false</default>
+                <label>4303 - Melbourne &amp; Western Health</label>
+            </value>
+            <value>
+                <fullName>4304 - Gippsland</fullName>
+                <default>false</default>
+                <label>4304 - Gippsland</label>
+            </value>
+            <value>
+                <fullName>4305 - Ballarat</fullName>
+                <default>false</default>
+                <label>4305 - Ballarat</label>
+            </value>
+            <value>
+                <fullName>4306 - Geelong &amp; South Coast</fullName>
+                <default>false</default>
+                <label>4306 - Geelong &amp; South Coast</label>
+            </value>
+            <value>
+                <fullName>4307 - Bendigo &amp; North West</fullName>
+                <default>false</default>
+                <label>4307 - Bendigo &amp; North West</label>
+            </value>
+            <value>
+                <fullName>4308 - Tasmania</fullName>
+                <default>false</default>
+                <label>4308 - Tasmania</label>
+            </value>
+            <value>
+                <fullName>4310 - Resellers</fullName>
+                <default>false</default>
+                <label>4310 - Resellers</label>
+            </value>
+            <value>
+                <fullName>4311 - Melbourne City</fullName>
+                <default>false</default>
+                <label>4311 - Melbourne City</label>
+            </value>
+            <value>
+                <fullName>4312 - Alburn and Shepparton</fullName>
+                <default>false</default>
+                <label>4312 - Alburn and Shepparton</label>
+            </value>
+            <value>
+                <fullName>4313 - Packers</fullName>
+                <default>false</default>
+                <label>4313 - Packers</label>
+            </value>
+            <value>
+                <fullName>4314 - Penninsula Health</fullName>
+                <default>false</default>
+                <label>4314 - Penninsula Health</label>
+            </value>
+            <value>
+                <fullName>4315 - Southern Health</fullName>
+                <default>false</default>
+                <label>4315 - Southern Health</label>
+            </value>
+            <value>
+                <fullName>4401 - Metro 1</fullName>
+                <default>false</default>
+                <label>4401 - Metro 1</label>
+            </value>
+            <value>
+                <fullName>4402 - Metro 2</fullName>
+                <default>false</default>
+                <label>4402 - Metro 2</label>
+            </value>
+            <value>
+                <fullName>4403 - Metro 3</fullName>
+                <default>false</default>
+                <label>4403 - Metro 3</label>
+            </value>
+            <value>
+                <fullName>4404 - Metro 4</fullName>
+                <default>false</default>
+                <label>4404 - Metro 4</label>
+            </value>
+            <value>
+                <fullName>4405 - Brisbane West</fullName>
+                <default>false</default>
+                <label>4405 - Brisbane West</label>
+            </value>
+            <value>
+                <fullName>4406 - Resellers</fullName>
+                <default>false</default>
+                <label>4406 - Resellers</label>
+            </value>
+            <value>
+                <fullName>4407 - Central Queensland</fullName>
+                <default>false</default>
+                <label>4407 - Central Queensland</label>
+            </value>
+            <value>
+                <fullName>4408 - Far North Queensland</fullName>
+                <default>false</default>
+                <label>4408 - Far North Queensland</label>
+            </value>
+            <value>
+                <fullName>4409 - Southern Coast</fullName>
+                <default>false</default>
+                <label>4409 - Southern Coast</label>
+            </value>
+            <value>
+                <fullName>4411 - Country Queensland</fullName>
+                <default>false</default>
+                <label>4411 - Country Queensland</label>
+            </value>
+            <value>
+                <fullName>4412 - Northern Coast</fullName>
+                <default>false</default>
+                <label>4412 - Northern Coast</label>
+            </value>
+            <value>
+                <fullName>4501 - Central Region</fullName>
+                <default>false</default>
+                <label>4501 - Central Region</label>
+            </value>
+            <value>
+                <fullName>4502 - Northern Region</fullName>
+                <default>false</default>
+                <label>4502 - Northern Region</label>
+            </value>
+            <value>
+                <fullName>4503 - Southern Region</fullName>
+                <default>false</default>
+                <label>4503 - Southern Region</label>
+            </value>
+            <value>
+                <fullName>4504 - Regional/Country</fullName>
+                <default>false</default>
+                <label>4504 - Regional/Country</label>
+            </value>
+            <value>
+                <fullName>4505 - Northern Territory</fullName>
+                <default>false</default>
+                <label>4505 - Northern Territory</label>
+            </value>
+            <value>
+                <fullName>4601 - South Perth</fullName>
+                <default>false</default>
+                <label>4601 - South Perth</label>
+            </value>
+            <value>
+                <fullName>4602 - West Perth</fullName>
+                <default>false</default>
+                <label>4602 - West Perth</label>
+            </value>
+            <value>
+                <fullName>4603 - Perth</fullName>
+                <default>false</default>
+                <label>4603 - Perth</label>
+            </value>
+            <value>
+                <fullName>4604 - Country</fullName>
+                <default>false</default>
+                <label>4604 - Country</label>
+            </value>
+            <value>
+                <fullName>4605 - Resellers</fullName>
+                <default>false</default>
+                <label>4605 - Resellers</label>
+            </value>
+            <value>
+                <fullName>6000 - National</fullName>
+                <default>false</default>
+                <label>6000 - National</label>
+            </value>
+            <value>
+                <fullName>91RT - NZ North Island Retail</fullName>
+                <default>false</default>
+                <label>91RT - NZ North Island Retail</label>
+            </value>
+            <value>
+                <fullName>91TR - NZ North Island Trade</fullName>
+                <default>false</default>
+                <label>91TR - NZ North Island Trade</label>
+            </value>
+            <value>
+                <fullName>97RT - NZ South Island Retail</fullName>
+                <default>false</default>
+                <label>97RT - NZ South Island Retail</label>
+            </value>
+            <value>
+                <fullName>97TR - NZ South Island Trade</fullName>
+                <default>false</default>
+                <label>97TR - NZ South Island Trade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

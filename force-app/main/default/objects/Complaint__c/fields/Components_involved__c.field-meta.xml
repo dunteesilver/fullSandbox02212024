@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Components_involved__c</fullName>
+    <description>Indicate the specific components involved during the reported event?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate the specific components involved during the reported event?</inlineHelpText>
+    <label>Components involved</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Introducer Needle</fullName>
+                <default>false</default>
+                <label>Introducer Needle</label>
+            </value>
+            <value>
+                <fullName>Catheter over Needle</fullName>
+                <default>false</default>
+                <label>Catheter over Needle</label>
+            </value>
+            <value>
+                <fullName>Catheter</fullName>
+                <default>false</default>
+                <label>Catheter</label>
+            </value>
+            <value>
+                <fullName>Sheath</fullName>
+                <default>false</default>
+                <label>Sheath</label>
+            </value>
+            <value>
+                <fullName>Other Component</fullName>
+                <default>false</default>
+                <label>Other Component</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

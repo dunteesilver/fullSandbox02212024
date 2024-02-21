@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Team_Project__c</fullName>
+    <description>Insert the 15-digit Salesforce Custom Field ID for the field with API Name &quot;Project__c&quot; on Custom Object &quot;Project Team&quot;.
+***Setup&gt; Create&gt; Objects&gt; Project Team&gt; Project&gt; grab the 15 characters that appear after &quot;.com/&quot;, then paste them here***</description>
+    <externalId>false</externalId>
+    <label>Project_Team__c.Project__c</label>
+    <length>15</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

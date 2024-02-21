@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Approval_Level__c</fullName>
+    <description>Rollup of maximum approval level needed for EMEA.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Rollup of maximum approval level needed for EMEA.</inlineHelpText>
+    <label>EMEA Approval Level</label>
+    <summarizedField>Price_Quote_Line_Item__c.EMEA_Approval_Level__c</summarizedField>
+    <summaryForeignKey>Price_Quote_Line_Item__c.Price_Quote__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Delivery_Block_Reason__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Order_Delivery_Block__c, 
+&quot;ZC&quot;,&quot;Waiting Cust. Approval&quot;,
+&quot;ZF&quot;,&quot;Pricing Override Approval&quot;,
+&quot;ZL&quot;,&quot;Constraint&quot;,
+&quot;Z5&quot;,&quot;Pending Cust Rx License&quot;,
+&quot;ZT&quot;,&quot;Etching Required&quot;,
+&quot;ZS&quot;,&quot;Customer Service Block&quot;,
+&quot;ZK&quot;,&quot;Inventory Review&quot;,
+&quot;ZZ&quot;,&quot;Obsolete&quot;,
+&quot;ZV&quot;,&quot;ASK Inventory Review&quot;,
+&quot;ZX&quot;,&quot;Price Discrepancy&quot;,
+NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Order Delivery Block Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

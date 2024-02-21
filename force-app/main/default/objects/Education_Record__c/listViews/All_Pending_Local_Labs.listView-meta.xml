@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Pending_Local_Labs</fullName>
+    <columns>Stage__c</columns>
+    <columns>Approval_Status__c</columns>
+    <columns>Executed_Agreement__c</columns>
+    <columns>CMA_Complete__c</columns>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Responsible_CEM__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Date_of_Event_Start__c</columns>
+    <columns>Account_Facility__c</columns>
+    <columns>Type_of_In_Service__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Education_Record__c.CMA_Procedural_Lab</value>
+    </filters>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Submitted</value>
+    </filters>
+    <label>All Pending Approval Local Labs</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Clinical_Affairs_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

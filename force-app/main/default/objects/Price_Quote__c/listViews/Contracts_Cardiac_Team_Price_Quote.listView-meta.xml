@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Cardiac_Team_Price_Quote</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Contracts Cardiac Team</label>
+    <queue>Contracts_Cardiac_Team</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

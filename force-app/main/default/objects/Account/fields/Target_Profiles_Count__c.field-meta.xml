@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Profiles_Count__c</fullName>
+    <description>This field is to store the number of Target profiles an account have.</description>
+    <externalId>false</externalId>
+    <label>Target Profiles Count</label>
+    <summaryForeignKey>Target_Profile__c.Account__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

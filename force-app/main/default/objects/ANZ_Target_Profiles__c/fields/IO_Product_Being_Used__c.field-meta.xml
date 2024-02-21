@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IO_Product_Being_Used__c</fullName>
+    <externalId>false</externalId>
+    <label>IO Product Being Used</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EZ-IO</fullName>
+                <default>false</default>
+                <label>EZ-IO</label>
+            </value>
+            <value>
+                <fullName>TALON</fullName>
+                <default>false</default>
+                <label>TALON</label>
+            </value>
+            <value>
+                <fullName>FAST1</fullName>
+                <default>false</default>
+                <label>FAST1</label>
+            </value>
+            <value>
+                <fullName>BD System</fullName>
+                <default>false</default>
+                <label>BD System</label>
+            </value>
+            <value>
+                <fullName>NIO</fullName>
+                <default>false</default>
+                <label>NIO</label>
+            </value>
+            <value>
+                <fullName>BIG</fullName>
+                <default>false</default>
+                <label>BIG</label>
+            </value>
+            <value>
+                <fullName>SAM</fullName>
+                <default>false</default>
+                <label>SAM</label>
+            </value>
+            <value>
+                <fullName>Jamshidi</fullName>
+                <default>false</default>
+                <label>Jamshidi</label>
+            </value>
+            <value>
+                <fullName>COOK</fullName>
+                <default>false</default>
+                <label>COOK</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

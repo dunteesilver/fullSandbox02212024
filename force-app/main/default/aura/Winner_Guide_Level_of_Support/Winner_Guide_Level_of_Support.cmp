@@ -1,0 +1,82 @@
+<aura:component 
+                controller="WinnersGuideHandler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/> 
+    
+    <aura:attribute name="ocrObjLst" type="Object[]" />
+    <aura:attribute name="mycolumn" type="Object[]"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    <div class="slds-section slds-is-open" aura:id="LvlofSupDefSec">
+        <!--section header-->
+        <h1 class="slds-section__title">
+            <button aria-controls="LvlofSupDefSecLst" class="slds-button slds-section__title-action">
+                <span onclick="{!c.toggleSection}" data-auraId="LvlofSupDefSec">
+                    <lightning:icon iconName="utility:switch"
+                                    size="x-small"
+                                    class="slds-section__title-action-icon slds-button__icon_left"
+                                    alternativeText="button icon" 
+                                    />
+                </span>
+                <span class="slds-truncate" title="LvlofSupDef">Level of Support Definitions</span>
+            </button>
+        </h1>
+        <!--section body-->
+        <div class="slds-section__content" id="LvlofSupDefSecLst">
+            <article class="slds-card">
+                <div class="slds-border_top slds-border_bottom slds-border_left slds-border_right">
+                    <div class="slds-card__body slds-card__body_inner" >
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt class="slds-item_label slds-text-color_strong slds-border_bottom slds-p-top_small" >Neutral</dt>
+                            <dd class="slds-item_detail slds-border_bottom slds-border_left slds-p-top_small" >Doesn’t have a strong opinion for or against change</dd>
+                            <dt class="slds-item_label slds-text-color_strong slds-border_bottom slds-p-top_small" >Coach/Supporter</dt>
+                            <dd class="slds-item_detail slds-border_bottom slds-border_left slds-p-top_small" >Gives insider information. Very supportive but can’t influence others</dd>
+                            <dt class="slds-item_label slds-text-color_strong slds-border_left slds-text-color_error slds-p-top_small" ></dt>
+                            <dd class="slds-item_detail slds-border_left slds-text-color_error slds-p-top_small" >Has taken and will take action to influence others, has credibility to make things happen.</dd>
+                            <dt class="slds-item_label slds-border_bottom slds-text-color_strong slds-text-color_error" >Champion</dt>
+                            <dd class="slds-item_detail slds-border_bottom slds-border_left slds-text-color_error" >Will be involved with evaluation process through sales close. Minimum of 2 champions are required.</dd>
+                            <dt class="slds-item_label slds-text-color_strong slds-p-top_small slds-text-color_error" >Blocker</dt>
+                            <dd class="slds-item_detail slds-border_left slds-text-color_error slds-p-top_small" >Actively speaks out against Teleflex</dd>
+                        </dl>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    
+    <div class="slds-section slds-is-open" aura:id="conRolesSection">
+        <!--section header-->
+        <h3 class="slds-section__title">
+            <button aria-controls="conRolesLst" class="slds-button slds-section__title-action">
+                <span onclick="{!c.toggleSection}" data-auraId="conRolesSection">
+                    <lightning:icon iconName="utility:switch"
+                                    size="x-small"
+                                    class="slds-section__title-action-icon slds-button__icon_left"
+                                    alternativeText="button icon" 
+                                    />
+                </span>
+                <span class="slds-truncate" title="ContactRoles">Contact Roles</span>
+            </button>
+        </h3>
+        <!--section body-->
+        <div class="slds-section__content" id="conRolesLst">
+            <lightning:datatable data="{!v.ocrObjLst }" 
+                                 columns="{!v.mycolumn }" 
+                                 keyField="id"
+                                 hideCheckboxColumn="true" />
+        </div>
+    </div>
+    
+    
+</aura:component>

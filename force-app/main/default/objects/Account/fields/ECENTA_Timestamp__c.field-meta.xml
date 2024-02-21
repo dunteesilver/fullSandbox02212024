@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ECENTA_Timestamp__c</fullName>
+    <description>Field used to capture time of a workflow rule whenever changes happen on an Account record to specific fields checked in the workflow rule criteria.
+
+Workflow Rule Name: Account data has changed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field used to capture time of a workflow rule whenever changes happen on an Account record to specific fields checked in the workflow rule criteria.
+
+Workflow Rule Name: Account data has changed</inlineHelpText>
+    <label>ECENTA Timestamp</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

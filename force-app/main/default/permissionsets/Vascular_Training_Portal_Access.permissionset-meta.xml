@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides users with access to the training custom object for Vascular</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Vascular Training Portal Access</label>
+    <license>Salesforce</license>
+    <pageAccesses>
+        <apexPage>VascularNewHireTraining</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+</PermissionSet>

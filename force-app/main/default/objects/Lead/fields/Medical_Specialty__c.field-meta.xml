@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical_Specialty__c</fullName>
+    <externalId>false</externalId>
+    <label>Medical Specialty</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Infection Control</fullName>
+                <default>false</default>
+                <label>Infection Control</label>
+            </value>
+            <value>
+                <fullName>Oncology Nurse</fullName>
+                <default>false</default>
+                <label>Oncology Nurse</label>
+            </value>
+            <value>
+                <fullName>PICC / Vascular Nurse</fullName>
+                <default>false</default>
+                <label>PICC / Vascular Nurse</label>
+            </value>
+            <value>
+                <fullName>Critical Care / Med Surg Nurse</fullName>
+                <default>false</default>
+                <label>Critical Care / Med Surg Nurse</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Respiratory Director</fullName>
+                <default>false</default>
+                <label>Respiratory Director</label>
+            </value>
+            <value>
+                <fullName>Respiratory Therapist</fullName>
+                <default>false</default>
+                <label>Respiratory Therapist</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Director</fullName>
+                <default>false</default>
+                <label>Anesthesia Director</label>
+            </value>
+            <value>
+                <fullName>Anesthesiologist</fullName>
+                <default>false</default>
+                <label>Anesthesiologist</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Tech</fullName>
+                <default>false</default>
+                <label>Anesthesia Tech</label>
+            </value>
+            <value>
+                <fullName>Materials Management</fullName>
+                <default>false</default>
+                <label>Materials Management</label>
+            </value>
+            <value>
+                <fullName>Risk Management</fullName>
+                <default>false</default>
+                <label>Risk Management</label>
+            </value>
+            <value>
+                <fullName>Neonatologist</fullName>
+                <default>false</default>
+                <label>Neonatologist</label>
+            </value>
+            <value>
+                <fullName>Allergy and Immunology</fullName>
+                <default>false</default>
+                <label>Allergy and Immunology</label>
+            </value>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Cardiology</fullName>
+                <default>false</default>
+                <label>Cardiology</label>
+            </value>
+            <value>
+                <fullName>Cardiothoracic</fullName>
+                <default>false</default>
+                <label>Cardiothoracic</label>
+            </value>
+            <value>
+                <fullName>Dermatology</fullName>
+                <default>false</default>
+                <label>Dermatology</label>
+            </value>
+            <value>
+                <fullName>Emergency Medicine</fullName>
+                <default>false</default>
+                <label>Emergency Medicine</label>
+            </value>
+            <value>
+                <fullName>Endocrinology</fullName>
+                <default>false</default>
+                <label>Endocrinology</label>
+            </value>
+            <value>
+                <fullName>Gastroenterology</fullName>
+                <default>false</default>
+                <label>Gastroenterology</label>
+            </value>
+            <value>
+                <fullName>General Surgery</fullName>
+                <default>false</default>
+                <label>General Surgery</label>
+            </value>
+            <value>
+                <fullName>Geriatrics</fullName>
+                <default>false</default>
+                <label>Geriatrics</label>
+            </value>
+            <value>
+                <fullName>Gynaecology and obstetrics</fullName>
+                <default>false</default>
+                <label>Gynaecology and obstetrics</label>
+            </value>
+            <value>
+                <fullName>Infectious Diseases</fullName>
+                <default>false</default>
+                <label>Infectious Diseases</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine</fullName>
+                <default>false</default>
+                <label>Internal Medicine</label>
+            </value>
+            <value>
+                <fullName>Interventional Radiology</fullName>
+                <default>false</default>
+                <label>Interventional Radiology</label>
+            </value>
+            <value>
+                <fullName>Microbiology</fullName>
+                <default>false</default>
+                <label>Microbiology</label>
+            </value>
+            <value>
+                <fullName>Neonatology</fullName>
+                <default>false</default>
+                <label>Neonatology</label>
+            </value>
+            <value>
+                <fullName>Nephrology</fullName>
+                <default>false</default>
+                <label>Nephrology</label>
+            </value>
+            <value>
+                <fullName>Neurology</fullName>
+                <default>false</default>
+                <label>Neurology</label>
+            </value>
+            <value>
+                <fullName>Neurosurgery</fullName>
+                <default>false</default>
+                <label>Neurosurgery</label>
+            </value>
+            <value>
+                <fullName>Nuclear medicine</fullName>
+                <default>false</default>
+                <label>Nuclear medicine</label>
+            </value>
+            <value>
+                <fullName>Occupational medicine</fullName>
+                <default>false</default>
+                <label>Occupational medicine</label>
+            </value>
+            <value>
+                <fullName>Ophthalmology</fullName>
+                <default>false</default>
+                <label>Ophthalmology</label>
+            </value>
+            <value>
+                <fullName>Oral and Maxillofacial Surgery</fullName>
+                <default>false</default>
+                <label>Oral and Maxillofacial Surgery</label>
+            </value>
+            <value>
+                <fullName>Orthopaedics</fullName>
+                <default>false</default>
+                <label>Orthopaedics</label>
+            </value>
+            <value>
+                <fullName>Otorhinolaryngology</fullName>
+                <default>false</default>
+                <label>Otorhinolaryngology</label>
+            </value>
+            <value>
+                <fullName>Pediatrics</fullName>
+                <default>false</default>
+                <label>Pediatrics</label>
+            </value>
+            <value>
+                <fullName>Physical and Rehabilitation Medicine</fullName>
+                <default>false</default>
+                <label>Physical and Rehabilitation Medicine</label>
+            </value>
+            <value>
+                <fullName>Plastic, Reconstructive and Aesthetic</fullName>
+                <default>false</default>
+                <label>Plastic, Reconstructive and Aesthetic</label>
+            </value>
+            <value>
+                <fullName>Pneumology</fullName>
+                <default>false</default>
+                <label>Pneumology</label>
+            </value>
+            <value>
+                <fullName>Psychiatry</fullName>
+                <default>false</default>
+                <label>Psychiatry</label>
+            </value>
+            <value>
+                <fullName>Radiology</fullName>
+                <default>false</default>
+                <label>Radiology</label>
+            </value>
+            <value>
+                <fullName>Radiotherapy</fullName>
+                <default>false</default>
+                <label>Radiotherapy</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Vascular Medicine</fullName>
+                <default>false</default>
+                <label>Vascular Medicine</label>
+            </value>
+            <value>
+                <fullName>Non-Medical Professional</fullName>
+                <default>false</default>
+                <label>Non-Medical Professional</label>
+            </value>
+            <value>
+                <fullName>PACU Nurse</fullName>
+                <default>false</default>
+                <label>PACU Nurse</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Edit_Products</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add/Edit Products</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/PP_Price_Quote_Redirect?id={!Opportunity.Price_QuoteId__c}&amp;aid={!Opportunity.AccountId}&amp;cid={!Opportunity.Primary_ContactId__c}&amp;oid={!Opportunity.Id}&amp;otp={!Opportunity.One_Time_Sale__c}</url>
+</WebLink>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CA_Active_Phys_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL( Status__c , &quot;Active&quot;), 
+RecordType.Name =&quot;Clinical Advisor&quot; ,ISBLANK( TEXT( Physician_Primary_Type__c  )),
+
+OR(INCLUDES( Credentials__c , &quot;CRNA&quot;), 
+INCLUDES( Credentials__c , &quot;DO&quot;) ,
+INCLUDES( Credentials__c , &quot;Chief Medical Officer&quot;), 
+INCLUDES( Credentials__c , &quot;FACEP&quot;), 
+INCLUDES( Credentials__c , &quot;MD&quot;), 
+INCLUDES( Credentials__c , &quot;Medical Director&quot;) ,
+INCLUDES( Credentials__c , &quot;NP&quot;), 
+INCLUDES( Credentials__c , &quot;Senior Medical Advisor&quot;) ,
+INCLUDES( Credentials__c , &quot;PA&quot;)))</errorConditionFormula>
+    <errorDisplayField>Physician_Primary_Type__c</errorDisplayField>
+    <errorMessage>Please select the Physician Primary Type</errorMessage>
+</ValidationRule>

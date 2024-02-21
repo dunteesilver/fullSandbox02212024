@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_ConsolesStylets_Required_Field_3</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ISPICKVAL(  Is_this_complaint_regarding_VPS_Consoles__c , &quot;Yes&quot;),
+ISBLANK(TEXT((Were_there_any_cardiac_abnormalities__c   )))
+)</errorConditionFormula>
+    <errorDisplayField>Were_there_any_cardiac_abnormalities__c</errorDisplayField>
+    <errorMessage>This field is required when the complaint is regarding VPS Consoles/Stylets</errorMessage>
+</ValidationRule>

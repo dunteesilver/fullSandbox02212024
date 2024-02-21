@@ -1,0 +1,5 @@
+<apex:page showHeader="true" sidebar="true" standardController="VPS__c">
+	<apex:include pageName="vpsMenu"/>
+	<apex:enhancedList type="VPS__c" height="500" rowsPerPage="50" id="VpsList" />
+	<!-- <apex:ListViews type="VPS__c" /> -->
+</apex:page>

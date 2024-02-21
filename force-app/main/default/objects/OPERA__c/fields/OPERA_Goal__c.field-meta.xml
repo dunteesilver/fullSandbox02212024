@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OPERA_Goal__c</fullName>
+    <externalId>false</externalId>
+    <label>OPERA Goal</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Increase awareness to CVAD care/use</fullName>
+                <default>false</default>
+                <label>Increase awareness to CVAD care/use</label>
+            </value>
+            <value>
+                <fullName>Product standardization across org</fullName>
+                <default>false</default>
+                <label>Product standardization across org</label>
+            </value>
+            <value>
+                <fullName>Optimize care delivery model</fullName>
+                <default>false</default>
+                <label>Optimize care delivery model</label>
+            </value>
+            <value>
+                <fullName>Reduce financial risk</fullName>
+                <default>false</default>
+                <label>Reduce financial risk</label>
+            </value>
+            <value>
+                <fullName>Increase patient safety</fullName>
+                <default>false</default>
+                <label>Increase patient safety</label>
+            </value>
+            <value>
+                <fullName>Optimize prod utilization/stdzn</fullName>
+                <default>false</default>
+                <label>Optimize prod utilization/stdzn</label>
+            </value>
+            <value>
+                <fullName>Create operational efficiencies</fullName>
+                <default>false</default>
+                <label>Create operational efficiencies</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

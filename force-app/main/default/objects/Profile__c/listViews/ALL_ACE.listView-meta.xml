@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ALL_ACE</fullName>
+    <columns>First_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>Hourly_Rate__c</columns>
+    <columns>Status__c</columns>
+    <columns>Mailing_City__c</columns>
+    <columns>Mailing_State__c</columns>
+    <columns>Cell_Phone__c</columns>
+    <columns>Alternate_Phone__c</columns>
+    <columns>E_mail_Address__c</columns>
+    <columns>Agreement_Renew_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Profile__c.ACE</value>
+    </filters>
+    <label>*ACE: ALL</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Clinical_Contacts_ACE</group>
+        <group>Clinicals_Vascular_CEM</group>
+    </sharedTo>
+</ListView>

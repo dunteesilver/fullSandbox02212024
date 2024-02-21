@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SearchableProducts__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+NOT(ASK_Custom_Kit__c),TRUE,
+IF(
+OR(
+Name = &quot;ASK-45703-PK&quot;,
+Name = &quot;ASK-42703-PK&quot;,
+Name = &quot;ASK-24301-K&quot;,
+Name = &quot;ASK-21142-K&quot;,
+Name = &quot;ASK-29903-K&quot;,
+Name = &quot;ASK-29803-K&quot;,
+Name = &quot;ASK-46702-PK&quot;,
+Name = &quot;ASK-09701-K&quot;,
+Name = &quot;ASK-04500-UCH&quot;,
+Name = &quot;CDC-42854-XPCN1A&quot;,
+Name = &quot;CDC-42802-XPN1A&quot;,
+Name = &quot;CDC-42802-XPCN1A​&quot;,
+Name = &quot;CDC-45802-XPN1A&quot;,
+Name = &quot;CDC-45802-XPCN1A​&quot;,
+Name = &quot;CDC-42703-XPN1A​&quot;,
+Name = &quot;CDC-42703-XPCN1A&quot;,
+Name = &quot;CDC-42703-XPSN1A​&quot;,
+Name = &quot;CDC-45703-XPN1A&quot;,
+Name = &quot;CDC-45703-XPCN1A​&quot;,
+Name = &quot;CDC-45703-XPSN1A&quot;,
+Name = &quot;CDC-45854-XPN1A&quot;,
+Name = &quot;CDC-42854-XPCN1A&quot;,
+Name = &quot;CDC-45854-XPCN1A​&quot;,
+Name = &quot;SL-22802&quot;,
+Name = &quot;9408-VC-005&quot;,
+Name = &quot;9408-VC-005&quot;
+),
+TRUE,
+FALSE
+)
+)</formula>
+    <label>Searchable Products</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

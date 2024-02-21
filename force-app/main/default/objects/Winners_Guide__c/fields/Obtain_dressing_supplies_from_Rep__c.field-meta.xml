@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obtain_dressing_supplies_from_Rep__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Obtain dressing supplies from Rep</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Obtain dressing supplies from Rep</inlineHelpText>
+    <label>Obtain dressing supplies from Rep</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

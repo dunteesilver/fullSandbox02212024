@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Three_Contact_Fields_need_to_be_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>And( 
+
+ISPICKVAL(Status,&quot;Ready to Convert&quot; ),
+OR(ISBLANK(TEXT( Preferred_language__c )),
+ISBLANK(Text( Position_Job_Title__c )),
+ISBLANK(Text( Credentials__c ))
+
+)
+)</errorConditionFormula>
+    <errorMessage>Please make sure you fill in the Preferred Language, Position/JobTitle, &amp; Credentials fields before you convert your Lead</errorMessage>
+</ValidationRule>

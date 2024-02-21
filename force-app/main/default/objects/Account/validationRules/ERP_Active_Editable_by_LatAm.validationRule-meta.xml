@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ERP_Active_Editable_by_LatAm</fullName>
+    <active>false</active>
+    <description>Allows editing of active status of accounts that aren&apos;t created by system administrators</description>
+    <errorConditionFormula>and(Owner.ProfileId == &apos;00eE0000000lT3Q&apos;, $User.ProfileId != &apos;00eE0000000lT3Q&apos;, ISCHANGED(ERP_Active__c), RecordTypeId == &apos;012E0000000RHE6&apos;)</errorConditionFormula>
+    <errorMessage>You cannot edit the ERP Active field on this account</errorMessage>
+</ValidationRule>

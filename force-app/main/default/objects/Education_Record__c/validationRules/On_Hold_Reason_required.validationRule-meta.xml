@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Hold_Reason_required</fullName>
+    <active>true</active>
+    <description>Require on hold reason when status = on hold</description>
+    <errorConditionFormula>AND( ISPICKVAL(Stage__c , &quot;On Hold&quot;)  , ISBLANK( Reason_on_Hold__c ))</errorConditionFormula>
+    <errorDisplayField>Reason_on_Hold__c</errorDisplayField>
+    <errorMessage>Please enter the reason the record is on hold</errorMessage>
+</ValidationRule>

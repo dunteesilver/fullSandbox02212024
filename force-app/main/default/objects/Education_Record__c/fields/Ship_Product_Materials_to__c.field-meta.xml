@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_Product_Materials_to__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Ship Product/Materials to</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Profile__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Contractor - Clinical Advisor</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Profile__c</referenceTo>
+    <relationshipLabel>Education Records (Ship Product/Materials to)</relationshipLabel>
+    <relationshipName>Education_Records4</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

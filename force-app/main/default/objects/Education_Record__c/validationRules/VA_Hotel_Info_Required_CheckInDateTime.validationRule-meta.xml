@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_Hotel_Info_Required_CheckInDateTime</fullName>
+    <active>false</active>
+    <description>For Clinical Sales</description>
+    <errorConditionFormula>AND(  ISPICKVAL(Hotel_Requested__c, &quot;Yes&quot;),
+ISPICKVAL( Business_Unit__c ,&quot;VA&quot;),
+ ISBLANK (  VACheckInDateTime__c   ),
+RecordType.Name = &quot;Clinical Sales Program&quot;,
+
+OR(
+ISPICKVAL( Stage__c, &quot;CEM Review&quot; ),
+ISPICKVAL(Stage__c, &quot;RCEM Review&quot;),
+ISPICKVAL(Stage__c, &quot;CMA Review&quot;)
+
+)
+
+)</errorConditionFormula>
+    <errorDisplayField>VACheckInDateTime__c</errorDisplayField>
+    <errorMessage>Please fill in Check In Date Time when Hotel is requested</errorMessage>
+</ValidationRule>

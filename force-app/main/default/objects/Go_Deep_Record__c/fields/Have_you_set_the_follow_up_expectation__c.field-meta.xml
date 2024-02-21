@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Have_you_set_the_follow_up_expectation__c</fullName>
+    <description>Have you set the follow up expectation? (ex: 2 weeks after education check in to review new cases where EZ-IO used or could have been used, why/why not?)</description>
+    <externalId>false</externalId>
+    <label>Have you set the follow up expectation?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

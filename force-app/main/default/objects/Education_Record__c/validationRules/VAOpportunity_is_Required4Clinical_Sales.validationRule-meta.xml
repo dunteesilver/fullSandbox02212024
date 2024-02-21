@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAOpportunity_is_Required4Clinical_Sales</fullName>
+    <active>false</active>
+    <description>Make Opportunity required for clinical sales record type</description>
+    <errorConditionFormula>AND(ISBLANK(Opportunity__c),
+RecordType.Name = &quot;Clinical Sales Program&quot;,
+OPPValidationRuleException__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>Opportunity is required for Clinical Sales Record</errorMessage>
+</ValidationRule>

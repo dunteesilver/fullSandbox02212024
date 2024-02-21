@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_of_EZ_IO_in_Hospital__c</fullName>
+    <externalId>false</externalId>
+    <label>Location of EZ-IO in Hospital?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ED – Unlocked Office/Room</fullName>
+                <default>false</default>
+                <label>ED – Unlocked Office/Room</label>
+            </value>
+            <value>
+                <fullName>ED – Locked Office/Room</fullName>
+                <default>false</default>
+                <label>ED – Locked Office/Room</label>
+            </value>
+            <value>
+                <fullName>ED – Clean Utility</fullName>
+                <default>false</default>
+                <label>ED – Clean Utility</label>
+            </value>
+            <value>
+                <fullName>ED – Nurses Station</fullName>
+                <default>false</default>
+                <label>ED – Nurses Station</label>
+            </value>
+            <value>
+                <fullName>ED – Pyxis</fullName>
+                <default>false</default>
+                <label>ED – Pyxis</label>
+            </value>
+            <value>
+                <fullName>ED – Cart</fullName>
+                <default>false</default>
+                <label>ED – Cart</label>
+            </value>
+            <value>
+                <fullName>ED - Wall Box</fullName>
+                <default>false</default>
+                <label>ED - Wall Box</label>
+            </value>
+            <value>
+                <fullName>ED – Other</fullName>
+                <default>false</default>
+                <label>ED – Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>ED – Not Available</fullName>
+                <default>false</default>
+                <label>ED – Not Available</label>
+            </value>
+            <value>
+                <fullName>ICU – Unlocked Office/Room</fullName>
+                <default>false</default>
+                <label>ICU – Unlocked Office/Room</label>
+            </value>
+            <value>
+                <fullName>ICU – Locked Office/Room</fullName>
+                <default>false</default>
+                <label>ICU – Locked Office/Room</label>
+            </value>
+            <value>
+                <fullName>ICU – Clean Utility</fullName>
+                <default>false</default>
+                <label>ICU – Clean Utility</label>
+            </value>
+            <value>
+                <fullName>ICU – Nurses Station</fullName>
+                <default>false</default>
+                <label>ICU – Nurses Station</label>
+            </value>
+            <value>
+                <fullName>ICU – Pyxis</fullName>
+                <default>false</default>
+                <label>ICU – Pyxis</label>
+            </value>
+            <value>
+                <fullName>ICU – Cart</fullName>
+                <default>false</default>
+                <label>ICU – Cart</label>
+            </value>
+            <value>
+                <fullName>ICU – Wall Box</fullName>
+                <default>false</default>
+                <label>ICU – Wall Box</label>
+            </value>
+            <value>
+                <fullName>ICU – Other</fullName>
+                <default>false</default>
+                <label>ICU – Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>ICU – Not Available</fullName>
+                <default>false</default>
+                <label>ICU – Not Available</label>
+            </value>
+            <value>
+                <fullName>RRT – Yellow Bag in Office</fullName>
+                <default>false</default>
+                <label>RRT – Yellow Bag in Office</label>
+            </value>
+            <value>
+                <fullName>RRT – EZ-IO in Go-Bag</fullName>
+                <default>false</default>
+                <label>RRT – EZ-IO in Go-Bag</label>
+            </value>
+            <value>
+                <fullName>RRT – Other</fullName>
+                <default>false</default>
+                <label>RRT – Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>RRT – Not Available</fullName>
+                <default>false</default>
+                <label>RRT – Not Available</label>
+            </value>
+            <value>
+                <fullName>Trauma – Unlocked Office/Room</fullName>
+                <default>false</default>
+                <label>Trauma – Unlocked Office/Room</label>
+            </value>
+            <value>
+                <fullName>Trauma – Locked Office/Room</fullName>
+                <default>false</default>
+                <label>Trauma – Locked Office/Room</label>
+            </value>
+            <value>
+                <fullName>Trauma – Nurses Station</fullName>
+                <default>false</default>
+                <label>Trauma – Nurses Station</label>
+            </value>
+            <value>
+                <fullName>Trauma – Cart</fullName>
+                <default>false</default>
+                <label>Trauma – Cart</label>
+            </value>
+            <value>
+                <fullName>Trauma – Wall Box</fullName>
+                <default>false</default>
+                <label>Trauma – Wall Box</label>
+            </value>
+            <value>
+                <fullName>Trauma - Other</fullName>
+                <default>false</default>
+                <label>Trauma - Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>Trauma – Not Available</fullName>
+                <default>false</default>
+                <label>Trauma – Not Available</label>
+            </value>
+            <value>
+                <fullName>OR In Room</fullName>
+                <default>false</default>
+                <label>OR In Room</label>
+            </value>
+            <value>
+                <fullName>OR Nurses Station</fullName>
+                <default>false</default>
+                <label>OR Nurses Station</label>
+            </value>
+            <value>
+                <fullName>OR Other (add notes)</fullName>
+                <default>false</default>
+                <label>OR Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>OR Not Available</fullName>
+                <default>false</default>
+                <label>OR Not Available</label>
+            </value>
+            <value>
+                <fullName>Flight Team - Stocked</fullName>
+                <default>false</default>
+                <label>Flight Team - Stocked</label>
+            </value>
+            <value>
+                <fullName>Misc - Other (add notes)</fullName>
+                <default>false</default>
+                <label>Misc - Other (add notes)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

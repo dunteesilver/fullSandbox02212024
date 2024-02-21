@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milage_Rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>/*IF( 
+(Date_of_Event_Start__c)  &lt; Date(2014,1,1), 0.565,
+IF( AND(Date_of_Event_Start__c  &gt; Date(2013,12,31),Date_of_Event_Start__c  &lt; Date(2016,1,1)), 0.56,
+IF( AND(Date_of_Event_Start__c  &gt; Date(2016,01,01),Date_of_Event_Start__c  &lt; Date(2016,12,31)), 0.54,
+ Case(CurrencyIsoCode , &apos;USD&apos;, 0.535 , &apos;CAD&apos; , 0.54, 0.535)
+))) */
+
+IF(AND(ISPICKVAL(CurrencyIsoCode , &apos;USD&apos;),Date_of_Event_Start__c &gt; Date (2019,12,31)),0.575,
+
+IF(AND(ISPICKVAL(CurrencyIsoCode , &apos;CAD&apos;),Date_of_Event_Start__c &gt; Date (2019,12,31)),0.59,
+
+
+IF(Date_of_Event_Start__c &gt; Date (2018,12,31),0.58,
+IF( 
+(Date_of_Event_Start__c) &lt; Date(2014,1,1), 
+0.565, 
+IF( 
+AND(Date_of_Event_Start__c &gt; Date(2013,12,31), 
+Date_of_Event_Start__c &lt; Date(2016,1,1)), 
+0.56, 
+IF( 
+AND(Date_of_Event_Start__c &gt; Date(2016,01,01), 
+Date_of_Event_Start__c &lt; Date(2016,12,31)), 
+0.54, 
+IF(Date_of_Event_Start__c &gt; Date (2017,12,31), 
+Case(CurrencyIsoCode, &apos;USD&apos;, 0.545, &apos;CAD&apos;, 0.55, 0.545), 
+Case(CurrencyIsoCode , &apos;USD&apos;, 0.535 , &apos;CAD&apos; , 0.545, 0.535) 
+)))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Milage Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

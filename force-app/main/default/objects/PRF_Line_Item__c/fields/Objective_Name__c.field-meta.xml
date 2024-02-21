@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Objective_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Objective__c = &quot;01&quot;, &quot;Direct/Rebate&quot;, 
+if(Objective__c = &quot;02&quot;, &quot;Direct&quot;, 
+if(Objective__c = &quot;03&quot;, &quot;Distributor Netbill&quot;, 
+if(Objective__c = &quot;04&quot;, &quot;Specialty Market&quot;, 
+if(Objective__c = &quot;05&quot;, &quot;Strategic Accounts&quot;, 
+if(Objective__c = &quot;06&quot;, &quot;Rebate Only&quot;, 
+&quot;-&quot;))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Objective Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

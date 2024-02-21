@@ -1,0 +1,311 @@
+<apex:page title="Agreement Details: {!ad.Owner_Name__c} - {!ad.Owner__c} - {!ad.name}"
+           docType="html-5.0"
+           standardStylesheets="false"
+           controller="PP_Agreement_Detail"
+           tabStyle="Pricing_Portal__tab"
+           readOnly="false" cache="false"
+           sidebar="false" 
+           applyBodyTag="false"
+           language="{!userLang}">
+    <head>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.css')}"/>
+
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+
+        <apex:stylesheet value="{!UrlFor($Resource.tablesorter,'/tablesorter-master/dist/css/theme.bootstrap.min.css')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.widgets.min.js')}"/>
+
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/libs/FileSaver/FileSaver.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/tableExport.min.js')}"/>
+    </head>
+<body>
+
+    <!-- DIV to Render the rest of the page in Bootstrap -->
+    <div class="teleflex">
+        <!-- Call the Menu -->
+    	<apex:include id="menu" pageName="PP_Menu"/>
+        <!-- Standard UI -->
+        <apex:variable var="emeaUser" value="{!IF(contains($UserRole.Name,'EMEA'),TRUE,FALSE)}"/>
+        <apex:outputText rendered="{!NOT(altui)}">
+            <apex:form id="mainform" html-ng-non-bindable="true">
+                <apex:pageMessages id="errorId"/>
+                <table class="table table-condensed">
+                    <tr>
+                        <td class="col-md-1" colspan="3"><h4><img src="/img/icon/hands16.png" alt="Contract Details"/>&nbsp;&nbsp;{!$ObjectType.Contract_Header__c.fields.Contract_Detail__c.label}:&nbsp;{!aid}</h4></td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-1">{!$ObjectType.Contract_Header__c.fields.Description__c.label}:</td>
+                        <td colspan="2">{!ad.Description__c}</td>
+                    </tr>
+                    <apex:outputText rendered="{!PRF.Sales_Deal__C != NULL }">
+                    <tr>
+                        <td class="col-md-1">PRF {!$ObjectType.PRF__c.fields.Sales_Deal__c.label}:</td>
+                        <td colspan="2">{!PRF.Sales_Deal__c}
+                        </td>
+                    </tr>
+                        <tr>
+                        <td class="col-md-1">PRF {!$ObjectType.PRF__c.fields.Owner_Full_Name__c.label}:</td>
+                        <td colspan="2">{!PRF.Owner.Name}
+                        </td>
+                    </tr>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!ad.Owner__c != NULL && ad.GPO_Contract_Ref__c != NULL}">
+                        <tr>
+                            <td>{!$ObjectType.Contract_Header__c.fields.Owner_Name__c.label}/{!$ObjectType.Contract_Header__c.fields.Owner__c.label}:</td>
+                            <td colspan="2"><a href="/apex/PP_GPO_Matrix?oid={!ad.Owner__c}">{!ad.Owner_Name__c} / {!ad.Owner__c}</a></td>
+                        </tr>
+                        <tr>
+                            <td>{!$ObjectType.Contract_Header__c.fields.GPO_Contract_Ref__c.label}:</td>
+                            <td colspan="2"><a href="/apex/PP_Contract_Detail?oid={!ad.Owner__c}&gporef={!ad.GPO_Contract_Ref__c}">{!ad.Owner__c} - {!ad.GPO_Contract_Ref__c}</a></td>
+                        </tr>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!ad.Contract_Detail__c != NULL}">
+                        <tr>
+                            <td>{!$ObjectType.Contract_Header__c.fields.Contract_Detail__c.label}</td>
+                            <td colspan="2"><div class="text-wrap"><apex:outputText escape="true" value="{!ad.Contract_Detail__c}" /></div></td>
+                        </tr>
+                    </apex:outputText>
+                    <tr>
+                        <td>{!$ObjectType.Contract_Header__c.fields.Valid_From__c.label}/{!$ObjectType.Contract_Header__c.fields.Valid_To__c.label}:</td>
+                        <td><apex:outputText value="{0,date,MM/dd/yyyy}">
+                            <apex:param value="{!ad.Valid_From__c}" />
+                            </apex:outputText> to&nbsp;<apex:outputText value="{0,date,MM/dd/yyyy}">
+                            <apex:param value="{!ad.Valid_To__c}" />
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{!$ObjectType.Contract_Header__c.fields.Objective__c.label}:</td>
+                        <td><apex:outputText value="{!ad.Objective_Name__c}" /></td>
+                        <td class="text-right">
+                            <a href="/apex/PP_Active_Customer?aid={!ad.name}" class="btn btn-primary btn-sm" >View Active Customers ({!ad.Account_Count__c})</a>
+                            <a href="/{!bigreport}?pv0={!aid}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download Report</a>
+                            <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=xls" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download XLS</a>
+                            <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=pdf" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download PDF</a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Main Table -->
+                <table class="table table-striped table-hover table-bordered table-condensed" width="100%">
+                    <tr>
+                        <th class="col-md-1 text-center" style="width: 20px;">#</th>
+                        <th class="col-md-4 text-center">{!$ObjectType.Product2.fields.Name.label}</th>
+                        <th class="col-md-6 text-center">{!$ObjectType.Product2.fields.Description.label}</th>
+                        <th class="col-md-1 text-center">{!$ObjectType.Contract_Material__c.fields.Valid_From__c.label}</th>
+                        <th class="col-md-1 text-center">{!$ObjectType.Contract_Material__c.fields.Valid_To__c.label}</th>
+                        <!-- Only Show if there's an Active Quote -->
+                        <apex:outputText rendered="{!pqId != NULL}">
+                            <th class="col-md-2 text-center">Quote</th>
+                        </apex:outputText>
+                        <th class="col-md-1 text-center">{!$ObjectType.Product2.fields.Sales_Unit__c.label}</th>
+                        <th class="col-md-1 text-center">#{!$ObjectType.Product2.fields.Qty_Sales_Unit__c.label}</th>
+                        <th class="col-md-1 text-center">{!$ObjectType.Contract_Material__c.fields.CurrencyIsoCode.label}</th>
+                        <th class="col-md-1 text-center">{!$ObjectType.Contract_Material__c.fields.Price__c.label}</th>
+                    </tr>
+                    <!-- Build out the data -->
+                    <apex:variable value="{!1}" var="rowNum"/>
+                    <apex:repeat value="{!plist}" var="p">
+                        <tr>
+                            <td class="text-center" style="width: 20px;"><apex:outputText value="{!FLOOR(rowNum)}"/></td>
+                            <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                            <td class="text-nowrap"><a href="/apex/PP_Material_Info?id={!p.Product__r.Id}&pqId={!pqId}">{!p.Product__r.Name}</a></td>
+                            <td class="text-nowrap"><a href="/apex/PP_Material_Info?id={!p.Product__r.Id}&pqId={!pqId}">{!p.Product__r.Description}</a></td>
+                            <td class="text-nowrap text-center">
+                            	<apex:outputText value="{0,date,MM/dd/yyyy}">
+                            	<apex:param value="{!p.Valid_From__c}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="text-nowrap text-center">
+                            	<apex:outputText value="{0,date,MM/dd/yyyy}">
+                            	<apex:param value="{!p.Valid_To__c}" />
+                                </apex:outputText>
+                            </td>
+                            <!-- Only Show if there's an Active Quote -->
+                            <apex:outputText rendered="{!pqId != NULL}">
+                                <td>
+                                    <center>
+                                        <apex:commandLink action="{!addQuoteLine}" reRender="errorId" styleClass="btn btn-primary btn-xs" value="Add" status="actStatusId">
+                                            <apex:param name="materialId" value="{!p.Product__r.Id}"/>
+                                        </apex:commandLink>
+
+                                    </center>
+                                </td>
+                            </apex:outputText>
+                            <td style="text-align:center;">{!p.Product__r.Sales_Unit__c}</td>
+                            <td style="text-align:center;">{!p.Product__r.Qty_Sales_Unit__c}</td>
+                            <td style="text-align:center;">{!p.CurrencyIsoCode}</td>
+                            <td style="text-align:center;">
+                                <apex:outputText rendered="{!emeaUser}" >
+                                    {!p.Price__c}
+                                </apex:outputText>
+                                <apex:outputText rendered="{!!emeaUser}" value="{0,number,#,##0.00}">$
+                                    <apex:param value="{!p.Price__c}"/>
+                                    <!-- </apex:outputText><apex:outputText rendered="{!p.CurrencyIsoCode != 'USD'}"> - {!p.CurrencyIsoCode} -->
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                <table width="100%">
+                    <tr>
+                        <td class="text-right">
+                            <a href="/apex/PP_Active_Customer?aid={!ad.name}" class="btn btn-primary btn-sm" >View Active Customers ({!ad.Account_Count__c})</a>
+                            <a href="/{!bigreport}?pv0={!aid}" class="btn btn-primary btn-sm">Download Report</a>
+                            <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=xls" class="btn btn-primary btn-sm">Download XLS</a>
+                            <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=pdf" class="btn btn-primary btn-sm">Download PDF</a>
+                        </td>
+                    </tr>
+                </table>
+                <!-- End Panel -->
+                <apex:actionFunction name="callAction" action="{!addQuoteLine}" reRender="mainform">
+                    <apex:param name="materialStr" value=""/>
+                </apex:actionFunction>
+
+                <apex:actionstatus id="actStatusId">
+                        <apex:facet name="start">
+                            <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                                 height: 100%;opacity:0.65;width:100%;">
+                                <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                                    <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." />
+                                    <span class="waitingDescription">Loading...</span>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus>
+            </apex:form>
+            <script>
+            function callActionMethod(materialName) {
+                console.log('*** In callActionMethod ***');
+                callAction(materialName);
+            }
+            </script>
+            <script>
+            $('th').click(function(){
+                var table = $(this).parents('table').eq(0)
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+                this.asc = !this.asc
+                if (!this.asc){rows = rows.reverse()}
+                for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+            })
+            function comparer(index) {
+                return function(a, b) {
+                    if(index == 1 || index == 2){
+                        var valA = getCellText(a, index), valB = getCellText(b, index)
+                        //console.log('valA = ' + valA + ' valB = ' + valB);
+                        //console.log('localeCompare = ' + valA.localeCompare(valB));
+                        return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+                    }
+                    else{
+                        var valA = getCellValue(a, index), valB = getCellValue(b, index)
+                        //console.log('valA = ' + valA + ' valB = ' + valB);
+                        //console.log('localeCompare = ' + valA.localeCompare(valB));
+                        return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+                    }
+                }
+            }
+            function getCellValue(row, index){
+                console.log('row = ' + $(row).children('td').eq(index).html());
+                return $(row).children('td').eq(index).html()
+
+            }
+            function getCellText(row, index){
+                console.log('row = ' + $(row).children('td').eq(index).text());
+                return $(row).children('td').eq(index).text()
+            }
+            </script>
+        </apex:outputText>
+        <!-- End Standard UI -->
+
+        <!-- Start Alternative JS Remote UI -->
+        <apex:outputText rendered="{!altui}">
+
+            <apex:pageMessages id="errorId2"/>
+            <table class="table table-condensed">
+                <tr>
+                    <td class="col-md-1">{!$ObjectType.Contract_Header__c.fields.Agreement_Number__c.label}:</td>
+                    <td colspan="2">{!aid}</td>
+                </tr>
+                <tr>
+                    <td>{!$ObjectType.Contract_Header__c.fields.Description__c.label}:</td>
+                    <td colspan="2">{!ad.Description__c}</td>
+                </tr>
+                <apex:outputText rendered="{!ad.Owner__c != NULL && ad.GPO_Contract_Ref__c != NULL}">
+                    <tr>
+                        <td>{!$ObjectType.Contract_Header__c.fields.Owner_Name__c.label}/{!$ObjectType.Contract_Header__c.fields.Owner__c.label}:</td>
+                        <td colspan="2"><a href="/apex/PP_GPO_Matrix?oid={!ad.Owner__c}">{!ad.Owner_Name__c} / {!ad.Owner__c}</a></td>
+                    </tr>
+                    <tr>
+                        <td>{!$ObjectType.Contract_Header__c.fields.GPO_Contract_Ref__c.label}:</td>
+                        <td colspan="2"><a href="/apex/PP_Contract_Detail?oid={!ad.Owner__c}&gporef={!ad.GPO_Contract_Ref__c}">{!ad.Owner__c} - {!ad.GPO_Contract_Ref__c}</a></td>
+                    </tr>
+                </apex:outputText>
+                <tr>
+                    <td>{!$ObjectType.Contract_Header__c.fields.Valid_From__c.label}/{!$ObjectType.Contract_Header__c.fields.Valid_To__c.label}:</td>
+                    <td><apex:outputText value="{0,date,MM/dd/yyyy}">
+                        <apex:param value="{!ad.Valid_From__c}" />
+                        </apex:outputText> to&nbsp;<apex:outputText value="{0,date,MM/dd/yyyy}">
+                        <apex:param value="{!ad.Valid_To__c}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{!$ObjectType.Contract_Header__c.fields.Objective__c.label}:</td>
+                    <td><apex:outputText value="{!ad.Objective_Name__c}" /></td>
+                    <td class="text-right">
+                        <a href="/apex/PP_Active_Customer?aid={!ad.name}" class="btn btn-primary btn-sm" >View Active Customers ({!ad.Account_Count__c})</a>
+                        <a href="/{!bigreport}?pv0={!aid}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download Report</a>
+                        <!-- <apex:outputLink onclick="$('[id$=ListVariable]').tableExport({type:'excel', fileName: '{!filename}', excelstyles:['border-bottom', 'border-top', 'border-left', 'border-right']});return false;" Styleclass="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download Excel (NEW)</apex:outputLink> -->
+                        <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=xls" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download XLS</a>
+                        <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=pdf" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download PDF</a>
+                        <!-- <apex:outputLink onclick="$('[id$=ListVariable]').tableExport({type:'excel', fileName: '{!filename}', excelstyles:['border-bottom', 'border-top', 'border-left', 'border-right']});return false;" Styleclass="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download Excel 2</apex:outputLink> -->
+                    </td>
+                </tr>
+                <apex:outputText rendered="{!ad.Contract_Detail__c != NULL}">
+                    <tr>
+                        <td>{!$ObjectType.Contract_Header__c.fields.Contract_Detail__c.label}</td>
+                        <td colspan="2"><div class="text-wrap"><apex:outputText escape="true" value="{!ad.Contract_Detail__c}" /></div></td>
+                    </tr>
+                </apex:outputText>
+            </table>
+            <!-- Start Product List -->
+            <table class="table table-striped table-hover table-bordered table-condensed" id="ListVariable">
+            </table>
+            <table width="100%">
+                <tr>
+                    <td class="text-right">
+                        <a href="/apex/PP_Active_Customer?aid={!ad.name}" class="btn btn-primary btn-sm" >View Active Customers ({!ad.Account_Count__c})</a>
+                        <a href="/{!bigreport}?pv0={!aid}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download Report</a>
+                        <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=xls" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download XLS</a>
+                        <a href="/apex/PP_Agreement_Detail_Export?aid={!ad.name}&rs=pdf" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Download PDF</a>
+                    </td>
+                </tr>
+            </table>
+            <!-- End Panel -->
+
+            <script type="text/javascript">
+            window.onload=function ()
+            {
+                var aid = '{!$CurrentPage.parameters.aid}';
+
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.PP_Agreement_Detail.htmlList}',
+                    aid,
+                    function(result, event){
+                        if (event.status) {
+                            //console.log(result);
+                            //join(''); = This pulls out the commas between rows of strings - ESC
+                            document.getElementById("ListVariable").innerHTML = result.join('');
+                        }
+                    },
+                    {buffer: true, escape: false, timeout: 120000}
+                );
+            };
+            </script>
+        </apex:outputText>
+    </div></body>
+</apex:page>

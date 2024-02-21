@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Over_Under__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF
+
+(Consumable_Forecast__c&gt;Consumable_Committment__c,
+
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0154400000AaopP&quot;,&quot;NO&quot;),
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0154400000Aap3M&quot;,&quot;NO&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If the customer is expected to meet their Consumable Commitment based on the Consumable Forecast, then this field will be green. If not, this will be red.</inlineHelpText>
+    <label>Over/Under</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loaner_Start_Date_Adjusted__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(MONTH(Loaner_Expiration_Date__c) &gt;= MONTH(TODAY()), 
+/* Previous Year */ 
+DATE(YEAR(TODAY())-1,MONTH(Loaner_Expiration_Date__c),1), 
+/* Current Year */ 
+DATE(YEAR(TODAY()),MONTH(Loaner_Expiration_Date__c),1) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Loaner Start Date (Adjusted)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

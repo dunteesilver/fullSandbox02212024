@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Field_Upd_Set_Name_to_Dupe_Check_Value</fullName>
+        <description>Set Dupe Check field value to user&apos;s name.</description>
+        <field>Dupe_Check__c</field>
+        <formula>Name</formula>
+        <name>Field Upd Set Name to Dupe Check Value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PPU_Update_Active_Sales_Currency</fullName>
+        <description>Setting user&apos;s active currency.</description>
+        <field>Active_Currency__c</field>
+        <formula>if(ISPICKVAL(Active_Region__c, &quot;US - Teleflex&quot;),&quot;USD&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CA - Canada&quot;),&quot;CAD&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;LA - Latin America&quot;),&quot;USD&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;MX - Mexico&quot;),&quot;MXN&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CL - Chile&quot;),&quot;CLP&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CO - Colombia&quot;),&quot;COP&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;US - Teleflex/Arrow&quot;),&quot;USD&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;LA - Latin America Old&quot;),&quot;USD&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;AU - Australia&quot;),&quot;AUD&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;NZ - New Zealand&quot;),&quot;NZD&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;BR - Brazil&quot;),&quot;BRL&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;DE - Germany&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;UK - United Kingdom&quot;),&quot;GBP&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;AT - Austria&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;BE - Belgium&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CH - Switzerland&quot;),&quot;CHF&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CZ - Czech&quot;),&quot;CZK&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;ES - Spain&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;FR - France&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;GR - Greece&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;IT - Italy&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;NL - Netherlands&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;PL - Poland&quot;),&quot;PLN&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;SK - Slovakia&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;PT - Portugal&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;IE - Ireland&quot;),&quot;EUR&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;SA - South Africa&quot;),&quot;ZAR&quot;,
+&quot;&quot;
+)))))))))))))))))))))))))))</formula>
+        <name>PPU - Update Active Sales Currency</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PPU_Update_Active_Sales_Org_Key</fullName>
+        <description>Setting user&apos;s active sales org key.</description>
+        <field>Active_Sales_Org_Key__c</field>
+        <formula>if(ISPICKVAL(Active_Region__c, &quot;US - Teleflex&quot;),&quot;US6010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CA - Canada&quot;),&quot;CA1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;LA - Latin America&quot;),&quot;US6020&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;MX - Mexico&quot;),&quot;MX4010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CL - Chile&quot;),&quot;CL1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CO - Colombia&quot;),&quot;CO1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;US - Teleflex/Arrow&quot;),&quot;US103010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;LA - Latin America Old&quot;),&quot;US103020&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;AU - Australia&quot;),&quot;AU1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;NZ - New Zealand&quot;),&quot;NZ1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;BR - Brazil&quot;),&quot;BR1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;DE - Germany&quot;),&quot;DE1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;UK - United Kingdom&quot;),&quot;UK1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;AT - Austria&quot;),&quot;AT1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;BE - Belgium&quot;),&quot;BE1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CH - Switzerland&quot;),&quot;CH1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;CZ - Czech&quot;),&quot;CZ2010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;ES - Spain&quot;),&quot;ES1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;FR - France&quot;),&quot;FR1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;GR - Greece&quot;),&quot;GR1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;IT - Italy&quot;),&quot;IT1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;NL - Netherlands&quot;),&quot;NL1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;PL - Poland&quot;),&quot;PL1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;SK - Slovakia&quot;),&quot;SK1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;PT - Portugal&quot;),&quot;PT1010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;IE - Ireland&quot;),&quot;IE2010&quot;,
+if(ISPICKVAL(Active_Region__c, &quot;SA - South Africa&quot;),&quot;SA1010&quot;,
+&quot;&quot;
+)))))))))))))))))))))))))))</formula>
+        <name>PPU - Update Active Sales Org Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>PPU - Update Active Sales Org Key</fullName>
+        <actions>
+            <name>PPU_Update_Active_Sales_Currency</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PPU_Update_Active_Sales_Org_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>ISCHANGED( Active_Region__c ) ||  OR( ISBLANK(Active_Sales_Org_Key__c), ISBLANK(Active_Currency__c) )</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Name to Dupe Check Value</fullName>
+        <actions>
+            <name>Field_Upd_Set_Name_to_Dupe_Check_Value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_User__c.Dupe_Check__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Sets name of user being created to Dupe Check.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

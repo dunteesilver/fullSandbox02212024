@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clinical_documentation_captured_in_SF__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Clinical documentation captured in SF.com</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Clinical documentation captured in SF.com</inlineHelpText>
+    <label>Clinical documentation captured in SF</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

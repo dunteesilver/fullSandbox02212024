@@ -1,0 +1,28 @@
+<apex:page showheader="false" standardStylesheets="false">
+    <head>
+        <apex:includeScript value="{!URLFOR($Resource.jQuery)}"/>
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.css')}"/>
+        <link rel="icon" type="image/png" href="{!$Resource.Favicon}" />    
+    </head>
+    <br/>
+    <div class="teleflex">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Teleflex Communication Preferences</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h5>
+                                <p class="text-black">You have successfully unsubscribed from all marketing email communications from Teleflex.</p>
+                                <p class="text-black">Please visit <a href="http://www.Teleflex.com">Teleflex.com</a> for more information on our specialty medical devices for a range of procedures in critical care, urology and surgery.</p>
+                            </h5>
+                        </div>
+                        <div class="panel-footer text-center">&copy; 2015 Teleflex Incorporated  All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+</apex:page>

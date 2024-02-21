@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Quota_Monthly</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Territory Quota Monthly</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00O44000003ZWd8?pc1=FK_NAME&amp;pn1=eq&amp;pv1={!Territory_Master__c.Name}</url>
+</WebLink>

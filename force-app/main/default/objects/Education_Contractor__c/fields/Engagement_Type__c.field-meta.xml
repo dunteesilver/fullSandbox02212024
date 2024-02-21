@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Engagement Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Onboarding/Prof. Development (Hour)</fullName>
+                <default>false</default>
+                <label>Onboarding/Prof. Development (Hour)</label>
+            </value>
+            <value>
+                <fullName>Inservice (Hour)</fullName>
+                <default>false</default>
+                <label>Inservice (Hour)</label>
+            </value>
+            <value>
+                <fullName>Product Implementation (Hour)</fullName>
+                <default>false</default>
+                <label>Product Implementation (Hour)</label>
+            </value>
+            <value>
+                <fullName>Speaking Engagements (Hour)</fullName>
+                <default>false</default>
+                <label>Speaking Engagements (Hour)</label>
+            </value>
+            <value>
+                <fullName>Conference Support (Hour)</fullName>
+                <default>false</default>
+                <label>Conference Support (Hour)</label>
+            </value>
+            <value>
+                <fullName>Consulting (Hour)</fullName>
+                <default>false</default>
+                <label>Consulting (Hour)</label>
+            </value>
+            <value>
+                <fullName>Procedural Program - Physician (Day)</fullName>
+                <default>false</default>
+                <label>Procedural Program - Physician (Day)</label>
+            </value>
+            <value>
+                <fullName>Procedural Program - MD Prof. Dev (Day)</fullName>
+                <default>false</default>
+                <label>Procedural Program - MD Prof. Dev (Day)</label>
+            </value>
+            <value>
+                <fullName>Procedural Program - Lead (Day)</fullName>
+                <default>false</default>
+                <label>Procedural Program - Lead (Day)</label>
+            </value>
+            <value>
+                <fullName>Procedural Program - Faculty (Day)</fullName>
+                <default>false</default>
+                <label>Procedural Program - Faculty (Day)</label>
+            </value>
+            <value>
+                <fullName>Procedural Program - Prof. Dev (Day)</fullName>
+                <default>false</default>
+                <label>Procedural Program - Prof. Dev (Day)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

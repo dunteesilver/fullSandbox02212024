@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsthispartofTFXprogram__c</fullName>
+    <description>Trial/Evaluation Criteria
+
+If “Yes”, review criteria for the specific program  (e.g. OPERA, Reason to Change, etc.)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If “Yes”, review criteria for the specific program  (e.g. OPERA, Reason to Change, etc.)
+
+Trial/Evaluation Criteria</inlineHelpText>
+    <label>Is this part of TFX program?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

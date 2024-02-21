@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MRP_Group__c</fullName>
+    <description>Repbid functionality that houses values such as MTO (Made to Order) or MTSR (Made to Stock Reserve)</description>
+    <externalId>false</externalId>
+    <label>MRP Group</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family__c</fullName>
+    <description>List of Product Families</description>
+    <externalId>false</externalId>
+    <label>Product Family</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Unit__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Access</fullName>
+                <default>false</default>
+                <label>Access</label>
+            </value>
+            <value>
+                <fullName>Instruments</fullName>
+                <default>false</default>
+                <label>Instruments</label>
+            </value>
+            <value>
+                <fullName>Ligation</fullName>
+                <default>false</default>
+                <label>Ligation</label>
+            </value>
+            <value>
+                <fullName>Pleur Evac</fullName>
+                <default>false</default>
+                <label>Pleur Evac</label>
+            </value>
+            <value>
+                <fullName>Stapling</fullName>
+                <default>false</default>
+                <label>Stapling</label>
+            </value>
+            <value>
+                <fullName>Suture</fullName>
+                <default>false</default>
+                <label>Suture</label>
+            </value>
+            <value>
+                <fullName>Central Venous Access</fullName>
+                <default>false</default>
+                <label>Central Venous Access</label>
+            </value>
+            <value>
+                <fullName>PICCs</fullName>
+                <default>false</default>
+                <label>PICCs</label>
+            </value>
+            <value>
+                <fullName>Arterial</fullName>
+                <default>false</default>
+                <label>Arterial</label>
+            </value>
+            <value>
+                <fullName>VasoNova</fullName>
+                <default>false</default>
+                <label>VasoNova</label>
+            </value>
+            <value>
+                <fullName>Respiratory</fullName>
+                <default>false</default>
+                <label>Respiratory</label>
+            </value>
+            <value>
+                <fullName>Airway</fullName>
+                <default>false</default>
+                <label>Airway</label>
+            </value>
+            <value>
+                <fullName>Pain Management</fullName>
+                <default>false</default>
+                <label>Pain Management</label>
+            </value>
+            <value>
+                <fullName>Bladder Management</fullName>
+                <default>false</default>
+                <label>Bladder Management</label>
+            </value>
+            <value>
+                <fullName>Endourology &amp; Special</fullName>
+                <default>false</default>
+                <label>Endourology &amp; Special</label>
+            </value>
+            <value>
+                <fullName>Dialysis Access</fullName>
+                <default>false</default>
+                <label>Dialysis Access</label>
+            </value>
+            <value>
+                <fullName>Interventional Procedures</fullName>
+                <default>false</default>
+                <label>Interventional Procedures</label>
+            </value>
+            <value>
+                <fullName>Interventional Sheaths</fullName>
+                <default>false</default>
+                <label>Interventional Sheaths</label>
+            </value>
+            <value>
+                <fullName>Large Bore CVCs</fullName>
+                <default>false</default>
+                <label>Large Bore CVCs</label>
+            </value>
+            <value>
+                <fullName>IABP</fullName>
+                <default>false</default>
+                <label>IABP</label>
+            </value>
+            <value>
+                <fullName>IAB</fullName>
+                <default>false</default>
+                <label>IAB</label>
+            </value>
+            <value>
+                <fullName>Right Heart</fullName>
+                <default>false</default>
+                <label>Right Heart</label>
+            </value>
+            <value>
+                <fullName>Accessories</fullName>
+                <default>false</default>
+                <label>Accessories</label>
+            </value>
+            <value>
+                <fullName>Service Parts</fullName>
+                <default>false</default>
+                <label>Service Parts</label>
+            </value>
+            <value>
+                <fullName>LMA</fullName>
+                <default>false</default>
+                <label>LMA</label>
+            </value>
+            <value>
+                <fullName>Anesthesia</fullName>
+                <default>false</default>
+                <label>Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>General Specialties</fullName>
+                <default>false</default>
+                <label>General Specialties</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Airway</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Pain Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cardiac</controllingFieldValue>
+            <valueName>IABP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cardiac</controllingFieldValue>
+            <valueName>IAB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cardiac</controllingFieldValue>
+            <valueName>Right Heart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cardiac</controllingFieldValue>
+            <valueName>Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cardiac</controllingFieldValue>
+            <valueName>Service Parts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Access</controllingFieldValue>
+            <valueName>Dialysis Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Access</controllingFieldValue>
+            <valueName>Interventional Procedures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Access</controllingFieldValue>
+            <valueName>Interventional Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional Access</controllingFieldValue>
+            <valueName>Large Bore CVCs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LMA</controllingFieldValue>
+            <valueName>LMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Respiratory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Instruments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Ligation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Pleur Evac</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Stapling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Suture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Bladder Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Endourology &amp; Special</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Central Venous Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>PICCs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Arterial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>VasoNova</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

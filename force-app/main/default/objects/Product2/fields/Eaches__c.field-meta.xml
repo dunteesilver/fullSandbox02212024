@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eaches__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows for users to order eaches as UOM when ordering Samples.  This is regulated by the Compliance Team and should not be checked for products unless approved.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Allows for users to order eaches as UOM when ordering Samples.  This is regulated by the Compliance Team and should not be checked for products unless approved. Bin 4500 (Sample Request Type: Disposable/Single Use Product Evaluation - Eaches)</inlineHelpText>
+    <label>Eaches</label>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

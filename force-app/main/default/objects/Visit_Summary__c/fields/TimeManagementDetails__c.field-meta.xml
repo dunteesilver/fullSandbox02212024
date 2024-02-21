@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TimeManagementDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Time Management Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Time_Management_CE__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Does not set daily goals or use educational resources, schedule follow-up</fullName>
+                <default>false</default>
+                <label>Does not set daily goals or use educational resources, schedule follow-up</label>
+            </value>
+            <value>
+                <fullName>Frequently late to appointments/meetings and/or calls</fullName>
+                <default>false</default>
+                <label>Frequently late to appointments/meetings and/or calls</label>
+            </value>
+            <value>
+                <fullName>Books flights outside of Teleflex (TFX) guidelines</fullName>
+                <default>false</default>
+                <label>Books flights outside of Teleflex (TFX) guidelines</label>
+            </value>
+            <value>
+                <fullName>Slow response time to emails and calls</fullName>
+                <default>false</default>
+                <label>Slow response time to emails and calls</label>
+            </value>
+            <value>
+                <fullName>Sets daily goals and utilizes educational resources, schedules follow-up</fullName>
+                <default>false</default>
+                <label>Sets daily goals and utilizes educational resources, schedules follow-up</label>
+            </value>
+            <value>
+                <fullName>Prompt to appointments/meetings and calls</fullName>
+                <default>false</default>
+                <label>Prompt to appointments/meetings and calls</label>
+            </value>
+            <value>
+                <fullName>Books flights per TFX guidelines</fullName>
+                <default>false</default>
+                <label>Books flights per TFX guidelines</label>
+            </value>
+            <value>
+                <fullName>Returns calls and emails within 24 hours</fullName>
+                <default>false</default>
+                <label>Returns calls and emails within 24 hours</label>
+            </value>
+            <value>
+                <fullName>Exceptionally good planning and organizational skills</fullName>
+                <default>false</default>
+                <label>Exceptionally good planning and organizational skills</label>
+            </value>
+            <value>
+                <fullName>Always delivers on time</fullName>
+                <default>false</default>
+                <label>Always delivers on time</label>
+            </value>
+            <value>
+                <fullName>Schedules flights per TFX guidelines</fullName>
+                <default>false</default>
+                <label>Schedules flights per TFX guidelines</label>
+            </value>
+            <value>
+                <fullName>Prompt and proactive response to emails and calls</fullName>
+                <default>false</default>
+                <label>Prompt and proactive response to emails and calls</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not set daily goals or use educational resources, schedule follow-up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Frequently late to appointments/meetings and/or calls</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Books flights outside of Teleflex (TFX) guidelines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Slow response time to emails and calls</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Sets daily goals and utilizes educational resources, schedules follow-up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Prompt to appointments/meetings and calls</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Books flights per TFX guidelines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Returns calls and emails within 24 hours</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Exceptionally good planning and organizational skills</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Always delivers on time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Schedules flights per TFX guidelines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Prompt and proactive response to emails and calls</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

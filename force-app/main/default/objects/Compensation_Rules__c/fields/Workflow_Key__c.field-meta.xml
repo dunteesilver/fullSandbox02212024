@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workflow_Key__c</fullName>
+    <externalId>false</externalId>
+    <formula>Workflow_Compensation_Profile__c
+&amp;
+if(Compensatory_Rule_Exception__c, 
+/* TRUE */
+&quot;-x-&quot; &amp; Product_Hierarchy_Id__c,
+/* FALSE/Default */
+&quot;-&quot; &amp; Product_Hierarchy_Id__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Workflow Key</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

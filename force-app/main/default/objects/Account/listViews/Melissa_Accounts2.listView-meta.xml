@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Melissa_Accounts2</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>SAP_Sold_To__c</columns>
+    <columns>ERP_Active__c</columns>
+    <columns>Working__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>Customer_Group_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Territory_Temp__c</field>
+        <operation>equals</operation>
+        <value>800349</value>
+    </filters>
+    <label>Melissa Accounts</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Territory_800349</group>
+    </sharedTo>
+</ListView>

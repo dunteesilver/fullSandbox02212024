@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Fiscal_Month_Sales__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Current_Fiscal_Month_Number__c = 1,MONTH(Date__c) = 12,
+MONTH(Date__c) = Current_Fiscal_Month_Number__c-1
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last Fiscal Month Sales</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

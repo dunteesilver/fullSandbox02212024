@@ -1,0 +1,32 @@
+<aura:component controller="CustExpAccRepresentationTool"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute
+                    name="conObj"
+                    type="Contact"
+                    default="{'sobjectType':'Contact'}"
+                    />
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}" />
+    <aura:attribute name="message" type="String" />
+    
+    <aura:if isTrue="{!not(empty(v.message))}">
+        <p>{!v.message}</p>
+        <aura:set attribute="else">
+            <p>By clicking "Send" you are sending Sales Rep Account Representation Email to</p><br/><br/>
+            <p>Contact Name: <strong>{!v.conObj.Name}</strong></p>
+            <p>Contact Email: <strong>{!v.conObj.Email}</strong></p>
+            <p>Associated Customer Name: <strong>{!v.conObj.Account.Name}</strong></p><br/><br/>
+            
+            <p>View Email Template before sending? <lightning:formattedUrl 
+                                                                           value="{!'/apex/CXSalesRepLookup?id=' + v.conObj.AccountId}"
+                                                                           label="Click here"
+                                                                           target="_blank" /></p><br/><br/>
+            
+            <lightning:button
+                              variant="brand"
+                              label="Send"
+                              onclick="{!c.sendCXAccRepEmail}"
+                              />
+        </aura:set>
+        </aura:if> 
+    </aura:component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager_Territory_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(AND(NOT(ISBLANK(Manager__c)),Territory_User_Active__c= true),Manager_Name__c &amp; &quot; (&quot; &amp; Parent_Territory__r.Name &amp; &quot;)&quot;, 
+if(AND(NOT(ISBLANK(Parent_Territory__r.Sales_Rep__c)),Parent_Territory__r.Primary_Sales_Rep_Flip__c = FALSE),Parent_Territory__r.Sales_Rep_Name__c, 
+if(NOT(ISBLANK(Parent_Territory__r.Primary_Territory_User__c)),Parent_Territory__r.Sales_Rep_Name__c, 
+NULL 
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used to join Invoiced Sales with Territory Quota on the Sales Cockpit.</inlineHelpText>
+    <label>Manager Territory Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

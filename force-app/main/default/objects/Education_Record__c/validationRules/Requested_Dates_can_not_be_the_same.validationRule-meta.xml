@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Dates_can_not_be_the_same</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+  (RecordType.Name= &quot;CMA Procedural Lab Request&quot;) ,
+OR ( 
+(Start_Date__c = Requested_Date_2nd_Choice__c ),
+(Requested_Date_2nd_Choice__c  = Requested_Date_3rd_Choice__c ),
+(Start_Date__c = Requested_Date_3rd_Choice__c )
+))</errorConditionFormula>
+    <errorDisplayField>Start_Date__c</errorDisplayField>
+    <errorMessage>Please enter different dates</errorMessage>
+</ValidationRule>

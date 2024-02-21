@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IO_potential_TP_Range__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(1, 
+IF(ISPICKVAL(IO_Pain_Protocol__c,&apos;No&apos;),1,0),&apos;MD&apos;,
+
+IF(OR(IO_Potential_for_Reporting__c &gt; 240,  Last_Year_Eaches__c &gt; 240),1,0), &apos;A+&apos;, 
+
+IF(OR(AND(IO_Potential_for_Reporting__c &gt; 180,IO_Potential_for_Reporting__c &lt;= 240), AND(Last_Year_Eaches__c &gt; 180,Last_Year_Eaches__c &lt;= 240)),1,0), &apos;A&apos;,
+	
+IF(OR(AND(IO_Potential_for_Reporting__c &gt;=120,IO_Potential_for_Reporting__c &lt;= 180),AND(Last_Year_Eaches__c &gt;=120,Last_Year_Eaches__c &lt;= 180)),1,0), &apos;B&apos;, 
+
+&apos;C&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IO potential TP Range</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CMAResponsibleinSteepRockEmail__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Amy Bardin&quot; ),&quot;amy.bardin@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Amy Mills&quot; ),&quot;amy.mills@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Brandon Burney&quot;),&quot;brandon.burney@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Brian Spence&quot; ),&quot;brian.spence@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c,&quot;Gary Klimek&quot; ),&quot;Gary.klimek@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Jaclyn Smith&quot;),&quot;jaclyn.smith@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Jim Blosser&quot;),&quot;jim.blosser@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c,&quot;Katherine Renteria&quot; ),&quot;katherine.renteria@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Keiler Brown&quot;),&quot;keiler.brown@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c,&quot;Kelli Thomas&quot; ),&quot;kelli.thomas@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c,&quot;Kent McCain&quot; ),&quot;kent.mccain@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c,&quot;Michelle Pickrel&quot; ),&quot;michelle.pickrel@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Rebekah Tessitore&quot;),&quot;rebekah.tessitore@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Sean Allen&quot; ),&quot;sean.allen@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Heather Wear&quot; ),&quot;heather.wear@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Joshua Nuelken&quot;),&quot;joshua.nuelken@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Nadine Weller&quot;),&quot;nadine.weller@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Kelly Pulley&quot;),&quot;kelly.pulley@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Kersten Conley&quot;),&quot;kersten.conley@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Donna Crawford&quot;),&quot;donna.crawford@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;JoAnna Webb&quot;),&quot;joanna.webb@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Amber Anderson&quot;),&quot;amber.anderson@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Eileen Peterson&quot;),&quot;eileen.peterson@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Lexia Parker&quot;),&quot;lexia.parker@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Megan Contino&quot;),&quot;megan.contino@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Erin Hill&quot;),&quot;erin.hill@teleflex.com&quot;,
+
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Terri Camp&quot;),&quot;terri.camp@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;April Martin&quot;),&quot;april.martin@teleflex.com&quot;,
+IF(ISPICKVAL(CMAResponsibleinSteepRock__c, &quot;Kim Oliver&quot;),&quot;kim.oliver@teleflex.com&quot;,
+
+
+NULL)))))))))))))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CMA Responsible in SteepRock Email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

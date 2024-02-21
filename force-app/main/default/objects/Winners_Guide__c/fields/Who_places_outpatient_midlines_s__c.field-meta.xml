@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_places_outpatient_midlines_s__c</fullName>
+    <description>Who places outpatient midlines(s)?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who places outpatient midlines(s)?</inlineHelpText>
+    <label>Who places outpatient midlines(s)?</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

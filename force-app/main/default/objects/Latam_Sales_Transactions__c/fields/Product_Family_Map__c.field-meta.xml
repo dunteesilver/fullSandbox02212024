@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family_Map__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case(Product_Class__c,
+&apos;0001&apos;,&apos;Surgical&apos;,
+&apos;0002&apos;,&apos;Surgical&apos;,
+&apos;0003&apos;,&apos;Surgical&apos;,
+&apos;0004&apos;,&apos;Surgical&apos;,
+&apos;0005&apos;,&apos;Surgical&apos;,
+&apos;0006&apos;,&apos;Surgical&apos;,
+&apos;0007&apos;,&apos;Surgical&apos;,
+&apos;0008&apos;,&apos;Surgical&apos;,
+&apos;0009&apos;,&apos;Surgical&apos;,
+&apos;0010&apos;,&apos;Surgical&apos;,
+&apos;0011&apos;,&apos;Surgical&apos;,
+&apos;0012&apos;,&apos;Respiratory&apos;,
+&apos;0013&apos;,&apos;Respiratory&apos;,
+&apos;0014&apos;,&apos;Anesthesia&apos;,
+&apos;0015&apos;,&apos;Urology&apos;,
+&apos;0016&apos;,&apos;Anesthesia&apos;,
+&apos;0017&apos;,&apos;Services&apos;,
+&apos;0018&apos;,&apos;Error&apos;,
+&apos;0019&apos;,&apos;Error&apos;,
+&apos;0020&apos;,&apos;Error&apos;,
+&apos;0021&apos;,&apos;Surgical&apos;,
+&apos;0023&apos;,&apos;Vascular&apos;,
+&apos;0024&apos;,&apos;Vascular&apos;,
+&apos;0025&apos;,&apos;Cardiac&apos;,
+&apos;0026&apos;,&apos;Interventional&apos;,
+&apos;0027&apos;,&apos;Surgical&apos;,
+&apos;0028&apos;,&apos;Surgical&apos;,
+&apos;0029&apos;,&apos;Surgical&apos;,
+&apos;0030&apos;,&apos;VSI&apos;,
+&apos;0031&apos;,&apos;Error&apos;,
+&apos;0032&apos;,&apos;Surgical&apos;,
+&apos;0033&apos;,&apos;Surgical&apos;,
+&apos;0034&apos;,&apos;Error&apos;,
+&apos;0099&apos;,&apos;Error&apos;, &quot;Error&quot;)</formula>
+    <label>Product Family Map</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

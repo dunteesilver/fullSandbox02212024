@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_of_QCNI__c</fullName>
+    <externalId>false</externalId>
+    <label>Location of QCNI?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OR – Shelf/Cabinet (in-room)</fullName>
+                <default>false</default>
+                <label>OR – Shelf/Cabinet (in-room)</label>
+            </value>
+            <value>
+                <fullName>OR – Trauma Cart (in-room)</fullName>
+                <default>false</default>
+                <label>OR – Trauma Cart (in-room)</label>
+            </value>
+            <value>
+                <fullName>OR – Code Cart (in-room)</fullName>
+                <default>false</default>
+                <label>OR – Code Cart (in-room)</label>
+            </value>
+            <value>
+                <fullName>OR – Core</fullName>
+                <default>false</default>
+                <label>OR – Core</label>
+            </value>
+            <value>
+                <fullName>OR – Other (add notes)</fullName>
+                <default>false</default>
+                <label>OR – Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>OR – Not Available</fullName>
+                <default>false</default>
+                <label>OR – Not Available</label>
+            </value>
+            <value>
+                <fullName>Trauma Bay - Unlocked Cabinet/Cart</fullName>
+                <default>false</default>
+                <label>Trauma Bay - Unlocked Cabinet/Cart</label>
+            </value>
+            <value>
+                <fullName>Trauma Bay – Locked Cabinet/Cart</fullName>
+                <default>false</default>
+                <label>Trauma Bay – Locked Cabinet/Cart</label>
+            </value>
+            <value>
+                <fullName>Trauma Bay – Pyxis</fullName>
+                <default>false</default>
+                <label>Trauma Bay – Pyxis</label>
+            </value>
+            <value>
+                <fullName>Trauma Bay – Other (add notes)</fullName>
+                <default>false</default>
+                <label>Trauma Bay – Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>Trauma Bay – Not Available</fullName>
+                <default>false</default>
+                <label>Trauma Bay – Not Available</label>
+            </value>
+            <value>
+                <fullName>ED – Unlocked Cabinet</fullName>
+                <default>false</default>
+                <label>ED – Unlocked Cabinet</label>
+            </value>
+            <value>
+                <fullName>ED – Locked Cabinet</fullName>
+                <default>false</default>
+                <label>ED – Locked Cabinet</label>
+            </value>
+            <value>
+                <fullName>ED – Cart</fullName>
+                <default>false</default>
+                <label>ED – Cart</label>
+            </value>
+            <value>
+                <fullName>ED – Pyxis</fullName>
+                <default>false</default>
+                <label>ED – Pyxis</label>
+            </value>
+            <value>
+                <fullName>ED – Other (add notes)</fullName>
+                <default>false</default>
+                <label>ED – Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>ED – Not Available</fullName>
+                <default>false</default>
+                <label>ED – Not Available</label>
+            </value>
+            <value>
+                <fullName>ICU - Unlocked Cabinet/Cart</fullName>
+                <default>false</default>
+                <label>ICU - Unlocked Cabinet/Cart</label>
+            </value>
+            <value>
+                <fullName>ICU – Locked Cabinet/Cart</fullName>
+                <default>false</default>
+                <label>ICU – Locked Cabinet/Cart</label>
+            </value>
+            <value>
+                <fullName>ICU – Other (add notes)</fullName>
+                <default>false</default>
+                <label>ICU – Other (add notes)</label>
+            </value>
+            <value>
+                <fullName>ICU – Not Available</fullName>
+                <default>false</default>
+                <label>ICU – Not Available</label>
+            </value>
+            <value>
+                <fullName>Flight Team – Stocked</fullName>
+                <default>false</default>
+                <label>Flight Team – Stocked</label>
+            </value>
+            <value>
+                <fullName>Misc – Other (add notes)</fullName>
+                <default>false</default>
+                <label>Misc – Other (add notes)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

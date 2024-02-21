@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Read_and_Consent_Privacy_Policy__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>I have read and consent to the privacy policy</description>
+    <externalId>false</externalId>
+    <inlineHelpText>I have read and consent to the privacy policy</inlineHelpText>
+    <label>Read and Consent Privacy Policy</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>discuss_details_with_IR_agreeing_fluoro__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If agreeing to fluoro correlation discuss details with IR</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If agreeing to fluoro correlation discuss details with IR</inlineHelpText>
+    <label>discuss details with IR agreeing fluoro</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

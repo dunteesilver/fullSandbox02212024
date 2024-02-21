@@ -1,0 +1,309 @@
+<apex:page controller="PP_ProductSearch" tabStyle="Pricing_Portal__tab" sidebar="false">
+
+    <style>
+        .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+        border: none !important;
+        }
+    </style>
+
+    <div class="teleflex">
+        <!-- Call the Menu -->
+        <apex:include id="menu" pageName="PP_Menu"/>
+        <apex:outputText rendered="{!IF(recId != NULL, true, false)}">
+            <table class="table borderless">
+                <tr>
+                    <td>
+                        <apex:outputText rendered="{!IF(recId != NULL, true, false)}">
+                            <!-- <a href="{!vfPage+recId}"><h4><strong>Back to {!recType} {!recName}</strong></h4></a> -->
+                            <apex:outputLink value="{!vfPage+recId}"><h4>
+                                <strong>Back to {!recType} {!recName}</strong>
+                                </h4></apex:outputLink>
+                                
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </table>
+        </apex:outputText>
+        <!-- Start Search Bar Here -->
+        <div class="panel panel-primary" >
+            <div class="panel-heading">
+                <h6 class="panel-title"><img src="/img/icon/products24.png" alt="Products"/>&nbsp;&nbsp;Material Search</h6>
+            </div>
+            <table class="table table-bordered">
+                <tr style="text-align:center;">
+                    <td>
+                        <apex:form styleClass="form-inline">
+                            <span class="glyphicon glyphicon-search"/>&nbsp;&nbsp;&nbsp;
+                            <apex:inputText value="{!prodEntry}" id="product" style="width: 200px;" styleClass="form-control" html-placeholder="Material Name, Description, Brand Name..."/>&nbsp;&nbsp;&nbsp;
+                            <script>
+                            var Search = "{!$Component.product}";
+                            </script>
+                            <apex:commandButton value="Material Search" action="{!getURL}" styleClass="btn btn-primary"/>&nbsp;&nbsp;
+                            <!--Siva-03 Nov 2018--- Added command button instead of anchor tag--> 
+                            <apex:commandButton value="Clear" action="{!clearSearch}" styleClass="btn btn-primary"/>
+                            <!--<a class="btn btn-primary" href="/apex/{!if(recType = 'PRF', 'PP_PRF?id='+recId, 'PP_Price_Quote?pqid='+recId)}">Clear</a>-->&nbsp;&nbsp;&nbsp;
+                            <input label="Filter" id="filter" style="width: 200px;" type="text" class="form-control" placeholder="Type here to filter results..." />&nbsp;&nbsp;&nbsp;
+                            <apex:outputLink rendered="{!isSingleDemo || typeName = 'Disposable/Single Use Product Evaluation'}" value="https://teleflex.lightning.force.com/lightning/r/Report/00O2S000004BDucUAG/view?queryScope=userFolders" styleclass="btn btn-primary">Single Use Report</apex:outputLink>
+                            <apex:outputLink rendered="{!isMultiDemo}" value="https://teleflex.lightning.force.com/lightning/r/Report/00O2S000004BDuhUAG/view?queryScope=userFolders" styleclass="btn btn-primary">Multi-Use Report</apex:outputLink>
+                            <apex:outputLink rendered="{!isEach}" value="https://teleflex.lightning.force.com/lightning/r/Report/00O2S000003wVeaUAE/view?queryScope=userFolders" styleclass="btn btn-primary">Eaches Report</apex:outputLink>
+                        </apex:form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- End Start Search Bar -->
+        <apex:outputPanel id="msgPanelId">
+            <apex:pageMessages ></apex:pageMessages>
+        </apex:outputPanel>
+        <!-- Bulk Insert only renders if Quote is not in the Approval Process -->
+        <apex:outputPanel id="bulkPanelId">
+            <apex:form id="bulkform" rendered="{!$CurrentPage.parameters.srId != null}" html-ng-non-bindable="true">
+                <table class="table table-striped table-hover table-bordered" id="bulktable">
+                    <tr><th>Bulk Material Insert:</th></tr>
+                    <tr><td>
+                        <apex:inputTextArea value="{!strMats}" html-placeholder="Copy and Paste Materials Here..." cols="50" rows="1" id="autoresize"/>&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                    <tr><td>
+                        <apex:commandButton value="Insert (Limit 75)" action="{!bulkInsert2}" status="actStatusId" rerender="bulkPanelId,msgPanelId" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                        <apex:commandButton value="Clear" onclick="this.form.reset();return false;" styleClass="btn btn-primary btn-sm"/>&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </apex:form>
+        </apex:outputPanel>
+        <!--Added by Siva on 15 Nov. 2018 to render the search results when search string is entered -->
+        <apex:outputPanel id="pbId" rendered="{!prodEntry != '' && prodEntry != null}">
+            <apex:form >
+                <apex:actionFunction name="refreshPageSize" action="{!refreshPageSize}" status="fetchStatus" reRender="pbId" oncomplete="load();"/>
+                <!-- Results Start Here -->
+                <div class="panel panel-primary" >
+                    <div class="panel-heading">
+                      <h6 class="panel-title"><img src="/img/icon/products24.png" alt="Products"/>&nbsp;&nbsp;Search Results</h6>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover table-bordered" id="conM">
+                          <thead>
+                            <tr class="text-center">
+                                <th style="text-align:center;">#</th>
+                                <th style="text-align:center;">Action</th>
+                                <th id="Name22">Material</th>
+                                <th>Image</th>
+                                <th class="text-center" title="Sort by Brand Name">Brand Name</th>
+                                <th class="text-center" title="Sort by Description">Description</th>
+                                <th class="text-center" title="Sort by Class">Class</th>
+                                <th class="text-center col-xs-1" title="Sort by SU">SU</th>
+                                <th class="text-center col-xs-1" title="Sort by #/SU">#/SU</th>
+                                <th class="text-center" title="Sort by Sales Org">Sales<br /> Org</th>
+                                <th class="text-center" title="Sort by Currency">Currency</th>
+                                <th class="text-center" title="Sort by Currency">Material<br /> Status</th>
+                                <th class="text-center" title="Sort by Currency">MRP<br /> Group</th>
+                                <th class="text-center" title="Sort by List Price">List Price(s)</th>
+                                <th class="text-center" title="Sort by RSM Price">RSM Price</th>
+                                <th class="text-center" title="Sort by Rep Price">Rep Price</th>
+                                <!--
+                                <apex:repeat value="{!tierHeaderNames}" var="tl">
+                                      <th colspan="{!tierLevels[tl]}" style="text-align:center; vertical-align:middle;">{!tl}</th>
+                                </apex:repeat>
+                                <apex:repeat value="{!tierHeaderList}" var="th">
+                                    <th style="text-align:center; vertical-align:middle;">
+                                        <apex:outputText value="T{!right(th,1)}" />
+                                    </th>
+                                </apex:repeat>
+                                -->
+                            </tr>
+                          </thead>
+                          <tbody class="searchable">
+                            <apex:variable value="{!1}" var="rowNum"/>
+                            <apex:variable value="{!IF(recId != NULL && recStatus != 'Ready' && recStatus != 'Approved' && !contains(recStatus,'Waiting') , true, false)}" var="statusCheck" />
+                            <apex:variable value="{!IF(typeName == 'Field Sales Stock (i.e., future saleable unit)',true,false)}" var="samType"/>
+                            <apex:repeat value="{!Product2}" var="prods">
+                                <apex:variable value="{!IF(samType && prods.Applier__c,true,false)}" var="fieldApplier"/>
+                                <!--Siva-03 Nov 2018---Added class on the row for enable disable filter box -->
+                                <tr class="searchableRows">
+                                    <td class="col-md-1 text-center" style="width: 35px;vertical-align:middle;"><apex:outputText value="{!rowNum}"/></td>
+                                    <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                                    <td style="text-align:center; vertical-align:middle;">
+                                        <apex:outputText rendered="{!statusCheck}">
+                                            <apex:commandlink value="Add" action="{!sapPrice}" styleClass="btn btn-primary btn-sm" rerender="errors,errors1" status="actStatusId" rendered="{!(prods.SearchableProducts__c || agreeType == 'ASK Agreement') && !fieldApplier}">
+                                                <apex:param name="prdsrchVal" value="{!prods.Id}"/>
+                                                <apex:param name="prdsrchName" value="{!prods.name}"/>
+                                            </apex:commandlink>
+                                        </apex:outputText>
+                                    </td>
+                                    <td style="vertical-align:middle;" class="col-md-1 text-nowrap">
+                                        <strong><a href="/apex/PP_Material_Info?id={!prods.Id}&pqId={!recId}">{!prods.name}</a></strong>
+                                    </td>
+                                    <apex:variable value="" var="i" rendered="{!NOT(ISBLANK(prods.Image_URL__c))}">
+                                        <td style="text-align:center; vertical-align:middle;"><apex:image id="theImage" value="{!prods.Image_URL__c}" /></td>
+                                    </apex:variable>
+                                    <apex:variable value="" var="i" rendered="{!ISBLANK(prods.Image_URL__c)}">
+                                        <td style="text-align:center; vertical-align:middle;" class="text-nowrap">No Image Found!</td>
+                                    </apex:variable>
+                                    <td class="col-md-1 text-nowrap" style="text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.Brand_Name__c}"/></td>
+                                    <td class="col-md-2 text-nowrap" style="text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.Description}"/></td>
+                                    <td class="col-md-1 text-nowrap" style="text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.Class__c}"/></td>
+                                    <td class="col-xs-1" style="padding: 0px; text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.Sales_Unit__c}" /></td>
+                                    <td class="col-xs-1" style="padding: 0px; text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.Qty_Sales_Unit__c}" /></td>
+                                    <td class="col-md-1" style="text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.Sales_Org__c}-{!prods.Distribution_Channel__c}" /></td>
+                                    <td class="col-md-1" style="text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.CurrencyIsoCode}" /></td>
+                                    <td class="col-md-1" style="text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.Material_Status__c}" /></td>
+                                    <td class="col-md-1" style="text-align:center; vertical-align:middle;"><apex:outputText value="{!prods.MRP_Group__c}" /></td>
+                                    <!-- variables for List Pricing -->
+                                    <apex:variable var="hospitalList" value="{!IF(prods.List_Price__c != NULL,prods.List_Price__c,0.00)}"/>
+                                    <apex:variable var="distributorList" value="{!IF(prods.Distributor_List__c != NULL,prods.Distributor_List__c,0.00)}"/>
+                                    <apex:variable var="altSiteList" value="{!IF(prods.Alt_Site_List__c != NULL,prods.Alt_Site_List__c,0.00)}"/>
+                                    <!-- end of variables for List Pricing -->
+                                    <!-- Start Handle List Price View -->
+                                    <apex:outputText rendered="{!IF(recSales_Org_Key = 'US6010' || recSales_Org_Key = 'US103010' || recSales_Org_Key = 'CA1010',true,false)}">
+                                      <td class="col-md-1" style="text-align:center; vertical-align:middle;">
+                                        <table>
+                                        <tr>
+                                          <td class="text-left"><b>Hospital:&nbsp;</b></td>
+                                          <td class="text-right">{!formatListPrices[prods.Id]}</td>
+                                        </tr>
+                                        <tr >
+                                          <td class="text-left"><b>Distributor:&nbsp;</b></td>
+                                          <td class="text-right">{!formatDistributorPrices[prods.Id]}</td>
+                                        </tr>
+                                        <tr>
+                                          <td class="text-left"><b>Alt. Site:&nbsp;</b></td>
+                                          <td class="text-right">{!formatAltSitePrices[prods.Id]}</td>
+                                        </tr>
+                                        </table>
+                                      </td>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!IF(recSales_Org_Key != 'US6010' && recSales_Org_Key != 'US103010' && recSales_Org_Key != 'CA1010',true,false)}">
+                                      <td class="col-md-1" style="text-align:center; vertical-align:middle;">
+                                          {!formatListPrices[prods.Id]}
+                                      </td>
+                                    </apex:outputText>
+                                    <!-- End Handle List Price View -->
+                                    <td class="col-md-1" style="text-align:center; vertical-align:middle;">{!formatRsmPrices[prods.Id]}</td>
+                                    <td class="col-md-1" style="text-align:center; vertical-align:middle;">{!formatRepPrices[prods.Id]}</td>
+                                    
+                                    <!-- Pricing Tier Start Stuff
+                                    <apex:repeat value="{!prodlist}" var="p">
+                                        <apex:repeat value="{!tierHeaderList}" var="th">
+                                            <apex:variable var="key" value="{!th}-{!p.Name}" />
+                                            <apex:outputText rendered="{!RIGHT(tierMap[key].TierName,1) = '1'}">
+                                                <tr>
+                                                    <td colspan="3"><b>
+                                                        {!LEFT(tierMap[key].TierName,3)} Pricing Level - {!tierMap[key].chGPORef}</b>
+                                                    </td>
+                                                </tr>
+                                            </apex:outputText>
+                                            <tr>
+                                                <td>{!RIGHT(tierMap[key].TierName,1)}</td>
+                                                <td class="text-nowrap">
+                                                    <a href="/apex/PP_Agreement_Detail?aid={!tierMap[key].Name}">
+                                                    {!tierMap[key].chDesc}&nbsp;</a>
+                                                </td>
+                                                <td>{!tierMap[key].Price}&nbsp;</td>
+                                            </tr>
+                                            
+                                        </apex:repeat>
+                                    </apex:repeat>
+                                    Pricing Tier End Stuff -->
+                                </tr>
+                            </apex:repeat>
+                            </tbody>
+                        </table>
+                        <!-- Start Pagenation Grid -->
+                        <apex:panelGrid columns="13">
+                            <apex:selectList value="{!size}" multiselect="false" size="1" onchange="refreshPageSize();" styleClass="">
+                                <apex:selectOptions value="{!paginationSizeOptions}" />
+                            </apex:selectList>&nbsp;
+                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="First" action="{!setCon.first}" disabled="{!!setCon.hasPrevious}" title="First Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="Previous" action="{!setCon.previous}" disabled="{!!setCon.hasPrevious}" title="Previous Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="Next" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                            <apex:commandButton status="fetchStatus" reRender="pbId,filterBox" value="Last" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page" styleClass="btn btn-primary btn-xs" oncomplete="load();"/>&nbsp;
+                            <apex:outputText >{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>noOfRecords, noOfRecords,
+                                (setCon.pageNumber * size))} of {!noOfRecords}
+                            </apex:outputText>
+                            <apex:outputPanel >
+                                <apex:actionStatus id="fetchStatus" >
+                                    <apex:facet name="start" >
+                                        <img src="/img/loading.gif" />
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </apex:outputPanel>
+                        </apex:panelGrid>
+                        <!-- END Pagenation Grid -->
+                    </div>
+                </div>
+            </apex:form>
+        </apex:outputPanel>
+        <apex:outputText rendered="{!IF(recId != NULL, true, false)}">
+            <table class="table borderless">
+                <tr><td>
+                    <!-- <a href="{!vfPage+recId}"><h4><strong>Back to {!recType} {!recName}</strong></h4></a> -->
+                    
+                    <apex:outputLink value="{!vfPage+recId}"><h4>
+                    <strong>Back to {!recType} {!recName}</strong>
+                    </h4></apex:outputLink>
+                    
+                    </td></tr>
+            </table>
+        </apex:outputText>
+
+        <apex:actionstatus id="actStatusId">
+            <apex:facet name="start">
+                <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                     height: 100%;opacity:0.65;width:100%;">
+                    <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                        <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." />
+                        <span class="waitingDescription">Loading...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus>
+    </div>
+    <script>
+    $('th').click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc){rows = rows.reverse()}
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+    })
+    function comparer(index) {
+        return function(a, b) {
+            var valA = getCellValue(a, index), valB = getCellValue(b, index)
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+        }
+    }
+    function getCellValue(row, index){ return $(row).children('td').eq(index).html() }
+
+    //function to handle filter
+    $(document).ready(function () {
+           //Start Siva-03 Nov 2018--- Start of code to enable/disable filter if unavailable //
+              if($('tbody').find('.searchableRows').length > 0){
+                  console.log('*** found searchable!!!!! ***');
+                    $('[id$=filter]').prop('disabled',false);
+                }
+                else{
+                  //second check for Lightning Experience
+                  var x = document.getElementsByClassName("searchableRows");
+                  if(x.length > 0){
+                    $('[id$=filter]').prop('disabled',false);
+                  }
+                  else{
+                    $('[id$=filter]').prop('disabled',true);
+                  }
+                }
+                //End Siva-03 Nov 2018--- End of code to enable/disable filter if unavailable //
+      load();
+    });
+
+    function load(){
+      $('[id$=filter]').keyup(function () {
+          var rex = new RegExp($(this).val(), 'i');
+          $('.searchable tr').hide();
+          $('.searchable tr').filter(function () {
+              return rex.test($(this).text());
+          }).show();
+      });
+    }
+    </script>
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" showQuickActionVfHeader="false">
+    
+    <apex:iframe id="ifr"  frameborder="0" src="https://teleflex-teleflexprod.spm.varicent.com/payeewebv2/sforce_composite_login?SessionId={!$Api.Session_ID}&ServerURL={!$Api.Partner_Server_URL_540}&Tenant=teleflex&Model=teleflexprod" scrolling="true"/>
+
+</apex:page>

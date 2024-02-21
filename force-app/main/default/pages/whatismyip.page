@@ -1,0 +1,5 @@
+<apex:page controller="whatismyip">
+    <p>Your IP is:
+        <input type="text" name="IP" value="{!IP}"/>
+    </p>
+</apex:page>

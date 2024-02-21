@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewTest</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Acceptance Criteria</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var rtid = sforce.connection.query(&quot;Select Id FROM RecordType WHERE Name = &apos;Test&apos;&quot;).getArray(&apos;records&apos;)[0].Id; 
+var status = &apos;{!Story__c.Status__c}&apos;;
+var userstorycustomid = &apos;{!$Setup.CustomIDs__c.Element_Story__c}&apos;; 
+
+if (status == &quot;{!$Label.FieldValue_StoryStatusComplete}&quot;) 
+
+{ 
+alert(&quot;{!$Label.ButtonAlert_StoryIsCompleteNoNewTests}&quot;); 
+} 
+
+else if (userstorycustomid.length == 0) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_CustomSettingsNotSetup}&quot;);
+} 
+
+else 
+{ 
+function redirect() 
+{ 
+parent.frames.location.replace(&apos;/{!$ObjectType.Element__c}/e?CF&apos; + userstorycustomid + &apos;={!Story__c.Name}&amp;CF&apos; + userstorycustomid + &apos;_lkid={!Story__c.Id}&amp;retURL=%2F{!Story__c.Id}&amp;saveURL=%2F{!Story__c.Id}&amp;RecordType=&apos; + rtid); 
+} 
+
+redirect(); 
+}</url>
+</WebLink>

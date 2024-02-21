@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Add_Owner_Approval_Level</fullName>
+        <field>Owner_Approval_Level__c</field>
+        <formula>Workflow_Owner_Approval_Level__c</formula>
+        <name>Add Owner Approval Level</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Hack_Sync_Product_Descriptions</fullName>
+        <field>Product_Description__c</field>
+        <formula>Material_Name__r.Description</formula>
+        <name>Hack - Sync Product Descriptions</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PQLI_Add_Owner_Approval_Level</fullName>
+        <field>Owner_Approval_Level__c</field>
+        <formula>Workflow_Owner_Approval_Level__c</formula>
+        <name>PQLI - Add Owner Approval Level</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PQLI_Add_Owner_Region</fullName>
+        <field>Owner_Region__c</field>
+        <formula>Workflow_Owner_Region__c</formula>
+        <name>PQLI - Add Owner Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PQLI_Check_BU</fullName>
+        <field>Check_Business_Unit__c</field>
+        <formula>Workflow_Business_Unit__c</formula>
+        <name>PQLI - Check BU</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PQLI_Check_Sales_Org_Key</fullName>
+        <field>Check_Sales_Org_Key__c</field>
+        <formula>Workflow_Sales_Org_Key__c</formula>
+        <name>PQLI - Check Sales Org Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PQLI_Fix_Null_Sales_Price</fullName>
+        <field>Sales_Price__c</field>
+        <formula>0</formula>
+        <name>PQLI - Fix Null Sales Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PQLI_Update_Extended_Price</fullName>
+        <field>Extended_Price__c</field>
+        <formula>Quantity__c  *  Sales_Price__c</formula>
+        <name>PQLI - Update Extended Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PQLI_Update_Material_Cost</fullName>
+        <field>Cost_Price__c</field>
+        <formula>Material_Name__r.Cost_Formula__c</formula>
+        <name>PQLI - Update Material Cost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Name_Copy_from_Related_Product</fullName>
+        <field>Material_Name_Text__c</field>
+        <formula>Material_Name__r.Name</formula>
+        <name>Product Name - Copy from Related Product</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_product_as_exception_to_price_logic</fullName>
+        <description>Used to exclude products from any rules, pricing logic, etc. Initially created to exclude products from pricing in the Pricing Portal. Mainly cardiac products used in the cardiac bundles.</description>
+        <field>Exception__c</field>
+        <literalValue>1</literalValue>
+        <name>Set product as exception to price logic</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Cost_Check_Field</fullName>
+        <description>Update Cost Check field to match Cost Formula field on Product.</description>
+        <field>Cost_Check__c</field>
+        <formula>IF(
+OR(
+Material_Name__r.Cost_Price_Unit__c = 0,
+ISBLANK(Material_Name__r.Cost_Price_Unit__c)
+),
+0,
+/* Default */
+((Material_Name__r.Cost__c / Material_Name__r.Cost_Price_Unit__c) - Material_Name__r.Transfer_Price__c )* Material_Name__r.Qty_Sales_Unit__c )</formula>
+        <name>Update Cost Check Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Add Owner Approval Level</fullName>
+        <actions>
+            <name>Add_Owner_Approval_Level</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( 
+ISNEW(), 
+Owner_Approval_Level__c &lt;&gt; Workflow_Owner_Approval_Level__c, 
+ISBLANK( Owner_Approval_Level__c ) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Hack - Sync Product Descriptions</fullName>
+        <actions>
+            <name>Hack_Sync_Product_Descriptions</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>Material_Name__r.Description &lt;&gt;  Product_Description__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>PQLI - Add Owner Approval Level</fullName>
+        <actions>
+            <name>PQLI_Add_Owner_Approval_Level</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PQLI_Add_Owner_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( ISNEW(), Owner_Approval_Level__c &lt;&gt; Workflow_Owner_Approval_Level__c, ISBLANK( Owner_Approval_Level__c ), ISBLANK( Owner_Region__c ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>PQLI - Check Sales Org Key and BU</fullName>
+        <actions>
+            <name>PQLI_Check_BU</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PQLI_Check_Sales_Org_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( ISBLANK(Check_Business_Unit__c), Check_Business_Unit__c &lt;&gt; Workflow_Business_Unit__c, ISBLANK(Check_Sales_Org_Key__c), Check_Sales_Org_Key__c &lt;&gt; Workflow_Sales_Org_Key__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>PQLI - Fix Null Sales Price</fullName>
+        <actions>
+            <name>PQLI_Fix_Null_Sales_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Price_Quote_Line_Item__c.Sales_Price__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PQLI - Product Name - Copy from Related Product</fullName>
+        <actions>
+            <name>Product_Name_Copy_from_Related_Product</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Material_Name_Text__c &lt;&gt; Material_Name__r.Name</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>PQLI - Update Material Cost</fullName>
+        <actions>
+            <name>PQLI_Update_Material_Cost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>!ISBLANK( Material_Name__c) &amp;&amp;
+Material_Name__r.Cost_Formula__c &lt;&gt; Cost_Price__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set product as exception to price logic</fullName>
+        <actions>
+            <name>Set_product_as_exception_to_price_logic</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Used to exclude products from any rules, pricing logic, etc. Initially created to exclude products from pricing in the Pricing Portal. Mainly cardiac products used in the cardiac bundles.</description>
+        <formula>Exception__c &lt;&gt; Material_Name__r.Exception__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Cost Check Field</fullName>
+        <actions>
+            <name>Update_Cost_Check_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Cost_Check__c field to match Cost_Formula__c field.</description>
+        <formula>OR( ISBLANK( Cost_Check__c ), Cost_Check__c &lt;&gt; Material_Name__r.Cost_Formula__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Extended Price</fullName>
+        <actions>
+            <name>PQLI_Update_Extended_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(
+((Sales_Price__c * Quantity__c) &lt;&gt; Extended_Price__c),
+ISBLANK(Extended_Price__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Team_Member_Name</fullName>
+        <description>Renames the TeamMember.Name upon record creation and edit if the User field is populated.</description>
+        <field>Name</field>
+        <formula>User__r.FirstName &amp; &quot; &quot; &amp; User__r.LastName</formula>
+        <name>Team Member Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>SCRUM Team Member Name</fullName>
+        <actions>
+            <name>Team_Member_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Team_Member__c.User__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Renames the TeamMember.Name upon record creation and edit.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

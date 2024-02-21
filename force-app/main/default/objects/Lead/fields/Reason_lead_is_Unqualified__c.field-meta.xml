@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_lead_is_Unqualified__c</fullName>
+    <description>Enter the Reason why the lead is unqualified.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the Reason why the lead is unqualified.</inlineHelpText>
+    <label>Other Reason lead is Unqualified</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

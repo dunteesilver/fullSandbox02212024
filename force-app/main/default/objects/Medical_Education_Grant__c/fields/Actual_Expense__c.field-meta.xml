@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Expense__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Monetary_NEW__c+Product_In_Kind_New__c+ 
+Technician_s_NEW__c+Cadaveric_Tissue_New__c+ 
+Simulator_s_NEW__c+Other_Approved_Value_NEW__c+ 
+Shipping_New__c)-Post_Grant_Return_New__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Actual Expense</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

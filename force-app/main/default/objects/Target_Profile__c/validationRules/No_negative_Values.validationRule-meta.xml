@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_negative_Values</fullName>
+    <active>true</active>
+    <description>This rule restricrts entering Negative values in to this field.</description>
+    <errorConditionFormula>Additional_Care_calls__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Additional_Care_calls__c</errorDisplayField>
+    <errorMessage>You cannot have Negative Values.</errorMessage>
+</ValidationRule>

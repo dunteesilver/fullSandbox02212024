@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Only New or Saved */
+if(OR(ISPICKVAL(Status__c, &quot;New&quot;),ISPICKVAL(Status__c, &quot;Save&quot;)),
+
+/* No Reimbursement Rate */
+if(OR(ISBLANK(Reimbursement_Rate__c),Reimbursement_Rate__c = 0),
+IMAGE(&quot;/img/msg_icons/error16.png&quot;, &quot;Missing Reimbursement Rate!&quot;) &amp;
+&quot; Missing Reimbursement Rate!&quot;,
+
+/* No Pay Rate */
+if(ISBLANK(Pay_Rate_Card__c),
+IMAGE(&quot;/img/msg_icons/error16.png&quot;, &quot;Missing Pay Rate!&quot;) &amp;
+&quot; Missing Pay Rate!&quot;,
+
+/* Missing Engagement Type */
+if(ISBLANK(Engagement_Type__c),
+IMAGE(&quot;/img/msg_icons/error16.png&quot;, &quot;Missing Engagement Type!&quot;) &amp;
+&quot; Missing Engagement Type!&quot;,
+
+/* All Good! */
+IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;All Good!&quot;) &amp;
+&quot; All Good!&quot;))),
+IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;All Good!&quot;) &amp;
+&quot; All Good!&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Check</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<apex:page >
+    <html>
+        <head>
+            <script language="javascript" type="text/javascript">
+            window.location="/04i";
+            </script>
+            <title>Approvals Redirect</title>
+            <meta http-equiv="refresh" content="0; URL=/04i"/>
+        </head>
+        <body>
+            If your browser doesn't automatically go to the approvals page within a few seconds, you can click the following link: 
+            <a href="/04i">Approvals</a>
+        </body>
+    </html>
+</apex:page>

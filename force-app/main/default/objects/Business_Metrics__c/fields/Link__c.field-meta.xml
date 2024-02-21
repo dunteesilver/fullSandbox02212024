@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+AND(
+ISPICKVAL(Type__c, &quot;Custom URL&quot;),
+NOT(ISBLANK(Custom_URL__c))
+), Custom_URL__c,
+if(
+AND(
+ISPICKVAL(Type__c, &quot;Report&quot;),
+NOT(ISBLANK(Report_Id__c))
+), &quot;/&quot; &amp;  Report_Id__c,
+NULL
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Tier_Access_Debug__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(RIGHT(GPO_Contract_Ref__c,3) = &quot;-VP&quot;, 4,
+if(RIGHT(GPO_Contract_Ref__c,2) = &quot;-D&quot;, 3,
+if(RIGHT(GPO_Contract_Ref__c,2) = &quot;-M&quot;, 2,
+if(RIGHT(GPO_Contract_Ref__c,2) = &quot;-R&quot;, 1,
+if(AND(RIGHT(GPO_Contract_Ref__c,2) = &quot;-N&quot;, Sales_Org__c = &quot;CA10&quot;), 1,
+NULL
+)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pricing Tier Access Debug</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

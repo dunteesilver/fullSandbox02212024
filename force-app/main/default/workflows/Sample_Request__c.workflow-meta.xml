@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Sample_Request_Approval_Email</fullName>
+        <ccEmails>samplescs@teleflex.com</ccEmails>
+        <description>Sample Request - Approval Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Approvalt_Sample_Request_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Approval_Email_for_Sample_Request_CS</fullName>
+        <description>Sample Request - Approval Email for Sample Request CS</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Approvalt_Sample_Request_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_LATAM_Approval_Email</fullName>
+        <ccEmails>la.cs@teleflex.com</ccEmails>
+        <description>Sample Request - Latam Approval Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/LATAMApprovalt_Sample_Request_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Latam_Approval_Email_Chile</fullName>
+        <ccEmails>la.cs@teleflex.com</ccEmails>
+        <ccEmails>sofia.reyes@teleflex.com</ccEmails>
+        <ccEmails>alfredo.avalos@teleflex.com</ccEmails>
+        <description>Sample Request - Latam Approval Email (Chile)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/LATAMApprovalt_Sample_Request_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Latam_Approval_Email_Colombia</fullName>
+        <ccEmails>la.cs@teleflex.com</ccEmails>
+        <ccEmails>sofia.reyes@teleflex.com</ccEmails>
+        <ccEmails>alfredo.avalos@teleflex.com</ccEmails>
+        <description>Sample Request - Latam Approval Email (Colombia)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/LATAMApprovalt_Sample_Request_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Latam_Approval_Email_Mexico</fullName>
+        <ccEmails>la.cs@teleflex.com</ccEmails>
+        <ccEmails>sofia.reyes@teleflex.com</ccEmails>
+        <ccEmails>alfredo.avalos@teleflex.com</ccEmails>
+        <description>Sample Request - Latam Approval Email (Mexico)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/LATAMApprovalt_Sample_Request_Supa</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Rejection_Email</fullName>
+        <description>Sample Request - Rejection Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Rejection_Sample_Request_Supa</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Sample_Request_Update_Status</fullName>
+        <field>Status__c</field>
+        <literalValue>Ready</literalValue>
+        <name>Sample Request - Update Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Update_Status_Recall</fullName>
+        <field>Status__c</field>
+        <literalValue>New</literalValue>
+        <name>Sample Request - Update Status - Recall</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Update_Status_Reject</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Sample Request - Update Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Update_Status_Submit</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting for Approval</literalValue>
+        <name>Sample Request - Update Status Submit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Territory_Manager_Field</fullName>
+        <field>TerritoryManager__c</field>
+        <formula>Territory__r.Manager__c</formula>
+        <name>Update Territory Manager Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Waiting_for_Territory_Manager</fullName>
+        <field>Status__c</field>
+        <literalValue>Waiting for Territory Manager Approval</literalValue>
+        <name>Update to Waiting for Territory Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Update Territory Manager Field</fullName>
+        <actions>
+            <name>Update_Territory_Manager_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Updates the Territory Manager field on the Sample Request record for help with approval routing.</description>
+        <formula>ISCHANGED( Territory_Number__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competency_Level__c</fullName>
+    <externalId>false</externalId>
+    <label>Competency</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 – Novice (customer interactions prohibited)</fullName>
+                <default>false</default>
+                <label>1 – Novice (customer interactions prohibited)</label>
+            </value>
+            <value>
+                <fullName>2 – Advanced Beginner (supervised customer interactions)</fullName>
+                <default>false</default>
+                <label>2 – Advanced Beginner (supervised customer interactions)</label>
+            </value>
+            <value>
+                <fullName>3 – Competent (independent customer interactions)</fullName>
+                <default>false</default>
+                <label>3 – Competent (independent customer interactions)</label>
+            </value>
+            <value>
+                <fullName>4 – Proficient (independent for high level customer interactions)</fullName>
+                <default>false</default>
+                <label>4 – Proficient (independent for high level customer interactions)</label>
+            </value>
+            <value>
+                <fullName>5 – Expert (independent + mentor/resource)</fullName>
+                <default>false</default>
+                <label>5 – Expert (independent + mentor/resource)</label>
+            </value>
+            <value>
+                <fullName>Pass</fullName>
+                <default>false</default>
+                <label>Pass</label>
+            </value>
+            <value>
+                <fullName>Fail</fullName>
+                <default>false</default>
+                <label>Fail</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,596 @@
+<apex:page controller="PP_Print_Quote" sidebar="false" applyBodyTag="false" applyHtmlTag="false" renderAs="{!r}" showHeader="false">
+    <head>
+        <style type="text/css" media="print">
+            @page 
+            {
+            <!-- size: 8.5in 11in;/* width height */ -->
+            size: letter;
+            
+            margin-top: 25px;
+            margin-bottom: 65px;
+            @top-center { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 0px; position: running(header); }
+            div.footer { display: block; padding: 25px; position: running(footer); }
+            
+            .page-break { display:block; page-break-before:always; }            
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+            
+        </style>     
+        <style type="text/css">
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 10px;
+            padding: 1px;
+            }
+            #tbs {
+            padding:10px;
+            border:1px solid black;
+            }
+            #tbs th{
+            padding:5px;
+            border:1px solid black; 
+            font-family:"Sans-Serif"; 
+            font-size: 11px;
+            font-weight: bold;
+            background-color:#777;
+            color:#FFF;
+            }
+            #tbs td{
+            padding:4px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            vertical-align: text-top; 
+            }
+            #tbs td.bline{
+            padding:10px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: 1px solid #f0f0f5;
+            }
+            #tbs td.noline{
+            padding:7px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: none;
+            }
+            .bl {
+            border-bottom: 2px solid black;
+            }
+            .noborders {
+            border-left: 0px solid black;
+            border-right: 0px solid black;
+            }
+            .tborder{
+            border:1px solid black;
+            }
+            
+            #sig {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            page-break-inside:avoid;
+            position:relative;
+            }
+            #mid {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            page-break-inside:avoid;
+            position:relative;
+            }
+            
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            td {
+            <!-- font-family: Arial Unicode MS; -->
+            font-family:"Sans-Serif"; 
+            font-size: 12px;
+            padding: 2px;
+            }
+            p {
+            <!-- font-family: Arial Unicode MS; -->
+            font-family:"Arial Unicode MS,Sans-Serif"; 
+            font-size: 12px;
+            padding: 2px;
+            }
+            th {
+            font-family:"Sans-Serif"; 
+            font-size: 10px;
+            padding: 2px;
+            font-weight: bold;
+            background-color: grey;
+            }
+            .y {
+            background-color: #ffff00;
+            font-weight: bold;
+            }
+            .c{
+            text-align: center; 
+            }
+            .isbold {
+            font-weight: bold;
+            }
+            .fl {
+            font-weight: bold;
+            text-align: right;
+            }
+            .r {
+            text-align: right;
+            }
+            .va {
+            vertical-align: text-top; 
+            }
+            .rline {
+            border-right-color: black;
+            border-right-style: solid;
+            border-width: 1px;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            .tnowrap {
+            page-break-inside: avoid;
+            position: relative;
+            }
+            .topline {
+            border-top-style: solid;
+            }
+            .bottomline {
+            border-bottom-style: solid;
+            }
+            .bgc{
+            background-color: #f0f0f5;
+            }
+            .qlogo {
+            max-height: 28px;
+            max-width: 500px;
+            }
+            @page {
+            <!-- size:A4 portrait;
+border: 1px solid black;    -->
+            }
+            .border {
+            padding:1px;
+            border:1px solid black;
+            }
+            ul {
+            list-style: none; /* Remove list bullets */
+            padding: 0;
+            margin: 0;
+            }
+            
+            li { 
+            padding-left: 16px;
+            }
+            
+            li:before {
+            content: "•"; /* Insert content that looks like bullets */
+            padding-right: 18px;
+            }
+            .fl {
+            font-weight: bold;
+            text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        
+        
+        <div class="header"> 
+        </div>
+        
+        <div class="footer"><center>Page <span class="pagenumber"/> of <span class="pagecount"/></center>
+        </div>
+        
+        <!-- Contact -->
+        <div class="content">
+            <apex:variable value="{!if(pq.Template__c ='Arrow International','Sec','Pri')}" var="qt"/>
+            <br/>&nbsp;
+            <table width="100%" border="0">
+                <tr>
+                    <td width="100%" valign="top">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h2>Quotation: {!pq.name}</h2>
+                                    Date:
+                                    <apex:outputText value="{0,date,short}">
+                                        <apex:param value="{!today()}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <b>Customer: {!pq.Account_Name__r.SAP_Sold_To__c}</b><br/>
+                        <table width="100%"><tr><td>
+                            {!pq.Account_Name__r.Name}<br/>
+                            {!pq.Account_Name__r.BillingStreet}<br/>
+                            {!pq.Account_Name__r.BillingCity},&nbsp;{!pq.Account_Name__r.BillingState}{!pq.Account_Name__r.BillingPostalCode}<br/>
+                            Attn: {!pq.Contact_Name__r.name}<br/>
+                            Email: {!pq.Contact_Name__r.email}<br/>
+                            <!-- Pricing Source: {!sdeal} contract&nbsp; 
+                            <apex:outputText rendered="{!li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}">#{!li.Sales_Deal__r.GPO_Contract_Ref__c} </apex:outputText>
+                            <apex:outputText rendered="{!li.Sales_Deal_Tier__c != NULL}"> {!li.Sales_Deal_Tier__c} </apex:outputText>-->
+                            </td></tr>
+                        </table>
+                        <br/>
+                        
+                        <table width="100%">
+                            <tr>
+                                <td valign="top" width="50%">
+                                    <b>Service Rep:</b><br/>
+                                    {!pq.Owner_Full_Name__c}<br/>
+                                    {!pq.Owner_Email__c}<br/>
+                                    {!pq.Owner_Phone__c}
+                                </td>
+                                <td width="50%">
+                                    <apex:outputText rendered="{!qt='Pri'}">
+                                        <b>PO Remittance:</b><br/>
+                                        Arrow Interventional <br/>
+                                        PO Box 781762 <br/>
+                                        Philadelphia, PA 19178-1762 <br/>
+                                        Email to: maria.santorelli@teleflex.com<br/>
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td valign="top">
+                        <table><tr><td colspan="2">
+                            <apex:image width="200" url="/servlet/servlet.ImageServer?id=015E0000008xCLs&oid={!OrgId}"/>
+                            </td></tr>
+                            <tr><td>&nbsp;&nbsp;</td><td>
+                            <apex:outputText rendered="{!qt='Pri'}">
+                                Arrow Interventional, Inc.<br/>
+                                Cardiac Care<br/>
+                                16 Elizabeth Drive<br/>
+                                Chelmsford, MA 01824<br/>
+                                978-250-5100<br/>
+                                Toll-free: 800-343-3297<br/>
+                                24-hr. Customer Support:<br/>
+                                800-447-6961<br/>
+                                Fax: 978-250-5105<br/>
+                                
+                            </apex:outputText>
+                            <apex:outputText rendered="{!qt='Sec'}">
+                                Arrow International, Inc.<br/>
+                                16 Elizabeth Drive<br/>
+                                Chelmsford, MA 01824<br/>
+                                978-250-5100<br/>
+                                Toll-free: 800-343-3297<br/>
+                                24-hr. Customer Support:<br/>
+                                800-447-6961<br/>
+                                Fax: 978-250-5180<br/>
+                            </apex:outputText>
+                            </td></tr></table>
+                        <br/>                        
+                        <table>
+                            <tr>
+                                <td>&nbsp;&nbsp;</td>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <center><h2>OFFER VALID THROUGH&nbsp;
+                            <apex:outputText value="{0,date,long}">
+                                <apex:param value="{!pq.Expiration_Date__c}" />
+                            </apex:outputText></h2></center>
+                    </td>
+                </tr>
+            </table>
+            
+            <br/>
+            <table width="100%" tableborder="0" id="tbs">
+                <tr>
+                    <th class="c">#</th>
+                    <th class="c">Catalog #</th>
+                    <th class="r"><center>Sales Org</center></th>
+                    <th class="c">Product Description</th>
+                    
+                    <th class="r"><center>Unit Price</center></th>
+                    <th class="r"><center>Sales Price</center></th>
+                    <th class="c">Qty</th>
+                    <th class="r"><center>Extended Price</center></th>
+                </tr>
+                <apex:variable value="{!0}" var="rowNum"/>
+                <apex:variable value="{!1}" var="rowCount"/>
+                <apex:repeat value="{!pqli}" var="li">
+                    <apex:variable value="{!if(li.Material_Name__r.Sales_Org__c == 'US30','Arrow',if(li.Material_Name__r.Sales_Org__c == 'US10','TFX','') )}" var="salesOrgName"/>
+                    <apex:variable var="rowNum" value="{!rowNum + 1}" rendered="{!li.Material_Name__r.name <> NULL}"/>
+                    <apex:variable value="{!IF(MOD(rowNum, 2)=0,'bgc','')}" var="bgcolr"/>
+                    <apex:variable value="{!if(li.IsBold__c == TRUE,'isbold','')}" var="isbold"/>
+                    <apex:variable value="{!if(li.Material_Name__r.Cardiac_Complimentary__c == TRUE,TRUE,FALSE)}" var="CardiacComp"/>
+                    <apex:variable value="{!li.Sales_Deal__r.Owner_Name__c}" var="sdeal" rendered="{!LEFT(li.Material_Name__r.name,6) == 'IAP-05' && li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}"/>
+                    <tr>
+                        <td class="{!bgcolr} c rline {!isbold}">
+                            <apex:outputText rendered="{!li.Material_Name__r.name <> NULL}">{!rowNum}</apex:outputText>
+                        </td>
+
+                        <td class="{!bgcolr} c rline {!isbold}">{!li.Material_Name__r.name}</td>
+                        <td><center>{!salesOrgName}</center></td>
+                        <td class="{!bgcolr} rline {!isbold}">
+                            <apex:outputField value="{!li.Product_Description__c}"/>
+                            <!--
+                            <apex:outputText rendered="{!LEFT(li.Material_Name__r.name,6) == 'IAP-05' && li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}">
+                                <br/>&nbsp;<br/>
+                                <table><tr><td class="y" style="background-color:#ffff00;font-weight:bold;border-left:0px;border-right:0px;">
+                                    Arrow Interventional-Cardiac Care, a division of Teleflex, is pleased to provide ({!li.Quantity__c}) 
+                                    AutoCAT 2 WAVE® Intra-Aortic Balloon Pump Systems to {!pq.Account_Name__r.Name} at the special 
+                                    {!li.Sales_Deal__r.Owner_Name__c} contract&nbsp;
+                                    <apex:outputText rendered="{!li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}">#{!li.Sales_Deal__r.GPO_Contract_Ref__c} </apex:outputText>
+                                    <apex:outputText rendered="{!li.Sales_Deal_Tier__c != NULL}"> {!li.Sales_Deal_Tier__c} </apex:outputText>
+                                    price of&nbsp;
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!li.Eligible_Price__c}" />
+                                    </apex:outputText>
+                                    each for a total purchase price of&nbsp;
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!pq.Grand_Total__c}" />
+                                    </apex:outputText>.
+                                    <br/>&nbsp;<br/>
+                                    Please note that this special pricing includes all cash discounts and trade-in allowances.
+                                    </td></tr>
+                                </table>&nbsp;
+                            </apex:outputText>-->
+
+
+                        </td>
+                        <td class="{!bgcolr} r {!isbold}">&nbsp;
+                            <apex:outputText value="{0, number, currency}">
+                                <apex:param value="{!li.Material_Name__r.List_Price__c}" />
+                            </apex:outputText>
+                        </td>
+
+                        <apex:outputText rendered="{!CardiacComp}">
+                            <td valign="center" class="{!bgcolr} r {!isbold}">
+                                <u>NO&nbsp;CHARGE</u>
+                            </td>
+                            <td class="{!bgcolr} c rline {!isbold}">{!li.Quantity__c}</td>
+                            <td valign="center" class="{!bgcolr} r {!isbold}">
+                                <u>NO&nbsp;CHARGE</u>
+                            </td>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!!CardiacComp}">
+                            <td class="{!bgcolr} r {!isbold}">&nbsp;
+                                <apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!li.Sales_Price__c}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="{!bgcolr} c rline {!isbold}">{!li.Quantity__c}</td>
+                            <td class="{!bgcolr} r {!isbold}">&nbsp;
+                                <apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!li.Extended_Price__c}" />
+                                </apex:outputText>
+                            </td>
+                        </apex:outputText>                        
+                    </tr>
+                    <apex:outputText rendered="{!rowCount = pq.Line_Count__c}">
+                        <tr>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="c bl"><br/>
+                                If you have any questions please contact your local <br/>
+                                Teleflex Representative: {!pq.Owner_Full_Name__c} at {!pq.Owner_Phone__c}<br/>
+                                Please email Purchase Orders to maria.santorelli@teleflex.com<br/>&nbsp;
+                                
+                            </td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                        </tr>
+                        <apex:outputText rendered="{!pq.Discount__c <> NULL && pq.Discount__c > 0}">
+                            <tr>
+                                <td class="bline" colspan="3">&nbsp;</td>
+                                <td class="r bl" colspan="4">Sub-Total:</td>
+                                <td class="r bl">{!pq.CurrencyIsoCode}&nbsp;
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!pq.Grand_Total__c}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bline" colspan="3">&nbsp;</td>
+                                <td class="r bl text-nowrap" colspan="4">
+                                    <apex:outputText rendered="{!ISBLANK(pq.Discount_Type__c)}">Discount&nbsp;({!round(pq.Discount__c,2)}%):</apex:outputText>
+                                    <apex:outputText rendered="{!NOT(ISBLANK(pq.Discount_Type__c))}">{!pq.Discount_Type__c}&nbsp;({!round(pq.Discount__c,2)}%):</apex:outputText>
+                                </td>
+                                <td class="r bl">{!pq.CurrencyIsoCode}&nbsp;-
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!pq.Grand_Total__c-pq.Discounted_Total__c}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:outputText>
+                        <tr>
+                            <td class="bline" colspan="4">&nbsp;</td>
+                            <td class="r bl" colspan="3">Grand Total:</td>
+                            <td class="r bl">{!pq.CurrencyIsoCode}&nbsp;
+                                <apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!pq.Discounted_Total__c}" />
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:outputText>
+                    <apex:variable var="rowCount" value="{!rowCount + 1}"/>
+                </apex:repeat>
+            </table><br/>
+            <apex:outputPanel rendered="{!pq.Customer_comments__c != NULL}">
+                <table align="center" width="400px">
+                    <tr><th style="padding: 5px;"><center>Comments</center></th></tr>
+                    <tr>
+                        <td class="border" style="padding: 5px;">
+                            <apex:outputField value="{!pq.Customer_comments__c}"/>
+                        </td>
+                    </tr>
+                </table><br/>&nbsp;
+            </apex:outputPanel>
+            <!--
+            <ol>
+                <li>All orders are subject to acceptance in writing by Arrow Interventional, Everett MA</li>
+                <li>IMPORTANT-NOTE TERMS AND CONDITIONS ARE ATTACHED.</li>
+                <li>One (1) full year service warranty included on equipment.</li>
+            </ol>
+<br/>&nbsp;<br/>&nbsp;
+            -->
+            
+            <apex:outputPanel layout="block" style="page-break-inside: avoid;">
+                <table width="95%" id="sig">
+                    <tr>
+                        <td colspan="5"><b>CUSTOMER ACKNOWLEDGES THAT IT HAS READ AND UNDERSTANDS THE TERMS AND CONDITIONS ON THE FOLLOWING PAGES AND AGREES THAT THEY FORM AN INTEGRAL PART OF THIS AGREEMENT.</b><br/>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="40%" colspan="2" class="isbold text-nowrap">For Arrow Interventional:</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td width="40%" colspan="2" class="isbold text-nowrap">For Customer:</td>
+                    </tr>
+                    <tr>
+                        <td>Signature:&nbsp;</td>
+                        <td width="40%" class="bottomline">&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>Signature:</td>
+                        <td width="40%" class="bottomline">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Name:&nbsp;</td>
+                        <td width="40%" class="bottomline">&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>Name:</td>
+                        <td width="40%" class="bottomline">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Title:&nbsp;</td>
+                        <td width="40%" class="bottomline">&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>Title:</td>
+                        <td width="40%" class="bottomline">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Date:&nbsp;</td>
+                        <td width="40%" class="bottomline">&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>Date:</td>
+                        <td width="40%" class="bottomline">&nbsp;</td>
+                    </tr>                    
+
+                    <!--
+                    <tr>
+                        <td colspan="3" valign="top">&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="topline" valign="top">For Teleflex<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="topline">Quotation Accepted and Approved</td>
+                        <td class="c topline">Date</td>
+                        <td class="r topline">Purchase Order</td>
+                    </tr>-->
+                </table>
+            </apex:outputPanel>
+            
+            
+           
+            
+        </div>
+        <!-- End: Quote Content -->
+        
+        <apex:outputText rendered="{!qt='Pri'}">
+            <!-- Start: Terms and Conditions -->
+            <div class="page-break">
+                <table>
+                    <tr>
+                        <td class="bottomline" colspan="2"><p><center><b>ARROW INTERVENTIONAL, INC.<br/>SUPPORT PROGRAM TERMS AND CONDITIONS</b></center></p></td>
+                    </tr>
+                    <tr>
+                        <td width="50%">
+                            <p>1. <u>General</u>. For an additional fee, Arrow Interventional, Inc. (“Arrow Interventional”) will provide service coverage on its In- tra-Aortic Balloon Pump Console (the “Product”) on the terms and subject to the conditions set forth herein (the “Program”). All individuals or entities purchasing the Program from Arrow Interventional are referred to herein as “Customer”. THE PROGRAM EXTENDS ONLY TO PRODUCTS PURCHASED FROM ARROW INTERVENTIONAL OR AN AUTHORIZED RESELLER OR DISTRIBUTOR THEREOF.</p>
+                            <p>2. <u>Cost; Support Period</u>. Cost for each Program is based on Arrow Interventional pricing in effect at the time the coverage is purchased by Customer. The Program may be purchased by Customer on Products in twelve (12) month increments only, with the term of the Program commencing on the start date and ending on the end date identified in the “Coverage Dates” section on the invoice to which these terms and conditions apply (as applicable, the “Support Period”).</p>
+                            <p>3. <u>Contract</u>. Arrow Interventional's acceptance of Customer's purchase order for the Program is expressly limited to the terms and conditions contained herein. Any and all other terms and conditions proposed by Customer are objected to and rejected by Arrow Interventional. Acceptance of parts or services provided under the Program by Customer shall be deemed to be an acceptance of the terms and conditions contained herein.</p>
+                            <p>4. <u>Purchasing Account Acceptance</u>. Customer must establish a valid purchasing account with Arrow Interventional prior to purchase order acceptance. If Customer seeks open credit terms with Arrow Interventional, Customer must provide all requested information included in Arrow Interventional's credit application. Arrow Interventional is not responsible, nor offers any remedy to Customer, for delays in order fulfillment due to Customer delay in providing incomplete or incorrect information on their submitted credit application. Any change to Customer purchasing account information, or addition of shipping facility locations, must be submitted in writing prior to Arrow Interventional implementation of this change for subsequent purchase orders placed.</p>
+                            <p>5. <u>Purchase Order Acceptance</u>. Arrow Interventional accepts Customer purchase orders via telephone, fax, email and electronic data interchange (EDI). EDI connections must be requested in writing and accepted linkage made prior to acceptance of Customer purchase orders via EDI. Purchase orders are recognized and order placement confirmed by Arrow Interventional within twenty-four (24) hours of the receipt of Customer purchase order.</p>
+                            <p>6. <u>Payment Terms; Methods of Payment</u>. Except as otherwise specified in writing by Arrow Interventional to Customer, the terms of payment for each order of Customer shall be net thirty (30) days from date of invoice. In the event of nonpayment of an invoice, (a) any unpaid balance will accrue interest at a rate of 1.5% per month and (b) all collection fees and legal fees incurred by Arrow Interventional will be added to the balance owed on the account, as permitted by law. Arrow Interventional accepts payment via open credit terms (if extended by Arrow Interventional, pursuant to section 4 hereof), or payment in advance with a cleared company check or pre-authorized credit card.</p>
+                            <p>7. <u>Termination</u>. Except as prohibited by applicable law, Arrow Interventional may terminate the Program at any time by giving written notice to Customer. If Arrow Interventional terminates the Program prior to the expiration of the Support Period, Customer</p>
+                        </td>
+                        <td width="50%" valign="top">
+                            <p>will receive a prorated refund of the fee paid by Customer for the Program less the value of any services provided under the Program. Customer may terminate the Program within thirty (30) days of its purchase of the Program by giving written notice to Arrow Interventional prior to the expiration of such thirty (30)-day period, and Customer will receive (unless otherwise provided by applicable law) a full refund of the fee paid by Customer for the Program less the value of any services provided under the Program.</p>
+                            <p>8. <u>Compliance</u>. The Program is subject to Arrow Interventional's on-going determination that Customer and the Program comply with all applicable laws and regulations, including, but not limited to, those relating to workplace safety, FDA matters, federal healthcare program anti-kickback compliance, export/import control and money laundering prevention. Customer acknowledges that the Products and services provided hereunder are or may be subject to regulation by the FDA and other federal or state agencies. Customer shall not use or permit the Products or services provided hereunder to be used in any manner that does not comply with applicable FDA or other regulations or for any non-medical or entertainment purposes. Further, Customer represents that it is purchasing the Products and services provided hereunder for its own use consistent with the terms and conditions contained herein and that it does not intend to re-sell any such Products or services to any other party or to export the Products outside the country to which Arrow Interventional delivers the Products. All clinical and medical treatment and diagnostic decisions are the responsibility of the Customer and its professional healthcare providers.</p>
+                            <p>9. <u>Cost Reporting</u>. Customer agrees that it will fully and accurately account for and report in all cost reports and otherwise fully and accurately disclose to federal and state health care program payors and fully and accurately reflect where and as appropriate to the applicable reimbursement methodology, all services and other items, including any and all discounts, received from Arrow Interventional under the Program, in compliance with all applicable laws, rules and regulations, including, but not limited to, the Social Security Act and implementing regulations relating to Medicare, Medicaid and other federal and state health care reimbursement programs.</p>
+                            <p>10. <u>Force Majeure</u>. Arrow Interventional shall not be responsible nor liable to Customer for any failure to perform its obligations to Customer as a result of any strikes, work stoppages or labor unrest, earthquakes, fires, floods, storms or other natural disasters, shortages of materials or supplies or availability of goods or inventory, acts of war, terrorism, crimes, unrest or violence, shipping or other transportation delays or restraints, acts, laws, rules or regulations of any governmental or legal authority, or any other cause or circumstance beyond Arrow Interventional's reasonable control.</p>
+                            <p>11. <u>Taxes</u>. Any sales, use or excise taxes or other charges or levies which Arrow Interventional is required to pay or collect under any applicable law, ordinance, rule or regulation (domestic or foreign), upon or with respect to the sale, shipping, delivery, storage or use of the Products or services provided hereunder, shall be for the account of Customer and Customer agrees to pay the amount thereof to Arrow Interventional, as invoiced or upon request.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-break">
+                <table>
+                    <tr>
+                        <td width="50%" valign="top">
+                            <p>12. <u>Customer Responsibilities</u>. Customer is responsible for (i) using all Products only as labeled for their intended use and in accordance with their Instructions For Use and not misusing or abusing any Products, (ii) protecting against further damage to the Products if there is a covered defect or covered damage, (iii) ensuring satisfactory power quality and grounding for all Products, and (iv) taking all necessary and legally required precautions for the health and safety of Arrow Interventional personnel who will be performing services at the site, including taking all necessary or legally required actions to properly store, remove or remediate any safety conditions or hazardous materials, as well as, maintain a reasonably safe operating environment in accordance with legal requirements so that Arrow Interventional personnel can safely perform the services.</p>
+                            <p>13. <u>Indemnification</u>. Customer shall indemnify, defend and hold harmless Arrow Interventional and its directors, officers, employees, agents, subsidiaries, affiliates, successors and assigns from and against, any and all claims, demands, liabilities, losses, damages, injuries, penalties, costs and expenses (including, but not limited to, reasonable attorneys' fees and any injury or death to any person or damage to any property) imposed or asserted against any of them resulting from or relating to (i) any breach of these terms and conditions by Customer; (ii) the negligence, or the willful acts or omissions, of Customer or any of its employees, agents or representatives; or (iii) improper use of the Products or services provided hereunder by Customer or any of its employees, agents or representatives.</p>
+                            <p>14. <u>Exclusions</u>. UNLESS EXPRESSLY SPECIFIED HEREIN, THE PROGRAM DOES NOT COVER, AND NEITHER AR- ROW INTERVENTIONAL NOR ANY OF ITS AFFILIATES SHALL BE RESPONSIBLE IN ANY WAY FOR, THE EXCLU- SIONS SET FORTH IN EXHIBIT A ATTACHED HERETO (the “Exclusions”).</p>
+                            <p>15. <u>Limited Parts Warranty</u>. (a) With respect to any part Customer purchases or receives in conjunction with the Program, Arrow Interventional warrants, subject to the Exclusions, that such part will be free from defects in workmanship and materials during the applicable Support Period, provided such part is not used in any application or manner not specified or recommended by Arrow Interventional or otherwise misused or abused. ARROW INTERVENTIONAL'S SOLE AND EXCLUSIVE LIABILITY AND OBLIGATION TO CUSTOMER IN THE EVENT OF A BREACH OF THE FOREGOING WARRANTY SHALL BE TO REPAIR OR REPLACE THE DEFECTIVE PART OR, IN ITS DISCRETION, TO PROVIDE A CREDIT IN THE AMOUNT OF THE PURCHASE PRICE OF SUCH PART, EVEN IF ANY SUCH REMEDIES FAIL OF THEIR ESSENTIAL PURPOSE. All claims for breach of the foregoing express warranty shall be made by Customer (and no other party) in writing within thirty (30) days after discovery of the defect. The claim shall include a returned goods authorization number which may be obtained from Arrow Interventional prior to assertion of the claim. In addition, the claim shall be accompanied by the return of the defective part(s) to Arrow Interventional, when possible. Any claim not made in compliance herewith shall be deemed to have been waived and Arrow Interventional shall have no obligations or liability hereunder with respect thereto.</p>
+                            <p>(b) If Arrow Interventional elects to replace the defective part(s), the replacement part(s) may be a new or reconditioned part of equal or comparable value. All part(s) returned to Arrow Interventional, or replaced during any repair of Products by Arrow Interventional, shall become the sole property of Arrow Interventional.</p>
+                        </td>
+                        <td width="50%" valign="top">
+                            <p>16. <u>Limited Service Warranty</u>.(a) Arrow Interventional agrees that, during the Support Period, it shall render to Customer the services set forth in the applicable service coverage schedule (as identified on the invoice to which these terms and conditions apply), and warrants, subject to the Exclusions, that the Services will be performed by trained personnel in a professional, workman- like manner. If any of the Services include installation of periodic software updates (when and if available), Arrow Interventional shall have no obligation to develop any future features or functionality for Products under the Program, and such updates shall not include any new software releases with additional features or options or any future software program(s) that Arrow Interventional may sell separately.</p>
+                            <p>(b) Arrow Interventional will promptly re-perform any non- conforming Services at no charge as long as Customer provides written notice to Arrow Interventional of such non-conformance within thirty (30) days after discovery of the non-conforming Services. THE FOREGOING REMEDY IS CUSTOMER'S SOLE AND EXCLUSIVE REMEDY (AND ARROW INTERVENTIONAL'S SOLE AND EXCLUSIVE LIABILITY AND OBLIGATION TO CUSTOMER) FOR SERVICE WARRANTY CLAIMS, AND SUCH REMEDY SHALL NOT HAVE FAILED OF ITS ESSENTIAL PURPOSE AS LONG AS ARROW INTERVENTIONAL REMAINS WILLING TO RE- PERFORM ANY NON-CONFORMING SERVICES AT NO ADDITIONAL CHARGE, AS APPLICABLE, WITHIN A COMMERCIALLY REASONABLE TIME AFTER BEING NOTIFIED OF CUSTOMER'S CLAIM.</p>
+                            <p>17. <u>Disclaimer</u>. EXCEPT AS EXPRESSLY SET FORTH HEREIN, ARROW INTERVENTIONAL NEITHER MAKES, NOR SHALL HAVE ANY LIABILITY UNDER, ANY W ARRANTY , EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR AN INTENDED USE OR PARTICULAR PURPOSE. NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, MADE BY ANY REPRESENTATIVE, AGENT OR EMPLOYEE OF ARROW INTERVENTIONAL WHICH IS NOT SPECIFICALLY SET FORTH HEREIN SHALL BE BINDING UPON ARROW INTERVENTIONAL.</p>
+                            <p>18. <u>Limitation of Liability; Waiver of Jury Trial</u>. NEITHER ARROW INTERVENTIONAL NOR ANY OF ITS AFFILIATES SHALL BE LIABLE FOR ANY INCIDENTAL, INDIRECT, CONSEQUENTIAL, SPECIAL, EXEMPLARY OR PUNITIVE DAMAGES OR LOSS (INCLUDING, WITHOUT LIMITATION, LOST PROFITS), WHETHER ARISING IN CONTRACT OR TORT, WHETHER FORESEEABLE OR UNFORESEEABLE, ARISING OUT OF OR RELATING TO THE DESIGN, MANUFACTURE, SALE, USE OR REPAIR OF THE PRODUCTS OR PROVISION OF SERVICES, EVEN IF ARROW INTERVENTIONAL HAS BEEN APPRISED OF THE LIKELIHOOD OF SUCH DAMAGES OCCURRING. EACH PARTY EXPRESSLY WAIVES ALL RIGHTS TO A JURY TRIAL IN CONNECTION WITH ANY DISPUTE ARISING OUT OF OR RELATING TO THE PROGRAM OR THE TERMS AND CONDITIONS CONTAINED HEREIN.</p>
+                            <p>19. <u>Independent Contractor</u>. Arrow Interventional and Customer are independent contractors and nothing contained herein is intended nor shall it be construed as creating a fiduciary relationship, partnership or joint venture between them.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-break">
+                <table>
+                    <tr>
+                        <td width="50%" valign="top">
+                            <p>20. <u>Assignment</u>. Customer shall not assign its rights nor delegate its duties with respect to any purchase order for Arrow Interventional's products or its agreement with Arrow Interventional without the prior written consent of Arrow Interventional. Any such actual or attempted assignment without Arrow Interventional's prior written consent shall entitle Arrow Interventional to cancel the Program and all outstanding orders upon notice to Customer. Arrow Interventional may subcontract or assign performance of its obligations hereunder to any of its affiliates or any third party or parties.</p>
+                            <p>21. <u>Governing Law</u>. The Program and the terms and conditions set forth herein shall in all respects be governed by, and the parties' respective rights and obligations enforced under, the laws of the Commonwealth of Pennsylvania without giving effect to the conflict of laws principles thereof.</p>
+                            <p>22. <u>Confidential Information</u>. Certain information disclosed by Arrow Interventional during the course of business dealings with Customer may be confidential and proprietary information (“Confidential Information”). Confidential Information shall include all information not previously known to Customer or not generally known or readily ascertainable and from which Customer may obtain a business benefit or advantage. If Customer questions whether any information is regarded as confidential, Customer agrees to treat the information as Confidential Information until and unless Arrow Interventional confirms in writing that it is not confidential. Absent express written consent to the contrary and until the Confidential Information becomes publicly known or otherwise legally available in some manner, other than as a result of a breach of these terms and conditions, Customer will not use, disclose, transfer, duplicate, or reproduce Confidential Information in any form other than as necessary in the performance of these terms and conditions. Notwithstanding the provisions of this para-</p>
+                        </td>
+                        <td width="50%" valign="top">
+                            <p>graph, Customer party may disclose Confidential Information as required by a court order or other lawful process; provided that it notifies Arrow Interventional of any such order or process promptly and shall attempt in good faith to allow Arrow Interventional to contest such order or process. Arrow Interventional may require Customer to return all copies of documents containing Confidential Information. Customer shall be liable to Arrow Interventional for any damages Arrow Interventional may suffer if the Confidential Information is disclosed without Arrow Interventional's authorization, whether such disclosure is due to negligence, intentional misconduct or any other reason.</p>
+                            <p>23. <u>Insurance</u>. Arrow Interventional will provide evidence of insurance coverage upon request.</p>
+                            <p>24. <u>Modification; Waiver</u>. The terms and conditions contained herein may not be changed, modified or amended except in writing signed by duly authorized representatives of the parties. No failure or delay in exercising, on the part of any party, any right hereunder will operate as a waiver thereof, nor will any single or partial exercise of any right preclude the further exercise of any other right.</p>
+                            <p>25. <u>Severability; Headings</u>. No provision hereof which may be deemed unenforceable will in any way invalidate any other portion or provision hereof. Section headings are for convenience only and will have no substantive effect.</p>
+                            <p>26. <u>Integration</u>. These terms and conditions, including any attachments or other documents specifically incorporated by reference herein, constitute the entire agreement and the complete and exclusive statement of agreement with respect to the subject matter hereof, and supersede any and all prior agreements, understandings and communications between the parties with respect to the Program.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-break">
+                <table>
+                    <tr>
+                        <td class="bottomline" colspan="2"><p><center><b>EXHIBIT A<br/>SUPPORT PROGRAM EXCLUSIONS</b></center></p></td>
+                    </tr>
+                    <tr><td class="c">-</td><td width="95%">Expendable supply items and other consumables used with the Product, including, but not limited to, intra-aortic balloon (IAB) catheters and accessories.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Defects or damage resulting from using the Product in any application or manner not specified or recommended by Arrow Interventional in such Product's Instructions For Use.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Defects or damage from misuse, abuse, accident or neglect. (This includes a patient's blood that may flow back inside the Product causing contamination)</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Scratches or other cosmetic damage to Product surfaces not affecting the operation of the Product. Damage resulting from normal and customary wear and tear.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Defects or damage resulting from spills or other exposure to food, liquid or bodily fluids.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Lost, stolen or misplaced Products.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Product with labels removed or illegible serial numbers.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Products subjected to unauthorized modifications, disassembles or repairs (including, but not limited to, the addition to the Product of non-Arrow Interventional supplied equipment or software) in such manner as to adversely affect performance or interfere with adequate testing and inspection to verify any warranty claim.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Products that are serviced or repaired by any individual or entity other than Arrow Interventional (unless specifically authorized in writing by Arrow Interventional), or used in conjunction with incompatible parts or accessories.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Any adjustment, such as alignment, calibration, or other normal preventative maintenance required of Customer as specified in the Products Instructions For Use, User Manual or other documentation accompanying the Product.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Non-Arrow Interventional equipment or software that was not commercially available from the OEM on the date such equipment or software was installed, including, but not limited to, experimental and proprietary equipment or software.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Service required under an OEM's warranty or with respect to Product upgrades, installations, certification surveys or Product relocation.</td></tr>
+                    <tr><td class="c">-</td><td width="95%">Consultation, training or other assistance with Customer use, development, or modification of any items or materials, including, but not limited to, software and protocols, not provided by Arrow Interventional.</td></tr>
+                </table>
+            </div>
+        <!-- End: Terms and Conditions -->
+        </apex:outputText>
+    </body>
+</apex:page>

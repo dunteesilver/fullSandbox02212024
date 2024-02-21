@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gender_Null_Check</fullName>
+    <active>true</active>
+    <description>Gender field should not be null when &quot;How the product was being used&quot; is set to &quot;During Use on a Patient&quot;.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(How_the_product_was_being_used__c, &quot;During use on a patient&quot;),ISPICKVAL(Gender__c,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Gender__c</errorDisplayField>
+    <errorMessage>Gender field should not be blank when the “How the Product was being Used” is set to “During Use on a Patient”.</errorMessage>
+</ValidationRule>

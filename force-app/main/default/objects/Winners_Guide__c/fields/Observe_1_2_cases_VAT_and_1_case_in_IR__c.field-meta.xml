@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Observe_1_2_cases_VAT_and_1_case_in_IR__c</fullName>
+    <description>Observation Day/Sales
+Observe 1–2 cases VAT and 1 case in IR - if applicable</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Observe 1–2 cases VAT and 1 case in IR - if applicable
+
+Observation Day/Sales</inlineHelpText>
+    <label>Observe 1–2 cases w/ VAT</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Yes_No</valueSetName>
+    </valueSet>
+</CustomField>

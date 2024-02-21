@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flight_Taken__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(CMA_Travel__c &gt; 1, 
+Airline_Ticket__c &gt; 1)</formula>
+    <inlineHelpText>Used to mark if this education contractor flew to their lab.</inlineHelpText>
+    <label>Flight Taken</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

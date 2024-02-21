@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_VPS_G4_Device_Impl_on_line_edu__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Send VPS G4™ Device Implementation on-line education link to participating clinicians, with username and password or link to Teleflex Academy for ECG online training course forVPS Rhythm® Device</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Send Implementation online education link(s) to participating clinicians, to Teleflex Academy for required training courses</inlineHelpText>
+    <label>Send VPS G4™ Device Impl. on-line edu...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_product_arrival_Week_prior_eval__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Confirm product arrival: 1 week prior to eval.
+PICC, Midline, Endurance, Arterials
+Trial/Evaluation Stage
+Develop Education Plan/Sales</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirm product, cart(s), and printer(s) is ordered with enough time to arrive 1 week prior to evaluation (it takes 1 week for cart to ship ground)</inlineHelpText>
+    <label>Confirm product arrival:Week prior eval</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

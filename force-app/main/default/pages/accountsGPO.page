@@ -1,0 +1,90 @@
+<apex:page standardController="Account" extensions="oppsIDN">
+<style>
+#stoplights{
+    -webkit-transform: rotate(90deg);
+
+    -moz-transform: rotate(90deg);
+
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+</style>
+    <apex:composition template="{!$Page.accountsTemplate}"> 
+     
+        <apex:define name="TFHeader">
+            <apex:sectionHeader title="GPO Account" subtitle="{!Account.Name}"/>
+            <apex:outputPanel rendered="{!Account.ERP_Active__c = FALSE && Account.Account_Record_Type_Name__c = 'North American Customer'}">
+                <p style="color:red; font-size:24px; font-weight:bold; text-align:center;"><img id="stoplights" src="/img/samples/light_red.gif"/>This account is flagged as inactive<img id="stoplights" src="/img/samples/light_red.gif"/></p>
+            </apex:outputPanel>
+        </apex:define>
+        <apex:define name="TFDetail">
+         
+            <apex:pageBlock title="Account Detail" mode="mainDetail" >
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!edit}" id="editButton" value="Edit"/>
+                    <apex:commandButton action="{!delete}" id="deleteButton" value="Delete"/>
+                    <apex:commandButton action="{!URLFOR($Action.Account.Share,Account.Id)}" id="sharingButton" value="Share"/>
+                    <apex:commandButton action="{!save}" id="saveButton" value="Save" style="display: none;"/>
+                    <apex:commandButton onclick="resetInlineEdit()" id="cancelButton" value="Cancel" style="display:none;"/>                
+                    <apex:commandButton action="{!$Site.Domain}/{!Account.Id}?nooverride=1" id="standardLayout" value="Standard Layout" rendered="{!if(OR($User.ProfileId=='00eE0000000lT3QIAU',$User.ProfileId=='00eE0000000j4VkIAI'),true,false)}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Account.Name}" />
+                    <apex:outputField value="{!Account.SAP_Sold_To__c}"/>
+                    <apex:outputField value="{!Account.OwnerId}">
+                        <apex:outputLink value="/{!Account.Id}/a?retURL={!Account.Id}"><br/>[Change]</apex:outputLink>
+                    </apex:outputField>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Account.LastModifiedById}"/>
+                    <apex:outputField value="{!Account.LastModifiedDate}"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+
+        </apex:define>
+        
+        <apex:define name="TFTopSingle">
+            <apex:pageblock mode="detail">
+                <apex:pageBlockSection columns="2" title="Contact Information">
+                    <apex:outputField value="{!Account.Billing_Address_Full__c}"/>
+                    <apex:outputField value="{!Account.Phone}"/>
+                    <apex:outputField value="{!Account.Website}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Account.Fax}"/>
+                </apex:pageBlockSection>
+            </apex:pageblock>
+            
+        </apex:define>
+
+        <apex:define name="TFLowerRight">
+
+                                                
+        </apex:define>
+
+        <apex:define name="TFLowerLeft">
+
+                                                           
+        </apex:define>
+
+        <apex:define name="TFLowerSingle">
+                           
+        </apex:define>
+        
+        <apex:define name="TFRelLists">
+            <apex:relatedList list="GPO_Contracts__r" />
+            <!--<apex:relatedList list="Accounts__r" />-->
+            <apex:relatedList list="Contacts"/>
+            <!--<apex:relatedList list="Leads__r" />-->
+        </apex:define>
+        
+        <apex:define name="TFRelListsBottom">
+            <apex:relatedList list="NotesAndAttachments"/>
+            <apex:relatedList list="Opportunities" />
+            <apex:relatedList list="OpenActivities"/>
+            <apex:relatedList list="ActivityHistories"/>
+
+        </apex:define>
+        
+    </apex:composition>
+                    
+</apex:page>

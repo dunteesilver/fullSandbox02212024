@@ -1,0 +1,411 @@
+<apex:page standardcontroller="Cross_Reference_Project__c" sidebar="false" extensions="bulkXRefController">
+<style>
+.withborders td{
+    padding:3px;
+}
+.greenRow{
+    background-color:green;
+}
+
+.autohide {
+    display:none;
+}
+
+.styled-select {
+    width:740px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 22px;
+    border: 1px solid #bbb;
+    background: transparent url("{!$Resource.downarrow}") no-repeat;
+    background-position: 3px 50%;
+}
+
+.overline td {
+    border-top: 1px solid #aaa;
+    padding:0;
+    padding-top:5px;
+}
+
+.allRows td {
+    padding-bottom:5px;
+}
+
+.boxed {
+    border-collapse: collapse;
+    border-spacing:0;
+}
+
+.tableContent table{
+    margin-top:10px;
+}
+
+.handPointer{
+    cursor:pointer;
+}
+
+</style>
+<script>
+Visualforce.remoting.timeout = 120000;
+function unhideRow(row, product){
+    var content = document.getElementById(row);
+    content.style.display = 'table-row';
+    flagChanged(product);
+}
+
+function hideRow(rowNum, product){
+    var tempMarker = document.getElementById(product+"dropdown"+rowNum);
+    var removeSecondary = document.getElementById(product+'dropdown'+rowNum+'secondary');
+    if(tempMarker != null){
+        tempMarker.value = '';
+    }
+    if(removeSecondary != null){
+        removeSecondary.innerHTML = '<br/><br/>';
+    }
+
+    var removeRow = document.getElementById(rowNum+"xref"+product);
+    if(removeRow != null){
+        removeRow.style.display = 'none';
+    }
+    flagChanged(product);
+    
+}
+
+//<button onclick="unhideRow(\'2xref'+result[i]['Competitive_Product_Code__c']+'\')">Add</button>
+
+function getFullList(){
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.bulkXRefController.pullItems}',
+        "{!Cross_Reference_Project__c.Id}",
+        function(result, event){
+            console.log(event.status);
+            if (event.status) {
+                var content = document.getElementById('tableContent');
+                var htmlOutput = '';
+                
+                htmlOutput = '<table class="boxed" id="items">';
+                for(var i=0; i!= result.length; i++){
+                    //htmlOutput += '<tr class="allRows'+ ((i!=0) ? ' overline' :'') +'" id="'+result[i]['Competitive_Product_Code__c']+'row"><td style="vertical-align:middle;font-weight:bold;">'+result[i]['Competitive_Product_Code__c']+'</td>';
+                    htmlOutput += '<tr class="allRows overline" id="'+result[i]['Competitive_Product_Code__c']+'row"><td style="vertical-align:middle;font-weight:bold;"><img class="handPointer" onclick="unhideRow(\'2xref'+result[i]['Competitive_Product_Code__c']+'\',\''+result[i]['Competitive_Product_Code__c'].toUpperCase()+'\')" src="{!$Resource.plusSign}"/></td><td></td>';
+                    htmlOutput += '<td style="vertical-align:middle;padding-right:5px;padding-left:5px;">'+result[i]['Competitive_Product_Code__c'].toUpperCase()+'</td>';
+                    htmlOutput += '<td><select class="styled-select" onchange="flagChanged(\''+result[i]['Competitive_Product_Code__c'].toUpperCase()+'\',1)" id="'+result[i]['Competitive_Product_Code__c'].toUpperCase().replace(/[^A-Za-z0-9]/g,'')+'dropdown1">';
+                    htmlOutput += '</select><br/>';<!--<option></option>-->
+
+                    htmlOutput += '<span id="'+result[i]['Competitive_Product_Code__c'].toUpperCase().replace(/[^A-Za-z0-9]/g,'')+'dropdown1secondary"><br/><br/></span></td>';
+
+                    htmlOutput += '<td style="vertical-align:middle;"><button onclick="commitChange(\''+result[i]['Competitive_Product_Code__c'].toUpperCase()+'\')">Save</button></td>';
+                    htmlOutput += '<td style="vertical-align:middle;"><button style="vertical-align:middle;" onclick="removeLine(\''+result[i]['Competitive_Product_Code__c'].toUpperCase()+'\')">Discard</button></td>';
+                    htmlOutput += '<td style="vertical-align:middle;" id="'+result[i]['Competitive_Product_Code__c'].toUpperCase()+'indicator">';
+                    
+                    if(result[i]['Cross_Reference__c'] != null){
+                        htmlOutput += '<img alt="Saved." src="/img/msg_icons/confirm24.png"/>';
+                    }else{
+                        htmlOutput += '<img alt="Not saved. Please approve." src="/img/msg_icons/warning24.png"/>';
+                    }
+                    htmlOutput +='</td></tr>';
+                    for(var n=2; n!=5; n++){
+                        htmlOutput += '<tr class="autohide allRows" id="' + n + 'xref'+result[i]['Competitive_Product_Code__c'].toUpperCase()+'"><td style="vertical-align:middle;">'
+                        if(n !=4){
+                            o=n+1;
+                            htmlOutput += '<img class="handPointer" onclick="unhideRow(\'' + o + 'xref'+result[i]['Competitive_Product_Code__c'].toUpperCase()+'\',\''+result[i]['Competitive_Product_Code__c']+'\')" src="{!$Resource.plusSign}"/>';
+                        }
+                        htmlOutput += '</td><td style="vertical-align:middle;"><img class="handPointer" onclick="hideRow('+n+',\''+result[i]['Competitive_Product_Code__c'].toUpperCase()+'\')" src="{!$Resource.minusSign}"/></td><td></td><td><select class="styled-select" onchange="flagChanged(\''+result[i]['Competitive_Product_Code__c'].toUpperCase()+'\','+n+')" id="'+result[i]['Competitive_Product_Code__c'].toUpperCase().replace(/[^A-Za-z0-9]/g,'')+'dropdown'+n+'">';
+                        htmlOutput += '<option></option></select><br/>';
+                        htmlOutput += '<span id="'+result[i]['Competitive_Product_Code__c'].toUpperCase().replace(/[^A-Za-z0-9]/g,'')+'dropdown'+n+'secondary"><br/><br/></span></td><td></td></tr>';
+                    }
+                }
+                htmlOutput += '</table>';
+                content.innerHTML = htmlOutput; 
+            }
+            else{
+                alert('Something went wrong contact your administrator '+event.message);
+            }
+        }, 
+        {escape: true}
+    );
+}
+
+function getOptions(){
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.bulkXRefController.pullRelationships}',
+        "{!Cross_Reference_Project__c.Id}",
+        function(result, event){
+            if (event.status) {
+                
+                for(var i=0; i!= result.length; i++){
+                    for (var n=1; n!= 5; n++){
+                        var tmpContent = document.getElementById(result[i]['Competitor_Product_Code__c'].toUpperCase().replace(/[^A-Za-z0-9]/g,'')+'dropdown'+n);
+                        if(tmpContent != null){
+                            if(tmpContent.options.length == 0){
+                                
+                                var newOp = document.createElement("option");
+                                newOp.text = "Cross-Reference Available";
+                                newOp.value = "";
+                                tmpContent.options.add(newOp);
+                                
+                                //tmpContent.innerHTML ='<option value="">Cross-Reference Available</option>';
+                            }
+                            var newOp = document.createElement("option");
+                            newOp.text = result[i]['Competitor_Name__c']+' --- Teleflex: ' + result[i]['Product__r']['Name'] + ' - ' + result[i]['Percent_Match__c'] + '%'; 
+                            newOp.value = result[i]['Id'];
+                            tmpContent.options.add(newOp);
+                            //htmlOutput = '<option value="'+result[i]['Id']+'">'+result[i]['Competitor_Name__c']+' --- Teleflex: ' + result[i]['Product__r']['Name']+'</option>';
+                            //tmpContent.innerHTML += htmlOutput;
+                        }
+                    }
+                }
+                
+            }
+            else{
+                alert('Something went wrong while calling getOptions() contact your administrator '+event.message);
+            }
+        }
+    );
+}
+
+function markSelected(){
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.bulkXRefController.pullItems}',
+        "{!Cross_Reference_Project__c.Id}",
+        function(result, event){
+            if (event.status) {
+                for(var i=0; i!= result.length; i++){
+                    if(result[i]['Cross_Reference__c'] != null){
+                        for (var n=1; n!= 5; n++){
+                            var tempSubMarker = document.getElementById(result[i]['Competitive_Product_Code__c'].toUpperCase().replace(/[^A-Za-z0-9]/g,'')+"dropdown"+n);
+                            var o = n-1;
+                            if(n==1){
+                                if(tempSubMarker != null && result[i]['Cross_Reference__c']!= null){
+                                    tempSubMarker.value = result[i]['Cross_Reference__c'];
+                                }
+                            }else{
+                                if(tempSubMarker != null && result[i]['Cross_Reference_'+o+'__c']!= null){
+                                    tempSubMarker.value = result[i]['Cross_Reference_'+o+'__c'];
+                                    var content = document.getElementById(n+'xref'+result[i]['Competitive_Product_Code__c'].toUpperCase());
+                                    content.style.display = 'table-row';
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            else{
+                alert('Something went wrong while calling markSelected() contact your administrator '+event.message);
+            }
+        }, 
+        {escape: true}
+    );
+}
+
+function addAllDescriptors(xref){
+    if(xref == null){
+        xref = '';
+    }
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.bulkXRefController.pullDescriptors}',
+        "{!Cross_Reference_Project__c.Id}",
+        xref,
+        function(result, event){
+            if (event.status) {
+                var dropDowns = document.querySelectorAll('select.styled-select');
+                for(var i=0; i!= result.length; i++){
+                    for(var item in dropDowns){
+                        if(dropDowns[item]['value'] == result[i]['Id']){
+                            for(var n=1; n!=5;n++){
+                                var tmpSecondaryVar = document.getElementById(dropDowns[item]['id']+'secondary');
+                                if(tmpSecondaryVar != null){
+                                    tmpSecondaryVar.innerHTML = '<div style="float:left;margin-left:22px;width:50%">Comp: ' + result[i]['Competitor_Product_Description__c']+'<br/>Key Difference: ' + (result[i]['Key_Difference__c'] != null ? result[i]['Key_Difference__c'] : '')+'</div>';
+                                    tmpSecondaryVar.innerHTML += '<div style="float:right;margin-right:22px;text-align:right;">TFX: ' + result[i]['Product__r']['Description'] + '<br/>' + result[i]['Product__r']['Each_per_Case__c'] + ' / case</div><br/><br/>';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else{
+                alert('Something went wrong while calling addAllDescriptors() contact your administrator '+event.message);
+            }
+        }, 
+        {escape: true}
+    );
+}
+
+function addSingleDescriptor(xref, product, line){
+    if(xref == null || xref == ''){
+        var secondary = document.getElementById(product.replace(/[^A-Za-z0-9]/g,'')+'dropdown'+line+'secondary');
+        secondary.innerHTML='<br/><br/>';
+    }else{
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.bulkXRefController.pullDescriptors}',
+            "{!Cross_Reference_Project__c.Id}",
+            xref,
+            function(result, event){
+                if (event.status) {
+                    var secondary = document.getElementById(product.replace(/[^A-Za-z0-9]/g,'')+'dropdown'+line+'secondary');
+                    secondary.innerHTML = '<div style="float:left;margin-left:22px;width:50%;">Comp: ' + result[0]['Competitor_Product_Description__c']+'<br/>Key Difference: ' + (result[0]['Key_Difference__c'] != null ? result[0]['Key_Difference__c'] : '')+'</div>';
+                    secondary.innerHTML += '<div style="float:right;margin-right:22px;text-align:right;">TFX: ' + result[0]['Product__r']['Description'] + '<br/>' + result[0]['Product__r']['Each_per_Case__c'] + ' / case</div><br/><br/>';
+                }
+                else{
+                    alert('Something went wrong while calling addSingleDescriptor() contact your administrator '+event.message);
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    
+}
+
+function buildSecondary(){
+
+}
+
+function commitChange(product) {
+    var xref1 = document.getElementById(product.replace(/[^A-Za-z0-9]/g,'')+'dropdown1').value;
+    var xref2 = document.getElementById(product.replace(/[^A-Za-z0-9]/g,'')+'dropdown2').value;
+    var xref3 = document.getElementById(product.replace(/[^A-Za-z0-9]/g,'')+'dropdown3').value;
+    var xref4 = document.getElementById(product.replace(/[^A-Za-z0-9]/g,'')+'dropdown4').value;
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.bulkXRefController.commitChange}',
+        product,
+        xref1,
+        xref2,
+        xref3,
+        xref4,
+        "{!Cross_Reference_Project__c.Id}",
+        function(result, event){
+            if (event.status) {
+                var tmpInd = document.getElementById(product+'indicator');
+                tmpInd.innerHTML = '<img alt="Saved." src="/img/msg_icons/confirm24.png"/>';
+            }
+            else{
+                alert('Something went wrong while calling commitChange() contact your administrator '+event.message);
+            }
+        }, 
+        {escape: true}
+    );
+
+}
+
+function flagChanged(product, line){
+    if(line != null && line != ''){
+        var tmpSelect = document.getElementById(product.replace(/[^A-Za-z0-9]/g,'')+'dropdown'+line);
+        addSingleDescriptor(tmpSelect.value, product, line);
+    }
+    var tmpInd = document.getElementById(product+'indicator');
+    tmpInd.innerHTML = '<img alt="Your change has not been saved. Please approve this change." src="/img/msg_icons/error24.png"/>';
+}
+
+function removeLine(product){
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.bulkXRefController.removeRecord}',
+        product,
+        function(result, event){
+            if (event.status) {
+                var tmpRow = document.getElementById(product+'row');
+                tmpRow.parentNode.removeChild(tmpRow);
+                for(var i=2; i!=5; i++){
+                    var tmpRow = document.getElementById(i+'xref'+product);
+                    tmpRow.parentNode.removeChild(tmpRow);
+                }
+                
+            }
+            else{
+                alert('Something went wrong while calling removeLine() contact your administrator '+event.message);
+            }
+        }, 
+        {escape: true}
+    );
+}
+
+
+
+function cleanseNewlines() {
+    if(confirm ('Adding new lines will wipe any unsaved changes. Is this ok?')){
+        var dirtyString = document.getElementById('dirtyinput').value;
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.bulkXRefController.pullXref}',
+            dirtyString,
+            "{!Cross_Reference_Project__c.Id}",
+            function(result, event){
+                if (event.status) {
+                    fullRefresh();                    
+                }
+                else{
+                    alert('Something went wrong while calling cleanseNewlines() contact your administrator '+event.message);
+                }
+            }, 
+            {escape: true}
+        );
+    }
+}
+function addLoadEvent(func) 
+        { 
+          var oldonload = window.onload; 
+          if (typeof window.onload != 'function') 
+          { 
+             window.onload = func; 
+          } 
+          else
+          { 
+              window.onload = function()  
+              { 
+                if (oldonload) 
+                { 
+                   oldonload(); 
+                } 
+                func(); 
+              } 
+           } 
+        } 
+
+        addLoadEvent(function(){
+            fullRefresh();
+        });
+</script>
+<div id="totalWrapper" style="width:1000px;margin-left:auto;margin-right:auto;">
+    <div class="addProductsDiv" style="float:left;vertical-align:middle;height:80px;">
+        <b>Add competitive products:</b><br/>
+        <textarea style="max-width:150px;max-height:50px;min-width:150px;min-height:50px;resize:none;" id="dirtyinput"></textarea><br/>
+        <button style="" onclick="cleanseNewlines()">Add Products</button>
+    </div>
+    
+    <div id="topRight" style="float:right;width:200px;">
+        <div style="text-align:right;" >
+            <b>Project: </b><apex:outputText style="" value="{!Cross_Reference_Project__c.Name}"/>
+        </div>
+        <div id="projectDetail" style="border:1px solid #bbb;height: 50px;padding:6px 6px 0px 6px;">
+            {!Cross_Reference_Project__c.Account__r.Name}<br/>
+            {!Cross_Reference_Project__c.Account__r.BillingStreet}<br/>
+            <apex:outputText value="{!Cross_Reference_Project__c.Account__r.BillingCity}"/>
+            <apex:outputPanel rendered="{!AND(Cross_Reference_Project__c.Account__r.BillingState != '',Cross_Reference_Project__c.Account__r.BillingCity != '')}">,&nbsp;</apex:outputPanel>
+            <apex:outputText value="{!Cross_Reference_Project__c.Account__r.BillingState} {!Cross_Reference_Project__c.Account__r.BillingPostalCode}"/>
+        </div>
+        <div style="float:right;" id="report">
+            <button onclick="openReport()">View Report</button>
+        </div>
+    </div>
+
+    <div class="tableContent" id="tableContent" style="float:left;">
+   
+    </div>
+</div>
+<script type="text/javascript">
+function openReport(){
+        var tmpId = "{!Cross_Reference_Project__c.Id}";
+        tmpId = tmpId.substring(0,15);
+        var finalURL = "{!$Site.Domain}/00OE0000002ZAI5?pv0=" + tmpId;
+        window.open(finalURL);
+    }
+
+function fullRefresh(){
+    var content = document.getElementById('tableContent');
+    content.innerHTML = '';
+    getFullList();
+    getOptions();
+    markSelected();
+    addAllDescriptors();
+}
+</script>
+</apex:page>

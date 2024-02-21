@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Family</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Arrow Endurance</fullName>
+                <default>false</default>
+                <label>Arrow Endurance</label>
+            </value>
+            <value>
+                <fullName>Arterials</fullName>
+                <default>false</default>
+                <label>Arterials</label>
+            </value>
+            <value>
+                <fullName>Course Faculty Competency</fullName>
+                <default>false</default>
+                <label>Course Faculty Competency</label>
+            </value>
+            <value>
+                <fullName>CVC/MAC/PSI/HD</fullName>
+                <default>false</default>
+                <label>CVC/MAC/PSI/HD</label>
+            </value>
+            <value>
+                <fullName>Epidurals</fullName>
+                <default>false</default>
+                <label>Epidurals</label>
+            </value>
+            <value>
+                <fullName>ETT’s</fullName>
+                <default>false</default>
+                <label>ETT’s</label>
+            </value>
+            <value>
+                <fullName>EZ-IO</fullName>
+                <default>false</default>
+                <label>EZ-IO</label>
+            </value>
+            <value>
+                <fullName>EZ-IO MSL</fullName>
+                <default>false</default>
+                <label>EZ-IO MSL</label>
+            </value>
+            <value>
+                <fullName>Incisional Catheters</fullName>
+                <default>false</default>
+                <label>Incisional Catheters</label>
+            </value>
+            <value>
+                <fullName>ISO-Gard</fullName>
+                <default>false</default>
+                <label>ISO-Gard</label>
+            </value>
+            <value>
+                <fullName>LMA MAD Nasal</fullName>
+                <default>false</default>
+                <label>LMA MAD Nasal</label>
+            </value>
+            <value>
+                <fullName>LMA Supreme</fullName>
+                <default>false</default>
+                <label>LMA Supreme</label>
+            </value>
+            <value>
+                <fullName>MAD Nasal MSL</fullName>
+                <default>false</default>
+                <label>MAD Nasal MSL</label>
+            </value>
+            <value>
+                <fullName>OnControl</fullName>
+                <default>false</default>
+                <label>OnControl</label>
+            </value>
+            <value>
+                <fullName>One Lung Ventilation</fullName>
+                <default>false</default>
+                <label>One Lung Ventilation</label>
+            </value>
+            <value>
+                <fullName>Pain Pumps</fullName>
+                <default>false</default>
+                <label>Pain Pumps</label>
+            </value>
+            <value>
+                <fullName>Peripheral Nerve Blocks</fullName>
+                <default>false</default>
+                <label>Peripheral Nerve Blocks</label>
+            </value>
+            <value>
+                <fullName>PICC/Midline Education Course</fullName>
+                <default>false</default>
+                <label>PICC/Midline Education Course</label>
+            </value>
+            <value>
+                <fullName>PICC/Midline Product Inservice</fullName>
+                <default>false</default>
+                <label>PICC/Midline Product Inservice</label>
+            </value>
+            <value>
+                <fullName>Plur-evac</fullName>
+                <default>false</default>
+                <label>Plur-evac</label>
+            </value>
+            <value>
+                <fullName>Rusch AirTraq</fullName>
+                <default>false</default>
+                <label>Rusch AirTraq</label>
+            </value>
+            <value>
+                <fullName>Rusch QuickTrach</fullName>
+                <default>false</default>
+                <label>Rusch QuickTrach</label>
+            </value>
+            <value>
+                <fullName>Single Use Laryngoscopes</fullName>
+                <default>false</default>
+                <label>Single Use Laryngoscopes</label>
+            </value>
+            <value>
+                <fullName>Single Use LMA’s</fullName>
+                <default>false</default>
+                <label>Single Use LMA’s</label>
+            </value>
+            <value>
+                <fullName>TALON</fullName>
+                <default>false</default>
+                <label>TALON</label>
+            </value>
+            <value>
+                <fullName>VPS G4/Rhythm</fullName>
+                <default>false</default>
+                <label>VPS G4/Rhythm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

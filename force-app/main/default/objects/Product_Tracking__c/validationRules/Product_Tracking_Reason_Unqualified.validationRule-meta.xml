@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Tracking_Reason_Unqualified</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+TEXT(Status__c) = &quot;Not Qualified&quot;,
+(ISBLANK(TEXT(Reason_Unqualified__c))))</errorConditionFormula>
+    <errorDisplayField>Reason_Unqualified__c</errorDisplayField>
+    <errorMessage>If Unqualified, please state reason why.</errorMessage>
+</ValidationRule>

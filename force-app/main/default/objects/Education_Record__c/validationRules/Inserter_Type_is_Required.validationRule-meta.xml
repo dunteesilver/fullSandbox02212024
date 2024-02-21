@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inserter_Type_is_Required</fullName>
+    <active>true</active>
+    <description>When Coure Type is Selected for VA BU, Inserter Type is required</description>
+    <errorConditionFormula>AND( ISPICKVAL(Business_Unit__c, &quot;VA&quot;),
+
+NOT(ISBLANK(TEXT(VACourseType1__c))),
+
+ISBLANK (TEXT(InserterType__c )),
+
+ Record_Type_Name__c = &quot;Clinical Sales Program&quot;
+)</errorConditionFormula>
+    <errorDisplayField>InserterType__c</errorDisplayField>
+    <errorMessage>Inserter Type is required once you have chosen a Course Type</errorMessage>
+</ValidationRule>

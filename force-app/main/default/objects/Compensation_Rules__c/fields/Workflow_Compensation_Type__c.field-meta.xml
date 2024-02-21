@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workflow_Compensation_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Updated as per 2023 product bucketing -AN Feb 4 2023 */
+/* Updated as per INTV Changes 2022 product bucketing -AN May 27 2022 */
+/* Updated as per 2022 product bucketing -AN Feb 05 2022 */
+/* Updated as per 2021 product bucketing -AN Jan 25 2021 */
+if(UPPER(Compensation_Type_Id__c) = &quot;ALL OTHER&quot;,&quot;All Other&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;ALLOTHER&quot;,&quot;All Other&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;ALLPRODUCTS&quot;,&quot;All Products&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;ALL PRODUCTS&quot;,&quot;All Products&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;CANADA ALLPRODUCTS&quot;,&quot;Canada All Products&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;LARYNGOSCOPES&quot;,&quot;Laryngoscopes&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;QUIKCLOT&quot;,&quot;Quikclot&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;ONCONTROL&quot;,&quot;On Control&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;ZMEDICA AEM&quot;,&quot;Zmedica AEM&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;ZMEDICA SURGICAL&quot;, &quot;Zmedica Surgical&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;ZMEDICA VASCULAR&quot;,&quot;Zmedica Vascular&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;COMPENSABLE&quot;,&quot;Compensable&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;CARDIAC&quot;,&quot;Cardiac&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;CORE&quot;,&quot;Core&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;SILICONE&quot;,&quot;Silicone&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;CVC&quot;,&quot;CVC&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;EZIO&quot;,&quot;EZIO&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;CONTROL PLUS&quot;,&quot;Control Plus&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;EZIO DRIVERS&quot;,&quot;EZIO Drivers&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;FOCUS&quot;,&quot;Focus&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;NOT APPLICABLE&quot;,&quot;Not Applicable&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;PERCUTANEOUS&quot;,&quot;Percutaneous&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;PICC&quot;,&quot;PICC&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;SURGICAL&quot;,&quot;Surgical&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;IABP&quot;,&quot;IABP&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;IABC&quot;,&quot;IABC&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;VPS&quot;,&quot;VPS&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;INTV UROL ALL PRODUCTS&quot;,&quot;ANZ Uro All Products&quot;, 
+if(UPPER(Compensation_Type_Id__c) = &quot;INTERNAL STAPLING&quot;,&quot;Internal Stapling&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;CORONARY&quot;,&quot;Coronary&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;STRUCTURAL HEART&quot;,&quot;Structural Heart&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;SURD ALL PRODUCTS&quot;,&quot;SURD All Products&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;SURI ALL PRODUCTS&quot;,&quot;SURI All Products&quot;,
+if(UPPER(Compensation_Type_Id__c) = &quot;SURI SPIF DIR&quot;,&quot;SPIF&quot;,
+Compensation_Type_Id__c
+))))))))))))))))))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Takes the ICM value and normalizes the case/name for the Compensation Type field.</inlineHelpText>
+    <label>Workflow Compensation Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

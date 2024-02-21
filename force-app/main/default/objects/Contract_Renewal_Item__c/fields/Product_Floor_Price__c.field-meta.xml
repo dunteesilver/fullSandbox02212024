@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Floor_Price__c</fullName>
+    <description>This field is required for aproval flad calculations, it will be sync with a Workflow Rule</description>
+    <externalId>false</externalId>
+    <label>Product Floor Price</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

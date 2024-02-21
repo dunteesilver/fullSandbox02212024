@@ -1,0 +1,29 @@
+<apex:page showheader="false" standardStylesheets="false" controller="OptOut">
+    <head>
+        <apex:includeScript value="{!URLFOR($Resource.jQuery)}"/>
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.css')}"/>
+        <link rel="icon" type="image/png" href="{!$Resource.Favicon}" />    
+    </head>
+    <br/>
+    <div class="teleflex">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h6 class="panel-title">Teleflex Communication Preferences</h6>
+                        </div>
+                        <div class="panel-body"><h4><br/><p class="text-center text-black">I no longer wish to receive marketing e-mails from Teleflex.</p><br/>
+                            <apex:form styleClass="form-inline">
+                                <center><apex:commandButton action="{!save}" value="Click to Unsubscribe Email" styleClass="btn btn-primary"/></center>
+                            </apex:form><br/>
+                            </h4>
+                        </div>
+                        <div class="panel-footer text-center">&copy; 2015 Teleflex Incorporated  All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:page>

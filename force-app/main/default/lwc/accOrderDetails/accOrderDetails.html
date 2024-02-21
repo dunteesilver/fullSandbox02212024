@@ -1,0 +1,104 @@
+<template>   
+     <lightning-modal-header
+    label={header}
+></lightning-modal-header>
+<lightning-modal-body>  
+    <template for:each={orderDetailsData} for:item="order">
+        <div key={order.vbeln} class="slds-p-around_medium lgc-bg">
+            <h2 class="slds-text-heading_small">Order Number: {selectedOrderId}</h2>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <tbody>
+                    <tr><!-- order details as rows here -->
+                        <th>Account Number</th>
+                        <td>{order.accountnum}</td>
+                    </tr> 
+                    <tr>
+                        <th>Status</th>
+                        <td>{order.status}</td>
+                    </tr>                   
+                    <tr>
+                        <th>Document Type</th>
+                        <td>{order.doctype}</td>
+                    </tr>
+                    <tr>
+                        <th>Purchase Order Number</th>
+                        <td>{order.ponum}</td>
+                    </tr>
+                   <tr>
+                        <th>Purchase Order Date</th>
+                        <td>{order.podate}</td>
+                    </tr>
+                    <tr>
+                        <th>Orderer</th>
+                        <td>{order.orderer}</td>
+                    </tr>
+                    <tr>
+                        <th>PO Type</th>
+                        <td>{order.potype}</td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td>{order.total}</td>
+                    </tr>
+                    <tr>
+                        <th>Currency</th>
+                        <td>{order.waerk}</td>
+                    </tr>
+                    <tr>
+                        <th>Billing Address</th>
+                        <td>{order.billto}, {order.name1bp}, {order.street1bp}, {order.citybp}, {order.regionbp} {order.postlcodebp}</td>
+                    </tr>
+                   <tr>
+                        <th>Shipping Address</th>
+                        <td>{order.shipto}, {order.name1sh}, {order.street1sh}, {order.citysh}, {order.regionsh} {order.postlcodesh}</td>
+                    </tr>
+                    <tr>
+                        <th>Invoice Indicator</th>
+                        <td>{order.invoiceind}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="slds-text-heading_small">Items({itemsSize})</h3>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <!-- headers for item details as needed -->
+                        <th>Item</th>
+                        <th>Material Number</th>
+                        <th>Order Qty</th>
+                        <th>Unit of measure</th>
+                        <th>Shipped Qty</th>
+                        <th>Status</th>
+                        <th>Position Number</th>                                            
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={order.items} for:item="item" for:index="index">
+                        <tr key={item.posnr}>
+                            <td>{item.maktx}</td>
+                            <td>{item.matnr}</td>
+                            <td>{item.orderqty}</td>
+                            <td>{item.uom}</td>
+                            <td>{item.shippedqty}</td>
+                            <td>{item.status}</td>
+                            <td>{item.posnr}</td>
+                            
+                        </tr>
+                    </template>
+                    
+                </tbody>
+            </table>
+        </div>
+    </template>
+    <template if:true={shippingButtonClicked}>{shippingInfo}</template>
+
+</lightning-modal-body>
+<lightning-modal-footer>
+    <div class="slds-float_left">
+    <lightning-button label="Shipping Details" class="slds-text-align_left"  variant="brand" onclick={shippingDetailsView}></lightning-button>
+    </div>
+   <lightning-button label="OK"  onclick={handleOkay}></lightning-button>
+
+</lightning-modal-footer>
+
+</template>

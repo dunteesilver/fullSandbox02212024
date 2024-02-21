@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Probability_Stage__c</fullName>
+    <description>Text Field which is concatenation of Probability with Stage, this would help Sort the Opportunity Funnel by Probability on Opportunity Wave Dashboard.
+
+Concatenated to make the Label more meaningful instead of Just showing as 10% it would show as 10% -Needs Analysis.</description>
+    <externalId>false</externalId>
+    <formula>(Text(Probability*100)&amp;&quot;%&quot;) &amp; &quot; - &quot; &amp; Text(StageName)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Probability - Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

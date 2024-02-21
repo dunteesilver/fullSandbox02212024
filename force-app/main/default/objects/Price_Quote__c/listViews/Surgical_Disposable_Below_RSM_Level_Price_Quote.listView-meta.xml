@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surgical_Disposable_Below_RSM_Level_Price_Quote</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Surgical Disposable Below RSM Level Sale</label>
+    <queue>Surgical_Disposable_Below_RSM_Level_Sale</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

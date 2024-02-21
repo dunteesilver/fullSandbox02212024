@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Select_a_VPS_Console</fullName>
+    <active>true</active>
+    <description>Validation rule to force the user to select a VPS Unit to demo.</description>
+    <errorConditionFormula>ISBLANK(  VPS_Console__r.Name  )</errorConditionFormula>
+    <errorDisplayField>VPS_Console__c</errorDisplayField>
+    <errorMessage>Please select a VPS Console for this demo.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,95 @@
+<apex:page showHeader="true" sidebar="true" standardController="Lead" extensions="convertingLeads">
+
+<style type="text/css">
+ table.exceptionText td {
+                 font-style:italic;
+                 font-size:16px;
+                 font-weight:bold;
+                 text-align:center;
+                 color:red;}
+</style>
+
+<apex:outputPanel id="msgPanel">
+	<apex:messages id="msgBlock" layout="table" styleClass="exceptionText" />
+</apex:outputPanel>
+<apex:form id="lookAccForm">
+	<apex:pageblock >
+	<apex:pageblockSection title="STEP 1: Search/Select an Existing Account or create New Account if this is a Prospect Account."/>
+			<apex:pageblockSection id="PBS1" title="Acccount" collapsible="false" columns="1" rendered="{!NOT(displayPopup)}">
+			<apex:outputLink value="/{!lead.Id}">Back to Lead Record</apex:outputLink>
+      </apex:pageblockSection>
+      <apex:pageblockSection rendered="{!NOT(displayPopup)}">
+				<apex:inputField label="Select Account" value="{!lead.Account__c}" >
+        <apex:commandButton value="Save/Continue" action="{!lookupAcc}" rendered="{!NOT(displayPopup)}" />
+      </apex:inputField>
+      </apex:pageblockSection>
+      <apex:pageblockSection rendered="{!NOT(displayPopup)}">
+				<apex:outputField label="Lead" value="{!lead.Name}" />
+      </apex:pageblockSection>
+      <apex:pageblockSection rendered="{!NOT(displayPopup)}">
+				<apex:outputField label="Company" value="{!lead.Company}" />
+      </apex:pageblockSection>
+      <apex:pageblockSection >
+				<apex:outputField label="Contact" value="{!lead.Contact__c}" rendered="{!lead.Contact__c != NULL}"/>
+      </apex:pageblockSection>
+
+
+			<apex:commandButton value="Create New Account" action="{!showAccFields}" rendered="{!NOT(displayPopup)}">
+				<apex:actionSupport event="onclick" reRender="PBS1,PBScreate"/>
+			</apex:commandButton>
+
+			<apex:commandButton value="Remove Contact" action="{!removeContact}" rendered="{!lead.Contact__c != NULL}" reRender="PBS1" />
+
+			<apex:pageblockSection id="PBScreate" title="Create Acccount" collapsible="false" columns="1" rendered="{!displayPopup}">
+			<apex:outputLink value="/{!lead.Id}">Back to Lead Record</apex:outputLink>
+				<apex:inputText label="Account Name" value="{!aName}" />
+				<apex:inputText label="Street" value="{!aStreet}" />
+				<apex:inputText label="City" value="{!aCity}" />
+				<apex:inputText label="State" value="{!aState}" />
+				<apex:inputText label="Zip / Postal Code" value="{!aZip}" />
+			</apex:pageblockSection>
+
+			<apex:commandButton value="Save Account" action="{!createAccount}" rendered="{!displayPopup}" />
+			<apex:commandButton value="Cancel" action="{!showAccFieldsFalse}" rendered="{!displayPopup}">
+				<apex:actionSupport event="onclick" rerender="PBS1,PBScreate"/>
+			</apex:commandButton>
+	</apex:pageblock>
+</apex:form>
+
+<apex:form id="selectAccForm">
+	<apex:pageBlock rendered="{!simAccBool}">
+		<apex:pageblockSection id="PBS2" title="Similar Accounts" collapsible="false" columns="1">
+			<apex:pageBlockTable title="Similar Accounts" value="{!simAccs}" var="s" columns="6">
+			<apex:column headerValue="Select" style="width:20px">
+			<apex:commandButton value="Select Account" action="{!selectedAccount}" reRender="msgPanel">
+					<apex:param name="saccId" value="{!s.Id}" assignTo="{!saccId}"/>
+			</apex:commandButton>
+			</apex:column>
+			<apex:column headerValue="Account Name" value="{!s.Name}" style="width:100px;overflow-wrap"/>
+			<apex:column headerValue="SAP Code" value="{!s.SAP_Sold_To__c}" style="width:25px"/>
+			<apex:column headerValue="City" value="{!s.ShippingCity}" style="width:50px;overflow-wrap"/>
+			<apex:column headerValue="State" value="{!s.ShippingState}" style="width:10px"/>
+			<apex:column headerValue="Postal Code" value="{!s.ShippingPostalCode}" style="width:25px"/>
+			</apex:pageBlockTable>
+		</apex:pageblockSection>
+	</apex:pageblock>
+
+	<apex:pageBlock rendered="{!simRecBool}">
+		<apex:pageblockSection id="PBS7" title="Recent Accounts" collapsible="false" columns="1">
+	<apex:pageBlockTable title="Recent Accounts" value="{!recAccs}" var="s" columns="6">
+	<apex:column headerValue="Select" style="width:20px">
+	<apex:commandButton value="Select Account" action="{!selectedAccount}" reRender="msgPanel">
+		<apex:param name="saccId" value="{!s.Id}" assignTo="{!saccId}" />
+	</apex:commandButton>
+	</apex:column>
+	<apex:column headerValue="Account Name" value="{!s.Name}" style="width:100px;overflow-wrap"/>
+	<apex:column headerValue="SAP Code" value="{!s.SAP_Sold_To__c}" style="width:25px"/>
+	<apex:column headerValue="City" value="{!s.ShippingCity}" style="width:50px;overflow-wrap"/>
+	<apex:column headerValue="State" value="{!s.ShippingState}" style="width:10px"/>
+	<apex:column headerValue="Postal Code" value="{!s.ShippingPostalCode}" style="width:25px"/>
+	</apex:pageBlockTable>
+	</apex:pageblockSection>
+	</apex:pageBlock>
+
+</apex:form>
+</apex:page>

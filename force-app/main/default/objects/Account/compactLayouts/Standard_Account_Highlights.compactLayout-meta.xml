@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Account_Highlights</fullName>
+    <fields>Name</fields>
+    <fields>Shipping_Address_Full__c</fields>
+    <fields>SAP_Sold_To__c</fields>
+    <fields>Type</fields>
+    <fields>Customer_Group_Formula__c</fields>
+    <fields>ERP_Active__c</fields>
+    <fields>Active_Sales__c</fields>
+    <label>Standard Account Highlights</label>
+</CompactLayout>

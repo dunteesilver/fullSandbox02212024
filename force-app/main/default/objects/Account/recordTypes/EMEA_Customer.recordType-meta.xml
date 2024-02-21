@@ -1,0 +1,2144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Customer</fullName>
+    <active>true</active>
+    <label>EMEA Customer</label>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>Clinical Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer Reports Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Blast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPO Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inside Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Chapter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCI%2FCTO Targeting Tool</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Generated</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Seminar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teleflex Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telemarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BedCountSize__c</picklist>
+        <values>
+            <fullName>%3C100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3E1000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>100-200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>201-300</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>301-400</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>401-500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>501-600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>601-700</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>701-800</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>801-900</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>901-1000</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Budget_Cycle__c</picklist>
+        <values>
+            <fullName>Calendar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fiscal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Variable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CVCLicense__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Potential__c</picklist>
+        <values>
+            <fullName>1 - High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Very Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ungraded</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distribution_Method__c</picklist>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distributor__c</picklist>
+        <values>
+            <fullName>A %26 M Hospital Supply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A A Laquis Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>A%2E Tarrillo Barba S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AAA Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ABASTECEDOR TERAPEUTICO%2CS%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ABASTECEDORA MEDICA HOSP DE AGUASCALIENTES S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACTIVE MEDICAL S%2EA DE C%2EV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ALIMENTACION ENTERAL Y PARENTERAL DE DURANGO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ASSOCIACAO DOS FORNECEDORES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aceti-Oxigeno SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Active Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Advanced Instrumentations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agencia Matamoros S De Rl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Albatros S%2EA%2EC%2EI%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alive Heart Material</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alpha Mediq SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alternative Export</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Fiure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anjack Medica S%2EA%2EC%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aplicaciones Medicas Integrales%2C S%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Armoc Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arromed Suministros Medicos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arrow Mexico %28Other Cust%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asepsis Products De Colombia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asistencia Respiratoria%2C SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atlantic Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Badeia Comercio E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bahamas Medical %26 Surg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banda Vanoni Cia Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bascat Y Cia Sac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bermuda Hospital Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bio In Sa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biocare Medical%2C S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biomedical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotecno Srl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bryden Pi Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CCL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIRUGIA Y MEDICAMENTOS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMERCIAL ALPRO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMERCIALIZADORA GLAVS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMERCIALIZADORA MEDICA ALVASAN S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMERLAT S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSM Inc%2E%2C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CTP Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardinal HC PR %28Borschow%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carmen Lucia Arechiga</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cemrad Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cirurgica Fernandes Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comercial Medica Ind</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comercial Nacional De Produtos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comercial Propato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comercializadora Medisan Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compania De Equipo Medico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coral Pharmaceutica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coramed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corpomedica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporativo Neomedica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DISENO Y DESARROLLO MEDICO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DISPOSITIVOS MEDICOS Y CATETERES S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DISTRIBUIDOR TERAPEUTICO INTEGRAL S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DMG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DURFA%2CS%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dcd Products S R L</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dipromequi Sa De Cv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distribuidora De Equipo Medico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distromex Sa De Cv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doctors Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drogueria Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EXARIS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ecuasurgical S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electroplast S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eqalsa SA de CV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipos Respiratorios</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Express Medical Supply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FERPROSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farmaco Quimica Nacional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundacao Albino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundacao Faculdade Medicina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>G%2E Barco%2E S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GRUPO EMEQUR S%2EA DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GRUPO INYECTA DEL GOLFO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GRUPO MORAVI S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gabmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gaesca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gimpromed Cia Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Trading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gremed Group Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grupo Moravi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grupo Veniflux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guadarrama Sa De Cv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gunter Schaaf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HIMGRO S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HMG Investment Corp%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hemisferio Sur S%2EA%2E%2FPontificia Uni</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Himgro Sa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospifar C%2E Por A%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospimedica Y%2FO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital %26 Medical Supply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hp Medical%2FImportadora Fernado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ICV DE MONTERREY S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMPULSO MEXICANO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INFUSOMED S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSTITUTO NACIONAL DE CARDIOLOGIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSUMOS HOSPITALARIOS ESPECIALIZADOS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INTEGRACION DE SERVICIOS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Importadora Eyf%2FHENALIS MEDICA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independence Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inelbal S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instrumed-Int%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insumos Hospitalarios %28Javier P%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intecmed S%2EA%2E de C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integracion De Servicios</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intermedical Productos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Islands Medical Supplies Inc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Isomedical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JTC PROVEEDOR MEDICO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jamaica Hospital Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kerik PR %28VE%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labfarma International Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lym Medical Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MARIO A%2E ESPINOSA CASTANEDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAS MEDICA%2C S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC Group Suriname</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEDICAL CORPORATION GROUP S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEDICAMEX S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEDIMEDICAL%2C S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MOPER MEDICAL%2C S%2EA%2E DE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Makol S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Masimex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Med-X International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medica Consolidada Distribuidora Ca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Depot S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Innovations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Supply Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicalway Equipamentos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicus Healthcare Costa Rica S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medicus%2FPharmed Healthcare Panama S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mediplex S A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meditec Venezuela C%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medlab Supplies NV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mequim S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miami Medical Equipment And Supply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Munnich Parma Medic%2FGuillermo Harding Y Cia%2E Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ORTO-PAC S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oxigeno Y Gases De El Salvador</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PEGO MEDICAL S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIHCSA PARA HOSPITALES S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTOS MEDICOS E HIGIENICOS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRODUCTOS MEDICOS REGIOMONTANTOS S%2EA DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PROVEEDORA DE ESPECIALIDADES MEDICAS S%2EA%2E DE  C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PROVEEDORA NACIONAL DE MATERIAL DE CURACION S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pekato%2C Inc%2E %28Us%2FHonduras%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ports International Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Praxair Costa Rica%2C S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Productos Del Aire De Guatemala%2C SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Productos Med Expecializados</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prokontrol SAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promedica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propato Hnos Sa Ic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proveedores quirurgicos S%2EA%2E de C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Puerto Rico Hospital Sply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R%2EK%2E Comercial S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>R%2EP%2E Medicas S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAPPYD%2C S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RAYOMED       %28Ships To Antigua%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RENTAS Y SERVICIOS DIVERSOS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real E Benemerita Associacao</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rece International Corp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reserma %28Ships To Panama%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rihani International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Royspec Purchasing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SELECCIONES MEDICAS DEL CENTRO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SELECCIONES MEDICAS S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SERVICIO ELECTROMEDICO PROF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEYSA INTERNACIONAL S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIMULATION %26 MEDICAL TECH%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SISTEMAS HOSPITALARIOS DALCA S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOCIEDADE BENEFICIENTE SAO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUMINISTROS FEGA S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUMINISTROS MEDICOS DEL CENTRO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SURTIDOR MEDICO DEL BAJIO S%2EA%2E DE C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sanyfico SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sao Luiz Operadora Hosp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scientific %26 Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scientific Sportive a Vida Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scientific Supplies %26 Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Selecciones Medicas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semicom S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sempro SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serviamed Dominicana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sharp Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signomed S%2EA%2EC%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sms Ambassadors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soluciones Integrales Sa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Srw Industries %28Us%2FCarribean%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suministros Medicos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgimed Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgimed Ltda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surmed - Imex Tech Inc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Synergy Supply Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TRI DM S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tc Tecnica Cirurgica Com Mat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tecnika Sa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tektronik S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tort Sola Medical Products Inc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trans Med USA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ucin Medica%2C S%2EA%2E De C%2EV%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United Medical Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United Trading Supply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unitrade Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Universal Care Corp</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unomedical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA MC Puerto Rico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VITALMEX INTERNACIONAL%2C SA DE CV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vanyland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ventas Paraguayas S%2EA%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vitalmex</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Exclusion_Type__c</picklist>
+        <values>
+            <fullName>ZA01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZB01</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Group_Area_Name__c</picklist>
+        <values>
+            <fullName>Healthecare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthscope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - Central Coast LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - Hunter New England LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - Mid North Coast LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - South Eastern Sydney LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - South West Sydney LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - Southern LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - Sydney LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - Western NSW LHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSW - Western Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD - Metro North Hospitals Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QLD - Metro South Hospitals Board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ramsay</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IDN_Region__c</picklist>
+        <values>
+            <fullName>Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region 11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region 6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Region 8</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Litmos__Active__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Litmos__CustomerPriority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Litmos__SLA__c</picklist>
+        <values>
+            <fullName>Bronze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Litmos__UpsellOpportunity__c</picklist>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Main_GPO__c</picklist>
+        <values>
+            <fullName>Intralere</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Number_Of_Beds__c</picklist>
+        <values>
+            <fullName>0-50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>101-250</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>251-500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>500%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>51-100</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OnsiteSimulation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Region__c</picklist>
+        <values>
+            <fullName>Mexico</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Secondary_GPO__c</picklist>
+        <values>
+            <fullName>Amerinet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ascension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dignity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HPG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intralere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MedAssets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Novation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vizient</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Specialties__c</picklist>
+        <values>
+            <fullName>Anaesthetics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anatomy%2FPhysiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Angiography</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bariatric</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biomedical Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biophysics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capital Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardio-Thoracic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colorectal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cosmetics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dermatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endocrinology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endoscopy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endovascular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facio-Maxillary%2FOral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fetal Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gastro %26 Hepato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gastroenterology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gynaecology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Head %26 Neck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hepato Biliary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intensive Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interventional Cardiac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Musculoskeletal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neonatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neurology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neurosurgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occulo-Plastic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology%2FHaematology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operating Theatres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opthalmology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orthopaedic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paediatrics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perfusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peri-operative %26 Surgical Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plastics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pulmonology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiation%2FOncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robotics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skin Cancer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spinal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply%2FProcurement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thoracics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transplant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upper GI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vascular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Territory__c</picklist>
+        <values>
+            <fullName>10CR - HO Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10HO - HO Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10IR - HO Independent Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10SI - HO Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12CR - NSW Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12IR - NSW Independent Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12SI - NSW Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13CR - VIC Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13IR - VIC Independent Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13SI - VIC Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14CR - QLD Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14IR - QLD Independent Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14SI - QLD Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15CR - SA Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15IR - SA Independent Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15SI - SA Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16CR - WA Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16IR - WA Independent Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16SI - WA Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18CR - Int%2FEmer Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18IR - Int%2FEmer Independent Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18SI - Int%2FEmer Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>31IN - Fishers Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>31RS - Fishers Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4201 - ACT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4202 - South Eastern Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4203 - Southern NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4204 - South Western Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4205 - Western NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4206 - Western Syd LHN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4207 - Northern Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4208 - Hunter New England</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4209 - Northern NSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4211 - Resellers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4212 - Packers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4213 - Overseas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4214 - Illawarra Shoalhaven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4215 - Murrumbidgee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4216 - Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4217 - Central Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4218 - Nepean Blue Mountains</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4219 - Far West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4220 - Mid North Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4221 - Sydney Childrens Hospitals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4222 - St Vincents Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4301 - Bayside Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4302 - Eastern Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4303 - Melbourne %26 Western Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4304 - Gippsland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4305 - Ballarat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4306 - Geelong %26 South Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4307 - Bendigo %26 North West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4308 - Tasmania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4310 - Resellers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4311 - Melbourne City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4312 - Alburn and Shepparton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4313 - Packers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4314 - Penninsula Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4315 - Southern Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4401 - Metro 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4402 - Metro 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4403 - Metro 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4404 - Metro 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4405 - Brisbane West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4406 - Resellers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4407 - Central Queensland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4408 - Far North Queensland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4409 - Southern Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4411 - Country Queensland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4412 - Northern Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4501 - Central Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4502 - Northern Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4503 - Southern Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4504 - Regional%2FCountry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4505 - Northern Territory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4506 - Chemist%2FBrokers%2FAP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4507 - Pharmacies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4601 - South Perth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4602 - West Perth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4603 - Perth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4604 - Country</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4605 - Resellers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6000 - National</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>91CR - Nth Island Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>91SI - Nth Island Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>97CR - Sth Island Corporate Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>97SI - Sth Island Safety %26 Industrial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Bill To</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect %28ZREB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ship-To %28Z002%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sold-To %28Z001%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VendorCredentialing__c</picklist>
+        <values>
+            <fullName>GHX%2FVendormate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parallon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SEC3URE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Symplr</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

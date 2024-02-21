@@ -1,0 +1,44 @@
+<apex:page controller="PP_Membership_Export" 
+           cache="true"
+           readOnly="true"
+           contentType="application/vnd.ms-excel#{!filename}.xls">
+    <table>
+        <tr>
+            <th>Customer</th>
+            <th>Customer Name</th>   
+            <th>Street</th>
+            <th>City</th>
+            <th>State/Region</th>
+            <th>Zip</th>
+            <th>Country</th>
+            <th>Customer Group #</th>
+            <th>Customer Group Name</th>
+        </tr>
+        <apex:repeat value="{!Accounts}" var="a">
+            <tr>
+                <td>{!a.SAP_Sold_To__c}</td>
+                <td>{!a.Name}</td>
+                <td>{!a.BillingStreet}</td>
+                <td>{!a.BillingCity}</td>
+                <td>{!a.BillingState}</td>
+                <td>{!a.BillingPostalCode}</td>
+                <td>{!a.BillingCountry}</td>
+                <td>{!a.Customer_Group__c}</td>
+                <td>{!a.Customer_Group_Name__c}</td>
+            </tr>
+        </apex:repeat>
+        <apex:repeat value="{!Accounts2}" var="a" rendered="{!IF(Accounts2.size > 0,true,false)}">
+            <tr>
+                <td>{!a.SAP_Sold_To__c}</td>
+                <td>{!a.Name}</td>
+                <td>{!a.BillingStreet}</td>
+                <td>{!a.BillingCity}</td>
+                <td>{!a.BillingState}</td>
+                <td>{!a.BillingPostalCode}</td>
+                <td>{!a.BillingCountry}</td>
+                <td>{!a.Customer_Group__c}</td>
+                <td>{!a.Customer_Group_Name__c}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+</apex:page>

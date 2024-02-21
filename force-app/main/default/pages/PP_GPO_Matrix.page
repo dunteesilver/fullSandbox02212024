@@ -1,0 +1,173 @@
+<apex:page docType="html-5.0" title="GPO Matrix - {!ownerName}" controller="PP_GPO_Matrix" tabStyle="Pricing_Portal__tab" cache="false" expires="600" standardStylesheets="true" sidebar="false">
+
+<!-- Call the Menu -->
+    <apex:include id="menu" pageName="PP_Menu"/>
+
+<!-- Render the rest of the page -->
+    <div class="teleflex">
+        <!-- Matrix Search Results -->
+        <div class="contain-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <!-- <apex:variable value="{!IF(contains($UserRole.Name,'EMEA'),TRUE,FALSE)}" var="emeaUser"/> -->
+                    <apex:variable value="{!IF(contains($UserRole.Name,'EMEA') || emeaUserFlag ,TRUE,FALSE)}" var="emeaUser"/>
+                    <apex:outputPanel rendered="{!ownerID != NULL}" id="outterPanel">
+                        <!-- Contract Security Issue -->
+                        <apex:outputPanel rendered="{!CheckCH.size = 0 && CheckChEmea.size = 0}">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"><h6 class="panel-title"><img src="/img/msg_icons/warning32.png" alt="Contract Details"/>&nbsp;&nbsp;Access to {!ownerID}</h6></div>
+                                <div class="panel-body">
+                                    <div class="text-left">
+                                        <strong><a href="/apex/PP_GPO_Matrix">Back to Home Page</a></strong><br/>
+                                    </div> <br/>
+                                    <div class="Container">
+                                        <div class="Row">
+                                            <h4>
+                                                If you are looking for Veterans Affairs Courtesy Contracts, please follow the link below to Courtesy Agreements, scroll down on the list until you see VA.<br /><br />
+                                                <u><a href="/apex/PP_GPO_Matrix?oid=123310"><strong>Teleflex Medical Inc NC</strong></a></u>
+                                            </h4><br /><br />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">&nbsp;</div>
+                                <!-- End Panel -->
+                            </div>
+                        </apex:outputPanel>
+                        <!-- Normal Pull -->
+                        <apex:outputPanel rendered="{!CheckCH.size > 0 || CheckChEmea.size > 0}">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands32.png" alt="Contract Details"/>&nbsp;&nbsp;{!ownerName}</h6></div>
+                            <div class="panel-body">
+                                <!-- Button! -->
+                                <div class="text-left">
+                                    <a href="/apex/PP_GPO_Matrix">Back to Home Page</a>
+                                </div>
+                                <div class="text-right">
+                                    <a href="/apex/PP_Membership_Export_XLS?oid={!ownerID}" class="btn btn-primary btn-sm" status="actStatusId">View Membership</a><br/>&nbsp;
+                                      <!-- <apex:form >
+                                          <a href="/apex/PP_Membership_Export_XLS?oid={!ownerID}" class="btn btn-primary btn-sm">View Membership</a>
+                                      	  <!-- <apex:actionFunction name="callBackToGpoMatrix" action="{!backToGpoMatrix}" /> 
+                                          <apex:commandLink id="downLoad" action="/apex/PP_Membership_Export_XLS?oid={!ownerID}" styleClass="btn btn-primary btn-sm" status="actStatusId">View Membership</apex:commandLink><br/>&nbsp;
+                                      </apex:form> -->
+                                </div>
+                                <div class="Container">
+                                    <div class="Row">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <tr>
+                                                <th>GPO Contract Reference</th>
+                                                <th>Contract Tiers</th>
+                                                <th>Contract Details</th>
+                                                <th>Start</th>
+                                                <th>End</th>
+                                            </tr>
+                                            <apex:outputText rendered="{!!emeaUser}">
+                                                <apex:repeat value="{!Tiers}" var="key">
+                                                    <tbody>
+                                                        <apex:outputText value="{!Tiers[key]}" escape="false"/>
+                                                    </tbody>
+                                                </apex:repeat>
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!emeaUser}">
+                                                <apex:repeat value="{!TiersEmea}" var="keyEmea">
+                                                    <tbody>
+                                                        <apex:outputText value="{!TiersEmea[keyEmea]}" escape="false"/>
+                                                    </tbody>
+                                                </apex:repeat>
+                                            </apex:outputText>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="text-left">
+                                    <a href="/apex/PP_GPO_Matrix">Back to Home Page</a>
+                                </div>
+                                <!-- Button! -->
+                                <div class="text-right">
+                                    <a href="/apex/PP_Membership_Export_XLS?oid={!ownerID}" class="btn btn-primary btn-sm">View Membership</a>
+                                </div>
+                            </div>
+                            <div class="panel-footer">&nbsp;</div>
+                            <!-- End Panel -->
+                        </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <!-- Default Homepage -->
+                    <!-- Panel below shows GPOs from a custom setting called GPO_Picklist__c (North America only) -->
+                    <apex:outputText rendered="{!!emeaUser}">
+                        <apex:outputPanel rendered="{!ownerID == NULL}">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands32.png" alt="Contract Details"/>&nbsp;&nbsp;GPO Contract Matrix</h6></div>
+                                <div class="panel-body">
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <apex:repeat value="{!Items}" var="GPO">
+                                            <tr><td class="col-md-2"><apex:outputLink value="/apex/PP_GPO_Matrix?oid={!GPO.Key__c}">{!GPO.name}&nbsp;({!GPO.Key__c})</apex:outputLink></td></tr>
+                                        </apex:repeat>
+                                    </table>
+                                </div>
+                            <div class="panel-footer panel-primary">&nbsp;</div>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputText>
+                    <!-- Panel below shows GPOs for EMEA region (GPOs are pulled from standard Account object using prefix of the sales org) -->
+                    <!-- For example... Germany's sales org is "DE10" and a GPO account would start with "DE-" -->
+                    <apex:outputText rendered="{!emeaUser}">
+                        <apex:outputPanel id="gpoPanel" rendered="{!ownerID == NULL}">
+                            <apex:form >
+                                <apex:actionFunction name="refreshPageSize" action="{!refreshPageSize}" status="fetchStatus" reRender="gpoPanel" />
+                                <apex:outputPanel id="gpoPanel1">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands32.png" alt="Contract Details"/>&nbsp;&nbsp;GPO Contract Matrix</h6></div>
+                                    <div class="panel-body">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <apex:repeat value="{!emeaGpos}" var="GPO">
+                                                <tr><td class="col-md-2"><apex:outputLink value="/apex/PP_GPO_Matrix?oid={!GPO.SAP_Sold_To__c}">{!GPO.name}&nbsp;({!GPO.SAP_Sold_To__c})</apex:outputLink></td></tr>
+                                            </apex:repeat>
+                                        </table>
+                                        <!-- Start Pagenation Grid -->
+                                        <apex:panelGrid columns="13" rendered="{!emeaGpos.size > 0}">
+                                            <apex:selectList value="{!size}" multiselect="false" size="1" onchange="refreshPageSize();">
+                                                <apex:selectOptions value="{!paginationSizeOptions}" />
+                                            </apex:selectList>&nbsp;
+                                            <apex:commandButton status="fetchStatus" value="First" action="{!setCon.first}" disabled="{!!setCon.hasPrevious}" title="First Page" styleClass="btn btn-primary btn-xs"/>&nbsp;
+                                            <apex:commandButton status="fetchStatus" value="Previous" action="{!setCon.previous}" disabled="{!!setCon.hasPrevious}" title="Previous Page" styleClass="btn btn-primary btn-xs"/>&nbsp;
+                                            <apex:commandButton status="fetchStatus" value="Next" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page" styleClass="btn btn-primary btn-xs"/>&nbsp;
+                                            <apex:commandButton status="fetchStatus" value="Last" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page" styleClass="btn btn-primary btn-xs"/>&nbsp;
+                                            <apex:outputText >{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>noOfRecords, noOfRecords,
+                                                (setCon.pageNumber * size))} of {!noOfRecords}
+                                            </apex:outputText>
+                                            <apex:outputPanel >
+                                                <apex:actionStatus id="fetchStatus" >
+                                                    <apex:facet name="start" >
+                                                        <img src="/img/loading.gif" />
+                                                    </apex:facet>
+                                                </apex:actionStatus>
+                                            </apex:outputPanel>
+                                        </apex:panelGrid>
+                                        <!-- END Pagenation Grid -->
+                                    </div>
+                                <div class="panel-footer panel-primary">&nbsp;</div>
+                                </div>
+                                </apex:outputPanel>
+                            </apex:form>
+                        </apex:outputPanel>
+                    </apex:outputText>
+                    <apex:actionstatus id="actStatusId">
+                        <apex:facet name="start">
+                            <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                                 height: 100%;opacity:0.65;width:100%;">
+                                <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                                    <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." id="imageLoad"/>
+                                    <span class="waitingDescription">Loading...</span>
+                                </div>
+                            </div>
+                        </apex:facet>
+                    </apex:actionstatus>
+
+                    <!-- Close out the teleflex DIV and table -->
+                </div></div></div></div>
+    <script>
+    $('.square_mark').click(function () {
+        $(this).toggleClass('active');
+        $('.polygon_mark').toggleClass("disabled");
+	});
+    </script>
+</apex:page>

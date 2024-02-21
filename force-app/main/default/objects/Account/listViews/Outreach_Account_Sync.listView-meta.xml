@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outreach_Account_Sync</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LegacySurgicalRep__c</columns>
+    <columns>PleurEvacRep__c</columns>
+    <columns>SurgicalSpecialist__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SurgicalSpecialist__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>PleurEvacRep__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Outreach Account Sync</label>
+    <sharedTo>
+        <role>Teleflex_Global_IT</role>
+    </sharedTo>
+</ListView>

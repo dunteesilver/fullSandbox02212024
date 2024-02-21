@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NEWSame_Stylet_Used</fullName>
+    <active>true</active>
+    <description>Please specify if the same stylet was used if this is was the second attempt made.</description>
+    <errorConditionFormula>AND( 
+RecordType.Name = &quot;Vascular/Legacy Arrow Products&quot;, 
+ISPICKVAL(Was_Second_Attempt_Made__c,&quot;Yes&quot;), 
+ISBLANK(TEXT(Was_the_same_stylet_used__c)))</errorConditionFormula>
+    <errorDisplayField>Was_the_same_stylet_used__c</errorDisplayField>
+    <errorMessage>Please specify if the same stylet was used if this is was the second attempt made.</errorMessage>
+</ValidationRule>

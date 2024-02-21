@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Describe_how_to_align_these_goals__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Briefly describe what would need to happen to align these goals?</inlineHelpText>
+    <label>*Describe how to align these goals</label>
+    <length>3000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

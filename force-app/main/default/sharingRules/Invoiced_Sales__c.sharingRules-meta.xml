@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BSW_Sales</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>BSW_Sales</label>
+        <sharedTo>
+            <group>BSW_Sales</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800801</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Canada</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Canada</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Canada</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_1</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 1</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_1</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 1</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_10</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 10</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_10</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_11</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales -Region 11</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_WestCorporate_Sales_Manager_Region_11</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 11</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_12</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 12</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_12</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 12</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_13</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 13</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_13</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 13</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_2</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 2</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_2</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 2</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_3</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales -Region 3</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_3</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 3</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_4</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales-Region 4</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_4</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 4</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_5</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 5</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_5</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 5</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_6</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 6</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_6</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 6</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_7</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 7</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_7</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 7</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_8</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales -Region 8</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_8</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 8</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Invoiced_Sales_Region_9</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Invoiced Sales - Region 9</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Region_9</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 9</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800414</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>800427, 800428, 800447</description>
+        <label>Share w 800414</label>
+        <sharedTo>
+            <group>X800414_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800414</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800416</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 800433, 800434</description>
+        <label>Share w 800416</label>
+        <sharedTo>
+            <group>X800416_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800416</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800420</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share w 800420</label>
+        <sharedTo>
+            <group>X800420_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800420</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800431</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 800427, 800454</description>
+        <label>Share w 800431</label>
+        <sharedTo>
+            <group>X800431_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800431</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800443</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 800427, 800428, 800429, 800433, 80034, 800435, 800447, 800451, 800454</description>
+        <label>Share w 800443</label>
+        <sharedTo>
+            <group>X800443_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800443</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800450</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 800475, 801104, 801108, 801111</description>
+        <label>Share w 800450</label>
+        <sharedTo>
+            <group>X800450_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800450</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800455</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share w 800455</label>
+        <sharedTo>
+            <group>X800455_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800455</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800462</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 800475, 801104, 801108, 801111</description>
+        <label>Share w 800462</label>
+        <sharedTo>
+            <group>X800462_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800462</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800468</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 801101, 801110, 802218</description>
+        <label>Share w 800468</label>
+        <sharedTo>
+            <group>X800468_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800468</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800477</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 801109, 801100</description>
+        <label>Share w 800477</label>
+        <sharedTo>
+            <group>X800477_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800477</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800478</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 801103, 801112</description>
+        <label>Share w 800478</label>
+        <sharedTo>
+            <group>X800478_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800478</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800480</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 800474, 800482 and 800484</description>
+        <label>Share w 800480</label>
+        <sharedTo>
+            <group>X800480_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800480</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800483</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share w 800487 user: 800471, 801093, 801095</description>
+        <label>Share w 800483</label>
+        <sharedTo>
+            <group>X800483_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800483</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800487</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share w 800487</label>
+        <sharedTo>
+            <group>X800487_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800487</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_800497</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>shared with 800439</description>
+        <label>Share w 800497</label>
+        <sharedTo>
+            <group>X800497_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800497</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_899955</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shared with 801116, 801117</description>
+        <label>Share w 899955</label>
+        <sharedTo>
+            <group>X899955_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>899955</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_w_Lee_Brooks_and_Mark_Leggett</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share w/ Lee Brooks and Mark Leggett</label>
+        <sharedTo>
+            <group>X800485_Share</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800485</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>X800247_800246_Stephane</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>800247,800246&gt;Stephane</label>
+        <sharedTo>
+            <role>Interventional_Canada_RSM</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800247,800246</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>X800249_Gilbert</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>800249 &gt; Gilbert</label>
+        <sharedTo>
+            <role>Anesthesia_RSM_Canada</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Territory_Number__c</field>
+            <operation>equals</operation>
+            <value>800249</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

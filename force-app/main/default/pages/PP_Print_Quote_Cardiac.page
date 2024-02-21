@@ -1,0 +1,566 @@
+<apex:page controller="PP_Print_Quote" sidebar="false" applyBodyTag="false" applyHtmlTag="false" renderAs="{!r}" showHeader="false">
+    <head>
+        <style type="text/css" media="print">
+            @page 
+            {
+            <!-- size: 8.5in 11in;/* width height */ -->
+            size: letter;
+            
+            margin-top: 25px;
+            margin-bottom: 65px;
+            @top-center { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 0px; position: running(header); }
+            div.footer { display: block; padding: 25px; position: running(footer); }
+            
+            .page-break { display:block; page-break-before:always; }            
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+            
+        </style>     
+        <style type="text/css">
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 10px;
+            padding: 1px;
+            }
+            #tbs {
+            padding:10px;
+            border:1px solid black;
+            }
+            #tbs th{
+            padding:5px;
+            border:1px solid black; 
+            font-family:"Sans-Serif"; 
+            font-size: 11px;
+            font-weight: bold;
+            background-color:#777;
+            color:#FFF;
+            }
+            #tbs td{
+            padding:4px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            vertical-align: text-top; 
+            }
+            #tbs td.bline{
+            padding:10px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: 1px solid #f0f0f5;
+            }
+            .bl {
+            border-bottom: 2px solid black;
+            }
+            .noborders {
+            border-left: 0px solid black;
+            border-right: 0px solid black;
+            }
+            .tborder{
+            border:1px solid black;
+            }
+            
+            #sig {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            page-break-inside:avoid;
+            position:relative;
+            }
+            #mid {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            page-break-inside:avoid;
+            position:relative;
+            }
+            
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            td {
+            <!-- font-family: Arial Unicode MS; -->
+            font-family:"Sans-Serif"; 
+            font-size: 12px;
+            padding: 2px;
+            }
+            p {
+            <!-- font-family: Arial Unicode MS; -->
+            font-family:"Arial Unicode MS,Sans-Serif"; 
+            font-size: 12px;
+            padding: 2px;
+            }
+            th {
+            font-family:"Sans-Serif"; 
+            font-size: 10px;
+            padding: 2px;
+            font-weight: bold;
+            background-color: grey;
+            }
+            .y {
+            background-color: #ffff00;
+            font-weight: bold;
+            }
+            .c{
+            text-align: center; 
+            }
+            .isbold {
+            font-weight: bold;
+            }
+            .fl {
+            font-weight: bold;
+            text-align: right;
+            }
+            .r {
+            text-align: right;
+            }
+            .va {
+            vertical-align: text-top; 
+            }
+            .rline {
+            border-right-color: black;
+            border-right-style: solid;
+            border-width: 1px;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            .tnowrap {
+            page-break-inside: avoid;
+            position: relative;
+            }
+            .topline {
+            border-top-style: solid;
+            }
+            .bgc{
+            background-color: #f0f0f5;
+            }
+            .qlogo {
+            max-height: 28px;
+            max-width: 500px;
+            }
+            @page {
+            <!-- size:A4 portrait;
+            border: 1px solid black;    -->
+            }
+            .border {
+            padding:1px;
+            border:1px solid black;
+            
+            }
+        </style>
+    </head>
+    <body>
+        
+        
+        <div class="header">
+            <!--
+            <table width="100%" border="0">
+            <tr>
+                <td align="left" style="padding:20px;"><img src="{!sm[pq.Stationary__c].URL__c}&oid={!OrgId}" /></td>
+            </tr>
+            </table>
+            -->
+        </div>
+        
+        <div class="footer"><center>Page <span class="pagenumber"/> of <span class="pagecount"/></center>
+        </div>
+        
+        <!-- Contact -->
+        <div class="content">
+            <apex:variable value="{!if(pq.Template__c ='Arrow International','Sec','Pri')}" var="qt"/>
+            <br/>&nbsp;
+            <table width="100%" border="0">
+                <tr>
+                    <td width="100%" valign="top">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h2>Quotation: {!pq.name}</h2>
+                                    Date:
+                                    <apex:outputText value="{0,date,short}">
+                                        <apex:param value="{!today()}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <b>Customer:</b><br/>
+                        <table width="100%"><tr><td>
+                            {!pq.Account_Name__r.Name}<br/>
+                            {!pq.Account_Name__r.BillingStreet}<br/>
+                            {!pq.Account_Name__r.BillingCity},&nbsp;{!pq.Account_Name__r.BillingState}{!pq.Account_Name__r.BillingPostalCode}<br/>
+                            Attn: {!pq.Contact_Name__r.name}<br/>
+                            Email: {!pq.Contact_Name__r.email}<br/>
+                            <!-- Pricing Source: {!sdeal} contract&nbsp; 
+                            <apex:outputText rendered="{!li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}">#{!li.Sales_Deal__r.GPO_Contract_Ref__c} </apex:outputText>
+                            <apex:outputText rendered="{!li.Sales_Deal_Tier__c != NULL}"> {!li.Sales_Deal_Tier__c} </apex:outputText>-->
+                            </td></tr>
+                        </table>
+                        <br/>
+                        
+                        <table width="100%">
+                            <tr>
+                                <td valign="top" width="50%">
+                                    <b>Sales Rep:</b><br/>
+                                    {!pq.Owner_Full_Name__c}<br/>
+                                    {!pq.Owner_Email__c}<br/>
+                                    {!pq.Owner_Phone__c}
+                                </td>
+                                <td width="50%">
+                                    <apex:outputText rendered="{!qt='Pri'}">
+                                        <b>PO Remittance:</b><br/>
+                                        Teleflex Funding LLC <br/>
+                                        PO Box 936729 <br/>
+                                        Atlanta, GA 31193-6729 <br/>
+                                        Email to: specialtycontracts@teleflex.com<br/>
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td valign="top">
+                        <table><tr><td colspan="2">
+                            <apex:image width="200" url="/servlet/servlet.ImageServer?id=0152S00000BtQFL&oid={!OrgId}"/>
+                            </td></tr>
+                            <tr><td>&nbsp;&nbsp;</td><td>
+                            <apex:outputText rendered="{!qt='Pri'}">
+                                Teleflex LLC<br/>
+                                Cardiac Care<br/>
+                                16 Elizabeth Drive<br/>
+                                Chelmsford, MA 01824<br/>
+                                978-250-5100<br/>
+                                Toll-free: 800-343-3297<br/>
+                                24-hr. Customer Support:<br/>
+                                800-447-6961<br/>
+                                Fax: 978-250-5105<br/>
+                                
+                            </apex:outputText>
+                            <apex:outputText rendered="{!qt='Sec'}">
+                                Teleflex LLC<br/>
+                                16 Elizabeth Drive<br/>
+                                Chelmsford, MA 01824<br/>
+                                978-250-5100<br/>
+                                Toll-free: 800-343-3297<br/>
+                                24-hr. Customer Support:<br/>
+                                800-447-6961<br/>
+                                Fax: 978-250-5105<br/>
+                            </apex:outputText>
+                            </td></tr></table>
+                        <br/>                        
+                        <table>
+                            <tr><td>&nbsp;&nbsp;</td><td>
+                            <b>Terms:</b><br/>
+                            Net 30 Days<br/>
+                            FOB Shipping Point<br/>
+                            Freight Prepaid and<br/>
+                            Added to Invoice
+                            </td></tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <center><h2>OFFER VALID THROUGH&nbsp;
+                            <apex:outputText value="{0,date,long}">
+                                <apex:param value="{!pq.Expiration_Date__c}" />
+                            </apex:outputText></h2></center>
+                    </td>
+                </tr>
+            </table>
+            
+            <br/>
+            <table width="100%" tableborder="0" id="tbs">
+                <tr>
+                    <th class="c">#</th>
+                    <th class="c">Catalog #</th>
+                    <th class="r"><center>Sales Org</center></th>
+                    <th class="c">Product Description</th>
+                    
+                    <th class="r"><center>Unit Price</center></th>
+                    <th class="r"><center>Sales Price</center></th>
+                    <th class="c">Qty</th>
+                    <th class="r"><center>Extended Price</center></th>
+                </tr>
+                <apex:variable value="{!1}" var="rowNum"/>
+                <apex:repeat value="{!pqli}" var="li">
+                    <apex:variable value="{!if(li.Material_Name__r.Sales_Org__c == 'US30','Arrow',if(li.Material_Name__r.Sales_Org__c == 'US10','TFX','') )}" var="salesOrgName"/>
+                    <apex:variable value="{!IF(MOD(rowNum, 2)=0,'bgc','')}" var="bgcolr"/>
+                    <apex:variable value="{!if(li.IsBold__c == TRUE,'isbold','')}" var="isbold"/>
+                    <apex:variable value="{!if(li.Material_Name__r.Cardiac_Complimentary__c == TRUE,TRUE,FALSE)}" var="CardiacComp"/>
+                    <apex:variable value="{!li.Sales_Deal__r.Owner_Name__c}" var="sdeal" rendered="{!LEFT(li.Material_Name__r.name,6) == 'IAP-05' && li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}"/>
+                    
+
+                    <tr>
+                        <td class="{!bgcolr} c rline {!isbold}">{!rowNum}</td>
+
+                        <td class="{!bgcolr} c rline {!isbold}">{!li.Material_Name__r.name}</td>
+                        <td class="{!bgcolr} r {!isbold}"><center>{!salesOrgName}</center></td>
+                        <td class="{!bgcolr} rline {!isbold}">
+                            <apex:outputField value="{!li.Product_Description__c}"/>
+                            <!--
+                            <apex:outputText rendered="{!LEFT(li.Material_Name__r.name,6) == 'IAP-05' && li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}">
+                                <br/>&nbsp;<br/>
+                                <table><tr><td class="y" style="background-color:#ffff00;font-weight:bold;border-left:0px;border-right:0px;">
+                                    Arrow Interventional-Cardiac Care, a division of Teleflex, is pleased to provide ({!li.Quantity__c}) 
+                                    AutoCAT 2 WAVE® Intra-Aortic Balloon Pump Systems to {!pq.Account_Name__r.Name} at the special 
+                                    {!li.Sales_Deal__r.Owner_Name__c} contract&nbsp;
+                                    <apex:outputText rendered="{!li.Sales_Deal__r.GPO_Contract_Ref__c != NULL}">#{!li.Sales_Deal__r.GPO_Contract_Ref__c} </apex:outputText>
+                                    <apex:outputText rendered="{!li.Sales_Deal_Tier__c != NULL}"> {!li.Sales_Deal_Tier__c} </apex:outputText>
+                                    price of&nbsp;
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!li.Eligible_Price__c}" />
+                                    </apex:outputText>
+                                    each for a total purchase price of&nbsp;
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!pq.Grand_Total__c}" />
+                                    </apex:outputText>.
+                                    <br/>&nbsp;<br/>
+                                    Please note that this special pricing includes all cash discounts and trade-in allowances.
+                                    </td></tr>
+                                </table>&nbsp;
+                            </apex:outputText>-->
+
+
+                        </td>
+                        <td class="{!bgcolr} r {!isbold}">&nbsp;
+                            <apex:outputText value="{0, number, currency}">
+                                <apex:param value="{!li.Material_Name__r.List_Price__c}" />
+                            </apex:outputText>
+                        </td>
+
+                        <apex:outputText rendered="{!CardiacComp}">
+                            <td valign="center" class="{!bgcolr} r {!isbold}">
+                                <u>NO&nbsp;CHARGE</u>
+                            </td>
+                            <td class="{!bgcolr} c rline {!isbold}">{!li.Quantity__c}</td>
+                            <td valign="center" class="{!bgcolr} r {!isbold}">
+                                <u>NO&nbsp;CHARGE</u>
+                            </td>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!!CardiacComp}">
+                            <td class="{!bgcolr} r {!isbold}">&nbsp;
+                                <apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!li.Sales_Price__c}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="{!bgcolr} c rline {!isbold}">{!li.Quantity__c}</td>
+                            <td class="{!bgcolr} r {!isbold}">&nbsp;
+                                <apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!li.Extended_Price__c}" />
+                                </apex:outputText>
+                            </td>
+                        </apex:outputText>                        
+                    </tr>
+                    <apex:outputText rendered="{!rowNum = pq.Line_Count__c}">
+                        <tr>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="c bl"><br/>
+                                Please send any Purchase Orders to<br/>
+                                {!pq.Owner_Full_Name__c} at {!pq.Owner_Email__c} and<br/>
+                                Specialty Contracts at specialtycontracts@teleflex.com<br/>&nbsp;
+                                
+                            </td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                            <td class="bl">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="bline" colspan="6">&nbsp;</td>
+                            <td class="c bl">Total</td>
+                            <td class="c bl">
+                                <apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!pq.Grand_Total__c}" />
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </apex:outputText>
+                    <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                </apex:repeat>
+            </table><br/>
+            <apex:outputPanel rendered="{!pq.Customer_comments__c != NULL}">
+                <table align="center" width="400px">
+                    <tr><th style="padding: 5px;"><center>Comments</center></th></tr>
+                    <tr>
+                        <td class="border" style="padding: 5px;">
+                            <apex:outputField value="{!pq.Customer_comments__c}"/>
+                        </td>
+                    </tr>
+                </table><br/>
+            </apex:outputPanel>
+            
+            <ol>
+                <li>All orders are subject to acceptance in writing by Arrow Interventional, Everett MA</li>
+                <li>IMPORTANT-NOTE TERMS AND CONDITIONS ARE ATTACHED.</li>
+                <li>One (1) full year service warranty included on equipment.</li>
+            </ol>
+            
+            <br/>&nbsp;<br/>&nbsp;
+            <apex:outputPanel layout="block" style="page-break-inside: avoid;">
+                <table width="600" id="sig">
+                    <tr>
+                        <td colspan="3" valign="top">&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="topline" valign="top">For Teleflex<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="topline">Quotation Accepted and Approved</td>
+                        <td class="c topline">Date</td>
+                        <td class="r topline">Purchase Order</td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+            
+            
+           
+            
+        </div>
+        <!-- End: Quote Content -->
+
+        <apex:outputText rendered="{!qt='Pri'}">
+        <!-- Start: Terms and Conditions -->
+        <div class="page-break">
+            <table>
+                <!-- <apex:iframe frameborder="true" scrolling="true" src="{!$Site.Domain}/servlet/servlet.FileDownload?file={!Document1}"/> -->
+                <!-- <apex:image width="95%" url="/servlet/servlet.FileDownload?id=0810t0000000hKI"/> -->
+                <apex:image width="95%" url="{!$Resource.CardiacGeneralTerms1}"/>
+                <apex:image width="95%" url="{!$Resource.CardiacGeneralTerms2}"/>
+                <apex:image width="95%" url="{!$Resource.CardiacGeneralTerms3}"/>
+                <apex:image width="95%" url="{!$Resource.CardiacGeneralTerms4}"/>
+                <apex:image width="95%" url="{!$Resource.W9form}"/>
+            </table>
+        </div>
+        <!-- End: Terms and Conditions -->
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!qt='Sec'}">
+            <!-- Start: Terms and Conditions -->
+            <div class="page-break">
+                <table>
+                    <tr>
+                        <td width="100%">
+                            <p><b>TELEFLEX TERMS AND<br/>CONDITIONS OF SALE</b></p>
+                            <p>Teleflex Medical Incorporated, a California Corporation with its principal place of business at 3015 Carrington Mill Blvd, Morrisville, North Carolina and Arrow International, Inc., with offices located at 2400 Bernville Road, Reading, Pennsylvania (“Arrow”) (“Teleflex Medical Incorporated” and “Arrow” individually or collectively referred to herein as “Teleflex”). All entities purchasing products from Teleflex are referred to herein as “Buyer” </p>
+                            <p>1. Contract. These terms and conditions will apply to all sales of products by Teleflex to Buyer(s). Teleflex’s acceptance of Buyer’s purchase order is expressly limited to the terms and conditions contained herein and any provisions of Buyer’s purchase order which are consistent with the terms and conditions contained herein. Any and all other terms and conditions proposed by Buyer are objected to and rejected by Teleflex. Acceptance of products from Teleflex by Buyer shall be deemed to be an acceptance of these terms and conditions. Notwithstanding the foregoing, if at the time of Buyer’s purchase of products there is in effect a supply, or purchasing, or distributorship agreement between Teleflex and Buyer, any of these terms and conditions which are inconsistent with the provisions of such supply or purchasing agreement shall be ineffective and the terms of the supply or purchasing agreement shall control. </p>
+                            <p>2. Purchasing Account Acceptance. Buyer must establish a valid purchasing account with Teleflex prior to purchase order acceptance. If Buyer seeks open credit terms with Teleflex, Buyer must provide all requested information included in Teleflex’s credit application. Teleflex is not responsible, nor offers any remedy to Buyer, for delays in order fulfillment due to Buyer delay in providing incomplete or incorrect information on their submitted credit application. Any change to Buyer purchasing account information, or addition of shipping facility locations, must be submitted in writing prior to Teleflex implementation of this change for subsequent purchase orders placed. </p>
+                            <p>3. Payment Terms. Except as otherwise specified to Buyer, the terms of payment for each order of Buyer shall be net thirty (30) days from date of invoice. In the event of nonpayment of an invoice, all collection fees and/or legal fees incurred by Teleflex will be added to the balance owed on the account, as permitted by law. </p>
+                            <p>4. Methods of Payment. Teleflex accepts payment via open credit terms (if extended by Teleflex, pursuant to section 8 of these Terms), or payment in advance with a cleared company check or pre-authorized credit card. Teleflex accepts Visa, MasterCard and American Express (excluding Arrow International, Inc., orders) credit cards. </p>
+                            <p>5. Purchase Order Acceptance: Teleflex accepts Buyer purchase orders via telephone, fax, email and EDI. EDI connections must be requested in writing and accepted linkage made prior to acceptance of Buyer purchase orders via EDI. Purchase orders are recognized and order placement confirmed by Teleflex within 24 hours of the receipt of Buyer purchase order. </p>
+                            <p>6. Purchase Order Cancellations. Teleflex allows Buyer the ability to cancel all or part of their purchase order, excluding any products already in the process of delivery, and products made to order, customized, or repaired for Buyer. All purchase order cancellation requests must be communicated to, and confirmed by Teleflex, prior to being accepted as cancelled. Teleflex offers no Remedy to Buyer for purchase order discrepancies caused by requested order cancellations that do not comply with provisions for order cancellation contained herein. </p>
+                            <p>7. Shipping. Products will be shipped as FOB Origin, with risk of loss or damage passing to the Buyer at Teleflex’s shipping point. Teleflex shall not fill orders with requested shipment directly to patients, any residential address, and any temporary or mobile site (hotel, construction site, storage unit, etc). All shipment locations must have Buyer staff on hand to accept and sign for delivered product during normal business hours. All applicable shipping charges are the responsibility of Buyer and will be prepaid by Teleflex and invoiced to Buyer or paid directly by Buyer. </p>
+                            <p>7 a. Standard Freight Terms. Teleflex shall ship products via preferred standard ground service carriers, with charges prepaid and invoiced. When Buyer is paying freight, Buyer can select their preferred carrier and method of service. Buyer is responsible for all applicable freight charges, including but not limited to, any special level of service, handling, packaging or freight charges, other than standard ground service, as requested by Buyer. These can include liftgate service, inside delivery, special packaging requirements, special delivery appointments, etc. </p>
+                            <p>7 b. Third Party Freight Payment. Buyers participating in a third party freight program can have applicable freight charges billed to their preferred third party freight collect account. Requests to change freight billing for a Buyer to a managed third party freight program must be provided in writing to Teleflex by Buyer, or the Third Party Managed Freight Program acting as the Buyer’s Proxy, no later than five (5) business days prior to expectation of implementation of this service to Buyer. As part of this written request, Buyer, or Buyer’s Proxy, must provide third party freight collect account number(s) to Teleflex, per facility to be added to this program, including any other special instructions needed to ensure compliance to Buyer’s program. Teleflex shall not be liable for any disputed freight charged incorrectly, if the Buyer does not comply with provisions herein.   </p>
+                            <p>7 c. Expedited Orders Expedited orders are only processed at the specific request of the Buyer, and when Buyer is specifically requesting at the time of ordering. Buyers request for expedited orders must include the exact level of service needed for the delivery (Next day, Second day, Saturday delivery, early AM, etc.) and a location with valid address that the Carrier can deliver to. Expedited orders are not eligible for free freight of any type, and Buyer is responsible for all freight charges either prepaid and added to the invoice, or through provision of a third party collect account number. Teleflex is not liable for the reliability or outcome of expedite requests, nor will offer Buyer any remedy, due to Carrier error, Carrier delay, Acts of God, and/or any other situations outlined in section 8 of these terms contained herein. </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-break">
+                <table>
+                    <tr>
+                        <td width="100%">
+                            <p>7d Other: Shipment of products is subject to availability of Teleflex’s inventory. Products are shipped within five (5) to seven (7) business days once a Purchase Order is received. Teleflex reserves the right to fill orders with one or more shipments. Notification of short shipments and other shipping discrepancies must be reported to Teleflex Customer Service within seven (7) business days of signed receipt of order. Upon receipt of shipment, all products should be unpacked and inspected and any damage noted on the freight bill and reported to the carrier. Shipping requirements for Authorized Distributors are according to the Agreements with the Authorized Distributors. </p>
+                            <p>8. Force Majeure. Teleflex shall not be responsible nor liable, to Buyer for any failure to perform its obligations to Buyer as a result of any strikes, work stoppages or labor unrest, earthquakes, fires, floods, storms or other natural disasters, shortages of materials or supplies or availability of goods or inventory, acts of war, terrorism, crimes, unrest or violence, shipping or other transportation delays or restraints, acts, laws, rules or regulations of any governmental or legal authority, or any other cause or circumstance beyond Teleflex’s reasonable control. </p>
+                            <p>9. Taxes. Any sales, use or excise taxes or other charges or levies which Teleflex is required to pay or collect under any applicable law, ordinance, rule or regulation (domestic or foreign), upon or with respect to the sale, shipping, delivery, storage or use of the products purchased by Buyer, shall be for the account of Buyer and Buyer agrees to pay the amount thereof to Teleflex, as invoiced or upon request. </p>
+                            <p>10. Product Warranty. Teleflex warrants that its products sold to Buyer pursuant hereto, other than products which have been reconditioned or repaired for Buyer, will be free from defects in workmanship and materials from their date of shipment until (i) their expiration date, if they have an expiration date, or (ii) one (1) year after the date of original purchase, if they do not have an expiration date, provided they are not used in any application or manner not specified or recommended by Teleflex in their Instructions For Use or otherwise misused or abused. Teleflex makes no warranty whatsoever with respect to reprocessed or repaired products. Teleflex’s sole liability and obligation to Buyer in the event of a breach of the foregoing warranty shall be to replace the defective product or products or, in its discretion, to provide a credit in the amount of the purchase price thereof. </p>
+                            <p>EXCEPT AS EXPRESSLY SET FORTH HEREIN, TELEFLEX NEITHER MAKES, NOR SHALL HAVE ANY LIABILITY UNDER, ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR AN INTENDED USE OR PURPOSE. NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, MADE BY ANY REPRESENTATIVE, AGENT OR EMPLOYEE OF TELEFLEX WHICH IS NOT SPECIFICALLY SET FORTH HEREIN SHALL BE BINDING UPON TELEFLEX. </p>
+                            <p>All claims for breach of the foregoing express warranty shall be made by Buyer (and no other party) in writing within thirty (30) days after discovery of the defect. The claim shall include a returned goods authorization number which may be obtained from Teleflex prior to assertion of the claim. In addition, the claim must be accompanied by the return of the defective product or products to the destination specified by Teleflex within 60 days of Buyer’s written claim. Any claim not made in compliance herewith shall be deemed to have been waived. Products for which a warranty claim is validly made under this Section 10 hereof shall be returned as specified in this Section 10 and Teleflex’s Return Goods Policy . </p>
+                            <p>11. LIMITATION OF LIABILITY. IN NO EVENT SHALL TELEFLEX BE LIABLE TO BUYER WITH RESPECT TO ANY SALES OF PRODUCTS, WHETHER UNDER THEORIES OF CONTRACT, TORT, INDEMNITY, PRODUCT LIABILITY, STRICT LIABILITY OR OTHERWISE, FOR ANY LOST PROFITS OR SPECIAL, CONSEQUENTIAL, INCIDENTAL, PUNITIVE OR EXEMPLARY DAMAGES, EVEN IF TELEFLEX HAS BEEN APPRISED OF THE LIKELIHOOD OF SUCH DAMAGES OCCURRING. </p>
+                            <p>12. Product Returns. Products shipped to Buyer may be returned within sixty (60) days of shipment for replacement or credit in the amount of the purchase price, as allowed in Teleflex’s Return Goods Policy outlined in Exhibit A. </p>
+                            <p>13. Minimum Order Requirement: Teleflex requires Buyer to meet the minimum order requirement of One Hundred dollars ($100.00) per Purchase Order. Teleflex at its sole discretion may charge a fee of Twenty Dollars ($20.00) to the Buyer for each Purchase Order less than One Hundred Dollars ($100.00). The minimum order requirement for Authorized Distributors shall be per Agreement with the Authorized Distributors. </p>
+                            <p>14. Product Recalls. If any products shipped to and held by Buyer are or become subject to a recall mandated by the United States Food and Drug Administration (FDA), Buyer shall notify Teleflex immediately of possession of affected product, request a return authorization, and promptly return the affected product to the address designated by Teleflex. Teleflex will replace affected product with comparable products not subject to recall, or provide a credit in the amount of Buyer’s original purchase price. </p>
+                            <p>15. Adequate Assurance/Suspension of Orders. Teleflex may, at any time or times, suspend performance of any order to Buyer or require payment in cash, security or other adequate assurance satisfactory to Teleflex when, in Teleflex’s opinion, the financial condition of Buyer or other grounds for insecurity warrant such action. </p>
+                            <p>16. Assignment. Buyer shall not assign its rights nor delegate its duties with respect to any purchase order for Teleflex’s products and/or its agreement with Teleflex without the prior written consent of Teleflex. Any such actual or attempted assignment without Teleflex’s prior written consent shall entitle Teleflex to cancel all outstanding orders upon notice to Buyer. </p>
+                            <p>17. Governing Law. These terms and conditions and the agreement between Teleflex and Buyer shall in all respects be governed by, and the parties respective rights and obligations enforced under, the laws of the Commonwealth of Pennsylvania without giving effect to the conflict of laws principles thereof. </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-break">
+                <table>
+                    <tr>
+                        <td width="100%">
+                            <p>18. Confidential Information. Certain information disclosed by Teleflex during the course of business dealings with Buyer may be confidential and proprietary information (“Confidential Information”). Confidential Information shall include all information not previously known to Buyer or not generally known or readily ascertainable and from which Buyer may obtain a business benefit or advantage. If Buyer questions whether any information is regarded as confidential, Buyer agrees to treat the information as Confidential Information until and unless Teleflex confirms in writing that it is not confidential. Absent express written consent to the contrary and until the Confidential Information becomes publicly known or otherwise legally available in some manner, other than as a result of a breach of this Agreement, Buyer will not use, disclose, transfer, duplicate, or reproduce Confidential Information in any form other than as necessary in the performance of this Agreement. Notwithstanding the provisions of this paragraph, Buyer party may disclose Confidential Information as required by a court order or other lawful process; provided that it notifies Teleflex of any such order or process promptly and shall attempt in good faith to allow Teleflex to contest such order or process. Teleflex may require Buyer to return all copies of documents containing Confidential Information. Buyer shall be liable Teleflex for any damages Teleflex may suffer if the Confidential Information is disclosed without Teleflex’s authorization, whether such disclosure is due to negligence, intentional misconduct or any other reason. </p>
+                            <p>19. Insurance. Teleflex will provide evidence of coverage upon request. </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+        <!-- Start: Return Policy -->
+        <div class="page-break">
+            <table>
+                <tr>
+                    <td>
+                        <p>
+                            <b>EXHIBIT A</b><br/>
+                            TELEFEX MEDICAL INCORPORATED AND ARROW INTERVENTIONAL INC.,<br/>
+                            RETURN GOODS POLICY</p>
+                        
+                        <p>A Return Goods Authorization (RGA) number must be received from Teleflex Medical Domestic Customer Service (866-246-6990) and (800-523-8446) for Arrow Interventional Inc. Domestic Customer Service prior to returning any products. Interventional customers may send their information by facsimile to 919-361-4111. Requests for return authorizations must be received by telephone, mail, email or facsimile within sixty (60) calendar days of invoice date and must include: </p>
+                        <ul>
+                            <li>Purchase Order number</li>
+                            <li>Invoice number</li>
+                            <li>Date of purchase</li>
+                            <li>Product number</li>
+                            <li>Quantity of items to be returned</li> 
+                            <li>Lot or serial number</li>
+                            <li>Reason for return</li>                            
+                        </ul>
+
+                        
+                        <p>All authorized return shipments must be shipped freight prepaid. Upon issuance of the RGA number, the customer will be advised as to which Distribution Center to ship the product. Goods returned without an RGA number will not be accepted or credited. Teleflex Medical will not accept any authorized return shipments after sixty (60) calendar days of the RGA issue date.</p>
+                        Acceptable Returns and Credit Schedule <br/>
+                        Reason for Return <br/>
+                        Defective product Invoiced price <br/>
+                        Teleflex Medical shipping error Invoiced price<br/> 
+                        Teleflex Medical order error Invoiced price <br/>
+                        Customer order error Invoiced price less 30% <br/>
+                        Refused shipment (not Teleflex Medical error) Invoiced price less 30% <br/>
+                        Customer stock reduction Invoiced price less 30% <br/>
+                        Unacceptable Returns <br/>
+                        Merchandise damaged in shipment. The carrier is responsible and should be contacted by the customer. <br/>
+                        Custom or special order products.<br/> 
+                        Products not in the original packaging or in less than sales unit quantity. <br/>
+                        Product not in saleable condition. <br/>
+                        Obsolete or discontinued product. <br/>
+                        Private labeled products. <br/>
+                        Reusable goods over 60 days from invoice date <br/>
+                        Sterile products <br/>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- End: Return Policy -->
+        </apex:outputText>
+        <apex:outputText rendered="{!qt='Pri'}">
+        <!-- Start: W9 -->
+        <div class="page-break">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <apex:outputText rendered="{!qt='Sec'}">
+                        <apex:image width="95%" url="/servlet/servlet.ImageServer?id=015E0000008G5e9&oid={!OrgId}"/>
+                        </apex:outputText>
+                        <p><b>Remittance Address:</b><br/>
+                              Teleflex Funding LLC <br/>
+                              PO Box 936729 <br/>
+                              Atlanta, GA 31193-6729 <br/></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- End: W9 -->
+        </apex:outputText>
+    </body>
+</apex:page>

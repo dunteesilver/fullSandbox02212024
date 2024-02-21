@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deliver_education_session_with_Rad_Techs__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Deliver education session with Rad Techs (if correlations are required)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Deliver education session with Rad Techs (if correlations are required)</inlineHelpText>
+    <label>Deliver education session with Rad Techs</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

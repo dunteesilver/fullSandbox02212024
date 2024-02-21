@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RegionPickList__c</fullName>
+    <externalId>false</externalId>
+    <label>Region</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Canada</fullName>
+                <default>false</default>
+                <label>Canada</label>
+            </value>
+            <value>
+                <fullName>Central</fullName>
+                <default>false</default>
+                <label>Central</label>
+            </value>
+            <value>
+                <fullName>Central Atlantic</fullName>
+                <default>false</default>
+                <label>Central Atlantic</label>
+            </value>
+            <value>
+                <fullName>East</fullName>
+                <default>false</default>
+                <label>East</label>
+            </value>
+            <value>
+                <fullName>Executive</fullName>
+                <default>false</default>
+                <label>Executive</label>
+            </value>
+            <value>
+                <fullName>Great Lakes</fullName>
+                <default>false</default>
+                <label>Great Lakes</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Mid South</fullName>
+                <default>false</default>
+                <label>Mid South</label>
+            </value>
+            <value>
+                <fullName>National</fullName>
+                <default>false</default>
+                <label>National</label>
+            </value>
+            <value>
+                <fullName>Northeast</fullName>
+                <default>false</default>
+                <label>Northeast</label>
+            </value>
+            <value>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+                <label>Pacific</label>
+            </value>
+            <value>
+                <fullName>RCEM - Great Lakes/Central</fullName>
+                <default>false</default>
+                <label>RCEM - Great Lakes/Central</label>
+            </value>
+            <value>
+                <fullName>RCEM - Northeast/Central Atlantic</fullName>
+                <default>false</default>
+                <label>RCEM - Northeast/Central Atlantic</label>
+            </value>
+            <value>
+                <fullName>RCEM - North West/Pacific</fullName>
+                <default>false</default>
+                <label>RCEM - North West/Pacific</label>
+            </value>
+            <value>
+                <fullName>RCEM - South Atlantic/Southeast</fullName>
+                <default>false</default>
+                <label>RCEM - South Atlantic/Southeast</label>
+            </value>
+            <value>
+                <fullName>RCEM - South Central/South West</fullName>
+                <default>false</default>
+                <label>RCEM - South Central/South West</label>
+            </value>
+            <value>
+                <fullName>South Atlantic</fullName>
+                <default>false</default>
+                <label>South Atlantic</label>
+            </value>
+            <value>
+                <fullName>South Central</fullName>
+                <default>false</default>
+                <label>South Central</label>
+            </value>
+            <value>
+                <fullName>Southeast</fullName>
+                <default>false</default>
+                <label>Southeast</label>
+            </value>
+            <value>
+                <fullName>West</fullName>
+                <default>false</default>
+                <label>West</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

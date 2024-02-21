@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Exposed_to_Infectious_Desease</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(How_the_product_was_being_used__c, &quot;During use on a patient&quot;),
+ISPICKVAL(Patient_exposed_to_infectious_disease__c,&quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Patient_exposed_to_infectious_disease__c</errorDisplayField>
+    <errorMessage>Please fill in the details in this field when &apos;How the Product was being Used&quot; is selected as &apos;During Use on a patient&apos;.</errorMessage>
+</ValidationRule>

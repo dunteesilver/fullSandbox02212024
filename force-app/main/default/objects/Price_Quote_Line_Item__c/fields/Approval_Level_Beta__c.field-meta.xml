@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Level_Beta__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* These rules should cover 99% of Line Items */
+
+/* This Catches Blank Lines for Descriptions  */
+IF(
+Quantity__c = 0
+,1,
+
+/* Pricing Tiers */
+if(
+AND(
+Check_Sales_Org_Key__c = &quot;US103010&quot;,
+Check_Business_Unit__c &lt;&gt; &quot;Surgical Instruments&quot;,
+Eligible_Price__c &lt;&gt; Sales_Price__c,
+List_Price__c &lt;&gt; Sales_Price__c,
+Requested_Price__c &lt;&gt; Sales_Price__c
+),4,
+
+
+/* REP - Rep is Zero and Sales not equal to List */ 
+IF( 
+AND( 
+List_Price__c = 0, 
+Eligible_Price__c &lt;&gt; Sales_Price__c, 
+Sales_Price__c != Rep_Price__c, 
+Owner_Approval_Level__c = 1 
+),2, 
+
+/* RSM - RSM is Zero and Sales not equal to List */ 
+IF( 
+AND( 
+List_Price__c = 0, 
+Eligible_Price__c &lt;&gt; Sales_Price__c, 
+Sales_Price__c != RSM_Price__c, 
+Owner_Approval_Level__c = 2 
+),3, 
+
+/* Sales Price is outside Cost Guidelines  */
+IF(
+AND(
+Cost__c != 0,
+Sales_Price__c &lt; Cost__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c,
+Sales_Price__c &lt;&gt; 0
+),4,
+
+/* Sales Price is outside Floor Guidelines  */
+IF(
+AND(
+Floor_Price__c != 0,
+Sales_Price__c &lt; Floor_Price__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c,
+Sales_Price__c &lt;&gt; 0
+),4,
+
+/* Sales Price is outside Director Guidelines  */
+IF(
+AND(
+Director_Price__c != 0,
+Sales_Price__c &lt; Director_Price__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c,
+Sales_Price__c &lt;&gt; 0
+),4,
+
+/* Sales Price is outside RSM Guidelines  */
+IF(
+AND(
+Sales_Price__c &lt; RSM_Price__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c,
+Sales_Price__c &lt;&gt; 0
+),3,
+
+/* Sales Price is outside Rep Guidelines  */
+IF(
+AND(
+Sales_Price__c &lt; Rep_Price__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c,
+Sales_Price__c &lt;&gt; 0
+),2,
+
+/* These are the exceptions that get sent to the RSM to sort out */
+
+/* Sales Price is outside Director Guidelines  */
+IF(
+AND(
+Director_Price__c != 0,
+OR(
+Sales_Price__c &lt; Director_Price__c,
+Sales_Price__c &lt; Floor_Price__c,
+Sales_Price__c &lt; Cost__c
+),
+LEFT(Sales_Deal_Description__c,3) = &quot;[*]&quot;,  
+LEFT(Sales_Deal_Description__c,7) != &quot;[*] EMS&quot;, 
+Sales_Price__c &lt;&gt; 0
+),4,
+
+/* REP BIDS - Sales Price is outside RSM Guidelines */ 
+IF( 
+AND( 
+Owner_Approval_Level__c = 2, 
+Sales_Price__c &lt; RSM_Price__c, 
+LEFT(Sales_Deal_Description__c,3) = &quot;[*]&quot;, 
+Sales_Price__c &lt;&gt; 0 
+),3,
+
+/* REP BIDS - Sales Price is outside Rep Guidelines */ 
+IF( 
+AND( 
+Owner_Approval_Level__c = 1, 
+Sales_Price__c &lt; Rep_Price__c, 
+LEFT(Sales_Deal_Description__c,3) = &quot;[*]&quot;,  
+LEFT(Sales_Deal_Description__c,7) != &quot;[*] EMS&quot;, 
+Sales_Price__c &lt;&gt; 0 
+),2, 
+
+
+/* Off Contract and List Price is Zero */
+IF(
+AND(
+Sales_Price__c = 0, 
+Material_Name_Text__c != &quot;IAA-01003&quot;, 
+Material_Name_Text__c != &quot;IAA-01004&quot;,
+Material_Name_Text__c != &quot;IAA-00175&quot;, 
+Material_Name_Text__c != &quot;IAT-CE32&quot;, 
+Material_Name_Text__c != &quot;IAT-CE33&quot;, 
+!ISBLANK(Material_Name_Text__c)
+),2,
+
+/* Sales Price is above Contract Price  */
+IF(
+AND(
+!ISBLANK(Sales_Deal_Description__c),
+Sales_Price__c &gt; Eligible_Price__c
+),2,
+
+/* When RSM and Rep Price is Zero, Sales Price must Equal Eligible Price */
+IF(
+AND(
+Rep_Price__c = 0, 
+RSM_Price__c = 0, 
+Eligible_Price__c &lt;&gt;  Sales_Price__c
+),2,
+
+/* Sales Price is above List Price  */
+IF(
+AND(
+List_Price__c != 0,
+Sales_Price__c &gt; List_Price__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c
+),2,
+/* Default Value of 1 returned */
+1
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Level Beta</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

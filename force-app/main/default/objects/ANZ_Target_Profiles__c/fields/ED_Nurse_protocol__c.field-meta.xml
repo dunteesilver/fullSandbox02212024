@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ED_Nurse_protocol__c</fullName>
+    <externalId>false</externalId>
+    <label>ED Nurse protocol</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Protocol in place, nurses use IO often</fullName>
+                <default>false</default>
+                <label>Protocol in place, nurses use IO often</label>
+            </value>
+            <value>
+                <fullName>Protocol in place, nurses use IO/IV</fullName>
+                <default>false</default>
+                <label>Protocol in place, nurses use IO/IV</label>
+            </value>
+            <value>
+                <fullName>Protocol yes, not using IO consistently, or at all</fullName>
+                <default>false</default>
+                <label>Protocol yes, not using IO consistently, or at all</label>
+            </value>
+            <value>
+                <fullName>Only docs can insert, no nurse policy</fullName>
+                <default>false</default>
+                <label>Only docs can insert, no nurse policy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

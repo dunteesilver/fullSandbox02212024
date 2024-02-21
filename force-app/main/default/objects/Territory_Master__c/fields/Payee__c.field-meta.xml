@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payee__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(
+AND(
+Sales_Rep__r.IsActive = TRUE,
+NOT(ISBLANK(Sales_Rep__c)),
+NOT(ISBLANK(Payee_Id__c))
+),
+Sales_Rep__r.FirstName &amp; &quot; &quot; &amp; Sales_Rep__r.LastName &amp; &quot; (&quot; &amp; Territory_Number__c &amp; &quot;)&quot;,
+NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Payee</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

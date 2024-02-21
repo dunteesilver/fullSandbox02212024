@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CMA Procedural Lab Request Rec Type access</label>
+    <license>Salesforce</license>
+    <recordTypeVisibilities>
+        <recordType>Education_Record__c.CMA_Procedural_Lab</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Inservice_Records</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Responsible_CEM__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Date_of_Event_Start__c</columns>
+    <columns>Account_Facility__c</columns>
+    <columns>Type_of_In_Service__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Education_Record__c.ANES_EMS_Education_Record,Education_Record__c.Inservice_Record</value>
+    </filters>
+    <label>All Inservice Records</label>
+    <sharedTo>
+        <role>Teleflex_Global_IT</role>
+        <roleAndSubordinates>Clinical_Affairs_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

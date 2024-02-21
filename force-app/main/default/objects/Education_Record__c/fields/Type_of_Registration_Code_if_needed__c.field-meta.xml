@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Registration_Code_if_needed__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If you require an event code, please specify what type of code.  If more than 10 codes are needed, please select Full Event Code.</inlineHelpText>
+    <label>Type of Registration Code (if needed)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Event Code</fullName>
+                <default>false</default>
+                <label>Full Event Code</label>
+            </value>
+            <value>
+                <fullName>Multiple Codes</fullName>
+                <default>false</default>
+                <label>Multiple Codes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

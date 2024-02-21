@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prior_2_entering_patient_room_review__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Prior to entering patient room review bedside coaching expectations with each inserter/TFX team
+
+Evaluation Go Live/Clinical
+Bedside Education:</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Prior to entering patient room review bedside coaching expectations with each inserter/TFX team
+
+Evaluation Go Live/Clinical
+Bedside Education:</inlineHelpText>
+    <label>Prior 2 entering patient room review...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

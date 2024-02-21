@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Receive_Additional_Communication__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>I&apos;d like to receive additional communications from Teleflex, Including educational opportunities, new product information, event information, adn product updates</description>
+    <externalId>false</externalId>
+    <inlineHelpText>I&apos;d like to receive additional communications from Teleflex, Including educational opportunities, new product information, event information, adn product updates</inlineHelpText>
+    <label>Receive Additional Communication</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

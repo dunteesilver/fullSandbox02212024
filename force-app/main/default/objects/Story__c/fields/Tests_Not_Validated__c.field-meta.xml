@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tests_Not_Validated__c</fullName>
+    <externalId>false</externalId>
+    <label>Tests Not Validated</label>
+    <summaryFilterItems>
+        <field>Element__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Test</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Element__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started, In Progress, Fail</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Element__c.User_Story__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

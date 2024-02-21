@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submitted_CRF__c</fullName>
+    <externalId>false</externalId>
+    <label>Submitted CRF</label>
+    <summaryFilterItems>
+        <field>CE_Reimbursement_Expense__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Submit CRF, Submitted Manually (10/1/14 - 10/31/14), Approved for Payment</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CE_Reimbursement_Expense__c.Education_Record__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

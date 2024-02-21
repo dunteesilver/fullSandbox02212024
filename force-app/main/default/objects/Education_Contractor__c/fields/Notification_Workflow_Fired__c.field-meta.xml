@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notification_Workflow_Fired__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This gets checked by the Education Contractor workflows “CE – EC No Travel Required Notification” and “CE – EC Travel Required Notification” when the workflows fire.</description>
+    <externalId>false</externalId>
+    <label>Notification Workflow Fired</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

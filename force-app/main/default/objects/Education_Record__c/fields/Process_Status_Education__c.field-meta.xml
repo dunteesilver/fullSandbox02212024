@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Status_Education__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+     ISPICKVAL(Stage__c, &quot;Record&quot;)  ||   RecordType.Name = &quot;Inservice Record&quot;, 
+     IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6SU&amp;oid=00DOy000000IObl&amp;lastMod=1459780633000&quot;,&quot;Record&quot;),
+     IF(
+        ISPICKVAL(Stage__c, &quot;Cancelled&quot;), 
+        IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6TX&amp;oid=00DOy000000IObl&amp;lastMod=1459781255000&quot;,&quot;Cancelled&quot;),
+        IF(
+           ISPICKVAL(Stage__c, &quot;Confirmed&quot;), 
+           IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6Tc&amp;oid=00DOy000000IObl&amp;lastMod=1459781335000&quot;,&quot;Confirmed&quot;),
+IF(
+           ISPICKVAL(Stage__c, &quot;Training Completed&quot;), 
+           IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6Tc&amp;oid=00DOy000000IObl&amp;lastMod=1459781335000&quot;,&quot;Training Completed&quot;),
+           IF(
+              ISPICKVAL(Stage__c, &quot;On Hold&quot;), 
+              IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6Vx&amp;oid=00DOy000000IObl&amp;lastMod=1459782885000&quot;,&quot;On Hold&quot;),
+              IF(
+                 ISPICKVAL(Stage__c, &quot;CEM Vetting&quot;), 
+                 IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6W7&amp;oid=00DOy000000IObl&amp;lastMod=1459783099000&quot;,&quot;CME Vetting&quot;), 
+                 IF(
+                    ISPICKVAL(Approval_Status__c, &quot;Submitted&quot;)&amp;&amp; LEFT(RecordType.DeveloperName,3) &lt;&gt; &quot;CMA&quot;, 
+                    IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6SP&amp;oid=00DOy000000IObl&amp;lastMod=1459780529000&quot;,&quot;Submitted&quot;),
+IMAGE(&quot;https://teleflex--c.na9.content.force.com/servlet/servlet.ImageServer?id=015E0000007Z6S5&amp;oid=00DOy000000IObl&amp;lastMod=1459780377000&quot;,&quot;New Request&quot;)
+)    
+)
+)
+)
+)
+)
+)</formula>
+    <label>Process Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

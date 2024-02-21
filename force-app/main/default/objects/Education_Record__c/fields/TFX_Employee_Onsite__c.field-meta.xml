@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TFX_Employee_Onsite__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>TFX Employee Onsite for the Event</inlineHelpText>
+    <label>TFX Employee Onsite</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MSR</fullName>
+                <default>false</default>
+                <label>MSR</label>
+            </value>
+            <value>
+                <fullName>RSM</fullName>
+                <default>false</default>
+                <label>RSM</label>
+            </value>
+            <value>
+                <fullName>CEM</fullName>
+                <default>false</default>
+                <label>CEM</label>
+            </value>
+            <value>
+                <fullName>RCEM</fullName>
+                <default>false</default>
+                <label>RCEM</label>
+            </value>
+            <value>
+                <fullName>CMA</fullName>
+                <default>false</default>
+                <label>CMA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

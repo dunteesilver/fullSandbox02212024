@@ -1,0 +1,44 @@
+<apex:page standardController="Case" recordSetVar="unused" sidebar="false">
+<apex:includeScript value="{!$Resource.UtilJS}" />
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlock >
+Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+</apex:pageBlock>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+<apex:commandButton value="Return" action="{!cancel}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockTable value="{!selected}" var="a" id="table">
+<apex:column headerValue="Subject">
+<apex:inputField value="{!a.Subject}"/>
+</apex:column>
+<apex:column headerValue="Status">
+<apex:inputField value="{!a.Status}"/>
+</apex:column>
+<apex:column headerValue="Type">
+<apex:inputField value="{!a.Type}"/>
+</apex:column>
+<apex:column headerValue="Reason">
+<apex:inputField value="{!a.Reason}"/>
+</apex:column>
+<apex:column headerValue="Priority">
+<apex:inputField value="{!a.Priority}"/>
+</apex:column>
+<apex:column headerValue="Release">
+<apex:inputField value="{!a.Release__c}"/>
+</apex:column>
+<apex:column headerValue="Effort Level">
+<apex:inputField value="{!a.Effort_Level__c}"/>
+</apex:column>
+<apex:column headerValue="Next Action Owner">
+<apex:inputField value="{!a.Next_Action_Owner__c}"/>
+</apex:column>
+<apex:column headerValue="Next Action">
+<apex:inputField value="{!a.Next_Action__c}"/>
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

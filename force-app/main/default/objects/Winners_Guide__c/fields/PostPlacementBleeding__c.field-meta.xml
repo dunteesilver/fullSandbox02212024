@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PostPlacementBleeding__c</fullName>
+    <description>Trial/Evaluation Stage
+Round Table with the Account/Clinical
+What is facility protocol/procedure for the following?
+
+Post Placement Bleeding (Discuss AGBA dressing protocol)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Post Placement Bleeding (Discuss AGBA dressing protocol)
+
+Trial/Evaluation Stage
+Round Table with the Account/Clinical
+What is facility protocol/procedure for the following?</inlineHelpText>
+    <label>Post Placement Bleeding</label>
+    <length>1000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

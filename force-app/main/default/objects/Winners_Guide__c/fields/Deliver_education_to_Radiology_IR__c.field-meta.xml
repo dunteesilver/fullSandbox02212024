@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deliver_education_to_Radiology_IR__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Deliver education to Radiology/IR (reading Radiologists)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Deliver education to Radiology/IR (reading Radiologists)</inlineHelpText>
+    <label>Deliver education to Radiology/IR</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

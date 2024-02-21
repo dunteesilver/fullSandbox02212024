@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Arterial_YTD_To_Quota__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( or(Arterial_YOY_Growth__c = 0, Arterial_Growth_Objective__c = 0),0,Arterial_YOY_Growth__c/Arterial_Growth_Objective__c)</formula>
+    <label>Arterial YTD % To Quota</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Anesthesia_Lead_Assignement_Que_Lead</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Anesthesia Lead Assignment Queue</label>
+    <language>en_US</language>
+    <queue>Anesthesia_Lead_Assignment_Queue</queue>
+    <sharedTo>
+        <roleAndSubordinates>Anesthesia_Executive</roleAndSubordinates>
+    </sharedTo>
+</ListView>

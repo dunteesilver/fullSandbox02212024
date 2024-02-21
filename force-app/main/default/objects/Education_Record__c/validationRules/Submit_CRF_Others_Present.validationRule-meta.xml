@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_CRF_Others_Present</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(   RecordType.Name  =&quot;Inservice Record&quot;,
+ Verify_for_CRF__c = TRUE,
+ISNULL(  Others_Present_for_In_Service__c   )
+)</errorConditionFormula>
+    <errorDisplayField>Others_Present_for_In_Service__c</errorDisplayField>
+    <errorMessage>Others Present for In-Service must be entered in order to submit a CRF</errorMessage>
+</ValidationRule>

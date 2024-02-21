@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obtain_a_copy_of_CLP_and_CMP__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Obtain a copy of Central Line Procedure and Care and Maintenance Policies</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Obtain a copy of Central Line Procedure and Care and Maintenance Policies</inlineHelpText>
+    <label>Obtain a copy of CLP and CMP</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

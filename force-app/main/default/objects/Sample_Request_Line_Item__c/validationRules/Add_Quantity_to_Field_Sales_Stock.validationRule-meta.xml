@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Quantity_to_Field_Sales_Stock</fullName>
+    <active>true</active>
+    <description>Must add entire quantity to field sales stock if field sales type is selected.</description>
+    <errorConditionFormula>IF
+(
+AND( TEXT( Sample_Request__r.Type__c ) = &quot;Field Sales Stock (i.e., future saleable unit)&quot; , Field_Sales_Stock__c &lt;&gt;  (Quantity__c * Qty_Sales_Unit__c ), NOT( ISNEW() ) ),
+TRUE,
+FALSE
+)</errorConditionFormula>
+    <errorDisplayField>Field_Sales_Stock__c</errorDisplayField>
+    <errorMessage>If this Sample Request is type &quot;Field Sales Stock&quot;, all of the quantity must be added to the &quot;Field Sales Stock&quot; field.</errorMessage>
+</ValidationRule>

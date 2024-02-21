@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consumable_Attainment__c</fullName>
+    <description>Number of days between Loaner Start Date (Adjusted) and today</description>
+    <externalId>false</externalId>
+    <formula>TODAY()-Loaner_Start_Date_Adjusted__c</formula>
+    <inlineHelpText>Number of days passed in 12 month period.</inlineHelpText>
+    <label>Consumable Attainment Days In</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

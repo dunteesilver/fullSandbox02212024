@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Marketing_Code__c</fullName>
+    <description>Product Marketing Code</description>
+    <externalId>false</externalId>
+    <label>Product Marketing Code</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Central Venous Access</fullName>
+                <default>false</default>
+                <label>Central Venous Access</label>
+            </value>
+            <value>
+                <fullName>Peripheral Access</fullName>
+                <default>false</default>
+                <label>Peripheral Access</label>
+            </value>
+            <value>
+                <fullName>Venous Access - Other</fullName>
+                <default>false</default>
+                <label>Venous Access - Other</label>
+            </value>
+            <value>
+                <fullName>Hemodynamic Monitoring</fullName>
+                <default>false</default>
+                <label>Hemodynamic Monitoring</label>
+            </value>
+            <value>
+                <fullName>Special Procedures-Other</fullName>
+                <default>false</default>
+                <label>Special Procedures-Other</label>
+            </value>
+            <value>
+                <fullName>VasoNova</fullName>
+                <default>false</default>
+                <label>VasoNova</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

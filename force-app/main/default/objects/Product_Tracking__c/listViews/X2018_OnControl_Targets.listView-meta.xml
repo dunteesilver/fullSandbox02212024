@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2018_OnControl_Targets</fullName>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Opportunity_Amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Strategic_Initiative_Name__c</field>
+        <operation>equals</operation>
+        <value>2018 OnControl Targets and Opportunities</value>
+    </filters>
+    <label>2018 OnControl Targets</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Interventional_Executive</roleAndSubordinates>
+    </sharedTo>
+</ListView>

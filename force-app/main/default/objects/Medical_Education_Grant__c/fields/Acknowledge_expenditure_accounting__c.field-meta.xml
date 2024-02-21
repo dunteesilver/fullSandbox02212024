@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Acknowledge_expenditure_accounting__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>An accounting detailing the expenditure of grant funds must be submitted to teleflex within sixty days of the end of the program/event, and any unused funds must be returned to Teleflex at that time</description>
+    <externalId>false</externalId>
+    <inlineHelpText>An accounting detailing the expenditure of grant funds must be submitted to teleflex within sixty days of the end of the program/event, and any unused funds must be returned to Teleflex at that time</inlineHelpText>
+    <label>Acknowledge expenditure accounting</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

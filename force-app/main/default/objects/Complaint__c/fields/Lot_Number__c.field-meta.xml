@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lot_Number__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide the lot number of the complaint device. If the lot number is unavailable, write unknown. Please only enter one LOT#</inlineHelpText>
+    <label>Lot Number (ONLY ONE LOT#)</label>
+    <length>10</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

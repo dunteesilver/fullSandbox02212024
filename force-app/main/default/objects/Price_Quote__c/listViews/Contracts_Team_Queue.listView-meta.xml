@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contracts_Team_Queue</fullName>
+    <columns>Price_Quote_Name__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Contact_Name__c</columns>
+    <columns>Owner_Full_Name__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Status__c</columns>
+    <columns>Expiration_Date__c</columns>
+    <columns>Commit_Date__c</columns>
+    <columns>Grand_Total__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>Contracts Team Queue</label>
+    <language>en_US</language>
+    <queue>Contracts_Team</queue>
+    <sharedTo>
+        <role>Commercial_Operations</role>
+        <role>Teleflex_Global_IT</role>
+    </sharedTo>
+</ListView>

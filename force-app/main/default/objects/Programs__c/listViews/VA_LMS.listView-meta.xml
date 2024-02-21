@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_LMS</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Program_Type__c</columns>
+    <columns>Products__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>VA</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>LMS - Online Course,LMS - Webinar</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>VA: LMS</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+    </sharedTo>
+</ListView>

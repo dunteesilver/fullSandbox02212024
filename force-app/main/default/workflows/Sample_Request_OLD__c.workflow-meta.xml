@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>LatAm_Sample_Request_Approved_Email</fullName>
+        <ccEmails>la.cs@teleflex.com</ccEmails>
+        <description>LatAm Sample Request Approved Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requesting_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>LatAm_Email_Templates/LatAm_Sample_Request_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Approved_Spanish</fullName>
+        <ccEmails>arrow.mexico@teleflex.com</ccEmails>
+        <description>Sample Request Approved - Spanish</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>LatAm_Email_Templates/LatAm_Sample_Request_Complete_Spanish</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Ready_to_be_Shipped</fullName>
+        <ccEmails>Leslie.COllins@teleflex.com</ccEmails>
+        <description>Sample Request Shipped</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requesting_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>LatAm_Email_Templates/Sample_Request_has_shipped</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Ready_to_be_shipped2</fullName>
+        <ccEmails>latam.samples@teleflex.com</ccEmails>
+        <description>Sample Request: Ready to be shipped</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requesting_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>LatAm_Email_Templates/Sample_Request_to_be_shipped</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Rejection3</fullName>
+        <description>Sample Request Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>LatAm_Email_Templates/Sample_Request_Approval_Rejection_LC</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Rejection_Email</fullName>
+        <description>Sample Request Rejection Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Requesting_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Sample_Request_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Request_Submitted</fullName>
+        <description>Sample Request: Request Submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>leslie.collins@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>LatAm_Email_Templates/Sample_Request_Submitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Request_Submitted_Successfully</fullName>
+        <description>Sample Request Submitted Successfully</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>LatAm_Email_Templates/Sample_Request_Submitted</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Date</fullName>
+        <field>Approval_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_By</fullName>
+        <field>Approved_By__c</field>
+        <formula>$User.FirstName+&quot; &quot;+$User.LastName</formula>
+        <name>Approved By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Locked_Checkbox_False</fullName>
+        <field>Locked__c</field>
+        <literalValue>0</literalValue>
+        <name>Locked Checkbox False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Locked_Checkbox_True</fullName>
+        <field>Locked__c</field>
+        <literalValue>1</literalValue>
+        <name>Locked Checkbox True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Approved_By</fullName>
+        <field>Approved_By__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>Sample Request - Approved By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Approved_By_Date</fullName>
+        <field>Approval_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Sample Request - Approved By Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Sample Request: Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Status_Ready_Ship</fullName>
+        <field>Status__c</field>
+        <literalValue>To Be Shipped</literalValue>
+        <name>Sample Request: Status Ready Ship</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Update_Status_to_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Sample Request: Update Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Shipped3</fullName>
+        <field>Status__c</field>
+        <literalValue>Shipped</literalValue>
+        <name>Status: Shipped</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contact_Phone</fullName>
+        <field>Contact_Phone__c</field>
+        <formula>$User.Phone</formula>
+        <name>Update Contact Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Update to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Draft</fullName>
+        <field>Status__c</field>
+        <literalValue>Draft</literalValue>
+        <name>Update to Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Update to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Sample Request Auto Populate Phone</fullName>
+        <actions>
+            <name>Update_Contact_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Contact_Phone__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample Request%3A Send email when sample shipped %28Status%3Dshipped%29</fullName>
+        <actions>
+            <name>Sample_Request_Ready_to_be_Shipped</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Status_Shipped3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Status__c</field>
+            <operation>equals</operation>
+            <value>To Be Shipped</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Tracking__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send LatAm Approved Email</fullName>
+        <actions>
+            <name>LatAm_Sample_Request_Approved_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Approved_By__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Owner_s_Region__c</field>
+            <operation>notEqual</operation>
+            <value>Mexico</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send LatAm Approved Email Spanish</fullName>
+        <actions>
+            <name>Sample_Request_Approved_Spanish</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Approved_By__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sample_Request_OLD__c.Owner_s_Region__c</field>
+            <operation>equals</operation>
+            <value>Mexico</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

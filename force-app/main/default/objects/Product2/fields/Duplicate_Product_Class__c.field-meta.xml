@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Product_Class__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND( 
+NOT(ISBLANK(Product_Class__c)), 
+Product_Class__c = Product_Group__c, 
+Product_Class__c = Product_Sub_Group__c, 
+Product_Class__c = Product_Line__c 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Duplicate Product Class</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

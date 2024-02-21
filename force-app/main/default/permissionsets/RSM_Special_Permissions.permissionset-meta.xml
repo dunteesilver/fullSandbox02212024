@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gives access to edit the Current RSM Comment field on opportunities.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Current_RSM_Comment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>RSM Special Permissions</label>
+    <license>Salesforce</license>
+</PermissionSet>

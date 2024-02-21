@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Anesthesia_Rep_Post_Visit_Account_Notes</fullName>
+    <active>true</active>
+    <description>This is to make sure that the Rep Post Visit Account Notes is filled out</description>
+    <errorConditionFormula>ISPICKVAL(Owner:User.Business_Unit__c, &quot;Anesthesia&quot;) &amp;&amp;  Rep_Post_Visit_Notes__c = NULL</errorConditionFormula>
+    <errorDisplayField>Rep_Post_Visit_Notes__c</errorDisplayField>
+    <errorMessage>Please fill in your &quot;Rep Post Visit Account Notes&quot; as it is a requirement to submit this record for approval</errorMessage>
+</ValidationRule>

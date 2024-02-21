@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VACSPlanningProficiencyDetails__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Sets clear objectives for account visit, clear understanding CSS role and the clinical needs of the customer, 
+utilization of Winners Guide plans for specific measurable goals for each visit or educational opportunity.</inlineHelpText>
+    <label>Planning Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Planning_CE__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Did not complete or send objectives/agenda to RCSM 48 prior to visit</fullName>
+                <default>false</default>
+                <label>Did not complete or send objectives/agenda to RCSM 48 prior to visit</label>
+            </value>
+            <value>
+                <fullName>Does not demonstrate understanding of Clinical role or customers’ needs</fullName>
+                <default>false</default>
+                <label>Does not demonstrate understanding of Clinical role or customers’ needs</label>
+            </value>
+            <value>
+                <fullName>Did not review or utilize Winners Guide during visit.</fullName>
+                <default>false</default>
+                <label>Did not review or utilize Winners Guide during visit.</label>
+            </value>
+            <value>
+                <fullName>Unable to achieve measurable goals during planning/visit and/or identify future educational opportunities</fullName>
+                <default>false</default>
+                <label>Unable to achieve measurable goals during planning/visit and/or identify future educational opportunities</label>
+            </value>
+            <value>
+                <fullName>Completed objectives/agenda and sent to RCSM 48 hours to visit</fullName>
+                <default>false</default>
+                <label>Completed objectives/agenda and sent to RCSM 48 hours to visit</label>
+            </value>
+            <value>
+                <fullName>Demonstrates understanding of role/responsibilities and is able recognize and meet customer’s needs</fullName>
+                <default>false</default>
+                <label>Demonstrates understanding of role/responsibilities and is able recognize and meet customer’s needs</label>
+            </value>
+            <value>
+                <fullName>Utilizes Winners guide</fullName>
+                <default>false</default>
+                <label>Utilizes Winners guide</label>
+            </value>
+            <value>
+                <fullName>Sets and achieves specific goals for each visit and identifies educational opportunities for future visits</fullName>
+                <default>false</default>
+                <label>Sets and achieves specific goals for each visit and identifies educational opportunities for future visits</label>
+            </value>
+            <value>
+                <fullName>Completed and sent clear objectives to RCSM 48 hours to visit</fullName>
+                <default>false</default>
+                <label>Completed and sent clear objectives to RCSM 48 hours to visit</label>
+            </value>
+            <value>
+                <fullName>Demonstrates strong and consistent performance in almost all competencies, skills, and responsibilities.</fullName>
+                <default>false</default>
+                <label>Demonstrates strong and consistent performance in almost all competencies, skills, and responsibilities.</label>
+            </value>
+            <value>
+                <fullName>Fully utilizes Winners guide</fullName>
+                <default>false</default>
+                <label>Fully utilizes Winners guide</label>
+            </value>
+            <value>
+                <fullName>Schedules return visit for follow-up and/or new educational opportunities</fullName>
+                <default>false</default>
+                <label>Schedules return visit for follow-up and/or new educational opportunities</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Did not complete or send objectives/agenda to RCSM 48 prior to visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not demonstrate understanding of Clinical role or customers’ needs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Did not review or utilize Winners Guide during visit.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Unable to achieve measurable goals during planning/visit and/or identify future educational opportunities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Completed objectives/agenda and sent to RCSM 48 hours to visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Demonstrates understanding of role/responsibilities and is able recognize and meet customer’s needs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Utilizes Winners guide</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Sets and achieves specific goals for each visit and identifies educational opportunities for future visits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Completed and sent clear objectives to RCSM 48 hours to visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Demonstrates strong and consistent performance in almost all competencies, skills, and responsibilities.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Fully utilizes Winners guide</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Schedules return visit for follow-up and/or new educational opportunities</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

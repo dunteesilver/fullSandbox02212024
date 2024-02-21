@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verify_for_CRF__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check to see if required fields are entered in order to submit a CRF</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check to see if required fields are entered in order to submit a CRF</inlineHelpText>
+    <label>Verify for CRF</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

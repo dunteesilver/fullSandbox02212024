@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Yesterday_Sales__c</fullName>
+    <externalId>false</externalId>
+    <formula>Commissionable_Date__c = Today()-1</formula>
+    <label>Yesterday Sales</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

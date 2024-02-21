@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Method__c</fullName>
+    <externalId>false</externalId>
+    <label>Shipping Method</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard</fullName>
+                <default>true</default>
+                <label>Standard</label>
+            </value>
+            <value>
+                <fullName>3-Day</fullName>
+                <default>false</default>
+                <label>3-Day</label>
+            </value>
+            <value>
+                <fullName>2-Day</fullName>
+                <default>false</default>
+                <label>2-Day</label>
+            </value>
+            <value>
+                <fullName>Overnight</fullName>
+                <default>false</default>
+                <label>Overnight</label>
+            </value>
+            <value>
+                <fullName>Consolidate with next shipment</fullName>
+                <default>false</default>
+                <label>Consolidate with next shipment</label>
+            </value>
+            <value>
+                <fullName>Customer carrier</fullName>
+                <default>false</default>
+                <label>Customer carrier</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specific_Lead_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Specific Lead Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>LeadSource</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>American Association for Respiratory Care (AARC)</fullName>
+                <default>false</default>
+                <label>American Association for Respiratory Care (AARC)</label>
+            </value>
+            <value>
+                <fullName>American Society of Anesthesia Technologists &amp; Technicians (ASATT)</fullName>
+                <default>false</default>
+                <label>American Society of Anesthesia Technologists &amp; Technicians (ASATT)</label>
+            </value>
+            <value>
+                <fullName>American Society of Anesthesiologists (ASA)</fullName>
+                <default>false</default>
+                <label>American Society of Anesthesiologists (ASA)</label>
+            </value>
+            <value>
+                <fullName>Association for Professionals in Infection Control and Epidemiology (APIC)</fullName>
+                <default>false</default>
+                <label>Association for Professionals in Infection Control and Epidemiology (APIC)</label>
+            </value>
+            <value>
+                <fullName>BID</fullName>
+                <default>false</default>
+                <label>BID</label>
+            </value>
+            <value>
+                <fullName>Mailer</fullName>
+                <default>false</default>
+                <label>Mailer</label>
+            </value>
+            <value>
+                <fullName>International Continence Society (ICS)</fullName>
+                <default>false</default>
+                <label>International Continence Society (ICS)</label>
+            </value>
+            <value>
+                <fullName>National Association of Neonatal Nurses (NANN)</fullName>
+                <default>false</default>
+                <label>National Association of Neonatal Nurses (NANN)</label>
+            </value>
+            <value>
+                <fullName>Post Graduate Assembly (PGA)</fullName>
+                <default>false</default>
+                <label>Post Graduate Assembly (PGA)</label>
+            </value>
+            <value>
+                <fullName>Society of Airway Management (SAM)</fullName>
+                <default>false</default>
+                <label>Society of Airway Management (SAM)</label>
+            </value>
+            <value>
+                <fullName>Society of Critical Care Medicine (SCCM)</fullName>
+                <default>false</default>
+                <label>Society of Critical Care Medicine (SCCM)</label>
+            </value>
+            <value>
+                <fullName>Spring INS 2014 Booth</fullName>
+                <default>false</default>
+                <label>Spring INS 2014 Booth</label>
+            </value>
+            <value>
+                <fullName>Spring INS 2014 Breakfast Symposium</fullName>
+                <default>false</default>
+                <label>Spring INS 2014 Breakfast Symposium</label>
+            </value>
+            <value>
+                <fullName>Spring INS 2014 Cadaver Lab</fullName>
+                <default>false</default>
+                <label>Spring INS 2014 Cadaver Lab</label>
+            </value>
+            <value>
+                <fullName>AACN/NTI 2014</fullName>
+                <default>false</default>
+                <label>AACN/NTI 2014</label>
+            </value>
+            <value>
+                <fullName>AACN 2014</fullName>
+                <default>false</default>
+                <label>AACN 2014</label>
+            </value>
+            <value>
+                <fullName>AAGL 2014</fullName>
+                <default>false</default>
+                <label>AAGL 2014</label>
+            </value>
+            <value>
+                <fullName>AANA 2014</fullName>
+                <default>false</default>
+                <label>AANA 2014</label>
+            </value>
+            <value>
+                <fullName>AAO 2014</fullName>
+                <default>false</default>
+                <label>AAO 2014</label>
+            </value>
+            <value>
+                <fullName>AARC   2014</fullName>
+                <default>false</default>
+                <label>AARC   2014</label>
+            </value>
+            <value>
+                <fullName>ACEP 2014</fullName>
+                <default>false</default>
+                <label>ACEP 2014</label>
+            </value>
+            <value>
+                <fullName>AMN 2014</fullName>
+                <default>false</default>
+                <label>AMN 2014</label>
+            </value>
+            <value>
+                <fullName>AMTC 2014</fullName>
+                <default>false</default>
+                <label>AMTC 2014</label>
+            </value>
+            <value>
+                <fullName>ANS 2014</fullName>
+                <default>false</default>
+                <label>ANS 2014</label>
+            </value>
+            <value>
+                <fullName>APAO 2014</fullName>
+                <default>false</default>
+                <label>APAO 2014</label>
+            </value>
+            <value>
+                <fullName>APIC 2014</fullName>
+                <default>false</default>
+                <label>APIC 2014</label>
+            </value>
+            <value>
+                <fullName>ARN 2014</fullName>
+                <default>false</default>
+                <label>ARN 2014</label>
+            </value>
+            <value>
+                <fullName>ASA 2014</fullName>
+                <default>false</default>
+                <label>ASA 2014</label>
+            </value>
+            <value>
+                <fullName>ASATT 2014</fullName>
+                <default>false</default>
+                <label>ASATT 2014</label>
+            </value>
+            <value>
+                <fullName>ASCO 2014</fullName>
+                <default>false</default>
+                <label>ASCO 2014</label>
+            </value>
+            <value>
+                <fullName>ASCP 2014</fullName>
+                <default>false</default>
+                <label>ASCP 2014</label>
+            </value>
+            <value>
+                <fullName>ASH 2014</fullName>
+                <default>false</default>
+                <label>ASH 2014</label>
+            </value>
+            <value>
+                <fullName>ASMBS 2014</fullName>
+                <default>false</default>
+                <label>ASMBS 2014</label>
+            </value>
+            <value>
+                <fullName>ASPAN</fullName>
+                <default>false</default>
+                <label>ASPAN</label>
+            </value>
+            <value>
+                <fullName>AST 2014</fullName>
+                <default>false</default>
+                <label>AST 2014</label>
+            </value>
+            <value>
+                <fullName>ATACCC/MHSRS 2014</fullName>
+                <default>false</default>
+                <label>ATACCC/MHSRS 2014</label>
+            </value>
+            <value>
+                <fullName>AVA 2014</fullName>
+                <default>false</default>
+                <label>AVA 2014</label>
+            </value>
+            <value>
+                <fullName>Boston Abilities 2014</fullName>
+                <default>false</default>
+                <label>Boston Abilities 2014</label>
+            </value>
+            <value>
+                <fullName>CAEP 2014</fullName>
+                <default>false</default>
+                <label>CAEP 2014</label>
+            </value>
+            <value>
+                <fullName>CAP 2014</fullName>
+                <default>false</default>
+                <label>CAP 2014</label>
+            </value>
+            <value>
+                <fullName>CHEST 2014</fullName>
+                <default>false</default>
+                <label>CHEST 2014</label>
+            </value>
+            <value>
+                <fullName>Chicago Abilities Expo 2014</fullName>
+                <default>false</default>
+                <label>Chicago Abilities Expo 2014</label>
+            </value>
+            <value>
+                <fullName>CIDA 2014</fullName>
+                <default>false</default>
+                <label>CIDA 2014</label>
+            </value>
+            <value>
+                <fullName>EMS EXPO 2014</fullName>
+                <default>false</default>
+                <label>EMS EXPO 2014</label>
+            </value>
+            <value>
+                <fullName>ENA 2014</fullName>
+                <default>false</default>
+                <label>ENA 2014</label>
+            </value>
+            <value>
+                <fullName>FOCUS</fullName>
+                <default>false</default>
+                <label>FOCUS</label>
+            </value>
+            <value>
+                <fullName>Houston Abilities 2014</fullName>
+                <default>false</default>
+                <label>Houston Abilities 2014</label>
+            </value>
+            <value>
+                <fullName>HSCA 2014</fullName>
+                <default>false</default>
+                <label>HSCA 2014</label>
+            </value>
+            <value>
+                <fullName>HTPG 2014</fullName>
+                <default>false</default>
+                <label>HTPG 2014</label>
+            </value>
+            <value>
+                <fullName>IAHCSMM 2014</fullName>
+                <default>false</default>
+                <label>IAHCSMM 2014</label>
+            </value>
+            <value>
+                <fullName>IARS 2014</fullName>
+                <default>false</default>
+                <label>IARS 2014</label>
+            </value>
+            <value>
+                <fullName>IDN Fall 2014</fullName>
+                <default>false</default>
+                <label>IDN Fall 2014</label>
+            </value>
+            <value>
+                <fullName>IL Abilities 2014</fullName>
+                <default>false</default>
+                <label>IL Abilities 2014</label>
+            </value>
+            <value>
+                <fullName>INS Fall 2014</fullName>
+                <default>false</default>
+                <label>INS Fall 2014</label>
+            </value>
+            <value>
+                <fullName>PBT 2014</fullName>
+                <default>false</default>
+                <label>PBT 2014</label>
+            </value>
+            <value>
+                <fullName>PGA 2014</fullName>
+                <default>false</default>
+                <label>PGA 2014</label>
+            </value>
+            <value>
+                <fullName>SAGES</fullName>
+                <default>false</default>
+                <label>SAGES</label>
+            </value>
+            <value>
+                <fullName>SAM 2014</fullName>
+                <default>false</default>
+                <label>SAM 2014</label>
+            </value>
+            <value>
+                <fullName>San Jose Abilities 2014</fullName>
+                <default>false</default>
+                <label>San Jose Abilities 2014</label>
+            </value>
+            <value>
+                <fullName>SCA 2014</fullName>
+                <default>false</default>
+                <label>SCA 2014</label>
+            </value>
+            <value>
+                <fullName>SLS 2014</fullName>
+                <default>false</default>
+                <label>SLS 2014</label>
+            </value>
+            <value>
+                <fullName>SOMA 2014</fullName>
+                <default>false</default>
+                <label>SOMA 2014</label>
+            </value>
+            <value>
+                <fullName>SUNA 2014</fullName>
+                <default>false</default>
+                <label>SUNA 2014</label>
+            </value>
+            <value>
+                <fullName>UHC 2014</fullName>
+                <default>false</default>
+                <label>UHC 2014</label>
+            </value>
+            <value>
+                <fullName>VGM 2014</fullName>
+                <default>false</default>
+                <label>VGM 2014</label>
+            </value>
+            <value>
+                <fullName>PEDS ACEP Booth</fullName>
+                <default>false</default>
+                <label>PEDS ACEP Booth</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>American Association for Respiratory Care (AARC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>American Society of Anesthesia Technologists &amp; Technicians (ASATT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>American Society of Anesthesiologists (ASA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Association for Professionals in Infection Control and Epidemiology (APIC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>International Continence Society (ICS)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>National Association of Neonatal Nurses (NANN)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Post Graduate Assembly (PGA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Society of Airway Management (SAM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Society of Critical Care Medicine (SCCM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>FOCUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>SAGES</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

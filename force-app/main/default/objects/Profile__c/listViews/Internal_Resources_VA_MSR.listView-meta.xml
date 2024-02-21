@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Resources_VA_MSR</fullName>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>NAME</columns>
+    <columns>First_Name__c</columns>
+    <columns>Profile_Manager__c</columns>
+    <columns>Profile_CEM__c</columns>
+    <columns>RCEM__c</columns>
+    <columns>E_mail_Address__c</columns>
+    <columns>Cell_Phone__c</columns>
+    <columns>Profile_Role__c</columns>
+    <columns>Profile_Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Profile__c.TFX_Internal_Resource</value>
+    </filters>
+    <filters>
+        <field>Profile_Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>Vascular</value>
+    </filters>
+    <filters>
+        <field>Profile_Role__c</field>
+        <operation>contains</operation>
+        <value>MSR</value>
+    </filters>
+    <label>!Internal Resources - VA MSR</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Vascular_Executive</roleAndSubordinates>
+    </sharedTo>
+</ListView>

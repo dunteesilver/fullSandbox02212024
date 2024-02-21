@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_CRF_Primary_Educator</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(   RecordType.Name  =&quot;Inservice Record&quot;,
+ Verify_for_CRF__c = TRUE,
+ISBLANK(TEXT( Primary_Educator__c   ))
+)</errorConditionFormula>
+    <errorDisplayField>Primary_Educator__c</errorDisplayField>
+    <errorMessage>Primary Educator must be entered in order to submit a CRF</errorMessage>
+</ValidationRule>

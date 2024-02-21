@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VACMANoOpportunity</fullName>
+    <active>true</active>
+    <description>short cut until we can update Page Layout</description>
+    <errorConditionFormula>AND(
+
+RecordType.Name = &quot;CMA Program&quot;,
+
+NOT(ISBLANK(  Opportunity__c ))
+
+)</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>Please note this field will be removed shortly and should not be filled out.  In the meantime assure you are filling out the correct Account and Contact</errorMessage>
+</ValidationRule>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Product__r.Name , 
+&quot;EFX001&quot;, &quot;Fascial Closure&quot;, 
+&quot;EFX002&quot;, &quot;Fascial Closure&quot;, 
+&quot;EFXCT1&quot;, &quot;Fascial Closure&quot;, 
+&quot;EFXSP1&quot;, &quot;Fascial Closure&quot;, 
+&quot;EFXSP2&quot;, &quot;Fascial Closure&quot;, 
+&quot;P47482&quot;, &quot;Fascial Closure&quot;, 
+&quot;543965&quot;, &quot;Auto Ligation&quot;, 
+&quot;AE05ML&quot;, &quot;Auto Ligation&quot;, 
+&quot;PGAC200&quot;, &quot;Percutaneous&quot;, 
+&quot;PGAC300&quot;, &quot;Percutaneous&quot;, 
+&quot;PGBK300&quot;, &quot;Percutaneous&quot;, 
+&quot;PGCC300&quot;, &quot;Percutaneous&quot;, 
+&quot;PGBC300&quot;, &quot;Percutaneous&quot;, 
+&quot;ECMP300&quot;, &quot;Percutaneous&quot;, 
+&quot;ECMC300&quot;, &quot;Percutaneous&quot;, 
+&quot;ECMH300&quot;, &quot;Percutaneous&quot;, 
+&quot;GBC200&quot;, &quot;Percutaneous&quot;, 
+&quot;GBC250&quot;, &quot;Percutaneous&quot;, 
+&quot;BCK250&quot;, &quot;Percutaneous&quot;, 
+&quot;BLC250&quot;, &quot;Percutaneous&quot;, 
+&quot;CLC250&quot;, &quot;Percutaneous&quot;, 
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Family</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

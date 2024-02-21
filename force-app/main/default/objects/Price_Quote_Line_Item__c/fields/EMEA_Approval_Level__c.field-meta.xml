@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Approval_Level__c</fullName>
+    <description>IF(
+Quantity__c = 0,
+1,
+IF(
+OR(Floor_Price__c &gt;= Sales_Price__c, Director_Price__c &gt; Sales_Price__c) ,4,
+IF(
+AND(Eligible_Price__c  &lt;&gt; Sales_Price__c, Eligible_Price__c &gt; Sales_Price__c, RSM_Price__c &gt; Sales_Price__c),3,
+IF(
+AND(Eligible_Price__c  = List_Price__c, Eligible_Price__c &lt; RSM_Price__c),3,
+IF(
+AND(Eligible_Price__c  &lt;&gt; Sales_Price__c, Eligible_Price__c &gt; Sales_Price__c, Rep_Price__c &gt; Sales_Price__c),2,
+IF(
+AND(Eligible_Price__c  &lt;&gt; List_Price__c, Eligible_Price__c &gt; Sales_Price__c),2,
+IF(
+AND(Eligible_Price__c  = List_Price__c, Eligible_Price__c &lt; Rep_Price__c),2,
+IF(
+AND(Eligible_Price__c  &lt;&gt; Sales_Price__c, Eligible_Price__c &gt; Sales_Price__c, Rep_Price__c &lt;= Sales_Price__c ),1,1
+)
+)
+)
+)
+)
+)
+)
+)</description>
+    <externalId>false</externalId>
+    <formula>IF(
+Quantity__c = 0,
+1,
+IF(
+OR(Floor_Price__c &gt;= Sales_Price__c, Director_Price__c &gt; Sales_Price__c),4,
+IF(
+AND(Eligible_Price__c &lt;&gt; List_Price__c,Eligible_Price__c &lt;&gt; Sales_Price__c, Sales_Price__c &lt; RSM_Price__c),3,
+IF(
+AND(Eligible_Price__c = List_Price__c, Sales_Price__c &lt; RSM_Price__c),3,
+IF(
+AND(Eligible_Price__c &lt;&gt; List_Price__c, Eligible_Price__c &lt;&gt; Sales_Price__c, Sales_Price__c &lt; Rep_Price__c),2,
+IF(
+AND(Eligible_Price__c = List_Price__c, Sales_Price__c &lt; Rep_Price__c),2,
+IF(
+OR(Rep_Price__c = 0.00, RSM_Price__c = 0),2,
+IF(
+AND(Eligible_Price__c &lt;&gt; List_Price__c, Eligible_Price__c &gt; Sales_Price__c),2,
+IF(
+AND(Eligible_Price__c &lt;&gt; Sales_Price__c, Rep_Price__c &lt;= Sales_Price__c ),1,1
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>EMEA Approval Level</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

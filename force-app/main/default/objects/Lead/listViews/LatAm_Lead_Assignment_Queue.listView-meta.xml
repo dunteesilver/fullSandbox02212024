@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LatAm_Lead_Assignment_Queue</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>LatAm Lead Assignment Queue</label>
+    <language>en_US</language>
+    <queue>LatAm_Lead_Assignment_Queue</queue>
+    <sharedTo>
+        <roleAndSubordinates>Latin_America_Executive</roleAndSubordinates>
+    </sharedTo>
+</ListView>

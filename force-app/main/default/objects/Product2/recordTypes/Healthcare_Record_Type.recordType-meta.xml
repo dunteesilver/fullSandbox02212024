@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Healthcare_Record_Type</fullName>
+    <active>true</active>
+    <description>Record type designated to healthcare product records.</description>
+    <label>Healthcare Product Record Type</label>
+    <picklistValues>
+        <picklist>Exclusion_Type__c</picklist>
+        <values>
+            <fullName>ZA01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZB01</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Family</picklist>
+        <values>
+            <fullName>Cardio Vascular Imaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Respiratory%2FVent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vascular Access</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

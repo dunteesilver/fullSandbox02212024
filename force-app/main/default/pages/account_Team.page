@@ -1,0 +1,11 @@
+<apex:page standardController="Account" extensions="account_Page_Helper" lightningStylesheets="true" action="{!shareAccount}">
+    <apex:pageBlock rendered="{!atmCheck = true}">
+        <apex:pageBlockTable value="{!tsort}" var="atm">
+            <apex:column value="{!repMap[atm]}" headerValue="Name"/>
+            <apex:column value="{!atmMap[atm].Business_Unit__c}"/>
+            <apex:column value="{!tSales[atm]}" headerValue="$"/>
+            <apex:column value="{!atmMap[atm].Role__c}" headerValue="Team Role"/>
+            <apex:column headerValue="Territory"><a href="/{!atmMap[atm].Id}">{!atmMap[atm].Name}</a></apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

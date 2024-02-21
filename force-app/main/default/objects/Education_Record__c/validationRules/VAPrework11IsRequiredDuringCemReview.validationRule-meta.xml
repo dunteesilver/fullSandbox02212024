@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAPrework11IsRequiredDuringCemReview</fullName>
+    <active>true</active>
+    <description>VA PreWork is Required during CEM or RCEM Review</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Stage__c, &quot;CEM Review&quot;),ISPICKVAL(Stage__c, &quot;RCEM Review&quot;)),
+OR(RecordType.Name = &quot;Clinical Sales Program&quot;, RecordType.Name = &quot;CMA Program&quot;),
+
+ISBLANK(TEXT(  VAPreWork1__c  ))
+)</errorConditionFormula>
+    <errorDisplayField>VAPreWork1__c</errorDisplayField>
+    <errorMessage>Please select if Prework Required? 1 is required or not</errorMessage>
+</ValidationRule>

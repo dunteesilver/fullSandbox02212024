@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CarryOverPolymerAmmount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND(One_Time_Sale__c, YEAR(CloseDate) &gt; YEAR(Today()) ) , AmountofPolymerLost__c , IF( AND(One_Time_Sale__c, YEAR(CloseDate) = YEAR(Today()) ) , 0 , AmountofPolymerLost__c - CurrentYearPolymerImpact__c ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Carry Over Polymer Ammount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

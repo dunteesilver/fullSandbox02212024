@@ -1,0 +1,25 @@
+<apex:page standardController="Zip_Code_Territories__c" extensions="Zip_Code_Territories_Lookup" showHeader="false">
+<apex:pageblock mode="maindetail">
+   <apex:pageBlocksection columns="2" showHeader="false">
+        <apex:outputField value="{!Zip_Code_Territories__c.Alternate_Care__c}"/> 
+       {!IF((Alt_Care!= null),Alt_Care.User__r.Name,Alt_Care)} 
+       <apex:outputtext value="{!Zip_Code_Territories__c.Anesthesia__c}"/> 
+       {!IF((Anesthesia!= null),Anesthesia.User__r.Name,Anesthesia)}
+       <apex:outputField value="{!Zip_Code_Territories__c.EMS__c}"/> 
+       {!IF((EMS!= null),EMS.User__r.Name,EMS)}
+       <apex:outputField value="{!Zip_Code_Territories__c.IA__c}"/> 
+       {!IF((IA!= null),IA.User__r.Name,IA)}
+       <apex:outputField value="{!Zip_Code_Territories__c.Respiratory__c}"/> 
+       {!IF((Respiratory!= null),Respiratory.User__r.Name,Respiratory)}
+       <apex:outputField value="{!Zip_Code_Territories__c.Surgical_Disposables__c}"/> 
+      {!IF((Surg_Disp!= null),Surg_Disp.User__r.Name,Surg_Disp)}
+       <apex:outputField value="{!Zip_Code_Territories__c.Surgical_Instruments__c}"/> 
+       {!IF((Surg_Inst!= null),Surg_Inst.User__r.Name,Surg_Inst)}
+       <apex:outputField value="{!Zip_Code_Territories__c.Urology__c}"/> 
+       {!IF((Urology!= null),Urology.User__r.Name,Urology)}
+       <apex:outputField value="{!Zip_Code_Territories__c.Vascular__c}"/> 
+       {!IF((Vascular!= null),Vascular.User__r.Name,Vascular)}
+
+ </apex:pageBlocksection>
+</apex:pageblock> 
+</apex:page>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accept_User_Story</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Accept Story</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var url = parent.location.href; 
+var userstoryObj = new sforce.SObject(&quot;Story__c&quot;); 
+userstoryObj.Id = &apos;{!Story__c.Id}&apos;;
+userid = &apos;{!$User.Id}&apos;; 
+var isowner = &apos;{!Story__c.IsOwner__c}&apos;; 
+var status = &apos;{!Story__c.Status__c}&apos;; 
+
+if (isowner == &quot;TRUE&quot;) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_AlreadyStoryOwner}&quot;); 
+} 
+
+else
+if (status != &quot;{!$Label.FieldValue_StoryStatusProductBacklog}&quot; &amp;&amp; status != &quot;{!$Label.FieldValue_StoryStatusInSprint}&quot;) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_StoryCanNotBeClosed}&quot;); 
+} 
+
+else 
+{ 
+var result = sforce.connection.query(&quot;select Id from Team_Member__c Where Salesforce_User_ID__c = \&apos;&quot; + userid + &quot;\&apos; LIMIT 1&quot;); 
+records = result.getArray(&quot;records&quot;);
+
+if(records[0] == undefined)
+{
+alert(&quot;{!$Label.ButtonAlert_TeamMemberNotLinkedToUser}&quot;);
+}
+
+else
+{
+userstoryObj.Owner__c = records[0].Id;
+var results = sforce.connection.update([userstoryObj]); 
+
+if (results[0].success==&apos;false&apos;) 
+{ 
+alert(results[0].errors.message); 
+} 
+
+else 
+{ 
+parent.location.href = url; 
+}
+}
+}</url>
+</WebLink>

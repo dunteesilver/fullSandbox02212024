@@ -1,0 +1,206 @@
+<apex:page docType="html-5.0" title="Contract Detail: {!oidname} - {!oid}" 
+           controller="PP_Contract_Detail" 
+           tabStyle="Pricing_Portal__tab"
+           readOnly="false" 
+           cache="false" expires="600" 
+           standardStylesheets="false"
+           sidebar="false">
+
+    <style>
+        .text-zeros{
+        mso-number-format:"\@";/*force text*/ 
+        }
+        
+        /* spinner */
+        .loader {
+          border: 16px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 16px solid #3498db;
+          width: 120px;
+          height: 120px;
+          -webkit-animation: spin 2s linear infinite; /* Safari */
+          animation: spin 2s linear infinite;
+        }
+		/* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+        
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    </style>
+    <!-- DIV to Render the rest of the page in Bootstrap -->
+    <div class="teleflex">
+        <!-- Call the Menu -->
+    	<apex:include id="menu" pageName="PP_Menu"/>
+        <!-- Standard UI -->
+        <!-- remove later
+        <apex:outputPanel rendered="{!NOT(altui)}">
+            <apex:form id="mainform" html-ng-non-bindable="true">
+                <apex:pageMessages id="errorId"/>
+                <div class="panel">
+                    <h4><img src="/img/icon/hands24.png" alt="Contract Details"/>&nbsp;&nbsp;Contract Details:&nbsp;<a href="/apex/PP_GPO_Matrix?oid={!oid}">{!oidname}</a> / {!oid} - {!gporef}</h4>
+                    <div class="pull-right">
+                        <a href="/{!bigreport}?&pn0=eq&pv0={!gporef}&pn1=eq&pv1={!oid}" class="btn btn-primary btn-sm">Download Report</a>
+                        <apex:outputText rendered="{!pList.size < 10000}">
+                        <a href="/apex/PP_Contract_Detail_Export?oid={!oid}&gporef={!gporef}&rs=xls" class="btn btn-primary btn-sm">Download XLS</a>
+                        </apex:outputText>
+                    </div>
+                </div>
+                
+                
+                <!-- Table Headers --> 
+        <!-- remove later
+                <table class="table table-striped table-hover table-bordered table-condensed">
+                    <tr>
+                        <th style="width:20px;" class="col-md-1 text-center">#</th>
+                        <th class="col-md-2 text-center text">Material</th>
+                        <th class="col-md-2 text-center">Description</th>
+                        <!-- Only Show if there's an Active Quote -->
+        <!-- remove later
+                        <apex:outputText rendered="{!pqId != NULL}"> 
+                            <th class="col-md-1 text-center">Quote</th>
+                        </apex:outputText>
+                        <th class="col-md-1 text-center"><div class="su">SU</div></th>
+                        <th class="col-md-1 text-center">#SU</th>
+                        <th class="col-md-1 text-center">Currency</th>
+                        <apex:repeat value="{!contractHeaders}" var="ch" id="theRepeatheader">
+                            <th valign="top" class="col-md-5 text-center text-wrap" style="min-width: 125px;"><apex:outputLink value="/apex/PP_Agreement_Detail?aid={!ch.Agreement_Number__c}">{!ch.Description__c}<br/>{!ch.Agreement_Number__c}<br/><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!ch.Valid_From__c}" /></apex:outputText>-<apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!ch.Valid_To__c}" /></apex:outputText></apex:outputLink><br/>{!ch.Contract_Detail__c}</th>
+                        </apex:repeat>
+                    </tr>
+                    <!-- Start Product List -->
+        <!-- remove later
+                    <apex:variable value="{!1}" var="rowNum"/>
+                    <apex:repeat value="{!plist}" var="pl">
+                        <tr>
+                            <td class="text-center"><apex:outputText value="{!FLOOR(rowNum)}"/></td>
+                            <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                            <td class="col-md-1 text-zeros" style='mso-number-format:"\@"'><a href="/apex/PP_Material_Info?id={!pl.Id}&pqId={!pqId}">&nbsp;{!pl.Name}</a></td>
+                            <td class="col-md-2 text-nowrap"><a href="/apex/PP_Material_Info?pname={!left(pl.Description,10)}&id={!pl.Id}&pqId={!pqId}">{!pl.Description}</a></td>                                    
+                            <!-- Only Show if there's an Active Quote -->
+        <!-- remove later
+                            <apex:outputText rendered="{!pqId != NULL}"> 
+                                <td class="col-md-1">
+                                    <center>
+                                        <apex:commandLink action="{!addQuoteLine}" reRender="errorId" styleClass="btn btn-primary btn-xs" value="Add">
+                                            <apex:param name="materialId" value="{!pl.Id}"/> 
+                                        </apex:commandLink>
+                                        
+                                    </center>
+                                </td>
+                            </apex:outputText>
+                            <td class="col-md-1"><center>{!pl.Sales_Unit__c}</center></td>
+                            <td class="col-md-1"><center>{!pl.Qty_Sales_Unit__c}</center></td>
+                            <td class="col-md-1"><center>{!pl.CurrencyIsoCode}</center></td>
+                            <apex:outputText escape="false" value="{!htmlMap[pl.Name]}"/>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                <div class="panel">
+                    <div class="pull-right">
+                        <a href="/{!bigreport}?&pn0=eq&pv0={!gporef}&pn1=eq&pv1={!oid}" class="btn btn-primary btn-sm">Download Report</a>
+                        <apex:outputText rendered="{!pList.size < 10000}">
+                        <a href="/apex/PP_Contract_Detail_Export?oid={!oid}&gporef={!gporef}&rs=xls" class="btn btn-primary btn-sm">Download XLS</a>
+                        </apex:outputText>
+                    </div>
+                </div>
+                
+                <!-- End Panel -->
+            <!-- remove later    
+            </apex:form>
+            remove later -->
+            <script>
+            function callActionMethod(materialName) {
+                //callAction(materialName);
+            } 
+            </script>
+            <script>
+            $('th').click(function(){
+                var table = $(this).parents('table').eq(0)
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+                this.asc = !this.asc
+                if (!this.asc){rows = rows.reverse()}
+                for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+            })
+            function comparer(index) {
+                return function(a, b) {
+                    var valA = getCellValue(a, index), valB = getCellValue(b, index)
+                    return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+                }
+            }
+            function getCellValue(row, index){ return $(row).children('td').eq(index).html() }
+            </script>
+        <!-- remove later 
+        </apex:outputPanel>
+		remove later -->
+        <!-- End Standard UI -->
+        
+        <!-- Start Alternative JS Remote UI -->
+        <apex:outputPanel ><!-- rendered="{!altui}" -->
+            <div class="panel">
+                    <h4><img src="/img/icon/hands24.png" alt="Contract Details"/>&nbsp;&nbsp;Contract Details:&nbsp;
+                        <a href="/apex/PP_GPO_Matrix?oid={!oid}">{!oidname}</a> / {!oid}<apex:outputText rendered="{!gporef != NULL}"> - {!gporef}</apex:outputText></h4>
+                    <div class="pull-right">
+                        <a href="/{!bigreport}?&pn0=eq&pv0={!gporef}&pn1=eq&pv1={!oid}" class="btn btn-primary btn-sm">Download Report</a>
+                        <apex:outputText rendered="{!pList.size < 10000}">
+                        <a href="/apex/PP_Contract_Detail_Export?oid={!oid}&gporef={!gporef}&rs=xls" class="btn btn-primary btn-sm">Download XLS</a>
+                        </apex:outputText>
+                    </div>
+                </div>
+                
+                
+                <!-- Table Headers -->  
+                <!-- Start Product List -->
+                    <table class="table table-striped table-hover table-bordered" id="ListVariable">
+                    </table> 
+               
+                <div class="panel">
+                    <div class="pull-right">
+                        <a href="/{!bigreport}?&pn0=eq&pv0={!gporef}&pn1=eq&pv1={!oid}" class="btn btn-primary btn-sm">Download Report</a>
+                        <apex:outputText rendered="{!pList.size < 10000}">
+                        <a href="/apex/PP_Contract_Detail_Export?oid={!oid}&gporef={!gporef}&rs=xls" class="btn btn-primary btn-sm">Download XLS</a>
+                        </apex:outputText>
+                    </div>
+                </div>
+            
+                    <!-- Start Product List -->
+                    <table class="table table-striped table-hover table-bordered" id="ListVariable">
+                        <center><div class="loader"></div></center>
+                    </table> 
+               
+            <!-- End Panel -->            
+            
+            <script type="text/javascript">
+            //show spinner onload
+            //https://stackoverflow.com/questions/21131378/show-a-div-on-load-using-jquery
+            $(document).ready(function(){
+                //$('#ListVariable').css('display','none');
+                $('.loader').css('display','block');
+            });
+            window.onload=function ()
+            {
+                var gporef = '{!$CurrentPage.parameters.gporef}';
+                var oid = '{!$CurrentPage.parameters.oid}';
+                
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.PP_Contract_Detail.htmlList}',
+                    oid, gporef,
+                    function(result, event){
+                        if (event.status) {
+                            $('.loader').css('display','none');//removes spinner once data is ready
+                            //console.log(result);
+                            //join(''); = This pulls out the commas between rows of strings - ESC
+                            document.getElementById("ListVariable").innerHTML = result.join('');
+                        } 
+                    }, 
+                    {buffer: true, escape: false, timeout: 120000}
+                );     
+            };
+            </script>
+            
+        </apex:outputPanel>
+    </div>
+</apex:page>

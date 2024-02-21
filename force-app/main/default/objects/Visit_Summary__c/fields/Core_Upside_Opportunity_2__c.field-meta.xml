@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Core_Upside_Opportunity_2__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Core Upside Opportunity 2</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Visit Summary (Core Upside Opportunity 2)</relationshipLabel>
+    <relationshipName>Visit_Summary2</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

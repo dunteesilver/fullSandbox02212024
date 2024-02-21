@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_reason_is_price_previous_price_requir</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Reason_for_not_buying__c , &quot;Price&quot;) ,  
+  ISNULL(Previous_Price__c)
+)</errorConditionFormula>
+    <errorDisplayField>Previous_Price__c</errorDisplayField>
+    <errorMessage>You selected Price as a Reason for not buying, please enter the previous price</errorMessage>
+</ValidationRule>

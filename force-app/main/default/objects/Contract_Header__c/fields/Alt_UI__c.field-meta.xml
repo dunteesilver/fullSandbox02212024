@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alt_UI__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used for Agreements that have a large number of related Contract Materials that cause the standard code to hit the 10k collection and/or 50k list limits.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used for Agreements that have a large number of related Contract Materials that cause the standard code to hit the 10k collection and/or 50k list limits.</inlineHelpText>
+    <label>Alt UI</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

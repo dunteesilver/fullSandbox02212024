@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Teleflex_Academy_is_required</fullName>
+    <active>false</active>
+    <description>Teleflex Academy is required</description>
+    <errorConditionFormula>ISPICKVAL( Add_to_Teleflex_Academy__c , &quot;NO&quot;)
+&amp;&amp;
+ISPICKVAL(Business_Unit__c, &quot;VA&quot;)
+&amp;&amp;  
+(
+ISPICKVAL( Primary_Product__c , &quot;Arterials&quot;) 
+||
+ISPICKVAL( Primary_Product__c , &quot;CVC&quot;) 
+||
+ISPICKVAL( Primary_Product__c , &quot;Endurance&quot;) 
+||
+ISPICKVAL( Primary_Product__c , &quot;General&quot;)
+||
+ISPICKVAL( Primary_Product__c , &quot;JACC&quot;)
+||
+ISPICKVAL( Primary_Product__c , &quot;Midlines&quot;)
+||
+ISPICKVAL( Primary_Product__c , &quot;Opera&quot;)
+||
+ISPICKVAL( Primary_Product__c , &quot;PICC&quot;)
+||
+ISPICKVAL( Primary_Product__c , &quot;VPS&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Add_to_Teleflex_Academy__c</errorDisplayField>
+    <errorMessage>Based on your Business Unit and Primary Product, it is required that you select Yes to Add to Teleflex Academy</errorMessage>
+</ValidationRule>

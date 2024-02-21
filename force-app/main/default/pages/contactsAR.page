@@ -1,0 +1,207 @@
+<apex:page standardController="Contact" >
+
+    <apex:composition template="{!$Page.accountsTemplate}"> 
+     
+        <apex:define name="TFHeader">
+            <apex:sectionHeader title="Contact" subtitle="{!Contact.Name}"/>
+        </apex:define>
+        <apex:define name="TFDetail">
+         
+            <apex:pageBlock title="Contact Detail" mode="mainDetail" >
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!edit}" id="editButton" value="Edit"/>
+                    <apex:commandButton action="{!delete}" id="deleteButton" value="Delete"/>
+                    <apex:commandButton value="Clone" id="cloneButton" action="{!URLFOR($Action.Contact.edit, Contact.id, [clone='1'])}"/>
+                    <apex:commandButton action="{!URLFOR($Action.Contact.requestupdate, Contact.id)}" id="updateButton" value="Request Update"/>
+                    <apex:commandButton action="{!save}" id="saveButton" value="Save" style="display: none;"/>
+                    <apex:commandButton onclick="resetInlineEdit()" id="cancelButton" value="Cancel" style="display:none;"/>
+                    <apex:commandButton action="{!URLFOR($Action.Contact.GoogleMaps, Contact.id)}" value="Google Maps"/>
+                </apex:pageBlockButtons>
+                
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Contact.Name}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Department_Picklist__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Credentials__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Department}" label="Other Dept.">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.ReportsToId}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>  
+                        <!--<apex:outputLink value="{!$Site.Domain}/cntc/contact_hierarchy.jsp?id={!Contact.Id}"><br/>[View Org Chart]</apex:outputLink>-->
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Position_Job_Title__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Level_of_Influence__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Influencer_Level__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.AccountId}" label="Primary Account">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Birthdate}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Business_Unit1__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.OwnerId}">
+                        <apex:outputLink value="/{!Contact.Id}/a?retURL={!Contact.Id}">&nbsp;[Change]</apex:outputLink>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Does_Not_Work_Here__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Bed_Count__c}" rendered="{!not(ispickval($User.Business_Unit__c,'Surgical'))}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.CreatedDate}"/>
+                    <apex:outputField value="{!Contact.DoNotCall}" >
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.HasOptedOutOfEmail}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1">
+                    <apex:outputField value="{!Contact.Description}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:define>
+        <apex:define name="TFLowerSingle">
+            <apex:pageBlock >
+                <apex:pageBlockSection title="Contact Details">
+                    <apex:outputField value="{!Contact.Surgical_Favorite__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Medical_License_Number__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.VAC_Committee_Member__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.NPI_Code__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                        &nbsp;&nbsp;&nbsp;<apex:outputLink target="_blank" value="http://www.hipaaspace.com/Medical_Billing/Coding/National_Provider_Identifier/NPI_Number_Lookup.aspx">NPI Lookup</apex:outputLink>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.KOL__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Professional_Affiliations_Memberships__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Additional Information">
+                    <apex:outputField value="{!Contact.Email}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.MobilePhone}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Phone}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Fax}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.AssistantName}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    
+                    <apex:outputField value="{!Contact.AssistantPhone}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    
+                    <apex:outputField value="{!Contact.HomePhone}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.OtherPhone}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Notes__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.A_R_Notes__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Surgical_Notes__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Demographic Data">
+                    <apex:outputField value="{!Contact.Contact_Type__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Medical_Specialty__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Geocode_Location__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Role__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Level_of_Experience__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Purchase_Decision_Influence__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Preferred_Product__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.User_Type__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Teleflex_Product_of_Interest__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>                     
+                    <apex:outputField value="{!Contact.Segmentation__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Competitive_Product_Expertise__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.LeadSource}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Other_Product_Expertise__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Contact.Specific_Lead_Source__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, updateButton, cloneButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>                   
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:define>
+        
+        
+    <apex:define name="TFRelLists">
+        <apex:pageBlock title="Address Information">
+            <apex:pageBlockSection >
+                    <apex:outputField value="{!Contact.Mailing_Address_Full__c}"/>
+                    <apex:outputField value="{!Contact.Other_Address_Full__c}"/>
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:relatedList list="Opportunities" rendered="{!$UserRole.Name!='AR Customer Advocacy'}"/>
+        <apex:relatedList list="OpenActivities"/>
+        <apex:relatedList list="Account_Contacts__r" rendered="{!or(ispickval($User.Business_Unit__c,'Surgical'),ispickval($User.Business_Unit__c,'Cross BU'))}"/>
+        <apex:relatedList list="NotesAndAttachments"/>
+        <!--<apex:relatedList list="Leads__r"/>-->
+        <apex:relatedList list="CampaignMembers" rendered="{!or(ispickval($User.Business_Unit__c,'Vascular'),ispickval($User.Business_Unit__c,'Cross BU'))}"/>
+        <apex:relatedList list="EmailStatuses"/>
+    </apex:define>
+    <apex:define name="TFRelListsBottom">
+        <apex:relatedList list="ActivityHistories"/>
+    </apex:define>
+    </apex:composition>
+</apex:page>

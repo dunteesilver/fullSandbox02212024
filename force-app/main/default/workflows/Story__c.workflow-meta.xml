@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Story_CompletdByBlank</fullName>
+        <description>Updates the Story.CompletedBy to BLANK</description>
+        <field>Completed_By__c</field>
+        <name>Story CompletdByBlank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Story_Completed_By</fullName>
+        <description>Updates Story.CompletedBy to the User that changes the Status to Complete</description>
+        <field>Completed_By__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>Story Completed By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Story_Completed_Date</fullName>
+        <description>Updates Story.CompletedDate to TODAY</description>
+        <field>Completed_Date__c</field>
+        <formula>Today()</formula>
+        <name>Story Completed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Story_NoCompletdDate</fullName>
+        <description>Updates Story.CompletedDate to BLANK</description>
+        <field>Completed_Date__c</field>
+        <name>Story NoCompletdDate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Email Owner</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Story__c.Age_Days__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>14</value>
+        </criteriaItems>
+        <description>Email to owner to update person of origin on stories.</description>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Story__c.CreatedDate</offsetFromField>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>SCRUM User Story Complete</fullName>
+        <actions>
+            <name>Story_Completed_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Story_Completed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Story__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <description>Updates the Story.CompletedDate to TODAY &amp; CompletedBy to logged-in user upon Story.Status change to Complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SCRUM User Story NotComplete</fullName>
+        <actions>
+            <name>Story_CompletdByBlank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Story_NoCompletdDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Story__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Story__c.Completed_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Updates the Story.CompletedDate &amp; CompletedBy both to BLANK upon Story.Status change from Complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

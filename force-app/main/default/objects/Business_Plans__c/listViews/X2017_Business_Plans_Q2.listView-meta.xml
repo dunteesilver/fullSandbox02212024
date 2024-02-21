@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2017_Business_Plans_Q2</fullName>
+    <columns>NAME</columns>
+    <columns>Annual_Target__c</columns>
+    <columns>Latest_Forecast__c</columns>
+    <columns>Q2_Actual__c</columns>
+    <columns>Q2_Comments__c</columns>
+    <columns>Q2_Confidence_Level__c</columns>
+    <columns>Q2_Latest_Forecast__c</columns>
+    <columns>Q2_Target__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Business_Plans__c.Latin_American_Business_Plan_2</value>
+    </filters>
+    <filters>
+        <field>Year__c</field>
+        <operation>equals</operation>
+        <value>2017</value>
+    </filters>
+    <label>2017 Business Plans Q2</label>
+    <language>en_US</language>
+</ListView>

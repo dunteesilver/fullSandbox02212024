@@ -1,0 +1,30 @@
+<apex:page controller="PP_Print_Center" sidebar="False">
+    <apex:pagemessages />
+    <apex:pageBlock title="Email Quote to {!pqrec.Account_Name__r.Name} Representative">
+        <apex:form ><br/><br/>
+					<apex:outputLabel value="To" for="To"/>: <br/>
+					<apex:outputText value="{!pqRec.Contact_Name__r.Email}" id="toField" /> <br/><br/>
+
+          <apex:outputLabel value="Bcc myself" for="Bcc"/>:&nbsp;
+          <apex:inputCheckbox value="{!bccCheck}" selected="{!bccCheck}"/><br/><br/>
+
+          <apex:outputLabel value="Subject" for="Subject"/>: <br/>
+          <apex:inputText value="{!subject}" id="Subject" style="width:500px;"/>
+          <br/><br/>
+
+          <apex:outputLabel value="Body" for="Body"/>: <br/>
+          <apex:inputTextarea value="{!body}" id="Body" rows="10" cols="80" style="width:500px;"/>
+          <br/><br/>
+
+            <apex:commandButton value="Send Email" action="{!send}"/>
+            <apex:commandButton value="Cancel" action="{!doCancel}"/><br /><br />
+            <strong>
+              <apex:outputText value="Attachment"/><br />
+              <apex:outputText value="{!pqRec.Name + '-' + pqRec.Account_Name__r.Name + '-#' + pqRec.Account_Name__r.SAP_Sold_To__c}.pdf" />
+            </strong>
+        </apex:form>
+
+    </apex:pageBlock>
+
+
+</apex:page>

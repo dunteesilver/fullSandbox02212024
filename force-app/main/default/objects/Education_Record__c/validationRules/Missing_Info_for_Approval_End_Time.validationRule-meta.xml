@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Info_for_Approval_End_Time</fullName>
+    <active>true</active>
+    <description>Need Confirmed Dates, Educator and Hotel</description>
+    <errorConditionFormula>AND( RecordType.Name =&quot;Education Program Request&quot; ,
+ Course_Type__c =&quot;Live Training&quot;,
+ISPICKVAL( Stage__c , &quot;confirmed&quot;),
+OR(ISBLANK( Ending_Date__c ),ISBLANK( End_Time__c)))</errorConditionFormula>
+    <errorMessage>In order to approve, please enter a value for the Confirmed End Date and End Time</errorMessage>
+</ValidationRule>

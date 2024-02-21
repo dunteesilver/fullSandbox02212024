@@ -1,0 +1,12 @@
+<apex:page showHeader="false" sidebar="false">
+<script>
+    function dlhelp(){
+        window.location='{!$Site.Domain}/servlet/servlet.FileDownload?file=015E0000002hClK';
+        setTimeout("window.close()",1000);
+    }
+    window.onload = dlhelp;
+</script>
+  Click here if your download doesn't start automatically within 5 seconds:
+  <apex:outputLink value="{!$Site.Domain}/servlet/servlet.FileDownload?file=015E0000002hClK">Download</apex:outputLink>
+  
+</apex:page>

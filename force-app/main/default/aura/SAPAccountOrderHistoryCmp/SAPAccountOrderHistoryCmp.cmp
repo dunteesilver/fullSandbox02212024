@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" 
+                access="global" >
+    <aura:attribute name="accSfId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <c:accOrderHistory recordId="{!v.accSfId}" />
+</aura:component>

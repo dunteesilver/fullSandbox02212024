@@ -1,0 +1,109 @@
+<apex:page standardController="Opportunity" >
+
+    <apex:composition template="{!$Page.accountsTemplate}"> 
+     
+        <apex:define name="TFHeader">
+            <apex:sectionHeader title="Opportunity" subtitle="{!Opportunity.Name}"/>
+        </apex:define>
+        <apex:define name="TFDetail">
+         
+            <apex:pageBlock title="Opportunity Detail" mode="mainDetail">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!edit}" id="editButton" value="Edit"/ >
+                    <apex:commandButton action="{!delete}" id="deleteButton" value="Delete"/>
+                    <apex:commandButton value="Clone" id="cloneButton" action="{!URLFOR($Action.Opportunity.edit, Opportunity.id, [clone='1'])}"/>
+                    <apex:commandButton action="{!URLFOR($Action.Opportunity.Share,Opportunity.Id)}" id="sharingButton" value="Sharing"/>
+                    <apex:commandButton action="{!save}" id="saveButton" value="Save" style="display: none;"/>
+                    <apex:commandButton onclick="resetInlineEdit()" id="cancelButton" value="Cancel" style="display:none;"/>
+                    <apex:commandButton action="{!$Site.Domain}/0BG/e?retURL=%2F{!left(Opportunity.Id,15)}&opp={!left(Opportunity.Id,15)}" id="campaignButton" value="Add to Campaign"/>
+                                    
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection columns="2">
+                    <apex:outputField value="{!Opportunity.Name}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, cloneButton, campaignButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputfield value="{!Opportunity.OwnerId}">
+                        <apex:outputLink value="/{!Opportunity.Id}/a?retURL={!Opportunity.Id}"><br/>[Change]</apex:outputLink>
+                    </apex:outputField>
+                    <apex:outputField value="{!Opportunity.AccountId}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, cloneButton, campaignButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Opportunity.Amount}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, cloneButton, campaignButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Opportunity.RecordTypeId}"> 
+                        <!--<apex:outputLink value="{!$Site.Domain}/setup/ui/recordtypeselect.jsp?id={!left(Opportunity.Id,15)}&retURL=%2F{!left(Opportunity.Id,15)}"><br/>[Change]</apex:outputLink>-->
+                    </apex:outputField>  
+                    <apex:outputField value="{!Opportunity.CloseDate}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, cloneButton, campaignButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField> 
+                    <apex:outputField value="{!Opportunity.Probability}"/>          
+                    <apex:outputField value="{!Opportunity.StageName}"/>
+                    <apex:outputField value="{!Opportunity.Type}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, cloneButton, campaignButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>   
+                    <apex:outputField value="{!Opportunity.Reason_Opp_Lost__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, cloneButton, campaignButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                               
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1">
+                    <apex:outputField value="{!Opportunity.Description}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, cloneButton, campaignButton" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    
+                </apex:pageBlockSection>
+                <!--<apex:pageBlockSection columns="2">
+                    <apex:outputLink value="{!$Site.Domain}/servlet/servlet.FileDownload?file=015L000000024qF" target="_blank">GPO Matrix</apex:outputLink>
+                    <apex:outputLink value="https://c.na9.content.force.com/servlet/servlet.FileDownload?file=015E0000000z8Y9" target="_blank">Sales Stage Definitions</apex:outputLink>
+                </apex:pageBlockSection>-->
+            </apex:pageBlock>
+        </apex:define>
+        
+        <apex:define name="TFLowerSingle">
+                     
+        </apex:define>
+        
+        <apex:define name="TFRelLists">
+            
+            
+            <apex:relatedList list="OpenActivities"/>
+            <!--<apex:pageBlock title="My BU's Contacts">
+                <apex:pageBlockTable rows="5" value="{!myCtcs}" var="mc" rendered="{!myCtcs.size > 0}">
+                    <apex:column headerValue="Action">
+                        <apex:outputLink value="{!$Site.Domain}/{!mc.Id}/e?retURL=%2F{!left(Opportunity.Id,15)}">Edit</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Contact Name">
+                        <apex:outputLink value="{!$Site.Domain}/{!mc.Id}?retURL=%2F{!left(Opportunity.Id,15)}">{!mc.name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!mc.title}"/>
+                    <apex:column value="{!mc.Business_Unit__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>-->
+            <!--<apex:pageBlock title="Contact Roles">
+                <apex:commandbutton action="{!URLFOR($Action.OpportunityContactRole.New, $Opportunity.Id)}" title="New" value="New"/>
+                <apex:pageBlockTable value="{!Opportunity.OpportunityContactRoles}" var="Roles">
+                    <apex:column value="{!Roles.ContactId}"/>
+                    <apex:column value="{!Roles.Contact.AccountId}"/>
+                    <apex:column value="{!Roles.Role}"/>
+                    <apex:column value="{!Roles.IsPrimary}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>-->
+            <apex:relatedList list="OpportunityContactRoles"/>
+            <apex:relatedList list="NotesAndAttachments"/>
+            <apex:relatedList subject="{!opportunity}" list="OpportunityHistories" />
+        </apex:define>
+        
+        <apex:define name="TFLeftRelatedLists">
+            <apex:relatedList list="OpportunityTeamMembers"/>
+        </apex:define>
+        
+        <apex:define name="TFRelListsBottom">
+            <apex:relatedList list="OpportunityLineItems"/>
+            <apex:relatedList list="Quotes"/>
+            <apex:relatedList list="ActivityHistories"/>
+        </apex:define>
+        
+    </apex:composition>
+    <chatter:feedWithFollowers entityId="{!Opportunity.Id}"/>
+</apex:page>

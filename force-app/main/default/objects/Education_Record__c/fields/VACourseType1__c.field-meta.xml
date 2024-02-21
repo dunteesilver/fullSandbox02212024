@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VACourseType1__c</fullName>
+    <externalId>false</externalId>
+    <label>Course Type 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Endurance</fullName>
+                <default>false</default>
+                <label>Endurance</label>
+            </value>
+            <value>
+                <fullName>Midline</fullName>
+                <default>false</default>
+                <label>Midline</label>
+            </value>
+            <value>
+                <fullName>Endurance/Midline</fullName>
+                <default>false</default>
+                <label>Endurance/Midline</label>
+            </value>
+            <value>
+                <fullName>PICC</fullName>
+                <default>false</default>
+                <label>PICC</label>
+            </value>
+            <value>
+                <fullName>VPS G4</fullName>
+                <default>false</default>
+                <label>VPS G4</label>
+            </value>
+            <value>
+                <fullName>VPS Rhythm</fullName>
+                <default>false</default>
+                <label>VPS Rhythm</label>
+            </value>
+            <value>
+                <fullName>PICC preloaded with VPS G4</fullName>
+                <default>false</default>
+                <label>PICC preloaded with VPS G4</label>
+            </value>
+            <value>
+                <fullName>PICC preloaded with VPS-R</fullName>
+                <default>false</default>
+                <label>PICC preloaded with VPS-R</label>
+            </value>
+            <value>
+                <fullName>Arrow® Integrated Arterial- Novice</fullName>
+                <default>false</default>
+                <label>Arrow® Integrated Arterial- Novice</label>
+            </value>
+            <value>
+                <fullName>Arrow® Integrated Arterial- Advanced</fullName>
+                <default>false</default>
+                <label>Arrow® Integrated Arterial- Advanced</label>
+            </value>
+            <value>
+                <fullName>Arrow® QuickFlash® Arterial- Novice</fullName>
+                <default>false</default>
+                <label>Arrow® QuickFlash® Arterial- Novice</label>
+            </value>
+            <value>
+                <fullName>Arrow® QuickFlash® Arterial- Advanced</fullName>
+                <default>false</default>
+                <label>Arrow® QuickFlash® Arterial- Advanced</label>
+            </value>
+            <value>
+                <fullName>Arrow® Seldinger Arterial Catheter (SAC)- Novice</fullName>
+                <default>false</default>
+                <label>Arrow® Seldinger Arterial Catheter (SAC)- Novice</label>
+            </value>
+            <value>
+                <fullName>Arrow® Seldinger Arterial Catheter (SAC)- Advanced</fullName>
+                <default>false</default>
+                <label>Arrow® Seldinger Arterial Catheter (SAC)- Advanced</label>
+            </value>
+            <value>
+                <fullName>PICC Fundamentals</fullName>
+                <default>false</default>
+                <label>PICC Fundamentals</label>
+            </value>
+            <value>
+                <fullName>Midline Fundamentals</fullName>
+                <default>false</default>
+                <label>Midline Fundamentals</label>
+            </value>
+            <value>
+                <fullName>Acute HD Training Program</fullName>
+                <default>false</default>
+                <label>Acute HD Training Program</label>
+            </value>
+            <value>
+                <fullName>Arterial</fullName>
+                <default>false</default>
+                <label>Arterial</label>
+            </value>
+            <value>
+                <fullName>Arterial Training Program</fullName>
+                <default>false</default>
+                <label>Arterial Training Program</label>
+            </value>
+            <value>
+                <fullName>Care and Maintenance</fullName>
+                <default>false</default>
+                <label>Care and Maintenance</label>
+            </value>
+            <value>
+                <fullName>Catheter Technology: A Risk Reduction Strategy</fullName>
+                <default>false</default>
+                <label>Catheter Technology: A Risk Reduction Strategy</label>
+            </value>
+            <value>
+                <fullName>Clinical Education</fullName>
+                <default>false</default>
+                <label>Clinical Education</label>
+            </value>
+            <value>
+                <fullName>Clinical Education - Bedside</fullName>
+                <default>false</default>
+                <label>Clinical Education - Bedside</label>
+            </value>
+            <value>
+                <fullName>Conference Support</fullName>
+                <default>false</default>
+                <label>Conference Support</label>
+            </value>
+            <value>
+                <fullName>Consult</fullName>
+                <default>false</default>
+                <label>Consult</label>
+            </value>
+            <value>
+                <fullName>Content Development</fullName>
+                <default>false</default>
+                <label>Content Development</label>
+            </value>
+            <value>
+                <fullName>CVC</fullName>
+                <default>false</default>
+                <label>CVC</label>
+            </value>
+            <value>
+                <fullName>CVC/PSI/MAC Training Program</fullName>
+                <default>false</default>
+                <label>CVC/PSI/MAC Training Program</label>
+            </value>
+            <value>
+                <fullName>Device Selection in the ICU</fullName>
+                <default>false</default>
+                <label>Device Selection in the ICU</label>
+            </value>
+            <value>
+                <fullName>Endurance EDU Program</fullName>
+                <default>false</default>
+                <label>Endurance Training Program</label>
+            </value>
+            <value>
+                <fullName>JACC Training Program</fullName>
+                <default>false</default>
+                <label>JACC Training Program</label>
+            </value>
+            <value>
+                <fullName>Midline Training Program</fullName>
+                <default>false</default>
+                <label>Midline Training Program</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>OPERA</fullName>
+                <default>false</default>
+                <label>OPERA</label>
+            </value>
+            <value>
+                <fullName>Partnering for Prevention: Infection Prevention, Vascular Access and Patient Safety</fullName>
+                <default>false</default>
+                <label>Partnering for Prevention: Infection Prevention, Vascular Access and Patient Safety</label>
+            </value>
+            <value>
+                <fullName>PICC Training Program</fullName>
+                <default>false</default>
+                <label>PICC Training Program</label>
+            </value>
+            <value>
+                <fullName>Pre-loaded PICC w/ G4 Training Program</fullName>
+                <default>false</default>
+                <label>Pre-loaded PICC w/ G4 Training Program</label>
+            </value>
+            <value>
+                <fullName>Pre-loaded PICC w/ Rhythm Training Program</fullName>
+                <default>false</default>
+                <label>Pre-loaded PICC w/ Rhythm Training Program</label>
+            </value>
+            <value>
+                <fullName>Speaker Program</fullName>
+                <default>false</default>
+                <label>Speaker Program</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Fundamentals</fullName>
+                <default>false</default>
+                <label>Ultrasound Essentials</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Arterial Catheter Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Arterial Catheter Insertion</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided CVC Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided CVC Insertion</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Peripheral</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Peripheral</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Peripheral Access Program</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided Peripheral Access Program</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided PICC/Midline Insertion</fullName>
+                <default>false</default>
+                <label>Ultrasound Guided PICC/Midline Insertion</label>
+            </value>
+            <value>
+                <fullName>VPS G4 Training Program</fullName>
+                <default>false</default>
+                <label>VPS G4 Training Program</label>
+            </value>
+            <value>
+                <fullName>VPS Rhythm Training Program</fullName>
+                <default>false</default>
+                <label>VPS Rhythm Training Program</label>
+            </value>
+            <value>
+                <fullName>Ultrasound For Vascular Access</fullName>
+                <default>false</default>
+                <label>Ultrasound For Vascular Access</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+            <value>
+                <fullName>Midline Training</fullName>
+                <default>false</default>
+                <label>Midline Training</label>
+            </value>
+            <value>
+                <fullName>Endurance Training</fullName>
+                <default>false</default>
+                <label>Endurance Training</label>
+            </value>
+            <value>
+                <fullName>Hemodialysis Training</fullName>
+                <default>false</default>
+                <label>Hemodialysis Training</label>
+            </value>
+            <value>
+                <fullName>Arterial Training</fullName>
+                <default>false</default>
+                <label>Arterial Training</label>
+            </value>
+            <value>
+                <fullName>CVC/PSI/MAC Training</fullName>
+                <default>false</default>
+                <label>CVC/PSI/MAC Training</label>
+            </value>
+            <value>
+                <fullName>JACC training</fullName>
+                <default>false</default>
+                <label>JACC training</label>
+            </value>
+            <value>
+                <fullName>PICC Training</fullName>
+                <default>false</default>
+                <label>PICC Training</label>
+            </value>
+            <value>
+                <fullName>Pre-load G4 training</fullName>
+                <default>false</default>
+                <label>Pre-load G4 training</label>
+            </value>
+            <value>
+                <fullName>Pre-load Rhythm Training</fullName>
+                <default>false</default>
+                <label>DLX Pre-load Rhythm Training</label>
+            </value>
+            <value>
+                <fullName>G4 training</fullName>
+                <default>false</default>
+                <label>G4 training</label>
+            </value>
+            <value>
+                <fullName>Rhythm training</fullName>
+                <default>false</default>
+                <label>DLX Rhythm training</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Clinical In-Service</fullName>
+                <default>false</default>
+                <label>Clinical In-Service</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided Midline Fundamentals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ultrasound Guided Midline Fundamentals</label>
+            </value>
+            <value>
+                <fullName>Ultrasound Guided PICC Fundamentals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ultrasound Guided PICC Fundamentals</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

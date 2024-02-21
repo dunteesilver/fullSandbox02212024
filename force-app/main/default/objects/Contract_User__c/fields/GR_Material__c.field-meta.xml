@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GR_Material__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Greece sales org access.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Greece sales org access.</inlineHelpText>
+    <label>GR Material</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

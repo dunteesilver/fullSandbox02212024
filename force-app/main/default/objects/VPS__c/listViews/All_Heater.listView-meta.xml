@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Heater</fullName>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Expired__c</columns>
+    <columns>Active__c</columns>
+    <columns>SAP__c</columns>
+    <columns>NAME</columns>
+    <columns>Sales_Rep__c</columns>
+    <columns>RSM_Email__c</columns>
+    <columns>Product__c</columns>
+    <columns>Lease_Contract__c</columns>
+    <columns>Loaner_Start_Date__c</columns>
+    <columns>Loaner_Expiration_Date__c</columns>
+    <columns>Days_to_Expire__c</columns>
+    <columns>Total_of_Units__c</columns>
+    <columns>Ultrasound__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>VPS__c.Heater_Contracts</value>
+    </filters>
+    <label>All Heater Contracts</label>
+    <sharedTo>
+        <roleAndSubordinates>Customer_Service_Rep</roleAndSubordinates>
+        <roleAndSubordinates>Respiratory_President</roleAndSubordinates>
+    </sharedTo>
+</ListView>

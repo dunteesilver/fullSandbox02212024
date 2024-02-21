@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Language_Formula__c</fullName>
+    <description>Show language of customer on Price Quote template.</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT( ISBLANK(Account_Name__r.Language__c) ), Account_Name__r.Language__c, &quot;English&quot;)</formula>
+    <label>Language Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

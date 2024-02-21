@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Alignment_Skip__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(AND(BillingCountry &lt;&gt; &quot;US&quot;,BillingCountry &lt;&gt; &quot;CA&quot;),TRUE,
+if(AND(ISBLANK( BillingState ),ISBLANK( BillingPostalCode ),ISBLANK( SAP_Sold_To__c )),TRUE,
+if(OR(
+RecordType.Name = &quot;Mayo Healthcare Account Record Type&quot;,
+RecordType.Name = &quot;GPO Account&quot;,
+RecordType.Name = &quot;IDN Account&quot;,
+RecordType.Name = &quot;Associations&quot;
+),TRUE,
+FALSE
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Territory Alignment Skip</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

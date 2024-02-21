@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Incident_Description__c</fullName>
+    <description>Describe the alleged quality issue/incident in DETAIL (Explain who, what, where, when, how)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Describe the alleged quality issue/incident in DETAIL (Explain who, what, where, when, how)</inlineHelpText>
+    <label>Issue/Incident Description</label>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

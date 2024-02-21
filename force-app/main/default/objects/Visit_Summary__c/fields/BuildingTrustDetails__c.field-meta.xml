@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BuildingTrustDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Building Trust Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>BuildingTrust__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Communicate openly, honestly and with an open heart</fullName>
+                <default>false</default>
+                <label>Communicate openly, honestly and with an open heart</label>
+            </value>
+            <value>
+                <fullName>Say what you mean; listen to others and be open to new ideas</fullName>
+                <default>false</default>
+                <label>Say what you mean; listen to others and be open to new ideas</label>
+            </value>
+            <value>
+                <fullName>Behave in a consistent and predictable manner</fullName>
+                <default>false</default>
+                <label>Behave in a consistent and predictable manner</label>
+            </value>
+            <value>
+                <fullName>Speak up when something is not right and address the difficult issues</fullName>
+                <default>false</default>
+                <label>Speak up when something is not right and address the difficult issues</label>
+            </value>
+            <value>
+                <fullName>Seek to put forth meaningful discussion and willingly share information to achieve positive outcomes</fullName>
+                <default>false</default>
+                <label>Seek to put forth meaningful discussion and willingly share information to achieve positive outcomes</label>
+            </value>
+            <value>
+                <fullName>Share knowledge and information that is accurate and complete</fullName>
+                <default>false</default>
+                <label>Share knowledge and information that is accurate and complete</label>
+            </value>
+            <value>
+                <fullName>Provide timely, positive and constructive feedback</fullName>
+                <default>false</default>
+                <label>Provide timely, positive and constructive feedback</label>
+            </value>
+            <value>
+                <fullName>Listen to understand and seek to be understood</fullName>
+                <default>false</default>
+                <label>Listen to understand and seek to be understood</label>
+            </value>
+            <value>
+                <fullName>Show genuine interest in other individuals and be accepting of others</fullName>
+                <default>false</default>
+                <label>Show genuine interest in other individuals and be accepting of others</label>
+            </value>
+            <value>
+                <fullName>Uphold integrity in our actions and conduct in accordance to Teleflex ‘s ethical standards</fullName>
+                <default>false</default>
+                <label>Uphold integrity in our actions and conduct in accordance to Teleflex ‘s ethical standards</label>
+            </value>
+            <value>
+                <fullName>Follow-up, honor commitment and deliver promises</fullName>
+                <default>false</default>
+                <label>Follow-up, honor commitment and deliver promises</label>
+            </value>
+            <value>
+                <fullName>Believe in the capabilities of others, seek their input, and trust their motives</fullName>
+                <default>false</default>
+                <label>Believe in the capabilities of others, seek their input, and trust their motives</label>
+            </value>
+            <value>
+                <fullName>Strive to create a positive atmosphere by engaging in behaviors that will promote open communication and effective collaboration</fullName>
+                <default>false</default>
+                <label>Strive to create a positive atmosphere by engaging in behaviors that will promote open communication and effective collaboration</label>
+            </value>
+            <value>
+                <fullName>Take pride in producing high quality work and deliver / exceed expectations to achieve common good and inspire others to do the same</fullName>
+                <default>false</default>
+                <label>Take pride in producing high quality work and deliver / exceed expectations to achieve common good and inspire others to do the same</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Be sincere &amp; authentic</controllingFieldValue>
+            <valueName>Communicate openly, honestly and with an open heart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be sincere &amp; authentic</controllingFieldValue>
+            <valueName>Say what you mean; listen to others and be open to new ideas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be sincere &amp; authentic</controllingFieldValue>
+            <valueName>Behave in a consistent and predictable manner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be sincere &amp; authentic</controllingFieldValue>
+            <valueName>Speak up when something is not right and address the difficult issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inform, Ask &amp; Listen</controllingFieldValue>
+            <valueName>Seek to put forth meaningful discussion and willingly share information to achieve positive outcomes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inform, Ask &amp; Listen</controllingFieldValue>
+            <valueName>Share knowledge and information that is accurate and complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inform, Ask &amp; Listen</controllingFieldValue>
+            <valueName>Provide timely, positive and constructive feedback</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inform, Ask &amp; Listen</controllingFieldValue>
+            <valueName>Listen to understand and seek to be understood</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be supportive &amp; reliable</controllingFieldValue>
+            <valueName>Show genuine interest in other individuals and be accepting of others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be supportive &amp; reliable</controllingFieldValue>
+            <valueName>Uphold integrity in our actions and conduct in accordance to Teleflex ‘s ethical standards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be supportive &amp; reliable</controllingFieldValue>
+            <valueName>Follow-up, honor commitment and deliver promises</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be supportive &amp; reliable</controllingFieldValue>
+            <valueName>Believe in the capabilities of others, seek their input, and trust their motives</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be supportive &amp; reliable</controllingFieldValue>
+            <valueName>Strive to create a positive atmosphere by engaging in behaviors that will promote open communication and effective collaboration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Be supportive &amp; reliable</controllingFieldValue>
+            <valueName>Take pride in producing high quality work and deliver / exceed expectations to achieve common good and inspire others to do the same</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Current_Sales_2_Uncheck</fullName>
+        <field>Current_Sales_2__c</field>
+        <literalValue>0</literalValue>
+        <name>Current Sales (2) Uncheck</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Current_Sales_Flag</fullName>
+        <field>Current_Sales_2__c</field>
+        <literalValue>1</literalValue>
+        <name>Current Sales Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Prior_2_Years_Quantity</fullName>
+        <field>Two_Years_Prior_Quantity_Text2__c</field>
+        <formula>X2_Years_Prior__c</formula>
+        <name>VPS Consumables Prior 2 Years Quantity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Group_Field_Update</fullName>
+        <field>Product_Grouping_TXT__c</field>
+        <formula>Product_Group__c</formula>
+        <name>Product Group Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Respiratory_Heater_Consumables_WF</fullName>
+        <field>Resp_Heater_Consumables_WF__c</field>
+        <literalValue>1</literalValue>
+        <name>Respiratory Heater Consumables (WF)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_This_Cal_Year_Flag</fullName>
+        <field>Sales_This_Cal_Year2__c</field>
+        <literalValue>1</literalValue>
+        <name>Sales This Cal Year? Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Product_Class_Fields</fullName>
+        <field>Product_Class_Text__c</field>
+        <formula>Product_Class__c</formula>
+        <name>Update Product Class Fields</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Product_Name</fullName>
+        <field>Product_Text__c</field>
+        <formula>Product__r.Name</formula>
+        <name>Update Product Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VPS_Consumables_Current_Year_Quantity</fullName>
+        <field>Current_Year_Quantity__c</field>
+        <formula>Current_Year__c</formula>
+        <name>VPS Consumables Current Year Quantity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VPS_Consumables_Name</fullName>
+        <field>Name</field>
+        <formula>Product__c+&quot; - &quot;+Product_Class__c</formula>
+        <name>VPS Consumables Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VPS_Consumables_Prior_Year_Quantity</fullName>
+        <field>Prior_Year_Quantity__c</field>
+        <formula>Prior_Year__c</formula>
+        <name>VPS Consumables Prior Year Quantity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VPS_Consumables_WF</fullName>
+        <field>VPS_Consumable_WF__c</field>
+        <literalValue>1</literalValue>
+        <name>VPS Consumables (WF)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Water_Heater_Uncheck</fullName>
+        <field>Resp_Heater_Consumables_WF__c</field>
+        <literalValue>0</literalValue>
+        <name>Water Heater Uncheck</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Current Sales %282%29 Uncheck</fullName>
+        <actions>
+            <name>Current_Sales_2_Uncheck</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Current_Sales__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Current_Sales_2__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Current Sales Flag</fullName>
+        <actions>
+            <name>Current_Sales_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Current_Sales__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Current_Sales_2__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Respiratory Heater Consumables %28WF%29</fullName>
+        <actions>
+            <name>Respiratory_Heater_Consumables_WF</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Resp_Heater_Consumables__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales This Cal Year%3F Flag</fullName>
+        <actions>
+            <name>Sales_This_Cal_Year_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>IF(YEAR(Date__c)=YEAR(TODAY()),true,false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Product Class Fields</fullName>
+        <actions>
+            <name>Update_Product_Class_Fields</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Product Group Fields</fullName>
+        <actions>
+            <name>Product_Group_Field_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Product Name</fullName>
+        <actions>
+            <name>Update_Product_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VPS Consumables %28WF%29</fullName>
+        <actions>
+            <name>VPS_Consumables_WF</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VPS_Consumables__c.VPS_Consumable__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VPS Consumables Current Year Quantity</fullName>
+        <actions>
+            <name>VPS_Consumables_Current_Year_Quantity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VPS Consumables Name</fullName>
+        <actions>
+            <name>VPS_Consumables_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VPS Consumables Prior 2 Years Quantity</fullName>
+        <actions>
+            <name>Prior_2_Years_Quantity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VPS Consumables Prior Year Quantity</fullName>
+        <actions>
+            <name>VPS_Consumables_Prior_Year_Quantity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Water Heater Uncheck</fullName>
+        <actions>
+            <name>Water_Heater_Uncheck</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Resp_Heater_Consumables__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>VPS_Consumables__c.Resp_Heater_Consumables_WF__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

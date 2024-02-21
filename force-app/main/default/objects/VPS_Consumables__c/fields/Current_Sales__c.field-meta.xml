@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Sales__c</fullName>
+    <externalId>false</externalId>
+    <formula>YEAR(Date__c) =  Year(Today())</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Used to evaluate Current Sales Start and End Date Now evaluates This Year</inlineHelpText>
+    <label>Current Sales</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

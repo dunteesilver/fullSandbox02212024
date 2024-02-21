@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_ECC_Product__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Temporary field to track new product via ECC merge</description>
+    <externalId>false</externalId>
+    <label>New ECC Product</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

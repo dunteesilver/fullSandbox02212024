@@ -1,0 +1,17 @@
+<apex:page docType="html-5.0" standardController="Sample_Request__c"
+standardStylesheets="false" applyHtmlTag="true" tabStyle="Pricing_Portal__tab">
+    <html>
+        <body>
+            
+            <h1>
+            <p style="font-size:200%;">
+               There will be a Sample Request Blackout Period in beginning Monday, December 9th, 2019.
+               A select group of people have been selected to participate in a Pilot Program for changes made
+               to the Sample Ordering process.  If you have any questions, please contact Matt Boretti.<br/><br/>
+               
+               email: matt.boretti@teleflex.com <br/>
+            </p>   
+            </h1>
+        </body>
+    </html>
+</apex:page>

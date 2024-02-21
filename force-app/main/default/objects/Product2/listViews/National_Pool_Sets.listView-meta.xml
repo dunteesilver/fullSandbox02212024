@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>National_Pool_Sets</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.DESCRIPTION</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>National_Pool__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>National_Pool__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>National Pool Sets</label>
+</ListView>

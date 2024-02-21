@@ -1,0 +1,167 @@
+<apex:page sidebar="false"
+showHeader="false" applyBodyTag="false" applyHtmlTag="false"
+docType="html-5.0" standardController="Contract_Renewal__c" extensions="Contract_Renewal_Rep">
+<html>
+<head>
+<style type="text/css">
+body { padding-top: 70px; }
+</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Start Scripts -->
+  <apex:includescript value="/soap/ajax/34.0/connection.js"> </apex:includescript>
+  <apex:includescript value="/soap/ajax/34.0/apex.js"> </apex:includescript>
+  <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+  <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+  <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+
+  <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.js"></script>
+
+  <apex:stylesheet value="{!UrlFor($Resource.tablesorter,'/tablesorter-master/dist/css/theme.bootstrap.min.css')}"/>
+   <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.min.js')}"/>
+   <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.widgets.min.js')}"/>
+
+   <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/libs/FileSaver/FileSaver.min.js')}"/>
+   <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'/tableExport/tableExport.min.js')}"/>
+  <!-- END Scripts -->
+
+</head>
+<body>
+  <!-- Start of teleflex way -->
+  <div class="teleflex">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand">Contract Renewal </a>
+        <!-- <a><input class="form-control" size="10" html-placeholder="Search..." type="text" ng-model="searchText" id="searchText" ng-change="fetchContracts()"/></a> -->
+
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/home/home.jsp">Salesforce.com</a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+  </div>
+  <!-- End of teleflex way -->
+
+  <!-- start of table stuff -->
+  <!--start outter teleflex div -->
+  <div class="teleflex">
+    <!-- Start of Back to Previous Page / Search -->
+    <div class="container col-md-12">
+    <div class="btn-group">
+        <a class="btn btn-primary btn-sm">Back</a>
+        <a href="#" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li style="margin-left: 0px;">
+                <a href="/apex/Contract_Renewal_Home">Back to Contract Renewal List</a>
+            </li>
+            <li style="margin-left: 0px;">
+                <a href="/apex/Contract_Renewal_Home?search={!crList[0].Agreement_Number__c}">Back to Contract {!crList[0].Agreement_Number__c}</a>
+            </li>
+        </ul>
+    </div>
+    </div><br /><br />
+    <!-- End of Back to Previous Page / Search -->
+    <!-- <a href="/apex/Contract_Renewal_Home"><b>&lt;----- Back to the Contract Renewal List!</b></a> -->
+  	<apex:form >
+    <div class="teleflex"> <!-- 2nd class teleflex -->
+        <div class="contain-fluid"> <!-- 1st class contain-fluid -->
+            <div class="row">
+              <div class="container table-responsive col-md-12">
+
+                <apex:outputText rendered="{!crList.size <= 1}">
+                <div class="col-md-4" >
+                  <table class="table table-hover table-bordered table-xtra-condensed" id="cr">
+                    <apex:repeat value="{!crList}" var="cr">
+                      <tr><td>Contract #:</td><td>{!cr.Agreement_Number__c}</td></tr>
+                      <tr><td>Status:</td><td>{!cr.Status__c}</td></tr>
+                      <tr><td>Sales Org:</td><td>{!cr.Sales_Org__c}</td></tr>
+                      <tr><td>Distr Channel:</td><td>{!cr.Distribution_Channel__c}</td></tr>
+                      <tr><td>Owner:</td><td>{!cr.Owner.Name}</td></tr>
+                      <tr><td>Sales Manager:</td><td>{!cr.Sales_Manager__r.Name}</td></tr>
+                      <tr><td>Sales Rep:</td><td>{!cr.Sales_Rep__r.Name}</td></tr>
+                    </apex:repeat>
+                  </table>
+                 </div>
+               </apex:outputText>
+
+                 <apex:outputText rendered="{!crList.size > 1}">
+                 <div class="col-md-4" >
+                   <table class="table table-hover table-bordered table-xtra-condensed" >
+                      <tr>
+                          <th>Contract #s</th>
+                          <th>Status</th>
+                          <th>Sales Org</th>
+                          <th>Distr Channel</th>
+                          <th>Owner</th>
+                          <th>Sales Manager</th>
+                          <th>Sales Rep</th>
+                          <apex:repeat value="{!crList}" var="cr">
+                            <tr class="text-center">
+                              <td>{!cr.Agreement_Number__c}</td>
+                              <td>{!cr.Status__c}</td>
+                              <td>{!cr.Sales_Org__c}</td>
+                              <td>{!cr.Distribution_Channel__c}</td>
+                              <td>{!cr.Owner.Name}</td>
+                              <td>{!cr.Sales_Manager__r.Name}</td>
+                              <td>{!cr.Sales_Rep__r.Name}</td>
+                            </tr>
+                          </apex:repeat>
+                     </tr>
+                   </table>
+                  </div>
+                </apex:outputText>
+              </div>
+            </div>
+        </div> <!-- 1st class contain-fluid -->
+    </div> <!-- 2nd class teleflex -->
+
+    <!-- start of search table -->
+
+    <div class="container table-responsive col-md-6">
+      <apex:inputText style="width:250px;" html-placeholder="Search for User by First or Last Name..." value="{!strName}"/>
+ 	<apex:commandButton value="Get Users" action="{!getUserList}" styleClass="btn btn-primary btn-sm"/><br /><br />
+  <apex:outputText rendered="{! IF(ISBLANK(userList), false, true) }">
+    	<table class="table table-hover table-bordered table-xtra-condensed" id="cr">
+    		<tr>
+    			<th>Action</th>
+    			<th>Name</th>
+          <th>Role</th>
+    			<th>Manager</th>
+    			<th>Business Unit</th>
+    		</tr>
+    		<apex:repeat value="{!userList}" var="u">
+    			<tr>
+    				<td><apex:commandLink value="Set Owner" action="{!setNewOwner}" styleClass="btn btn-primary btn-sm">
+    						<apex:param name="uId" value="{!u.Id}"/>
+    					</apex:commandLink>
+    				</td>
+    				<td>{!u.Name}</td>
+            <td>{!u.UserRole.Name}</td>
+    				<td>{!u.Manager.Name}</td>
+    				<td>{!u.Business_Unit__c}</td>
+    			</tr>
+    		</apex:repeat>
+
+    	</table>
+      </apex:outputText>
+    </div>
+
+    <!-- end of search table -->
+    </apex:form>
+  </div>
+  <!--end outter teleflex div -->
+  <!-- end of table stuff -->
+</body>
+</html>
+</apex:page>

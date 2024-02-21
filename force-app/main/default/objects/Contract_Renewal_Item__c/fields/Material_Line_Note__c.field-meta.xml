@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Line_Note__c</fullName>
+    <externalId>false</externalId>
+    <label>Material Line Note</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Renew</fullName>
+                <default>false</default>
+                <label>Renew</label>
+            </value>
+            <value>
+                <fullName>Renew, Standard Increase</fullName>
+                <default>false</default>
+                <label>Renew, Standard Increase</label>
+            </value>
+            <value>
+                <fullName>Renew, Larger Than Standard Increase To Meet Guidelines</fullName>
+                <default>false</default>
+                <label>Renew, Larger Than Standard Increase To Meet Guidelines</label>
+            </value>
+            <value>
+                <fullName>Renew, No Increase</fullName>
+                <default>false</default>
+                <label>Renew, No Increase</label>
+            </value>
+            <value>
+                <fullName>Renew, Recent Addition - No Increase</fullName>
+                <default>false</default>
+                <label>Renew, Recent Addition - No Increase</label>
+            </value>
+            <value>
+                <fullName>Renew, Other - See Notes</fullName>
+                <default>false</default>
+                <label>Renew, Other - See Notes</label>
+            </value>
+            <value>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+                <label>Do Not Renew</label>
+            </value>
+            <value>
+                <fullName>Do Not Renew, Lack of Sales</fullName>
+                <default>false</default>
+                <label>Do Not Renew, Lack of Sales</label>
+            </value>
+            <value>
+                <fullName>Do Not Renew, Discontinued</fullName>
+                <default>false</default>
+                <label>Do Not Renew, Discontinued</label>
+            </value>
+            <value>
+                <fullName>Do Not Renew, Renewal Price Above List</fullName>
+                <default>false</default>
+                <label>Do Not Renew, Renewal Price Above List</label>
+            </value>
+            <value>
+                <fullName>Do Not Renew, Lower Contract Pricing Available</fullName>
+                <default>false</default>
+                <label>Do Not Renew, Lower Contract Pricing Available</label>
+            </value>
+            <value>
+                <fullName>Do Not Renew, Other - See Notes</fullName>
+                <default>false</default>
+                <label>Do Not Renew, Other - See Notes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

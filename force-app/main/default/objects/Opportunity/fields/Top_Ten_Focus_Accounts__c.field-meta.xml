@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Ten_Focus_Accounts__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used for Polaris Product Reporting (Anesthesia).</description>
+    <externalId>false</externalId>
+    <label>Top Ten Focus Accounts</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

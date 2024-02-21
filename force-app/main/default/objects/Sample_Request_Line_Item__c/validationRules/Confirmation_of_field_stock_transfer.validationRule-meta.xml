@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmation_of_field_stock_transfer</fullName>
+    <active>true</active>
+    <description>Field is used to confirm transfer of field stock to another person.  Only the person the stock is being transferred to can check this box.</description>
+    <errorConditionFormula>AND($User.Id &lt;&gt; Transferred_To__c, Confirm_Transfer_of_Stock__c)</errorConditionFormula>
+    <errorDisplayField>Confirm_Transfer_of_Stock__c</errorDisplayField>
+    <errorMessage>Only the person the field stock is being transferred to can check this box.</errorMessage>
+</ValidationRule>

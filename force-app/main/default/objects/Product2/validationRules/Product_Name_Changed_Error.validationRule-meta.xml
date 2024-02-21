@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Name_Changed_Error</fullName>
+    <active>true</active>
+    <description>Every field on Products should be read only but we cannot make the &quot;Name&quot; read only. This was mainly created to support the Respiratory Specialty Contracts - CS permission set which gives them access to edit fields on the object.</description>
+    <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;TFX System Administrator&quot;,
+ISCHANGED( Name ))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>You cannot change the &quot;Name&quot; field on the Product. Please change it back to what it was or click Cancel and perform your action again without changing the name.</errorMessage>
+</ValidationRule>

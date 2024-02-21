@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_CMA_Sales_Rep_is_Required</fullName>
+    <active>true</active>
+    <description>Due to Clinical Sales changes CMA Program  Sales Rep needs to be required as it was removed from the CS process as required and is now automated</description>
+    <errorConditionFormula>AND(
+
+RecordType.Name = &quot;CMA Program&quot;,
+
+ISBLANK(  Sales_Rep__c  )
+
+)</errorConditionFormula>
+    <errorDisplayField>Sales_Rep__c</errorDisplayField>
+    <errorMessage>Please add the appropriate Sales Rep</errorMessage>
+</ValidationRule>

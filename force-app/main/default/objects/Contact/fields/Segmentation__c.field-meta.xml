@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segmentation__c</fullName>
+    <externalId>false</externalId>
+    <label>Segmentation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CKE (Confident Knowledgeable Experimentor)</fullName>
+                <default>false</default>
+                <label>CKE (Confident Knowledgeable Experimentor)</label>
+            </value>
+            <value>
+                <fullName>PFTom (Patient Friendly Trade-off maker)</fullName>
+                <default>false</default>
+                <label>PFTom (Patient Friendly Trade-off maker)</label>
+            </value>
+            <value>
+                <fullName>OMM (Open Minded Moderate)</fullName>
+                <default>false</default>
+                <label>OMM (Open Minded Moderate)</label>
+            </value>
+            <value>
+                <fullName>CCP (Cautious Conservative Practitioner)</fullName>
+                <default>false</default>
+                <label>CCP (Cautious Conservative Practitioner)</label>
+            </value>
+            <value>
+                <fullName>RAU (Risk Averse Unconvinceable/Unfriendly)</fullName>
+                <default>false</default>
+                <label>RAU (Risk Averse Unconvinceable/Unfriendly)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

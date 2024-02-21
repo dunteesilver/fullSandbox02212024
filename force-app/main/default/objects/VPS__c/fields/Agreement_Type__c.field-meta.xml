@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agreement_Type__c</fullName>
+    <description>Currently only for Heater Contracts</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specifies if the contract is EPA, Addendum or Evaluation. If this is an Evaluation that is turning into an EPA, deactivate this record and create a new record for the EPA.</inlineHelpText>
+    <label>Agreement Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EPA</fullName>
+                <default>false</default>
+                <label>EPA</label>
+            </value>
+            <value>
+                <fullName>Addendum</fullName>
+                <default>false</default>
+                <label>Addendum</label>
+            </value>
+            <value>
+                <fullName>Product Evaluation</fullName>
+                <default>false</default>
+                <label>Product Evaluation</label>
+            </value>
+            <value>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+                <label>Terminated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

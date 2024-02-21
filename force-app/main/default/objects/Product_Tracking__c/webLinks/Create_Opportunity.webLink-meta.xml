@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Opportunity</fullName>
+    <availability>online</availability>
+    <description>Create Opportunity from Product Tracking object with button click.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Opportunity</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/41.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/41.0/apex.js&quot; )} 
+
+//disable button to avoid double clicks 
+var createBtn = document.getElementsByName(&quot;create_opportunity&quot;); 
+
+var connection = sforce.connection; 
+var prodTrack= new sforce.SObject(&quot;Product_Tracking__c&quot;); 
+var newCon= new sforce.SObject(&quot;Contact&quot;);
+var updCon= new sforce.SObject(&quot;Contact&quot;);
+var newOpp= new sforce.SObject(&quot;Opportunity&quot;);
+var prodTrack= new sforce.SObject(&quot;Product_Tracking__c&quot;); 
+
+if(( &quot;{!Product_Tracking__c.Contact_Name__c}&quot; == &apos;&apos; &amp;&amp; (&quot;{!Product_Tracking__c.Contact_First_Name__c}&quot; == &apos;&apos; || &quot;{!Product_Tracking__c.Contact_Last_Name__c}&quot; == &apos;&apos;)) || &quot;{!Product_Tracking__c.Product_Family_GPL__c}&quot; == &apos;&apos; || 
+&quot;{!Product_Tracking__c.Opportunity_Amount__c}&quot; == &apos;&apos;){ 
+alert(&quot;Please fill out Information in &apos;Opportunity Info&apos; section before proceeding!&quot;); 
+}//outter if 
+else{ 
+if(&quot;{!Product_Tracking__c.Opportunity__c}&quot; == &apos;&apos;){ 
+createBtn[0].value=&quot;Please wait...&quot;; 
+createBtn[0].disabled=true; 
+
+if(&quot;{!Product_Tracking__c.Contact_Name__c}&quot; == &apos;&apos;){ 
+newCon.FirstName=&quot;{!Product_Tracking__c.Contact_First_Name__c}&quot;; 
+newCon.LastName=&quot;{!Product_Tracking__c.Contact_Last_Name__c}&quot;; 
+newCon.Title=&quot;{!Product_Tracking__c.Contact_Title__c}&quot;; 
+var result = sforce.connection.create([newCon]);
+prodTrack.Contact_Name__c = result[0].id;
+updCon.Id = result[0].id;
+updCon.AccountId = &quot;{!Product_Tracking__c.AccountId__c}&quot;;
+var result = sforce.connection.update([updCon]);
+//alert(&quot;*** RESULTS *** &quot; + result); 
+}//end of FirstName check 
+
+newOpp.Name=&quot;{!Product_Tracking__c.Opportunity_Name__c}&quot;; 
+newOpp.StageName = &quot;Qualified Prospect&quot;; 
+newOpp.OwnerId = &quot;{!Product_Tracking__c.OwnerId}&quot;; 
+newOpp.AccountId = &quot;{!Product_Tracking__c.AccountId__c}&quot;; 
+newOpp.Product_Family_GPL__c = &quot;{!Product_Tracking__c.Product_Family_GPL__c}&quot;; 
+newOpp.Product_of_Interest_GPL__c = &quot;{!Product_Tracking__c.Product_of_Interest_GPL__c}&quot;; 
+var amountCom = &quot;{!Product_Tracking__c.Opportunity_Amount__c}&quot;; 
+var newAmount = amountCom.replace(/\,/g,&apos;&apos;); 
+newOpp.Amount = newAmount; 
+newOpp.Business_Unit_GPL__c = &quot;{!Product_Tracking__c.Business_Unit_GPL__c}&quot;; 
+
+if(&quot;{!Product_Tracking__c.Contact_Name__c}&quot; == &apos;&apos;){ 
+newOpp.Primary_Contact__c = result[0].id; 
+} 
+else{ 
+newOpp.Primary_Contact__c = &quot;{!Product_Tracking__c.Contact_NameId__c}&quot;; 
+} 
+
+var d = new Date({!Opportunity.CloseDate}); 
+d.setDate(d.getDate() + 90); 
+newOpp.CloseDate = d; 
+var result = sforce.connection.create([newOpp]); 
+
+if(result[0].success == &quot;true&quot;){ 
+//alert(&quot;*** RESULTS *** &quot; + result); 
+prodTrack.Id = &quot;{!Product_Tracking__c.Id}&quot;; 
+prodTrack.Opportunity__c = result[0].id; 
+result = sforce.connection.update([prodTrack]);
+if(result[0].success == &quot;true&quot;){ 
+alert(&quot;You have successfully created an Opportunity!&quot;); 
+window.location.reload(); 
+}//end else for Opportunity creation
+
+} 
+else{ 
+alert(&quot;An issue occurred: RESULTS *** &quot; + result); 
+window.location.reload(); 
+} 
+} 
+else{ 
+createBtn[0].value=&quot;Please wait...&quot;; 
+createBtn[0].disabled=true; 
+alert(&quot;An Opportunity is already associated to this record...&quot;); 
+createBtn[0].value=&quot;Create Opportunity&quot;; 
+createBtn[0].disabled=false; 
+} 
+}//outter else</url>
+</WebLink>

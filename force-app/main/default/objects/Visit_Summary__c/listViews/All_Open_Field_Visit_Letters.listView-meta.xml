@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Field_Visit_Letters</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>,New,Waiting on RSM,Waiting on Director</value>
+    </filters>
+    <label>All Open Field Visit Letters</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Surgical_Disposables</group>
+        <group>Surgical_Disposables_Sales_Dir</group>
+    </sharedTo>
+</ListView>

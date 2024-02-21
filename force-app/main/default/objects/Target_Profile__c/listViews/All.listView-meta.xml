@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Account_Number__c</columns>
+    <columns>City__c</columns>
+    <columns>State__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Go_Deep_from_Accounts__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Total_Beds__c</field>
+        <operation>greaterThan</operation>
+        <value>475</value>
+    </filters>
+    <filters>
+        <field>Total_Beds__c</field>
+        <operation>lessThan</operation>
+        <value>500</value>
+    </filters>
+    <filters>
+        <field>Adult_Trauma_Center_Level__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>IO_Potential_Range__c</field>
+        <operation>equals</operation>
+        <value>A+</value>
+    </filters>
+    <label>All</label>
+</ListView>

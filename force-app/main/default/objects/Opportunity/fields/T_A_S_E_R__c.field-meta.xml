@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_A_S_E_R__c</fullName>
+    <description>Field brought over from Australia data integration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Pick the TASER Perspective that is most suited.</inlineHelpText>
+    <label>T.A.S.E.R</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Meeting Presenting</fullName>
+                <default>false</default>
+                <label>Meeting Presenting</label>
+            </value>
+            <value>
+                <fullName>Preparation</fullName>
+                <default>false</default>
+                <label>Preparation</label>
+            </value>
+            <value>
+                <fullName>Headlining</fullName>
+                <default>false</default>
+                <label>Headlining</label>
+            </value>
+            <value>
+                <fullName>Uncovering</fullName>
+                <default>false</default>
+                <label>Uncovering</label>
+            </value>
+            <value>
+                <fullName>Perspectives</fullName>
+                <default>false</default>
+                <label>Perspectives</label>
+            </value>
+            <value>
+                <fullName>Presenting</fullName>
+                <default>false</default>
+                <label>Presenting</label>
+            </value>
+            <value>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+                <label>Proposal</label>
+            </value>
+            <value>
+                <fullName>Follow Up</fullName>
+                <default>false</default>
+                <label>Follow Up</label>
+            </value>
+            <value>
+                <fullName>Meeting Headling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Meeting Headling</label>
+            </value>
+            <value>
+                <fullName>Meeting Perspectives</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Meeting Perspectives</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

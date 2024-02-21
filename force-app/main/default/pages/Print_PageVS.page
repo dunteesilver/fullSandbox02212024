@@ -1,0 +1,8 @@
+<apex:page standardController="Visit_Summary__c" sidebar="false" title="{!Visit_Summary__c.Name}" showHeader="false">
+    <apex:form >
+        <br/>&nbsp;&nbsp;&nbsp;
+        <apex:commandbutton value="<-- Click to Return to {!Visit_Summary__c.Name}" action="/{!Visit_Summary__c.Id}" />&nbsp;&nbsp;&nbsp;
+        <apex:commandButton onclick="window.print();" value="Print Page" />
+        <apex:detail subject="{!Visit_Summary__c.Id}" relatedList="false" title="false"/> 
+    </apex:form>
+</apex:page>

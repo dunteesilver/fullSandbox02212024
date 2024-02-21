@@ -1,0 +1,179 @@
+<apex:page controller="PP_PRF_Export" sidebar="false" showHeader="false" contentType="{!rxls}" readOnly="true" standardStylesheets="false">
+    <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+    <!-- contentType="application/vnd.ms-excel#PRF-{!prf.PRF_Name__c}.xls" -->
+    <!--contentType="application/vnd.ms-excel#123.xls"-->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <style type="text/css">
+            @page {            
+            mso-page-orientation:landscape;
+            }
+            
+        </style> 
+        <style type="text/css">
+            table {
+            border-collapse: collapse;
+            }
+            
+            table, td, th {
+            border: 1px solid black;
+            white-space:nowrap;
+            mso-data-placement:same-cell;
+            }
+            body { font-family: Arial Unicode MS; }
+            span {
+            white-space:nowrap;
+            mso-data-placement:same-cell;
+            }
+            .text-wrap {
+            /* wrap long text and urls */
+            white-space: pre; /* CSS 2.0 */
+            white-space: pre-wrap; /* CSS 2.1 */
+            white-space: pre-line; /* CSS 3.0 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            white-space: -moz-pre-wrap; /* Mozilla */
+            word-wrap: break-word; /* IE 5+ */
+            }
+            br {
+            mso-data-placement:same-cell;
+            }
+            .text{
+            mso-number-format:"\@";/*force text*/
+            }
+            .num{
+            mso-number-format:"0\.00";
+            }
+            
+        </style>
+    </head>
+    <apex:variable value="{!2}" var="leftC1"/>
+    <apex:variable value="{!2}" var="leftC2"/>
+    <apex:variable value="{!4}" var="rightC1"/>
+    <apex:variable value="{!3}" var="rightC2"/>
+    <div class="teleflex">
+        <table width="600px">
+            <tr><td>
+                <table class="table table-bordered table-hover">
+                    <!-- Left Nav -->
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">PRF #:</td>
+                        <td colspan="{!leftC2}" style="mso-number-format:\@;"><strong>{!prf.Name}</strong></td>
+                        <td colspan="{!rightC1}" align="right">Primary Account</td>
+                        <td colspan="{!rightC2}" style="mso-number-format:\@;">{!prf.Account__r.Name}</td>
+                    </tr>      
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Status</td>
+                        <td colspan="{!leftC2}"><strong>{!prf.Status__c}</strong></td>
+                        <td colspan="{!rightC1}" align="right">Primary Customer Number</td>
+                        <td colspan="{!rightC2}" style="mso-number-format:\@;"><strong>{!prf.Account__r.SAP_Sold_To__c}</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Requisition Date</td>
+                        <td colspan="{!leftC2}" style="mso-number-format:\@;">
+                            <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                <apex:param value="{!prf.Requisition_Date__c}" />
+                            </apex:outputText>
+                        </td>
+                        <td colspan="{!rightC1}" align="right">Additional Customer Numbers</td>
+                        <td colspan="{!rightC2}" style="mso-number-format:\@;">{!prf.Additional_Accounts__c}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Agreement Type</td>
+                        <td colspan="{!leftC2}">{!prf.Agreement_Type__c}</td>
+                        <td colspan="{!rightC1}" align="right">Street Address</td>
+                        <td colspan="{!rightC2}">{!prf.Account__r.BillingStreet}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Eligible Distributor</td>
+                        <td colspan="{!leftC2}">{!prf.Eligible_Distributor__c}</td>
+                        <td colspan="{!rightC1}" align="right">City/State/Zip</td>
+                        <td colspan="{!rightC2}">{!prf.Account__r.BillingCity}, {!prf.Account__r.BillingState} {!prf.Account__r.BillingPostalCode}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Current Annual Purchases</td>
+                        <td colspan="{!leftC2}" style="mso-number-format:\@;">{!prf.Current_Annual_Purchases__c}</td>
+                        <td colspan="{!rightC1}" align="right">Contact Name</td>
+                        <td colspan="{!rightC2}">{!prf.Contact__r.name}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Estimated&nbsp;Annual&nbsp;Purchases</td>
+                        <td colspan="{!leftC2}" style="mso-number-format:\@;">{!prf.Estimated_Annual_Purchases__c}</td>
+                        <td colspan="{!rightC1}" align="right">Contact Email</td>
+                        <td colspan="{!rightC2}">{!prf.Contact__r.email}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Preferred Start Date</td>
+                        <td colspan="{!leftC2}" style="mso-number-format:\@;">
+                            <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                <apex:param value="{!prf.Preferred_Start_Date__c}" />
+                            </apex:outputText>
+                        </td>
+                        <td colspan="{!rightC1}" align="right">Sales Consultant/Specialist</td>
+                        <td colspan="{!rightC2}">{!prf.Owner_Full_Name__c}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Preferred End Date</td>
+                        <td colspan="{!leftC2}" style="mso-number-format:\@;">
+                            <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                <apex:param value="{!prf.Preferred_End_Date__c}" />
+                            </apex:outputText>
+                        </td>
+                        <td colspan="{!rightC1}" align="right">Sales Business Unit</td>
+                        <td colspan="{!rightC2}">{!prf.Owner_Business_Unit__c}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1}" align="right">Data Driven Justification</td>
+                        <td colspan="{!leftC2}" style="mso-number-format:\@;">
+                            <apex:outputText escape="false" style="white-space:pre;" value="{!substitute(prf.Data_Driven_Justification__c, '\n', '<br/>')}"/></td>
+                        <td colspan="{!rightC1}" align="right">Territory Number</td>
+                        <td colspan="{!rightC2}" style="mso-number-format:\@;">{!prf.Territory__r.Territory_Number__c}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="{!leftC1+leftC2}">&nbsp;</td>
+                        <td colspan="{!rightC1}" align="right">Territory Name</td>
+                        <td colspan="{!rightC2}">{!prf.Territory__r.Territory_Name__c}</td>
+                    </tr>
+                    <!-- End Top Nav -->
+                    
+                    <!-- Start Lines -->
+                    <tr>
+                        
+                        <th style="vertical-align:middle;">Material</th>
+                        <th style="vertical-align:middle;">Description</th>
+                        <th class="text-center" style="vertical-align:middle;">Sales Deal #</th>
+                        <th style="vertical-align:middle;">Sales Deal</th>
+                        <th class="text-center" style="vertical-align:middle;">Condition</th>
+                        <th class="text-center" style="vertical-align:middle;">Currency</th>
+                        <th class="text-center" style="vertical-align:middle;">List<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">Rep<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">RSM<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">Eligible<br/>Price</th>
+                        <th class="text-center" style="vertical-align:middle;">Requested<br/>Price</th>
+                    </tr>
+                    
+                    <apex:repeat value="{!PLI}" var="pl">
+                        <tr>
+                            <td style="mso-number-format:'\@';">{!pl.Material_Name__r.Name}</td>
+                            <td class="text-nowrap">{!pl.Product_Description__c}</td>
+                            <td>{!pl.Sales_Deal_Num__c}</td>
+                            <td class="text-nowrap">{!pl.Sales_Deal_Description__c}</td>
+                            <td><center>{!pl.Condition__c}</center></td>
+                            <td><center>{!pl.CurrencyIsoCode}</center></td>
+                            <td><center>{!pl.List_Price__c}</center></td>
+                            <td style="mso-number-format:\@;"><center>{!pl.Rep_Price__c}</center></td>
+                            <td style="mso-number-format:\@;"><center>{!pl.RSM_Price__c}</center></td>
+                            <td style="mso-number-format:\@;"><center>{!pl.Eligible_Price__c}</center></td>
+                            <td style="mso-number-format:\@;background-color:yellow"><center>{!pl.Requested_Price__c}</center></td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                </td></tr>
+        </table>
+        
+    </div>
+    
+    
+</apex:page>

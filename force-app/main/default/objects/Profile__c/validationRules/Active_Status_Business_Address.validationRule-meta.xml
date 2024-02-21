@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Status_Business_Address</fullName>
+    <active>false</active>
+    <description>Requests fields to be populated when the status is active</description>
+    <errorConditionFormula>AND( ISPICKVAL( Status__c , &quot;Active&quot;),  RecordType.Name &lt;&gt;&quot;ACE&quot;, RecordType.Name &lt;&gt;&quot;TFX - Internal Resource&quot;, OR( ISBLANK(Business_Address__c ) , ISBLANK(Business_City__c) , ISBLANK(Business_State__c ) , ISBLANK(Business_Zip__c)))</errorConditionFormula>
+    <errorDisplayField>Business_Address__c</errorDisplayField>
+    <errorMessage>The following fields need a value when Status=Active:  Business Address, City, St Zip</errorMessage>
+</ValidationRule>

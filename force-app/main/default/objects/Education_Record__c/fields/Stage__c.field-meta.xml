@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Request</fullName>
+                <default>false</default>
+                <label>New Request</label>
+            </value>
+            <value>
+                <fullName>NEW</fullName>
+                <default>true</default>
+                <label>NEW</label>
+            </value>
+            <value>
+                <fullName>1st Review</fullName>
+                <default>false</default>
+                <label>1st Review</label>
+            </value>
+            <value>
+                <fullName>In Review</fullName>
+                <default>false</default>
+                <label>In Review</label>
+            </value>
+            <value>
+                <fullName>RSM Review</fullName>
+                <default>false</default>
+                <label>RSM Review</label>
+            </value>
+            <value>
+                <fullName>Director Review</fullName>
+                <default>false</default>
+                <label>Director Review</label>
+            </value>
+            <value>
+                <fullName>Marketing Review</fullName>
+                <default>false</default>
+                <label>Marketing Review</label>
+            </value>
+            <value>
+                <fullName>BU Review</fullName>
+                <default>false</default>
+                <label>BU Review</label>
+            </value>
+            <value>
+                <fullName>CEM Vetting</fullName>
+                <default>false</default>
+                <label>CEM Vetting</label>
+            </value>
+            <value>
+                <fullName>AEM Input</fullName>
+                <default>false</default>
+                <label>AEM Input</label>
+            </value>
+            <value>
+                <fullName>CEM Review</fullName>
+                <default>false</default>
+                <label>CEM Review</label>
+            </value>
+            <value>
+                <fullName>RCEM Review</fullName>
+                <default>false</default>
+                <label>RCEM Review</label>
+            </value>
+            <value>
+                <fullName>CMA Review</fullName>
+                <default>false</default>
+                <label>CMA Review</label>
+            </value>
+            <value>
+                <fullName>CSS Review</fullName>
+                <default>false</default>
+                <label>CSS Review</label>
+            </value>
+            <value>
+                <fullName>RCSM Review</fullName>
+                <default>false</default>
+                <label>RCSM Review</label>
+            </value>
+            <value>
+                <fullName>CMA Vetting</fullName>
+                <default>false</default>
+                <label>CMA Vetting</label>
+            </value>
+            <value>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+                <label>Confirmed</label>
+            </value>
+            <value>
+                <fullName>Review Complete/Education in Progress</fullName>
+                <default>false</default>
+                <label>Review Complete/Education in Progress</label>
+            </value>
+            <value>
+                <fullName>Hold</fullName>
+                <default>false</default>
+                <label>Hold</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Training Completed</fullName>
+                <default>false</default>
+                <label>Training Completed</label>
+            </value>
+            <value>
+                <fullName>Record</fullName>
+                <default>false</default>
+                <label>Record</label>
+            </value>
+            <value>
+                <fullName>Education Record</fullName>
+                <default>false</default>
+                <label>Education Record</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

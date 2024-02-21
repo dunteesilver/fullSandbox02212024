@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Pivot_Snapshots_Business_Unit</fullName>
+        <field>Business_Unit__c</field>
+        <formula>TEXT(Territory__r.Business_Unit__c)</formula>
+        <name>Pivot Snapshots - Business Unit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pivot_Snapshots_Sales_Rep</fullName>
+        <field>Sales_Rep__c</field>
+        <formula>Territory__r.Sales_Rep_Name__c</formula>
+        <name>Pivot Snapshots - Sales Rep</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pivot_Snapshots_Territory_Number</fullName>
+        <field>Territory_Number__c</field>
+        <formula>Territory__r.Territory_Number__c</formula>
+        <name>Pivot Snapshots - Territory Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Pivot Snapshots - Territory Updates</fullName>
+        <actions>
+            <name>Pivot_Snapshots_Business_Unit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Pivot_Snapshots_Sales_Rep</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Pivot_Snapshots_Territory_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Pivot_Snapshots__c.Territory_Number__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

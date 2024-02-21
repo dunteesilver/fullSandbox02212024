@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2H_Current_Fiscal_Quarter_Number__c</fullName>
+    <description>Created to support Surgical H2 calendar</description>
+    <externalId>false</externalId>
+    <formula>/* AN Aug 2020 Created to support Surgical H2 calendar */
+/* AN July 2021 Updated to support all H2 BU&apos;s */
+
+/* 2021 */
+if(TODAY() &gt; DATEVALUE(&quot;2021-09-27&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2021-06-28&quot;), 3,
+
+/* 2020 */
+if(TODAY() &gt; DATEVALUE(&quot;2020-09-28&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2020-06-29&quot;), 3,
+
+0
+))
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>2H Current Fiscal Quarter Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

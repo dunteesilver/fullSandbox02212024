@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Rep_Info__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Sales Rep Company Name:  &quot;+Sales_Rep__r.CompanyName+BR()+ &quot;Sales Rep Department:  &quot;+Sales_Rep__r.Department+BR()+ &quot;Sales Rep Email:  &quot;+Sales_Rep__r.Email+BR()+ &quot;Sales Rep Phone:  &quot;+Sales_Rep__r.MobilePhone</formula>
+    <inlineHelpText>This should include rep name, Company, Department, Email and Phone. If any of that is missing, it is missing from the reps users record.</inlineHelpText>
+    <label>Sales Rep Info</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

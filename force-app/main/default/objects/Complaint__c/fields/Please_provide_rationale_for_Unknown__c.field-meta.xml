@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Please_provide_rationale_for_Unknown__c</fullName>
+    <description>Please provide rationale for Unknown</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please provide rationale for Unknown whenever &apos;A Medical Intervention was performed&quot; is selected as Unknown.</inlineHelpText>
+    <label>Please provide rationale for Unknown</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

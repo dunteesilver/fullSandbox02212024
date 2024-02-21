@@ -1,0 +1,94 @@
+<apex:page docType="html-5.0" id="thePage" title="PRF: #{!prf.Name}" controller="PP_ImportCsvPrf" sidebar="false">
+		
+    <div class="teleflex">
+        <apex:include id="menu" pageName="PP_Menu"/>
+			<div class="contain-fluid">
+					<div class="row">
+						<apex:pageMessages ></apex:pageMessages>
+						<div class="col-md-4">
+						<div class="panel panel-warning">
+								<div class="panel-heading">
+										<h3 class="panel-title">Import CSV PRF</h3>
+								</div>
+
+								<div class="panel-body">
+									<div>
+										<apex:outputLink value="apex/PP_Prf?id={!prf.Id}">
+										<h4>
+										<strong>Back to PRF \ {!prf.Name} - {!prf.Account__r.Name}</strong>
+										</h4></apex:outputLink>
+									</div><br />
+										<table class="table table-hover">
+												<tr>
+													<apex:form >
+													<td>
+														<apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}" />
+													</td>
+													<td>
+														<apex:commandButton value="Import Line Items" action="{!importCSVFile}" styleClass="btn btn-primary btn-sm"/>
+													</td>
+													</apex:form>
+												</tr>
+										</table>
+								</div>
+						</div>
+					</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4">
+						<div class="panel panel-warning">
+								<div class="panel-heading">
+										<h3 class="panel-title">Instructions for Importing PRFs</h3>
+								</div>
+
+								<div class="panel-body">
+
+										<table class="table table-hover">
+												<tr>
+													<td>
+														<strong><u>File Preparation:</u></strong><br/>
+																		The file must have a (.csv) extension.<br/>
+																		Up to <strong>two</strong> columns can be included as seen in the screenshot.<br/>
+																		Please keep the columns in the order seen and formatted as text.<br/>
+														<strong><u>Importing:</u></strong><br/>
+														<strong>Step 1:</strong> Click the "Choose File" button and select your .csv file to upload.<br/>
+														<strong>Step 2:</strong> Click the "Import Line Items" button to start the process.<br/>
+														<strong>Step 3:</strong> Wait for confirmation email that notifies you when the import job is complete.
+																										 Email will include a link back to the record.  You can also you the link on this page
+																										 and just refresh the page once you receive the email.<br/><br/>
+														<strong>Example PRF CSV: </strong><apex:outputLink value="{!$Resource.importCsvPrf}" styleclass="btn btn-primary btn-sm">Download</apex:outputLink>
+													</td>
+												</tr>
+										</table>
+								</div>
+						</div>
+					</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4">
+						<div class="panel panel-warning">
+								<div class="panel-heading">
+										<h3 class="panel-title"> Example Screenshot of PRF CSV</h3>
+								</div>
+
+								<div class="panel-body">
+
+										<table class="table table-hover">
+												<tr>
+													<apex:form >
+													<td>
+														<apex:image url="{!$Resource.PrfImportImage}" style="width:100%;"/>
+													</td>
+													</apex:form>
+												</tr>
+										</table>
+								</div>
+						</div>
+					</div>
+					</div>
+
+			</div>
+		</div>
+</apex:page>

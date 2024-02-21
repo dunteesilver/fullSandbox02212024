@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Impact_of_Risk__c</fullName>
+    <description>5 - Inability to deliver, business case/objective not viable
+4 - Substantial delay, key deliverable not met, incur costs
+3 - Delay, increased cost in excess of tolerance
+2 - Small delay, small increased cost, but absorbable
+1 - Insignificant changes, re-planning may be required</description>
+    <externalId>false</externalId>
+    <inlineHelpText>5 - Inability to deliver
+4 - Substantial delay, key deliverable not met, incur costs
+3 - Delay, increased cost in excess of tolerance
+2 - Small delay, small increased cost, but absorbable
+1 - Insignificant changes, re-planning may be required</inlineHelpText>
+    <label>Impact of Risk</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>5</fullName>
+                <default>false</default>
+                <label>5</label>
+            </value>
+            <value>
+                <fullName>4</fullName>
+                <default>false</default>
+                <label>4</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>3</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <label>2</label>
+            </value>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <label>1</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

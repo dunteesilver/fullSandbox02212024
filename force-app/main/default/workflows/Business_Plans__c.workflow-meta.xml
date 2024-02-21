@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Business_Plan_Name_LATAM</fullName>
+        <field>Business_Plan_Name__c</field>
+        <formula>Year__c+&quot; &quot;+&quot;-&quot;+&quot; &quot;+Account__r.Name</formula>
+        <name>Business Plan Name (LATAM)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Business_Plan_Name_LATAM2</fullName>
+        <field>Name</field>
+        <formula>Year__c+&quot; &quot;+&quot;-&quot;+&quot; &quot;+Account__r.Name</formula>
+        <name>Business Plan Name (LATAM)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Business Plan Name %28LATAM%29</fullName>
+        <actions>
+            <name>Business_Plan_Name_LATAM2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Business_Plans__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Latin American Business Plan 2</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>During_use_on_a_patient__c</fullName>
+    <externalId>false</externalId>
+    <label>During use on a patient</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>How_the_product_was_being_used__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Patient injury or consequence</fullName>
+                <default>false</default>
+                <label>No Patient injury or consequence</label>
+            </value>
+            <value>
+                <fullName>Patient death occurred</fullName>
+                <default>false</default>
+                <label>Patient death occurred</label>
+            </value>
+            <value>
+                <fullName>An injury occurred but not a death</fullName>
+                <default>false</default>
+                <label>An injury occurred but not a death</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>During use on a patient</controllingFieldValue>
+            <valueName>No Patient injury or consequence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>During use on a patient</controllingFieldValue>
+            <valueName>Patient death occurred</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>During use on a patient</controllingFieldValue>
+            <valueName>An injury occurred but not a death</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>During use on a patient</controllingFieldValue>
+            <valueName>Unknown</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_of_C_in_OR__c</fullName>
+    <externalId>false</externalId>
+    <label>Location of C+ in OR?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>Shelf</fullName>
+                <default>false</default>
+                <label>Shelf</label>
+            </value>
+            <value>
+                <fullName>Pyxis</fullName>
+                <default>false</default>
+                <label>Pyxis</label>
+            </value>
+            <value>
+                <fullName>Cart</fullName>
+                <default>false</default>
+                <label>Cart</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

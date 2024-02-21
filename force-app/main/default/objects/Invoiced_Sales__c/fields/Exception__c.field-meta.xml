@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exception__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Removed EMS exceptions */
+/* Removed filter to exclude Indirect UPMC sales across the board as per Comp team&apos;s request 2020 Aug 24 - AN*/ 
+OR(
+/* Interventional Canada per JZ/Morgan - 20Jun2018 - ESC */
+AND( 
+Compensation_Profile__c = &quot;Interventional Access Canada&quot;,
+Date__c &gt;= DATEVALUE(&quot;2018-01-01&quot;),
+Date__c &lt; DATEVALUE(&quot;2018-04-01&quot;)
+),
+AND( 
+Compensation_Profile__c = &quot;Interventional Access Canada&quot;,
+Date__c &gt;= DATEVALUE(&quot;2017-01-01&quot;),
+Date__c &lt; DATEVALUE(&quot;2017-04-01&quot;)
+),
+/* Disabling per JZ/Shane request - 26Jan2018 - ESC
+   Enabling per JZ/Shane&apos;s request  - 19Dec2018 - AN 
+   Update the date range to exclude Langston till Dec 2021 Jan30 2021 - AN */
+AND( 
+Business_Unit__c = &quot;Interventional&quot;,
+Date__c &gt;= DATEVALUE(&quot;2020-08-01&quot;),
+Date__c &lt; DATEVALUE(&quot;2021-12-01&quot;),
+Product_Sub_Group__c = &quot;003000160003&quot;
+),
+/* Adding exception to exclude Endurance sales  per Kyle&apos;s request - JUNE 2023 Case 00032444 - AN */
+AND( 
+Business_Unit__c = &quot;Vascular&quot;,
+Date__c &gt;= DATEVALUE(&quot;2023-05-01&quot;),
+Date__c &lt; DATEVALUE(&quot;2023-12-31&quot;),
+Product_Sub_Group__c = &quot;002300020005&quot;
+),
+/* Disabling this per the new dashboards and John Bowmans permission 
+2017Dec19 - ESC 
+Re-Enabling...ESC 29Dec2017
+*/
+AND( 
+Compensation_Profile__c = &quot;Interventional Capital&quot;,
+Date__c &gt;= DATEVALUE(&quot;2017-01-01&quot;),
+Date__c &lt; DATEVALUE(&quot;2017-06-01&quot;)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Exception</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

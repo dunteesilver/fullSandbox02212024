@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Choose_Unit_Based_on_Traininig</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( NOT(ISNEW()),$User.Id = User__c,
+OR(
+AND(INCLUDES( Trainings__c , &quot;VPS G4 Product Training&quot;),
+INCLUDES( Trainings__c , &quot;VPS Rhythm Product Training&quot;),
+NOT(ISPICKVAL( Choose_Unit__c , &quot;G4 &amp; Rhythm&quot;))
+),
+AND( INCLUDES( Trainings__c , &quot;VPS G4 Product Training&quot;),
+NOT( INCLUDES( Trainings__c , &quot;VPS Rhythm Product Training&quot;) ),
+NOT( ISPICKVAL( Choose_Unit__c , &quot;G4&quot;) )
+),
+AND( INCLUDES( Trainings__c , &quot;VPS Rhythm Product Training&quot;),
+NOT( INCLUDES( Trainings__c , &quot;VPS G4 Product Training&quot;) ),
+NOT( ISPICKVAL( Choose_Unit__c , &quot;Rhythm&quot;) )
+),
+AND(NOT( INCLUDES( Trainings__c , &quot;VPS G4 Product Training&quot;) ),
+OR(ISPICKVAL( Choose_Unit__c , &quot;G4&quot;), ISPICKVAL( Choose_Unit__c , &quot;G4 &amp; Rhythm&quot;))
+),
+AND(NOT( INCLUDES( Trainings__c , &quot;VPS Rhythm Product Training&quot;) ),
+OR(ISPICKVAL( Choose_Unit__c , &quot;Rhythm&quot;), ISPICKVAL( Choose_Unit__c , &quot;G4 &amp; Rhythm&quot;) )
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Choose_Unit__c</errorDisplayField>
+    <errorMessage>You must choose a unit based on whatever product training you have completed.</errorMessage>
+</ValidationRule>

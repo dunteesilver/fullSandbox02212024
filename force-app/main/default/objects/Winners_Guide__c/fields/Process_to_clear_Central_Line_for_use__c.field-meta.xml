@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_to_clear_Central_Line_for_use__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Process to clear Central Line for use?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Process to clear Central Line for use?</inlineHelpText>
+    <label>Process to clear Central Line for use?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

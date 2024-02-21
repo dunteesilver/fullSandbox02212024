@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Territory_Quota_Fix_Key</fullName>
+        <field>Key__c</field>
+        <formula>Workflow_Key__c</formula>
+        <name>Territory Quota - Fix Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_Quota_Update_Month</fullName>
+        <field>Month__c</field>
+        <formula>CASE(MONTH(Date__c), 
+1,&quot;January&quot;, 
+2,&quot;February&quot;, 
+3,&quot;March&quot;, 
+4,&quot;April&quot;, 
+5,&quot;May&quot;, 
+6,&quot;June&quot;, 
+7,&quot;July&quot;, 
+8,&quot;August&quot;, 
+9,&quot;September&quot;, 
+10,&quot;October&quot;, 
+11,&quot;November&quot;, 
+12,&quot;December&quot;, 
+&quot;Date Not Set&quot;)</formula>
+        <name>Territory Quota - Update Month Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_Quota_Update_Month_Number</fullName>
+        <field>Month_Number__c</field>
+        <formula>MONTH( Date__c )</formula>
+        <name>Territory Quota - Update Month Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_Quota_Update_Year</fullName>
+        <field>Year__c</field>
+        <formula>TEXT(YEAR(Date__c))</formula>
+        <name>Territory Quota - Update Year</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Territory Quota - Key</fullName>
+        <actions>
+            <name>Territory_Quota_Fix_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>OR(
+Key__c &lt;&gt; Workflow_Key__c,
+ISBLANK(Key__c), 
+TEXT(Territory_Master__r.Business_Unit__c) &lt;&gt; &quot;Interventional&quot;
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Territory Quota - Update Date Fields</fullName>
+        <actions>
+            <name>Territory_Quota_Update_Month</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Territory_Quota_Update_Month_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Territory_Quota_Update_Year</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( PRIORVALUE( Date__c ) &lt;&gt; Date__c, ISNEW(), ISBLANK(Month__c),  ISBLANK(Month_Number__c), ISBLANK(Year__c), ISBLANK(Key__c) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

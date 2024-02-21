@@ -1,0 +1,23 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" >
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="simpleRecord" type="Account"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="accError" type="Boolean" default="false"/>
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      fields="Name,ERP_Active__c,SAP_Sold_To__c" />
+    
+    <div class="slds-align_absolute-center">
+    <aura:if isTrue="{!v.accError}">
+        <div class="slds-box slds-theme--error">
+            <p>This Account is not Active in SAP and is not a Prospect Account so you will not be able to Create a Quote.</p>
+        </div>
+        <aura:set attribute="else">
+            <p>Please wait...</p>
+        </aura:set>
+    </aura:if>
+        </div>
+</aura:component>

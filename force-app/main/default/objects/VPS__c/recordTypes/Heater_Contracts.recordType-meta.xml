@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Heater_Contracts</fullName>
+    <active>true</active>
+    <label>Heater Contracts</label>
+    <picklistValues>
+        <picklist>Agreement_Type__c</picklist>
+        <values>
+            <fullName>EPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Product__c</picklist>
+        <values>
+            <fullName>Maxtec Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neptune %26 Maxtec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neptune Only</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

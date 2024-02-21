@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quota_Compensation_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Updated as per 2023 Comp Profiles -AN Feb 4 2023 */
+/* Updated as per 2022 Comp Profiles -AN Feb 5 2022 */
+/* Updated Comp Profiles for Anesthesia\EMS as per new comp rules -AN July 8 2021 */
+/* Updated Comp Profiles for Anesthesia as per new comp rules -AN JAN 25 2021 */
+/* Updated Comp Profiles for Australia as per new comp rules -AN May 8 2021 */
+/* Updated Comp Profiles for surgical Canada -AN May 15 2020 */
+/* Updated as per 2020 Comp Profiles -AN Feb 5 2020 */
+/* Updated as per 2019 Comp Profiles -AN Feb 11 2019 */
+/* Updated LATAM Comp Profiles -AN March 26 2019 */
+CASE(Compensation_Profile__c,
+&quot;Alt Care Urology&quot;,&quot;All Products&quot;,
+&quot;Alt Care&quot;,&quot;All Other,Focus&quot;,
+&quot;Alt Care ISR&quot;,&quot;All Other,Focus&quot;,
+&quot;Anesthesia&quot;,&quot;All Products,Laryngoscopes&quot;,
+&quot;Anesthesia Canada&quot;,&quot;Core,Focus&quot;,
+&quot;Anesthesia Military&quot;,&quot;Core&quot;,
+&quot;Anesthesia Military Rep&quot;,&quot;Focus&quot;,
+&quot;SBM Pain Management&quot;,&quot;Focus,Core&quot;,
+&quot;DTAC&quot;,&quot;Core,Focus&quot;,
+&quot;DTAC IS&quot;,&quot;Core,Focus&quot;,
+&quot;Tactical&quot;,&quot;All Products&quot;,
+&quot;EM&quot;,&quot;All Other,Control Plus,EZIO&quot;,
+&quot;EMISR&quot;,&quot;All Other&quot;,
+&quot;Australia\NZ&quot;,&quot;Core,Focus,All Products,ANZ Uro All Products&quot;,
+&quot;Interventional MCS&quot;,&quot;IABC,IABP&quot;,
+&quot;Interventional Access Canada&quot;,&quot;Core,Focus&quot;,
+&quot;Interventional Coronary&quot;,&quot;Coronary&quot;,
+&quot;Interventional Structural Heart&quot;,&quot;Structural Heart&quot;,
+&quot;Interventional ISR&quot;,&quot;All Products&quot;,
+&quot;Surgical Canada&quot;,&quot;Canada All Products&quot;,
+&quot;Surgical Disposables&quot;,&quot;SURD All Products&quot;,
+&quot;Surgical Instruments&quot;,&quot;SURI All Products,SPIF&quot;,
+&quot;Surgical Inside Sales&quot;,&quot;Core,Focus&quot;,
+&quot;Surgical Bariatrics&quot;,&quot;Internal Stapling&quot;,
+&quot;Urology&quot;,&quot;All Other,Focus&quot;,
+&quot;Vascular&quot;,&quot;Core,Focus&quot;,
+&quot;Vascular Canada&quot;,&quot;Core,Focus&quot;,
+&quot;Latin America&quot;,&quot;All Products&quot;,
+&quot;All Products&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Field used to build out Empty Quota&apos;s. There are 6 Profiles that use &quot;All Products&quot; so that is the default.</inlineHelpText>
+    <label>Quota Compensation Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

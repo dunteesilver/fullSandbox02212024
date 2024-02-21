@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Flag__c</fullName>
+    <description>If( Sales_Price__c = 0, 1 , 
+If( (RSM_Price__c &lt;  Eligible_Price__c) &amp;&amp; (Sales_Price__c &lt;= RSM_Price__c), 1, 
+If( (Eligible_Price__c = List_Price__c &amp;&amp; Eligible_Price__c = 0) &amp;&amp; (Sales_Price__c &lt;= RSM_Price__c), 1, 
+If( (Eligible_Price__c = List_Price__c &amp;&amp; Eligible_Price__c = 0) &amp;&amp; (Sales_Price__c &lt; Rep_Price__c), 1, 
+IF( (List_Price__c &lt;  Eligible_Price__c) &amp;&amp; (Sales_Price__c &lt;=   List_Price__c) , 1 , 
+IF( (Eligible_Price__c &lt; RSM_Price__c) &amp;&amp; (Eligible_Price__c &lt; Rep_Price__c) &amp;&amp; (Sales_Price__c &lt; Eligible_Price__c)  , 1 , 0 ) )  )  )  )  )
+
+
+IF(AND(!ISBLANK(Sales_Number__c), Eligible_Price__c &lt;&gt; Sales_Price__c), 1,
+IF(AND(ISBLANK(Sales_Number__c), Sales_Price__c &lt; Rep_Price__c), 1,
+0
+))</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ Approval_Flag_Reason__c &lt;&gt; &quot;Ready&quot;, 
+ 1,
+ 0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Flag</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

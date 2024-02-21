@@ -1,0 +1,465 @@
+<apex:page controller="PP_Print_Quote" sidebar="false" applyBodyTag="false" applyHtmlTag="false" renderAs="{!r}" showHeader="false" language="{!custLang}">
+    <head>
+        <style type="text/css" media="print">
+            @page
+            {
+            <!-- size: 8.5in 11in;/* width height */ -->
+            size: letter;
+
+            padding-top: 10px;
+            margin-top: 10px;
+            margin-bottom: 50px;
+
+            @top-left { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+            
+            div.header { padding: 0px; }
+            div.footer { display: block; padding: 5px; position: running(footer); }
+
+            .page-break { display:block; page-break-before:always; }
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+
+            @page :first{
+                .header{
+                    display: block;
+                }
+            }
+
+        </style>
+        <style type="text/css">
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 10px;
+            padding: 10px;
+            }
+            
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            
+            div.indentNum{
+                text-indent: 25px;
+            }
+            div.bottomMessage{
+                font-size: 12px;
+            }
+            div.header{
+            /*background-color: #ADD8E6;*/
+                margin-bottom: 20px;
+            }
+            div.accountInfo{
+            /*background-color: light gray;*/
+                margin-top: 40px;
+            }
+            div.content{
+            /*background-color: yellow;*/
+                margin-top: 30px;
+            }
+            .sapTextClass{
+                vertical-align: text-top;
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+            #sapText{
+                vertical-align: text-top;
+                border: solid thin;
+            }
+            .quotationTable{
+                border: 2px solid black;
+                border-spacing: 0;
+                margin-top: 50px;
+                font-weight: bold;
+            }
+            .quotationTable th{
+                font-weight: bold;
+            }
+            .rowheaders{
+                background-color: silver;
+                text-align: left;
+                padding: 0px 0px 10px 0px;
+                border-bottom: 2px solid black;
+            }
+            .isbold{
+                font-weight: bold;
+            }
+            .paymentTerms{
+                border-spacing: 0;
+                font-weight: bold;
+                border-top: 2px solid black;
+                border-bottom: 2px solid black;
+                border-left: 2px solid black;
+            }
+            .paymentTerms th{
+                font-weight: bold;
+                border-right: 2px solid black;
+                border-bottom: 2px solid black;
+                border-spacing: 0;
+            }
+            .rowheaders2{
+                border-spacing: 0;
+                background-color: silver;
+                border-block: 2px solid black;
+            }
+            .paymentTerms td{
+                border-right: 2px solid black;
+                border-spacing: 0;
+            }
+            /*.paymentTerms{
+                border: 1px;
+            }*/
+        </style>
+    </head>
+    <apex:variable value="{!IF(contains($UserRole.Name,'EMEA') || pq.BusinessUnit__c = 'EMEA',TRUE,FALSE)}" var="emeaUser"/>
+    <apex:variable value="{!if(pq.Template__c ='Standard' || pq.Template__c = NULL,TRUE,FALSE)}" var="StandardTemplate"/>
+    <apex:variable value="{!if(pq.BusinessUnit__c ='Australia',TRUE,FALSE)}" var="auUser"/>
+    <apex:variable value="{!if(pq.BusinessUnit__c ='New Zealand',TRUE,FALSE)}" var="nzUser"/>
+    <apex:variable value="{!if(pq.Sales_Org_Key__c ='CZ2010' || pq.Sales_Org_Key__c ='SK1010' || languageCode = 'cs',TRUE,FALSE)}" var="altLang"/>
+    <apex:variable value="{!if(pq.Sales_Org_Key__c ='CZ2010' || languageCode = 'cs',TRUE,FALSE)}" var="czLang"/>
+    <div class="header">
+        <table width="100%" class="sapTextClass">
+            <tr>
+                <td style="display:block; width:200px;"><apex:image url="/servlet/servlet.ImageServer?id=015E0000008xCLs&oid={!OrgId}" style="width:200px;"/></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="sapText" align="top">
+                <td align="left">
+                    {!quoteStandardText.Name}<br/>
+                    <!-- Below is 2nd half of Name moved because I could not add a line break -->
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'UK1010'}">{!quoteStandardText.Bank_Name__c}<br/></apex:outputText>
+                    {!quoteStandardText.Street__c}<br/>
+                    <!-- Below is 2nd half of Street moved because I could not add a line break -->
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'UK1010'}">{!quoteStandardText.Other_Bank_Name__c}<br/></apex:outputText>
+                    {!quoteStandardText.Zip_City__c}<br/>
+                    <!-- Below is 2nd half of Zip_City__c moved because I could not add a line break -->
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'IE2010'}">{!quoteStandardText.SWIFT_Code__c}<br/></apex:outputText>
+                    {!quoteStandardText.Country__c}<br />
+                    {!IF(altLang || pq.Sales_Org_Key__c = 'PT1010' || pq.Sales_Org_Key__c = 'ES1010' || pq.Sales_Org_Key__c = 'NL1010',labelsMap['EMEA_Phone_Number'],'Phone Number')}: {!quoteStandardText.Phone__c}<br/>
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c !='CZ2010'}">
+                        Fax: {!quoteStandardText.Fax__c}<br/>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c !='PT1010'}">
+                        Email: {!quoteStandardText.Email__c}<br/>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c ='PT1010'}">
+                        Email:&nbsp;orçamento.pt@teleflex.com<br/>
+                    </apex:outputText>
+                    
+                </td>
+                <td align="left">
+                    <!-- *** Standard Text VAT Number is the Tax Number (last minute update from EMEA) *** -->
+                    <apex:outputText rendered="{!quoteStandardText.VAT_Number__c != NULL && pq.Sales_Org_Key__c !='CZ2010'}">
+                        <apex:outputText rendered="{!pq.Sales_Org_Key__c != 'AT1010'}">
+                            {!IF(altLang,labelsMap['EMEA_VAT'],$Label.EMEA_Tax_Number)}:&nbsp;{!quoteStandardText.VAT_Number__c}
+                        </apex:outputText>
+                        <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'AT1010'}">
+                            {!quoteStandardText.VAT_Number__c}
+                        </apex:outputText>
+                    </apex:outputText><br/>
+                    <apex:outputText rendered="{!quoteStandardText.Country_Specific_1__c != NULL}">
+                        <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'UK1010'}">Registration Number:&nbsp;</apex:outputText>{!quoteStandardText.Country_Specific_1__c}
+                    </apex:outputText><br/>
+                    <apex:outputText rendered="{!quoteStandardText.Country_Specific_2__c != NULL}">
+                        {!quoteStandardText.Country_Specific_2__c}
+                    </apex:outputText><br/>
+                    <apex:outputText rendered="{!quoteStandardText.Country_Specific_3__c != NULL}" value="{!quoteStandardText.Country_Specific_3__c}"/><br/>
+                    <apex:outputText rendered="{!quoteStandardText.Country_Specific_4__c != NULL}" value="{!quoteStandardText.Country_Specific_4__c}"/><br/>
+                    <!-- Below is 2nd half of Country_Specific_4__c moved because I could not add a line break -->
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'AT1010'}">
+                        {!quoteStandardText.IBAN__c}
+                    </apex:outputText>
+
+                </td>
+                <td></td>
+            </tr>  
+        </table>
+    </div>
+
+    <div class="accountInfo" >
+        <table width="70%" align="right">
+            <tr>
+                <td colspan="2">
+                    <table class="quotationTable" width="100%">
+                        <tr class="rowheaders">
+                            <th colspan="4" style="border-bottom: 2px solid black;">
+                                {!IF(altLang,labelsMap['EMEA_Quotation'],$Label.EMEA_Quotation)}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>{!IF(czLang,labelsMap['EMEA_No'],$Label.EMEA_No)}</th>
+                            <th>
+                                {!IF(altLang,labelsMap['EMEA_Date'],$Label.EMEA_Date)}
+                            </th>
+                            <th>{!IF(altLang,labelsMap['EMEA_Validity_Period'],$Label.EMEA_Validity_Period)}</th>
+                            <th>{!IF(altLang,labelsMap['EMEA_Page'],$Label.EMEA_Page)}</th>
+                        </tr>
+                        <tr>
+                            <td>{!pq.Name}</td>
+                            <td>
+                                <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                    <apex:param value="{!NOW()}" />
+                                </apex:outputText>
+                            </td>
+                            <td>
+                                <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                    <apex:param value="{!pq.Commit_Date__c}" />
+                                </apex:outputText>
+                                &nbsp;-&nbsp;
+                                <apex:outputText value="{0,date,dd/MM/yyyy}">
+                                    <apex:param value="{!pq.Expiration_Date__c}"/>
+                                </apex:outputText>
+                            </td>
+                            <td><span class="pagenumber"/> {!IF(czLang || (pq.Sales_Org_Key__c='DE1010' || pq.Sales_Org_Key__c='AT1010' || pq.Sales_Org_Key__c='SK1010' || pq.Sales_Org_Key__c='PT1010'),labelsMap['EMEA_Of'],'of')} <span class="pagecount"/></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr><br/><br/><br/>
+            
+        </table><br/><br/><br/>
+    </div>
+    <div class="accountInfo" >
+        <table>
+            <tr>
+                <td colspan="2">
+                    {!IF(altLang,labelsMap['EMEA_Sold_To_Party'],$Label.EMEA_Sold_To_Party)}&nbsp;{!SoldToAccount.SAP_Sold_To__c}<br/>
+                    {!SoldToAccount.Name}<br/>
+                    <apex:outputText rendered="{!IF(SoldToAccount.Account_Name_2__c != NULL,TRUE,FALSE)}">
+                        {!SoldToAccount.Account_Name_2__c}<br/>
+                    </apex:outputText>
+                    {!SoldToAccount.ShippingStreet}<br/>
+                    <apex:outputText rendered="{!SoldToAccount.ShippingPostalCode != NULL}">{!SoldToAccount.ShippingPostalCode}&nbsp;</apex:outputText>{!SoldToAccount.ShippingCity}<br/>
+                    {!SoldToAccount.ShippingCountry}<br/>
+                </td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td >&nbsp;</td>
+                <td colspan="2">
+                    {!IF(altLang,labelsMap['EMEA_Ship_To_Party'],$Label.EMEA_Ship_To_Party)}&nbsp;{!pq.Account_Name__r.SAP_Sold_To__c}<br/>
+                    {!pq.Account_Name__r.Name}<br/>
+                    <apex:outputText rendered="{!IF(pq.Account_Name__r.Account_Name_2__c != NULL,TRUE,FALSE)}">
+                        {!pq.Account_Name__r.Account_Name_2__c}<br/>
+                    </apex:outputText>
+                    {!pq.Account_Name__r.ShippingStreet}<br/>
+                    <apex:outputText rendered="{!pq.Account_Name__r.ShippingPostalCode != NULL}">{!pq.Account_Name__r.ShippingPostalCode}&nbsp;</apex:outputText>{!pq.Account_Name__r.ShippingCity}<br/>
+                    {!pq.Account_Name__r.ShippingCountry}<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="content">
+        <table class="paymentTerms" width="100%" >
+            <tr class="rowheaders2">
+                <th>
+                    <apex:outputText value="{!IF(altLang,labelsMap['EMEA_Quotation'],$Label.EMEA_Quotation)}" />
+                </th>
+                <th>
+                    <apex:outputText value="{!IF(altLang,labelsMap['EMEA_Incoterms'],$ObjectType.Account.fields.Incoterms_1__c.label)}" />
+                </th>
+                <th>
+                    <apex:outputText value="{!IF(altLang,labelsMap['EMEA_Terms'],$Label.EMEA_Payment_Terms)}" />
+                </th>
+                <th>
+                    <apex:outputText value="{!IF(altLang,labelsMap['EMEA_Account_Currency'],$Label.EMEA_Currency)}" />
+                </th>
+            </tr>
+            <tr>
+                <td>{!pq.Name}</td>
+                <td>{!SoldToAccount.Incoterms_1__c}&nbsp;{!SoldToAccount.Incoterms_2__c}</td>
+                <td>{!SoldToAccount.Terms__c}</td>
+                <td>{!pq.CurrencyIsoCode}</td>
+            </tr>
+            <br/>
+            <br/>
+            <apex:outputText rendered="{!pq.Customer_comments__c != NULL}">
+                <tr>
+                    <th style="border: none; font-weight: bold;">{!$Label.EMEA_Customer_Comments}:</th>
+                    <td colspan="4" style="border: none;">{!pq.Customer_comments__c}</td>
+                </tr>
+            </apex:outputText>
+        </table><br/>
+    </div>
+    <!-- Contact -->
+    <div class="content">
+        <table id="tbs" width="100%"  >
+            <tr class="topline">
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Line'],$Label.EMEA_Line)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Material'],$Label.EMEA_Material)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Product_Description'],$Label.EMEA_Material_Description)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Quantity'],$Label.EMEA_Qty)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_UOM'],$Label.EMEA_UOM)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Sales_Price'],$Label.EMEA_Unit_Price)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Line_Price'],$Label.EMEA_Net_Value)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_VAT'],$Label.EMEA_VAT)}
+                </td>
+                <!--
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Total'],$Label.EMEA_Total)}
+                </td>
+                -->
+            </tr>
+            
+            <apex:variable var="rowNum" value="{!1}" />
+            <apex:repeat value="{!pqli}" var="li">
+                <apex:variable value="{!if(li.IsBold__c,'isbold','')}" var="isbold"/>
+                <tr>
+                    <td class="{!isbold}">{!rowNum}</td>
+                    <td class="{!isbold}">{!li.Material_Name__r.Name}</td>
+                    <td class="{!isbold}">{!li.Material_Description__c}</td>
+                    <apex:outputText rendered="{!li.Quantity__c = 0 || li.Quantity__c = NULL}">
+                        <td class="isbold" colspan="2" style="text-align: center;" >{!li.Product_Description__c}</td>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!li.Quantity__c != 0 && li.Quantity__c != NULL}">
+                        <td class="{!isbold}">{!li.Quantity__c}</td>
+                        <td class="{!isbold}">{!li.Material_Name__r.Sales_Unit__c}</td>
+                        <td class="{!isbold}">{!li.Sales_Price__c}</td>
+                        <td class="{!isbold}">{!li.Line_Price__c}</td>
+                        <td class="{!isbold}">{!li.VAT__c}<apex:outputText rendered="{!li.VAT__c != NULL}">%</apex:outputText></td>
+                        <!--
+                        <td class="{!isbold}">{!li.Total__c}</td>
+                        -->
+                    </apex:outputText>
+                </tr>
+                <apex:variable var="rowNum" value="{!rowNum + 1}" />
+            </apex:repeat>
+            <tr><td colspan="9" ></td></tr>
+            <tr><td colspan="8" style="border-bottom-style:solid;border-width:1px;" class="bottomline"></td></tr>
+            <tr>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline"></td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline"></td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline"></td>
+               <!--  <td style="border-bottom-style:solid;border-width:1px;" class="bottomline"></td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline"></td> -->
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_Sub_Total'],$Label.EMEA_Sub_Total)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_VAT_Base'],$Label.EMEA_VAT_Base)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    {!IF(altLang,labelsMap['EMEA_VAT_Rate'],$Label.EMEA_VAT_Rate)}
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    <strong>{!IF(altLang,labelsMap['EMEA_VAT_Amount'],$Label.EMEA_VAT_Amount)}</strong>
+                </td>
+                <td style="border-bottom-style:solid;border-width:1px;" class="bottomline">
+                    <strong>{!IF(altLang,labelsMap['EMEA_Total'],$Label.EMEA_Total)}</strong>
+                </td>
+            </tr>
+            <apex:repeat value="{!groupedLineItemsMap}" var="vatEntry">
+                <apex:outputText rendered="{!vatEntry.subTotal > 0}">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <!-- <td></td>
+                    <td></td> -->
+                    <td><apex:outputText value="{!vatEntry.subTotal}" /></td>
+                    <td><apex:outputText value="{!vatEntry.subTotal}" /></td>
+                    <td><apex:outputText value="{!vatEntry.vatPercentage}" /><apex:outputText rendered="{!vatEntry.vatPercentage != NULL}">%</apex:outputText></td>
+                    <td><apex:outputText value="{!vatEntry.vatAmount}" /></td>
+                    <td><apex:outputText value="{!vatEntry.total}" /></td>
+                </tr>
+                </apex:outputText>
+                <tr><td></td></tr>
+                <tr><td></td></tr>
+            </apex:repeat>
+            <tr>
+                <td colspan="7" style="text-align: right;">{!IF(pq.Sales_Org_Key__c='DE1010' || pq.Sales_Org_Key__c='AT1010' || pq.Sales_Org_Key__c='CZ2010' || pq.Sales_Org_Key__c='SK1010' || pq.Sales_Org_Key__c='PL1010',labelsMap['EMEA_Total_Full'],'Total')}:</td>
+                <td style="text-align: left;"><apex:outputText value="{!calculateVatTotal}" /></td>
+            </tr>
+            <br/><br/>
+            <div style="text-align: left;">
+                <p style="text-align: left;">
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c='DE1010' || pq.Sales_Org_Key__c = 'ES1010'}">
+                        <a href="https://www.teleflex.com/emea/de/services/AGBs_ab_21-03-2014.pdf" target="_blank" style="text-decoration: none;" rendered="{!pq.Sales_Org_Key__c = 'DE1010'}">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                        <a href="https://www.teleflex.com/emea/es/services/customer-services/terms/Terms_and_conditions-ES.pdf" target="_blank" style="text-decoration: none;" rendered="{!pq.Sales_Org_Key__c = 'ES1010'}">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'PT1010'}">
+                        <a href="https://teleflex.com/emea/pt/services/customer-services/terms/Terms_and_conditions-PT.pdf" target="_blank" style="text-decoration: none;">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c='IE2010'}">
+                        <a href="https://www.teleflex.com/emea/en/services/terms-and-conditions/Terms_and_Conditions_Ireland.pdf" target="_blank" style="text-decoration: none;">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'UK1010'}">
+                        <a href="https://www.teleflex.com/emea/en/services/terms-and-conditions/Terms_and_Conditions_UK.pdf" target="_blank" style="text-decoration: none;">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                    </apex:outputText>
+                    <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'BE1010' || pq.Sales_Org_Key__c = 'NL1010'}">
+                        <a href="https://www.teleflex.com/emea/fr/services/customer-services/Conditions_generales_de_vente_Belgique.pdf" target="_blank" style="text-decoration: none;" rendered="{!custLang = 'fr'}">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                        <a href="https://teleflex.com/emea/nl/services/customer-services/terms/" target="_blank" style="text-decoration: none;" rendered="{!custLang = 'nl'}">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                    </apex:outputText>
+                     <apex:outputText rendered="{!pq.Sales_Org_Key__c = 'AT1010'}">
+                        <a href="https://www.teleflex.com/emea/de/services/customer-services/AGBRusch_20230221.pdf" target="_blank" style="text-decoration: none;">
+                            {!$Label.EMEA_Terms_Conditions}
+                        </a>
+                    </apex:outputText>
+                </p>
+            </div>    
+        </table>
+        <br/>
+    </div>
+    <!-- End Header -->
+    <apex:outputText rendered="FALSE">
+        <div class="footer">
+            <table width="100%" align="right" style="padding:100px;">
+                <tr>
+                    <td style="width: 250px;">&nbsp;</td>
+                    <td>
+                        {!IF(altLang,labelsMap['EMEA_Page'],$Label.EMEA_Page)}
+                        <span class="pagenumber"/>
+                            {!IF(czLang,labelsMap['EMEA_Of'],'of')} 
+                         <span class="pagecount"/>
+                    </td>
+                    <td align="right" style="width: 275px;">
+                        <apex:image style="max-height:50px;" width="200" url="/servlet/servlet.ImageServer?id=015E0000008xCLs&oid={!OrgId}" height="50px"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </apex:outputText>
+    
+
+</apex:page>

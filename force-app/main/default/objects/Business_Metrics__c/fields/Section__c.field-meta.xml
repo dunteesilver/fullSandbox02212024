@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Section__c</fullName>
+    <externalId>false</externalId>
+    <label>Section</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Need Help?</fullName>
+                <default>false</default>
+                <label>Need Help?</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Leading Indicators</fullName>
+                <default>false</default>
+                <label>Leading Indicators</label>
+            </value>
+            <value>
+                <fullName>Vascular</fullName>
+                <default>false</default>
+                <label>Vascular</label>
+            </value>
+            <value>
+                <fullName>Sales Reporting</fullName>
+                <default>false</default>
+                <label>Sales Reporting</label>
+            </value>
+            <value>
+                <fullName>Open Orders</fullName>
+                <default>false</default>
+                <label>Open Orders</label>
+            </value>
+            <value>
+                <fullName>Leads</fullName>
+                <default>false</default>
+                <label>Leads</label>
+            </value>
+            <value>
+                <fullName>Opportunities</fullName>
+                <default>false</default>
+                <label>Opportunities</label>
+            </value>
+            <value>
+                <fullName>Daily Sales</fullName>
+                <default>false</default>
+                <label>Daily Sales</label>
+            </value>
+            <value>
+                <fullName>Customer Service Training</fullName>
+                <default>false</default>
+                <label>Customer Service Training</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

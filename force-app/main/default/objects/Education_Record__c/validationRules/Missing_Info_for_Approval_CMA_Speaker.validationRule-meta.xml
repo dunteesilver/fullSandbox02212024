@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Info_for_Approval_CMA_Speaker</fullName>
+    <active>true</active>
+    <description>Need Confirmed Dates</description>
+    <errorConditionFormula>AND( RecordType.Name =&quot;CMA Speaking Engagement Request&quot; ,
+ISPICKVAL(  Approval_Status__c  , &quot;Approved&quot;),
+ISBLANK(Date_of_Event_Start__c))</errorConditionFormula>
+    <errorMessage>In order to approve, please enter the Confirmed Start Date</errorMessage>
+</ValidationRule>

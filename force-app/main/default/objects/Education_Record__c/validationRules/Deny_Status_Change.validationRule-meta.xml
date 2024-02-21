@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deny_Status_Change</fullName>
+    <active>true</active>
+    <description>MSR/RSM cannot change status to hold/confirmed or record</description>
+    <errorConditionFormula>AND(ISCHANGED(Stage__c), RecordType.Name &lt;&gt;&quot;Education Record&quot;,OR($User.ProfileId =&quot;00eE0000000h4XT&quot;,
+$User.ProfileId =&quot;00eE0000000iVuu&quot;),
+OR( ISPICKVAL( Stage__c , &quot;Record&quot;),
+ISPICKVAL( Stage__c , &quot;On Hold&quot;),
+ISPICKVAL( Stage__c , &quot;Confirmed&quot;)))</errorConditionFormula>
+    <errorMessage>Status can only be changed to On Hold, Confirmed and Record by an approver.</errorMessage>
+</ValidationRule>

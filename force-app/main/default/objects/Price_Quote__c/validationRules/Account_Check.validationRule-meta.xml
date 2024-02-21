@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Check</fullName>
+    <active>true</active>
+    <description>This validation rule enforces that Price Quote&apos;s cannot be created without an Account.</description>
+    <errorConditionFormula>ISBLANK(Account_Name__c)</errorConditionFormula>
+    <errorMessage>Account Required to Create Price Quote. Please make sure you are creating the Price Quote from the Pricing Portal menu.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAPrimaryClinicianType__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary Clinician Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Physician</fullName>
+                <default>false</default>
+                <label>Physician</label>
+            </value>
+            <value>
+                <fullName>Advanced Practice Provider</fullName>
+                <default>false</default>
+                <label>Advanced Practice Provider</label>
+            </value>
+            <value>
+                <fullName>Nurse</fullName>
+                <default>false</default>
+                <label>Nurse</label>
+            </value>
+            <value>
+                <fullName>Respiratory Therapist</fullName>
+                <default>false</default>
+                <label>Respiratory Therapist</label>
+            </value>
+            <value>
+                <fullName>Radiology Technologist</fullName>
+                <default>false</default>
+                <label>Radiology Technologist</label>
+            </value>
+            <value>
+                <fullName>Patient Care Technician</fullName>
+                <default>false</default>
+                <label>Patient Care Technician</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Residence</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Residence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

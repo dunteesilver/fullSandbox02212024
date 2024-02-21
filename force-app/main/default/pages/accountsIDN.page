@@ -1,0 +1,167 @@
+<apex:page standardController="Account" extensions="myContacts,otherContacts,oppsIDN">
+<style>
+#stoplights{
+    -webkit-transform: rotate(90deg);
+
+    -moz-transform: rotate(90deg);
+
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+</style>
+    <apex:composition template="{!$Page.accountsTemplate}"> 
+     
+        <apex:define name="TFHeader">
+            <apex:sectionHeader title="IDN Account" subtitle="{!Account.Name}"/>
+            <apex:outputPanel rendered="{!Account.ERP_Active__c = FALSE && Account.Account_Record_Type_Name__c = 'North American Customer'}">
+                <p style="color:red; font-size:24px; font-weight:bold; text-align:center;"><img id="stoplights" src="/img/samples/light_red.gif"/>This account is flagged as inactive<img id="stoplights" src="/img/samples/light_red.gif"/></p>
+            </apex:outputPanel>
+        </apex:define>
+        <apex:define name="TFDetail">
+         
+            <apex:pageBlock title="Account Detail" mode="mainDetail" >
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!edit}" id="editButton" value="Edit"/>
+                    <apex:commandButton action="{!delete}" id="deleteButton" value="Delete"/>
+                    <apex:commandButton action="{!URLFOR($Action.Account.Share,Account.Id)}" id="sharingButton" value="Sharing"/>
+                    <apex:commandButton action="{!$Site.Domain}/003/e?retURL=/{!Account.Id}&accid={!Account.Id}" id="addContact" value="Add Contact"/>
+                    <apex:commandButton action="{!save}" id="saveButton" value="Save" style="display: none;"/>
+                    <apex:commandButton onclick="resetInlineEdit()" id="cancelButton" value="Cancel" style="display:none;"/>     
+                    <!-- Pricing Portal Buttons -->
+                    <apex:commandButton action="/apex/PP_Customer_Details?cid={!Account.SAP_Sold_To__c}" rendered="{!Account.SAP_Sold_To__c != null}" value="Pricing Portal"/> 
+                    <apex:commandButton action="/apex/PP_Create_Contact?id={!Account.Id}" value="Create Quote"/>
+                    <!-- Pricing Portal Buttons -->
+                    <apex:commandButton action="{!$Site.Domain}/{!Account.Id}?nooverride=1" id="standardLayout" value="Standard Layout" rendered="{!if(OR($User.ProfileId=='00eE0000000lT3QIAU',$User.ProfileId=='00eE0000000j4VkIAI'),true,false)}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Account.Name}" />
+                    <apex:outputField value="{!Account.OwnerId}">
+                        <apex:outputLink value="/{!Account.Id}/a?retURL={!Account.Id}"><br/>[Change]</apex:outputLink>
+                    </apex:outputField>
+                    <!--<apex:outputField value="{!Account.SAP_Sold_To__c}"/>-->
+                    <apex:outputField value="{!Account.Main_GPO__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Account.IDN_Region__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Account.IDN_Account_HQ__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Account.Working__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>                    
+                    <apex:pageblockSection />
+                    <apex:outputField value="{!Account.Distribution_Method__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <!--
+                    <apex:outputField value="{!Account.Distributor__c}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <!--
+                    <apex:outputText label="Previous Year Spend" value="${0, number, #,##0}">
+                         <apex:param value="{!AnnualValue}" />
+                    </apex:outputText>
+                    <apex:outputText label="Current YTD Spend" value="${0, number, #,##0}">
+                         <apex:param value="{!YTDValue}" />
+                    </apex:outputText>
+                    <apex:outputText label="Growth %" value="{0, number, #.#}%">
+                         <apex:param value="{!GrowthPct}" />
+                    </apex:outputText>
+-->
+                </apex:pageBlockSection>
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Account.LastModifiedById}"/>
+                    <apex:outputField value="{!Account.LastModifiedDate}"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+
+        </apex:define>
+        
+        <apex:define name="TFTopSingle">
+            <apex:pageblock mode="detail">
+                <apex:pageBlockSection columns="2" title="Contact Information">
+                    <apex:outputField value="{!Account.Billing_Address_Full__c}"/>
+                    <apex:outputField value="{!Account.Phone}"/>
+                    <apex:outputField value="{!Account.Website}">
+                        <apex:inlineEditSupport showOnEdit="saveButton, cancelButton"  hideOnEdit="editButton, deleteButton, sharingButton, addContact, standardLayout" event="ondblclick"  changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                    </apex:outputField>
+                    <apex:outputField value="{!Account.Fax}"/>
+                </apex:pageBlockSection>
+            </apex:pageblock>
+            
+        </apex:define>
+
+        <apex:define name="TFLowerRight">
+
+                                                
+        </apex:define>
+
+        <apex:define name="TFLowerLeft">
+
+                                                           
+        </apex:define>
+
+        <apex:define name="TFLowerSingle">
+                           
+        </apex:define>
+        
+        <apex:define name="TFRelLists">
+            <apex:relatedList list="IDN_Contracts__r" />
+            
+            <apex:relatedList list="Contacts"/>
+            <apex:relatedList list="IDN_Price_Increases__r" rendered="{!If($User.ProfileId = '00eM0000000LzFo',true,false)}"/>
+            <!--<apex:relatedList list="Leads__r" />-->
+        </apex:define>
+        
+        <apex:define name="TFRelListsBottom">
+            <!--<apex:relatedList list="Opportunities" />-->
+            <apex:relatedList list="NotesAndAttachments"/>
+            <apex:relatedList list="OpenActivities"/>
+            <apex:relatedList list="ActivityHistories"/>
+            <apex:pageBlock title="Open Opportunities" rendered="{!IDNOpps.size > 0}">
+                <apex:pageBlockTable value="{!IDNOpps}" var="mc">
+                    <apex:column headerValue="Opportunity Name">
+                        <apex:outputLink value="{!URLFOR($Action.Opportunity.View,mc.Id)}">{!mc.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!mc.AccountId}"/>
+                    <apex:column value="{!mc.Account.SAP_Sold_To__c}"/>
+                    <apex:column value="{!mc.Product_of_Interest__c}"/>
+                    <apex:column value="{!mc.StageName}"/>
+                    <apex:column value="{!mc.CloseDate}"/>
+                    <apex:column value="{!mc.Amount}"/>
+                    <apex:column value="{!mc.Vascular_Net_Amount__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:pageBlock title="Lost Opportunities" rendered="{!IDNLost.size > 0}">
+                <apex:pageBlockTable value="{!IDNLost}" var="mc">
+                    <apex:column headerValue="Opportunity Name">
+                        <apex:outputLink value="{!URLFOR($Action.Opportunity.View,mc.Id)}">{!mc.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!mc.AccountId}"/>
+                    <apex:column value="{!mc.Account.SAP_Sold_To__c}"/>
+                    <apex:column value="{!mc.Product_of_Interest__c}"/>
+                    <apex:column value="{!mc.StageName}"/>
+                    <apex:column value="{!mc.CloseDate}"/>
+                    <apex:column value="{!mc.Amount}"/>
+                    <apex:column value="{!mc.Vascular_Net_Amount__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:pageBlock title="Accounts by Open Opportunity Value" rendered="{!topAccts.size > 0}">
+                <apex:pageBlockTable value="{!topAccts}" var="mc">
+                    <apex:column headerValue="Account Name">
+                        <apex:outputLink value="{!URLFOR($Action.Account.View,mc.Id)}">{!mc.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!mc.BillingStreet}"/>
+                    <apex:column value="{!mc.BillingCity}"/>
+                    <apex:column value="{!mc.BillingState}"/>
+                    <apex:column value="{!mc.BillingPostalCode}"/>
+                    <apex:column value="{!mc.Open_Opportunity_Value__c}"/>                  
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:relatedList list="Accounts2__r" />
+        </apex:define>
+        
+    </apex:composition>
+                    
+</apex:page>

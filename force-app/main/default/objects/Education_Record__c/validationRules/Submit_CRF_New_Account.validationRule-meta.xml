@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_CRF_New_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(   RecordType.Name  =&quot;Inservice Record&quot;,
+ Verify_for_CRF__c = TRUE,
+ISNULL(  New_Account_Dept_or_Update__c  )
+)</errorConditionFormula>
+    <errorDisplayField>New_Account_Dept_or_Update__c</errorDisplayField>
+    <errorMessage>New Acct or Update must be entered in order to submit a CRF</errorMessage>
+</ValidationRule>

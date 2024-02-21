@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2H_Month_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* 2021 */
+if(TODAY() &gt; DATEVALUE(&quot;2021-11-29&quot;), 6,
+if(TODAY() &gt; DATEVALUE(&quot;2021-11-01&quot;), 5,
+if(TODAY() &gt; DATEVALUE(&quot;2021-09-27&quot;), 4,
+if(TODAY() &gt; DATEVALUE(&quot;2021-08-30&quot;), 3,
+if(TODAY() &gt; DATEVALUE(&quot;2021-08-02&quot;), 2,
+if(TODAY() &gt; DATEVALUE(&quot;2021-06-28&quot;), 1,
+0
+))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>2H Month Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

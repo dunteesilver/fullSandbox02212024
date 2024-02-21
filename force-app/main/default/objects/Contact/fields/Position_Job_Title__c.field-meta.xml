@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Position_Job_Title__c</fullName>
+    <externalId>false</externalId>
+    <label>Position/Job Title</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Abdominal Transplant Surgeon</fullName>
+                <default>false</default>
+                <label>Abdominal Transplant Surgeon</label>
+            </value>
+            <value>
+                <fullName>Accounts Receivable</fullName>
+                <default>false</default>
+                <label>Accounts Receivable</label>
+            </value>
+            <value>
+                <fullName>Administrator</fullName>
+                <default>false</default>
+                <label>Administrator</label>
+            </value>
+            <value>
+                <fullName>ALS Provider</fullName>
+                <default>false</default>
+                <label>ALS Provider</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Director</fullName>
+                <default>false</default>
+                <label>Anesthesia Director</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Tech</fullName>
+                <default>false</default>
+                <label>Anesthesia Tech</label>
+            </value>
+            <value>
+                <fullName>Anesthesiologist</fullName>
+                <default>false</default>
+                <label>Anesthesiologist</label>
+            </value>
+            <value>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+                <label>Assistant</label>
+            </value>
+            <value>
+                <fullName>Asst Chief</fullName>
+                <default>false</default>
+                <label>Asst Chief</label>
+            </value>
+            <value>
+                <fullName>Bariatric Surgeon</fullName>
+                <default>false</default>
+                <label>Bariatric Surgeon</label>
+            </value>
+            <value>
+                <fullName>Bio Med</fullName>
+                <default>false</default>
+                <label>Bio Med</label>
+            </value>
+            <value>
+                <fullName>BLS Provider</fullName>
+                <default>false</default>
+                <label>BLS Provider</label>
+            </value>
+            <value>
+                <fullName>Buyer/Purchasing Staff</fullName>
+                <default>false</default>
+                <label>Buyer/Purchasing Staff</label>
+            </value>
+            <value>
+                <fullName>Captain</fullName>
+                <default>false</default>
+                <label>Captain</label>
+            </value>
+            <value>
+                <fullName>Cardiologist</fullName>
+                <default>false</default>
+                <label>Cardiologist</label>
+            </value>
+            <value>
+                <fullName>Cardiopulmonary Director</fullName>
+                <default>false</default>
+                <label>Cardiopulmonary Director</label>
+            </value>
+            <value>
+                <fullName>Cardiopulmonary Manager</fullName>
+                <default>false</default>
+                <label>Cardiopulmonary Manager</label>
+            </value>
+            <value>
+                <fullName>Category Manager</fullName>
+                <default>false</default>
+                <label>Category Manager</label>
+            </value>
+            <value>
+                <fullName>CCL Manager</fullName>
+                <default>false</default>
+                <label>CCL Manager</label>
+            </value>
+            <value>
+                <fullName>CCL Scheduler</fullName>
+                <default>false</default>
+                <label>CCL Scheduler</label>
+            </value>
+            <value>
+                <fullName>Central Supply</fullName>
+                <default>false</default>
+                <label>Central Supply</label>
+            </value>
+            <value>
+                <fullName>CEO</fullName>
+                <default>false</default>
+                <label>CEO</label>
+            </value>
+            <value>
+                <fullName>CFO</fullName>
+                <default>false</default>
+                <label>CFO</label>
+            </value>
+            <value>
+                <fullName>Chief</fullName>
+                <default>false</default>
+                <label>Chief</label>
+            </value>
+            <value>
+                <fullName>Chief Nursing Officer</fullName>
+                <default>false</default>
+                <label>Chief Nursing Officer</label>
+            </value>
+            <value>
+                <fullName>Chief of CV</fullName>
+                <default>false</default>
+                <label>Chief of CV</label>
+            </value>
+            <value>
+                <fullName>Chief of General Surgery</fullName>
+                <default>false</default>
+                <label>Chief of General Surgery</label>
+            </value>
+            <value>
+                <fullName>Chief of GYN</fullName>
+                <default>false</default>
+                <label>Chief of GYN</label>
+            </value>
+            <value>
+                <fullName>CLABSI Team</fullName>
+                <default>false</default>
+                <label>CLABSI Team</label>
+            </value>
+            <value>
+                <fullName>Clinical Director</fullName>
+                <default>false</default>
+                <label>Clinical Director</label>
+            </value>
+            <value>
+                <fullName>Clinical Educator</fullName>
+                <default>false</default>
+                <label>Clinical Educator</label>
+            </value>
+            <value>
+                <fullName>Clinical Manager</fullName>
+                <default>false</default>
+                <label>Clinical Manager</label>
+            </value>
+            <value>
+                <fullName>Clinical Suprevisor</fullName>
+                <default>false</default>
+                <label>Clinical Suprevisor</label>
+            </value>
+            <value>
+                <fullName>Colon Surgeon</fullName>
+                <default>false</default>
+                <label>Colon Surgeon</label>
+            </value>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>Contracts/Supply Chain Manager</fullName>
+                <default>false</default>
+                <label>Contracts/Supply Chain Manager</label>
+            </value>
+            <value>
+                <fullName>COO</fullName>
+                <default>false</default>
+                <label>COO</label>
+            </value>
+            <value>
+                <fullName>Coordinator</fullName>
+                <default>false</default>
+                <label>Coordinator</label>
+            </value>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>CRD (Clinical Resource Director)</fullName>
+                <default>false</default>
+                <label>CRD (Clinical Resource Director)</label>
+            </value>
+            <value>
+                <fullName>Critical Product Manager</fullName>
+                <default>false</default>
+                <label>Critical Product Manager</label>
+            </value>
+            <value>
+                <fullName>CRNA</fullName>
+                <default>false</default>
+                <label>CRNA</label>
+            </value>
+            <value>
+                <fullName>CSR Technician</fullName>
+                <default>false</default>
+                <label>CSR Technician</label>
+            </value>
+            <value>
+                <fullName>CV Nurse Coordinator</fullName>
+                <default>false</default>
+                <label>CV Nurse Coordinator</label>
+            </value>
+            <value>
+                <fullName>CV Surgeon</fullName>
+                <default>false</default>
+                <label>CV Surgeon</label>
+            </value>
+            <value>
+                <fullName>CV team Lead</fullName>
+                <default>false</default>
+                <label>CV team Lead</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Director of Cardiopulmonary</fullName>
+                <default>false</default>
+                <label>Director of Cardiopulmonary</label>
+            </value>
+            <value>
+                <fullName>Director of Materials Management</fullName>
+                <default>false</default>
+                <label>Director of Materials Management</label>
+            </value>
+            <value>
+                <fullName>Director of Nursing</fullName>
+                <default>false</default>
+                <label>Director of Nursing</label>
+            </value>
+            <value>
+                <fullName>Director of Peri-Operative services</fullName>
+                <default>false</default>
+                <label>Director of Peri-Operative services</label>
+            </value>
+            <value>
+                <fullName>Director of Purchasing</fullName>
+                <default>false</default>
+                <label>Director of Purchasing</label>
+            </value>
+            <value>
+                <fullName>Director of Surgical Services</fullName>
+                <default>false</default>
+                <label>Director of Surgical Services</label>
+            </value>
+            <value>
+                <fullName>ED/EMS Coordinator</fullName>
+                <default>false</default>
+                <label>ED/EMS Coordinator</label>
+            </value>
+            <value>
+                <fullName>ED Director</fullName>
+                <default>false</default>
+                <label>ED Director</label>
+            </value>
+            <value>
+                <fullName>Education &amp; Inservice</fullName>
+                <default>false</default>
+                <label>Education &amp; Inservice</label>
+            </value>
+            <value>
+                <fullName>Education Coordinator</fullName>
+                <default>false</default>
+                <label>Education Coordinator</label>
+            </value>
+            <value>
+                <fullName>Educator</fullName>
+                <default>false</default>
+                <label>Educator</label>
+            </value>
+            <value>
+                <fullName>EMS Captain</fullName>
+                <default>false</default>
+                <label>EMS Captain</label>
+            </value>
+            <value>
+                <fullName>EMS Chief</fullName>
+                <default>false</default>
+                <label>EMS Chief</label>
+            </value>
+            <value>
+                <fullName>EMS Director</fullName>
+                <default>false</default>
+                <label>EMS Director</label>
+            </value>
+            <value>
+                <fullName>EMS Educator</fullName>
+                <default>false</default>
+                <label>EMS Educator</label>
+            </value>
+            <value>
+                <fullName>EMT</fullName>
+                <default>false</default>
+                <label>EMT</label>
+            </value>
+            <value>
+                <fullName>EMT / BLS</fullName>
+                <default>false</default>
+                <label>EMT / BLS</label>
+            </value>
+            <value>
+                <fullName>EMT-I / AEMT</fullName>
+                <default>false</default>
+                <label>EMT-I / AEMT</label>
+            </value>
+            <value>
+                <fullName>EMT-P</fullName>
+                <default>false</default>
+                <label>EMT-P</label>
+            </value>
+            <value>
+                <fullName>ENT Nurse Coordinator</fullName>
+                <default>false</default>
+                <label>ENT Nurse Coordinator</label>
+            </value>
+            <value>
+                <fullName>ENT Surgeon</fullName>
+                <default>false</default>
+                <label>ENT Surgeon</label>
+            </value>
+            <value>
+                <fullName>ER Manager</fullName>
+                <default>false</default>
+                <label>ER Manager</label>
+            </value>
+            <value>
+                <fullName>Executive Assistant</fullName>
+                <default>false</default>
+                <label>Executive Assistant</label>
+            </value>
+            <value>
+                <fullName>Fellow</fullName>
+                <default>false</default>
+                <label>Fellow</label>
+            </value>
+            <value>
+                <fullName>Fellow - Bariatric</fullName>
+                <default>false</default>
+                <label>Fellow - Bariatric</label>
+            </value>
+            <value>
+                <fullName>Fellow - Cardiovascular</fullName>
+                <default>false</default>
+                <label>Fellow - Cardiovascular</label>
+            </value>
+            <value>
+                <fullName>Fellow – EM</fullName>
+                <default>false</default>
+                <label>Fellow – EM</label>
+            </value>
+            <value>
+                <fullName>Fellow - ENT</fullName>
+                <default>false</default>
+                <label>Fellow - ENT</label>
+            </value>
+            <value>
+                <fullName>Fellow - FMIGS</fullName>
+                <default>false</default>
+                <label>Fellow - FMIGS</label>
+            </value>
+            <value>
+                <fullName>Fellow – General</fullName>
+                <default>false</default>
+                <label>Fellow – General</label>
+            </value>
+            <value>
+                <fullName>Fellow - MIS</fullName>
+                <default>false</default>
+                <label>Fellow - MIS</label>
+            </value>
+            <value>
+                <fullName>Fellow – Oncology</fullName>
+                <default>false</default>
+                <label>Fellow – Oncology</label>
+            </value>
+            <value>
+                <fullName>Fellow – Transplant</fullName>
+                <default>false</default>
+                <label>Fellow – Transplant</label>
+            </value>
+            <value>
+                <fullName>Fellow - Trauma</fullName>
+                <default>false</default>
+                <label>Fellow - Trauma</label>
+            </value>
+            <value>
+                <fullName>Firefighter</fullName>
+                <default>false</default>
+                <label>Firefighter</label>
+            </value>
+            <value>
+                <fullName>General Nurse Coordinator</fullName>
+                <default>false</default>
+                <label>General Nurse Coordinator</label>
+            </value>
+            <value>
+                <fullName>General Surgeon</fullName>
+                <default>false</default>
+                <label>General Surgeon</label>
+            </value>
+            <value>
+                <fullName>General Team Lead</fullName>
+                <default>false</default>
+                <label>General Team Lead</label>
+            </value>
+            <value>
+                <fullName>GYN surgeon</fullName>
+                <default>false</default>
+                <label>GYN surgeon</label>
+            </value>
+            <value>
+                <fullName>ICU Director</fullName>
+                <default>false</default>
+                <label>ICU Director</label>
+            </value>
+            <value>
+                <fullName>Infection Control</fullName>
+                <default>false</default>
+                <label>Infection Control</label>
+            </value>
+            <value>
+                <fullName>Instrument Coordinator</fullName>
+                <default>false</default>
+                <label>Instrument Coordinator</label>
+            </value>
+            <value>
+                <fullName>Interim Director</fullName>
+                <default>false</default>
+                <label>Interim Director</label>
+            </value>
+            <value>
+                <fullName>IV Theraphy</fullName>
+                <default>false</default>
+                <label>IV Theraphy</label>
+            </value>
+            <value>
+                <fullName>Labor &amp; Delivery Manager</fullName>
+                <default>false</default>
+                <label>Labor &amp; Delivery Manager</label>
+            </value>
+            <value>
+                <fullName>Lieutenant</fullName>
+                <default>false</default>
+                <label>Lieutenant</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <label>Manager</label>
+            </value>
+            <value>
+                <fullName>Material coordinator</fullName>
+                <default>false</default>
+                <label>Material coordinator</label>
+            </value>
+            <value>
+                <fullName>Materials Management</fullName>
+                <default>false</default>
+                <label>Materials Management</label>
+            </value>
+            <value>
+                <fullName>Materials Management/Purchasing</fullName>
+                <default>false</default>
+                <label>Materials Management/Purchasing</label>
+            </value>
+            <value>
+                <fullName>Materials Manager/Purchaser</fullName>
+                <default>false</default>
+                <label>Materials Manager/Purchaser</label>
+            </value>
+            <value>
+                <fullName>Medical Director</fullName>
+                <default>false</default>
+                <label>Medical Director</label>
+            </value>
+            <value>
+                <fullName>Negotiator</fullName>
+                <default>false</default>
+                <label>Negotiator</label>
+            </value>
+            <value>
+                <fullName>Neonatologist</fullName>
+                <default>false</default>
+                <label>Neonatologist</label>
+            </value>
+            <value>
+                <fullName>NICU</fullName>
+                <default>false</default>
+                <label>NICU</label>
+            </value>
+            <value>
+                <fullName>Nurse</fullName>
+                <default>false</default>
+                <label>Nurse</label>
+            </value>
+            <value>
+                <fullName>Nurse Anesthetist</fullName>
+                <default>false</default>
+                <label>Nurse Anesthetist</label>
+            </value>
+            <value>
+                <fullName>Nurse – ED</fullName>
+                <default>false</default>
+                <label>Nurse – ED</label>
+            </value>
+            <value>
+                <fullName>Nurse – ICU</fullName>
+                <default>false</default>
+                <label>Nurse – ICU</label>
+            </value>
+            <value>
+                <fullName>Nurse Manager</fullName>
+                <default>false</default>
+                <label>Nurse Manager</label>
+            </value>
+            <value>
+                <fullName>Nurse - OR</fullName>
+                <default>false</default>
+                <label>Nurse - OR</label>
+            </value>
+            <value>
+                <fullName>OB Anesthesia</fullName>
+                <default>false</default>
+                <label>OB Anesthesia</label>
+            </value>
+            <value>
+                <fullName>OBGYN Surgeon</fullName>
+                <default>false</default>
+                <label>OBGYN Surgeon</label>
+            </value>
+            <value>
+                <fullName>Office Manager</fullName>
+                <default>false</default>
+                <label>Office Manager</label>
+            </value>
+            <value>
+                <fullName>Oncology Surgeon</fullName>
+                <default>false</default>
+                <label>Oncology Surgeon</label>
+            </value>
+            <value>
+                <fullName>Operations Manager</fullName>
+                <default>false</default>
+                <label>Operations Manager</label>
+            </value>
+            <value>
+                <fullName>OR Director</fullName>
+                <default>false</default>
+                <label>OR Director</label>
+            </value>
+            <value>
+                <fullName>OR Manager</fullName>
+                <default>false</default>
+                <label>OR Manager</label>
+            </value>
+            <value>
+                <fullName>OR Materials Manager</fullName>
+                <default>false</default>
+                <label>OR Materials Manager</label>
+            </value>
+            <value>
+                <fullName>Ortho/Neuro Nurse Coordinator</fullName>
+                <default>false</default>
+                <label>Ortho/Neuro Nurse Coordinator</label>
+            </value>
+            <value>
+                <fullName>Orthopedic Surgeon</fullName>
+                <default>false</default>
+                <label>Orthopedic Surgeon</label>
+            </value>
+            <value>
+                <fullName>Orthro/Nero Team Lead</fullName>
+                <default>false</default>
+                <label>Orthro/Nero Team Lead</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Outpatient Surgery Manager</fullName>
+                <default>false</default>
+                <label>Outpatient Surgery Manager</label>
+            </value>
+            <value>
+                <fullName>Owner</fullName>
+                <default>false</default>
+                <label>Owner</label>
+            </value>
+            <value>
+                <fullName>Owner/CEO</fullName>
+                <default>false</default>
+                <label>Owner/CEO</label>
+            </value>
+            <value>
+                <fullName>PACU</fullName>
+                <default>false</default>
+                <label>PACU</label>
+            </value>
+            <value>
+                <fullName>Pain Management</fullName>
+                <default>false</default>
+                <label>Pain Management</label>
+            </value>
+            <value>
+                <fullName>Pain Nurse</fullName>
+                <default>false</default>
+                <label>Pain Nurse</label>
+            </value>
+            <value>
+                <fullName>Paramedic / ALS</fullName>
+                <default>false</default>
+                <label>Paramedic / ALS</label>
+            </value>
+            <value>
+                <fullName>Pharmacist</fullName>
+                <default>false</default>
+                <label>Pharmacist</label>
+            </value>
+            <value>
+                <fullName>Physician</fullName>
+                <default>false</default>
+                <label>Physician</label>
+            </value>
+            <value>
+                <fullName>PICU</fullName>
+                <default>false</default>
+                <label>PICU</label>
+            </value>
+            <value>
+                <fullName>Plastic Surgeon</fullName>
+                <default>false</default>
+                <label>Plastic Surgeon</label>
+            </value>
+            <value>
+                <fullName>Portfolio Executive</fullName>
+                <default>false</default>
+                <label>Portfolio Executive</label>
+            </value>
+            <value>
+                <fullName>Purchasing Manager</fullName>
+                <default>false</default>
+                <label>Purchasing Manager</label>
+            </value>
+            <value>
+                <fullName>Radiographer</fullName>
+                <default>false</default>
+                <label>Radiographer</label>
+            </value>
+            <value>
+                <fullName>Radiologist</fullName>
+                <color>#0B24BE</color>
+                <default>false</default>
+                <label>Radiologist</label>
+            </value>
+            <value>
+                <fullName>Rectal Surgeon</fullName>
+                <default>false</default>
+                <label>Rectal Surgeon</label>
+            </value>
+            <value>
+                <fullName>Resident – EM</fullName>
+                <default>false</default>
+                <label>Resident – EM</label>
+            </value>
+            <value>
+                <fullName>Resident – IM</fullName>
+                <default>false</default>
+                <label>Resident – IM</label>
+            </value>
+            <value>
+                <fullName>Resident - Surgical</fullName>
+                <default>false</default>
+                <label>Resident - Surgical</label>
+            </value>
+            <value>
+                <fullName>Resource nurse Gen Surgery</fullName>
+                <default>false</default>
+                <label>Resource nurse Gen Surgery</label>
+            </value>
+            <value>
+                <fullName>Resource nurse Urology</fullName>
+                <default>false</default>
+                <label>Resource nurse Urology</label>
+            </value>
+            <value>
+                <fullName>Respiratory/Staff Therapist (Tier 5)</fullName>
+                <default>false</default>
+                <label>Respiratory/Staff Therapist (Tier 5)</label>
+            </value>
+            <value>
+                <fullName>Respiratory Director</fullName>
+                <default>false</default>
+                <label>Respiratory Director</label>
+            </value>
+            <value>
+                <fullName>Respiratory Therapist</fullName>
+                <default>false</default>
+                <label>Respiratory Therapist</label>
+            </value>
+            <value>
+                <fullName>Risk Management</fullName>
+                <default>false</default>
+                <label>Risk Management</label>
+            </value>
+            <value>
+                <fullName>Robotic Bariatric Surgeon</fullName>
+                <default>false</default>
+                <label>Robotic Bariatric Surgeon</label>
+            </value>
+            <value>
+                <fullName>Robotic OBGYN</fullName>
+                <default>false</default>
+                <label>Robotic OBGYN</label>
+            </value>
+            <value>
+                <fullName>Robotics Nurse Coordinator</fullName>
+                <default>false</default>
+                <label>Robotics Nurse Coordinator</label>
+            </value>
+            <value>
+                <fullName>Robotic Team Lead</fullName>
+                <default>false</default>
+                <label>Robotic Team Lead</label>
+            </value>
+            <value>
+                <fullName>RT</fullName>
+                <default>false</default>
+                <label>RT</label>
+            </value>
+            <value>
+                <fullName>RT Director</fullName>
+                <default>false</default>
+                <label>RT Director</label>
+            </value>
+            <value>
+                <fullName>RT Manager</fullName>
+                <default>false</default>
+                <label>RT Manager</label>
+            </value>
+            <value>
+                <fullName>RT Supervisor</fullName>
+                <default>false</default>
+                <label>RT Supervisor</label>
+            </value>
+            <value>
+                <fullName>Scheduler</fullName>
+                <default>false</default>
+                <label>Scheduler</label>
+            </value>
+            <value>
+                <fullName>Senior Director</fullName>
+                <default>false</default>
+                <label>Senior Director</label>
+            </value>
+            <value>
+                <fullName>Senior Negotiator</fullName>
+                <default>false</default>
+                <label>Senior Negotiator</label>
+            </value>
+            <value>
+                <fullName>SPD</fullName>
+                <default>false</default>
+                <label>SPD</label>
+            </value>
+            <value>
+                <fullName>SPD Director</fullName>
+                <default>false</default>
+                <label>SPD Director</label>
+            </value>
+            <value>
+                <fullName>SPD Manager</fullName>
+                <default>false</default>
+                <label>SPD Manager</label>
+            </value>
+            <value>
+                <fullName>SPD Staff</fullName>
+                <default>false</default>
+                <label>SPD Staff</label>
+            </value>
+            <value>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+                <label>Supervisor</label>
+            </value>
+            <value>
+                <fullName>Supply Management Coordinator</fullName>
+                <default>false</default>
+                <label>Supply Management Coordinator</label>
+            </value>
+            <value>
+                <fullName>Surgeon</fullName>
+                <default>false</default>
+                <label>Surgeon</label>
+            </value>
+            <value>
+                <fullName>Surgical Services</fullName>
+                <default>false</default>
+                <label>Surgical Services</label>
+            </value>
+            <value>
+                <fullName>Surgical Tech</fullName>
+                <default>false</default>
+                <label>Surgical Tech</label>
+            </value>
+            <value>
+                <fullName>Technician</fullName>
+                <default>false</default>
+                <label>Technician</label>
+            </value>
+            <value>
+                <fullName>Training Coordinator</fullName>
+                <default>false</default>
+                <label>Training Coordinator</label>
+            </value>
+            <value>
+                <fullName>Trauma Coordinator</fullName>
+                <default>false</default>
+                <label>Trauma Coordinator</label>
+            </value>
+            <value>
+                <fullName>Trauma Program Director</fullName>
+                <default>false</default>
+                <label>Trauma Program Director</label>
+            </value>
+            <value>
+                <fullName>Trauma Program Manager</fullName>
+                <default>false</default>
+                <label>Trauma Program Manager</label>
+            </value>
+            <value>
+                <fullName>Trauma Surgeon</fullName>
+                <default>false</default>
+                <label>Trauma Surgeon</label>
+            </value>
+            <value>
+                <fullName>Urological Surgeon</fullName>
+                <default>false</default>
+                <label>Urological Surgeon</label>
+            </value>
+            <value>
+                <fullName>Urology Nurse Coordinator</fullName>
+                <default>false</default>
+                <label>Urology Nurse Coordinator</label>
+            </value>
+            <value>
+                <fullName>Urology Team Lead</fullName>
+                <default>false</default>
+                <label>Urology Team Lead</label>
+            </value>
+            <value>
+                <fullName>Vascular Access Team</fullName>
+                <default>false</default>
+                <label>Vascular Access Team</label>
+            </value>
+            <value>
+                <fullName>Vascular Surgeon</fullName>
+                <default>false</default>
+                <label>Vascular Surgeon</label>
+            </value>
+            <value>
+                <fullName>VP</fullName>
+                <default>false</default>
+                <label>VP</label>
+            </value>
+            <value>
+                <fullName>Warehouse Manager</fullName>
+                <default>false</default>
+                <label>Warehouse Manager</label>
+            </value>
+            <value>
+                <fullName>XRay Technician</fullName>
+                <default>false</default>
+                <label>XRay Technician</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

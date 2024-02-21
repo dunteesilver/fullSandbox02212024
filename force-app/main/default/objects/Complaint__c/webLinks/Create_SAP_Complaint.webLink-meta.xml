@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_SAP_Complaint</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create SAP Complaint</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/40.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/40.0/apex.js&quot;)}
+var connection = sforce.connection;
+var status = &quot;{!Complaint__c.Status__c}&quot;;
+var tcnum = &quot;{!Complaint__c.TC__c}&quot;;
+var sfnum = &quot;{!Complaint__c.Name}&quot;;
+
+if(status == &quot;Approved&quot;  &amp;&amp; tcnum == &quot;&quot;){
+sforce.apex.execute(&quot;ComplaintIntegrationExtension&quot;,&quot;createSapComplaintService&quot;,{complaintIds:&quot;{!Complaint__c.Id}&quot;,sfNum:&quot;{!Complaint__c.Name}&quot;}); 
+alert(&quot;Your request has been sent to SAP, please check your email for confirmation of creation of record in SAP.&quot;);
+window.location = window.location;
+}
+else{
+alert(&quot;Complaint record must be approved and not have a TC# to submit to SAP!&quot;);
+}</url>
+</WebLink>

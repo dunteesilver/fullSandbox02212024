@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Web to Lead Assignment Rule Fix</fullName>
+        <active>true</active>
+        <ruleEntry/>
+        <ruleEntry>
+            <assignedTo>cathi.repetto@teleflex.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.Lead_Source_URL__c</field>
+                <operation>equals</operation>
+                <value>https://www.teleflex.com/usa/en/product-areas/urology/form/index.html</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>test</fullName>
+        <active>false</active>
+    </assignmentRule>
+</AssignmentRules>

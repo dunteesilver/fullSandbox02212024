@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Account_NAme</fullName>
+        <field>Account_Name__c</field>
+        <formula>Account__r.Name</formula>
+        <name>Account NAme</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Converting_MXN_to_USD</fullName>
+        <field>Transaction_Amount__c</field>
+        <formula>Transaction_Amount__c * 0.0628</formula>
+        <name>Converting MXN to USD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LATAM_Sales_Region</fullName>
+        <field>Sales_Region__c</field>
+        <formula>TEXT(Account__r.Sales_Region__c)</formula>
+        <name>LATAM Sales Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LATAM_Update_Account_Name</fullName>
+        <field>Account_Name__c</field>
+        <formula>IF (Account__r.Do_not_Show_in_RR__c, &quot;Other&quot;, Account__r.Name)</formula>
+        <name>LATAM Update Account Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Family</fullName>
+        <field>Product_Family1__c</field>
+        <formula>Product_Family_Map__c</formula>
+        <name>Product Family</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Family_LMA</fullName>
+        <field>Product_Family1__c</field>
+        <formula>&quot;LMA&quot;</formula>
+        <name>Product Family - LMA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Region</fullName>
+        <field>Sales_Region__c</field>
+        <formula>Text(Account__r.Sales_Region__c)</formula>
+        <name>Sales Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_up_Checkbox</fullName>
+        <field>Convert_to_USD__c</field>
+        <literalValue>0</literalValue>
+        <name>Set up Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Converting MXN to USD</fullName>
+        <actions>
+            <name>Converting_MXN_to_USD</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_up_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>LATAM_Order_Transaction__c.Convert_to_USD__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>LATAM_Order_Transaction__c.Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>MX40</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>LMA Product Family - Orders</fullName>
+        <actions>
+            <name>LATAM_Sales_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>LATAM_Update_Account_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Family_LMA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>LATAM_Order_Transaction__c.Source_System__c</field>
+            <operation>equals</operation>
+            <value>SAP46C</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Latam Order Transactions Fill Info</fullName>
+        <actions>
+            <name>Account_NAme</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Family</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sales_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>LATAM_Order_Transaction__c.Product_Family1__c</field>
+            <operation>notEqual</operation>
+            <value>LMA</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>No_LMA Product Family - Orders</fullName>
+        <actions>
+            <name>LATAM_Sales_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>LATAM_Update_Account_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Family</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>LATAM_Order_Transaction__c.Source_System__c</field>
+            <operation>notEqual</operation>
+            <value>SAP46C</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

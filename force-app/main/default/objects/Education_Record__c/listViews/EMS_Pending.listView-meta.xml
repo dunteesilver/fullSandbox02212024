@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMS_Pending</fullName>
+    <columns>Date_of_Event_Start__c</columns>
+    <columns>Account_Facility__c</columns>
+    <columns>NAME</columns>
+    <columns>Type_of_In_Service__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Responsible_CEM__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Education_Record__c.Inservice_Record,Education_Record__c.Education_Program_Request</value>
+    </filters>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>EMS</value>
+    </filters>
+    <filters>
+        <field>Date_of_Event_Start__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>10/1/2014</value>
+    </filters>
+    <filters>
+        <field>Pending_CRF__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>EMS Pending</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>EMS_Federal_Gov_Manager</role>
+    </sharedTo>
+</ListView>

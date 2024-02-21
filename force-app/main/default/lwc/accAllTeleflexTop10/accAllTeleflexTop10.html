@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="All Teleflex Top 10" variant="Narrow" icon-name="custom:custom18" class="slds-p-top_medium">
+        <article class="slds-card">
+        <div class="slds-card__body slds-card__body_inner">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout slds-max-medium-table_stacked-horizontal">
+            <thead class="slds-cell-wrap">
+                    <tr class="slds-text-title_caps">
+                    <th class="slds-cell-wrap"><strong>Material</strong></th>
+                    <th class="slds-cell-wrap"><strong>Material Description</strong></th> 
+                    <th class="slds-text-align_center slds-cell-wrap"><strong>{thisYear}</strong></th>
+                    <th class="slds-text-align_center slds-cell-wrap"><strong>{lastYear}</strong></th>
+                </tr>
+                </thead>
+                    <tbody>
+                    <template for:each={matMapArray} for:item="matMap">
+                    <tr class="slds-text-title_caps slds-border_bottom" key={matMap.id}>
+                        <td class="slds-cell-wrap">
+                            {matMap.material}
+                        </td>
+                            <td class="slds-cell-wrap">  
+                            {matMap.desc}
+                           </td>
+                              <td>
+                                 <div class="slds-text-align_center slds-cell-wrap">
+                                 <lightning-formatted-number value={matMap.cursale} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                 </div>
+                              </td>
+                                  <td>
+                                     <div class="slds-text-align_center slds-cell-wrap">
+                                     <lightning-formatted-number value={matMap.prevsale} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </div>
+                                  </td>
+                    </tr>
+                    </template>
+                  </tbody>
+                </table>
+            </div>
+            </article>
+    </lightning-card>
+   </template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preferred_Product__c</fullName>
+    <description>Indicate the product of preference by this professional. Remember to also provide the brand by filling out the appropriate field.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate the product of preference by this professional. Remember to also provide the brand by filling out the appropriate field.</inlineHelpText>
+    <label>Preferred Product</label>
+    <length>60</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

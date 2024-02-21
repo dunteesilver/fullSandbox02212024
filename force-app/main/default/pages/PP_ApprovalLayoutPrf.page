@@ -1,0 +1,499 @@
+<apex:page docType="html-5.0" id="thePage" title="PRF: #{!prf.Prf_Name__c}" controller="PP_PRF" sidebar="false">
+    <head>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'jquery-ui.min.css')}"/>
+
+        <apex:stylesheet value="{!UrlFor($Resource.tablesorter,'/tablesorter-master/dist/css/theme.bootstrap.min.css')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.tablesorter ,'/tablesorter-master/dist/js/jquery.tablesorter.widgets.min.js')}"/>
+    </head>
+    <style type="text/css">
+
+        .accountIntCtrls {
+        display:none;
+        }
+        .accountOutCtrls {
+        display:block;
+        }
+
+        .contactIntCtrls {
+        display:none;
+        }
+        .contactOutCtrls {
+        display:block;
+        }
+        <!-- Used to surpress the 'Submit for Approval' button in the related list (21Oct2015/ESC) -->
+        input.btn[name="piSubmit"] {
+        display: none;
+        }
+
+        .dropdown-menu > .disabled{
+        cursor: not-allowed;
+        }
+
+        /* The real magic ;) */
+        .dropdown-menu > .disabled > a{
+        pointer-events: none;
+        }
+        .morecontent span {
+        display: none;
+        }
+        .bRelatedList .relatedProcessHistory .extraRow td.actionColumn .actionLink, .bRelatedList .relatedProcessHistory .extraRow td, .bRelatedList .relatedProcessHistory .extraRow th{
+            color:black;
+        }
+        
+        #approval {
+            font-family: Courier New;
+            font-size:  12px;
+        }
+    </style>
+
+    <div class="teleflex">
+        <apex:include id="menu" pageName="PP_Menu"/>
+        <!-- DIV to Render the rest of the page in Bootstrap -->
+        <div class="teleflex">
+            <div class="contain-fluid">
+                <div class="row">
+                    <!-- Column One -->
+                    <div class="col-md-6">
+                        <div class="panel panel-warning">
+                            <div class="panel-heading"><h3 class="panel-title">PRF Approve/Reject Approval Request</h3></div>
+                            <div class="panel-body">
+                              <apex:outputLink value="/apex/PP_PRF?id={!prf.Id}"><h5>
+                                  <strong>Back to PRF {!prf.PRF_Name__c}</strong>
+                                  </h5></apex:outputLink>
+                                <apex:outputPanel id="approvalPanel">
+                                <table class="table table-hover table-condensed">
+                                    <tr>
+                                        <td width="150" class="text-right text-nowrap">PRF:</td>
+                                        <td><a href="/apex/PP_PRF?id={!prf.Id}">#{!prf.Prf_Name__c}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="150" class="text-right">Account:</td>
+                                        <td><a href="/apex/PP_Customer_Details?id={!prf.Account__r.Id}"><b>{!prf.Account__r.Name}</b></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Address:</td>
+                                        <td>{!prf.Account__r.BillingStreet},&nbsp;{!prf.Account__r.BillingCity},&nbsp;{!prf.Account__r.BillingState}&nbsp;{!prf.Account__r.BillingPostalCode}&nbsp;{!prf.Account__r.BillingCountry}</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="150" class="text-right">Owner Name:</td>
+                                        <td><a href="/{!prf.Owner_ID__c}"><b>{!prf.Owner_Full_Name__c}</b> / {!prf.Owner_Business_Unit__c}</a></td>
+                                    </tr>
+                                    <apex:form >
+                                      <apex:actionFunction name="disableApprove" action="{!Approve}" />
+                                      <apex:actionFunction name="disableReject" action="{!Reject}" />
+                                      
+                                        <tr>
+                                            <td class="text-right"><h4><strong>Comments:&nbsp;</strong></h4></td>
+                                            <td class="text-left"><apex:inputTextArea label="Comments" value="{!appComments}" style="height:75px;" rows="3" styleclass="form-control" /></td><br /><br />
+                                        </tr>
+                                      
+                                        <tr class="text-center">
+                                          
+                                            <apex:variable var="approved_button" value="{!if( (prf.Status__c = 'Approved' || prf.Status__c = 'New'),'disabled',
+                                            if((prf.Status__c != 'Approved' || prf.Status__c != 'New') && (prf.Owner_ID__c = LEFT($User.Id,15) && $UserRole.Name != 'Teleflex Global IT' ),'disabled',
+                                            if(NOT(isApprover) , 'disabled' , '' ) ) )}"/>
+                                         
+                                            <td class="text-center" colspan="2">
+                                              
+                                                <apex:commandButton value="Approve" id="approveBtn" action="{!Approve}" styleClass="btn btn-primary {!approved_button}" reRender="approvalPanel" status="actStatusId" onclick="disableApprove()"/>&nbsp;
+                                                <apex:commandButton value="Reject" id="rejectBtn" action="{!Reject}" styleClass="btn btn-danger {!approved_button}" reRender="approvalPanel" status="actStatusId" onclick="disableReject()"/>&nbsp;
+                                              <!--
+                                              <apex:commandButton value="Approve" action="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!wrkId}" styleClass="btn btn-primary" />&nbsp;
+                                              <apex:commandButton value="Reject" action="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!wrkId}" styleClass="btn btn-danger" />
+                                               --> 
+                                            </td>
+                                        </tr>
+                                        <apex:actionstatus id="actStatusId">
+                                            <apex:facet name="start">
+                                                <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                                                     height: 100%;opacity:0.65;width:100%;">
+                                                    <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                                                        <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." />
+                                                        <span class="waitingDescription">Loading...</span>
+                                                    </div>
+                                                </div>
+                                            </apex:facet>
+                                        </apex:actionstatus>
+                                    </apex:form>
+                                </table>
+                                </apex:outputPanel>
+                                </div>
+                        </div>
+                    </div> <!-- End of Customer Detail Box -->
+                    <!-- End Column One -->
+                    <!-- Column Two -->
+                    <div class="col-md-6"> <!-- Start of Prf Box -->
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                <apex:outputText rendered="{!isLocked}">
+                                    <span data-toggle="tooltip" data-placement="top" title="Record Locked!" class="glyphicon glyphicon-lock"></span>
+                                </apex:outputText>
+
+                                <h3 class="panel-title">PRF: {!prf.PRF_Name__c}</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-hover table-condensed">
+                                    <tr><td width="150" class="text-right">Status:</td><td>{!prf.Status__c}</td></tr>
+                                    <tr>
+                                        <td align="right">Requisition Date:</td>
+                                        <td>
+                                            <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                <apex:param value="{!prf.Requisition_Date__c}" />
+                                            </apex:outputText>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">Agreement Type:</td>
+                                        <td>{!prf.Agreement_Type__c}</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">Eligible Distributor:</td>
+                                        <td>{!prf.Eligible_Distributor__c}</td>
+                                    </tr>
+                                    <apex:outputText rendered="{!prf.Current_Annual_Purchases__c != NULL}">
+                                        <tr><td class="text-right text-nowrap">Current Annual Purchases:</td><td><apex:outputField value="{!prf.Current_Annual_Purchases__c}"/></td></tr>
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!prf.Estimated_Annual_Purchases__c != NULL}">
+                                        <tr><td class="text-right text-nowrap">Estimated Annual Purchases:</td><td><apex:outputField value="{!prf.Estimated_Annual_Purchases__c}"/></td></tr>
+                                    </apex:outputText>
+                                    <tr><td class="text-right text-nowrap">Preferred Start Date:</td><td><apex:outputField value="{!prf.Preferred_Start_Date__c}"/></td></tr>
+                                    <tr><td class="text-right text-nowrap">Preferred End Date:</td><td><apex:outputField value="{!prf.Preferred_End_Date__c}"/></td></tr>
+                                    <apex:variable var="a" value="" rendered="{!!contains($UserRole.Name,'Latin America')}">
+                                    <tr>
+                                      <td align="right">GPO Affiliation:</td>
+                                      <td>
+                                        <apex:outputField value="{!prf.GPO_Affiliation__c}"/>
+                                      </td>
+                                    </tr>
+                                    </apex:variable>
+                                    <apex:outputText rendered="{!prf.Data_Driven_Justification__c != NULL}">
+                                        <tr><td class="text-right text-nowrap">Data Driven Justification:</td><td>{!prf.Data_Driven_Justification__c}</td></tr>
+                                    </apex:outputText>
+                                    <tr><td class="text-right text-nowrap">Created Date:</td><td><apex:outputField value="{!prf.CreatedById}"/>,&nbsp;<apex:outputField value="{!prf.CreatedDate}"/></td></tr>
+                                    <tr><td class="text-right text-nowrap">Last Modified Date:</td><td><apex:outputField value="{!prf.LastModifiedById}"/>,&nbsp;<apex:outputField value="{!prf.LastModifiedDate}"/></td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div> <!-- End of Price Quote Box -->
+                    <!-- End Column Two -->
+
+                </div>
+            </div>
+        </div> <!-- End of 2nd Div Teleflex -->
+        
+        <!-- Line Items -->
+        <apex:form id="itemsform">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><img src="/img/icon/cash24.png" alt="PRF Line Items"/>&nbsp;&nbsp;PRF Line Items</h6>
+                </div>
+            </div>
+            <!--<div class="panel-body">-->
+
+            <!-- Line Item Button Bar -->
+            <a href="myAnchor" id="myAnchor"/>
+
+            <!-- Start of Approved Layout -->
+            <!-- Line Item Entry -->
+            <!-- Locked -->
+            <apex:outputText >
+                <apex:outputText rendered="{!CheckInit}"/>
+                <apex:outputPanel Styleclass="panel-body" id="panelApproved" layout="block">
+                <apex:variable value="{!if($UserRole.Name="Teleflex Global IT" || $User.Approval_Level__c >= 3 || $UserRole.Name = 'Commercial Operations',TRUE,FALSE)}" var="ulevel"/>
+                    <table class="table table-striped table-hover table-bordered table-condensed" style="font-size:12px;" id="approval">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="text-center col-md-1" style="width: 25px; vertical-align:middle;text-align:center;" data-priority="critical">#</th>
+                                <!-- <th class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;">SBU</th> -->
+                                <th rowspan="2" class="text-center col-xs-1" style="width: 50px;text-align:center; vertical-align:middle;">Material</th>
+                                <th rowspan="2" class="text-center col-sm-1" style="text-align:center; width: 250px; vertical-align:middle;">Description</th>
+                                <th rowspan="2" class="text-center col-sm-1" style="text-align:center; vertical-align:middle;">Brand</th>
+                                <apex:outputText rendered="{!ulevel}">
+                                  <th rowspan="2" class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;">Gross<br/>Profit %</th>
+                                  <th rowspan="2" class="text-center col-sm-1" style="width: 50px;text-align:center; vertical-align:middle;">Current<br /> Year Cost</th>
+                                  <th rowspan="2" style="text-align:center; vertical-align:middle;">Previous<br /> Year ASP</th>
+                                </apex:outputText>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">List Price</th>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Rep Price</th>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">RSM Price</th>
+                                <apex:outputText rendered="{!ulevel}">
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Director Price</th>
+                                    <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">VP Price</th>
+                                    <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Floor Price</th>
+                                </apex:outputText>
+                                <apex:repeat value="{!tierHeaderNames}" var="tl">
+                                    <th colspan="{!tierLevels[tl]}" style="text-align:center; vertical-align:middle;">{!tl}</th>
+                                </apex:repeat>
+                                <th rowspan="2" style="text-align:center; vertical-align:middle;">{!$ObjectType.PRF_Line_Item__c.fields.Eligible_Price__c.label}</th>
+                                <th rowspan="2" style="text-align:center; vertical-align:middle;">Requested<br/>Sales<br/>Price</th>
+                                <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Price Check</th>
+                                <apex:outputText rendered="{!ulevel}">
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min Contract Price</th>
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min Contract Agreement</th>
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min GPO Price</th>
+                                  <th rowspan="2" style="text-align:center;white-space: normal; vertical-align:middle;">Min GPO Agreement</th>
+                                </apex:outputText>
+                            </tr>
+                            <tr>
+                                <apex:repeat value="{!tierHeaderList}" var="th">
+                                    <th class="col-xs-1">
+                                        <apex:outputText value="T{!right(th,1)}" html-data-toggle="tooltip" html-data-placement="top" title="Set All Lines to {!left(th,3)} T{!right(th,1)}" />
+                                    </th>
+                                </apex:repeat>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <apex:variable value="{!1}" var="rowNum"/>
+                            <apex:repeat value="{!PLI}" var="r">
+                                <tr>
+                                    <td class="col-md-1" align="center" style="width: 25px; vertical-align:middle;"><apex:outputText value="{!rowNum}"/></td>
+                                    <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                                    <!-- <td style="vertical-align:middle;"><apex:outputField value="{!r.Material_Name__r.SBU__c}" /></td> -->
+                                    <td class="text-center text-nowrap" style="vertical-align:middle;">{!r.Material_Name__r.Name}</td>
+                                    <td style="vertical-align:middle;" class="more">{!r.Product_Description__c}</td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">{!r.Material_Name__r.Brand_Name__c} - {!r.Material_Name__r.Brand__c}</td>
+
+                                    <apex:outputText rendered="{!ulevel}">
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                        <apex:outputText value="{0, number, 00.00%}" rendered="{!r.Material_Name__r.Cost__c != NULL && r.Material_Name__r.Cost__c != 0}">
+                                            <apex:param value="{!margins[r]/100}" />
+                                        </apex:outputText>
+                                        <apex:outputText value="-" rendered="{!r.Material_Name__r.Cost__c == NULL || r.Material_Name__r.Cost__c == 0}"/>
+                                      </td>
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText rendered="{!r.Material_Name__r.Cost_Formula__c != 0}" value="{0, number, currency}" >
+                                                <apex:param value="{!r.Material_Name__r.Cost_Formula__c}" />
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!r.Material_Name__r.Cost_Formula__c = 0}" value="-"/>
+                                        </td>
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                        <apex:outputText rendered="{!r.Material_Name__r.Last_Year_ASP__c != NULL}" value="{0, number, currency}" >
+                                            <apex:param value="{!r.Material_Name__r.Last_Year_ASP__c}" />
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!r.Material_Name__r.Last_Year_ASP__c = NULL}" value="-"/>
+                                      </td>
+                                    </apex:outputText>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                      <apex:outputText rendered="{!r.List_Price__c != NULL}" value="{0, number, currency}" >
+                                          <apex:param value="{!r.List_Price__c}" />
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!r.List_Price__c == NULL}" >-</apex:outputText>
+                                    </td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                      <apex:outputText rendered="{!r.Rep_Price__c != NULL}" value="{0, number, currency}" >
+                                          <apex:param value="{!r.Rep_Price__c}" />
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!r.Rep_Price__c == NULL}" >-</apex:outputText>
+                                    </td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                      <apex:outputText rendered="{!r.RSM_Price__c != NULL}" value="{0, number, currency}" >
+                                          <apex:param value="{!r.RSM_Price__c}" />
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!r.RSM_Price__c == NULL}" >-</apex:outputText>
+                                    </td>
+                                    <apex:outputText rendered="{!ulevel}">
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                        <apex:outputText rendered="{!r.Material_Name__r.Director_Price__c != NULL}" value="{0, number, currency}" >
+                                            <apex:param value="{!r.Material_Name__r.Director_Price__c}" />
+                                          </apex:outputText>
+                                          <apex:outputText rendered="{!r.Material_Name__r.Director_Price__c == NULL}" >-</apex:outputText>
+                                        </td>
+                                        <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                            <apex:outputText rendered="{!r.Material_Name__r.VP_Price__c != NULL}" value="{0, number, currency}" >
+                                                <apex:param value="{!r.Material_Name__r.VP_Price__c}" />
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!r.Material_Name__r.VP_Price__c == NULL}" >-</apex:outputText>
+                                        </td>
+                                        
+                                      <td class="text-center col-sm-1" style="vertical-align:middle;">
+                                        <apex:outputText rendered="{!r.Material_Name__r.Floor_Price__c != NULL}" value="{0, number, currency}" >
+                                            <apex:param value="{!r.Material_Name__r.Floor_Price__c}" />
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!r.Material_Name__r.Floor_Price__c == NULL}" >-</apex:outputText>
+                                      </td>
+                                    </apex:outputText>
+                                    <!-- Pricing Matrix -->
+                                    <apex:repeat value="{!tierHeaderList}" var="th">
+                                        <apex:variable var="mname" value="{!th}-{!r.Material_Name_Text__c}" />
+                                        <apex:variable var="selected" value="{!if(r.Requested_Pricing__r.Agreement_Number__c = tierMap[mname].Name || r.Sales_Deal__r.Agreement_Number__c = tierMap[mname].Name,TRUE,FALSE)}" />
+                                        <apex:variable var="PTSelected" value="{!if(r.Sales_Deal__r.Agreement_Number__c = tierMap[mname].Name && r.Eligible_Price__c = tierMap[mname].Price,'#40ff00',
+                                                                               if(r.Requested_Pricing__r.Agreement_Number__c = tierMap[mname].Name && r.Requested_Price__c = tierMap[mname].Price,'#ffa300',''))}" />
+                                        <!-- {!r.Requested_Pricing__r.Agreement_Number__c} = {!tierMap[mname].Name} - {!r.Sales_Deal__r.Agreement_Number__c} = {!tierMap[mname].Name} -->
+                                        <!-- No Pricing Tier -->
+                                        <apex:outputText rendered="{!tierMap[mname].Price = 0}">
+                                            <td class="text-center" style="text-align:center; vertical-align:middle;">-</td>
+                                        </apex:outputText>
+                                        <!-- Tiers -->
+                                        <apex:outputText rendered="{!tierMap[mname].Price != 0}">
+                                            <td class="text-center" style="text-align:center; vertical-align:middle;">${!tierMap[mname].Price}</td>
+                                        </apex:outputText>
+                                    </apex:repeat>
+                                    <!-- END Pricing Matrix -->
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">${!r.Eligible_Price__c}</td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle;">${!r.Requested_Price__c}</td>
+                                    <td class="text-center col-sm-1" style="vertical-align:middle; background-color: {!
+                                                                   IF(priceCheck[r] == 'Good','LawnGreen',
+                                                                   IF(priceCheck[r] == NULL, 'white','OrangeRed'))}">{!priceCheck[r]}</td>
+                                    <apex:outputText rendered="{!ulevel}">
+                                      <apex:outputText rendered="{!minContract[r.Material_Name__c] != 0}">
+                                          <td class="text-center col-sm-1" style="vertical-align:middle;">${!minContract[r.Material_Name__c]}</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!minContract[r.Material_Name__c] == 0}">
+                                          <td class="text-center col-sm-1" style="vertical-align:middle;">No Contract</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!minContractAgree[r.Material_Name__c] != ' '}">
+                                          <td style="vertical-align:middle;">{!minContractAgree[r.Material_Name__c]}</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!minContractAgree[r.Material_Name__c] == ' '}">
+                                          <td style="vertical-align:middle;">No Contract</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!minGpo[r.Material_Name__c] != 0}">
+                                          <td class="text-center col-sm-1" style="vertical-align:middle;">${!minGpo[r.Material_Name__c]}</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!minGpo[r.Material_Name__c] == 0}">
+                                          <td class="text-center col-sm-1" style="vertical-align:middle;">No Contract</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!minGpoAgree[r.Material_Name__c] != ' '}">
+                                          <td style="vertical-align:middle;">{!minGpoAgree[r.Material_Name__c]}</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!minGpoAgree[r.Material_Name__c] == ' '}">
+                                          <td style="vertical-align:middle;">No Contract</td>
+                                      </apex:outputText>
+                                    </apex:outputText>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                </apex:outputPanel>
+            </apex:outputText>
+            <!-- End Line Items -->
+            <!-- End of Approved Layout -->
+
+            <!-- End of Second Rendering of Buttons -->
+        </apex:form>
+        <!-- Dun's Form -->
+
+        <!-- Approval History Related List -->
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h6 class="panel-title"><img src="/img/icon/cash24.png" alt="Line Items"/>&nbsp;&nbsp;Related Lists</h6>
+            </div>
+        </div>
+
+        <apex:outputPanel >
+            <apex:relatedList list="ProcessSteps" subject="{!$CurrentPage.parameters.id}" /><br />
+        </apex:outputPanel>
+        <!-- Approval History Related List -->
+
+    </div> <!-- End of Main Div Teleflex -->
+    <!-- End of Dun's Form -->
+    <script>
+    $(function(){
+
+        $('table').tablesorter({
+            theme: 'bootstrap',
+            //showProcessing: true,
+            widthFixed: true,
+            headerTemplate : '{content} {icon}', // new in v2.7. Needed to add the bootstrap icon!
+
+            selectorHeaders: '> thead th, > thead td',
+            widgets: ['zebra', 'stickyHeaders', 'uitheme'],
+
+            widgetOptions: {
+
+                // css class name applied to the sticky header row (tr)
+                stickyHeaders : 'tablesorter-stickyHeader',
+
+                // adding zebra striping, using content and default styles - the ui css removes the background from default
+                // even and odd class names included for this demo to allow switching themes
+                //zebra   : ["ui-widget-content even", "ui-state-default odd"],
+                zebra : ["even", "odd"],
+                // reset filters button
+                filter_reset : ".reset",
+
+                // extra css class name (string or array) added to the filter element (input or select)
+                filter_cssFilter: "form-control",
+
+                // reset filters button
+                //filter_reset : ".reset",
+
+                // change default uitheme icons - find the full list of icons here: http://jqueryui.com/themeroller/ (hover over them for their name)
+                // default icons: ["ui-icon-arrowthick-2-n-s", "ui-icon-arrowthick-1-s", "ui-icon-arrowthick-1-n"]
+                // ["up/down arrow (cssHeaders/unsorted)", "down arrow (cssDesc/descending)", "up arrow (cssAsc/ascending)" ]
+                //uitheme : ["ui-icon-carat-2-n-s", "ui-icon-carat-1-s", "ui-icon-carat-1-n"]
+
+
+            }
+
+        });
+        $.extend($.tablesorter.themes.bootstrap
+                 // change default jQuery uitheme icons - find the full list of icons
+                 // here: http://jqueryui.com/themeroller/ (hover over them for their name)
+                 ,{table: 'ui-widget ui-widget-content ui-corner-all'        // table classes
+                   ,header: 'ui-widget-header ui-corner-all ui-state-default' // header classes
+                   ,icons: 'ui-icon'               // icon class added to the <i> in the header
+                   ,sortNone: 'ui-icon-carat-2-n-s'
+                   ,sortAsc: 'ui-icon-carat-1-n'
+                   ,sortDesc: 'ui-icon-carat-1-s'
+                   ,active: 'ui-state-active'       // applied when column is sorted
+                   ,hover: 'ui-state-hover'         // hover class
+                   ,filterRow: ''
+                   ,even: 'ui-widget-content'       // even row zebra striping
+                   ,odd: 'ui-state-default'         // odd row zebra striping
+                  });
+
+
+
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var showChar = 50;
+        var ellipsestext = "...";
+        var moretext = "more";
+        var lesstext = "less";
+        $('.more').each(function() {
+            var content = $(this).html();
+            var short = '';
+            var long = '';
+
+            if(content.length > showChar) {
+                short = content.substr(0, showChar);
+                long = content.substr(showChar, content.length - showChar);
+                console.log('short *** ' + short);
+                var html = short + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + long + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+                $(this).html(html);
+            }//end if
+
+        });//end of more each
+
+        $('.morelink').click(function(){
+            if($(this).hasClass("less")) {
+                $(this).removeClass("less");
+                $(this).html(moretext);
+            } else {
+                $(this).addClass("less");
+                $(this).html(lesstext);
+            }
+            $(this).parent().prev().toggle();
+            $(this).prev().toggle();
+            return false;
+        });
+
+        //disable approve button onclick
+        $('[id$=approveBtn]').click(function(){
+          $('[id$=approveBtn]').attr("disabled", true);
+          disableApprove();
+        });
+
+        //disable reject button onclick
+        $('[id$=rejectBtn]').click(function(){
+          $('[id$=rejectBtn]').attr("disabled", true);
+          disableReject();
+        });
+    });//end of document.ready
+    </script>
+</apex:page>

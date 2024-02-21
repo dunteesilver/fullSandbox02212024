@@ -1,0 +1,195 @@
+<apex:page docType="html-5.0" title="Contract Details" Controller="PP_SelectAccount" sidebar="false" readOnly="true" >
+    <!-- Set the Active Menu -->
+    <!-- Render the rest of the page -->
+    <div class="teleflex">
+		<!-- Call the Menu -->
+    	<apex:include id="menu" pageName="PP_Menu"/>
+
+        <apex:outputPanel title="" id="error">
+            <apex:pageMessages ></apex:pageMessages>
+        </apex:outputPanel>
+
+        <!-- Search Panel -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h6 class="panel-title"><img src="/img/icon/accounts32.png" alt="Account"/>&nbsp;&nbsp;{!$Label.EMEA_Select_Customer}</h6>
+            </div>
+            <div class="panel-body" align="center">
+                <apex:form styleClass="form-inline" html-ng-non-bindable="true">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="glyphicon glyphicon-search"/>&nbsp;&nbsp;&nbsp;&nbsp;<apex:inputText html-placeholder="{!$Label.EMEA_Search_on_Customer_Name_Address_or_SAP_Number}" size="60" value="{!strCust}" id="search" styleClass="form-control"/>
+                                &nbsp;<apex:commandButton action="{!getURL}" value="{!$Label.EMEA_Account_Search}" styleClass="btn btn-primary"/>
+                            </td>
+                        </tr>
+                    </table>
+                </apex:form>
+            </div>
+        </div>
+        <!-- Display Results Panel -->
+        <apex:outputText rendered="{!Search != NULL}">
+
+            <div class="panel panel-primary" >
+                <div class="panel-heading">
+                    <h6 class="panel-title">{!$Label.EMEA_Customer_Detail}</h6>
+                </div>
+
+                <div class="panel-body">
+                    <!-- Table Start for Account Info -->
+                    <table class="table table-striped table-hover table-bordered" id="conC">
+                        <tr>
+                            <th>{!$Label.EMEA_Action}</th>
+                            <th title="Sort by Customer Number"><apex:outputLabel value="{!$ObjectType.Account.fields.AccountNumber.label}" /></th>
+                            <th title="Sort by Name"><apex:outputLabel value="{!$ObjectType.Account.fields.Name.label}" /></th>
+                            <th title="Sort by Street"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Billing_Street__c.label}" /></th>
+                           
+                             <th title="Sort by City/State"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Billing_City__c.label}" /></th>
+                         <th title="Sort by City/State"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Billing_State__c.label}" /></th>
+                          
+                            <th title="Sort by Customer Group"><apex:outputLabel value="{!$ObjectType.Account.fields.Customer_Group__c.label}" /></th>
+                            <th title="Sort by Account Type"><apex:outputLabel value="{!$ObjectType.Account.fields.Type.label}" /></th>
+                        </tr>
+                        <apex:repeat value="{!Search}" var="cc">
+                            <apex:variable value="{!if(cc.ERP_Active__c || cc.SAP_Sold_To__c = "",'','disabled')}" var="notActive"/>
+                            <tr>
+                                <td class="col-md-1" style="vertical-align:middle;">
+                                    <center>
+                                      <apex:outputText rendered="{!IF(notActive = '', true, false)}">
+                                          <apex:OutputLink value="/apex/PP_Create_Contact?gs=off&id={!cc.Id}{!prf}{!pq}&sap={!cc.SAP_Sold_To__c}" styleClass="btn btn-primary"> {!$Label.EMEA_Select_Account} </apex:OutputLink>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!IF(notActive = 'disabled', true, false)}">
+                                          <apex:OutputLink value="/apex/PP_Create_Contact?gs=off&id={!cc.Id}{!prf}{!pq}&sap={!cc.SAP_Sold_To__c}" styleClass="btn btn-danger {!notActive}"> {!$Label.EMEA_Inactive_Account} </apex:OutputLink>
+                                      </apex:outputText>
+
+                                    </center>
+                                </td>
+                                <td style="vertical-align:middle;"><a href="/apex/PP_Customer_Details?cid={!cc.SAP_Sold_To__c}" > <apex:outputText value="{!cc.SAP_Sold_To__c}" /></a></td>
+                                <td style="vertical-align:middle;">
+                                    <apex:outputText value="{!cc.Name}" />
+                                    <apex:outputText rendered="{!cc.Account_Name_2__c != NULL}">
+                                        &nbsp;/<br/>{!cc.Account_Name_2__c}
+                                    </apex:outputText>
+                                </td>
+                                <td style="vertical-align:middle;"><apex:outputText value="{!cc.ShippingStreet}" /></td>
+                                <td style="vertical-align:middle;"><apex:outputText value="{!cc.ShippingCity}, {!cc.ShippingState}" /></td>
+                                <td style="vertical-align:middle;"><apex:outputText value="{!cc.ShippingPostalCode}" /></td>
+                                <td style="vertical-align:middle;">{!cc.Customer_Group__c} - {!cc.Customer_Group_Name__c}</td>
+                                <td style="vertical-align:middle;">{!cc.Account_Group__c}</td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                    <!-- Table End for Account Info -->
+
+                </div>
+            </div>
+        </apex:outputText>
+
+        <!-- End Panel -->
+
+        <div class="contain-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{!$Label.EMEA_Recent_Accounts}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped" id="accountTable">
+                                <thead>
+                                    <tr>
+                                        <th>{!$Label.EMEA_Action}</th>
+                                        <th title="Sort by Name"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Name__c.label}" /></th>
+                                        <th title="Sort by SAP Code"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_SAP_Code__c.label}" /></th>
+                                        <th title="Sort by Street"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Billing_Street__c.label}" /></th>
+                                        <th title="Sort by City"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Billing_City__c.label}" /></th>
+                                        <th title="Sort by State"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Billing_State__c.label}" /></th>
+                                        <th title="Sort by Zip"><apex:outputLabel value="{!$ObjectType.Price_Quote__c.fields.Account_Billing_Zipcode__c.label}" /></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <apex:repeat value="{!Accs}" var="row">
+                                        <apex:variable value="{!if(row.ERP_Active__c || row.SAP_Sold_To__c = "",'','disabled')}" var="notActive"/>
+                                        <!-- <tr style="display:{!IF(row.Name != null,'show','none')};"> -->
+                                        <tr>
+                                            <td style="vertical-align:middle;">
+                                                <center>
+                                                  <apex:outputText rendered="{!IF(notActive = '', true, false)}">
+                                                      <apex:OutputLink value="/apex/PP_Create_Contact?gs=off&id={!row.Id}{!prf}{!pq}&sap={!row.SAP_Sold_To__c}" styleClass="btn btn-primary"> {!$Label.EMEA_Select_Account} </apex:OutputLink>
+                                                  </apex:outputText>
+                                                  <apex:outputText rendered="{!IF(notActive = 'disabled', true, false)}">
+                                                      <apex:OutputLink value="/apex/PP_Create_Contact?gs=off&id={!row.Id}{!prf}{!pq}&sap={!row.SAP_Sold_To__c}" styleClass="btn btn-danger {!notActive}">  {!$Label.EMEA_Inactive_Account} </apex:OutputLink>
+                                                  </apex:outputText>
+                                                </center>
+                                            </td>
+                                            <td style="vertical-align:middle;">
+                                                <apex:outputlink value="/{!row.id}" target="blank"> 
+                                                    {!row.Name}
+                                                    <apex:outputText rendered="{!row.Account_Name_2__c != NULL}">
+                                                        &nbsp;/<br/>{!row.Account_Name_2__c}
+                                                    </apex:outputText>
+                                                </apex:outputlink>
+                                            </td>
+                                            <td style="vertical-align:middle;"><apex:outputField value="{!row.SAP_Sold_To__c}"/></td>
+                                            <td style="vertical-align:middle;"><apex:outputField value="{!row.ShippingStreet}"/></td>
+                                            <td style="vertical-align:middle;"><apex:outputField value="{!row.ShippingCity}"/></td>
+                                            <td style="vertical-align:middle;"><apex:outputField value="{!row.ShippingState}"/></td>
+                                            <td style="vertical-align:middle;"><apex:outputField value="{!row.ShippingPostalCode}"/></td>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{!$Label.EMEA_Recent_Quotes}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped" id="quoteTable">
+                                <thead>
+                                    <tr>
+                                        <th>{!$Label.EMEA_Open_Quote}</th>
+                                        <th title="Sort by Quote">{!$Label.EMEA_Quote}</th>
+                                        <th title="Sort by Account Name"><apex:outputLabel value="{!$ObjectType.Account.fields.Name.label}" /></th>
+                                        <th title="Sort by Contact Name"><apex:outputLabel value="{!$ObjectType.Account.fields.Name.label}" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <apex:repeat value="{!Pqs}" var="row">
+                                        <tr>
+                                            <td class="col-md-2" style="vertical-align:middle;"><apex:outputlink value="/{!row.id}" styleClass="btn btn-primary" target="blank"> {!$Label.EMEA_Open_Quote} </apex:outputlink></td>
+                                            <td class="col-md-2" style="vertical-align:middle;">{!row.Name}</td>
+                                            <td style="vertical-align:middle;"><apex:outputField value="{!row.Account_Name__r.Name}"/></td>
+                                            <td style="vertical-align:middle;"><apex:outputField value="{!row.Contact_Name__r.Name}"/></td>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- End of div class="panel panel-primary" for Recent Quotes -->
+                </div> <!-- End of div class="col-md-6" -->
+
+            </div><!-- End of Class Row -->
+        </div> <!-- End of div class="contain-fluid" -->
+    </div> <!-- End of div class="teleflex" -->
+    <script>
+    $('th').click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc){rows = rows.reverse()}
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+    })
+    function comparer(index) {
+        return function(a, b) {
+            var valA = getCellValue(a, index), valB = getCellValue(b, index)
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+        }
+    }
+    function getCellValue(row, index){ return $(row).children('td').eq(index).html() }
+    </script>
+</apex:page>

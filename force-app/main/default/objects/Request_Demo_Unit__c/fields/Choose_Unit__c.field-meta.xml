@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Choose_Unit__c</fullName>
+    <externalId>false</externalId>
+    <label>Choose Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>G4</fullName>
+                <default>false</default>
+                <label>G4</label>
+            </value>
+            <value>
+                <fullName>Rhythm</fullName>
+                <default>false</default>
+                <label>Rhythm</label>
+            </value>
+            <value>
+                <fullName>G4 &amp; Rhythm</fullName>
+                <default>false</default>
+                <label>G4 &amp; Rhythm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SM_Require_Information_if_Lost_reason</fullName>
+    <active>false</active>
+    <description>If the Account At Risk is set to Lost</description>
+    <errorConditionFormula>AND(TEXT( Specialty_At_Risk_Status__c ) = &quot;Lost&quot;, isblank(  Specialty_At_Risk_Description__c ))</errorConditionFormula>
+    <errorMessage>Please provide reason this account was lost</errorMessage>
+</ValidationRule>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OPERA_Risk__c</fullName>
+    <externalId>false</externalId>
+    <label>OPERA Risk</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Leadership turnover</fullName>
+                <default>false</default>
+                <label>Leadership turnover</label>
+            </value>
+            <value>
+                <fullName>Lack of infection prevention engmt</fullName>
+                <default>false</default>
+                <label>Lack of infection prevention engmt</label>
+            </value>
+            <value>
+                <fullName>Internal teams resistant to change</fullName>
+                <default>false</default>
+                <label>Internal teams resistant to change</label>
+            </value>
+            <value>
+                <fullName>Lack of urgency</fullName>
+                <default>false</default>
+                <label>Lack of urgency</label>
+            </value>
+            <value>
+                <fullName>Contract restraints</fullName>
+                <default>false</default>
+                <label>Contract restraints</label>
+            </value>
+            <value>
+                <fullName>Lack of intl ability to change process</fullName>
+                <default>false</default>
+                <label>Lack of intl ability to change process</label>
+            </value>
+            <value>
+                <fullName>Lack of internal stakeholders</fullName>
+                <default>false</default>
+                <label>Lack of internal stakeholders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

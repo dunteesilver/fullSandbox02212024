@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>New Product Tracking</label>
+    <license>Salesforce</license>
+    <pageAccesses>
+        <apexPage>New_Product_Tracking</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <tabSettings>
+        <tab>New_Product_Tracking</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

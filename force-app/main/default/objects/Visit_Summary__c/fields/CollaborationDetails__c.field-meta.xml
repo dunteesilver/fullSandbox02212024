@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CollaborationDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Collaboration Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Collaboration__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Does not provide regularly or consistently communication or collaboration on clinical training/projects.</fullName>
+                <default>false</default>
+                <label>Does not provide regularly or consistently communication or collaboration on clinical training/projects.</label>
+            </value>
+            <value>
+                <fullName>Does not clearly communicate role and/or responsibilities on clinical training projects</fullName>
+                <default>false</default>
+                <label>Does not clearly communicate role and/or responsibilities on clinical training projects</label>
+            </value>
+            <value>
+                <fullName>Does not manage resources and/or provide follow up/pull/through plan</fullName>
+                <default>false</default>
+                <label>Does not manage resources and/or provide follow up/pull/through plan</label>
+            </value>
+            <value>
+                <fullName>Provides regular and consistent communication and collaboration on clinical training/projects</fullName>
+                <default>false</default>
+                <label>Provides regular and consistent communication and collaboration on clinical training/projects</label>
+            </value>
+            <value>
+                <fullName>Clearly communicate role and/or responsibilities on clinical training projects</fullName>
+                <default>false</default>
+                <label>Clearly communicate role and/or responsibilities on clinical training projects</label>
+            </value>
+            <value>
+                <fullName>Manage resources and/or provide follow up/pull/through plan</fullName>
+                <default>false</default>
+                <label>Manage resources and/or provide follow up/pull/through plan</label>
+            </value>
+            <value>
+                <fullName>Superior in all aspects of communication throughout all clinical training projects</fullName>
+                <default>false</default>
+                <label>Superior in all aspects of communication throughout all clinical training projects</label>
+            </value>
+            <value>
+                <fullName>Strong active listening, writing, and verbal skills</fullName>
+                <default>false</default>
+                <label>Strong active listening, writing, and verbal skills</label>
+            </value>
+            <value>
+                <fullName>Excels at managing resources for clinical training project</fullName>
+                <default>false</default>
+                <label>Excels at managing resources for clinical training project</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not provide regularly or consistently communication or collaboration on clinical training/projects.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not clearly communicate role and/or responsibilities on clinical training projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Does not manage resources and/or provide follow up/pull/through plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Provides regular and consistent communication and collaboration on clinical training/projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Clearly communicate role and/or responsibilities on clinical training projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Manage resources and/or provide follow up/pull/through plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Superior in all aspects of communication throughout all clinical training projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Strong active listening, writing, and verbal skills</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Excels at managing resources for clinical training project</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

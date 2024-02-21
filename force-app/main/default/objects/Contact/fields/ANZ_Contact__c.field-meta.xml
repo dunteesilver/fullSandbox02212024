@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ANZ_Contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to identify Contacts migrated from AU Instance.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to identify Contacts migrated from AU Instance.</inlineHelpText>
+    <label>ANZ Contact</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needle_length_used_for_insertion__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>REQUIRED for this Section</inlineHelpText>
+    <label>Needle length used for insertion</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>15 mm</fullName>
+                <default>false</default>
+                <label>15 mm</label>
+            </value>
+            <value>
+                <fullName>25 mm</fullName>
+                <default>false</default>
+                <label>25 mm</label>
+            </value>
+            <value>
+                <fullName>45 mm</fullName>
+                <default>false</default>
+                <label>45 mm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

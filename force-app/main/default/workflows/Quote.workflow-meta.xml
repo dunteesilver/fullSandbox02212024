@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Quote_is_Approved</fullName>
+        <description>Quote is Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Quote_Approval/Quote_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_is_Approved_Inside_Sales</fullName>
+        <description>Quote is Approved Inside Sales</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Quote_Approval/Quote_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_is_Rejected</fullName>
+        <description>Quote is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Quote_Approval/Quote_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_is_Rejected_Inside_Sales</fullName>
+        <description>Quote is Rejected Inside Sales</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Quote_Approval/Quote_Rejected</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Approved</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Quote Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Approved_1</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Quote Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Change_Record_Type_to_Draft</fullName>
+        <description>Changes Quote record type to draft when approved quote is revised</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Quote_Draft</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Quote - Change Record Type to Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_In_Review</fullName>
+        <field>Status</field>
+        <literalValue>In Review</literalValue>
+        <name>Quote In Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Name</fullName>
+        <description>Quote Name Standard Format
+05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>LEFT(Opportunity.Name + &quot;-&quot; + QuoteNumber,120)</formula>
+        <name>Quote Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Name_Standard</fullName>
+        <description>This workflow updates the Quote Name field with the standard Quote naming converntion.
+05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 - 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>LEFT(Opportunity.Name  + &quot;-&quot; +  QuoteNumber,120)</formula>
+        <name>Quote Name Standard Format</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Recall</fullName>
+        <field>Status</field>
+        <literalValue>Draft</literalValue>
+        <name>Quote Recall</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Rejected</fullName>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>Quote Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_is_Approved_Change_Record_Type</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Quote_Approved</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Quote is Approved - Change Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <field>Status</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Quote - Revise approved</fullName>
+        <actions>
+            <name>Quote_Change_Record_Type_to_Draft</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Status</field>
+            <operation>equals</operation>
+            <value>Revise Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Quote - Approved</value>
+        </criteriaItems>
+        <description>Change layout and status of quote that needs revision</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote Name Standard Format</fullName>
+        <actions>
+            <name>Quote_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow updates the Quote Name field with the standard Quote naming converntion.</description>
+        <formula>AND(NOT(CONTAINS( Name,  Opportunity.Account.Name  )), NOT(Opportunity.RecordType.Id = &quot;012E00000005y2T&quot;),
+NOT(Opportunity.RecordType.Id = &quot;012E0000000RGuR&quot;),
+NOT(Opportunity.RecordType.Id = &quot;012E0000000PQUt&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

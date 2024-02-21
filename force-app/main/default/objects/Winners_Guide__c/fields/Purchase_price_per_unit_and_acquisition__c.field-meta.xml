@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purchase_price_per_unit_and_acquisition__c</fullName>
+    <description>Purchase price per unit and acquisition method of existing equipment</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Purchase price per unit and acquisition method of existing equipment</inlineHelpText>
+    <label>Purchase price per unit and acquisition</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

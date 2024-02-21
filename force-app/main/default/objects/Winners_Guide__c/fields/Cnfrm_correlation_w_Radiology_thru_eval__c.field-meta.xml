@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cnfrm_correlation_w_Radiology_thru_eval__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Cnfrm correlation w/Radiology thru eval</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirm we will be able to have correlation discussions with Radiology throughout evaluation</inlineHelpText>
+    <label>Cnfrm correlation w/Radiology thru eval.</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FellowConcentration__c</fullName>
+    <externalId>false</externalId>
+    <label>Fellow Concentration</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>CHIP</fullName>
+                <default>false</default>
+                <label>CHIP</label>
+            </value>
+            <value>
+                <fullName>CV Surgeon</fullName>
+                <default>false</default>
+                <label>CV Surgeon</label>
+            </value>
+            <value>
+                <fullName>Electrophysiology</fullName>
+                <default>false</default>
+                <label>Electrophysiology</label>
+            </value>
+            <value>
+                <fullName>Interventional Cardiologist</fullName>
+                <default>false</default>
+                <label>Interventional Cardiologist</label>
+            </value>
+            <value>
+                <fullName>Interventional Radiologist</fullName>
+                <default>false</default>
+                <label>Interventional Radiologist</label>
+            </value>
+            <value>
+                <fullName>Structural Heart</fullName>
+                <default>false</default>
+                <label>Structural Heart</label>
+            </value>
+            <value>
+                <fullName>Vascular Surgeon</fullName>
+                <default>false</default>
+                <label>Vascular Surgeon</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

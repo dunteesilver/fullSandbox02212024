@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Tier__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ Total_Airway_Management_Spend__c &gt;= 250000,
+ &quot;A&quot;,
+IF(
+ AND(
+ Total_Airway_Management_Spend__c &lt; 250000,
+ Total_Airway_Management_Spend__c &gt;= 100000
+ ),
+ &quot;B&quot;,
+ IF(
+ Total_Airway_Management_Spend__c  &lt;= 100000,
+ &quot;C&quot;,
+ NULL
+ )
+ )
+ )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Tier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

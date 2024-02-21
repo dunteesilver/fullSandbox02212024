@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3What_tecnqs_they_use_get_past_IJToDrop__c</fullName>
+    <externalId>false</externalId>
+    <label>What tecnqs they use get past IJ to drop</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Turn the patient’s head</fullName>
+                <default>false</default>
+                <label>Turn the patient’s head</label>
+            </value>
+            <value>
+                <fullName>Patient positioning skills</fullName>
+                <default>false</default>
+                <label>Patient positioning skills</label>
+            </value>
+            <value>
+                <fullName>Remove pillow</fullName>
+                <default>false</default>
+                <label>Remove pillow</label>
+            </value>
+            <value>
+                <fullName>Have patient cough or hum</fullName>
+                <default>false</default>
+                <label>Have patient cough or hum</label>
+            </value>
+            <value>
+                <fullName>Advance 1 cm/time</fullName>
+                <default>false</default>
+                <label>Advance 1 cm/time</label>
+            </value>
+            <value>
+                <fullName>Lower head of bed</fullName>
+                <default>false</default>
+                <label>Lower head of bed</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

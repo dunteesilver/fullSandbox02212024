@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_Rhythm_DLX_Device_demo_without_doc__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>VPS Rhythm DLX Device - demonstrate use without documentation for short peripheral, entering patient info, use of passcode to secure data , catheter vessel ratio, gain, depth, transducer orientation and color Doppler</description>
+    <externalId>false</externalId>
+    <inlineHelpText>VPS Rhythm DLX Device - demonstrate use without documentation for short peripheral, entering patient info, use of passcode to secure data , catheter vessel ratio, gain, depth, transducer orientation and color Doppler</inlineHelpText>
+    <label>VPS Rhythm DLX Device -demo without doc</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surgical_Disposables_DocMatterQual_Req</fullName>
+    <active>true</active>
+    <description>When DocMatter is marked Yes DocMater Qualifier is Required</description>
+    <errorConditionFormula>AND(ISPICKVAL(DocMatter__c, &quot;Yes&quot;),
+
+ISBLANK(TEXT(DocMatterQualifier__c))
+
+)</errorConditionFormula>
+    <errorDisplayField>DocMatterQualifier__c</errorDisplayField>
+    <errorMessage>When DocMatter is marked Yes DocMater Qualifier is Required</errorMessage>
+</ValidationRule>

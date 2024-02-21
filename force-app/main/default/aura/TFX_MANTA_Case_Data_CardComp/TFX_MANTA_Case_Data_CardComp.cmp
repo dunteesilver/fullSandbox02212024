@@ -1,0 +1,70 @@
+<aura:component controller="TFX_MANTA_Handler">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="caseDataObj" 
+                    type="Object" 
+                    />
+    <aura:attribute name="usrId" type="String" />
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large" />
+            </div>   
+        </div>
+    </aura:if>
+    
+    
+    <article class="slds-card slds-theme_shade">
+        <div class="slds-border_top slds-border_bottom slds-border_left slds-border_right">
+            <div class="slds-card__body slds-card__body_inner" >
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak" >Case Data Name:</dt>
+                    <dd class="slds-item_detail" >{!v.caseDataObj.Name}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Case Date:</dt>
+                    <dd class="slds-item_detail" >{!v.caseDataObj.Case_Date__c}</dd>
+                    <dt class="slds-item_label slds-text-color_weak" >MANTA Not Used:</dt>
+                    <dd class="slds-item_detail" >
+                        <aura:if isTrue="{! v.caseDataObj.MANTA_Not_Used__c == true }">
+                            Yes
+                            <aura:set attribute="else">
+                                No
+                            </aura:set>
+                        </aura:if>
+                    </dd>
+                    <dt class="slds-item_label slds-text-color_weak" >Reason MANTA Not Used:</dt>
+                    <dd class="slds-item_detail" >
+                        <aura:if isTrue="{! v.caseDataObj.MANTA_Not_Used__c == true }">
+                            {!v.caseDataObj.Reason_MANTA_Not_Used__c}
+                            <aura:set attribute="else">
+                                N/A
+                            </aura:set>
+                        </aura:if>
+                    </dd>
+                    <aura:if isTrue="{! v.caseDataObj.MANTA_Not_Used__c == true }">
+                        <aura:set attribute="else">
+                            <dt class="slds-item_label slds-text-color_weak" >Hospital Name:</dt>
+                            <dd class="slds-item_detail" >{!v.caseDataObj.Hospital_Name__r.Name}</dd>
+                            <dt class="slds-item_label slds-text-color_weak" >Deploying Physician:</dt>
+                            <dd class="slds-item_detail" >{!v.caseDataObj.Deploying_Physician__r.Name}</dd> 
+                            <dt class="slds-item_label slds-text-color_weak" >MANTA Trainer:</dt>
+                            <dd class="slds-item_detail" >{!v.caseDataObj.MANTA_Trainer__r.Name}</dd>
+                            <dt class="slds-item_label slds-text-color_weak" >Case Type:</dt>
+                            <dd class="slds-item_detail slds-p-right_xx-large" >{!v.caseDataObj.Case_Type__c}</dd>
+
+                            <dd class="slds-item_detail slds-p-right_xx-large" ></dd>
+                            <lightning:button variant="Brand" label="Edit" onclick="{!c.editCaseDataById}" />
+                            <lightning:button variant="Brand" label="Email" onclick="{!c.sendCaseDataToLoggedInUser}" />
+                            
+                            
+                                                       
+                        </aura:set>
+                    </aura:if>
+                </dl>
+            </div>
+        </div>
+    </article>
+    
+</aura:component>

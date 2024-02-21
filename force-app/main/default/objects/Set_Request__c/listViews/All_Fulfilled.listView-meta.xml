@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Fulfilled</fullName>
+    <columns>NAME</columns>
+    <columns>National_Pool_Set__c</columns>
+    <columns>Product__c</columns>
+    <columns>Shipping_Carrier__c</columns>
+    <columns>Status__c</columns>
+    <columns>Return_Tracking_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Fulfilled</value>
+    </filters>
+    <label>All Fulfilled</label>
+    <language>en_US</language>
+</ListView>

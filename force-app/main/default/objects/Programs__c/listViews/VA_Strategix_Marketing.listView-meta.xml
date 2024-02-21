@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_Strategix_Marketing</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Program_Type__c</columns>
+    <columns>Products__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>VA</value>
+    </filters>
+    <filters>
+        <field>Program_Type__c</field>
+        <operation>equals</operation>
+        <value>Strategic Vascular Education Programs</value>
+    </filters>
+    <label>VA: Strategic Vascular Marketing</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+    </sharedTo>
+</ListView>

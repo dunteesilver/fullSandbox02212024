@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VASC_Lost_Revenue</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+ISPICKVAL(Type, &quot;Lost Revenue&quot;),
+IsClosed = TRUE,
+ISPICKVAL(StageName, &quot;Closed Won&quot;)
+),
+AND(
+Amount &gt; 0,
+ISPICKVAL(Type, &quot;Lost Revenue&quot;),
+IsClosed = TRUE
+)
+
+)</errorConditionFormula>
+    <errorMessage>Lost Revenue requires a Negative Amount and the &quot;Closed Lost&quot; Stage</errorMessage>
+</ValidationRule>

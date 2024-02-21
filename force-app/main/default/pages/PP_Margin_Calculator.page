@@ -1,0 +1,101 @@
+<apex:page controller="PP_Margin_Calculator" title="Margin Calculator - Teleflex Pricing Portal (SFDC)" tabStyle="Pricing_Portal__tab">
+
+<!-- DIV to Render the rest of the page in Bootstrap -->
+<div class="teleflex">
+    <!-- Call the Menu -->    
+    <apex:include id="menu" pageName="PP_Menu"/>
+    <apex:outputPanel title="" id="error">
+         <apex:pageMessages ></apex:pageMessages>
+    </apex:outputPanel>
+    
+<div class="contain-fluid">
+    <div class="row">
+        <div class="col-md-4">  
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><img src="/img/icon/invoices32.png" alt="Price"/>&nbsp;&nbsp;Margin Calculator</h6>
+                </div>
+                <div class="panel-body">
+                <apex:form html-ng-non-bindable="true">
+                        <table style="padding: 10px">
+                        <tr>
+                            <td style="vertical-align:middle; padding: 10px"><h4>Material Number&nbsp;</h4></td>
+                            <td style="vertical-align:middle; padding: 10px">
+                                <apex:inputText label="Product" value="{!prodSrch}" id="Material" styleClass="form-control"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:middle; padding: 10px" align="right"><h4>Price&nbsp;</h4></td>
+                            <td style="padding: 10px">
+                                <apex:inputText label="Price" value="{!price}" id="Price" styleClass="form-control"/>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td style="padding: 10px">
+                                <apex:commandButton value="Calculate" action="{!getURL}" styleClass="btn btn-primary"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <apex:commandButton value="Clear" onclick="this.form.reset();return false;" styleClass="btn btn-primary"/>
+                            </td>
+                            
+                        </tr>
+                        </table>
+                    </apex:form>
+            <br/>&nbsp;            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<!-- Build Price Return Table -->
+    <apex:outputText rendered="{!prodRet.size > 0}">
+    <div class="contain-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-primary" style="display:{!IF(priceListTable,'show','none')};">
+                    <div class="panel-heading">
+                        <h6 class="panel-title"><img src="/img/icon/invoices32.png" alt="Price"/>&nbsp;&nbsp;Material Details</h6>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover table-bordered">
+                            <tr>
+                            <td>
+                                <h4>
+                                <strong>Material Name:</strong>
+                                    </h4></td><td><h4><strong>
+                                    
+                                    <apex:outputLink value="/apex/PP_Material_Info?pid={!prodRet[0].Name}" > {!prodRet[0].Name}</apex:outputLink>
+                                </strong></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Material Description:</h4></td><td><h4>
+                                    
+                                    <apex:outputLink value="/apex/PP_Material_Info?pid={!prodRet[0].Name}" > {!prodRet[0].Description}</apex:outputLink>
+                              
+                                    </h4>
+                                </td>
+                            </tr>
+                            <tr><td><h4>Gross Profit Margin:</h4></td><td><h4>{!grossMargin}%<br/></h4></td></tr>                  
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </apex:outputText>
+<!-- End Price Return Table -->    
+    
+</div>
+<!-- Script to pre-populate the input fields from the URL -->
+        <apex:variable value="{!if(price == NULL,'Material','Price')}" var="focus"/>        
+        <script>
+        $(document).ready( function(){
+            $("input[name*='Material']" ).val( "{!prodSrch}" );
+            $("input[name*='Price']" ).val( "{!price}" );
+            setTimeout(function() { $('input[name*="{!focus}"]').focus() }, 1000);
+        });
+        </script>
+</apex:page>

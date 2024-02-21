@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sample_Request</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Samples</compactLayoutAssignment>
+    <label>Sample Request</label>
+    <picklistValues>
+        <picklist>Default_Unit_of_Measure__c</picklist>
+        <values>
+            <fullName>Default</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Each</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Destination__c</picklist>
+        <values>
+            <fullName>Custom Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Territory Default</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Method__c</picklist>
+        <values>
+            <fullName>2-Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consolidate with next shipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer carrier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overnight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting for Approval</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Disposable%2FSingle Use Demo Product %28i%2Ee%2E%2C Not for Human Use%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disposable%2FSingle Use Product Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disposable%2FSingle Use Product Evaluation - Eaches</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Sales Stock %28i%2Ee%2E%2C future saleable unit%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loaner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multi-Use Product Demo %28i%2Ee%2E%2C Surgical Instrumentation%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_method_do_they_use__c</fullName>
+    <externalId>false</externalId>
+    <label>What method do they use?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+                <label>Integrated</label>
+            </value>
+            <value>
+                <fullName>Seldinger</fullName>
+                <default>false</default>
+                <label>Seldinger</label>
+            </value>
+            <value>
+                <fullName>PIV</fullName>
+                <default>false</default>
+                <label>PIV</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

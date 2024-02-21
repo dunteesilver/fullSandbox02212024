@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete_User_Story</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Complete Story</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var url = parent.location.href; 
+var userstoryObj = new sforce.SObject(&quot;Story__c&quot;); 
+userstoryObj.Id = &apos;{!Story__c.Id}&apos;; 
+var status = &apos;{!Story__c.Status__c}&apos;; 
+var opentasks = &apos;{!Story__c.Tasks_Not_Done__c}&apos;;
+var opentests = &apos;{!Story__c.Tests_Not_Validated__c}&apos;;
+
+if (status == &quot;{!$Label.FieldValue_StoryStatusComplete}&quot;) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_StoryAlreadyComplete}&quot;) 
+} 
+
+else 
+if (status == &quot;{!$Label.FieldValue_StoryStatusCanceled}&quot;) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_StoryCantCompleteIsCanceled}&quot;) 
+} 
+
+else 
+if (status == &quot;{!$Label.FieldValue_StoryStatusProductBacklog}&quot;) 
+{ 
+alert(&quot;{!$Label.ButtonAlert_StoryCantCompleteInPBL}&quot;) 
+}
+
+else 
+if (opentasks &gt; 0)
+{ 
+alert(&quot;{!$Label.ButtonAlert_StoryCantCompleteTasksOpen}&quot;) 
+} 
+
+else 
+if (opentests &gt; 0)
+{ 
+alert(&quot;{!$Label.ButtonAlert_StoryCantCompleteTestsOpen}&quot;) 
+} 
+
+else 
+{ 
+userstoryObj.Status__c = &quot;{!$Label.FieldValue_StoryStatusComplete}&quot;; 
+var result = sforce.connection.update([userstoryObj]); 
+
+if (result[0].success==&apos;false&apos;) 
+{ 
+alert(result[0].errors.message); 
+} 
+
+else 
+{ 
+parent.location.href = url;
+} 
+
+}</url>
+</WebLink>

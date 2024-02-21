@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_for_Locked_Set_Request</fullName>
+    <active>true</active>
+    <errorConditionFormula>Locked__c == true</errorConditionFormula>
+    <errorMessage>This record is locked because it has been Denied, Returned or Transferred</errorMessage>
+</ValidationRule>

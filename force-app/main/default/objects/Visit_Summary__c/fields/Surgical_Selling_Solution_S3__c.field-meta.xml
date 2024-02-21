@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surgical_Selling_Solution_S3__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>RSM: Please add your observations on the reps Surgical Selling Solution / S3.</inlineHelpText>
+    <label>Surgical Selling Solution / S3</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

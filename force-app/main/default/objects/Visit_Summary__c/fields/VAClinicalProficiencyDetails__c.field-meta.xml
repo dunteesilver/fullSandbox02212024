@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAClinicalProficiencyDetails__c</fullName>
+    <externalId>false</externalId>
+    <label>Clinical Proficiency Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Clinical_Proficency__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lacks skills and/or knowledge to perform role appropriately</fullName>
+                <default>false</default>
+                <label>Lacks skills and/or knowledge to perform role appropriately</label>
+            </value>
+            <value>
+                <fullName>Limited and/or knowledge of role/IFU, further training required,</fullName>
+                <default>false</default>
+                <label>Limited and/or knowledge of role/IFU, further training required,</label>
+            </value>
+            <value>
+                <fullName>Frequently requires assistance or instruction</fullName>
+                <default>false</default>
+                <label>Frequently requires assistance or instruction</label>
+            </value>
+            <value>
+                <fullName>Skills and/or knowledge meet understand and performs most phases of role well, occasionally requires assistance.</fullName>
+                <default>false</default>
+                <label>Skills and/or knowledge meet understand and performs most phases of role well, occasionally requires assistance.</label>
+            </value>
+            <value>
+                <fullName>Satisfactory skills and/or knowledge to perform role appropriately</fullName>
+                <default>false</default>
+                <label>Satisfactory skills and/or knowledge to perform role appropriately</label>
+            </value>
+            <value>
+                <fullName>Occasionally requires assistant or instructions</fullName>
+                <default>false</default>
+                <label>Occasionally requires assistant or instructions</label>
+            </value>
+            <value>
+                <fullName>Very well informed seldom requires assistance and/or instruction</fullName>
+                <default>false</default>
+                <label>Very well informed seldom requires assistance and/or instruction</label>
+            </value>
+            <value>
+                <fullName>Expert in Clinical knowledge and grasps all aspects of clinical role</fullName>
+                <default>false</default>
+                <label>Expert in Clinical knowledge and grasps all aspects of clinical role</label>
+            </value>
+            <value>
+                <fullName>Seen as a Clinical role model/expert</fullName>
+                <default>false</default>
+                <label>Seen as a Clinical role model/expert</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Lacks skills and/or knowledge to perform role appropriately</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Limited and/or knowledge of role/IFU, further training required,</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Needs Improvement</controllingFieldValue>
+            <valueName>Frequently requires assistance or instruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Skills and/or knowledge meet understand and performs most phases of role well, occasionally requires assistance.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Satisfactory skills and/or knowledge to perform role appropriately</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Achieving</controllingFieldValue>
+            <valueName>Occasionally requires assistant or instructions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Very well informed seldom requires assistance and/or instruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Expert in Clinical knowledge and grasps all aspects of clinical role</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Exceeding</controllingFieldValue>
+            <valueName>Seen as a Clinical role model/expert</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

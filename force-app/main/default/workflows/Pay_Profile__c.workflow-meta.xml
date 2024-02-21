@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Pay_Profile_Name</fullName>
+        <description>05/25/2108 - Updated the formula to handle 80 char limitation on Lightning (W-019704 80 char limit on naming)</description>
+        <field>Name</field>
+        <formula>LEFT(IF( 
+ISPICKVAL(Level__c, &quot;Custom&quot;), 
+Custom_Tier_Name__c &amp; &quot; - &quot; &amp; TEXT(Role__c) &amp; &quot; &quot; &amp; TEXT(CurrencyIsoCode) &amp; &quot; - &quot; &amp; Creation_Number__c, 
+TEXT(Role__c) &amp; &quot; - &quot; &amp; TEXT(Level__c) &amp; &quot; &quot; &amp; TEXT(CurrencyIsoCode) &amp; &quot; - &quot; &amp; Creation_Number__c),80)</formula>
+        <name>Pay Profile - Update Pay Profile Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Pay Profile - Standardize Name</fullName>
+        <actions>
+            <name>Update_Pay_Profile_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Pay_Profile__c.Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

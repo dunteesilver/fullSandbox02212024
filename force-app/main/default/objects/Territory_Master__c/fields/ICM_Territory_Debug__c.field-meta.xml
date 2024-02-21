@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICM_Territory_Debug__c</fullName>
+    <description>Used to debug when ICM Hierarchy Territory Update occurs and territories have users and are missing rep or manager email, or have rep and manager email and are missing territories.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+ISBLANK(Sales_Rep_Email__c),ISBLANK(Manager_Email__c),User_Count__c&gt;0),&quot;Missing Rep and Manager Email&quot;,
+
+IF(
+AND(
+(NOT(ISBLANK(Sales_Rep_Email__c))),ISBLANK(Manager_Email__c),User_Count__c&gt;0),&quot;Missing Manager Email&quot;,
+
+IF(
+AND(
+ISBLANK(Sales_Rep_Email__c),(NOT(ISBLANK(Manager_Email__c))),User_Count__c&gt;0),&quot;Missing Rep Email&quot;,
+
+IF(
+AND(
+(NOT(ISBLANK(Sales_Rep_Email__c))),(NOT((ISBLANK(Manager_Email__c)))),User_Count__c=0),&quot;Missing Users&quot;,&quot; &quot;))))</formula>
+    <label>ICM Territory Debug</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

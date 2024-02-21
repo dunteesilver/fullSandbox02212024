@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency__c</fullName>
+    <externalId>false</externalId>
+    <label>Currency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AED (United Arab Emirates Dirham)</fullName>
+                <default>false</default>
+                <label>AED (United Arab Emirates Dirham)</label>
+            </value>
+            <value>
+                <fullName>BGN (Bulgarian Lev)</fullName>
+                <default>false</default>
+                <label>BGN (Bulgarian Lev)</label>
+            </value>
+            <value>
+                <fullName>BD (Bahraini Dinar)</fullName>
+                <default>false</default>
+                <label>BD (Bahraini Dinar)</label>
+            </value>
+            <value>
+                <fullName>CHF (Swiss Franc)</fullName>
+                <default>false</default>
+                <label>CHF (Swiss Franc)</label>
+            </value>
+            <value>
+                <fullName>Kc (Czech Republic Koruna)</fullName>
+                <default>false</default>
+                <label>Kc (Czech Republic Koruna)</label>
+            </value>
+            <value>
+                <fullName>Dkr (Danish Krone)</fullName>
+                <default>false</default>
+                <label>Dkr (Danish Krone)</label>
+            </value>
+            <value>
+                <fullName>EGP (Egyptian Pound)</fullName>
+                <default>false</default>
+                <label>EGP (Egyptian Pound)</label>
+            </value>
+            <value>
+                <fullName>EUR (Euro)</fullName>
+                <default>false</default>
+                <label>EUR (Euro)</label>
+            </value>
+            <value>
+                <fullName>GBP (Great British Pound)</fullName>
+                <default>false</default>
+                <label>GBP (Great British Pound)</label>
+            </value>
+            <value>
+                <fullName>kn (Croatian Kuna)</fullName>
+                <default>false</default>
+                <label>kn (Croatian Kuna)</label>
+            </value>
+            <value>
+                <fullName>Ft (Hungarian Forint)</fullName>
+                <default>false</default>
+                <label>Ft (Hungarian Forint)</label>
+            </value>
+            <value>
+                <fullName>Ikr (Icelandic Króna)</fullName>
+                <default>false</default>
+                <label>Ikr (Icelandic Króna)</label>
+            </value>
+            <value>
+                <fullName>RUB (Russian Ruble)</fullName>
+                <default>false</default>
+                <label>RUB (Russian Ruble)</label>
+            </value>
+            <value>
+                <fullName>Skr (Swedish Krona)</fullName>
+                <default>false</default>
+                <label>Skr (Swedish Krona)</label>
+            </value>
+            <value>
+                <fullName>TL (Turkish Lira)</fullName>
+                <default>false</default>
+                <label>TL (Turkish Lira)</label>
+            </value>
+            <value>
+                <fullName>USD (US Dollar)</fullName>
+                <default>false</default>
+                <label>USD (US Dollar)</label>
+            </value>
+            <value>
+                <fullName>R (South African Rand)</fullName>
+                <default>false</default>
+                <label>R (South African Rand)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

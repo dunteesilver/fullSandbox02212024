@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Please_provide_Rationale_details</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( Complaint_submitted_within_24_hours_of_T__c	 , &quot;yes&quot;),
+ISNULL( Please_provide_rationale_for_the_late_s__c )
+)</errorConditionFormula>
+    <errorDisplayField>Please_provide_rationale_for_the_late_s__c</errorDisplayField>
+    <errorMessage>Please provide Rationale details</errorMessage>
+</ValidationRule>

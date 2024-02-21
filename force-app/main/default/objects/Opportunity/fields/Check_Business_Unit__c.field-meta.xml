@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+Business_Unit_Formula__c &lt;&gt; TEXT(Business_Unit_GPL__c),
+NOT(ISBLANK(TEXT(Business_Unit_GPL__c)))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Checked if the Owner BU does not match the Opportunity Business Unit</inlineHelpText>
+    <label>Check Business Unit</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

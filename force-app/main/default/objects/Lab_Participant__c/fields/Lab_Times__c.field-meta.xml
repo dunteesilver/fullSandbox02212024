@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lab_Times__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK( Lab_Time_2__c), &apos;&apos;, &apos;EZ-IO Track: &apos;+Lab_Time_2__c+ BR())+
+IF(ISBLANK( Hemorrhage_Track__c), &apos;&apos;, &apos;Hemorrhage Track: &apos;+Hemorrhage_Track__c+ BR())+
+IF(ISBLANK( Interventional_Track__c), &apos;&apos;, &apos;Interventional Track: &apos;+Interventional_Track__c+ BR())</formula>
+    <label>Lab Times</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

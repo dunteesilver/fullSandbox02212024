@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_CMA_Education_Record</fullName>
+    <filterScope>Queue</filterScope>
+    <label>VA CMA</label>
+    <queue>VA_CMA</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

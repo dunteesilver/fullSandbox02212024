@@ -1,0 +1,9 @@
+<aura:component controller="PP_creatQuoteContact" access="global"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:LightningQuickAction"> 
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="Contact" type="Contact" />
+    <div class="slds-align_absolute-center">
+    	<lightning:button label="Create Quote" onclick="{! c.contactCtrl }" />
+    </div>
+</aura:component>

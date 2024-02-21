@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_Rhythm_Refurb__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Specifies products available for Vascular Bundles.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specifies products available for Vascular Bundles.</inlineHelpText>
+    <label>VPS Rhythm - Refurb</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

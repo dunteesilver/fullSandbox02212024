@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    
+   <div class="slds-box"> 
+    <table
+           class="slds-table slds-table_bordered slds-table_col-bordered"
+           >
+        <thead>
+            <tr>
+                <th class="slds-cell-wrap" scope="col" style="color: rgb(0, 25, 86)">Proficiency Rating</th>
+                <th class="slds-cell-wrap" scope="col" style="color: rgb(0, 25, 86)"><strong>Proficiency Level</strong></th>
+                <th class="slds-cell-wrap" scope="col" style="color: rgb(0, 25, 86)"><strong>Proficiency Description</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="slds-cell-wrap" scope="col">1</th>
+                <th class="slds-cell-wrap" scope="col">Not Competent</th>
+                <th class="slds-cell-wrap" scope="col"><i>You do not demonstrate the skill at a minimally acceptable level, even with assistance or direction from others</i></th>
+            </tr>
+            <tr>
+                <td class="slds-cell-wrap" scope="col">2</td>
+                <td class="slds-cell-wrap" scope="col">Developing <div class="slds-text-body_small">(Limited Experience)</div></td>
+                <td class="slds-cell-wrap" scope="col"><i>You are expected to need coaching and support when performing this skill. You have the level of experience gained in a classroom or as a trainee on-the-job</i></td>
+            </tr>
+            <tr>
+                <td class="slds-cell-wrap" scope="col">3</td>
+                <td class="slds-cell-wrap" scope="col">Competent <div class="slds-text-body_small">(Practical Application)</div></td>
+                <td class="slds-cell-wrap" scope="col"><i>You are able to successfully complete the skill as requested. Help from an expert may be required from time to time, but you can usually perform the skill independently</i></td>
+            </tr>
+            <tr>
+                <td class="slds-cell-wrap" scope="col">4</td>
+                <td class="slds-cell-wrap" scope="col">Advanced <div class="slds-text-body_small">(Applied Theory)</div></td>
+                <td class="slds-cell-wrap" scope="col"><i>You can perform this skill without assistance. When questions arise regarding this skill, help is not required. You are capable of coaching others in the application of this competency. You can provide practical/relevant ideas and perspectives on process or practice improvements</i></td>
+            </tr>
+            <tr>
+                <td class="slds-cell-wrap" scope="col">5</td>
+                <td class="slds-cell-wrap" scope="col">Mastery <div class="slds-text-body_small">(Recognized Authority)</div></td>
+                <td class="slds-cell-wrap" scope="col"><i>You are considered the “go to” person who can provide guidance, troubleshoot and answer difficult questions related to this area of expertise. You are a skilled communicator who can demonstrate highly customized solutions to meet complex needs</i></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>    
+</aura:component>

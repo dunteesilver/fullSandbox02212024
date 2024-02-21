@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VSI_Complaints_All</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>VSI_Product__c</columns>
+    <columns>VSI_Product_Description__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Complaint__c.Interventional_Legacy_VSI</value>
+    </filters>
+    <label>VSI Complaints (All)</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Customer_Advocacy</role>
+    </sharedTo>
+</ListView>

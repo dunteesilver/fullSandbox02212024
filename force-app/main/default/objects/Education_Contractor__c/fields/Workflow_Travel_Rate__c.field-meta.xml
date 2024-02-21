@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workflow_Travel_Rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Hourly */
+if(
+AND(
+CONTAINS(TEXT(Engagement_Type__c), &quot;Hour&quot;),
+Pay_Rate_Card__r.Travel_Eligible__c = TRUE
+),
+ROUND(Reimbursement_Rate__c/2,2),
+/* Daily */
+if(
+AND(
+CONTAINS(TEXT(Engagement_Type__c), &quot;Day&quot;),
+Pay_Rate_Card__r.Travel_Eligible__c = TRUE
+),
+ROUND((Pay_Rate_Card__r.Inservice_Hour__c/2),2),  
+0
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Workflow Travel Rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

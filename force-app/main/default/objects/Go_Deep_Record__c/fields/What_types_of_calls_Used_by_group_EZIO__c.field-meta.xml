@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_types_of_calls_Used_by_group_EZIO__c</fullName>
+    <description>What types of calls is this group using EZ-IO currently? (disease states) 
+List: CA, trauma, sepsis, burns, IV drug users, shock, respiratory illnes, post partum hemorrhage</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What types of calls is this group using EZ-IO currently? (disease states) 
+List: CA, trauma, sepsis, burns, IV drug users, shock, respiratory illnes, post partum hemorrhage</inlineHelpText>
+    <label>What types of calls Used by group EZIO</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Burns</fullName>
+                <default>false</default>
+                <label>Burns</label>
+            </value>
+            <value>
+                <fullName>CA</fullName>
+                <default>false</default>
+                <label>CA</label>
+            </value>
+            <value>
+                <fullName>IV drug users</fullName>
+                <default>false</default>
+                <label>IV drug users</label>
+            </value>
+            <value>
+                <fullName>Post partum hemorrhage</fullName>
+                <default>false</default>
+                <label>Post partum hemorrhage</label>
+            </value>
+            <value>
+                <fullName>Respiratory illnes</fullName>
+                <default>false</default>
+                <label>Respiratory illnes</label>
+            </value>
+            <value>
+                <fullName>Sepsis</fullName>
+                <default>false</default>
+                <label>Sepsis</label>
+            </value>
+            <value>
+                <fullName>Shock</fullName>
+                <default>false</default>
+                <label>Shock</label>
+            </value>
+            <value>
+                <fullName>Trauma</fullName>
+                <default>false</default>
+                <label>Trauma</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

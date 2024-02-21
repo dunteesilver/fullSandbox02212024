@@ -1,0 +1,230 @@
+<apex:page docType="html-5.0" id="thePRF" TabStyle="Pricing_Portal__tab" controller="PP_PRF" tabStyle="Pricing_Portal__tab" sidebar="false">
+
+    <div class="teleflex">
+        <!-- Call the Menu -->
+    	<apex:include id="menu" pageName="PP_Menu"/>
+        
+        <div class="contain-fluid">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands16.png" alt="PRF Details"/>&nbsp;&nbsp;Price Requisition Form&nbsp;(PRF)&nbsp;</h6></div>
+                        <div class="panel-body">
+
+                            <apex:form id="prfForm">
+                            <apex:outputPanel id="dPanel">
+                            <apex:variable var="anzUser" value="{!IF(OR(userBu = 'Australia',userBu = 'New Zealand'),TRUE, FALSE)}" />
+                            <apex:pageMessages />
+                                <table class="table table-bordered">
+                                    <!-- Starting Agreement Details -->
+                                    <apex:actionRegion >
+                                        <tr>
+                                            <td align="right">Agreement Type&nbsp;<font style="color:red;">*</font></td>
+                                            <td>
+                                                <apex:inputField id="stageId" required="true" value="{!prf.Agreement_Type__c}" >
+                                                    <apex:actionSupport event="onchange" action="{!updateType}" rerender="dPanel"/>
+                                                </apex:inputField>
+                                                <script type="text/javascript">
+                                                var salesOrgKey = "{!activeSalesOrgKey}";
+                                                console.log('*** salesOrgKey *** ' + salesOrgKey);
+                                                $(document).ready( function () {
+                                                  if(salesOrgKey != 'CO1010'){
+                                                    console.log('*** In if *** ');
+                                                    $('option[value="ASK Agreement"]').remove();
+                                                  }
+                                                });
+                                                </script>
+                                            </td>
+                                    </tr>
+                                    </apex:actionRegion>
+                                    <apex:outputText rendered="{!createPath != TRUE && (prf.Line_Count__c = 0 || prf.Account__c == NULL)}">
+                                        <tr>
+                                            <td align="right">Primary Account&nbsp;<font style="color:red;">*</font></td>
+                                            <td><apex:inputField required="true" value="{!prf.Account__c}" /></td>
+                                        </tr>
+                                    </apex:outputText>
+                                        <tr>
+                                            <td align="right">Additional Customer Numbers</td>
+                                            <td><apex:inputTextarea cols="50" rows="3" value="{!prf.Additional_Accounts__c}" /></td>
+                                        </tr>
+                                    <apex:outputText rendered="{!createPath = FALSE}">
+                                        <tr>
+                                            <td align="right">Contact&nbsp;<font style="color:red;">*</font></td>
+                                            <td><apex:inputField required="true" value="{!prf.Contact__c}" /></td>
+                                        </tr>
+                                    </apex:outputText>
+
+                                    <!-- Start of Non ASK fields -->
+                                    <apex:variable var="a" value="" rendered="{!!isAsk && prf.Agreement_Type__c != 'ASK Agreement'}">
+                                        <tr>
+                                            <apex:variable var="a" value="" rendered="{!isDirect || prf.Agreement_Type__c = 'Direct Only Agreement'}">
+                                                <apex:outputText rendered="{!!anzUser}">
+                                                	<td align="right">Eligible Distributor</td>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!anzUser}">
+                                                	<td align="right">Eligible Customer</td>
+                                                </apex:outputText>
+                                                <td><apex:inputText size="30" value="{!prf.Eligible_Distributor__c}" /></td>
+                                            </apex:variable>
+
+                                            <apex:variable var="a" value="" rendered="{!NOT(isDirect) && prf.Agreement_Type__c != 'Direct Only Agreement'}">
+                                                <apex:outputText rendered="{!!anzUser}">
+                                                	<td align="right">Eligible Distributor&nbsp;<font style="color:red;">*</font></td>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!anzUser}">
+                                                	<td align="right">Eligible Customer&nbsp;<font style="color:red;">*</font></td>
+                                                </apex:outputText>
+                                                <td><apex:inputText size="30" required="true" value="{!prf.Eligible_Distributor__c}" /></td>
+                                            </apex:variable>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" class="text-nowrap">Current Annual Purchases&nbsp;($)<font style="color:red;">*</font></td>
+                                            <td><apex:inputField required="true" value="{!prf.Current_Annual_Purchases__c}" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" class="text-nowrap">Estimated&nbsp;Annual&nbsp;Purchases&nbsp;($)<font style="color:red;">*</font></td>
+                                            <td><apex:inputField required="true" value="{!prf.Estimated_Annual_Purchases__c}" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">Preferred Start Date&nbsp;<font style="color:red;">*</font></td>
+                                            <td><apex:inputField required="true" value="{!prf.Preferred_Start_Date__c}" showDatePicker="true" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">Preferred End Date&nbsp;<font style="color:red;">*</font></td>
+                                            <td><apex:inputField required="true" value="{!prf.Preferred_End_Date__c}" showDatePicker="true" /></td>
+                                        </tr>
+                                    </apex:variable>
+                                    <!-- End of Non ASK fields -->
+
+                                    <!-- Start of ASK fields -->
+                                    <apex:variable var="a" value="" rendered="{!isAsk || prf.Agreement_Type__c = 'ASK Agreement'}">
+                                        <tr>
+                                            <apex:outputText rendered="{!!anzUser}">
+                                                <td align="right">Eligible Distributor</td>
+                                            </apex:outputText>
+                                            <apex:outputText rendered="{!anzUser}">
+                                                <td align="right">Eligible Customer</td>
+                                            </apex:outputText>
+                                            <td><apex:inputText size="30" value="{!prf.Eligible_Distributor__c}" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" class="text-nowrap">Current Annual Purchases&nbsp;($)</td>
+                                            <td><apex:inputField value="{!prf.Current_Annual_Purchases__c}" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" class="text-nowrap">Estimated&nbsp;Annual&nbsp;Purchases&nbsp;($)</td>
+                                            <td><apex:inputField value="{!prf.Estimated_Annual_Purchases__c}" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" class="text-nowrap">Total Annual Eaches&nbsp;<font style="color:red;">*</font></td>
+                                            <td><apex:inputField required="true" value="{!prf.Total_Annual_Eaches__c}" /></td>
+                                        </tr>
+                                        <tr>
+                                        <td align="right">Preferred Start Date&nbsp;</td>
+                                        <td><apex:inputField value="{!prf.Preferred_Start_Date__c}" showDatePicker="true" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">Preferred End Date&nbsp;</td>
+                                            <td><apex:inputField value="{!prf.Preferred_End_Date__c}" showDatePicker="true" /></td>
+                                        </tr>
+                                    </apex:variable>
+                                    <!-- End of ASK fields -->
+
+                                    <apex:outputText rendered="{!createPath = FALSE && OR($UserRole.Name = 'Teleflex Global IT', $UserRole.Name = 'Commercial Operations')}">
+                                        <tr>
+                                            <td align="right">Sales Deal #&nbsp;</td>
+                                            <td style="white-space: nowrap;">
+                                                <apex:inputField value="{!prf.Sales_Deal__c}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">Valid From&nbsp;</td>
+                                            <td style="white-space: nowrap;">
+                                                <apex:inputField value="{!prf.Valid_From__c}" showDatePicker="true" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">Valid To&nbsp;</td>
+                                            <td style="white-space: nowrap;">
+                                                <apex:inputField value="{!prf.Valid_To__c}" showDatePicker="true" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">Category&nbsp;</td>
+                                            <td style="white-space: nowrap;">
+                                                <apex:inputField value="{!prf.Category__c}" />
+                                            </td>
+                                        </tr>
+                                    </apex:outputText>
+                                    <apex:variable var="a" value="" rendered="{!!contains($UserRole.Name,'Latin America')}">
+                                    <apex:outputText rendered="{!!anzUser}">
+                                    <tr>
+                                        <td align="right">GPO Affiliation&nbsp;</td>
+                                        <td>
+                                            <apex:selectlist id="selectedGPO" multiselect="false" value="{!selectedValue}" size="1" >
+                                              <apex:selectOptions value="{!gpoOptions}"  />
+                                                <apex:actionSupport event="onchange" action="{!updateGPO}" rerender="dPanel"/>
+                                            </apex:selectlist>
+                                        </td>
+                                    </tr>
+                                    </apex:outputText>
+                                    </apex:variable>
+                                    <tr>
+                                        <td align="right">Data Driven Justification&nbsp;<font style="color:red;">*</font></td>
+                                        <td style="height: 150px;">
+                                            <apex:inputTextarea cols="50" required="true" rows="6" value="{!prf.Data_Driven_Justification__c}"/>
+
+                                        </td>
+                                    </tr>
+                                    <apex:variable var="a" value="" rendered="{!contains($UserRole.Name,'Latin America') || contains($UserRole.Name,'Commercial Operations') || contains($UserRole.Name,'Teleflex Global IT')}">
+                                    <tr>
+                                        <td align="right">PRF Promotion-related&nbsp;</td>
+                                        <td>
+                                            <apex:inputField value="{!prf.PRF_Promotion_related__c}" />
+                                        </td>
+                                    </tr>
+                                    </apex:variable>
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <apex:commandButton rendered="{!createPath = FALSE}" action="{!save}" rerender="dPanel" styleClass="btn btn-primary btn-sm" value=" Save PRF " status="actStatusId"/>&nbsp;&nbsp;&nbsp;
+                                            <apex:commandButton rendered="{!createPath = TRUE}" action="{!save}" rerender="dPanel" styleClass="btn btn-primary btn-sm" value=" Create PRF " status="actStatusId"/>&nbsp;&nbsp;&nbsp;
+
+                                            <apex:variable var="p" value="" rendered="{!$CurrentPage.parameters.pqId != NULL}">
+                                            <a href="/apex/PP_Price_Quote?pqid={!$CurrentPage.parameters.pqId}" class="btn btn-primary btn-sm">Cancel</a>
+                                            </apex:variable>
+
+                                            <apex:variable var="p" value="" rendered="{!$CurrentPage.parameters.pqid = NULL && $CurrentPage.parameters.step != NULL}">
+                                            <a href="/apex/PP_GPO_Matrix" class="btn btn-primary btn-sm">Cancel</a>
+                                            </apex:variable>
+
+                                            <apex:variable var="p" value="" rendered="{!$CurrentPage.parameters.id != NULL}">
+                                            <a href="/apex/PP_PRF?id={!$CurrentPage.parameters.id}" class="btn btn-primary btn-sm">Cancel</a>
+                                            </apex:variable>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </apex:outputPanel>
+
+                                <!-- Loading image Start-->
+                                <apex:actionstatus id="actStatusId">
+                                    <apex:facet name="start">
+                                        <div class="waitingSearchDiv" id="is_loading" style="background-color: #DCD6D6;
+                                                                                             height: 100%;opacity:0.65;width:100%;">
+                                            <div class="waitingHolder" style="middle: 100px; width: 100px;">
+                                                <img class="waitingImage" src="{!$Resource.LoadingGif}" title="Please Wait..." />
+                                                <span class="waitingDescription">Loading...</span>
+                                            </div>
+                                        </div>
+                                    </apex:facet>
+                                </apex:actionstatus>
+                                <!-- Loading image End-->
+
+                            </apex:form>
+                        </div>
+                    </div>
+                    <!-- End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:page>

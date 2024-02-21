@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Eloqua_Sharing_w_Resp</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>created so Resp Marketing can view leads owned by the Eloqua service user</description>
+        <label>Eloqua Sharing w/ Resp</label>
+        <sharedTo>
+            <role>Respiratory_Marketing</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>005440000087MZm</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Surgical_Inside_Sales_Coverage</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>So Cal can see all Leads owned by Heather&apos;s Team</description>
+        <label>Surgical Inside Sales Coverage</label>
+        <sharedTo>
+            <group>Surgical_Inside_Sales_Coverage</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Lead_Owner_Manager_Email__c</field>
+            <operation>equals</operation>
+            <value>heather.doneth@teleflex.com</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Urology_Sample_Request_Notification_2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Urology Sample Request Notification 2</label>
+        <sharedTo>
+            <group>Cathi_Repetto</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Lead_Source_URL__c</field>
+            <operation>equals</operation>
+            <value>https://www.teleflex.com/usa/en/product-areas/urology/form/index.html</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>ANZ_Marketing_View_All</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ANZ Marketing View All</label>
+        <sharedTo>
+            <group>ANZ_Marketing_View_All_Leads_Campaigns</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TFX_ANZ_Managing_Director</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>ANZ_Marketing_View_EditAll</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ANZ Marketing View &amp; EditAll</label>
+        <sharedTo>
+            <group>ANZ_Marketing_View_Edit_all_Camp_Leads</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>TFX_ANZ_Managing_Director</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Anesthesia_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Anesthesia Marketing</label>
+        <sharedTo>
+            <role>Anesthesia_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Anesthesia_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Brazil_IUBU_Team_Leads</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Shares leads amongst members of the group.</description>
+        <label>Brazil IUBU Team Leads</label>
+        <sharedTo>
+            <group>Brazil_IUBU_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Brazil_IUBU_Team</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Canadian_IA_Leads</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Grants sharing of Canadian IA Leads with IA NA VP</description>
+        <label>Canadian IA Leads</label>
+        <sharedTo>
+            <role>Interventional_Access_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_DIR_Canada</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Chris_Guerra</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Chris Guerra needs to be able to Access EMS South East Leads</description>
+        <label>Chris Guerra</label>
+        <sharedTo>
+            <group>Chris_Guerra</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>EMS_MSR_South_East</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>EMS_Marketing_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>EMS Marketing Team</label>
+        <sharedTo>
+            <role>Anesthesia_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>EMS_Director_of_Sales_East</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>LATAM_Marketing_Sharing_All_LATAM_Leads</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>In order for LATMA Marketing to see All Leads marked as BU Latin America or owned by Executives</description>
+        <label>LATAM Marketing Sharing All LATAM Leads</label>
+        <sharedTo>
+            <role>Latin_America_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Latin_America_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Larry_Corscadden_Ted_Diamond_Gilbert</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Larry Corscadden,Ted Diamond &gt; Gilbert</label>
+        <sharedTo>
+            <role>Anesthesia_RSM_Canada</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>Ted_Diamond_Larry_Corscadden</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Latam_Assignment_Queue</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Latam Assignment Queue</label>
+        <sharedTo>
+            <role>Latin_America_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <queue>LatAm_Lead_Assignment_Queue</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Lead_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Lead Sharing</label>
+        <sharedTo>
+            <role>Surgical_Disposables_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Surgical_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Urology_Sample_Request_Notification</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Urology Sample Request Notification</label>
+        <sharedTo>
+            <group>Cathi_Repetto</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Anesthesia_Marketing</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Central</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular Central</label>
+        <sharedTo>
+            <role>Vascular_KAM_Central</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_Central</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Central_Atlantic</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular Central Atlantic</label>
+        <sharedTo>
+            <role>Vascular_KAM_Central_Atlantic</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_Central_Atlantic</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Great_Lakes</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular Great Lakes</label>
+        <sharedTo>
+            <role>Vascular_KAM_Great_Lakes</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_Great_Lakes</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Marketing_Leads</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Michele Schicchi couldn&apos;t see Bo&apos;s Leads and he reports to her.</description>
+        <label>Vascular Marketing Leads</label>
+        <sharedTo>
+            <role>Vascular_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_Marketing</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Northeast</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular Northeast</label>
+        <sharedTo>
+            <role>Vascular_KAM_Northeast</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_Northeast</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Pacific</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular Pacific</label>
+        <sharedTo>
+            <role>Vascular_RCEM_Northwest_Pacific</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_Pacific</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_South_Atlantic</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular South Atlantic</label>
+        <sharedTo>
+            <role>Vascular_KAM_South_Atlantic</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_South_Atlantic</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_South_Central</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular South Central</label>
+        <sharedTo>
+            <role>Vascular_KAM_South_Central</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_South_Central</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Southeast</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular Southeast</label>
+        <sharedTo>
+            <role>Vascular_KAM_Southeast</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_Southeast</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

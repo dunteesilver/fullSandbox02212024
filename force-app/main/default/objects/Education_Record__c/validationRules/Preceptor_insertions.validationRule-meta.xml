@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preceptor_insertions</fullName>
+    <active>true</active>
+    <description>If Type Inservice = Preceptorship user must enter # of Insertions</description>
+    <errorConditionFormula>AND(Includes(Type_of_In_Service__c , &quot;Preceptorship&quot;), ISNULL( Preceptorship_Insertions__c  ))</errorConditionFormula>
+    <errorDisplayField>Preceptorship_Insertions__c</errorDisplayField>
+    <errorMessage>If type of inservice includes Preceptorship, you must enter # Insertions CE Present for</errorMessage>
+</ValidationRule>

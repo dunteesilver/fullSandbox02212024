@@ -1,0 +1,131 @@
+<apex:page title="IDN Matrix - {!ownerID}" controller="PP_IDN_Matrix" cache="true" tabStyle="Pricing_Portal__tab" sidebar="false">
+
+<!-- Set the Active Menu -->
+<apex:variable var="GPO_Active" value="active" />
+    
+<!-- Render the rest of the page -->    
+    <div class="teleflex">
+        <!-- Call the Menu -->    
+    	<apex:include id="menu" pageName="PP_Menu"/>
+        <!-- Matrix Search Results -->
+        <div class="contain-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <apex:outputPanel rendered="{!ownerID != NULL}">
+                        <!-- Contract Security Issue -->
+                        <apex:outputPanel rendered="{!IDNlist.size = 0}">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"><h6 class="panel-title"><img src="/img/msg_icons/warning32.png" alt="Contract Details"/>&nbsp;&nbsp;Access to {!ownerID}</h6></div>
+                                <div class="panel-body">
+                                    <div class="Container">
+                                        <div class="Row"><h4><br/><br/>Please contact <u><a href="mailtp:contractservices@teleflex.com">Contract Services</a></u> if you have questions about your access to: <strong>{!ownerID}</strong></h4><br/><br/><br/></div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">&nbsp;</div>
+                                <!-- End Panel -->
+                            </div>
+                        </apex:outputPanel>
+                        <!-- Normal Pull -->
+                        <apex:outputPanel rendered="{!IDNlist.size > 0}">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands24.png" alt="Contract Details"/>&nbsp;&nbsp;{!ownerName} / {!ownerID}</h6></div>
+                                <div class="panel-body">
+                                    <!-- Button! -->
+                                    <div class="text-right">
+                                        <a href="/apex/PP_Membership_Export?oid={!ownerID}" class="btn btn-primary btn-sm">View Membership</a><br/>&nbsp;
+                                    </div>
+                                    <div class="text-right">
+                                        <a href="/apex/PP_Membership_Export_XLS?oid={!ownerID}" class="btn btn-primary btn-sm">Download Membership</a><br/>&nbsp;
+                                    </div>
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <tr>
+                                            <th class="col-md-1">Agreement</th>
+                                            <th class="col-md-3">Description</th>
+                                            <th class="col-md-1">Division</th>
+                                            <th class="col-md-1">Customers</th>
+                                            <th class="col-md-1">Start</th>
+                                            <th class="col-md-1">End</th>
+                                        </tr>
+                                        <apex:repeat value="{!IDNlist}" var="idn">
+                                            <tr>
+                                                <td>
+                                                    <apex:outputLink rendered="{!idn.Material_Count__c > 0}" value="/apex/PP_Agreement_Detail?aid={!idn.Agreement_Number__c}">{!idn.Agreement_Number__c}</apex:outputLink>
+                                                    <apex:outputText rendered="{!idn.Material_Count__c = 0}">{!idn.Agreement_Number__c}</apex:outputText>
+                                                </td>
+                                                <td class="text-nowrap"><apex:outputText value="{!idn.Description__c}" escape="false"/></td>
+                                                <td>
+                                                    <apex:outputText value="{!idn.Group_Name__c}" />
+                                                    <!--
+                                                    <apex:outputText rendered="{!idn.Division_10__c == TRUE}" value="Anesthesia " />
+                                                    <apex:outputText rendered="{!idn.Division_20__c == TRUE}" value="Surgical "/>
+                                                    <apex:outputText rendered="{!idn.Division_30__c == TRUE}" value="30 "/>
+                                                    <apex:outputText rendered="{!idn.Division_40__c == TRUE}" value="Vascular "/>
+                                                    <apex:outputText rendered="{!idn.Division_50__c == TRUE}" value="Respiratory "/>
+                                                    <apex:outputText rendered="{!idn.Division_60__c == TRUE}" value="Cardiac"/>
+                                                    <apex:outputText rendered="{!idn.Material_Count__c = 0}" value="No Material"/>
+                                                    -->
+                                                </td>
+                                                <td>
+                                                    <a href="/apex/PP_Active_Customer?aid={!idn.Agreement_Number__c}">View ({!idn.Account_Count__c})</a>                                    
+                                                </td>
+                                                <td>
+                                                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                        <apex:param value="{!idn.Valid_From__c}" />
+                                                    </apex:outputText>
+                                                </td>
+                                                <td>
+                                                    <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                        <apex:param value="{!idn.Valid_To__c}" />
+                                                    </apex:outputText>
+                                                </td>
+                                            </tr>
+                                        </apex:repeat>
+                                    </table>
+                                    <!-- Button! -->
+                                    <div class="text-right">
+                                        <a href="/apex/PP_Membership_Export?oid={!ownerID}" class="btn btn-primary btn-sm">View Membership</a><br/>&nbsp;
+                                    </div>
+                                    <div class="text-right">
+                                        <a href="/apex/PP_Membership_Export_XLS?oid={!ownerID}" class="btn btn-primary btn-sm">Download Membership</a><br/>&nbsp;
+                                    </div>
+                                </div>
+                                <div class="panel-footer">&nbsp;</div>
+                                <!-- End Panel -->
+                            </div>
+                        </apex:outputPanel>
+                        
+                    </apex:outputPanel>
+                    
+                    <!-- Default Homepage -->
+                    <apex:outputPanel rendered="{!ownerID == NULL}">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"><h6 class="panel-title"><img src="/img/icon/hands32.png" alt="Contract Details"/>&nbsp;&nbsp;IDN Contract Matrix</h6></div>
+                            <div class="panel-body">
+                                <table class="table table-striped table-hover table-bordered">
+                                    <apex:repeat value="{!Items}" var="key">
+                                        <tr><td class="col-md-1"><apex:outputLink value="/apex/PP_IDN_Matrix?oid={!key.Key__c}">{!key.name}</apex:outputLink></td></tr>
+                                    </apex:repeat>
+                                </table>
+                            </div>
+                        <div class="panel-footer panel-primary">&nbsp;</div>
+                        </div> 
+                    </apex:outputPanel>
+                    <!-- Close out the teleflex DIV and table -->
+                </div></div></div></div>
+    <script>
+    $('th').click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc){rows = rows.reverse()}
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+    })
+    function comparer(index) {
+        return function(a, b) {
+            var valA = getCellValue(a, index), valB = getCellValue(b, index)
+            return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+        }
+    }
+    function getCellValue(row, index){ return $(row).children('td').eq(index).html() }
+    </script>
+</apex:page>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>CM_Agreement_Code</fullName>
+        <field>Agreement_Number_Text__c</field>
+        <formula>Agreement__r.Agreement_Number__c</formula>
+        <name>CM - Agreement Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Fix_DIR_Price</fullName>
+        <field>Director_Price__c</field>
+        <formula>Product__r.Director_Price__c</formula>
+        <name>CM - Fix DIR Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Fix_Level_Fix</fullName>
+        <field>Level_Fix__c</field>
+        <formula>Agreement__r.Pricing_Tier_Access_Debug__c</formula>
+        <name>CM - Fix Level Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Fix_List_Price</fullName>
+        <field>List_Price__c</field>
+        <formula>Product__r.List_Price__c</formula>
+        <name>CM - Fix List Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Fix_RSM_Price</fullName>
+        <field>RSM_Price__c</field>
+        <formula>Product__r.RSM_Price__c</formula>
+        <name>CM - Fix RSM Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Fix_Rep_Price</fullName>
+        <field>Rep_Price__c</field>
+        <formula>Product__r.Rep_Price__c</formula>
+        <name>CM - Fix Rep Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Fix_VP_Price</fullName>
+        <field>VP_Price__c</field>
+        <formula>Product__r.VP_Price__c</formula>
+        <name>CM - Fix VP Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Material_Key</fullName>
+        <field>Material_Key__c</field>
+        <formula>Product__r.Material_Key__c</formula>
+        <name>CM - Material Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Material_Key2</fullName>
+        <field>Material_Lookup_Key__c</field>
+        <formula>Product__r.Material_Key__c</formula>
+        <name>CM - Material Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CM_Sync_GPO_Ref</fullName>
+        <field>GPO_Contract_Ref__c</field>
+        <formula>Agreement__r.GPO_Contract_Ref__c</formula>
+        <name>CM - Sync GPO Ref</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Material_Material_Division</fullName>
+        <field>Material_Division__c</field>
+        <formula>Product__r.Division__c</formula>
+        <name>Contract Material - Material Division</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Material_Name_Fix</fullName>
+        <field>Name</field>
+        <formula>Material_Name__c &amp; &quot; - &quot; &amp; Agreement_Number__c</formula>
+        <name>Contract Material - Name Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CM - Agreement Number and Material Key</fullName>
+        <actions>
+            <name>CM_Agreement_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CM_Material_Key2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( 
+ISBLANK(Agreement_Number_Text__c), 
+ISBLANK(Material_Lookup_Key__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CM - Fix Level Fix</fullName>
+        <actions>
+            <name>CM_Fix_Level_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(
+Level_Fix__c &lt;&gt; Agreement__r.Pricing_Tier_Access_Debug__c,
+ISBLANK(Level_Fix__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CM - Fix Product Compare Pricing</fullName>
+        <actions>
+            <name>CM_Fix_DIR_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CM_Fix_List_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CM_Fix_RSM_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CM_Fix_Rep_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CM_Fix_VP_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(
+List_Price__c &lt;&gt; Product__r.List_Price__c,
+Rep_Price__c &lt;&gt; Product__r.Rep_Price__c,
+RSM_Price__c &lt;&gt; Product__r.RSM_Price__c,
+Director_Price__c &lt;&gt; Product__r.Director_Price__c,
+VP_Price__c &lt;&gt; Product__r.VP_Price__c,
+ISBLANK(List_Price__c),
+ISBLANK(Rep_Price__c),
+ISBLANK(RSM_Price__c),
+ISBLANK(Director_Price__c),
+ISBLANK(VP_Price__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CM - Sync GPO Ref</fullName>
+        <actions>
+            <name>CM_Sync_GPO_Ref</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Agreement__r.GPO_Contract_Ref__c &lt;&gt; GPO_Contract_Ref__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Material - Name Fix</fullName>
+        <actions>
+            <name>Contract_Material_Material_Division</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>The only one that needs to move to Production.
+
+OR(
+Name &lt;&gt; Product__r.Name, 
+Material_Name__c &lt;&gt; Product__r.Name, 
+Material_Division__c &lt;&gt;  Product__r.Division__c 
+)</description>
+        <formula>Material_Division__c &lt;&gt; Product__r.Division__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Material - Name Fixer</fullName>
+        <actions>
+            <name>Contract_Material_Name_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Name &lt;&gt; Material_Name__c &amp; &quot; - &quot; &amp; Agreement_Number__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fix Currency</fullName>
+        <active>false</active>
+        <formula>AND(Sales_Org__c = &apos;CA10&apos;,  Currency_Code__c != &quot;CAD&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tier_Level_Name__c</fullName>
+    <description>CASE(Level__c, 
+1, &quot;REP&quot;, 
+2, &quot;RSM&quot;,
+3, &quot;DIR&quot;,
+4, &quot;VP&quot;,
+&quot;Out of Range&quot;
+)</description>
+    <externalId>false</externalId>
+    <formula>IF( AND(Level__c = 1,CONTAINS(Agreement__r.GPO_Contract_Ref__c, &quot;-N&quot;),Sales_Org__c = &quot;CA10&quot; ),&quot;National Tier&quot;,
+IF(
+Level__c = 1, &quot;REP&quot;,
+IF(
+Level__c = 2, &quot;RSM&quot;,
+IF(
+Level__c = 3, &quot;DIR&quot;,
+IF(
+Level__c = 4, &quot;VP&quot;,&quot;Out of Range&quot;
+)
+)
+)
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tier Level Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

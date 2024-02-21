@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recovery_Date__c</fullName>
+    <description>This field is loaded via Data Loader.
+Requested by Interventional BU as they need to track Recovery Date on Product which is not available on SAP side.</description>
+    <externalId>false</externalId>
+    <label>Recovery Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

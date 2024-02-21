@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>R211P03_036__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>MaxVenturi® Blender Setup</inlineHelpText>
+    <label>R211P03-036</label>
+    <summarizedField>VPS_Consumables__c.Quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>VPS_Consumables__c.Product_Text__c</field>
+        <operation>equals</operation>
+        <value>R211P03-036</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>VPS_Consumables__c.Sales__c</field>
+        <operation>equals</operation>
+        <value>0,</value>
+    </summaryFilterItems>
+    <summaryForeignKey>VPS_Consumables__c.VPS_Contract__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Assignment_Report</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Territory Assignment Report</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00OE0000002VRhN?pc0=00NE0000005L0e2&amp;pn0=eq&amp;pv0={!Territory_Master__c.Name}</url>
+</WebLink>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Heater_Contracts_Active</fullName>
+    <active>true</active>
+    <errorConditionFormula>( RecordType.DeveloperName =&quot;Heater Contracts&quot;) &amp;&amp; (Active__c= FALSE) &amp;&amp;  Days_to_Expire__c   &gt;  0</errorConditionFormula>
+    <errorMessage>Please mark the speciality Contract as active.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,3093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Actual_of_Attendees</fullName>
+        <description>Actual # of Attendees</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Fill_in_Actual_of_Attendees</template>
+    </alerts>
+    <alerts>
+        <fullName>Anes_EMS_Final_Approval_Email</fullName>
+        <description>Anes/EMS Final Approval Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Anes_EMS_EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Attendees_You_Followed_Up_With</fullName>
+        <description># Attendees You Followed Up With Email Action</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Fill_in_the_Attendees_You_Followed_Up_With</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Cadaveric_Tissue_Notification_after_Approval</fullName>
+        <description>CE Cadaveric Tissue - Notification after Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CE_CT_Notification_upon_approval_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_No_Travel_Required_Send_to_CE_ACE</fullName>
+        <description>CE - No Travel Required Send to CE ACE</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CE_CE_Travel_No_Required_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Travel_Approved_Send_to_CE_ACE</fullName>
+        <description>CE - Travel Approved Send to CE ACE</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CE_CE_Travel_Required_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Travel_Approved_Send_to_CE_ACE1</fullName>
+        <description>CE - Travel Approved Send to CE ACE</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CE_CE_Travel_Required_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>CMA_Lab_Approved_steps_1_and_2</fullName>
+        <description>CMA Lab Approved - steps 1 and 2</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Notification_of_Initial_Approval_CMA_Lab</template>
+    </alerts>
+    <alerts>
+        <fullName>CMA_Lab_Request_Submitted</fullName>
+        <description>CMA Lab Request Submitted</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>kelli.thomas@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.oliver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>terri.camp@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Notification_of_Rqst_for_Apvl_CMA_Lab_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>CMA_Missing_Information_Email_Action</fullName>
+        <description>CMA Missing Information Email Action</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>brandon.burney@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>joanna.webb@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>joey.selleck@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>WorkflowTemplates/CMA_Missing_Start_Date_End_Date_or_Course_Type</template>
+    </alerts>
+    <alerts>
+        <fullName>CMA_Vetting_Lab</fullName>
+        <description>CMA Vetting Lab</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CMA_Vetting_Lab_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>CMA_Vetting_Speaker</fullName>
+        <description>CMA Vetting Speaker</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CMA_Vetting_Speaker_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Cadaver_lab_notification</fullName>
+        <description>CMA Procedural Lab Request Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.reyer@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jim.blosser@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>joshua.nuelken@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>WorkflowTemplates/Cadaver_lab_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Cancelled_Education</fullName>
+        <description>Cancelled Education</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>madhav.arepalli@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>valerie.mueller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_TFX_Academy_Cancelled</template>
+    </alerts>
+    <alerts>
+        <fullName>DNU_Email_Notice_GPO_Difference</fullName>
+        <description>DNU Email Notice GPO Difference</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>archana.nayini@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>DNU/GPO_Notice</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Teleflex_Academy_Team_EMS</fullName>
+        <description>Email Teleflex Academy Team EMS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_EZIO_approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_to_VA_CMA_for_Clinical_Contractor_is_requested</fullName>
+        <description>Email to VA CMA for Clinical Contractor is requested</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>VA_CMA</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_CMA_Notification_of_Contractor_request</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval</fullName>
+        <description>Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_AEM_Lab</fullName>
+        <description>Final Approval: AEM Lab</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.reyer@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kelli.thomas@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.oliver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.reis@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>terri.camp@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CMA_Lab_Request_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Anesthesia_EMS_Rep_CEM_Training_Request</fullName>
+        <description>Final Approval - Education Request CEM and Rep</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Additional_Clinical_Educator_Email_2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Additional_Clinical_Educator_Email_3__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Clinical_Educator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_CMASpeaker</fullName>
+        <description>Final Approval CAM Speaker Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_IA_Lab</fullName>
+        <description>Final Approval: IA Lab</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.oliver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CMA_Lab_Request_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Live_Education</fullName>
+        <description>Final Approval - Live Education</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_VA_Lab</fullName>
+        <description>Final Approval: VA Lab</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>kelli.thomas@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.oliver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>terri.camp@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CMA_Lab_Request_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection</fullName>
+        <description>Final Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.reyer@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kelli.thomas@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.oliver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.reis@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>terri.camp@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Rejected_Final_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_CMA_Lab</fullName>
+        <description>Final Rejection - CMA Lab</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>kelli.thomas@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.oliver@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>terri.camp@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Notification_of_Final_Rjctn_CMA_Lab_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Education_Request_CEM_and_Rep</fullName>
+        <description>Final Rejection - Education Request CEM and Rep</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Additional_Clinical_Educator_Email_2__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Additional_Clinical_Educator_Email_3__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Clinical_Educator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Rejected_Final_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Live_Education</fullName>
+        <description>Final Rejection - Live Education</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Rejected_Final_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Follow_Up_Training_Record_Request</fullName>
+        <description>Follow-Up Training Record Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>WorkflowTemplates/Follow_Up_Training_Record_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>Hotel_Travel_Approved</fullName>
+        <description>Hotel/Travel Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Hotel_Travel_Approved1</fullName>
+        <description>Hotel/Travel Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Hotel_Travel_Rejected</fullName>
+        <description>Hotel/Travel Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Rejected_Final_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>IA_Record_Type_Final_Approval_Email_Action</fullName>
+        <description>IA Record Type Final Approval Email Action</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>erin.hill@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>WorkflowTemplates/IA_EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Initial_Rejection_CEM</fullName>
+        <description>Initial Rejection CEM</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Rejected_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Inservice_Record_Final_Approval</fullName>
+        <description>Inservice Record - Final Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Inservice_Record_Final_Rejection</fullName>
+        <description>Inservice Record - Final Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Rejected_Final_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>New_ANES_EMS_Education_Record_Requesting_Teleflex_Academy</fullName>
+        <description>New ANES/EMS Education Record Requesting Teleflex Academy</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>WorkflowTemplates/Education_Record_Requesting_Teleflex_Academy</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Education_Record_anesthesia</fullName>
+        <description>New Education Record - Anesthesia</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>giovanna.link@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rhianna.jobe@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/CE_New_Anesthesia_Education_Record_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_for_EZ_IO_Training</fullName>
+        <description>Notification for EZ-IO Training</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>corkey.devlin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_EZIO_approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Notifiy_Valerie_Mueller_for_VA</fullName>
+        <ccEmails>teleflexacademy@teleflex.com</ccEmails>
+        <description>Notifiy Valerie Mueller for VA</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>madhav.arepalli@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_is_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Jen_a_Clinical_has_created_a_EduRec</fullName>
+        <description>Notify Jen a Clinical has created a EduRec</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>fred.sorino@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Notify_Jen_a_Clinical_has_created_a_EduRec</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Samples_Approved</fullName>
+        <description>Product Samples Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_Product_Samples_l_Approved_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Samples_Rejected</fullName>
+        <description>Product Samples Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/EdRecord_Product_Samples_l_Rejected_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_on_Hold</fullName>
+        <description>Request on Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Request_on_Hold_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Resubmission_of_Edu_record_after_approval_due_to_Clinical_contractor</fullName>
+        <description>Resubmission of Edu record after approval due to Clinical contractor</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>VA_CMA</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Education_Contractor_has_been_added_after_approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Strategic_Marketing_Approval_Notification_RCEM_Final</fullName>
+        <description>Strategic Marketing Approval Notification RCEM/Final</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>corkey.devlin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Strategic_Marketing_Approval_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Strategic_Marketing_Rejection</fullName>
+        <description>Strategic Marketing Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>corkey.devlin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Strategic_Marketing_Rejection_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Strategic_Marketing_Submission_Notification</fullName>
+        <description>Strategic Marketing Submission Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>corkey.devlin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Education_Records/Strategic_Marketing_Submitted_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>Surgical_Bariatric_CMA_initial_Notification</fullName>
+        <description>Surgical Bariatric CMA initial Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>carol.milroy@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>derrick.young@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gary.klimek@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/INTV_Request_for_Approval_EdRequest_VF</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_5_day_RCEM_CEM_email_notification_for_Education_Record</fullName>
+        <description>VA immediate and 5 day RCEM CEM email notification for Education Record</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_EDU_CEM_15_Day_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_CMA_Clinical_Sales_Speaker_Program_has_been_Marked_as_Training_Complete</fullName>
+        <ccEmails>Victoria.Alff@teleflex.com</ccEmails>
+        <description>VA CMA Clinical Sales Speaker Program has been Marked as Training Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amy.bardin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_CMA_Clinical_Sales_Speaker_Program_has_been_Marked_as_Training_Complete</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_CMA_Needs_Assessment</fullName>
+        <description>VA CMA Needs Assessment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>HiddenContactEmailField__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>joanna.webb@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/VA_CMA_Needs_Assesment</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_CS_Speaker_Program_Record_Approved_by_RCSM</fullName>
+        <description>VA CS Speaker Program Record Approved by RCSM</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amy.bardin@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rebekah.tessitore@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>victoria.alf@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>WorkflowTemplates/VA_CS_Record_Approved_by_RCSM</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_EDU_Sales_rep_immediate_and_5_Day_Notification</fullName>
+        <description>VA EDU Sales rep immediate and 5 Day Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_EDU_Sales_rep_immediate_and_5_Day_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_Education_Contractor_added_to_training_request</fullName>
+        <description>VA Education Contractor added to training request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_Education_Contractor_added_to_training_request</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_Missing_information_during_approval_process</fullName>
+        <description>VA clinical sales Missing information during approval process</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/Missing_Start_Date_End_Date_or_Course_Type</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_Training_creation_and_submit_for_approval</fullName>
+        <description>VA Training creation and submit for approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_Training_creation_and_submit_for_approval</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_Vendor_credentialing_is_missing</fullName>
+        <description>VA Vendor credentialing is missing</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>grant.smith@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_Vendor_Credentialing_is_Missing</template>
+    </alerts>
+    <alerts>
+        <fullName>VA_immediate_and_5_day_CMA_email_notification_for_Education_Record</fullName>
+        <description>VA immediate and 5 day CMA email notification for Education Record</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>VA_CMA</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/VA_EDU_CMA_immediate_and_5_Day_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>X2019_VA_Final_Approval_Notification_For_Clinical_Sales_CMA_Program_RTs</fullName>
+        <description>2019 VA Final Approval Notification For Clinical Sales &amp; CMA Program RTs</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RCEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>RSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Rep__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/X2019_VA_EdRecord_is_Approved_VF</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Additional_CE_2_Email</fullName>
+        <field>Additional_Clinical_Educator_Email_2__c</field>
+        <formula>Clinical_Educator2__r.E_mail_Address__c</formula>
+        <name>CE - Additional Educator 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval_Status_to_Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_CEM_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>CEM Approved</literalValue>
+        <name>Approval Status to CEM Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Recalled</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Approval_Status_to_Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_SteepRock</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>SteepRock</literalValue>
+        <name>Approval Status to SteepRock</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CE_Additional_Educator_2</fullName>
+        <field>Additional_Clinical_Educator_Email_2__c</field>
+        <formula>Clinical_Educator2__r.E_mail_Address__c</formula>
+        <name>CE - Additional Educator 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CE_CMA_Stage_to_AEM_Input</fullName>
+        <description>CE - CMA Stage to AEM Input</description>
+        <field>Stage__c</field>
+        <literalValue>AEM Input</literalValue>
+        <name>CE - CMA Stage to AEM Input</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CE_Clinical_Educator_Update_Email</fullName>
+        <field>Clinical_Educator_Email__c</field>
+        <formula>Clinical_Educator__r.E_mail_Address__c</formula>
+        <name>CE - Clinical Educator Update Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CE_Stage_set_to_Training_Completed</fullName>
+        <field>Stage__c</field>
+        <literalValue>Training Completed</literalValue>
+        <name>CE - Stage set to Training Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CMA_Email_has_been_fired</fullName>
+        <field>CMAEmailhasbeenfired__c</field>
+        <literalValue>1</literalValue>
+        <name>CMA Email has been fired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CMA_Record_IS_Name</fullName>
+        <field>Name</field>
+        <formula>IF(ISBLANK(Date_of_Event_Start__c), 
+
+LEFT( 
+
+Account_Facility__r.Name &amp; &quot; * &quot; &amp; TEXT(Start_Date__c) &amp; &quot; * &quot; &amp; Account_Facility__r.BillingCity &amp; &quot;,&quot; &amp; Account_Facility__r.BillingState,80), 
+
+LEFT( 
+Account_Facility__r.Name &amp;&quot; * &quot;&amp; TEXT(Date_of_Event_Start__c) &amp;&quot; * &quot;&amp;Account_Facility__r.BillingCity &amp;&quot;, &quot;&amp; Account_Facility__r.BillingState,80))</formula>
+        <name>CMA Record IS Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CMA_Vetting</fullName>
+        <field>Stage__c</field>
+        <literalValue>CMA Vetting</literalValue>
+        <name>CMA Vetting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSS_Review_Update</fullName>
+        <field>Stage__c</field>
+        <literalValue>CSS Review</literalValue>
+        <name>CSS Review Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancel_Training_Request</fullName>
+        <field>Stage__c</field>
+        <literalValue>Cancelled</literalValue>
+        <name>Cancel Training Request</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Stage_to_Confirmed</fullName>
+        <field>Stage__c</field>
+        <literalValue>Confirmed</literalValue>
+        <name>Change Stage to Confirmed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Status_to_Confirmed</fullName>
+        <field>Stage__c</field>
+        <literalValue>Confirmed</literalValue>
+        <name>Change Status to Confirmed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_stage_to_cancelled</fullName>
+        <field>Stage__c</field>
+        <literalValue>Cancelled</literalValue>
+        <name>Change stage to cancelled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Confirmed_End_Date_is_Today</fullName>
+        <field>Ending_Date__c</field>
+        <formula>Today()</formula>
+        <name>Confirmed_End_Date_is_Today</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Confirmed_Start_Date_Today</fullName>
+        <field>Date_of_Event_Start__c</field>
+        <formula>Today()</formula>
+        <name>Confirmed_Start_Date_Today</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Created_by_Role_Field_Update</fullName>
+        <field>CreatedbyRole__c</field>
+        <formula>CreatedBy.UserRole.Name</formula>
+        <name>Created by Role Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EdRecord_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>EdRecord Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EdRecord_Recalled</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>EdRecord Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EdRecord_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>EdRecord Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EdRecord_Status_Recalled</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>EdRecord Status Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EdRecord_Status_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>EdRecord Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EdRecord_Submitted</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>EdRecord Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Education_Record_Submitted</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Education Record Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approval_Date_Filled</fullName>
+        <field>Final_Approval_Date__c</field>
+        <formula>Now()</formula>
+        <name>Final Approval Date Filled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Hotel_Request_No</fullName>
+        <field>Hotel_Requested__c</field>
+        <literalValue>No</literalValue>
+        <name>Hotel Request = No</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>IS_NAme_Update_Respiratory_Records</fullName>
+        <field>Name</field>
+        <formula>LEFT((&quot;Respiratory&quot; &amp; &quot; - &quot; &amp; Account_Facility__r.Name &amp; &quot; - &quot; &amp; TEXT(Date_of_Event_Start__c)),80)</formula>
+        <name>IS NAme Update - Respiratory Records</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>IS_Name_Update_Cancelled_Requests</fullName>
+        <field>Name</field>
+        <formula>&quot;Cancelled&quot; &amp; &quot; - &quot; &amp; LEFT( TEXT(VACourseType1__c)  &amp; &quot; - &quot; &amp; TEXT( VAProduct1__c ) &amp; &quot; - &quot; &amp; Account_Facility__r.Name &amp; &quot; - &quot; &amp; Department_Unit_Focus_Vetting__c &amp; &quot; &quot;&amp; TEXT(Date_of_Event_Start__c),68)</formula>
+        <name>IS Name Update - Cancelled Requests</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>In_Review_Stage_Update</fullName>
+        <field>Stage__c</field>
+        <literalValue>In Review</literalValue>
+        <name>In Review Stage Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Inservice_Record_Cancelled</fullName>
+        <field>Stage__c</field>
+        <literalValue>Cancelled</literalValue>
+        <name>Inservice Record - Cancelled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Inservice_Records_Confirmed</fullName>
+        <field>Stage__c</field>
+        <literalValue>Confirmed</literalValue>
+        <name>Inservice Records - Confirmed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Is_Name_Update</fullName>
+        <field>Name</field>
+        <formula>LEFT((Course_Type__c &amp; &quot; - &quot; &amp;  TEXT(Primary_Product__c) &amp; &quot; - &quot; &amp;  Account_Facility__r.Name  &amp; &quot; - &quot; &amp;   Department_Unit_Focus_Vetting__c &amp; &quot; &quot;&amp;  TEXT(Date_of_Event_Start__c)),80)</formula>
+        <name>Is Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_TFA_as_NO</fullName>
+        <field>Add_to_Teleflex_Academy__c</field>
+        <literalValue>No</literalValue>
+        <name>Mark TFA as NO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Needs_Assessment_Sent_Waiting_on_Acct</fullName>
+        <field>CMAVettingStep__c</field>
+        <literalValue>Needs Assessment Sent - Waiting on Account</literalValue>
+        <name>Needs Assessment Sent - Waiting on Acct</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Place_on_Hold</fullName>
+        <field>Stage__c</field>
+        <literalValue>Hold</literalValue>
+        <name>Place on Hold</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RCSM_Review_Update</fullName>
+        <field>Stage__c</field>
+        <literalValue>RCSM Review</literalValue>
+        <name>RCSM Review Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RSM_Review</fullName>
+        <field>Stage__c</field>
+        <literalValue>RSM Review</literalValue>
+        <name>RSM Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Region_Update</fullName>
+        <field>Region__c</field>
+        <formula>TEXT(Sales_Rep__r.Region__c)</formula>
+        <name>Region Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Stage_to_New</fullName>
+        <field>Stage__c</field>
+        <literalValue>NEW</literalValue>
+        <name>Set_Stage_to_New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SteepRock_Validation_Checkbox_Update</fullName>
+        <field>SteepRockValidationCheckbox__c</field>
+        <literalValue>1</literalValue>
+        <name>SteepRock Validation Checkbox Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_Update</fullName>
+        <field>Territory__c</field>
+        <formula>Sales_Rep__r.Territory__c</formula>
+        <name>Territory Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Training_Completed</fullName>
+        <field>Stage__c</field>
+        <literalValue>Training Completed</literalValue>
+        <name>Training Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Cancel_Training</fullName>
+        <field>CancelRecord__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Cancel Training</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Place_on_Hold</fullName>
+        <field>PlaceonHold__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Place on Hold</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Send_email_2_msr_4_fu_training</fullName>
+        <field>SendEmailtoMSR4FUTraining__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Send email 2 msr 4 fu training</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VAEDU_Stage_Update_to_CEM_Review</fullName>
+        <field>Stage__c</field>
+        <literalValue>CEM Review</literalValue>
+        <name>EDU Stage Update to CEM Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VAEDU_Stage_Update_to_CMA_Vetting</fullName>
+        <field>Stage__c</field>
+        <literalValue>CMA Vetting</literalValue>
+        <name>EDU Stage Update to CMA Vetting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VAEDU_Stage_Update_to_RCEM</fullName>
+        <field>Stage__c</field>
+        <literalValue>RCEM Review</literalValue>
+        <name>EDU Stage Update to RCEM Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VA_Check_TFA_to_Yes</fullName>
+        <field>Add_to_Teleflex_Academy__c</field>
+        <literalValue>Yes</literalValue>
+        <name>VA Check TFA to Yes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>X2019_VA_IS_Name_Update</fullName>
+        <description>Update IS Name for VA 2019 Record Types</description>
+        <field>Name</field>
+        <formula>LEFT( Left((Account_Facility__r.Name),30) &amp; &quot; - &quot; &amp; Text(Program_Type_1__c)   &amp; &quot; - &quot;&amp;  TEXT(Date_of_Event_Start__c),80)</formula>
+        <name>2019 VA IS Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>X2020_VA_IS_Name_Update</fullName>
+        <field>Name</field>
+        <formula>LEFT( Left((Account_Facility__r.Name),30) &amp; &quot; - &quot; &amp; Text(Program_Type_1__c)   &amp; &quot; - &quot;&amp;  TEXT(Date_of_Event_Start__c),80)</formula>
+        <name>2020 VA IS Name Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Qualtrics_Vascular_Survey_OutMsg</fullName>
+        <apiVersion>49.0</apiVersion>
+        <endpointUrl>https://feedback.teleflex.com/WRQualtricsServer/sfApi.php?r=outboundMessage&amp;u=UR_bCsvGeQF4FJnGQJ&amp;s=SV_2lshG4vhxwT9ejH&amp;t=TR_02LNWlhexIf0at7</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>surya.arvan@teleflex.com</integrationUser>
+        <name>Qualtrics Vascular Survey OutMsg</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>%23 Attendees You Followed Up With</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.AttendeesYouFollowedUpWith__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ANES/EMS Education Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Training Completed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Attendees_You_Followed_Up_With</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>2019 IA IS Name Update</fullName>
+        <actions>
+            <name>X2019_VA_IS_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>This rule is intended to Use the standard nomenclature for</description>
+        <formula>AND(   (RecordType.Name = &quot;Interventional Education Program&quot;),    OR( ISNEW() ,  ISCHANGED(  Program_Type_1__c  ) ,  ISCHANGED( Account_Facility__c ), ISCHANGED (  RecordTypeId  ),  ISCHANGED( Date_of_Event_Start__c ),ISPICKVAL( Approval_Status__c, &quot;Approved&quot; )),  NOT(ISPICKVAL(Stage__c,&quot;Cancelled&quot;)) , OR(Account_Facility__c!= NULL ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>2019 VA CEM RCEM Notification after completion</fullName>
+        <actions>
+            <name>VA_5_day_RCEM_CEM_email_notification_for_Education_Record</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND (3 OR 4) AND 5</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Training Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType1__c</field>
+            <operation>equals</operation>
+            <value>Clinical Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType2__c</field>
+            <operation>equals</operation>
+            <value>Clinical Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.SumofEducationContractors__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>This is to assure that Education records are being marked as Education Record after training is complete . 12/18/19 Revised Education Record Removed.  Just a notification to assure all is done</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>2019 VA CMA Notification after completion</fullName>
+        <actions>
+            <name>VA_immediate_and_5_day_CMA_email_notification_for_Education_Record</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 5 )</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Training Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Program,Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RequestClinicalEducationContractor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RequestClinicalEducationContractor2__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.SumofEducationContractors__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>This is to assure that Education records are being marked as Education Record after training is complete . Revised 12/18/19 remove 5 day check in and Education Record Satge</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>2019 VA IS Name Update</fullName>
+        <actions>
+            <name>X2020_VA_IS_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Program,Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <description>This rule is intended to Use the standard nomenclature for</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>2019 VA Sales Rep  Notification 5 days after completion</fullName>
+        <actions>
+            <name>VA_EDU_Sales_rep_immediate_and_5_Day_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5) AND 6 AND (7 OR 8)</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Training Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Education Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program,CMA Program,Clinical Sales Program,CMA Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType1__c</field>
+            <operation>equals</operation>
+            <value>Sales Representative</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType2__c</field>
+            <operation>equals</operation>
+            <value>Sales Representative</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.SumofEducationContractors__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType1__c</field>
+            <operation>notEqual</operation>
+            <value>Clinical Sales,Contractor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType2__c</field>
+            <operation>notEqual</operation>
+            <value>Clinical Sales,Contractor</value>
+        </criteriaItems>
+        <description>This is to assure that Education records are being marked as Education Record after training is complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>2020 Anes%2FEMS IS Name Update</fullName>
+        <actions>
+            <name>X2019_VA_IS_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ANES/EMS Education Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <description>This rule is intended to Use the standard nomenclature for</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>2020 IA IS Name Update Auto Approved</fullName>
+        <actions>
+            <name>Hotel_Request_No</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>X2019_VA_IS_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>IA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Interventional Education Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>This rule is intended to Use the standard nomenclature for</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Actual %23 of Attendees</fullName>
+        <actions>
+            <name>Actual_of_Attendees</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.TotalofAttendees__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ANES/EMS Education Record,CMA Program,Clinical Sales Program,Surgical Bariatric Proctorship</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Training Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType1__c</field>
+            <operation>equals</operation>
+            <value>Sales Representative,CMA</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anes%2FEMS Auto Approve</fullName>
+        <actions>
+            <name>Approval_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Training_Completed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ANES/EMS Education Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Date_of_Event_Start__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>NEW</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Anes%2FEMS Teleflex Academy Notification</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ANES/EMS Education Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved,SteepRock</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Add_to_Teleflex_Academy__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Confirmed</value>
+        </criteriaItems>
+        <description>Anes/EMS Teleflex Academy Notification</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>New_ANES_EMS_Education_Record_Requesting_Teleflex_Academy</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>CE - Anesthesia Notification</fullName>
+        <actions>
+            <name>New_Education_Record_anesthesia</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>Anesthesia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>CMA Record</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>CMA Procedural Lab Request Notification</fullName>
+        <actions>
+            <name>Cadaver_lab_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Procedural Lab Request</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CMA Vetting Lab</fullName>
+        <actions>
+            <name>CMA_Vetting_Lab</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Procedural Lab Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>CMA Vetting</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CMA Vetting Speaker</fullName>
+        <actions>
+            <name>CMA_Vetting_Speaker</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Speaker Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>CMA Vetting</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cancel Training Request</fullName>
+        <actions>
+            <name>Cancel_Training_Request</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.CancelRecord__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Marks the Stage as Cancelled</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Created by Role Field Update</fullName>
+        <actions>
+            <name>Created_by_Role_Field_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>DNU - CE -  Clinical Educator Email Address</fullName>
+        <actions>
+            <name>CE_Additional_Educator_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CE_Clinical_Educator_Update_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Education_Record__c.Date_of_Event_Start__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>DNU - GPO difference notice</fullName>
+        <actions>
+            <name>DNU_Email_Notice_GPO_Difference</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Send Laurie Croizer notice if Acct GPO and Education Vetting form GPO is different</description>
+        <formula>AND(ISPICKVAL( Business_Unit__c,&quot;VA&quot;), TEXT(Verified_Account_GPO__c)  &lt;&gt; TEXT( Account_Facility__r.Main_GPO__c),NOT( ISPICKVAL(Verified_Account_GPO__c,&quot;&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>DNU CE - CE Travel No Required</fullName>
+        <actions>
+            <name>CE_No_Travel_Required_Send_to_CE_ACE</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Hotel_Requested__c</field>
+            <operation>notEqual</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Car_Request__c</field>
+            <operation>notEqual</operation>
+            <value>Car Rental Requested,Taxi/Public Transportation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Travel_Time_4_hrs__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Live Education Program Request</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>EZ-IO Training Notification</fullName>
+        <actions>
+            <name>Notification_for_EZ_IO_Training</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>EZ_IO_Training_Notification_Fired</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>This notification goes to Valerie Mueller so that she can set up information in Teleflex Academy (Manually) when EZ-IO Training is scheduled and approved (Live Education or Rep/CEM provided).</description>
+        <formula>AND(  ISPICKVAL(Add_to_Teleflex_Academy__c,&quot;Yes&quot;),  ISPICKVAL(Business_Unit__c,&quot;VA&quot;),  ISPICKVAL( Primary_Product__c,&quot;EZ-IO&quot;),  OR(     Record_Type_Name__c = &quot;REP/CEM Provided Training&quot;,     AND (          Record_Type_Name__c = &quot;Live Education Program Request&quot;,          ISPICKVAL(Approval_Status__c, &quot;Approved&quot;))))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Follow-Up Training Record Request</fullName>
+        <actions>
+            <name>Follow_Up_Training_Record_Request</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Training Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.CommentsforFollowUpTraining__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.WeeksUntilFollowUpTraining__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Program_Type_1__c</field>
+            <operation>equals</operation>
+            <value>Implementation,Implementation (NO TRIAL NEEDED)</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>INTV Auto Approve certain Records %2723</fullName>
+        <actions>
+            <name>Approval_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Change_Status_to_Confirmed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Confirmed_End_Date_is_Today</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Confirmed_Start_Date_Today</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>X2019_VA_IS_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>IA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Interventional Education Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Program_Type_1__c</field>
+            <operation>equals</operation>
+            <value>Procedural Program,Product In-Service,Booth Education</value>
+        </criteriaItems>
+        <description>2023 updates</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>IA_Record_Type_Final_Approval_Email_Action</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Education_Record__c.oneminutetimetrigger__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Name Change - Cancelled Education Records</fullName>
+        <actions>
+            <name>IS_Name_Update_Cancelled_Requests</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notification of Cancelled Education</fullName>
+        <actions>
+            <name>Cancelled_Education</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Cancellation_Notifcation</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved,SteepRock</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <description>Notify Valerie Mueller if education that was entered into TFX Academy is cancelled.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Notify Jen Clinical created an EdRec</fullName>
+        <actions>
+            <name>Notify_Jen_a_Clinical_has_created_a_EduRec</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( 
+
+CONTAINS( CreatedBy.UserRole.Name , &quot;Clinical&quot;),
+
+ OR(Record_Type_Name__c = &quot;Clinical Sales Program&quot; , Record_Type_Name__c = &quot;CMA Program&quot;
+),
+
+OR(
+NOT( CreatedById = &quot;0544000008nwZF&quot;),
+NOT(CreatedById = &quot;005E0000005ju26&quot; )
+) 
+
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>On Hold Notice</fullName>
+        <actions>
+            <name>Request_on_Hold</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>On Hold</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Place on Hold</fullName>
+        <actions>
+            <name>Place_on_Hold</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.PlaceonHold__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Qualtrics Vascular Survey WrkFlw</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Education_Record__c.Ending_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Program_Type__c</field>
+            <operation>equals</operation>
+            <value>Evaluation</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Qualtrics_Vascular_Survey_OutMsg</name>
+                <type>OutboundMessage</type>
+            </actions>
+            <offsetFromField>Education_Record__c.Ending_Date__c</offsetFromField>
+            <timeLength>15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Sales Rep update for VA Clinical Sales</fullName>
+        <active>false</active>
+        <formula>AND(
+
+ISCHANGED(LastModifiedDate),
+ ISPICKVAL(Business_Unit__c,&quot;VA&quot;),
+NOT(ISBLANK( Opportunity__c ))
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stage to Confirmed from Training Completed</fullName>
+        <actions>
+            <name>Change_Stage_to_Confirmed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stage to Confirmed from Training Completed</description>
+        <formula>AND( Ending_Date__c  &gt;  TODAY() ,  ISPICKVAL( Stage__c , &quot;Training Completed&quot; )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Standardize CMA name</fullName>
+        <actions>
+            <name>CMA_Record_IS_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stantardize the record name for CMA lab and CMA speaker requests</description>
+        <formula>AND(OR( RecordType.Name  =&quot;CMA Procedural Lab Request&quot;,RecordType.Name  =&quot;CMA Speaking Engagement Request&quot;),
+OR( ISNEW() , ISCHANGED(Start_Date__c ) , ISCHANGED( Account_Facility__c  ), ISCHANGED( Date_of_Event_Start__c )  ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Standardize Education Program Request Name</fullName>
+        <actions>
+            <name>Is_Name_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stantardize the record name for Education Program Request</description>
+        <formula>AND(  NOT(ISPICKVAL( Business_Unit__c ,&quot;IA&quot;)),        OR(         Contains(RecordType.Name, &quot;Education&quot;),        Contains(RecordType.Name, &quot;Provided Training&quot;)) ,        OR( ISNEW() ,         ISCHANGED(Primary_Product__c ) ,          ISCHANGED( Account_Facility__c  ),         ISCHANGED( Date_of_Event_Start__c )),         NOT(ISPICKVAL(Stage__c,&quot;Cancelled&quot;))         )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Standardize Education Program Request Name - Respiratory</fullName>
+        <actions>
+            <name>IS_NAme_Update_Respiratory_Records</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Stantardize the record name for Education Program Request for Respiratory</description>
+        <formula>AND((RecordTypeId=&quot;01244000000g5pG&quot;), 
+OR( ISNEW() , 
+ISCHANGED( Account_Facility__c ), 
+ISCHANGED( Date_of_Event_Start__c ) 
+))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteepRock Approval Status Update</fullName>
+        <actions>
+            <name>Approval_Status_to_SteepRock</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType1__c</field>
+            <operation>equals</operation>
+            <value>Contractor,CMA &amp; Contractor,Clinical Sales &amp; Contractor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType2__c</field>
+            <operation>equals</operation>
+            <value>Contractor,CMA &amp; Contractor,Clinical Sales &amp; Contractor</value>
+        </criteriaItems>
+        <description>SteepRock Approval Status Update</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SteepRock Validation Checkbox Update</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Interventional Education Program,ANES/EMS Education Record,CMA Program,Clinical Sales Program,CMA Procedural Lab Request</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>SteepRock_Validation_Checkbox_Update</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Education_Record__c.oneminutetimetrigger__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Travel Approved Email</fullName>
+        <actions>
+            <name>Hotel_Travel_Approved</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( NOT(Clinical_Educator__r.RecordType.Name = &quot;TFX - Internal Resource&quot;), OR( ISPICKVAL(Hotel_Requested__c, &quot;Yes&quot;), ISPICKVAL(Travel_Type_Requested__c,&quot;Flight&quot;), ISPICKVAL(Travel_Type_Requested__c,&quot;Train&quot;), ISPICKVAL(Car_Request__c,&quot;Car Rental Requested&quot;), ISPICKVAL(Car_Request__c,&quot;Taxi/Public Transportation&quot;), Travel_Time_4_hrs__c = TRUE), ISPICKVAL (Approval_Status__c,&quot;Approved&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Trgger TFX Academy Email</fullName>
+        <actions>
+            <name>Email_Teleflex_Academy_Team_EMS</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Education_Record__c.Date_of_Event_Start__c</field>
+            <operation>greaterThan</operation>
+            <value>4/28/2019</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>SteepRock,Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ANES/EMS Education Record</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>EMS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAProduct1__c</field>
+            <operation>equals</operation>
+            <value>EZ-IO</value>
+        </criteriaItems>
+        <description>Used as a quick fix for Teleflex Academy Emails that need to be sent to be added to Teleflex Academy Calendar.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Territory%2FRegion</fullName>
+        <actions>
+            <name>Region_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Territory_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( ISNEW(), ISCHANGED(  Sales_Rep__c  ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA CMA Clinical Sales Speaker Program has been Marked as Training Complete</fullName>
+        <actions>
+            <name>VA_CMA_Clinical_Sales_Speaker_Program_has_been_Marked_as_Training_Complete</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Training Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Program_Type_1__c</field>
+            <operation>equals</operation>
+            <value>Speaker Program</value>
+        </criteriaItems>
+        <description>Email notification CMA Clinical Sales Speaker Program has been Marked as Training Complete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA CMA Missing information during approval process</fullName>
+        <actions>
+            <name>CMA_Missing_Information_Email_Action</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR (2 AND (3 OR 4 OR 5 OR 6))) AND 7 AND (8 OR 9 )</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType1__c</field>
+            <operation>equals</operation>
+            <value>CMA,CMA &amp; Contractor,Contractor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VATrainerType2__c</field>
+            <operation>equals</operation>
+            <value>CMA,CMA &amp; Contractor,Contractor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RequestClinicalEducationContractor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RequestClinicalEducationContractor2__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>CMA Vetting,Confirmed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VACourseType1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This is for records that CMA are approving</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA CMA Needs Assessment</fullName>
+        <actions>
+            <name>VA_CMA_Needs_Assessment</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Needs_Assessment_Sent_Waiting_on_Acct</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Program_Type_1__c</field>
+            <operation>notEqual</operation>
+            <value>Midline Fundamentals,PICC Fundamentals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>CMA Vetting</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>VA CMA Notification of Contractor request</fullName>
+        <actions>
+            <name>Email_to_VA_CMA_for_Clinical_Contractor_is_requested</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CMA_Email_has_been_fired</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 2) AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.RequestClinicalEducationContractor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RequestClinicalEducationContractor2__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.CMAEmailhasbeenfired__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>VA</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA CS Speaker Program Record Approved by RCSM</fullName>
+        <actions>
+            <name>VA_CS_Speaker_Program_Record_Approved_by_RCSM</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Program_Type_1__c</field>
+            <operation>equals</operation>
+            <value>Speaker Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.ProgramType2__c</field>
+            <operation>equals</operation>
+            <value>Speaker Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>CMA Vetting,Confirmed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA Edu record Approved  with Add to TFX Academy %27Yes%27</fullName>
+        <actions>
+            <name>Notifiy_Valerie_Mueller_for_VA</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork1__c</field>
+            <operation>equals</operation>
+            <value>Yes - Teleflex Academy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved,SteepRock</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.CreatedDate</field>
+            <operation>greaterThan</operation>
+            <value>10/16/2022</value>
+        </criteriaItems>
+        <description>Sends notification to Valerie with 2022 course type, inserter type, and SteepRock fields used by all BUs</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA Education Contractor added to training request</fullName>
+        <actions>
+            <name>VA_Education_Contractor_added_to_training_request</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(
+SumofEducationContractors__c &gt;   PRIORVALUE(SumofEducationContractors__c),
+
+ISPICKVAL(Business_Unit__c, &quot;VA&quot;),
+
+ RecordType.Name = &quot;Clinical Sales Program&quot;
+
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA Missing information during approval process</fullName>
+        <actions>
+            <name>VA_Missing_information_during_approval_process</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8)</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Confirmed,RCEM Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Ending_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Date_of_Event_Start__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VACourseType1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAStartTimePL__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAEndTimePL__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This is for clinical sales when CMA is not required</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA Missing information during approval process for 3 days</fullName>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8)</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Program,Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>CEM Review</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Ending_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Date_of_Event_Start__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VACourseType1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAStartTimePL__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAEndTimePL__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>when in review for more than 3 days</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>VA_Missing_information_during_approval_process</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>3</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>VA Uncheck Yes for TFA Field</fullName>
+        <actions>
+            <name>Mark_TFA_as_NO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork1__c</field>
+            <operation>equals</operation>
+            <value>No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork2__c</field>
+            <operation>equals</operation>
+            <value>No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.Add_to_Teleflex_Academy__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <description>This rule is to enforce the inverse of another rule that checks TFA to Yes.  which then sends an email to Val to enroll this program for Teleflex academy.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>VA Vendor Credentialing is necessary</fullName>
+        <actions>
+            <name>VA_Vendor_credentialing_is_missing</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Education_Record__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>VA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>CMA Program,Clinical Sales Program</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VendorCredentialing__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>VAUpdateTFAtoYes</fullName>
+        <actions>
+            <name>VA_Check_TFA_to_Yes</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork1__c</field>
+            <operation>equals</operation>
+            <value>Yes - Teleflex Academy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Education_Record__c.VAPreWork2__c</field>
+            <operation>equals</operation>
+            <value>Yes - Teleflex Academy</value>
+        </criteriaItems>
+        <description>This rule will update teleflex academy needed to yes based off of Pre work fields</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Cancellation_Notifcation</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The cancellation notification has been sent for Teleflex Academy.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Cancellation Notifcation</subject>
+    </tasks>
+    <tasks>
+        <fullName>EZ_IO_Training_Notification_Fired</fullName>
+        <assignedTo>corkey.devlin@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>EZ-IO Notification Workflow Fired.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>EZ-IO Training Notification Fired</subject>
+    </tasks>
+</Workflow>

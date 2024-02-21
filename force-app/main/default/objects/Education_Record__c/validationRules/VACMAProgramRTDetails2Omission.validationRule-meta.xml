@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VACMAProgramRTDetails2Omission</fullName>
+    <active>false</active>
+    <description>The point of this Validation rule is to short cut all the changes it would take to give CMA a new  Page Layout this close to VA Go Live</description>
+    <errorConditionFormula>AND(
+RecordType.Name = &quot;CMA Program&quot;,
+OR(
+
+ContractorHoursRequested2__c != NULL,
+
+NOT(ISBLANK(TEXT(VACourseType2__c))), 
+
+NOT(ISBLANK(TEXT(VAProduct2__c ))),
+
+NOT(ISBLANK(TEXT( VATrainerType2__c ))),
+
+NOT(ISBLANK(TEXT( VAPreWork2__c ))),
+
+NOT(ISBLANK( RequestedContractor2__c )),
+
+NOT(ISBLANK(TEXT(ReasonforContractorRequest2__c))),
+
+NOT(ISBLANK(ContractorHoursRequested2__c )),
+
+NOT(ISBLANK(AnticipatedTotalHoursRequired2__c  )),
+
+ RequestClinicalEducationContractor2__c = TRUE
+
+)
+)</errorConditionFormula>
+    <errorMessage>If you need another Course Type for this CMA Record.  Please create a new CMA Program Training Request</errorMessage>
+</ValidationRule>

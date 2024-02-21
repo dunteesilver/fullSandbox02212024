@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EZ_IO_Complaint_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please select one option and fill the information in the corresponding Section</inlineHelpText>
+    <label>EZ-IO Complaint Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Driver Related only</fullName>
+                <default>false</default>
+                <label>EZ-IO Driver Related only</label>
+            </value>
+            <value>
+                <fullName>Needle Set/Catheter Related only</fullName>
+                <default>false</default>
+                <label>Needle Set/Catheter Related only</label>
+            </value>
+            <value>
+                <fullName>Other Complications Related only</fullName>
+                <default>false</default>
+                <label>Other Complications Related only</label>
+            </value>
+            <value>
+                <fullName>On Control Driver Related only</fullName>
+                <default>false</default>
+                <label>Driver Related only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

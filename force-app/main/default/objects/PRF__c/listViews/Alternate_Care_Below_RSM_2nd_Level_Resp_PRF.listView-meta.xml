@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternate_Care_Below_RSM_2nd_Level_Resp_PRF</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Alternate Care Below RSM 2nd Level Resp</label>
+    <queue>Alternate_Care_Below_RSM_2nd_Level_Resp</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

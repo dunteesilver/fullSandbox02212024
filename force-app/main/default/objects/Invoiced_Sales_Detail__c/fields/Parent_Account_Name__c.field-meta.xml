@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Account_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Remove codes that start with v */
+if(UPPER(LEFT(Parent_SAP_Code__c,1)) = &quot;V&quot;, NULL,
+if(ISBLANK(Parent_SAP_Code__c),
+NULL,
+if(ISBLANK(Parent_Account__c),
+&quot;Pending Deletion (&quot; &amp;  Parent_SAP_Code__c  &amp; &quot;)&quot;,
+/* Use Standard Name if the Distributor Name is not filled in */
+if(ISBLANK(Parent_Account__r.Distributor_Name__c),
+Parent_Account__r.Name &amp; &quot; (&quot; &amp; Parent_Account__r.SAP_Sold_To__c &amp; &quot;)&quot;,
+ Parent_Account__r.Distributor_Name__c 
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Parent Account Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

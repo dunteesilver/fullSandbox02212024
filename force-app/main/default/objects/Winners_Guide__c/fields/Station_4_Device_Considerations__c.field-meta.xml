@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Station_4_Device_Considerations__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Station 4 – Device Considerations and Complication Management</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Station 4 – Device Considerations and Complication Management</inlineHelpText>
+    <label>Station 4 – Device Considerations</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

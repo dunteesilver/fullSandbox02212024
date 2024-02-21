@@ -1,0 +1,8 @@
+<apex:page sidebar="false" readOnly="true" cache="false" tabStyle="Pricing_Portal__tab" title="View PRF's" standardController="PRF__c" recordSetVar="PRFs__r">
+    
+    <!-- Call the Menu -->    
+    <apex:include id="menu" pageName="PP_Menu"/>
+    
+    <apex:ListViews type="PRF__c" id="AccountList" />
+    
+</apex:page>

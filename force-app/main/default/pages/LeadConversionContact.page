@@ -1,0 +1,100 @@
+<apex:page showHeader="true" sidebar="true" standardController="Lead" extensions="convertingLeads">
+
+<style type="text/css">
+ table.exceptionText td {
+                 font-style:italic;
+                 font-size:16px;
+                 font-weight:bold;
+                 text-align:center;
+                 color:red;}
+</style>
+
+<apex:outputPanel id="msgPanel">
+	<apex:messages id="msgBlock" layout="table" styleClass="exceptionText" />
+</apex:outputPanel>
+
+<apex:form id="lookConForm">
+<apex:outputPanel id="lookPanel">
+	<apex:pageblock >
+	<apex:pageblockSection title="Step 2: Update Lead information OR Select Contact from the related list below."/>
+	<apex:pageblockSection id="PBS3" title="Contact" collapsible="false" columns="1">
+		<apex:outputLink value="/{!lead.Id}">Back to Lead Record</apex:outputLink>
+  </apex:pageblockSection>
+ <!--
+  <apex:pageblockSection >
+			<apex:inputField label="Select Contact" value="{!lead.Contact__c}" >
+      <apex:commandButton value="Save" action="{!lookupCon}" styleClass="btn btn-primary" >
+  			<apex:param name="sconId" value="{!lead.Contact__c}" assignTo="{!sconId}" />
+  		</apex:commandButton>
+    </apex:inputField>
+  </apex:pageblockSection >
+  -->
+  <apex:pageblockSection >
+			<apex:outputField label="Account" value="{!lead.Account__c}" />
+  </apex:pageblockSection>
+  <!--
+  <apex:pageblockSection >
+		<apex:outputText style="font-weight:800" label=" " value="OR"/>
+	</apex:pageblockSection>
+  -->
+  <apex:pageblockSection >
+			<apex:inputField label="First Name" value="{!lead.FirstName}" />
+	</apex:pageblockSection>
+  <apex:pageblockSection >
+			<apex:inputField label="Last Name" value="{!lead.LastName}" />
+	</apex:pageblockSection>
+  <apex:pageblockSection >
+			<apex:inputField label="Email" value="{!lead.Email}" />
+	</apex:pageblockSection>
+  <apex:pageblockSection >
+			<apex:inputField label="Phone" value="{!lead.Phone}" />
+	</apex:pageblockSection>
+  <apex:pageblockSection >
+			<apex:inputField label="Title" value="{!lead.Title}" />
+	</apex:pageblockSection>
+  <apex:pageblockSection >
+  <apex:outputText label=" " >
+  <apex:commandButton value="Update Lead/Continue" action="{!updateLead}" styleClass="btn btn-primary" />
+  </apex:outputText>
+	</apex:pageblockSection>
+
+  <apex:commandButton value="Back to Account" action="/apex/LeadConversionAccount?id={!lead.Id}" styleClass="btn btn-primary" />
+
+	</apex:pageblock>
+</apex:outputPanel>
+</apex:form>
+
+<apex:form id="selectConForm">
+<apex:pageBlock rendered="{!conSimsBool}">
+		<apex:pageblockSection id="PBS6" title="Similar Contacts" collapsible="false" columns="1" >
+			<apex:pageBlockTable title="Similar Contacts" value="{!conSims}" var="c" columns="5" >
+				<apex:column headerValue="Select" style="width:35px">
+				<apex:commandButton value="Select Contact" action="{!selectedContact}" styleClass="btn btn-primary" rerender="PBS5">
+					<apex:param name="sconId" value="{!c.Id}" assignTo="{!sconId}"/>
+				</apex:commandButton>
+				</apex:column>
+				<apex:column headerValue="Contact Name" value="{!c.Name}" style="width:100px;overflow-wrap"/>
+				<apex:column headerValue="Email" value="{!c.Email}" style="width:30px"/>
+				<apex:column headerValue="Phone" value="{!c.Phone}" style="width:50px"/>
+				<apex:column headerValue="Account" value="{!c.Account.Name}" style="width:30px"/>
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+
+		<apex:pageBlock rendered="{!conAccsBool}">
+			<apex:pageblockSection id="PBS4" title="Contacts Related to Account" collapsible="false" columns="1">
+				<apex:pageBlockTable title="Related Contacts" value="{!conAccs}" var="c" columns="5">
+				<apex:column headerValue="Select" style="width:35px">
+				<apex:commandButton value="Select Contact" action="{!selectedContact}" styleClass="btn btn-primary" rerender="PBS4">
+					<apex:param name="sconId" value="{!c.Id}" assignTo="{!sconId}"/>
+				</apex:commandButton>
+				</apex:column>
+				<apex:column headerValue="Contact Name" value="{!c.Name}" style="width:100px;overflow-wrap"/>
+				<apex:column headerValue="Email" value="{!c.Email}" style="width:30px"/>
+				<apex:column headerValue="Phone" value="{!c.Phone}" style="width:50px"/>
+				<apex:column headerValue="Account" value="{!c.Account.Name}" style="width:30px"/>
+				</apex:pageBlockTable>
+			</apex:pageblockSection>
+		</apex:pageblock>
+</apex:form>
+</apex:page>

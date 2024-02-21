@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+TODAY() &gt;= Start_Date__c, 
+TODAY() &lt;= End_Date__c,
+Exception__c = FALSE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Active requests that &apos;Today&apos; be between the start and end dates and that the &apos;Exception&apos; field is not checked.</inlineHelpText>
+    <label>Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

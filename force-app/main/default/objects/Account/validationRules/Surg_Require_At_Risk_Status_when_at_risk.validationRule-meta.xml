@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surg_Require_At_Risk_Status_when_at_risk</fullName>
+    <active>false</active>
+    <description>Require the user to select a status when the account is set to At Risk</description>
+    <errorConditionFormula>AND( Surgical_at_risk__c = True, Text(Surgical_at_risk_status__c) = &quot;&quot;)</errorConditionFormula>
+    <errorMessage>Select and At Risk Status for this account</errorMessage>
+</ValidationRule>

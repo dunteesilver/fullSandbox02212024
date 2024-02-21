@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_Ability_to_Mount_VPS_Rythm_DLX__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Confirm ability to mount VPS Rhythm DLX 6 from ultrasound etc(recommended Cart which has been tip tested is RHY-100-CARTA)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirm ability to mount VPS Rhythm DLX 6 from ultrasound etc(recommended Cart which has been tip tested is RHY-100-CARTA)</inlineHelpText>
+    <label>Confirm Ability to Mount VPS Rythm DLX</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

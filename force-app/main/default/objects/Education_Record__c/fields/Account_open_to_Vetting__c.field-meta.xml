@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_open_to_Vetting__c</fullName>
+    <externalId>false</externalId>
+    <label>Account open to</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Process Improvement</fullName>
+                <default>false</default>
+                <label>Process Improvement</label>
+            </value>
+            <value>
+                <fullName>Advancing Practice</fullName>
+                <default>false</default>
+                <label>Advancing Practice</label>
+            </value>
+            <value>
+                <fullName>Partnering to improve patient outcomes</fullName>
+                <default>false</default>
+                <label>Partnering to improve patient outcomes</label>
+            </value>
+            <value>
+                <fullName>Opera Assessment</fullName>
+                <default>false</default>
+                <label>Opera Assessment</label>
+            </value>
+            <value>
+                <fullName>Licensing CVC Curriculum</fullName>
+                <default>false</default>
+                <label>Licensing CVC Curriculum</label>
+            </value>
+            <value>
+                <fullName>Standardized procedural approach</fullName>
+                <default>false</default>
+                <label>Standardized procedural approach</label>
+            </value>
+            <value>
+                <fullName>Outside Attendee’s</fullName>
+                <default>false</default>
+                <label>Outside Attendee’s</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

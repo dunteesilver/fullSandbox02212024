@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_prior_Eval_Parameters_Goals__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Review prior agreed upon evaluation parameters and goals (pre-work, # inserters, timeframe,
+data collection process, unit-to-unit, pre-bedside and bedside education).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Review prior agreed upon evaluation parameters and goals (pre-work, # inserters, timeframe,
+data collection process, unit-to-unit, pre-bedside and bedside education).</inlineHelpText>
+    <label>Review prior Eval/Parameters/Goals</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

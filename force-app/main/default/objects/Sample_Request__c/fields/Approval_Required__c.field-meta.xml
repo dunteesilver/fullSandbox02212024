@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Required__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR( 
+     AND( 
+           NOT(ISPICKVAL(Shipping_Method__c, &quot;Standard&quot;)), 
+           Owner_Region__c &lt;&gt; &quot;Marketing&quot;),
+
+     AND( 
+            Owner_Business_Unit__c =&quot;Latin America&quot;, 
+            Owner_Region__c &lt;&gt; &quot;Marketing&quot; ), 
+
+     AND( 
+           Contains(Owner_Business_Unit__c,&quot;Surgical&quot;), 
+           ISPICKVAL(Type__c, &quot;Loaner&quot;), 
+           Owner_Region__c &lt;&gt; &quot;Marketing&quot; ) ,
+            
+    AND ( 
+           OR( 
+                 Owner_Business_Unit__c = &quot;Anesthesia&quot;, 
+                 Owner_Business_Unit__c = &quot;Vascular&quot;, 
+                 Owner_Business_Unit__c = &quot;EMS&quot; ),           
+          NOT(ISPIckVal(Owner:User.Region__c, &quot;Canada&quot;)) ), 
+
+    AND( 
+          ISPIckVal(Owner:User.Region__c, &quot;Canada&quot;), 
+          OR( 
+               Contains(Owner_Business_Unit__c,&quot;Surgical&quot;), 
+               Owner_Business_Unit__c = &quot;Interventional Access&quot;, 
+               Owner_Business_Unit__c = &quot;Interventional&quot; ,
+               Owner_Business_Unit__c = &quot;Vascular&quot;
+) 
+) 
+)</formula>
+    <label>Approval Required</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

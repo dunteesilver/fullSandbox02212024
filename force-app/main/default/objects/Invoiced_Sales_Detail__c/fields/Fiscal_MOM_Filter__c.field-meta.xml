@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_MOM_Filter__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+Fiscal_Day_Number__c &gt; 0,
+Fiscal_Day_Number__c &lt;= Days_In__c,
+Current_Fiscal_Month_Number__c = MONTH( Fiscal_Period_Date__c )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fiscal MOM Filter</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Grade__c</fullName>
+    <description>Holds letter values to grade Account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Holds letter values to grade Account.</inlineHelpText>
+    <label>Sales Grade</label>
+    <length>2</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

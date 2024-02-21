@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAProduct2__c</fullName>
+    <externalId>false</externalId>
+    <label>Product 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Arrow® Endurance™ Extended Dwell Peripheral Catheter System</fullName>
+                <default>false</default>
+                <label>Arrow® Endurance™ Extended Dwell Peripheral Catheter System</label>
+            </value>
+            <value>
+                <fullName>Arrow® Integrated Arterial Catheter</fullName>
+                <default>false</default>
+                <label>Arrow® Integrated Arterial Catheter</label>
+            </value>
+            <value>
+                <fullName>Arrow® Midline Kit Catheters (unprotected)</fullName>
+                <default>false</default>
+                <label>Arrow® Midline Kit Catheters (unprotected)</label>
+            </value>
+            <value>
+                <fullName>Arrow® PICC (unprotected)</fullName>
+                <default>false</default>
+                <label>Arrow® PICC (unprotected)</label>
+            </value>
+            <value>
+                <fullName>Arrow® PICC powered by Arrow® VPS® G4 Precision™ Stylet</fullName>
+                <default>false</default>
+                <label>Arrow® PICC powered by Arrow® VPS® G4 Precision™ Stylet</label>
+            </value>
+            <value>
+                <fullName>Arrow® PICC powered by Arrow® VPS TipTracker™ Stylet</fullName>
+                <default>false</default>
+                <label>Arrow® PICC powered by Arrow® VPS TipTracker™ Stylet</label>
+            </value>
+            <value>
+                <fullName>Arrow® QuickFlash® Arterial Catheter</fullName>
+                <default>false</default>
+                <label>Arrow® QuickFlash® Arterial Catheter</label>
+            </value>
+            <value>
+                <fullName>Arrow® Seldinger Arterial Catheter (SAC)</fullName>
+                <default>false</default>
+                <label>Arrow® Seldinger Arterial Catheter (SAC)</label>
+            </value>
+            <value>
+                <fullName>Arrow® Sharps-Protected Arterial Catheter</fullName>
+                <default>false</default>
+                <label>Arrow® Sharps-Protected Arterial Catheter</label>
+            </value>
+            <value>
+                <fullName>Arrow® Standard Arterial Catheter</fullName>
+                <default>false</default>
+                <label>Arrow® Standard Arterial Catheter</label>
+            </value>
+            <value>
+                <fullName>Arrow® Twin Cath® Peripheral Catheter</fullName>
+                <default>false</default>
+                <label>Arrow® Twin Cath® Peripheral Catheter</label>
+            </value>
+            <value>
+                <fullName>Arrow® VPS G4™ Device</fullName>
+                <default>false</default>
+                <label>Arrow® VPS G4™ Device</label>
+            </value>
+            <value>
+                <fullName>Arrow® VPS Rhythm® Device with ECG</fullName>
+                <default>false</default>
+                <label>Arrow® VPS Rhythm® Device with ECG</label>
+            </value>
+            <value>
+                <fullName>Arrow® VPS Rhythm® Device with TipTracker™ Technology</fullName>
+                <default>false</default>
+                <label>Arrow® VPS Rhythm® Device with TipTracker™ Technology</label>
+            </value>
+            <value>
+                <fullName>Arrowg+ard Blue® Two-Lumen Hemodialysis Catheterization Kit for High Volume Infusions</fullName>
+                <default>false</default>
+                <label>Arrowg+ard Blue® Two-Lumen Hemodialysis Catheterization Kit for High Volume Infusions</label>
+            </value>
+            <value>
+                <fullName>Arrowg+ard Blue® You-Bend™ Two-Lumen Hemodialysis Catheterization Kit for High Volume Infusions</fullName>
+                <default>false</default>
+                <label>Arrowg+ard Blue® You-Bend™ Two-Lumen Hemodialysis Catheterization Kit for High Volume Infusions</label>
+            </value>
+            <value>
+                <fullName>Arrowg+ard Blue Advance™ JACC</fullName>
+                <default>false</default>
+                <label>Arrowg+ard Blue Advance™ JACC</label>
+            </value>
+            <value>
+                <fullName>Arrowg+ard Blue Advance™ Midline</fullName>
+                <default>false</default>
+                <label>Arrowg+ard Blue Advance™ Midline</label>
+            </value>
+            <value>
+                <fullName>Arrowg+ard Blue Advance™ PICC</fullName>
+                <default>false</default>
+                <label>Arrowg+ard Blue Advance™ PICC</label>
+            </value>
+            <value>
+                <fullName>Arrowg+ard Blue Advance™ PICC pre-loaded with Arrow® TipTracker™ Stylet</fullName>
+                <default>false</default>
+                <label>Arrowg+ard Blue Advance™ PICC pre-loaded with Arrow® TipTracker™ Stylet</label>
+            </value>
+            <value>
+                <fullName>Arrowg+ard Blue Advance™ PICC pre-loaded with Arrow® VPS G4 Precision™ Stylet</fullName>
+                <default>false</default>
+                <label>Arrowg+ard Blue Advance™ PICC pre-loaded with Arrow® VPS G4 Precision™ Stylet</label>
+            </value>
+            <value>
+                <fullName>Atomization</fullName>
+                <default>false</default>
+                <label>Atomization</label>
+            </value>
+            <value>
+                <fullName>AutoFuser Pain Pump</fullName>
+                <default>false</default>
+                <label>AutoFuser Pain Pump</label>
+            </value>
+            <value>
+                <fullName>Cardiac</fullName>
+                <default>false</default>
+                <label>Cardiac</label>
+            </value>
+            <value>
+                <fullName>Complex PCI</fullName>
+                <default>false</default>
+                <label>Complex PCI</label>
+            </value>
+            <value>
+                <fullName>Control+</fullName>
+                <default>false</default>
+                <label>Control+</label>
+            </value>
+            <value>
+                <fullName>CVC/PSI/MAC</fullName>
+                <default>false</default>
+                <label>CVC/PSI/MAC</label>
+            </value>
+            <value>
+                <fullName>EID (Emergency Infusion Device)</fullName>
+                <default>false</default>
+                <label>EID (Emergency Infusion Device)</label>
+            </value>
+            <value>
+                <fullName>Endotracheal Tubes</fullName>
+                <default>false</default>
+                <label>Endotracheal Tubes</label>
+            </value>
+            <value>
+                <fullName>Endurance</fullName>
+                <default>false</default>
+                <label>Endurance</label>
+            </value>
+            <value>
+                <fullName>Epidurals</fullName>
+                <default>false</default>
+                <label>Epidurals</label>
+            </value>
+            <value>
+                <fullName>EZ Blocker</fullName>
+                <default>false</default>
+                <label>EZ Blocker</label>
+            </value>
+            <value>
+                <fullName>EZ-IO</fullName>
+                <default>false</default>
+                <label>EZ-IO</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>ISO-gard</fullName>
+                <default>false</default>
+                <label>ISO-gard</label>
+            </value>
+            <value>
+                <fullName>JACC</fullName>
+                <default>false</default>
+                <label>JACC</label>
+            </value>
+            <value>
+                <fullName>Laryngoscopy</fullName>
+                <default>false</default>
+                <label>Laryngoscopy</label>
+            </value>
+            <value>
+                <fullName>LMA Gastro</fullName>
+                <default>false</default>
+                <label>LMA Gastro</label>
+            </value>
+            <value>
+                <fullName>LMA MAD Nasal</fullName>
+                <default>false</default>
+                <label>LMA MAD Nasal</label>
+            </value>
+            <value>
+                <fullName>LMA Protector</fullName>
+                <default>false</default>
+                <label>LMA Protector</label>
+            </value>
+            <value>
+                <fullName>LMA Supreme</fullName>
+                <default>false</default>
+                <label>LMA Supreme</label>
+            </value>
+            <value>
+                <fullName>LMA Unique EVO</fullName>
+                <default>false</default>
+                <label>LMA Unique EVO</label>
+            </value>
+            <value>
+                <fullName>LMA Unique Silicone Cuff Pilot</fullName>
+                <default>false</default>
+                <label>LMA Unique Silicone Cuff Pilot</label>
+            </value>
+            <value>
+                <fullName>MAC</fullName>
+                <default>false</default>
+                <label>MAC</label>
+            </value>
+            <value>
+                <fullName>Manta</fullName>
+                <default>false</default>
+                <label>Manta</label>
+            </value>
+            <value>
+                <fullName>Manual needle</fullName>
+                <default>false</default>
+                <label>Manual Needle</label>
+            </value>
+            <value>
+                <fullName>Midlines</fullName>
+                <default>false</default>
+                <label>Midlines</label>
+            </value>
+            <value>
+                <fullName>Multi-Lumen Access Catheters (MAC)</fullName>
+                <default>false</default>
+                <label>Multi-Lumen Access Catheters (MAC)</label>
+            </value>
+            <value>
+                <fullName>Nerve Blocks</fullName>
+                <default>false</default>
+                <label>Nerve Blocks</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>OnControl</fullName>
+                <default>false</default>
+                <label>OnControl</label>
+            </value>
+            <value>
+                <fullName>Opera</fullName>
+                <default>false</default>
+                <label>Opera</label>
+            </value>
+            <value>
+                <fullName>Percutaneous Sheath Introducer (PSI)</fullName>
+                <default>false</default>
+                <label>Percutaneous Sheath Introducer (PSI)</label>
+            </value>
+            <value>
+                <fullName>Peripheral Nerve Blocks</fullName>
+                <default>false</default>
+                <label>Peripheral Nerve Blocks</label>
+            </value>
+            <value>
+                <fullName>PICC</fullName>
+                <default>false</default>
+                <label>PICC</label>
+            </value>
+            <value>
+                <fullName>QuikClot</fullName>
+                <default>false</default>
+                <label>QuikClot</label>
+            </value>
+            <value>
+                <fullName>RIC (Rapid Infusion Catheter)</fullName>
+                <default>false</default>
+                <label>RIC (Rapid Infusion Catheter)</label>
+            </value>
+            <value>
+                <fullName>Rusch Air Traq</fullName>
+                <default>false</default>
+                <label>Rusch Air Traq</label>
+            </value>
+            <value>
+                <fullName>Rusch QuikTrach</fullName>
+                <default>false</default>
+                <label>Rusch QuikTrach</label>
+            </value>
+            <value>
+                <fullName>Short-Term Central Venous Catheters (CVC)</fullName>
+                <default>false</default>
+                <label>Short-Term Central Venous Catheters (CVC)</label>
+            </value>
+            <value>
+                <fullName>Structural</fullName>
+                <default>false</default>
+                <label>Structural</label>
+            </value>
+            <value>
+                <fullName>SureBlock</fullName>
+                <default>false</default>
+                <label>SureBlock</label>
+            </value>
+            <value>
+                <fullName>Talon</fullName>
+                <default>false</default>
+                <label>TALON</label>
+            </value>
+            <value>
+                <fullName>T-Pod Responder</fullName>
+                <default>false</default>
+                <label>T-Pod</label>
+            </value>
+            <value>
+                <fullName>Two-Lumen Hemodialysis Catheterization Set with Blue FlexTip® Arrowg+ard Blue® for High Volume Infusions</fullName>
+                <default>false</default>
+                <label>Two-Lumen Hemodialysis Catheterization Set with Blue FlexTip® Arrowg+ard Blue® for High Volume Infusions</label>
+            </value>
+            <value>
+                <fullName>You-Bend™ Two-Lumen Hemodialysis Catheterization Set with Blue FlexTip® Arrowg+ard Blue® Catheter for High Volume Infusions</fullName>
+                <default>false</default>
+                <label>You-Bend™ Two-Lumen Hemodialysis Catheterization Set with Blue FlexTip® Arrowg+ard Blue® Catheter for High Volume Infusions</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

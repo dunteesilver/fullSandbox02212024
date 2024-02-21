@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_ECC_Product_Exists__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Temporary field to track new product via ECC merge which already exists in SFDC</description>
+    <externalId>false</externalId>
+    <label>New ECC Product Exists</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

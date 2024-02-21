@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>When_did_the_event_occur__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select when the event occurred.</inlineHelpText>
+    <label>When did the event occur?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>During use on a patient</fullName>
+                <default>false</default>
+                <label>During use on a patient</label>
+            </value>
+            <value>
+                <fullName>Prior to use on a patient (pre-testing)</fullName>
+                <default>false</default>
+                <label>Prior to use on a patient (pre-testing)</label>
+            </value>
+            <value>
+                <fullName>During incoming inspection, inventory review, product training or demonstration</fullName>
+                <default>false</default>
+                <label>During incoming inspection, inventory review, product training or demonstration</label>
+            </value>
+            <value>
+                <fullName>During post cleaning or reprocessing inspection</fullName>
+                <default>false</default>
+                <label>During post cleaning or reprocessing inspection</label>
+            </value>
+            <value>
+                <fullName>Unknown at this time</fullName>
+                <default>false</default>
+                <label>Unknown at this time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

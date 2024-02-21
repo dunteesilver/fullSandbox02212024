@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentYearPolymerImpact__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND( One_Time_Sale__c , YEAR(CloseDate) = YEAR(Today()) ) , AmountofPolymerLost__c , IF( AND( One_Time_Sale__c , YEAR(CloseDate) &gt; YEAR(Today()) ) , 0 , IF( AND( YEAR(CloseDate) = YEAR(Today()) , NOT(One_Time_Sale__c) ) , (AmountofPolymerLost__c/365) * (DATE(( YEAR( CloseDate )) ,12,31) - CloseDate) , IF( AND( NOT(One_Time_Sale__c) , YEAR(CloseDate) &gt; YEAR(Today()) ) , 0 , IF( AND( NOT(One_Time_Sale__c) , YEAR(CloseDate) &lt; YEAR(Today()) ) , (AmountofPolymerLost__c/365) * (DATE(( YEAR( CloseDate )) ,12,31) - CloseDate) , AmountofPolymerLost__c )) ) ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Polymer Amount that will be considered a sale this year. Determined by Close Date on Opportunity.</inlineHelpText>
+    <label>Current Year Polymer Impact</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

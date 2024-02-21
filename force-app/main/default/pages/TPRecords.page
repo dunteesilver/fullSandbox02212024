@@ -1,0 +1,37 @@
+<apex:page controller="TPRecordsController" readOnly="true">
+    <apex:pageBlock title="Target Profiles">
+        <apex:includeScript value="//code.jquery.com/jquery-2.1.1.min.js"/>
+        <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/js/jquery.tablesorter.js"/>
+        <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/js/jquery.tablesorter.widgets.js"/>
+        <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/css/theme.jui.css"/>
+        <script>
+        $(document).ready(function(){
+            $("table").tablesorter({
+                
+                theme : 'jui', 
+                
+                headerTemplate : '{content} {icon}',
+                
+                widgets : ['uitheme', 'zebra'],
+                
+                widgetOptions : {
+                    zebra   : ["even", "odd"],
+                }
+                
+            });
+        });
+        </script>
+        You are viewing the data for IO Potential Range {!$CurrentPage.parameters.pr} and Account Saturation Range {!$CurrentPage.parameters.sr}.
+        <apex:pageBlockTable value="{!targetProfs}" var="tp">
+            <apex:column headerValue="Name">
+                <apex:outputLink value="{!'/'+tp.Id}" target="_blank">{!tp.Name}</apex:outputLink>
+            </apex:column>
+            <apex:column value="{!tp.Account__r.Name }"/>
+            <apex:column value="{!tp.State__c}"/>
+            <apex:column value="{!tp.Actual_IO_Potential_eaches__c}"/>
+            <apex:column value="{!tp.Last_Year_Eaches__c }"/>
+            <apex:column value="{!tp.X12_Month_Rolling_Sales_eaches__c}"/>
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

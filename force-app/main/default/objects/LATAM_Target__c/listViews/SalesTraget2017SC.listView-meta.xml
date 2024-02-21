@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesTraget2017SC</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Account_ID__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Product_Family__c</columns>
+    <columns>Sales_Region_Formula__c</columns>
+    <columns>Target_Amount__c</columns>
+    <columns>Year__c</columns>
+    <columns>Sales_Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Year__c</field>
+        <operation>equals</operation>
+        <value>2017</value>
+    </filters>
+    <filters>
+        <field>Sales_Region__c</field>
+        <operation>equals</operation>
+        <value>Southern Cone</value>
+    </filters>
+    <label>Sales Target 2017 SC</label>
+    <language>en_US</language>
+</ListView>

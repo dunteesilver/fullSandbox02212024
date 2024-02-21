@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Heater_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>R203P13__c</columns>
+    <columns>R203P14__c</columns>
+    <columns>R211P03_036__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>VPS__c.Heater_Contracts</value>
+    </filters>
+    <label>Heater Contracts All</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Respiratory_President</roleAndSubordinates>
+    </sharedTo>
+</ListView>

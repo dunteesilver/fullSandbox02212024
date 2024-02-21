@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_diff_inserter_may_experience__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Sales provides high level overview of product differences inserter may experience, compared to currently used product):
+(See Sales Round Table Discussion for list of items to cover.)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sales provides high level overview of product differences inserter may experience, compared to currently used product: (See Sales Round Table Discussion for list of items to cover below), these will differ between VPS Rhythm® DLX Device, VPS G4™ Device, or BD Sherlock 3CG™ device.</inlineHelpText>
+    <label>Product diff inserter may experience</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

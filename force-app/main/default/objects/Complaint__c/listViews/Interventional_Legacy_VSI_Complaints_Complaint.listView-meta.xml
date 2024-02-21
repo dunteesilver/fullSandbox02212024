@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interventional_Legacy_VSI_Complaints_Complaint</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Interventional – Legacy VSI Complaints</label>
+    <queue>Interventional_Legacy_VSI_Complaints</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

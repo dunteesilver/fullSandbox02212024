@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMS_Below_Director_Level_PRF</fullName>
+    <filterScope>Queue</filterScope>
+    <label>EMS Below Director Level</label>
+    <queue>EMS_Below_Director_Level</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

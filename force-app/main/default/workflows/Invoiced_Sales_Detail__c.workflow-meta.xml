@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Detail_Business_Unit</fullName>
+        <field>Business_Unit__c</field>
+        <formula>TEXT(Territory__r.Business_Unit__c)</formula>
+        <name>Invoiced Sales Detail - Business Unit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Detail_Compensation_Pro</fullName>
+        <field>Compensation_Profile__c</field>
+        <formula>TEXT(Territory__r.Compensation_Profile__c)</formula>
+        <name>Invoiced Sales Detail - Compensation Pro</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Detail_Date</fullName>
+        <field>Date__c</field>
+        <formula>FP_Based_on_Comn_Date__c</formula>
+        <name>Invoiced Sales Detail - Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Detail_Material_Key</fullName>
+        <field>Material_Key__c</field>
+        <formula>Product__r.Material_Key__c</formula>
+        <name>Invoiced Sales Detail - Material Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Detail_SAP_Code</fullName>
+        <field>SAP_Code__c</field>
+        <formula>Account__r.SAP_Sold_To__c</formula>
+        <name>Invoiced Sales Detail - SAP Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Detail_Territory_Number</fullName>
+        <field>Territory_Number__c</field>
+        <formula>Territory__r.Territory_Number__c</formula>
+        <name>Invoiced Sales Detail - Territory Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Detail_Workflow_Tickle</fullName>
+        <field>Workflow_Tickle__c</field>
+        <literalValue>1</literalValue>
+        <name>Invoiced Sales Detail - Workflow Tickle</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoiced_Sales_Details_Quota_Key</fullName>
+        <field>Territory_Quota_Key__c</field>
+        <formula>TEXT(MONTH( Commissionable_Date__c )) &amp; &quot;-&quot; &amp; TEXT(YEAR(Commissionable_Date__c)) &amp; &quot;-&quot; &amp;  Territory_Number__c</formula>
+        <name>Invoiced Sales Details - Quota Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Invoiced Sales Detail - Business Unit</fullName>
+        <actions>
+            <name>Invoiced_Sales_Detail_Business_Unit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Business_Unit__c &lt;&gt; TEXT(Territory__r.Business_Unit__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoiced Sales Detail - Compensation Profile</fullName>
+        <actions>
+            <name>Invoiced_Sales_Detail_Compensation_Pro</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Invoiced_Sales_Detail__c.Compensation_Profile__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoiced Sales Detail - Date</fullName>
+        <actions>
+            <name>Invoiced_Sales_Detail_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(
+ISBLANK(Date__c),
+FP_Based_on_Comn_Date__c &lt;&gt; Date__c
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoiced Sales Detail - Material Key</fullName>
+        <actions>
+            <name>Invoiced_Sales_Detail_Material_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Invoiced_Sales_Detail__c.Material_Key__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoiced Sales Detail - SAP Code</fullName>
+        <actions>
+            <name>Invoiced_Sales_Detail_SAP_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Invoiced_Sales_Detail__c.SAP_Code__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoiced Sales Detail - Territory Number</fullName>
+        <actions>
+            <name>Invoiced_Sales_Detail_Territory_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Territory_Number__c &lt;&gt; Territory__r.Territory_Number__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoiced Sales Detail - Workflow Tickle</fullName>
+        <actions>
+            <name>Invoiced_Sales_Detail_Workflow_Tickle</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISNEW()</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Invoiced Sales Details - Quota Key</fullName>
+        <actions>
+            <name>Invoiced_Sales_Details_Quota_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Invoiced_Sales_Detail__c.Territory_Quota_Key__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

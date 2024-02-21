@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GlideThru_Sheath_brochure__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>GlideThru Sheath brochure</description>
+    <externalId>false</externalId>
+    <inlineHelpText>GlideThru Sheath brochure</inlineHelpText>
+    <label>GlideThru Sheath brochure</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_is_your_department__c</fullName>
+    <externalId>false</externalId>
+    <label>What is your department</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Interventional Radiology</fullName>
+                <default>false</default>
+                <label>Interventional Radiology</label>
+            </value>
+            <value>
+                <fullName>Emergency Department</fullName>
+                <default>false</default>
+                <label>Emergency Department</label>
+            </value>
+            <value>
+                <fullName>ICU</fullName>
+                <default>false</default>
+                <label>ICU</label>
+            </value>
+            <value>
+                <fullName>Pediatrics</fullName>
+                <default>false</default>
+                <label>Pediatrics</label>
+            </value>
+            <value>
+                <fullName>Infusion Team/Vascular Access</fullName>
+                <default>false</default>
+                <label>Infusion Team/Vascular Access</label>
+            </value>
+            <value>
+                <fullName>Pre-hospital</fullName>
+                <default>false</default>
+                <label>Pre-hospital</label>
+            </value>
+            <value>
+                <fullName>Obsterics</fullName>
+                <default>false</default>
+                <label>Obsterics</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Hematology/Oncology</fullName>
+                <default>false</default>
+                <label>Hematology/Oncology</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

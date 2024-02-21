@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shipping_Priority__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Delivery Priority on the Tracking Object</inlineHelpText>
+    <label>Shipping Priority</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

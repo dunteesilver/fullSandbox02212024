@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Eligible__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>This indicates that this profile is used for people who are eligible for travel rates.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This indicates that this profile is used for people who are eligible for travel rates.</inlineHelpText>
+    <label>Travel Eligible</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

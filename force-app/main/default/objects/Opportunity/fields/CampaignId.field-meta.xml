@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CampaignId</fullName>
+    <lookupFilter>
+        <active>false</active>
+        <booleanFilter>(1 AND 2) OR (3 AND 4 AND 5) OR (6 AND 7 AND 8)</booleanFilter>
+        <filterItems>
+            <field>Campaign.RecordType.Name</field>
+            <operation>equals</operation>
+            <valueField>$Source.Business_Unit_GPL__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Campaign.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>Campaign.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>$UserRole.Name</field>
+            <operation>startsWith</operation>
+            <value>TFX ANZ</value>
+        </filterItems>
+        <filterItems>
+            <field>Campaign.RecordType.Name</field>
+            <operation>equals</operation>
+            <value>ANZ Campaign</value>
+        </filterItems>
+        <filterItems>
+            <field>Campaign.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>Campaign.RecordType.Name</field>
+            <operation>equals</operation>
+            <value>Surgical</value>
+        </filterItems>
+        <filterItems>
+            <field>$Source.Business_Unit_GPL__c</field>
+            <operation>startsWith</operation>
+            <value>Surgical</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

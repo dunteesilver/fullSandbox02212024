@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interventional_Closed_Opportunities</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Product_Family__c</columns>
+    <columns>Product_of_Interest__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.IA_Sales_Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Postponed,Qualified Prospect,Financial Decision,Trial/Evaluation</value>
+    </filters>
+    <label>Interventional Closed Opportunities</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Interventional_Access_Executive</role>
+        <role>Vascular_Marketing</role>
+        <role>Vascular_President</role>
+    </sharedTo>
+</ListView>

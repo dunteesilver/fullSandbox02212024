@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Year_Sales_Regional_Anes__c</fullName>
+    <description>Previous Year Sales from January 1st to toadys date.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Previous Year Sales from January 1st to toadys date.</inlineHelpText>
+    <label>Last Year Sales Regional Anes</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

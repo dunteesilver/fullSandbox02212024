@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Product_Expertise__c</fullName>
+    <externalId>false</externalId>
+    <label>Competitor Expertise</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Carefusion</fullName>
+                <default>false</default>
+                <label>Carefusion</label>
+            </value>
+            <value>
+                <fullName>Covidien</fullName>
+                <default>false</default>
+                <label>Covidien</label>
+            </value>
+            <value>
+                <fullName>Smiths</fullName>
+                <default>false</default>
+                <label>Smiths</label>
+            </value>
+            <value>
+                <fullName>Ambu</fullName>
+                <default>false</default>
+                <label>Ambu</label>
+            </value>
+            <value>
+                <fullName>Flexicare</fullName>
+                <default>false</default>
+                <label>Flexicare</label>
+            </value>
+            <value>
+                <fullName>Heine</fullName>
+                <default>false</default>
+                <label>Heine</label>
+            </value>
+            <value>
+                <fullName>Salter Labs</fullName>
+                <default>false</default>
+                <label>Salter Labs</label>
+            </value>
+            <value>
+                <fullName>Braun</fullName>
+                <default>false</default>
+                <label>Braun</label>
+            </value>
+            <value>
+                <fullName>Bard</fullName>
+                <default>false</default>
+                <label>Bard</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Cardinal</fullName>
+                <default>false</default>
+                <label>Cardinal</label>
+            </value>
+            <value>
+                <fullName>Sourcemark</fullName>
+                <default>false</default>
+                <label>Sourcemark</label>
+            </value>
+            <value>
+                <fullName>OnQ</fullName>
+                <default>false</default>
+                <label>OnQ</label>
+            </value>
+            <value>
+                <fullName>Welch Allyn</fullName>
+                <default>false</default>
+                <label>Welch Allyn</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

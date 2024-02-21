@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discuss_need_for_pressure_dressing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Discuss need for pressure dressing protocol (pin point/min 2 mins of pressure) and post procedure monitoring of patient
+PICC, Midline
+Trial/Evaluation Stage
+Round Table with the Account/Clinical
+What is facility protocol/procedure for the following?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Discuss need for pressure dressing protocol (pin point/min 2 mins of pressure) and post procedure monitoring of patient
+PICC, Midline
+Trial/Evaluation Stage
+Round Table with the Account/Clinical
+What is facility protocol/procedure for the following?</inlineHelpText>
+    <label>Discuss need for pressure dressing...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

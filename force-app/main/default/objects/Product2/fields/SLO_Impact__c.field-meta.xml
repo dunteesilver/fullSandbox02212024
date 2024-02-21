@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SLO_Impact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Temporary field created to validate SLO, Checked the box via DL to show impacted product before the SLO merge</description>
+    <externalId>false</externalId>
+    <label>SLO Impact</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

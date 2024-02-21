@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>The_Arrow_NaviCurve_Stylet__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>The Arrow NaviCurve Stylet is supplied preloaded in geometrically compatible 4-6 French Arrow  PICCs and is also available as a replacement  component in the vent the preloaded Stylet becomes compromised during preparation or use. when using the NaviCure Stylet as a replacement for a NaviCure Stylet previously preloaded in an Arrow PICC, ensure to place the Stylet in the same lumen as Previously loaded</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Arrow NaviCurve Stylet is supplied preloaded in geometrically compatible 4-6 French Arrow  PICCs and is also available as a replacement  component in the vent the preloaded Stylet becomes compromised during preparation or use. when using the NaviCure Stylet as a replacement for a NaviCure Stylet previously preloaded in an Arrow PICC, ensure to place the Stylet in the same lumen as Previously loaded</inlineHelpText>
+    <label>The Arrow NaviCurve Stylet</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

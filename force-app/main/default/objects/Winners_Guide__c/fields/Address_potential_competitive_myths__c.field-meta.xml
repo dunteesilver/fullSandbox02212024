@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_potential_competitive_myths__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Be prepared to address potential competitive myths — know your competition</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Be prepared to address potential competitive myths — know your competition</inlineHelpText>
+    <label>Address potential competitive myths</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

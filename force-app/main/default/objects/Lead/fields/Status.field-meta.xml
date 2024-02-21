@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status</fullName>
+    <inlineHelpText>New -(Default) Assigned but has not been worked(Open)
+Contacted -Worked, but not enough information to Qualify/Disqualify (Open)
+Qualified -Viable sales opportunity(Closed)
+Unqualified -Not a viable sales opportunity at this time(Closed)
+Overdue -Open</inlineHelpText>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+</CustomField>

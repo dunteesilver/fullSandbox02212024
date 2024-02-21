@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Anesthesia_Canada_Larry_and_Ted_Gilbert2</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing rule that shares the opportunities for Larry and Ted to Gilbert. Larry and Ted are in the Vascular hierarchy but are agents that sell across BUs</description>
+        <label>Anesthesia Canada (Larry and Ted &gt; Gilbert)</label>
+        <sharedTo>
+            <role>Anesthesia_RSM_Canada</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>005E0000000hiq2IAA,005E0000000hiqAIAQ</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Unit_GPL__c</field>
+            <operation>equals</operation>
+            <value>Anesthesia,EMS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Maria_Santorelli_Opps_with_Bill_Warren</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Maria Santorelli Opps with Bill Warren</description>
+        <label>Share Maria Santorelli Opps with Bill Warren</label>
+        <sharedTo>
+            <group>Interventional_Capital_Service_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>005E0000006n68SIAQ</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Philip_Parker_w_Nick_Landavazo</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Philip Parker w/ Nick Landavazo</label>
+        <sharedTo>
+            <group>Nick_Landavazo</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>equals</operation>
+            <value>00544000009b0pbAAA</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>ANZ_Vascular_TM_south</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ANZ Vascular TM south</label>
+        <sharedTo>
+            <group>X800450_Share</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>X800450_Share</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Anesthesia_Canada_RSM_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Gilbert is covering multiple Canadian BUs</description>
+        <label>Anesthesia Canada RSM Sharing Rule</label>
+        <sharedTo>
+            <role>Anesthesia_RSM_Canada</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Surgical_MSR_Canada</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Brazil_IUBU_Team_Opportunities</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Shares Opportunities amongst members of the group.</description>
+        <label>Brazil IUBU Team Opportunities</label>
+        <sharedTo>
+            <group>Brazil_IUBU_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Brazil_IUBU_Team</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Customer_Service_Manager_LATAM</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Customer Service Manager LATAM</label>
+        <sharedTo>
+            <role>Customer_Service_Manager</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Surgical_Latin_America_President</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IA_Canada</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share Canadian IA opportunities with IA Sales VP</description>
+        <label>IA Canada</label>
+        <sharedTo>
+            <role>Interventional_Access_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_DIR_Canada</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IA_Canadian_Opportunities</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grants sharing between Canadian team with IA NA Pres Role</description>
+        <label>IA Canadian Opportunities</label>
+        <sharedTo>
+            <role>Specialty_President</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_DIR_Canada</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Opportunities_LA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Opportunities LA</label>
+        <sharedTo>
+            <role>Latin_America_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Latin_America_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Opps_with_Sean_s_Team</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Opps with Sean&apos;s Team</label>
+        <sharedTo>
+            <group>Sean_Higgins_Anes_Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Anesthesia_President</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_EMS_Inside_Sales_with_Gena_Chapman</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share EMS Inside Sales with Gena Chapman as she is the Supervisor.</description>
+        <label>Share EMS Inside Sales with Gena Chapman</label>
+        <sharedTo>
+            <group>EMS_Inside_Sales</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>DTAC_Inside_Sales_Manager</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_Opps_with_Surgical_Product_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Rule shares Opportunities from the Surgical Executive team and subordinates with the Surgical Product Support Team.  This was needed as MDMs are above the Product Team in the Role Hierarchy.</description>
+        <label>Share Opps with Surgical Product Team</label>
+        <sharedTo>
+            <role>Surgical_Product_Support</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Surgical_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Surgical_Disposables_Exec_View_Percuvance</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Surgical Disposables Exec View Percuvance</label>
+        <sharedTo>
+            <role>Surgical_Disposables_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Surgical_Percuvance_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Surgical_Exec</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Surgical Exec</label>
+        <sharedTo>
+            <role>Surgical_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Surgical_Executive</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Urology_Inside_Sales_Resp_Inside_Sales_Exec</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Gives access for Beryl Hodgin to view Urology Inside Sales Opportunities</description>
+        <label>Urology Inside Sales &gt; Resp Inside Sales Exec</label>
+        <sharedTo>
+            <role>Respiratory_Inside_Sales_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Urology_Inside_Sales</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Marketing_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Vascular Marketing Access</label>
+        <sharedTo>
+            <role>Vascular_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Sales_Marketing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Vascular Sales &amp; Marketing</label>
+        <sharedTo>
+            <group>Vascular</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

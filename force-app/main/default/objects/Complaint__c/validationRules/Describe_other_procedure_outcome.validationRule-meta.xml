@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Describe_other_procedure_outcome</fullName>
+    <active>true</active>
+    <description>Interventional – Legacy VSI Products - If procedure outcome = &quot;Other&quot; than please describe the procedure outcome</description>
+    <errorConditionFormula>AND(
+RecordType.Name = &quot;Interventional – Legacy VSI Products&quot;,
+ISPICKVAL( Procedure_Outcome__c, &quot;Other&quot;),
+ISBLANK( Describe_other_Procedure_Outcome__c ))</errorConditionFormula>
+    <errorDisplayField>Describe_other_Procedure_Outcome__c</errorDisplayField>
+    <errorMessage>If &quot;Procedure Outcome&quot; = &quot;Other&quot; than please describe the procedure outcome above</errorMessage>
+</ValidationRule>

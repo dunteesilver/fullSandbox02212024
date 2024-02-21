@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DE_Material__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Grants access to DE10 Sales Org.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Grants access to DE10 Sales Org.</inlineHelpText>
+    <label>DE Material</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

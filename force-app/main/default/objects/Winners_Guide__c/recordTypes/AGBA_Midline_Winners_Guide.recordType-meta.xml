@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AGBA_Midline_Winners_Guide</fullName>
+    <active>true</active>
+    <label>AGBA Midline Winner&apos;s Guide</label>
+    <picklistValues>
+        <picklist>Account_having_policy_procedure__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Age_of_Oldest_tip_confirmation_system__c</picklist>
+        <values>
+            <fullName>Less Than 5 years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>More than 5 years</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approved_policy_and_procedure__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Are_they_open_to_trial_evaluation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Arterial_Line_Dressing_products__c</picklist>
+        <values>
+            <fullName>BioPatch%C2%AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tegaderm%E2%84%A2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tegaderm%E2%84%A2 CHG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Chosen_DLX_Configuration__c</picklist>
+        <values>
+            <fullName>ECG only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TipTracker Navigation and ECG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultrasound only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultrasound with ECG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ultrasound with TipTracker Navigation and ECG</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Commitmenttopurchaseifgoalsmet__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Completion_of_therapy__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Policy_and_Procedure__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_goals_align_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Existing_Service_Contract_Purchased_by__c</picklist>
+        <values>
+            <fullName>Biomed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Existing_Tip_Confirmation_System__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sherlock 3cg from BD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS G4 from Teleflex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VPS Rythm Device from Teleflex</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hospital_Policy_On_Equipment_Disposal__c</picklist>
+        <values>
+            <fullName>Equipment vendor removes and disposes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital Disposes of Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_supplies_gathered__c</picklist>
+        <values>
+            <fullName>Don%E2%80%99t Use Other Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Assembles Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase Pre-Assembled Kit from Company</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_VAT_MGMT_willing_to_set_expectations__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_a_Cart_and_or_Printer_Required__c</picklist>
+        <values>
+            <fullName>Both Cart and Printer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cart Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_the_Team_Manager_in_agreement__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_the_Vascular_Access_Manager_agrmnt__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IstheVAManagerinagreement__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IsthispartofTFXprogram__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Manager_willing_to_set_expectations__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Non_sterile_midlines_GlideThru_Sheaths__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Observe_1_2_cases_VAT_and_1_case_in_IR__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PIVdwelltimeoutlinedinPP__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_acquisition_method_for_equipme__c</picklist>
+        <values>
+            <fullName>Outright Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Installments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Contract_End_Date_For_Tip_Confor__c</picklist>
+        <values>
+            <fullName>0-3 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%2B Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-6 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6-9 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9-12 Months</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tip_Confirmation_System__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Warranty_Length_Desired__c</picklist>
+        <values>
+            <fullName>2 Years</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 Years</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_method_do_they_use__c</picklist>
+        <values>
+            <fullName>Integrated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PIV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seldinger</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1What_tecnqs_they_use_get_past_IJTodrop__c</picklist>
+        <values>
+            <fullName>Advance 1 cm%2Ftime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have patient cough or hum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lower head of bed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient positioning skills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove pillow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turn the patient%E2%80%99s head</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X2What_tecnqs_they_use_get_past_IJToDrop__c</picklist>
+        <values>
+            <fullName>Advance 1 cm%2Ftime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have patient cough or hum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lower head of bed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient positioning skills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove pillow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turn the patient%E2%80%99s head</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3What_tecnqs_they_use_get_past_IJToDrop__c</picklist>
+        <values>
+            <fullName>Advance 1 cm%2Ftime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have patient cough or hum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lower head of bed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient positioning skills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove pillow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turn the patient%E2%80%99s head</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

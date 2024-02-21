@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Planning_Call_Members__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>List Teleflex Team Members to include on planning call (RSM, RCEM, CEM, Sales Rep, National Accounts Manager, KAM, etc)</inlineHelpText>
+    <label>Regional Planning Call Members</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

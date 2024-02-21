@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Default_Short_Descript</fullName>
+        <field>Short_Description__c</field>
+        <formula>&quot;Story Details&quot;</formula>
+        <name>Default Short Descript</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Element_Closed_FALSE</fullName>
+        <description>Updates the Element.IsClosed value to FALSE</description>
+        <field>IsClosed__c</field>
+        <literalValue>0</literalValue>
+        <name>Element Closed=FALSE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Element_Closed_TRUE</fullName>
+        <description>Updates the Element.IsClosed value to TRUE</description>
+        <field>IsClosed__c</field>
+        <literalValue>1</literalValue>
+        <name>Element Closed=TRUE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Element_Completed_By</fullName>
+        <description>Updates the Element.CompletedBy to the User that changes the Status to Done or Passed</description>
+        <field>Completed_By__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>Element Completed By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Element_Completed_By_Blank</fullName>
+        <description>Updates the Element.CompletedBy to BLANK</description>
+        <field>Completed_By__c</field>
+        <name>Element Completed By Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Name Description %28Detail%29</fullName>
+        <actions>
+            <name>Default_Short_Descript</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Element__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Detail</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SCRUM Element Closed</fullName>
+        <actions>
+            <name>Element_Closed_TRUE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Element__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Done,Passed,Failed,Canceled</value>
+        </criteriaItems>
+        <description>Updates the Element.IsClosed to TRUE upon Element.Status change to a closed value such as Done, Canceled, Passed, Failed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SCRUM Element Reopened</fullName>
+        <actions>
+            <name>Element_Closed_FALSE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Element__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Done,Passed,Failed,Canceled</value>
+        </criteriaItems>
+        <description>Updates the Element.IsClosed to FALSE upon Element.Status change to an open value such as Not Started, In Progress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SCRUM Task %26 Test Completed By</fullName>
+        <actions>
+            <name>Element_Completed_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Element__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Task,Test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Element__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Done,Passed</value>
+        </criteriaItems>
+        <description>Updates the Element.CompletedBy to User that updated status to complete upon Element.Status change to Done or Passed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SCRUM Task %26 Test NoCompletedBy</fullName>
+        <actions>
+            <name>Element_Completed_By_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>((1 AND 2) OR (3 AND 4)) AND 5</booleanFilter>
+        <criteriaItems>
+            <field>Element__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Task</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Element__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Done</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Element__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Element__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Passed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Element__c.Completed_By__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Updates the Element.CompletedBy to BLANK when Element.Status changes from Done or Passed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,7 @@
+<aura:component controller="ComplaintIntegrationExtension" access="global"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="Complaint" type="Complaint__c" />
+    <lightning:button label="Create SAP Complaint" onclick="{! c.calloutCtrl }" />
+</aura:component>

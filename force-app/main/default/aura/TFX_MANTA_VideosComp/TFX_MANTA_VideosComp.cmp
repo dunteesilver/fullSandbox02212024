@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+     <article class="slds-card slds-align_absolute-center">
+                         
+        <div class="slds-border_top slds-border_bottom slds-border_left slds-border_right">
+            <div class="slds-card__body slds-card__body_inner ">
+                <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" /><br/><br/>
+                <iframe width="720" height="480" src="https://youtu.be/uXTSCpU7lLQ"></iframe><br/><br/>
+                <iframe width="720" height="480" src="https://www.youtube.com/embed/JBE6D1y2qfE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe><br/><br/>
+            <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+            </div>
+        </div>
+    </article>
+	
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Continue_to_update_strong_champion_s__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Continue to update strong champion(s)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Continue to update strong champion(s)</inlineHelpText>
+    <label>Continue to update strong champion(s)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

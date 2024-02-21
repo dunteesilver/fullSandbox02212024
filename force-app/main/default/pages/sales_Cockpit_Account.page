@@ -1,0 +1,120 @@
+<apex:page controller="sales_Cockpit_Account" title="Sales Cockpit - Account Summary: {!sap}">
+        <head>
+        <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+        <!--
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+-->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js">
+        </script>
+        <style>
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            td {
+            padding: 5px;
+            }
+            
+            #tbs {
+            border:1px solid black;
+            
+            }
+            #tbs th{
+            padding:5px;
+            border:1px solid black; 
+            background-color:#777;
+            color:#FFF;
+            
+            }
+            #tbs td{
+            padding:5px;
+            border:1px solid black; 
+            }
+            #ytd td{
+            text-align: center;
+            vertical-align: center;
+            vertical-align: middle;
+            }
+            #ytd th{
+            background-color:#00205b;
+            color:#FFF;
+            font-weight: bold;
+            text-align: center;
+            }
+            
+            .c {
+            text-align: center;
+            }
+            .r {
+            text-align: right;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            .well {
+            background: #00205b !important;
+            color:#FFF;
+            text-align: center;
+            }
+        </style>
+    </head>
+    <div class="teleflex">
+        <a href="/apex/sales_Cockpit?id={!tid}" class="btn btn-primary btn-sm">Back to Territory Summary</a>
+        <table class="table table-hover table-striped table-bordered table-condensed" id="ytd">
+                                <tr>
+                                    <th class="text-center" style="width: 20px;">&nbsp;</th>
+                                    <th>Customer</th>
+                                    <th>Year</th>
+                                    <th>Total</th>
+                                    <apex:repeat value="{!mList}" var="m">
+                                        <th>{!monthMap[m]}</th>
+                                    </apex:repeat>
+                                </tr>
+                            <apex:variable value="{!1}" var="row"/>
+                            <apex:repeat value="{!pList}" var="p">
+                                <apex:repeat value="{!yList}" var="yr">
+                                    <tr>
+                                        <apex:outputText rendered="{!yr=lastYear}">
+                                            <td style="width: 20px;" rowspan="2" class="text-center">{!row}</td>
+                                            <td rowspan="2" class="text-nowrap">
+                                                <a href="/apex/PP_Material_Info?id={!prodMap[p].Id}">{!prodMap[p].Name}</a>                                                
+                                                </td>
+                                        </apex:outputText>
+                                        <td>{!yr}</td>
+                                        <td>
+                                            <apex:outputText rendered="{!salesMap[yr+p+'prodSalesTotal'] = 0}">-</apex:outputText>
+                                            <apex:outputText rendered="{!salesMap[yr+p+'prodSalesTotal'] != 0}">
+                                                <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!salesMap[yr+p+'prodSalesTotal']}" />
+                                                </apex:outputText>
+                                                <br/>{!round(qtyMap[yr+p+'prodQtyTotal'],0)}
+                                            </apex:outputText>
+                                            
+                                        </td>
+                                        <apex:repeat value="{!mList}" var="m">
+                                            <td><center>
+                                                <apex:outputText rendered="{!salesMap[yr+m+p] = 0}">-</apex:outputText>
+                                                <apex:outputText rendered="{!salesMap[yr+m+p] != 0}">
+                                                    <apex:outputText value="{0, number, currency}">
+                                                        <apex:param value="{!salesMap[yr+m+p]}" />
+                                                    </apex:outputText>
+                                                    <br/>{!round(qtyMap[yr+m+p],0)}
+                                                </apex:outputText>
+                                                </center></td>
+                                        </apex:repeat>
+                                    </tr>
+                                </apex:repeat>
+                                <apex:variable var="row" value="{!row + 1}"/>
+                            </apex:repeat>
+                            </table>
+    </div>
+</apex:page>

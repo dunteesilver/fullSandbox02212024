@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EZ_IO_During_Initial_Required_Info</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+ISPICKVAL( When_the_problem_was_encountered__c , &quot;EZ-IO During Initial Insertion&quot;), 
+OR( 
+ISBLANK(TEXT( Was_IO_acc_achieved_Needle_Cath_c__c )), 
+ISBLANK( What_time_was_IO_Achieved__c ) 
+) 
+)</errorConditionFormula>
+    <errorDisplayField>EZ_IO_Complaint_Type__c</errorDisplayField>
+    <errorMessage>Please fill the required information in the EZ-IO Driver Related only Section</errorMessage>
+</ValidationRule>

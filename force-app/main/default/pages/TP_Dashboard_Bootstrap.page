@@ -1,0 +1,255 @@
+<apex:page docType="html-5.0" id="thePage" controller="TP_Dashboard" readOnly="true">
+    <style type="text/css">
+        .SaturationBackground { background-color: DarkBlue; font-weight: bold; color: white;font-size:15px;} 
+        .SegmentationBackground { background-color: DarkSlateGrey; font-weight: bold; color: white;font-size:15px;} 
+        .APlusBackground { background-color: YellowGreen;font-size:15px;vertical-align:text-top;}
+        .ABackground { background-color: YellowGreen;font-size:15px;vertical-align:text-top;}
+        .BBackground { background-color: PaleGreen;font-size:15px;vertical-align:text-top;}
+        .CBackground { background-color: PaleVioletRed;font-size:15px;vertical-align:text-top;}
+        .MDBackground { background-color: LightGrey;font-size:15px;vertical-align:text-top;}
+        .VerticalDisplay { transform: rotate(180deg);writing-mode: vertical-rl;-webkit-writing-mode: vertical-rl;-ms-writing-mode: vertical-rl;height: 500px;font-size:15px;}
+        .rowHeight{ height:16%;}
+    </style>
+    
+    <div class="teleflex">
+        
+        <div class="teleflex">
+            <div class="contain-fluid">
+                <div class="row">
+                    
+                    
+                </div>
+            </div>
+        </div> <!-- End of 2nd Div Teleflex -->
+        
+        
+        <!-- Line Items -->
+        <apex:form id="itemsform" html-ng-non-bindable="true">
+            
+            <apex:outputPanel Styleclass="panel-body" id="panel1" layout="block">
+                <!-- <apex:pageMessages ></apex:pageMessages> -->
+                <table border="1" id="sortable" width="100%" height="100%">
+                    
+                    <thead>
+                        <tr class="SaturationBackground">
+                            <th rowspan="2" colspan="2"></th>
+                            <th colspan="3"><center>Saturation Rate</center></th>
+                        </tr>
+                        <tr class="SaturationBackground">
+                            <th>Low</th>
+                            <th>Medium</th>
+                            <th>High</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr class="rowHeight">
+                            <td  rowspan="5" class="SegmentationBackground"><center><b class="VerticalDisplay">Account Segmentation</b></center></td>
+                            <td class="SegmentationBackground">A+</td>
+                            <td class="APlusBackground">
+                                <apex:repeat value="{!recssaturation33eachesAPlus}" var="row">
+                                    <apex:outputText >
+                                        <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation33eachesAPlusTotal > 5}">
+                                    <a href="{!'/apex/TPRecords?pr='+URLENCODE('A+')+'&sr='+URLENCODE('<33%')}">View All ({!recssaturation33eachesAPlusTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="APlusBackground">
+                                <apex:repeat value="{!recssaturation3366eachesAPlus}" var="row">
+                                    <apex:outputText >
+                                        <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation3366eachesAPlusTotal > 5}">
+                                    <a href="{!'/apex/TPRecords?pr='+URLENCODE('A+')+'&sr='+URLENCODE('33%-66%')}">View All ({!recssaturation3366eachesAPlusTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td  class="APlusBackground">
+                                <apex:repeat value="{!recssaturation66eachesAPlus}" var="row">
+                                    <apex:outputText >
+                                      <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation66eachesAPlusTotal > 5}">
+                                    <a href="{!'/apex/TPRecords?pr='+URLENCODE('A+')+'&sr='+URLENCODE('>66%')}">View All ({!recssaturation66eachesAPlusTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+                        <tr class="rowHeight">
+                            <td class="SegmentationBackground">A</td>
+                            <td class="ABackground">
+                                <apex:repeat value="{!recssaturation33eachesA}" var="row">
+                                    <apex:outputText >
+                                      <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation33eachesATotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A')+'&sr='+URLENCODE('<33%')}">View All ({!recssaturation33eachesATotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="ABackground">
+                                <apex:repeat value="{!recssaturation3366eachesA}" var="row">
+                                    <apex:outputText >
+                                        <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation3366eachesATotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A')+'&sr='+URLENCODE('33%-66%')}">View All ({!recssaturation3366eachesATotal})</a>
+                                </apex:outputPanel>
+                           
+                                </td>
+                            <td class="ABackground">
+                                <apex:repeat value="{!recssaturation66eachesA}" var="row">
+                                    <apex:outputText >
+                                       <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation66eachesATotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('A')+'&sr='+URLENCODE('>66%')}">View All ({!recssaturation66eachesATotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+                        <tr class="rowHeight">
+                            <td class="SegmentationBackground">B</td>
+                            <td class="BBackground">
+                                <apex:repeat value="{!recssaturation33eachesB}" var="row">
+                                    <apex:outputText >
+                                      <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation33eachesBTotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('B')+'&sr='+URLENCODE('<33%')}">View All ({!recssaturation33eachesBTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="BBackground">
+                                <apex:repeat value="{!recssaturation3366eachesB}" var="row">
+                                    <apex:outputText >
+                                       <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation3366eachesBTotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('B')+'&sr='+URLENCODE('33%-66%')}">View All ({!recssaturation3366eachesBTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="BBackground">
+                                <apex:repeat value="{!recssaturation66eachesB}" var="row">
+                                    <apex:outputText >
+                                      <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation66eachesBTotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('B')+'&sr='+URLENCODE('>66%')}">View All ({!recssaturation66eachesBTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+                        <tr class="rowHeight">
+                            <td class="SegmentationBackground">C</td>
+                            <td class="CBackground">
+                                <apex:repeat value="{!recssaturation33eachesC}" var="row">
+                                    <apex:outputText >
+                                       <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation33eachesCTotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('C')+'&sr='+URLENCODE('<33%')}">View All ({!recssaturation33eachesCTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="CBackground">
+                                <apex:repeat value="{!recssaturation3366eachesC}" var="row">
+                                    <apex:outputText >
+                                      <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation3366eachesCTotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('C')+'&sr='+URLENCODE('33%-66%')}">View All ({!recssaturation3366eachesCTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="CBackground">
+                                <apex:repeat value="{!recssaturation66eachesC}" var="row">
+                                    <apex:outputText >
+                                       <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation66eachesCTotal > 5}">
+                                <a href="{!'/apex/TPRecords?pr='+URLENCODE('C')+'&sr='+URLENCODE('>66%')}">View All ({!recssaturation66eachesCTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+              <!----         <tr class="rowHeight">
+                            <td class="SegmentationBackground">MD</td>
+                            <td class="MDBackground">
+                                <apex:repeat value="{!recssaturation33eachesMD}" var="row">
+                                    <apex:outputText >
+                                       <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation33eachesMDTotal > 5}">
+                                    <a href="{!'/apex/TPRecords?pr='+URLENCODE('MD')+'&sr='+URLENCODE('<33%')}">View All ({!recssaturation33eachesMDTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="MDBackground">
+                                <apex:repeat value="{!recssaturation3366eachesMD}" var="row">
+                                    <apex:outputText >
+                                        <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation3366eachesMDTotal > 5}">
+                                    <a href="{!'/apex/TPRecords?pr='+URLENCODE('MD')+'&sr='+URLENCODE('33%-66%')}">View All ({!recssaturation3366eachesMDTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="MDBackground">
+                                <apex:repeat value="{!recssaturation66eachesMD}" var="row">
+                                    <apex:outputText >
+                                      <a href="{!'/'+row.Id}" target="_blank">{!row.Name}&nbsp;&nbsp;|&nbsp;&nbsp;{!row.Account__r.Name}&nbsp;&nbsp;</a>
+                                    </apex:outputText>
+                                    <br/>
+                                </apex:repeat>
+                                <br/>
+                                <apex:outputPanel rendered="{!recssaturation66eachesMDTotal > 5}">
+                                    <a href="{!'/apex/TPRecords?pr='+URLENCODE('MD')+'&sr='+URLENCODE('>66%')}">View All ({!recssaturation66eachesMDTotal})</a>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>--->
+                        <!-- END OF LINE ITEMS -->
+                    </tbody>
+                </table>
+                
+            </apex:outputPanel>
+            <!-- End Line Items -->
+            
+        </apex:form>
+        <!-- Dun's Form -->
+        
+    </div> <!-- End of Main Div Teleflex -->
+    <!-- End of Dun's Form -->
+</apex:page>

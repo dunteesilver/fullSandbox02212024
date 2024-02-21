@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demo_Status_to_Complete</fullName>
+    <active>true</active>
+    <description>Validation rule to ensure date fields are filled when setting up a demo.</description>
+    <errorConditionFormula>OR(ISBLANK( Start_Date__c ),ISBLANK( End_Date__c ), Start_Date__c &gt; End_Date__c)</errorConditionFormula>
+    <errorMessage>Start Date and End Date must be populated to save this record.  Also, End Date cannot be a date before Started Date.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workflow_Business_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Updated as per 2023 new comp profiles -AN Feb 04 2023 */ 
+/* Updated as per 2022 new comp profiles -AN Feb 05 2022 */ 
+/* Updated as per 2021 new comp profiles for EMS\ANES -AN July 8 2021 */
+/* Updated as per 2021 new comp profiles for ANZ -AN May 8 2021 */
+/* Updated as per 2020 new comp profiles -AN Feb 5 2020 */
+/* Updated as per 2019 new comp profiles -AN Feb 11 2019 */
+/* Updated new comp profiles for LATAM -AN March 26 2019 */
+if(UPPER(Compensation_Profile_Id__c) = &quot;ALTC&quot;,&quot;Alt Care&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ALTCISR&quot;,&quot;Alt Care&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ALTURO&quot;,&quot;Alt Care&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANES&quot;,&quot;Anesthesia&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANESCA&quot;,&quot;Anesthesia&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANESSBM&quot;,&quot;Anesthesia&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANESMIL&quot;,&quot;Military&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANESMIL REP&quot;,&quot;Military&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;TACTICAL&quot;,&quot;Miltac&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;DTAC&quot;,&quot;DTAC&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;DTAC IS&quot;,&quot;DTAC&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;UROL&quot;,&quot;DTAC&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANZ&quot;,&quot;Australia\NZ&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANZ INTV&quot;,&quot;Australia\NZ&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANZ VASC&quot;,&quot;Australia\NZ&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;ANZ INTV UROL&quot;,&quot;Australia\NZ&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;EM&quot;,&quot;EMS&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;EMISR&quot;,&quot;EMS&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;EMS&quot;,&quot;EMS&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTV&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTV COR&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTV MCS&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTV SH&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;CARDIAC&quot;,&quot;Interventional Capital&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTVCA&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTVISR&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTVCA ISR&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;INTVIS&quot;,&quot;Interventional&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;RESP&quot;,&quot;Respiratory&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;RESPISR&quot;,&quot;Respiratory&quot;, 
+if(UPPER(Compensation_Profile_Id__c) = &quot;RESPCA&quot;,&quot;Respiratory&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;SURCA&quot;,&quot;Surgical&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;SURD&quot;,&quot;Surgical&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;SURI&quot;,&quot;Surgical&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;SURIIS&quot;,&quot;Surgical&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;SURIIS PE&quot;,&quot;Surgical&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;BARIATRIC&quot;,&quot;Surgical&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;UROL&quot;,&quot;Urology&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;VASC&quot;,&quot;Vascular&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;VASCCA&quot;,&quot;Vascular&quot;, 
+if(UPPER(Compensation_Profile_Id__c) = &quot;VASCKAM&quot;,&quot;Vascular&quot;, 
+if(UPPER(Compensation_Profile_Id__c) = &quot;LATAM&quot;,&quot;Latin America&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;LATAM AEM&quot;,&quot;Latin America&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;LATAM INTV&quot;,&quot;Latin America&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;LATAM SOLA&quot;,&quot;Latin America&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;LATAM SURG&quot;,&quot;Latin America&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;LATAM SURG AEM&quot;,&quot;Latin America&quot;,
+if(UPPER(Compensation_Profile_Id__c) = &quot;LATAM VASC&quot;,&quot;Latin America&quot;,
+Compensation_Profile_Id__c
+))))))))))))))))))))))))))))))))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Workflow Business Unit</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

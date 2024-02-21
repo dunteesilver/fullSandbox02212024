@@ -1,0 +1,596 @@
+<aura:component
+                controller="WinnersGuideHandler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global"
+                >
+    <aura:handler name="init" action="{!c.myAction}" value="{!this}" />
+    <aura:attribute
+                    name="newVPSWinGuide"
+                    type="Winners_Guide__c"
+                    default="{ 'sobjectType': 'Winners_Guide__c',
+                             'Id' : '',
+                             'Name' : '',
+                             'BS_VAT_DirMgr_Nme_Em_Ph__c' : '',
+                             'BS_VAT_DirMgr_Lvl_of_Sup__c' : '',
+                             'BS_VAT_DirMgr_Sup_Comments__c' : '',
+                             'BS_VAT_DirMgr_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_VAT_Lead_Nme_Em_Ph__c' : '',   
+                             'BS_VAT_Lead_Lvl_of_Sup__c' : '',
+                             'BS_VAT_Lead_Sup_Comments__c' : '',
+                             'BS_VAT_Lead_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_IR_Lead_Tech_Nme_Em_Ph__c' : '',    
+                             'BS_IR_Lead_Tech_Lvl_of_Sup__c' : '',
+                             'BS_IR_Lead_Tech_Sup_Comments__c' : '',
+                             'BS_IR_Lead_Tech_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_MatMgmt_SuppChn_Nme_Em_Ph__c' : '',
+                             'BS_MatMgmt_SuppChn_Lvl_of_Sup__c' : '',
+                             'BS_MatMgmt_SuppChn_Sup_Comments__c' : '',
+                             'BS_MatMgmt_SuppChns_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_NurEdu_Nme_Em_Ph__c' : '',
+                             'BS_NurEdu_Lvl_of_Sup__c' : '',
+                             'BS_NurEdu_Sup_Comments__c' : '',
+                             'BS_NurEdu_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_QualityRskMgmt_Nme_Em_Ph__c' : '',
+                             'BS_QualityRskMgmt_Lvl_of_Sup__c' : '',
+                             'BS_QualityRskMgmt_Sup_Comments__c' : '',
+                             'BS_QualityRskMgmt_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_CSuite_Nme_Em_Ph__c' : '',
+                             'BS_CSuite_Lvl_of_Sup__c' : '',
+                             'BS_CSuite_Sup_Comments__c' : '',
+                             'BS_CSuite_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_VAC_Nme_Em_Ph__c' : '',
+                             'BS_VAC_Lvl_of_Sup__c' : '',
+                             'BS_VAC_Sup_Comments__c' : '',
+                             'BS_VAC_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_FinancialDecisionMaker_Nme_Em_Ph__c' : '',
+                             'BS_FinancialDecisionMaker_Lvl_of_Sup__c' : '',
+                             'BS_FinancialDecisionMaker_Sup_Comments__c' : '',
+                             'BS_FinancialDecisionMaker_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_Biomed_Nme_Em_Ph__c' : '',
+                             'BS_Biomed_Lvl_of_Sup__c' : '',
+                             'BS_Biomed_Sup_Comments__c' : '',
+                             'BS_Biomed_Cap_Equip_Comm__c' : '',
+                             
+                             'BS_Other_Nme_Em_Ph__c' : '',
+                             'BS_Other_Lvl_of_Sup__c' : '',
+                             'BS_Other_Sup_Comments__c' : '',
+                             'BS_Other_Cap_Equip_Comm__c' : ''
+                             
+                             }"
+                    />
+    <aura:attribute name="isLoading" type="Boolean" />
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>    
+    <!-- mobile -->
+    <div class="slds-box">
+        <div class="slds-m-around_xxx-small">
+            <div
+                 class="slds-text-heading_medium slds-text-align_left"
+                 style="font-weight: bold"
+                 >Needs Analysis: Balanced Seller
+            </div>
+        </div>
+        
+        <!--
+  <lightning:button
+                                                    variant="brand"
+                                                    label="Save"
+                                                    onclick="{!c.saveWGBalSelSectionDetails}"
+                                                    />
+  -->
+        
+        <table
+               class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered"
+               >
+            <thead style="background-color: rgb(222 171 52)">
+                <tr class="slds-text-title_caps">
+                    <th scope="col" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Stakeholder">Stakeholder </div>
+                    </th>
+                    <th scope="col" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="Nme_Em_Ph">Name/Email/Phone</div>
+                    </th>
+                    <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+                        <div class="slds-truncate" title="LvlOfSup"
+                             >Level Of Support<br />(N/CS/C/B)
+                        </div>
+                    </th>
+                    <th scope="col" class="slds-cell-wrap slds-size_1-of-12">
+                        <div class="slds-truncate" title="SupComments"
+                             >Support Comments/<br />Why
+                        </div>
+                    </th>
+                    <th scope="col" class="slds-cell-wrap">
+                        <div class="slds-truncate">Sits on<br />
+                            Capital<br />
+                            Equipment<br />
+                            Committee</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Vascular Access Team<br />Director/Manager</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_VAT_DirMgr_Nme_Em_Ph__c}"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_VAT_DirMgr_Lvl_of_Sup__c}"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_VAT_DirMgr_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_VAT_DirMgr_Cap_Equip_Comm__c}"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Vascular Access Team<br />Lead</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_VAT_Lead_Nme_Em_Ph__c}"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_VAT_Lead_Lvl_of_Sup__c}"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_VAT_Lead_Sup_Comments__c }" 
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_VAT_Lead_Cap_Equip_Comm__c}"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >IR/Radiology Lead Tech</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_IR_Lead_Tech_Nme_Em_Ph__c}"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_IR_Lead_Tech_Lvl_of_Sup__c}"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_IR_Lead_Tech_Sup_Comments__c}"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_IR_Lead_Tech_Cap_Equip_Comm__c}" 
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Materials Management/Supply<br />
+                            Chain</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_MatMgmt_SuppChn_Nme_Em_Ph__c}"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_MatMgmt_SuppChn_Lvl_of_Sup__c}"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_MatMgmt_SuppChn_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_MatMgmt_SuppChns_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Nursing Education</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_NurEdu_Nme_Em_Ph__c }"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_NurEdu_Lvl_of_Sup__c }"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_NurEdu_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_NurEdu_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Quality/Risk Management</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_QualityRskMgmt_Nme_Em_Ph__c }"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_QualityRskMgmt_Lvl_of_Sup__c }"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_QualityRskMgmt_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_QualityRskMgmt_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >C-Suite</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_CSuite_Nme_Em_Ph__c }"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_CSuite_Lvl_of_Sup__c }"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_CSuite_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_CSuite_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Value Analysis Chair and Team
+                            <br />Members (Identify Champion)</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_VAC_Nme_Em_Ph__c }"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_VAC_Lvl_of_Sup__c }"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_VAC_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_VAC_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Financial Decision Maker(s)</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_FinancialDecisionMaker_Nme_Em_Ph__c }"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_FinancialDecisionMaker_Lvl_of_Sup__c }"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_FinancialDecisionMaker_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_FinancialDecisionMaker_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Biomed</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_Biomed_Nme_Em_Ph__c }"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_Biomed_Lvl_of_Sup__c }"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_Biomed_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" />
+                            
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_Biomed_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="slds-hint-parent">
+                    <td>
+                        <div class="slds-truncate"
+                             >Other</div
+                            >
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:input
+                                             aura:id="vpsWinnerGuideForm"
+                                             value="{!v.newVPSWinGuide.BS_Other_Nme_Em_Ph__c }"
+                                             onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate"
+                             ><lightning:input
+                                               aura:id="vpsWinnerGuideForm"
+                                               maxlength="255"
+                                               value="{!v.newVPSWinGuide.BS_Other_Lvl_of_Sup__c }"
+                                               onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:TextArea
+                                                aura:id="vpsWinnerGuideForm"
+                                                value="{!v.newVPSWinGuide.BS_Other_Sup_Comments__c }"
+                                                onblur="{!c.saveWGBalSelSectionDetails}" /></div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate">
+                            <lightning:select
+                                              aura:id="vpsWinnerGuideForm"
+                                              value="{!v.newVPSWinGuide.BS_Other_Cap_Equip_Comm__c }"
+                                              onchange="{!c.saveWGBalSelSectionDetails}" >
+                                <option value="0">Please Select</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </lightning:select>
+                        </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>  
+    </div>
+    <!-- mobile -->
+</aura:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PatientsCurrentConditionDescription__c</fullName>
+    <description>This field is used to add details if needed based on the Patient&apos;s Current Condition.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If &quot;Other&quot; or &quot;Unknown&quot; is selected for Patient&apos;s Current Condition, please describe the patient&apos;s condition.</inlineHelpText>
+    <label>Patient&apos;s Condition Description</label>
+    <length>40</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

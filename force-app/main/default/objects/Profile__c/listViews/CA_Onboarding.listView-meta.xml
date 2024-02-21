@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CA_Onboarding</fullName>
+    <columns>NAME</columns>
+    <columns>First_Name__c</columns>
+    <columns>Type__c</columns>
+    <columns>Credentials__c</columns>
+    <columns>Field_of_Expertise__c</columns>
+    <columns>Current_Work_Title__c</columns>
+    <columns>Mailing_City__c</columns>
+    <columns>Mailing_State__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Profile__c.Clinical_Advisor</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Onboarding</value>
+    </filters>
+    <label>*CA: Onboarding</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinates>Clinical_Affairs_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

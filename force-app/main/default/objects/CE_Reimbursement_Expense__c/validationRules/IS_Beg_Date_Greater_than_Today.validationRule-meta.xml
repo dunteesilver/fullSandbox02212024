@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IS_Beg_Date_Greater_than_Today</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(OR( (Education_Record__r.Date_of_Event_Start__c)  &gt; Today(),
+(Education_Record__r.Ending_Date__c ) &gt; Today()), 
+ISPICKVAL( Status__c , &quot;Submit CRF&quot;))</errorConditionFormula>
+    <errorMessage>Inservice beginning date or ending date cannot be after date CRF submitted</errorMessage>
+</ValidationRule>

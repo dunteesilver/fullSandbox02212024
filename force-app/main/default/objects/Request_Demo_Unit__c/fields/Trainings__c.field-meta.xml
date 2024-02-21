@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trainings__c</fullName>
+    <description>Grans user permission to request a demo unit.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Completed Product Training - Permission to get a demo unit
+Completed Bedside Proctor Training - Can support a case on their own.</inlineHelpText>
+    <label>Trainings</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VPS Expert Trainer</fullName>
+                <default>false</default>
+                <label>VPS Expert Trainer</label>
+            </value>
+            <value>
+                <fullName>VPS G4 Product Training</fullName>
+                <default>false</default>
+                <label>VPS G4 Product Training</label>
+            </value>
+            <value>
+                <fullName>VPS G4 Bedside Proctoring</fullName>
+                <default>false</default>
+                <label>VPS G4 Bedside Proctoring</label>
+            </value>
+            <value>
+                <fullName>VPS Rhythm Product Training</fullName>
+                <default>false</default>
+                <label>VPS Rhythm Product Training</label>
+            </value>
+            <value>
+                <fullName>VPS Rhythm Bedside Proctoring</fullName>
+                <default>false</default>
+                <label>VPS Rhythm Bedside Proctoring</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

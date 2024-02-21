@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Overlay__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(KAM__c &lt;&gt; NULL,&quot;KAM Sales&quot;,
+if(DNA__c &lt;&gt; NULL,&quot;DNA Sales&quot;,
+/* Default */
+&quot;None&quot;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales Overlay</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

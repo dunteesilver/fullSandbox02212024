@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_CRF_Type_Inservice</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(   RecordType.Name  =&quot;Inservice Record&quot;,
+ Verify_for_CRF__c = TRUE,
+ISNULL(     Type_of_In_Service__c   )
+)</errorConditionFormula>
+    <errorDisplayField>Type_of_In_Service__c</errorDisplayField>
+    <errorMessage>Type of In-Service must be entered in order to submit a CRF</errorMessage>
+</ValidationRule>

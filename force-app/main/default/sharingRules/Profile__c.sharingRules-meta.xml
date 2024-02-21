@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ACE_Record_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ACE Record Sharing</label>
+        <sharedTo>
+            <group>Clinical_Contacts_ACE</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ACE</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Acre_records_access_for_CEM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Acre records - access for CEM</label>
+        <sharedTo>
+            <group>Clinicals_Vascular_CEM</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ACE</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Clinical_Affairs</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows Clinical Affairs role read access to CA record Type</description>
+        <label>Clinical Affairs</label>
+        <sharedTo>
+            <role>Clinical_Affairs</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Advisor,Contractor,Pre-Contract</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Clinical_Affairs_ACE_Profiles</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Opens ACE profiles to read/write access for Clinical Affairs Public Group.</description>
+        <label>Clinical Affairs - ACE Profiles</label>
+        <sharedTo>
+            <group>Clinical_Affairs</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>ACE,Contractor,Pre-Contract</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Clinical_Affairs_Interventional</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Clinical Affairs - Interventional</label>
+        <sharedTo>
+            <group>Clinical_Affairs_Interventional_Access</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Contractor</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Clinical_Affairs_MGR</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows Clinical Affairs Mgr to Read/Write for CA record Type</description>
+        <label>Clinical Affairs MGR</label>
+        <sharedTo>
+            <role>Clinical_Affairs_Manager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Advisor,Contractor,Pre-Contract</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Clinical_Team_Managers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Clinical Team Managers</label>
+        <sharedTo>
+            <group>Clinical_Team_Manager</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>TFX - Internal Resource,Contractor,ACE,Clinical Educator,Pre-Contract</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Contractor_Profiles_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Contractor Profiles - Read</label>
+        <sharedTo>
+            <roleAndSubordinates>Teleflex_Corporate</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>TFX - Internal Resource,Contractor</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMS_Profiles</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>EMS Profiles</label>
+        <sharedTo>
+            <role>EMS_Federal_Gov_Manager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>TFX - Internal Resource</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Business_Unit_TXT__c</field>
+            <operation>equals</operation>
+            <value>EMS,Anesthesia</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Educator_Record_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Shares the Clinical Educator record type with the Clinicals group</description>
+        <label>Educator Record Sharing</label>
+        <sharedTo>
+            <group>Clinicals</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Educator</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sales_access</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Sales access</label>
+        <sharedTo>
+            <group>Clinicals_Sales_access_to_CE</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Clinical Educator</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Vascular_CEM_RCEM_access_to_Clinical_Team</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Vascular CEM&amp;RCEM access to Clinical Team</label>
+        <sharedTo>
+            <roleAndSubordinates>Vascular_Clinical_Manager</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Pre-Contract</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

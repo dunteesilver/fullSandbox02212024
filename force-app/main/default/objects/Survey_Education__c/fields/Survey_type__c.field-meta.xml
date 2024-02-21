@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Survey_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Survey type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre</fullName>
+                <default>false</default>
+                <label>Pre</label>
+            </value>
+            <value>
+                <fullName>Post-Immediate</fullName>
+                <default>false</default>
+                <label>Post-Immediate</label>
+            </value>
+            <value>
+                <fullName>Post-6 Weeks</fullName>
+                <default>false</default>
+                <label>Post-6 Weeks</label>
+            </value>
+            <value>
+                <fullName>Post-6 Months</fullName>
+                <default>false</default>
+                <label>Post-6 Months</label>
+            </value>
+            <value>
+                <fullName>Education Survey</fullName>
+                <default>false</default>
+                <label>Education Survey</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

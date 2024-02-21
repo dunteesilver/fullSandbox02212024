@@ -1,0 +1,454 @@
+<apex:page docType="html-5.0" controller="PP_Price_Lookup"
+           title="Price Lookup - Teleflex Pricing Portal (SFDC)"
+           tabStyle="Pricing_Portal__tab" sidebar="false"
+           cache="false" expires="600"
+           standardStylesheets="true">
+    <style>
+        table.fs10a td, table.fs10a th{
+        font-size: 12px;
+        vertical-align: middle !important;
+        padding: 5px !important;
+        }
+    </style>
+    
+    <!-- DIV to Render the rest of the page in Bootstrap -->
+    <div class="teleflex">
+        <!-- Call the Menu -->
+        <apex:include id="menu" pageName="PP_Menu"/>
+        <apex:variable var="emeaUser" value="{!IF(contains($UserRole.Name,'EMEA'),TRUE,FALSE)}"/>
+        <apex:outputPanel title="" id="error" rendered="{!if(errorTable, TRUE, FALSE)}">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">&nbsp;</h3>
+                </div>
+                <div class="panel-body">
+                    <apex:pageMessages ></apex:pageMessages>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+        <div class="contain-fluid">
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h6 class="panel-title"><img src="/img/icon/quotes24.png" alt="Price"/>&nbsp;&nbsp;Price Lookup</h6>
+                        </div>
+                        <div class="panel-body">
+                            <apex:form html-ng-non-bindable="true">
+                                <table style="padding: 5px;" class="fs10a">
+                                    <tr>
+                                        <td style="vertical-align:middle; padding: 5px" class="vert-align" align="right"><h4>Customer&nbsp;#&nbsp;</h4></td>
+                                        <td style="vertical-align:middle; padding: 5px">
+                                            <apex:inputText label="Customer" value="{!cnumber}" id="custsearch" styleClass="form-control"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align:middle; padding: 5px" align="right"><h4>Material&nbsp;</h4></td>
+                                        <td style="padding: 5px">
+                                            <apex:inputText label="Part" value="{!pnumber}" id="prodsearch" styleClass="form-control"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td style="padding: 5px">
+                                            <apex:commandButton action="{!getURL}" value="Get Price" styleClass="btn btn-primary" />&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <apex:commandButton value="Clear" onclick="this.form.reset();return false;" styleClass="btn btn-primary"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <!-- <apex:commandButton action="{!getSample}" value="Test!" styleClass="btn btn-primary"/> -->
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </apex:form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Details -->
+                <apex:outputtext rendered="{!Accts.size > 0}" >
+                    <div class="col-xs-2">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><img src="/img/icon/accounts16.png" alt="Price"/>&nbsp;&nbsp;Account Details</h6>
+                            </div>
+                            <div class="panel-body">
+                                <apex:repeat value="{!Accts}" var="a">
+                                    <table class="table table-hover table-condensed fs10a">
+                                        <tr>
+                                            <apex:outputText rendered="{!soldToAcct.size != NULL}">
+                                              <td><strong>Sold To Acct&nbsp;({!soldToAcct[0].Price_List_Type__c})</strong></td>
+                                            </apex:outputText>
+                                        </tr>
+                                        <tr>
+                                          <apex:outputText rendered="{!soldToAcct.size != NULL}">
+                                            <td>
+                                              <strong>
+                                              <a href="/apex/PP_Customer_Details?cid={!soldToAcct[0].SAP_Sold_To__c}">{!soldToAcct[0].name}&nbsp;({!soldToAcct[0].SAP_Sold_To__c})</a>
+                                              </strong>
+                                            </td>
+                                          </apex:outputText>
+                                        </tr>
+                                        <tr>
+                                          <apex:outputText rendered="{!soldToAcct.size != NULL}">
+                                            <td >{!soldToAcct[0].ShippingStreet}<br/>
+                                              {!soldToAcct[0].ShippingCity}, {!soldToAcct[0].ShippingState} {!soldToAcct[0].ShippingPostalCode}<br/>
+                                              {!soldToAcct[0].ShippingCountry}
+                                            </td>
+                                          </apex:outputText>
+                                        </tr>
+                                        <tr>
+                                            <apex:outputText rendered="{!soldToAcct.size != NULL}">
+                                              <td><strong>Ship To Acct&nbsp;({!a.Price_List_Type__c})</strong></td>
+                                            </apex:outputText>
+                                        </tr>
+                                        <tr>
+                                          <td>
+                                            <strong><a href="/apex/PP_Customer_Details?cid={!a.SAP_Sold_To__c}">{!a.name}&nbsp;({!a.SAP_Sold_To__c})</a>
+                                            </strong>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                            <td>{!a.ShippingStreet}<br/>
+                                            {!a.ShippingCity}, {!a.ShippingState} {!a.ShippingPostalCode}<br/>
+                                            {!a.ShippingCountry}
+                                          </td>
+                                        </tr>
+                                    </table>
+                                </apex:repeat>
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputtext>
+
+                <apex:outputtext rendered="{!Accts.size == 0 && cid != NULL}" >
+                    <div class="col-xs-2">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><img src="/img/icon/accounts16.png" alt="Price"/>&nbsp;&nbsp;Account Details</h6>
+                            </div>
+                            <div class="panel-body">
+                                No Account Found
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputtext>
+                    <!-- End Account -->
+                
+                <apex:outputtext rendered="{!prod != NULL}">
+                    <apex:variable var="hospitalList" value="{!IF(prod.List_Price__c != NULL,prod.List_Price__c,0.00)}"/>
+                    <apex:variable var="distributorList" value="{!IF(prod.Distributor_List__c != NULL,prod.Distributor_List__c,0.00)}"/>
+                    <apex:variable var="altSiteList" value="{!IF(prod.Alt_Site_List__c != NULL,prod.Alt_Site_List__c,0.00)}"/>
+                    <apex:variable var="prodSales" value="{!IF(prod.Sales__c != NULL,prod.Sales__c,0.00)}"/>
+                    <apex:variable var="NAlist" value="{!IF(salesOrgKey = 'US103010' || salesOrgKey = 'CA1010' || salesOrgKey = 'US6010',TRUE,FALSE)}"/>
+                    <apex:variable var="NApTable" value="{!IF(salesOrgKey = 'US103010' || salesOrgKey = 'CA1010' || salesOrgKey = 'US6010','col-xs-4','col-xs-3')}"/>
+                    
+                    <!-- Start Material Details -->
+                    <div class="{!NApTable}">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><img src="/img/icon/documents16.png" alt="Price"/>&nbsp;&nbsp;Material Details</h4>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-hover table-condensed fs10a">
+                                    <tr><td class="col-xs-1"><strong>Material:</strong></td>
+                                        <td class="text-nowrap"><strong><a href="/apex/PP_Material_Info?id={!prod.Id}">{!prod.name}</a></strong></td>
+                                        <!-- <td class="text-nowrap">{!prod.Sales_Org__c}-{!prod.Distribution_Channel__c}</td> -->
+                                        <apex:outputText rendered="{!NAlist}">
+                                            <td><strong>Hospital&nbsp;List:</strong>&nbsp;${!hospitalList}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!NAlist = FALSE && NOT(emeaUser)}">
+                                            <td><strong>List Price:</strong>&nbsp;{!prod.Distributor_List__c}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!emeaUser}">
+                                            <td><strong>{!$ObjectType.Product2.fields.List_Price__c.label}:</strong>&nbsp;{!hospitalList}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-xs-1"><strong>Description:</strong></td>
+                                        <td >{!prod.description}</td>
+                                        <apex:outputText rendered="{!NAlist}">
+                                            <td><strong>Alt.&nbsp;Site&nbsp;List:</strong>&nbsp;${!altSiteList}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!NAlist = FALSE && NOT(emeaUser)}">
+                                            <td><strong>Rep&nbsp;Price:</strong>&nbsp;{!prod.Rep_Price__c}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!emeaUser}">
+                                            <td><strong>{!$ObjectType.Product2.fields.Alt_Site_List__c.label}:</strong>&nbsp;{!altSiteList}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                    </tr>
+                                    <tr>
+                                        <apex:outputText rendered="{!NAlist || (NAlist = FALSE && NOT(emeaUser))}">
+                                            <td><strong>Sales Unit:</strong></td>
+                                            <td>{!prod.Sales_Unit__c} / {!prod.Qty_Sales_Unit__c}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!emeaUser}">
+                                            <td><strong>{!$ObjectType.Product2.fields.Min_Order_Qty__c.label}:</strong></td>
+                                            <td>{!prod.Sales_Unit__c} / {!prod.Min_Order_Qty__c}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!NAlist}">
+                                            <td><strong>Distributor&nbsp;List:</strong>&nbsp;${!distributorList}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!NAlist = FALSE && NOT(emeaUser)}">
+                                            <td><strong>RSM&nbsp;Price:</strong>&nbsp;{!prod.RSM_Price__c}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!emeaUser}">
+                                            <td><strong>{!$ObjectType.Product2.fields.Distributor_List__c.label}:</strong>&nbsp;{!distributorList}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sales&nbsp;Org:</strong></td>
+                                        <td class="text-nowrap">{!prod.Sales_Org__c}-{!prod.Distribution_Channel__c}</td>
+                                        <apex:outputText rendered="{!NAlist}">
+                                            <td><strong>Rep&nbsp;Price:</strong>&nbsp;${!prod.Rep_Price__c}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!NAlist = FALSE && NOT(emeaUser)}">
+                                            <td></td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!emeaUser}">
+                                            <td>
+                                                <strong>{!$ObjectType.Price_Quote_Line_Item__c.fields.Rep_Price__c.label}:</strong>
+                                                &nbsp;{!prod.Rep_Price__c}&nbsp;{!prod.CurrencyIsoCode}
+                                            </td>
+                                        </apex:outputText>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>MRP Group:</strong></td>
+                                        <td>{!prod.MRP_Group__c}</td>
+                                        <apex:outputText rendered="{!NAlist}">
+                                            <td><strong>RSM&nbsp;Price:</strong>&nbsp;${!prod.RSM_Price__c}&nbsp;{!prod.CurrencyIsoCode}</td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!NAlist = FALSE && NOT(emeaUser)}">
+                                            <td></td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!emeaUser && pricingTierAccessLevel > 1}">
+                                            <td>
+                                                <strong>{!$ObjectType.Price_Quote_Line_Item__c.fields.RSM_Price__c.label}:</strong>
+                                                &nbsp;{!prod.RSM_Price__c}&nbsp;{!prod.CurrencyIsoCode}
+                                            </td>
+                                        </apex:outputText>
+                                        <apex:outputText rendered="{!emeaUser && pricingTierAccessLevel <= 1}">
+                                            <td></td>
+                                        </apex:outputText>
+                                    </tr>                                    
+                                    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Handle List Pricing -->
+
+                    <!-- Pricing Tiers -->
+                    <apex:outputText rendered="{!!emeaUser}">
+                    <div class="col-xs-3">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><img src="/img/icon/documents24.png" alt="Material Info"/>&nbsp;&nbsp;Pricing Tiers</h6>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-hover table-condensed fs10a">
+                                    <apex:repeat value="{!plist}" var="p">
+                                        <apex:repeat value="{!tierHeaderList}" var="th">
+                                            <apex:variable var="key" value="{!th}-{!p.Name}" />
+                                            <apex:outputText rendered="{!RIGHT(tierMap[key].TierName,1) = '1'}">
+                                                <tr>
+                                                    <td colspan="3">
+                                                        {!LEFT(tierMap[key].TierName,3)} Level - {!tierMap[key].chGPORef}
+                                                    </td>
+                                                </tr>
+                                            </apex:outputText>
+                                            <tr>
+                                                <td>{!RIGHT(tierMap[key].TierName,1)}</td>
+                                                <td class="text-nowrap">
+                                                    <a href="/apex/PP_Agreement_Detail?aid={!tierMap[key].Name}">
+                                                        {!tierMap[key].chDesc}&nbsp;</a>
+                                                </td>
+                                                <td>{!tierMap[key].Price}&nbsp;</td>
+                                            </tr>
+
+                                        </apex:repeat>
+                                    </apex:repeat>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    </apex:outputText>
+                </apex:outputtext>
+                 <apex:outputtext rendered="{!prod = NULL && pid != NULL}" >
+                        <div class="col-xs-5">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><img src="/img/icon/documents24.png" alt="Price"/>&nbsp;&nbsp;Product Details</h6>
+                            </div>
+                            <div class="panel-body">
+                                No Product Found!
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputtext>
+            </div>
+            <!-- End Material -->
+            <!-- Pricing Table -->
+            <apex:outputtext rendered="{!Price.size > 0}" >
+                <apex:variable var="anzRemove" value="{!IF(OR(salesOrgKey = 'AU1010', salesOrgKey = 'NZ1010'),TRUE,FALSE)}"/>
+                <table class="table table-striped table-hover table-bordered table-condensed">
+                    <tr>
+                        <td colspan="3"><img src="/img/icon/cash24.png" alt="Pricing"/>&nbsp;&nbsp;<b>Contract Pricing (Real Time)</b></td>
+                        <td colspan="5" class="text-center"><b>** <u>The first, bolded, row will be used on the quote.</u> **</b></td>
+                        <td colspan="6" class="text-center">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th>Sales Deal #</th>
+                        <th>Sales Deal</th>
+                        <apex:outputText rendered="{!!anzRemove}">
+                            <th>Objective</th>
+                        </apex:outputText>
+                        <th>Sold To #</th>
+                        <!-- <th>GPO Reference</th> -->
+                        <th>Owner</th>
+                        <th>Owner Name</th>
+                        <th>Valid From</th>
+                        <th>Valid To</th>
+                        <apex:outputText rendered="{!!anzRemove}">
+                            <th>Condition</th>
+                        </apex:outputText>
+                        <th>Material Status</th>
+                        <th>Material Name</th>
+                        <!-- <th>Status</th> -->
+                        <th>Price
+                          <apex:outputText rendered="{!soldToAcct.size != NULL}">
+                            &nbsp;(Sold To Acct)
+                          </apex:outputText>
+                        </th>
+                    </tr>
+                    <apex:variable value="{!1}" var="rowNum"/>
+                    <apex:repeat value="{!Price}" var="m4">
+                        <tr style="{!if(rowNum = 1,'font-weight:bold;','')}" class="{!if(rowNum = 1,'success','danger')}">
+                            <apex:outputText rendered="{!m4.SalesDeal__c <> NULL}">
+                                <td class="text-center">{!rowNum}&nbsp;</td>
+                                <td><a href="/apex/PP_Agreement_Detail?aid={!RIGHT(m4.SalesDeal__c,8)}">{!RIGHT(m4.SalesDeal__c,8)}&nbsp;</a></td>
+                                <td>{!m4.AgrDesc__c}</td>
+                                <apex:outputText rendered="{!!anzRemove}">
+                                    <td>{!m4.AgrObjective__c}</td>
+                                </apex:outputText>
+                                <td><apex:outputText rendered="{!cid != m4.Customer__c}"><a href="/apex/PP_Customer_Details?cid={!m4.Customer__c}">{!m4.Customer__c}</a></apex:outputText></td>
+                                <td>{!m4.Owner__c}</td>
+                                <td>{!m4.OwnerName__c}</td>
+                                <apex:outputText rendered="{!!anzRemove && NOT(emeaUser)}">
+                                <td><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!m4.ValidFrom__c}" /></apex:outputText>&nbsp;</td>
+                                <td><apex:outputText value="{0,date,MM/dd/yyyy}"><apex:param value="{!m4.ValidTo__c}" /></apex:outputText>&nbsp;</td>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!anzRemove || emeaUser}">
+                                <td><apex:outputText value="{0,date,dd/MM/yyyy}"><apex:param value="{!m4.ValidFrom__c}" /></apex:outputText>&nbsp;</td>
+                                <td><apex:outputText value="{0,date,dd/MM/yyyy}"><apex:param value="{!m4.ValidTo__c}" /></apex:outputText>&nbsp;</td>
+                                </apex:outputText>
+                                <apex:outputText rendered="{!!anzRemove}">
+                                    <td>{!m4.Condition__c}</td>
+                                </apex:outputText>
+                                <td>{!status}</td>
+                                <td><a href="/apex/PP_Material_Info?pid={!m4.Material__c}">{!m4.Material__c}</a></td>
+                                <td>
+                                    <apex:outputText rendered="{!!emeaUser}" value="{0, number, currency}">
+                                        <apex:param value="{!m4.Price__c}" />
+                                    </apex:outputText>
+                                    <apex:outputText rendered="{!emeaUser}">
+                                        {!m4.Price__c}&nbsp;{!m4.Currency__c}
+                                    </apex:outputText>
+                                </td>
+                            </apex:outputText>
+                            <apex:outputText rendered="{!m4.SalesDeal__c = NULL}">
+                                <td class="text-center">{!rowNum}&nbsp;</td>
+                                <td>No Contract Found</td>
+                                <td>No Contract Found</td>
+                                <apex:outputText rendered="{!!anzRemove}">
+                                    <td>-</td>
+                                </apex:outputText>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <apex:outputText rendered="{!!anzRemove}">
+                                    <td>-</td>
+                                </apex:outputText>
+                                <td>{!status}</td>
+                                <td><a href="/apex/PP_Material_Info?pid={!m4.Material__c}">{!m4.Material__c}</a></td>
+                                <!-- handles US users -->
+                                <!-- Shows pricing for account entered -->
+                                <apex:outputText rendered="{!soldToAcct.size = NULL}">
+                                  <apex:outputText rendered="{!IF(salesOrgKey != 'US103020' && salesOrgKey != 'US6020', true, false) }">
+                                      <apex:outputText rendered="{!IF(accts[0].Price_List_Type__c == 'ZH',true,false)}">
+                                        <td>
+                                            <apex:outputField value="{!p.List_Price__c}" />&nbsp;{!p.CurrencyIsoCode}
+                                        </td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!IF(accts[0].Price_List_Type__c == 'ZD',true,false)}">
+                                        <td>
+                                            <apex:outputField value="{!p.Distributor_List__c}" />&nbsp;{!p.CurrencyIsoCode}
+                                        </td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!IF(accts[0].Price_List_Type__c == 'ZA',true,false)}">
+                                        <td>
+                                            <apex:outputField value="{!p.Alt_Site_List__c}" />&nbsp;{!p.CurrencyIsoCode}
+                                        </td>
+                                      </apex:outputText>
+                                  </apex:outputText>
+                                </apex:outputText>
+
+                                <!-- Shows pricing for Sold To Acct if Available -->
+                                <apex:outputText rendered="{!soldToAcct.size != NULL}">
+                                  <apex:outputText rendered="{!IF(salesOrgKey != 'US103020' && salesOrgKey != 'US6020', true, false) }">
+                                      <apex:outputText rendered="{!IF(soldToAcct[0].Price_List_Type__c == 'ZH',true,false)}">
+                                        <td><apex:outputField value="{!p.List_Price__c}" />&nbsp;{!p.CurrencyIsoCode}</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!IF(soldToAcct[0].Price_List_Type__c == 'ZD',true,false)}">
+                                        <td><apex:outputField value="{!p.Distributor_List__c}" />&nbsp;{!p.CurrencyIsoCode}</td>
+                                      </apex:outputText>
+                                      <apex:outputText rendered="{!IF(soldToAcct[0].Price_List_Type__c == 'ZA',true,false)}">
+                                        <td><apex:outputField value="{!p.Alt_Site_List__c}" />&nbsp;{!p.CurrencyIsoCode}</td>
+                                      </apex:outputText>
+                                  </apex:outputText>
+                                </apex:outputText>
+                              <!-- end of US logic -->
+
+                              <!-- Other Countries logic -->
+                              <apex:outputText rendered="{!IF(salesOrgKey = 'US103020'  || salesOrgKey = 'US6020', true, false) }">
+                                    <td><apex:outputField value="{!p.Distributor_List__c}" />&nbsp;{!p.CurrencyIsoCode}</td>
+                              </apex:outputText>
+                              <!-- End of Other Countries Logic -->
+
+                            </apex:outputText>
+                        </tr>
+                        <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                    </apex:repeat>
+                </table>
+            </apex:outputtext>
+            <apex:outputtext rendered="{!Price.size = 0 && cid != NULL && pid != NULL}" >
+                <div class="col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><img src="/img/icon/cash24.png" alt="Price"/>&nbsp;&nbsp;<b>Contract Pricing (Real Time)</b></h6>
+                            </div>
+                            <div class="panel-body">
+                                No Contracts Found
+                            </div>
+                        </div>
+                    </div>
+            </apex:outputtext>
+            <!-- End Pricing Table -->
+
+        </div>
+        <!-- Script to pre-populate the input fields from the URL -->
+        <!-- Sets the position to the first field -->
+        <apex:variable value="{!if(cid == NULL,'custsearch','prodsearch')}" var="focus"/>
+        <script>
+        $(document).ready( function(){
+            $("input[name*='custsearch']" ).val( "{!cid}" );
+            $("input[name*='prodsearch']" ).val( "{!pid}" );
+            setTimeout(function() { $('input[name*="{!focus}"]').focus() }, 1000);
+        });
+        </script>
+    </div>
+</apex:page>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_Nation_Pool_Set_Number</fullName>
+        <description>Update National Pool Set Number to Product + Lot Number</description>
+        <field>Name</field>
+        <formula>Product__r.Name &amp; &quot; &quot; &amp; Lot_Number__c</formula>
+        <name>Update Nation Pool Set Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>National Pool Set Name Update</fullName>
+        <actions>
+            <name>Update_Nation_Pool_Set_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Auto Number field to Product - Lot Number</description>
+        <formula>true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

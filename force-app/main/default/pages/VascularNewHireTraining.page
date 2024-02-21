@@ -1,0 +1,191 @@
+<apex:page controller="newHireTraining">
+
+    <style>
+        .centerContent{
+            height:700px;
+        }
+        .centerContent h1{
+            color: rgb(0, 48, 115);
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 23px;
+            font-weight: bold;
+            height: 25px;
+            line-height: 25px;
+            margin-bottom: 20px;
+            margin-left: 0px;
+            margin-right: -25px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            text-align: left;
+            width: 535px;
+        }
+        .centerContent h3{
+            color: rgb(75, 75, 75);
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: normal;
+            height: 18px;
+            line-height: 18px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            text-align: left;
+            text-decoration: none;
+            width: 600px;
+        }
+        .centerContent h4{
+            color: rgb(75, 75, 75);
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            height: 16px;
+            line-height: 16px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            width: 600px;
+        }
+        .centerContent a{
+            color: rgb(33, 89, 182);
+            display: inline;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: normal;
+            height: auto;
+            line-height: 18px;
+            text-decoration: none;
+            width: auto;
+        }
+        .activeTab {
+            background-color: 86,161,213;
+            color: #013073;
+            background-image:none;
+            border-top:2px solid rgb(86,161,213);
+            font-size:14px;
+        }
+        .inactiveTab {
+            background-color: white;
+            color:#013073;
+            background-image:none;
+            font-size:14px;
+        }
+       
+        .innerContent {
+            background-color:white;
+        }
+        .arrowHeader {
+            width:100%;
+            height:65px;
+            border-bottom: 1px solid #7daed6;
+            margin-bottom:10px;
+        }
+        .arrowTop-border {
+            width:100%;
+            height:13px;
+            background-image: URL("{!$Resource.topBorderFill}");
+        }
+        #arrowColorsTopRight {
+            position:absolute;
+            right:10px;
+        }
+        #arrowHeaderText {
+            color:rgb(86,161,213);
+            position:absolute;
+            left:10px;
+            top:35px;
+            font-size:30px;
+            font-family: Helvetica, Arial, sans-serif;
+            margin-top:0px;
+            margin-bottom:0px;
+        }
+        #arrowLogoTopRight {
+            position:absolute;
+            right:30px;
+            top:30px;
+            width:95px;
+        }
+        .arrowFooter {
+            margin-top:150px;
+            height:30px;
+            width:99%;
+            background-color: #013073;
+            position: absolute;
+            bottom:10px;
+        }
+        #teleflexLogoBottomLeft {
+            margin-top:9px;
+            margin-left:9px;
+            margin-right:9px;
+        }
+        div.leftMessage {
+            position: absolute;
+            left: auto;
+            width: 300px;
+            height: 120px;
+        } 
+        div.rightImg {
+            position: absolute;
+            float: bottom;
+            bottom: 50px;
+            
+        } 
+    </style>
+
+<apex:tabPanel switchType="server" selectedTab="training" id="theTabPanel" activeTabClass="activeTab" inactiveTabClass="inactiveTab" contentClass="innerContent">
+<apex:tab label="Vascular Training" name="training" id="tabOne">
+    <div class="centerContent">
+        <div class="arrowHeader">
+            <div class="arrowTop-border">
+                <img id="arrowColorsTopRight" src="{!$Resource.topBorderRight}"/>
+                <img id="arrowLogoTopRight" src="{!$Resource.arrowLogo}"/>
+                <p id="arrowHeaderText">Vascular Sales New Hire Pre-work</p>
+            </div>
+        </div>
+        <!-- InstanceBeginEditable name="mainContentArea" -->
+        <!--<h1>New Hire Training Materials</h1>
+        <h3>
+            <ul>
+                <li>Please visit the Teleflex Academy internal training site for access to your training:</li>
+                <li><a href="https://www.teleflex-academy.com/internal/login.html">https://www.teleflex-academy.com/internal/login.html</a></li>
+                <li>For assistance with logging in or using the site, please contact jodie.gillon@teleflex.com.</li>
+                <li>Jodie Gillon Sr. Administrative Assistant, Sales Vascular</li>
+                <li>P: 919.361.4136  ext. 68.4136 |  M: 919.389.5753  |  F: 919.433.4968 (Attn: Jodie Gillon)</li>
+            </ul>
+        </h3>-->
+        <!-- Left div for message -->
+        <div class="leftMessage">
+            <h3>
+                <p>
+                    Please visit the Teleflex Academy internal training site for access to your training:<br/>
+                    <a href="https://www.teleflex-academy.com/internal/login.html">https://www.teleflex-academy.com/internal/login.html</a><br/><br/>
+                    For assistance with logging in or using the site, please contact <a href="mailto:VascularSalesTraining@teleflex.com" target="_top">VascularSalesTraining@teleflex.com</a>.<br/><br/>
+                    <apex:image id="theImage" value="{!'/servlet/servlet.FileDownload?file=' & tfxAcademyImg.Id}" width="600" height="400"/>
+                </p>
+            </h3>
+        </div>
+        
+        <div class="arrowFooter">
+            <img id="teleflexLogoBottomLeft" src="{!$Resource.teleflexLogoWhite12}"/>
+        </div>
+    </div> <!-- end of centerContent -->
+</apex:tab>
+
+</apex:tabPanel>
+
+</apex:page>

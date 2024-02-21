@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Quarter_Multiplier__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Used when estimating the quarters total as the multiplier so if in month one it is 3 and when in the last month it is 1. Runrate times multiplier plus current sales = quarter estimate.</inlineHelpText>
+    <label>Fiscal Quarter Multiplier</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<aura:component implements="lightning:availableForFlowScreens,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+     <aura:attribute name="requiredField" type="String" default="" />
+    <aura:handler name="change" value="{!v.requiredField}" action="{!c.HandleRequiredFieldChange}"/>
+    code goes here {!v.requiredField}
+</aura:component>

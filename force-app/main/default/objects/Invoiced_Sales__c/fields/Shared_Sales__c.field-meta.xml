@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shared_Sales__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(Territory_Number__c = &quot;800485&quot;,  $User.Id = &quot;0052S000009TYy6&quot; ),Sales__c * 0.33333333333333, Sales__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Shared Sales</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

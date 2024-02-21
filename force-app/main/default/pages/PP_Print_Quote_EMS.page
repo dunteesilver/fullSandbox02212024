@@ -1,0 +1,380 @@
+<apex:page controller="PP_Print_Quote" sidebar="false" applyBodyTag="false" applyHtmlTag="false" renderAs="{!r}" showHeader="false">
+    <head>
+        <style type="text/css" media="print">
+            @page {
+            size: 8.5in 11in;/* width height */
+            }
+
+            @page
+            {
+            margin-top: 50px;
+            margin-bottom: 250px;
+<!--            padding-bottom: 30px;-->
+            @top-center { content: element(header); }
+            @bottom-left { content: element(footer); }
+            }
+
+            div.header { padding: 10px; position: running(header); }
+            div.footer { display: block; padding: 5px; position: running(footer); }
+
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+
+        </style>
+        <style type="text/css">
+            body {
+            font-family: Arial Unicode MS;
+            font-size: 10px;
+            padding: 1px;
+            }
+
+            table {
+            border-spacing: 10px;
+            border-collapse: collapse;
+            }
+            td {
+            font-family:"Sans-Serif";
+            font-size: 10px;
+            padding: 5px;
+            }
+            #tbs {
+            border:1px solid black;
+
+            }
+            #tbs th{
+            padding:5px;
+            border:1px solid black;
+            font-family:"Sans-Serif";
+            font-size: 11px;
+            font-weight: bold;
+            background-color:#777;
+            color:#FFF;
+
+            }
+            #tbs td{
+            padding:5px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            }
+            #tbs td.bline{
+            padding:7px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: thick single #f0f0f5;
+            }
+            #tbs td.noline{
+            padding:7px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: none;
+            }
+
+            .bgc{
+            background-color: #f0f0f5;
+            }
+
+            .isbold {
+            font-weight: bold;
+            }
+            .fl {
+            font-weight: bold;
+            text-align: right;
+            }
+            .r {
+            text-align: right;
+            }
+            #totals td{
+            padding:7px;
+            }
+            .rline {
+            border-right-color: black;
+            border-right-style: solid;
+            border-width: 1px;
+            }
+            .bline{
+            padding:7px;
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-top: thick single #f0f0f5;
+
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            overflow:hidden;
+            }
+            .topline {
+            border-top-style: solid;
+            }
+            .bottomline {
+            border-bottom-style: solid;
+            border-width: 1px;
+            }
+            .border {
+            padding:1px;
+            border:1px solid black;
+
+            }
+        </style>
+    </head>
+    <body>
+
+
+    <div class="header">
+            <table width="100%" border="0">
+                <apex:variable value="{!if(pq.Template__c = 'Teleflex', '0152S00000BtQFL','0152S00000BtQFL')}" var="logo"/>
+                <!--Arrow = /servlet/servlet.ImageServer?id=015E0000006LhY3 - Teleflex = /servlet/servlet.ImageServer?id=015E0000006LhY8 - Old Image /servlet/servlet.ImageServer?id=015E0000008G98v -->
+                <tr><td align="right" style="padding:10px;"><img style="max-height:28px;max-width:350px;" src="/servlet/servlet.ImageServer?id={!logo}&oid={!OrgId}"/>
+                    </td></tr>
+            </table>
+    </div>
+    <div class="footer">
+        <table width="100%">
+            <tr>
+                <td width="250">
+                    <p>Thank you for the opportunity to quote Teleflex products. To place your order please call 866-246-6990 or email cs@teleflex.com.</p>
+                    <p>***Unless Shipping and Tax costs are specified, they are not included in the Grand Total.</p>
+                    <p><b>Teleflex, Arrow, EZ-IO, LMA, Hudson RCI and Rusch are trademarks or registered trademarks of Teleflex Incorporated or its affiliates.<br/>
+                        © 2014 Teleflex Incorporated. All rights reserved. MC-000219&nbsp;</b></p></td>
+            </tr>
+            <tr>
+                <td bgcolor="#0D2B68">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="130" style="padding:10px;"><apex:image value="{!$Site.BaseUrl}/servlet/servlet.ImageServer?id=015E0000008wTLv&oid={!OrgId}" width="114" height="42" /></td>
+                            <td width="347"><span style="font-family:Arial, Helvetica, sans-serif; color:#FFF; font-size:10px;">TELEFLEX 3015 Carrington Mill Boulevard, Morrisville, NC&nbsp;27560
+                                <br />
+                                Toll Free: 866.246.6990  Phone: +1.919.544.8000
+                                <br />
+                                <a style="color:#FFF; text-decoration:none;" href="http://teleflex.com">TELEFLEX.COM</a></span></td>
+                        </tr>
+                    </table>
+                </td></tr>
+            <tr><td style="padding: 15px;"><p><center>Page <span class="pagenumber"/> of <span class="pagecount"/></center></p></td></tr>
+        </table>
+    </div>
+
+    <!-- Contact -->
+    <div class="content">
+        <apex:variable value="{!if(pq.Template__c ='Teleflex', 'Sec','Pri')}" var="qt"/>
+        <br/>&nbsp;
+        <br/>&nbsp;
+        <table width="100%" border="0">
+            <tr>
+                <td>Customer #&nbsp;</td><td>{!pq.Account_Name__r.SAP_Sold_To__c}&nbsp;</td>
+                <td>Created&nbsp;Date&nbsp;</td><td>
+                <apex:outputText value="{0,date,long}">
+                    <apex:param value="{!pq.CreatedDate}" />
+                </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td>Quote #:&nbsp;</td><td>{!pq.name}&nbsp;</td>
+                <td>Expiration:&nbsp;</td><td width="50%">
+                <apex:outputText value="{0,date,long}">
+                    <apex:param value="{!pq.Expiration_Date__c}" />
+                </apex:outputText>
+                &nbsp;</td>
+            </tr>
+            <tr><td colspan="4">&nbsp;</td></tr>
+            <tr><td>Attn&nbsp;</td><td>{!pq.Contact_Name__r.name}</td><td>Prepared&nbsp;By&nbsp;</td><td>{!pq.Owner_Full_Name__c}</td></tr>
+            <tr><td>Phone&nbsp;</td><td>{!pq.Contact_Name__r.phone}</td><td>Phone&nbsp;</td><td>{!pq.Owner_Phone__c}</td></tr>
+            <tr><td>Email&nbsp;</td><td width="50%">{!pq.Contact_Name__r.email}</td><td>Email&nbsp;</td><td width="50%">{!pq.Owner_Email__c}</td></tr>
+            <tr><td colspan="4">&nbsp;</td></tr>
+            <tr><td class="text-nowrap">Bill&nbsp;To&nbsp;Name&nbsp;</td><td>{!pq.Account_Name__r.Name}</td><td class="text-nowrap">Ship&nbsp;To&nbsp;Name&nbsp;</td><td>{!pq.Account_Name__r.Name}</td></tr>
+            <tr><td>Bill&nbsp;To&nbsp;</td>
+                <td>
+                {!pq.Account_Name__r.BillingStreet}<br/>
+                {!pq.Account_Name__r.BillingCity}, {!pq.Account_Name__r.BillingState} {!pq.Account_Name__r.BillingPostalCode}<br/>
+                {!pq.Account_Name__r.BillingCountry}
+                </td>
+                <td>Ship&nbsp;To&nbsp;</td>
+                <td>
+                    {!pq.Account_Name__r.ShippingStreet}<br/>
+                    {!pq.Account_Name__r.ShippingCity}, {!pq.Account_Name__r.ShippingState} {!pq.Account_Name__r.ShippingPostalCode}<br/>
+                    {!pq.Account_Name__r.ShippingCountry}
+                </td>
+            </tr>
+        </table>
+
+        <br/>
+        <table width="100%" id="tbs" style="border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th class="hc">Product Code</th>
+                    <th class="r"><center>Sales Org</center></th>
+                    <th class="hc"><center>Product Description</center></th>
+                    <th class="r hc"><center>Quantity</center></th>
+                    <apex:outputText rendered="{!pq.Show_List_Price__c}">
+                        <th class="r hc"><center>Price</center></th>
+                        <th class="r hc"><center>Discount %</center></th>
+                    </apex:outputText>
+                    <th class="r hc"><center>Sales Price</center></th>
+                    <th class="r hc"><center>Each Per Case</center></th>
+                    <th class="r hc"><center>Each Price</center></th>
+                    <th class="r hc"><center>Total Price</center></th>
+                </tr>
+            </thead>
+            <apex:variable value="{!1}" var="rowNum"/>
+            <apex:repeat value="{!pqli}" var="li">
+                <apex:variable value="{!if(li.Material_Name__r.Sales_Org__c == 'US30','Arrow',if(li.Material_Name__r.Sales_Org__c == 'US10','TFX','') )}" var="salesOrgName"/>
+                <apex:variable value="{!IF(MOD(rowNum, 2)=0,'bgc','')}" var="bgcolr"/>
+                <apex:variable value="" rendered="{!AND(li.Material_Name__r.Low_Res_Image__c <> NULL, pq.Show_Images__c = TRUE)}" var="bottomline"/>
+                <apex:variable value="{!if(li.IsBold__c == TRUE,'isbold','')}" var="isbold"/>
+                <apex:variable value="{!if(OR(li.Sales_Unit_Qty__c = 0,li.Sales_Unit_Qty__c = NULL),1,li.Sales_Unit_Qty__c)}" var="salesUOM"/>
+
+                <tr>
+                    <td class="{!bgcolr} rline {!isbold}">{!li.Material_Name__r.name}</td>
+                    <td><center>{!salesOrgName}</center></td>
+                    <td class="{!bgcolr} rline {!isbold}">{!li.Product_Description__c}</td>
+                    <td class="{!bgcolr} r rline {!isbold}">{!li.Quantity__c}</td>
+                    <apex:outputText rendered="{!pq.Show_List_Price__c}">
+                        <td class="{!bgcolr} r rline {!isbold}"><apex:outputLabel value="{!li.CurrencyIsoCode} {!li.Material_Name__r.List_Price__c}"/></td>
+                        <td class="{!bgcolr} r rline {!isbold}">{!if(li.Material_Name__r.List_Price__c != 0,round((1-li.Sales_Price__c/li.Material_Name__r.List_Price__c)*100,2),0)}</td>
+                    </apex:outputText>
+                    <td class="{!bgcolr} r rline {!isbold}"><apex:outputLabel value="{!li.CurrencyIsoCode} {!li.Sales_Price__c}"/></td>
+                    <td class="{!bgcolr} r rline {!isbold}">{!li.Material_Name__r.Qty_Sales_Unit__c}</td>
+                    <td class="{!bgcolr} r rline {!isbold}"><apex:outputLabel value="{!li.CurrencyIsoCode} {!round((li.Sales_Price__c/salesUOM),2)}"/></td>
+                    <td class="{!bgcolr} r {!isbold}"><apex:outputLabel value="{!li.CurrencyIsoCode} {!li.Extended_Price__c}"/></td>
+                </tr>
+                <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+            </apex:repeat>
+        </table>
+        <table width="100%">
+            <apex:variable value="{!if(pq.Tax__c != NULL, pq.Tax__c, 0)}" var="Tax"/>
+            <apex:variable value="{!if(pq.Shipping__c != NULL, pq.Shipping__c, 0)}" var="Shipping"/>
+            <apex:variable value="{!Tax + Shipping + pq.Grand_Total__c}" var="GT"/>
+            <tr>
+                <td style="border-top: 1px solid black;" class="fl bline" align="right" width="100%"></td>
+            </tr>
+            <tr>
+                <td class="fl noline" align="right" width="100%">Subtotal ({!pq.CurrencyIsoCode}):&nbsp;
+                    <apex:outputText value="{0, number, currency}">
+                        <apex:param value="{!pq.Grand_Total__c}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+            <apex:outputText rendered="{!pq.Tax__c != NULL}">
+                <tr>
+                    <td class="fl noline" align="right" width="100%">Tax ({!pq.CurrencyIsoCode}):&nbsp;
+                        <apex:outputText value="{0, number, currency}">
+                            <apex:param value="{!pq.Tax__c}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </apex:outputText>
+            <apex:outputText rendered="{!pq.Shipping__c != NULL}">
+                <tr>
+                    <td class="fl noline" align="right" width="100%">Shipping ({!pq.CurrencyIsoCode}):&nbsp;
+                        <apex:outputText value="{0, number, currency}">
+                            <apex:param value="{!pq.Shipping__c}" />
+                        </apex:outputText>
+                    </td>
+                </tr>
+            </apex:outputText>
+            <tr class="noline">
+                <td class="fl noline" align="right" width="100%">***Grand Total ({!pq.CurrencyIsoCode}):&nbsp;
+                    <apex:outputText value="{0, number, currency}">
+                        <apex:param value="{!GT}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+        </table><br/>&nbsp;
+        <apex:outputPanel rendered="{!pq.Customer_comments__c != NULL}">
+            <table align="center" width="400px">
+                <tr><th style="padding: 5px;"><center>Comments</center></th></tr>
+                <tr>
+                    <td class="border" style="padding: 5px;">
+                        <apex:outputField value="{!pq.Customer_comments__c}"/>
+                    </td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+        <apex:outputText rendered="{!qt='Pri'}">
+            <table width="100%">
+                <tr>
+                    <td valign="top" class="border" style="padding:5px;"><b>Remittances via Wire or ACH:</b><br/>
+                        Beneficiary: Teleflex Funding LLC<br/>
+                        Account #: 4708086079<br/>
+                        Bank: Wells Fargo Bank, N.A., 420 Montgomery Street, San Francisco, CA 94104<br/>
+                        SWIFT: WFBIUS6S<br/>
+                        ABA: 121000248<br/>
+                        Email: tfxremit@teleflex.com<br/>
+                    </td>
+                    <td valign="top" class="border" style="padding:5px;"><b>Remittances via Check (Standard Mailing):</b><br/>
+                        Teleflex Funding LLC<br/>
+                        PO Box 936729<br/>
+                        Atlanta, GA 31193-6729
+                    </td>
+                    <td valign="top" class="border" style="padding:5px;"><b>Remittances via Check (Overnight Delivery):</b><br/>
+                        Teleflex Funding LLC<br/>
+                        Attn: PO Box 936729<br/>
+                        3585 Atlanta Avenue<br/>
+                        Hapeville, GA 30354-1705
+                    </td>
+                </tr>
+                <apex:outputText rendered="{!pq.Type__c == 'Trade-in'}">
+                	<br />
+                    <br />
+                    <tr>
+                        <td colspan="5" align="left">
+                            <h4>                                
+                                <strong>TRADE-IN PRICE QUOTE REQUIREMENTS:</strong><br/>
+                                <strong>The trade-in discount is conditioned on Teleflex’s receipt of the trade-in equipment no later than 60 days following the invoice date.</strong><br/>
+                                <strong>If Teleflex does not receive the trade-in equipment by such date, Customer shall pay Teleflex the discount amount.</strong>
+                            </h4>
+                        </td>
+                    </tr>
+                </apex:outputText>
+            </table>
+        </apex:outputText>
+        <apex:outputText rendered="{!qt='Sec'}">
+            <table width="100%">
+                <tr>
+                    <td valign="top" class="border" style="padding:5px;"><b>Remittances via Wire or ACH:</b><br/>
+                        Beneficiary: Teleflex Funding LLC<br/>
+                        Account #: 4708086079<br/>
+                        Bank: Wells Fargo Bank, N.A., 420 Montgomery Street<br/> 
+                        San Francisco, CA 94104<br/>
+                        SWIFT: WFBIUS6S<br/>
+                        ABA: 121000248<br/>
+                        Email: tfxremit@teleflex.com<br/>
+                    </td>
+                    <td valign="top" class="border" style="padding:5px;"><b>Remittances via Check (Standard Mailing):</b><br/>
+                        Teleflex Funding LLC<br/>
+                        PO Box 936729<br/>
+                        Atlanta, GA 31193-6729
+                    </td>
+                    <td valign="top" class="border" style="padding:5px;"><b>Remittances via Check (Overnight Delivery):</b><br/>
+                        Teleflex Funding LLC<br/>
+                        Attn: PO Box 936729<br/>
+                        3585 Atlanta Avenue<br/>
+                        Hapeville, GA 30354-1705
+                    </td>
+                </tr>
+                <apex:outputText rendered="{!pq.Type__c == 'Trade-in'}">
+                	<br />
+                    <br />
+                    <tr>
+                        <td colspan="5" align="left">
+                            <h4>                                
+                                <strong>TRADE-IN PRICE QUOTE REQUIREMENTS:</strong><br/>
+                                <strong>The trade-in discount is conditioned on Teleflex’s receipt of the trade-in equipment no later than 60 days following the invoice date.</strong><br/>
+                                <strong>If Teleflex does not receive the trade-in equipment by such date, Customer shall pay Teleflex the discount amount.</strong>
+                            </h4>
+                        </td>
+                    </tr>
+                </apex:outputText>
+            </table>
+        </apex:outputText>
+        
+        
+    </div>
+    <!-- End Header -->
+    </body>
+</apex:page>

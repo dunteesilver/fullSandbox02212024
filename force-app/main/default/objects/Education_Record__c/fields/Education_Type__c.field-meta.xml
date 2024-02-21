@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Education_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Education Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cadaver Lab (Local)</fullName>
+                <default>false</default>
+                <label>Cadaver Lab (Local)</label>
+            </value>
+            <value>
+                <fullName>Cadaver Lab (Military)</fullName>
+                <default>false</default>
+                <label>Cadaver Lab (Military)</label>
+            </value>
+            <value>
+                <fullName>Cadaver Lab (National)</fullName>
+                <default>false</default>
+                <label>Cadaver Lab (National)</label>
+            </value>
+            <value>
+                <fullName>Cadaver Lab (Regional)</fullName>
+                <default>false</default>
+                <label>Cadaver Lab (Regional)</label>
+            </value>
+            <value>
+                <fullName>Speaking Engagement</fullName>
+                <default>false</default>
+                <label>Speaking Engagement</label>
+            </value>
+            <value>
+                <fullName>Conference/Booth</fullName>
+                <default>false</default>
+                <label>Conference/Booth</label>
+            </value>
+            <value>
+                <fullName>Research</fullName>
+                <default>false</default>
+                <label>Research</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Cadaver Lab (Other)</fullName>
+                <default>false</default>
+                <label>Cadaver Lab (Other)</label>
+            </value>
+            <value>
+                <fullName>Humanitarian</fullName>
+                <default>false</default>
+                <label>Humanitarian</label>
+            </value>
+            <value>
+                <fullName>Inservice</fullName>
+                <default>false</default>
+                <label>Inservice</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

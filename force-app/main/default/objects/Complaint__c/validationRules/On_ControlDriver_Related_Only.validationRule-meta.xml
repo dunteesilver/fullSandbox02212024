@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_ControlDriver_Related_Only</fullName>
+    <active>true</active>
+    <description>Validation rule that makes &quot;describe insertion site&quot; mandatory when On Control Driver Related only is chosen.</description>
+    <errorConditionFormula>AND ( 
+ISPICKVAL( EZ_IO_Complaint_Type__c, &quot;On Control Driver Related only&quot;), 
+ISBLANK(Describe_identification_insertion_site__c) 
+)</errorConditionFormula>
+    <errorDisplayField>Describe_identification_insertion_site__c</errorDisplayField>
+    <errorMessage>Please describe the identification insertion site.</errorMessage>
+</ValidationRule>

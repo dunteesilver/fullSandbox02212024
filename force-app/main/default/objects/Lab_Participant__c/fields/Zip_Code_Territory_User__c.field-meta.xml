@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zip_Code_Territory_User__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Zip_Code_Business_Unit__c = &quot;Vascular&quot;, Zip_Code_Territories__r.Vascular__c,
+if(Zip_Code_Business_Unit__c = &quot;EMS&quot;, Zip_Code_Territories__r.EMS__c,
+if(Zip_Code_Business_Unit__c = &quot;IA&quot;, Zip_Code_Territories__r.IA__c,
+if(Zip_Code_Business_Unit__c = &quot;Anesthesia&quot;, Zip_Code_Territories__r.Anesthesia__c,
+&quot;&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Zip Code Territory User</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

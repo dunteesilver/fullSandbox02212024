@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SteepRockCMAResposibleShouldNotBeBlank</fullName>
+    <active>true</active>
+    <description>CMA Responsible in SteepRock should be filled out if one of the Trainer Types contains Contractor</description>
+    <errorConditionFormula>AND(
+ 
+OR(
+ISPICKVAL(VATrainerType1__c, &quot;CMA &amp; Contractor&quot;), 
+
+ISPICKVAL(VATrainerType1__c, &quot;Contractor&quot;),
+
+ISPICKVAL(VATrainerType1__c, &quot;Clinical Sales &amp; Contractor&quot;)
+
+
+),
+
+ISBLANK(TEXT(CMAResponsibleinSteepRock__c)
+))</errorConditionFormula>
+    <errorMessage>CMA Responsible in SteepRock should be filled out if one of the Trainer Types contains Contractor.
+
+If you are not an authorized Clinical employee you should not be selecting Contractor at this stage of the record.</errorMessage>
+</ValidationRule>

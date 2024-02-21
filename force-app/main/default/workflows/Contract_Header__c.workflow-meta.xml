@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Alt_UI_Check</fullName>
+        <field>Alt_UI__c</field>
+        <literalValue>1</literalValue>
+        <name>Alt UI Check</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_add_Vascular_contracts_to_EZIO</fullName>
+        <description>Some of Vascular&apos;s products moved to EMS under EZIO. The Vascular products are stilled sold outside of North America so they remained labeled under Division 40. This field update updates checkboxes of the affected contracts to show for EMS.</description>
+        <field>Division_50__c</field>
+        <literalValue>1</literalValue>
+        <name>Update to add Vascular contracts to EZIO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Alt UI Check</fullName>
+        <actions>
+            <name>Alt_UI_Check</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract_Header__c.Material_Count__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1000</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update to add Vascular contracts to EZIO</fullName>
+        <actions>
+            <name>Update_to_add_Vascular_contracts_to_EZIO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Some of Vascular&apos;s products moved to EMS under EZIO.  The Vascular products are stilled sold outside of North America so they remained labeled under Division 40.  This rule has a field update to check the boxes of the affected contracts to show for EMS.</description>
+        <formula>AND(
+OR( 
+Owner__c = &quot;GPO-009&quot;,Owner__c = &quot;GPO-005&quot;,Owner__c = &quot;GPO-030&quot;,Owner__c = &quot;GPO-014&quot;
+),
+OR(
+CONTAINS(Description__c, &quot;EMERGENCY MEDICINE&quot;),
+CONTAINS(Description__c, &quot;EZ-IO&quot;),
+CONTAINS(Description__c, &quot;EZIO&quot;) 
+) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

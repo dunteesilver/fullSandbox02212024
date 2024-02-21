@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CE_Approved_Email_to_CE</fullName>
+        <description>CE - Approved Email to CE</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CE_Approved_Expense_Form</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Approved_Email_to_CECMA</fullName>
+        <description>CE - Approved Email to CE CMA</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>clinical.affairs@teleflex.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workflow_Emails/CE_Approved_Expense_Form</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Expenses_Form_send_to_CE</fullName>
+        <description>CE - Expenses Form send to CE</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Emails/CE_Send_Expenses_Form_to_CE</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Expenses_Form_submission_send_to_CE</fullName>
+        <description>CE - Expenses Form submission send to CE</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CRF_Supa_Sub</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Rejected_Email_to_CE</fullName>
+        <description>CE - Rejected Email to CE</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CE_Rejected_Expense_Form</template>
+    </alerts>
+    <alerts>
+        <fullName>CE_Rejected_Email_to_CECMA</fullName>
+        <description>CE - Rejected Email to CE CMA</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CEM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>clinical.affairs@teleflex.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workflow_Emails/CE_Rejected_Expense_Form</template>
+    </alerts>
+    <alerts>
+        <fullName>CRF_Cadaver</fullName>
+        <description>CRF Cadaver</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jim.blosser@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CA_CRF2</template>
+    </alerts>
+    <alerts>
+        <fullName>CRF_Inservice</fullName>
+        <description>CRF Inservice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CA_CRF2</template>
+    </alerts>
+    <alerts>
+        <fullName>CRF_Inservice_VA_AA</fullName>
+        <description>CRF Inservice VA_AA</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CA_CRF2</template>
+    </alerts>
+    <alerts>
+        <fullName>CRF_Inservice_VA_Administrative_Assistant</fullName>
+        <description>CRF Inservice VA Administrative Assistant</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CA_CRF2</template>
+    </alerts>
+    <alerts>
+        <fullName>CRF_Inservice_VA_RCEM</fullName>
+        <description>CRF Inservice VA_RCEM</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CRF_RCEM__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jen.miller@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CA_CRF2</template>
+    </alerts>
+    <alerts>
+        <fullName>CRF_Speaking_Engagement</fullName>
+        <description>CRF Speaking Engagement</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jim.blosser@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CA_CRF2</template>
+    </alerts>
+    <alerts>
+        <fullName>CRF_Speaking_Engagement_Autofuser</fullName>
+        <description>CRF Speaking Engagement Autofuser</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heather.suhor@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>heather.wear@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jim.blosser@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristin.elliott@teleflex.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/CA_CRF2</template>
+    </alerts>
+    <alerts>
+        <fullName>EMS_Ed_Record_Notice_CEM2</fullName>
+        <description>EMS Ed Record Notice CEM</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact_EMail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Emails/EMS_CEM_Intro</template>
+    </alerts>
+    <alerts>
+        <fullName>Inservice_Survey</fullName>
+        <description>Inservice Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact_EMail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>clinical.affairs@teleflex.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workflow_Emails/CA_Education_Record_Survey_Formstack_Integrated</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CE_Email</fullName>
+        <field>CE_Email__c</field>
+        <formula>CE_Contractor_Email__c</formula>
+        <name>CE - Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CE_Update_Mil_Rate</fullName>
+        <description>update based on EC currency</description>
+        <field>Mil_Rate__c</field>
+        <formula>IF( 
+
+( Education_Record__r.Date_of_Event_Start__c ) &lt; Date(2014,1,1), 
+0.565, 
+IF( 
+AND(Education_Record__r.Date_of_Event_Start__c &gt; Date(2013,12,31), 
+Education_Record__r.Date_of_Event_Start__c &lt; Date(2016,1,1)), 
+0.56, 
+IF( 
+AND(Education_Record__r.Date_of_Event_Start__c &gt; Date(2016,01,01), 
+Education_Record__r.Date_of_Event_Start__c &lt; Date(2016,12,31)), 
+0.54, 
+IF(Education_Record__r.Date_of_Event_Start__c &gt; Date (2017,12,31), 
+Case( Clinical_Educator_Name__r.CurrencyIsoCode , &apos;USD&apos;, 0.545, &apos;CAD&apos;, 0.55, 0.545), 
+Case( Clinical_Educator_Name__r.CurrencyIsoCode  , &apos;USD&apos;, 0.535 , &apos;CAD&apos; , 0.545, 0.535) 
+))))</formula>
+        <name>CE - Update Mil_Rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRF_Copy_RCEM_Email</fullName>
+        <field>CRF_RCEM__c</field>
+        <formula>CEM__r.Manager_s_Email__c</formula>
+        <name>CE - Field Update - RCEM Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRF_Submit_Date</fullName>
+        <field>Date_Submitted__c</field>
+        <formula>TODAY()</formula>
+        <name>CRF: Submit Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRF_Submitted_by</fullName>
+        <field>CRF_Submitted_by__c</field>
+        <formula>$User.FirstName &amp;&quot; &quot;&amp; $User.LastName</formula>
+        <name>CRF Submitted by</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cadaver_Lab_Calculation</fullName>
+        <field>Cadaver_Lab__c</field>
+        <formula>IF ( 
+ISPICKVAL(Lab_Role__c,&quot;Clinical Lead&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,980*T_days__c,1284*T_days__c ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;Faculty&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,500 * T_days__c,660*T_days__c ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;Expert Faculty&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,800 * T_days__c,1048*T_days__c ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;Proficient Faculty&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,700 * T_days__c,917*T_days__c ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;Proficient Airway&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,700 * T_days__c,917*T_days__c ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;Airway&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,500 * T_days__c,660*T_days__c ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;Expert Airway&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,800 * T_days__c,1048*T_days__c ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;CE Prof. Development&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,300 * T_days__c,396 ), 
+IF ( 
+ISPICKVAL(Lab_Role__c,&quot;CA Prof. Development&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,1500 * T_days__c,1980 )* T_days__c, 
+IF( 
+ISPICKVAL(Lab_Role__c,&quot;Clinical Advisor&quot;), 
+Case(CurrencyIsoCode,&quot;USD&quot;,3000 + 1500 * (T_days__c - 1),3960 + 1980* (T_days__c - 1)), 
+
+0 
+))))))))))+IF(Cad_t__c,Case(CurrencyIsoCode,&quot;USD&quot;,500,660),0) 
++IF(Pain__c, Case(CurrencyIsoCode,&quot;USD&quot;,200,396),0) 
++IF(Oncontrol__c, Case(CurrencyIsoCode,&quot;USD&quot;,200,396),0)</formula>
+        <name>Cadaver Lab Calculation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Changed_to_New</fullName>
+        <field>Status__c</field>
+        <literalValue>New</literalValue>
+        <name>Changed to New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clinical_Hrly_Rate</fullName>
+        <description>Copies the Clinical Hourly Rate to the Ed Record.  will keep original value if Rate changes on the Clinical Contact</description>
+        <field>C_Rate__c</field>
+        <formula>IF( (Education_Record__r.Date_of_Event_Start__c ) &lt; DATEVALUE(&quot;2015-09-15&quot;) , Clinical_Educator_Name__r.Hourly_Rate__c , 
+( 
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;EZ-IO&quot;) , Clinical_Educator_Name__r.Rate_EZ_IO__c &gt;0, NOT(Includes(Education_Record__r.Type_of_In_Service__c, &quot;Education&quot;))),Clinical_Educator_Name__r.Rate_EZ_IO__c, 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;LMA MAD Nasal&quot;) , Clinical_Educator_Name__r.Rate_LMA_MAD_Nasal__c &gt;0),Clinical_Educator_Name__r.Rate_LMA_MAD_Nasal__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;CVC/PSI/MAC&quot;) , Clinical_Educator_Name__r.Rate_CVC_Arterial__c &gt;0),Clinical_Educator_Name__r.Rate_CVC_Arterial__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;Arterial&quot;) , Clinical_Educator_Name__r.Rate_CVC_Arterial__c &gt;0),Clinical_Educator_Name__r.Rate_CVC_Arterial__c , 
+
+
+
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;LMA Supreme&quot;) , Clinical_Educator_Name__r.Rate_LMA_Supreme__c &gt;0),Clinical_Educator_Name__r.Rate_LMA_Supreme__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;Rusch AirTraq&quot;) , Clinical_Educator_Name__r.Rate_Rusch_AirTraq__c &gt;0),Clinical_Educator_Name__r.Rate_Rusch_AirTraq__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;Rusch Quicktrach&quot;) , Clinical_Educator_Name__r.Rate_Rusch_QuickTrach__c &gt;0),Clinical_Educator_Name__r.Rate_Rusch_QuickTrach__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;OnControl&quot;) , Clinical_Educator_Name__r.Rate_OnControl__c &gt;0),Clinical_Educator_Name__r.Rate_OnControl__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;Pleur-evac&quot;) , Clinical_Educator_Name__r.Rate_Pleur_evac__c &gt;0),Clinical_Educator_Name__r.Rate_Pleur_evac__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;Percuvance&quot;) , Clinical_Educator_Name__r.Rate_Percuvance__c &gt;0),Clinical_Educator_Name__r.Rate_Percuvance__c ,
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;Implanted Ports&quot;) , Clinical_Educator_Name__r.Rate_Implanted_Ports__c &gt;0),Clinical_Educator_Name__r.Rate_Implanted_Ports__c ,
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;Acute Dialysis Catheters&quot;) , Clinical_Educator_Name__r.Rate_Acute_Dialysis_Catheters__c &gt;0),Clinical_Educator_Name__r.Rate_Acute_Dialysis_Catheters__c ,
+ 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;AutoFuser&quot;) , Clinical_Educator_Name__r.Rate_AutoFuser__c &gt;0),Clinical_Educator_Name__r.Rate_AutoFuser__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;ISO-Gard&quot;) , Clinical_Educator_Name__r.Rate_ISO_Gard__c &gt;0),Clinical_Educator_Name__r.Rate_ISO_Gard__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c , &quot;TALON&quot;) , Clinical_Educator_Name__r.Rate_TALON__c &gt;0),Clinical_Educator_Name__r.Rate_TALON__c , 
+
+IF(AND(ISPICKVAL(Education_Record__r.Primary_Product__c, &quot;Rate T-Pod Responder&quot;), Clinical_Educator_Name__r.Rate_T_Pod_Responder__c &gt;0), Clinical_Educator_Name__r.Rate_T_Pod_Responder__c, 
+Clinical_Educator_Name__r.Hourly_Rate__c ))))))))))))))))))</formula>
+        <name>Clinical Hrly Rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clinical_Milage_Rate</fullName>
+        <field>Mil_Rate__c</field>
+        <formula>Education_Record__r.Milage_Rate__c</formula>
+        <name>Clinical Milage Rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clinical_Travel_Rate</fullName>
+        <field>TravelRate__c</field>
+        <formula>Value(If(  
+Clinical_Educator_Name__r.RecordType.Name = &quot;ACE&quot;,   Right(Text(Clinical_Educator_Name__r.Compensation_Trip_hr__c),2), 
+Text(
+C_Rate__c /2)
+))</formula>
+        <name>Clinical Travel Rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ed_Record_change_record_type_Inservice</fullName>
+        <description>Change Ed Record record type to submitted</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Education_Record_Submitted</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Ed Record change record type: Inservice</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Inservice_Exception_update</fullName>
+        <field>Exc_In__c</field>
+        <formula>If(AND(OR(Primary_Product__c = &quot;Pleur-evac&quot;, 
+Primary_Product__c = &quot;Percuvance&quot;), 
+Inservice_Hours__c &gt;4), 500, 
+IF( 
+AND(Primary_Product__c = &quot;Autofuser&quot;, 
+Inservice_Hours__c &gt;4, 
+Inservice_Hours__c &lt;8) , 650, 
+IF( AND(Primary_Product__c = &quot;Autofuser&quot;, 
+Inservice_Hours__c &gt;8), 900, 
+0 )))</formula>
+        <name>Inservice Exception Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Speaking_Engagement_Calculation</fullName>
+        <description>CE - Calculate Speaking Engagement when is created or updated</description>
+        <field>Speak_Engmt__c</field>
+        <formula>IF (Contains(CRF_Type__c,&quot;Speaking Engagement&quot;), 
+
+IF (Clinical_Educator_Name__r.RecordType.Name = &quot;Clinical Educator&quot;, 
+Case(CurrencyIsoCode,&quot;USD&quot;,625,825), 
+Case(CurrencyIsoCode,&quot;USD&quot;,1500,1980)) 
+,0) 
+* T_days__c</formula>
+        <name>Speaking Engagement Calculation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_to_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending Approval</literalValue>
+        <name>Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_to_Submit_CRF</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved for Payment</literalValue>
+        <name>Status to Submit CRF</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Total_Worked_Days</fullName>
+        <field>T_days__c</field>
+        <formula>Education_Record__r.Total_Lab_Days__c</formula>
+        <name>Total Worked Days</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Reset_Cost_Center</fullName>
+        <field>Reset_Cost_Center__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Reset Cost Center</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contact_email</fullName>
+        <field>Contact_EMail__c</field>
+        <formula>Education_Record__r.Contact_Email__c</formula>
+        <name>Update Contact email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Cost_Center</fullName>
+        <field>Cost_Center_for_CRF__c</field>
+        <formula>IF( 
+ISPICKVAL(CurrencyIsoCode,&quot;CAD&quot;), 
+&quot;66209&quot;, 
+IF(Education_Record__r.Record_Type_Name__c = &quot;CMA Program&quot;,&quot;36861&quot;,
+
+IF(Education_Record__r.Record_Type_Name__c = &quot;Strategic Vascular Education Programs&quot;, 
+&quot;17054&quot;, 
+IF(
+AND(CONTAINS(Education_Record__r.Record_Type_Name__c, &quot;CMA&quot;),NOT(ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;VA&quot;))), 
+&quot;36201&quot;,/*was &quot;17647&quot;*/ 
+IF( 
+AND( 
+OR( ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;EMS&quot;), 
+ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;VA&quot;)), 
+Primary_Product__c = &quot;EZ-IO&quot;), 
+&quot;36212&quot;/*was &quot;17613 and 17676&quot;*/, 
+IF(ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;IA&quot;), 
+ &quot;36307&quot; , /*was &quot;17627&quot;*/
+IF( 
+AND(ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;EMS&quot;), 
+OR( 
+Primary_Product__c = &quot;LMA MAD Nasal&quot;, 
+Primary_Product__c = &quot;LMA Supreme&quot;, 
+Primary_Product__c = &quot;Rusch AirTraq&quot;, 
+Primary_Product__c = &quot;Rusch Quicktrach&quot;, 
+Primary_Product__c = &quot;TALON&quot;, 
+Primary_Product__c = &quot;T-Pod Responder&quot;)), 
+&quot;17634&quot;, 
+IF( 
+OR(ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;CMA&quot;), 
+ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;EMEA&quot;), 
+ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;APAC&quot;), 
+ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;LatAm&quot;)), 
+&quot;36201&quot;,/*was &quot;17647&quot;*/
+IF( 
+AND(ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;VA&quot;), 
+Primary_Product__c &lt;&gt; &quot;EZ-IO&quot;), 
+&quot;17654&quot;, 
+IF( 
+AND(ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;Surgical&quot;), 
+Primary_Product__c = &quot;Pleur-evac&quot;), 
+&quot;44054&quot;, 
+IF(AND(ISPICKVAL(Education_Record__r.Business_Unit__c,&quot;Surgical&quot;), 
+Primary_Product__c &lt;&gt; &quot;Pleur-evac&quot;), 
+&quot;44057&quot;, 
+IF(AND(Education_Record__r.Record_Type_Name__c = &quot;Inservice Record&quot;, 
+Primary_Product__c = &quot;AutoFuser&quot;),&quot;48039&quot;, 
+&quot;17647&quot;))))))))))))</formula>
+        <name>Update Cost Center</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Type_of_Inservice</fullName>
+        <field>Type_of_Inservice__c</field>
+        <formula>if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;PPT - Insertion, Care &amp; Removal&quot;) , &quot;PPT - Insertion, Care &amp; Removal&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;No PPT - Insertion, Care &amp; Removal&quot;) , &quot;No PPT - Insertion, Care &amp; Removal&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Hands On Practice&quot;) , &quot;Hands On Practice&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Brief Inservice/Demo (no PPT)&quot;) , &quot;Brief Inservice/Demo (no PPT)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Care &amp; Removal Inservice&quot;) , &quot;Care &amp; Removal Inservice&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Cadaver Lab (Local)&quot;) , &quot;Cadaver Lab (Local)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Cadaver Lab (National)&quot;) , &quot;Cadaver Lab (National)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Cadaver Lab (Regional)&quot;) , &quot;Cadaver Lab (Regional)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES( Education_Record__r.Type_of_In_Service__c , &quot;Cadaver Lab (Military)&quot;) , &quot;Cadaver Lab (Military)&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Speaking Engagement&quot;) , &quot;Speaking Engagement&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Conference/Booth&quot;) , &quot;Conference/Booth&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Preceptorship&quot;) , &quot;Preceptorship&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Research&quot;) , &quot;Research&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Education&quot;) , &quot;Education&quot;&amp; BR(),&quot; &quot;)&amp;
+if( INCLUDES(  Education_Record__r.Type_of_In_Service__c  , &quot;Other&quot;) , &quot;Other&quot;,&quot; &quot;)</formula>
+        <name>Update Type of Inservice</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CE - Email Alert - EMS Education record</fullName>
+        <actions>
+            <name>EMS_Ed_Record_Notice_CEM2</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>This is not used anymore - 17Jan2018 ESC</description>
+        <formula>AND(
+ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  
+ISPICKVAL(Education_Record__r.Business_Unit__c, &quot;EMS&quot;),
+OR(
+Education_Record__r.RecordType.Name =&quot;Inservice Record&quot;, Education_Record__r.RecordType.Name =&quot;Education Record&quot;
+)
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CE - Field Update - RCEM Email</fullName>
+        <actions>
+            <name>CRF_Copy_RCEM_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Business_Unit__c</field>
+            <operation>equals</operation>
+            <value>VA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CE_Reimbursement_Expense__c.CRF_RCEM__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Copy RCEM email from Education Request for directing CRF to RCEM.  Used for VA invoices &lt;3000</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CE - Field Update - Rates</fullName>
+        <actions>
+            <name>Clinical_Hrly_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clinical_Milage_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clinical_Travel_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CE_Reimbursement_Expense__c.Status__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Copies hourly rate from Clinical Contacts. Copies Mileage rate from education record</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>CE - Field Updates - Cadaver Lab %2F Spaeking Engagement Rates</fullName>
+        <actions>
+            <name>Cadaver_Lab_Calculation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Speaking_Engagement_Calculation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND(NOT( Labs_Overwrite_Calculations__c) ,
+OR( 
+AND(Contains( Education_Record__r.RecordType.Name, &quot;CMA&quot;), 
+OR(ISCHANGED( T_days__c ), 
+ISCHANGED( Cad_t__c ), 
+ISCHANGED( Pain__c ), 
+ISCHANGED(Oncontrol__c), 
+ISPICKVAL(Status__c, &quot;Save&quot;) ) 
+), 
+Contains( Education_Record__r.RecordType.Name, &quot;CMA&quot;) 
+))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CE - Update Mileage on CRF</fullName>
+        <actions>
+            <name>CE_Update_Mil_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update the Clinical Mileage Rate on the CRF based on the Currency on the Education Contractor&apos;s profile. This will still allow for overrides in special circumstance by only updating if the Clinical Mileage rate is blank.</description>
+        <formula>ISBLANK( Mil_Rate__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cadaver Status %3D Submitted</fullName>
+        <actions>
+            <name>CRF_Cadaver</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CRF_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CRF_Submitted_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ed_Record_change_record_type_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Change the record layout if Status = submitted</description>
+        <formula>AND(  ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  
+      OR(Education_Record__r.RecordType.Name =&quot;CMA Procedural Lab Request&quot; ,Education_Record__r.RecordType.Name =&quot;CMA Record&quot;) ,
+      OR( INCLUDES( Education_Record__r.Type_of_In_Service__c , &quot;Cadaver Lab (Local)&quot;) ,
+INCLUDES( Education_Record__r.Type_of_In_Service__c , &quot;Cadaver Lab (Other)&quot; ),
+            INCLUDES( Education_Record__r.Type_of_In_Service__c , &quot;Cadaver Lab (National)&quot; ),
+            INCLUDES( Education_Record__r.Type_of_In_Service__c ,&quot;Cadaver Lab (Regional)&quot;),
+            INCLUDES( Education_Record__r.Type_of_In_Service__c ,&quot;Cadaver Lab (Military)&quot;),
+
+INCLUDES( Education_Record__r.Type_of_In_Service__c ,&quot;Humanitarian&quot;)  
+         )
+     )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Update - Mileage Rate</fullName>
+        <actions>
+            <name>Clinical_Milage_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>deactivating- mileage should be set based on the currency for the education contractor- not the education record.  KE cases 00014193 and 00014161</description>
+        <formula>Mil_Rate__c &lt;&gt;  Education_Record__r.Milage_Rate__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Inservice Status %3D Submitted</fullName>
+        <actions>
+            <name>CRF_Inservice</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Inservice_Survey</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CRF_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CRF_Submitted_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ed_Record_change_record_type_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Contact_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Change the record layout if Status = submitted</description>
+        <formula>AND(
+ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  
+NOT(ISPICKVAL(Education_Record__r.Business_Unit__c, &quot;VA&quot;)),
+OR(
+Education_Record__r.RecordType.Name =&quot;Education Record&quot;,
+Education_Record__r.RecordType.Name =&quot;Inservice Record&quot;
+)
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Inservice Status %3D Submitted VA %3C3000</fullName>
+        <actions>
+            <name>CRF_Inservice_VA_Administrative_Assistant</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Inservice_Survey</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CRF_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CRF_Submitted_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ed_Record_change_record_type_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Contact_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  Education_Record__r.RecordType.Name =&quot;Inservice Record&quot;,  ISPICKVAL(Education_Record__r.Business_Unit__c, &quot;VA&quot;), Total_Expenses__c &lt; 3000.00)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Inservice Status %3D Submitted VA %3C3000 Ed Request</fullName>
+        <actions>
+            <name>CRF_Inservice_VA_RCEM</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Inservice_Survey</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CRF_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CRF_Submitted_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ed_Record_change_record_type_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Contact_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  Contains(Education_Record__r.RecordType.Name, &quot;Education Program Request&quot;),  ISPICKVAL(Education_Record__r.Business_Unit__c, &quot;VA&quot;), Total_Expenses__c &lt; 3000.00)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Inservice Status %3D Submitted VA %3E3000</fullName>
+        <actions>
+            <name>CRF_Inservice_VA_AA</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Inservice_Survey</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CRF_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CRF_Submitted_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ed_Record_change_record_type_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Contact_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  OR(Education_Record__r.RecordType.Name =&quot;Inservice Record&quot;,Contains(Education_Record__r.RecordType.Name, &quot;Education Program Request&quot;)),  ISPICKVAL(Education_Record__r.Business_Unit__c, &quot;VA&quot;), Total_Expenses__c &gt;= 3000.00)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send an Email to CE</fullName>
+        <actions>
+            <name>CE_Expenses_Form_send_to_CE</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CE_Reimbursement_Expense__c.CE_Contractor_Email__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CE_Reimbursement_Expense__c.Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Cost Center</fullName>
+        <actions>
+            <name>Uncheck_Reset_Cost_Center</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Cost_Center</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>CE_Reimbursement_Expense__c.Reset_Cost_Center__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CE_Reimbursement_Expense__c.Cost_Center_for_CRF__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Used in place of formula field on CE Reimbursement Records to record cost center for specific education records.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Speaking Engagement Status %3D Submitted</fullName>
+        <actions>
+            <name>CRF_Speaking_Engagement</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CRF_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CRF_Submitted_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ed_Record_change_record_type_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Change the record layout if Status = submitted</description>
+        <formula>AND(  ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  
+         NOT(ISPICKVAL(Education_Record__r.Primary_Product__c,&quot;AutoFuser&quot;)),
+      OR(Education_Record__r.RecordType.Name =&quot;CMA Procedural Lab Request&quot; ,
+      Education_Record__r.RecordType.Name =&quot;CMA Record&quot;,
+      Education_Record__r.RecordType.Name =&quot;CMA Speaker Request&quot; )
+     )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Speaking Engagement Status %3D Submitted Autofuser</fullName>
+        <actions>
+            <name>CRF_Speaking_Engagement_Autofuser</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>CRF_Submit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CRF_Submitted_by</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Ed_Record_change_record_type_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Change the record layout if Status = submitted Autofuser</description>
+        <formula>AND(  ISPICKVAL(Status__c, &quot;Submit CRF&quot;),  
+ISPICKVAL(Education_Record__r.Primary_Product__c,&quot;AutoFuser&quot;),
+      OR(Education_Record__r.RecordType.Name =&quot;CMA Procedural Lab Request&quot; ,
+      Education_Record__r.RecordType.Name =&quot;CMA Record&quot;,
+      Education_Record__r.RecordType.Name =&quot;CMA Speaker Request&quot; )
+     )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Type of Inservice</fullName>
+        <actions>
+            <name>Update_Type_of_Inservice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Education_Record__c.Type_of_In_Service__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>CE_Expense_Form_Sent_to_CE</fullName>
+        <assignedTo>archana.nayini@teleflex.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>This is to verify that the email was sent with the link to the CE Expense form for this record.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>CE Expense Form Sent to CE</subject>
+    </tasks>
+</Workflow>

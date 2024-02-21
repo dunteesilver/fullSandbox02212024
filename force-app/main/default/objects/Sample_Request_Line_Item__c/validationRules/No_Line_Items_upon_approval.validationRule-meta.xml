@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Line_Items_upon_approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Sample_Request__r.Status__c, &quot;Ready&quot;),
+    ISNEW())</errorConditionFormula>
+    <errorMessage>Sorry, you cannot enter line items in an approved Sample Request</errorMessage>
+</ValidationRule>

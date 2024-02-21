@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_Not_Qualified_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+IF($User.Id &lt;&gt; &quot;005440000087MZm&quot;,true,false), 
+IsPickVal(Status ,&quot;Unqualified&quot;), 
+IsBlank(Text(Reason_Lead_is_Unqualified_Picklist__c )))</errorConditionFormula>
+    <errorDisplayField>Reason_Lead_is_Unqualified_Picklist__c</errorDisplayField>
+    <errorMessage>Please add a reason why this lead is unqualified.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,36 @@
+<aura:component controller="TFX_MANTA_Handler"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    
+    <aura:attribute name="selectedId" type="String" />
+    <aura:attribute name="isLoading" type="Boolean" default="true" />
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-p-horizontal--small slds-align_absolute-center">
+            <div class="slds-p-horizontal--large slds-size--1-of-1 isActivityLoading">
+                <lightning:spinner variant="brand" size="large"/>
+            </div>   
+        </div>
+    </aura:if>
+    
+    <article class="slds-align_absolute-center slds-card" style="width: 100%">
+        <div class="slds-card__body slds-card__body_inner" style="width: 30rem;margin: 2%">
+            <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" />
+            <br/><br/><br/>
+            <div class="slds-align_absolute-center slds-text-heading_medium">Add Trainer</div><br/>
+           
+                <lightning:recordEditForm objectApiName="MANTA_Master__c"                 >
+                    <lightning:inputField fieldName="Trainer__c" value="{!v.selectedId}" />
+                </lightning:recordEditForm>
+            <br/>
+
+                <lightning:button variant="success" label="Confirm" onclick="{!c.addProctor}" />
+                <lightning:button label="Back" onclick="{!c.navigateToTFX_MANTA_Proctors_Comp}" />
+            <br/><br/><br/>
+            <lightning:button variant="Brand" label="Home" onclick="{!c.navigateToTFX_MANTA_Comp}" /> 
+        </div>
+    </article>
+    
+</aura:component>

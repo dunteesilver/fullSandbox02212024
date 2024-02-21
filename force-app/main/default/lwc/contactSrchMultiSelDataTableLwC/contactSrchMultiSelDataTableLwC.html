@@ -1,0 +1,85 @@
+<template>
+		<!--
+    <lightning-card title="Contact Selector">
+        <lightning-input label="Search Contacts" value={searchTerm} onchange={handleSearch}></lightning-input>
+        <template if:true={contacts.length}>
+            <ul class="slds-list_vertical slds-has-dividers_top-space">
+                <template for:each={contacts} for:item="contact">
+                    <li key={contact.Id}>
+                        <lightning-input type="checkbox" name={contact.Id} label={contact.Name} checked={contact.isSelected} onchange={handleSelection}></lightning-input>
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </lightning-card>
+
+table start here-->
+<lightning-card title="Contact Selector" class="slds-box slds-align_absolute-center">
+		<div>
+				<table>
+						<thead>
+						<tr>
+								<th class="slds-cell-wrap" colspan=2>
+										<div class="slds-line-clamp">
+												Showing {contacts.length} of {contacts.length} &#x2022; {selectedConsCnt} selected
+										</div>
+								</th>
+								<th class="slds-cell-wrap" colspan="2">
+										<div class="slds-line-clamp">
+												<lightning-input label="Search Contacts" value={searchTerm} onchange={handleSearch}></lightning-input>
+										</div>
+								</th>
+						</tr>
+						</thead>
+				</table>
+		</div>
+		<div class="slds-scrollable" style="height:15rem" tabindex="0">
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout slds-table_striped"
+        aria-label="Contact Selector ">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="slds-cell-wrap" scope="col">
+                    <div class="slds-line-clamp" title="NAME">NAME</div>
+                </th>
+                <th class="slds-cell-wrap" scope="col">
+                    <div class="slds-line-clamp" title="EMAIL">EMAIL</div>
+                </th>
+                <th class="slds-cell-wrap" scope="col">
+                    <div class="slds-line-clamp" title="PHONE">PHONE</div>
+                </th>
+                <th class="slds-cell-wrap" scope="col">
+                    <div class="slds-line-clamp" title="ACCOUNT_NAME">ACCOUNT NAME</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template if:true={contacts.length}>
+                <template for:each={contacts} for:item="contact">
+                    <tr class="slds-hint-parent" key={contact.Id}>
+                        <th data-label="CheckboxNameId" scope="row" class="slds-cell-wrap">
+                            <div class="slds-line-clamp" title="CheckboxNameId">
+																<lightning-input 
+																		type="checkbox"
+                                    name={contact.Id} 
+																	  label={contact.Name} 
+																	  checked={contact.isSelected}
+                                    onchange={handleSelection}>
+																</lightning-input></div>
+                        </th>
+                        <td class="slds-cell-wrap" data-label="ContactEmailVal">
+                            <div class="slds-line-clamp" title="ContactEmailVal">{contact.Email}</div>
+                        </td>
+                        <td class="slds-cell-wrap" data-label="ContactPhoneVal">
+                            <div class="slds-line-clamp" title="ContactPhoneVal">{contact.Phone}</div>
+                        </td>
+                        <td class="slds-cell-wrap" data-label="ContactAccNmeVal">
+                            <div class="slds-line-clamp" title="ContactAccNmeVal">{contact.Account_Name__c}</div>
+                        </td>
+                    </tr>
+                </template>
+            </template>
+        </tbody>
+    </table>
+				</div>
+</lightning-card>  
+</template>

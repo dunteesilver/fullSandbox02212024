@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ANZ_Contacts</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Share ANZ Contacts with ANZ Users.</description>
+        <label>ANZ Contacts</label>
+        <sharedTo>
+            <group>ANZ_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ANZ_Contact__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>KAM_South_Central_Vascular</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>KAM South Central Vascular</label>
+        <sharedTo>
+            <role>Vascular_KAM_South_Central</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Vascular_RSM_South_Central</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Share_All_Contacts</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing rule to share all Contacts with everyone.</description>
+        <label>Share All Contacts</label>
+        <sharedTo>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_KAM_access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Vascular KAM access</label>
+        <sharedTo>
+            <role>Vascular_KAM_Central</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_MSR_Central</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty_Highlights_Panel</fullName>
+    <fields>Product_Family_GPL__c</fields>
+    <fields>AccountId</fields>
+    <fields>CloseDate</fields>
+    <fields>Amount</fields>
+    <fields>OwnerId</fields>
+    <fields>StageName</fields>
+    <fields>Type</fields>
+    <fields>Product_of_Interest_GPL__c</fields>
+    <label>Oppty Highlights Panel</label>
+</CompactLayout>

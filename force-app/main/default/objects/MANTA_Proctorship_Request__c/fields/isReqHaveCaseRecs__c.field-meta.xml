@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isReqHaveCaseRecs__c</fullName>
+    <externalId>false</externalId>
+    <label>isReqHaveCaseRecs</label>
+    <summaryForeignKey>MANTA_Case_Data__c.MANTA_Proctorship_Request__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

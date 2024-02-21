@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Research_on_Professional_Needs__c</fullName>
+    <externalId>false</externalId>
+    <label>Market Research on Professional Needs</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Focus Panels</fullName>
+                <default>false</default>
+                <label>Focus Panels</label>
+            </value>
+            <value>
+                <fullName>Medical Education feedback</fullName>
+                <default>false</default>
+                <label>Medical Education feedback</label>
+            </value>
+            <value>
+                <fullName>Survey(s) of the proposed target audience</fullName>
+                <default>false</default>
+                <label>Survey(s) of the proposed target audience</label>
+            </value>
+            <value>
+                <fullName>Observed Data</fullName>
+                <default>false</default>
+                <label>Observed Data</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

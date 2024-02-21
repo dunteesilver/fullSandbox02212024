@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Group_Bucket__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(Compensation_Type__c = &quot;EZIO&quot;,OR(TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EM&quot;, TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EMS&quot;)),&quot;&quot;,
+IF(
+AND(Compensation_Type__c = &quot;ALLOTHER&quot;, OR(TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EM&quot;, TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EMS&quot;, TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EMISR&quot;) ),&quot;All Other&quot;,
+IF(
+AND(Compensation_Type__c = &quot;CONTROL PLUS&quot;, OR(TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EM&quot;, TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EMS&quot;, TEXT(Territory_Master__r.Compensation_Profile__c) = &quot;EMISR&quot;) ),&quot;Control Plus&quot;,
+Compensation_Type__c
+)
+)
+)</formula>
+    <label>Customer Group Bucket</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

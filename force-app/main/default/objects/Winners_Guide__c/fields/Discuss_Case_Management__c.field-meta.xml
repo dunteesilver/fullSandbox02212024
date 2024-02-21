@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discuss_Case_Management__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Discuss clinical education that Case Management will provide for home care agencies, LTAC,
+community outpatient clinics
+PICC,END, Midline
+Trial/Evaluation Stage
+Round Table w/the Account/Clinical
+What is facility protocol/procedure for the following?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Discuss clinical education that Case Management will provide for home care agencies, LTAC,
+community outpatient clinics
+PICC,END, Midline
+Trial/Evaluation Stage
+Round Table w/the Account/Clinical
+What is facility protocol/procedure for the following?</inlineHelpText>
+    <label>Discuss Case Management...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

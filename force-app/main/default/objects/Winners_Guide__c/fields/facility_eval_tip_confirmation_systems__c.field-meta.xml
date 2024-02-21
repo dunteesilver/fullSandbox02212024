@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>facility_eval_tip_confirmation_systems__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is facility evaluating other tip confirmation systems?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is facility evaluating other tip confirmation systems?</inlineHelpText>
+    <label>facility eval tip confirmation systems?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

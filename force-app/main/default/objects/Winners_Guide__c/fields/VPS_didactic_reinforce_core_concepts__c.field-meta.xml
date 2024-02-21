@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VPS_didactic_reinforce_core_concepts__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>VPS didactic – reinforce core concepts</description>
+    <externalId>false</externalId>
+    <inlineHelpText>VPS didactic – reinforce core concepts</inlineHelpText>
+    <label>VPS didactic – reinforce core concepts</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

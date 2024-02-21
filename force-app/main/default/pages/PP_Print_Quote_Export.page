@@ -1,0 +1,119 @@
+<apex:page controller="PP_Print_Quote" 
+           sidebar="false" 
+           applyHtmlTag="false" 
+           contentType="{!rxls}" 
+           showHeader="false"
+           readOnly="true"
+           cache="true">
+    <head>
+        <style type="text/css">
+            table {
+            border-collapse: collapse;
+            }
+            table, td, th {
+            border: 1px solid black;
+            }
+            br {
+            mso-data-placement:same-cell;
+            }
+            span {
+            white-space:nowrap;
+            }
+            .text-nowrap {
+            white-space:nowrap;
+            }
+            body { font-family: Arial Unicode MS; }
+            .text{
+            mso-number-format:"\@";/*force text*/
+            }
+            
+        </style>
+        <!--
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery181,'/jquery/jquery-ui.css')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery181,'/jquery/jquery-1.8.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery181,'/jquery/jquery-ui.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'jquery.base64.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'libs/FileSaver/FileSaver.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery_Table_Exporter,'tableExport.min.js')}"/>
+-->
+    </head>
+    <apex:variable var="csRemove" value="{!IF(contains($UserRole.Name,'Customer Service'),TRUE,FALSE)}"/>
+    <table tableborder="0" id="quote">
+        <thead>
+            <tr>
+                <th>Material</th>
+                <th><center>Description</center></th>
+                <th><center>#/SU</center></th>
+                <th><center>SUoM</center></th>
+                <th><center>Sales Deal</center></th>
+                <th><center>Sales Deal Name</center></th>
+                <th><center>Condition</center></th>
+                <th><center>List Price</center></th>
+                <th><center>Rep Price</center></th>
+                <th><center>RSM Price</center></th>
+                <th><center>Eligible Price</center></th>
+                <th><center>Sales Price</center></th>
+                <th><center>Qty</center></th>
+                <th><center>Line Price</center></th>
+                <apex:outputText rendered="{!!csRemove && pq.Sales_Org_Key__c = 'MX4010'}">
+                    <th><center>Price Per Each</center></th>
+                </apex:outputText>
+            </tr>
+        </thead>
+        <tbody>
+            <apex:repeat value="{!pqli_export}" var="li">
+                <tr>
+                    <td class="text">{!li.Material_Name__r.name}</td>
+                    <td class="text-nowrap">{!li.Product_Description__c}</td>
+                    <td align="center">{!li.Material_Name__r.Qty_Sales_Unit__c}</td>
+                    <td align="center">{!li.Material_Name__r.Sales_Unit__c}</td>
+                    <td align="center">{!li.Sales_Number__c}</td>
+                    <td class="text-nowrap">{!li.Sales_Deal_Description__c}</td>
+                    <td align="center">{!li.Condition__c}</td>
+                    <td align="center">{!li.List_Price__c}</td>
+                    <td align="center">{!li.Rep_Price__c}</td>
+                    <td align="center">{!li.RSM_Price__c}</td>
+                    <td align="center">{!li.Eligible_Price__c}</td>
+                    <td align="center">{!li.Sales_Price__c}</td>
+                    <td align="center">{!li.Quantity__c}</td>
+                    <td align="center">{!li.Extended_Price__c}</td>
+                    <apex:outputText rendered="{!!csRemove && pq.Sales_Org_Key__c = 'MX4010'}">
+                        <td align="center">{!li.Price_Per_Each__c}</td>
+                    </apex:outputText>
+                </tr>
+            </apex:repeat>
+        </tbody>
+    </table> <br /><br />
+    
+    <!-- Table shows list of Approvers... Requested by LATAM -->
+    <apex:outputText rendered="{!!csRemove && approversList.size > 0 && contains($UserRole.Name,'Latin America')}">
+    <table tableborder="0" id="approvers">
+        <thead>
+            <tr>
+                <th>Actual Approver</th>
+                <th><center>Assigned Approver</center></th>
+                <th><center>Status</center></th>
+                <th><center>Timestamp</center></th>
+            </tr>
+        </thead>
+        <tbody>
+            <apex:repeat value="{!approversList}" var="app">
+                <tr>
+                    <td class="text">{!app.Actor.Name}</td>
+                    <td class="text-nowrap">{!app.OriginalActor.Name}</td>
+                    <td align="center">{!app.StepStatus}</td>
+                    <td align="center">{!formatDate[app.Id]} 
+                    <!--
+                    <apex:outputText value="{0,date,MM'/'dd'/'yyyy HH:mm:ss a}">
+                        <apex:param value="{!app.CreatedDate}" />
+                    </apex:outputText>
+                    -->
+                    </td>
+                </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+    </apex:outputText>
+    <!-- <a href="#" onClick="$('#quote').tableExport({type:'excel',escape:'false'});">Download XLS</a> -->
+    
+</apex:page>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit_flyers_posters_approved_by_faclty__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Unit flyers/posters (approved by facility)
+
+Develop Education Plan/Sales
+Create or Order</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Unit flyers/posters (approved by facility)
+
+Develop Education Plan/Sales
+Create or Order</inlineHelpText>
+    <label>Unit flyers/posters(approved by faclty)</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

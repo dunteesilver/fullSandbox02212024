@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ANZ_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share ANZ Accounts with ANZ Users.</description>
+        <label>ANZ Accounts</label>
+        <sharedTo>
+            <group>ANZ_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ANZ_Account__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>All_Accounts_Active_in_SAP_for_Anes_EMS</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Short term to be deleted after align</description>
+        <label>All Accounts Active in SAP for Anes/EMS</label>
+        <sharedTo>
+            <roleAndSubordinates>Anesthesia_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>ERP_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Brazil_Region</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Brazil Region</label>
+        <sharedTo>
+            <group>LATAM_Brazil</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Brazil</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>BR10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CMA_AEM_KOL</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share with everyone</description>
+        <label>CMA AEM KOL</label>
+        <sharedTo>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>equals</operation>
+            <value>CMA AEM KOL</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Canada_Acct_Share_Stephane_Taillefer</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Canada Acct Share: Stephane Taillefer</description>
+        <label>Canada Acct Share: Stephane Taillefer</label>
+        <sharedTo>
+            <group>Canada_Acct_Share_Taillefer</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BillingCountry</field>
+            <operation>equals</operation>
+            <value>Canada,CA</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Canada_EZIO_BC_YT_AB_SK_NT</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Temporary account sharing for CANADA EZIO</description>
+        <label>Canada EZIO - BC, YT, AB, SK, NT</label>
+        <sharedTo>
+            <group>Canada_Acct_Share_Bird</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ShippingState</field>
+            <operation>equals</operation>
+            <value>BC,YT,AB,SK,NT</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Clinical_Acct_sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares accounts with all clinicals</description>
+        <label>Clinical Acct sharing</label>
+        <sharedTo>
+            <group>Clinicals</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>North American Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Prospect Customer</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corp_Opps_All_Regions</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Corp Opps All Regions</label>
+        <sharedTo>
+            <group>Corporate_Opps_all_region</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 1,Region 2,Region 3,Region 4,Region 5,Region 6,Region 7,Region 8,Region 9,Region 10,Region 11,Region 12,Region 13</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Account_Region_14_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Account Region 14 Account Sharing</description>
+        <label>Corporate Account Region 14 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_14</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 14</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Account_Region_15_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Account Region 15 Account Sharing</description>
+        <label>Corporate Account Region 15 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_15</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 15</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Account_Region_9</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>Corporate Account Region 9</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_9</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 9</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>IDN_Region__c</field>
+            <operation>equals</operation>
+            <value>Region 9</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Mid Atlantic NC Account Sharing</description>
+        <label>Corporate Accounts Region 3 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_3</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 3</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Mid_Atlantic_NC_MD_TN_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Mid Atlantic NC/MD/TN Account Sharing</description>
+        <label>Corporate Accounts Region 2 NC/MD/TN Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_2</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 2</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Midwest_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Midwest Account Sharing</description>
+        <label>Corporate Accounts Region 8 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_8</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 8</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Northeast_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Northeast Account Sharing</description>
+        <label>Corporate Accounts Region 1 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_1</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 1</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Northwest_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Northwest Account Sharing</description>
+        <label>Corporate Accounts Region 12 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_12</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 12</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Region_13_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Corporate Accounts Region 13 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Accounts_Region_13</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 13</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Region_5_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>Corporate Accounts Region 5 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_5</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 5</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Region_6_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Corporate Accounts Region 6 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_6</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 6</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Region_7_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Sharing Rule Region 7</description>
+        <label>Corporate Accounts Region 7 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_7</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 7</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>IDN_Region__c</field>
+            <operation>equals</operation>
+            <value>Region 7</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Southeast_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Southeast Account Sharing</description>
+        <label>Corporate Accounts Southeast Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_4</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>IDN_Region__c</field>
+            <operation>equals</operation>
+            <value>Region 4</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_Southwest_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts Southwest Account Sharing</description>
+        <label>Corporate Accounts Region 10 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_10</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Accounts_West_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Corporate Accounts West Account Sharing</description>
+        <label>Corporate Accounts Region 11 Account Sharing</label>
+        <sharedTo>
+            <group>Corporate_Account_Region_11</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>IDN_Region_Text__c</field>
+            <operation>equals</operation>
+            <value>Region 11</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_AT_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from AT sales org with AT User.</description>
+        <label>EMEA AT Accounts</label>
+        <sharedTo>
+            <group>EMEA_AT_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>AT10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_Account_Sharing_Rule_All_Accounts</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares all accounts with EMEA.</description>
+        <label>EMEA Account Sharing Rule All Accounts</label>
+        <sharedTo>
+            <roleAndSubordinates>EMEA_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>contains</operation>
+            <value>AT10,BE10,CZ20,DE10,ES10,IE20,NL10,PL10,PT10,SK10,UK10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_BE_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from BE sales org with BE User.</description>
+        <label>EMEA BE Accounts</label>
+        <sharedTo>
+            <group>EMEA_BE_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>BE10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_CZ_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from CZ sales org with CZ User.</description>
+        <label>EMEA CZ Accounts</label>
+        <sharedTo>
+            <group>EMEA_CZ_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>CZ20</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_DE_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from DE sales org with DE User.</description>
+        <label>EMEA DE Accounts</label>
+        <sharedTo>
+            <group>EMEA_DE_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>DE10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_ES_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from ES sales org with ES User.</description>
+        <label>EMEA ES Accounts</label>
+        <sharedTo>
+            <group>EMEA_ES_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>ES10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_IE_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from IE sales org with IE User.</description>
+        <label>EMEA IE Accounts</label>
+        <sharedTo>
+            <group>EMEA_IE_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>IE20</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_NL_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from NL sales org with NL User.</description>
+        <label>EMEA NL Accounts</label>
+        <sharedTo>
+            <group>EMEA_NL_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>NL10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_PL_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from PL sales org with PL User.</description>
+        <label>EMEA PL Accounts</label>
+        <sharedTo>
+            <group>EMEA_PL_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>PL10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_PT_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from PT sales org with PT User.</description>
+        <label>EMEA PT Accounts</label>
+        <sharedTo>
+            <group>EMEA_PT_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>PT10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_SK_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from SK sales org with SK User.</description>
+        <label>EMEA SK Accounts</label>
+        <sharedTo>
+            <group>EMEA_SK_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>SK10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>EMEA_UK_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts from UK sales org with UK User.</description>
+        <label>EMEA UK Accounts</label>
+        <sharedTo>
+            <group>EMEA_UK_Accounts</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>UK10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>INTV_Cap_Acc_shares</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>This rule shares accounts temporarily to Joe Ratbart in GA,FL.</description>
+        <label>INTV Cap Acc shares</label>
+        <sharedTo>
+            <group>Interventional_Account_Share_Joe_Ratbar</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BillingState</field>
+            <operation>equals</operation>
+            <value>FL,GA</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Intv</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Intv Cap Rep</label>
+        <sharedTo>
+            <group>Intv_Acc_Share_Sigman_Tyler</group>
+        </sharedTo>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>BillingState</field>
+            <operation>equals</operation>
+            <value>VA,DC,NC,TN,AL</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Intv_Cap_Rep</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>This allows the access to John Andrzejewski for all the accounts in OK,AR</description>
+        <label>Intv Cap Rep</label>
+        <sharedTo>
+            <group>Intv_Acc_share_John</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BillingState</field>
+            <operation>equals</operation>
+            <value>OK,AR</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>LATAM_Territory_Chile</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>LATAM Territory - Chile</label>
+        <sharedTo>
+            <group>LATAM_Territory_Chile</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Chile</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>CL10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Latam_Colombia_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Latam - Colombia Sharing</label>
+        <sharedTo>
+            <group>LATAM_Colombia</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Colombia</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Latam_Mexico_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Latam  - Mexico Sharing</label>
+        <sharedTo>
+            <group>LATAM_Mexico</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Mexico</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Latam_Northern_Cone</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Latam Northern Cone</label>
+        <sharedTo>
+            <group>LATAM_Central_Am_Nothern_Cone</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Central America - North Cone</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Latam_Southern_Cone</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Latam Southern Cone</label>
+        <sharedTo>
+            <group>LATAM_Southern_Cone</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Southern Cone</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Latam_Venezuela_Region</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Latam Venezuela Region</label>
+        <sharedTo>
+            <group>LATAM_Executives</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Venezuela</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>National_Accounts_Share</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>National Accounts Share</label>
+        <sharedTo>
+            <role>Director_Corporate_Accounts_Canada</role>
+        </sharedTo>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>North American Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SAP_Sold_To__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IDN Account</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SC_accounts_access</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>SC accounts access</label>
+        <sharedTo>
+            <group>SC_Accounts_access</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BillingState</field>
+            <operation>equals</operation>
+            <value>SC</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_ANZ_Accounts_w_ANZ</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Share ANZ Accounts w/ ANZ</label>
+        <sharedTo>
+            <roleAndSubordinates>TFX_ANZ_Managing_Director</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>ANZ_Account__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Associations_AN</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Share Associations AN</label>
+        <sharedTo>
+            <roleAndSubordinates>Anesthesia_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Associations</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Associations_CMA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Share Associations CMA</label>
+        <sharedTo>
+            <roleAndSubordinates>Clinical_Affairs_Manager</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Associations</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Associations_VA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Share Associations VA</label>
+        <sharedTo>
+            <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Associations</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>SouthEast_Territory</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>SouthEast Territory</label>
+        <sharedTo>
+            <group>Vascular_SouthEast</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BillingState</field>
+            <operation>equals</operation>
+            <value>NC,TN,VA,DC</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Surgical_Bariatrics_Account_Share</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share accounts with Surgical Bariatrics until territories and roles are complete.</description>
+        <label>Surgical Bariatrics Account Share</label>
+        <sharedTo>
+            <roleAndSubordinates>Surgical_Bariatrics_Executive</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>US60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Distribution_Channel__c</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Teleflex_Medical_Inc_NC</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares account used for complains to all of TeleFlex employees.</description>
+        <label>Teleflex Medical Inc NC</label>
+        <sharedTo>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>SAP_Sold_To__c</field>
+            <operation>equals</operation>
+            <value>123310</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Temp_Michelle_suarez_account_access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Temp - Michelle suarez account access</label>
+        <sharedTo>
+            <group>TEMP_Michelle_Suarez_Acct_Access</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ShippingState</field>
+            <operation>equals</operation>
+            <value>OR,WA</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Test_Account_Complaints_CA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Test Account - Complaints CA</label>
+        <sharedTo>
+            <role>Customer_Advocacy</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>equals</operation>
+            <value>Test Account - Complaints</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>US_Exports</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>US Exports</label>
+        <sharedTo>
+            <group>LATAM_US_Exports</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>US Exports</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>US_Exports_for_LATAM</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>US Exports for LATAM</label>
+        <sharedTo>
+            <group>LATAM_US_Exports</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>US Exports</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Venezuela_Region</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Venezuela Region</label>
+        <sharedTo>
+            <group>LATAM_Venezuela</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Region__c</field>
+            <operation>equals</operation>
+            <value>Venezuela</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>West_Inside_Sales</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>West Inside Sales</label>
+        <sharedTo>
+            <role>Vascular_Inside_Sales</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>West_Account__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Z_Med_Legacy_EMS_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Sharing accounts with Z-Medica &amp; Legacy EMS users until new territories and alignments are up to date.</description>
+        <label>Z-Med &amp; Legacy EMS Share</label>
+        <sharedTo>
+            <group>Z_Med_Legacy_EMS</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>US60</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Distribution_Channel__c</field>
+            <operation>equals</operation>
+            <value>10</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Sales_by_BU_Key__c</field>
+            <operation>contains</operation>
+            <value>EMS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>All_Accounts_to_Alternate_Care_MSR</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Requested by Paul Capitano and approved by Darby Darilek</description>
+        <label>All Accounts to Alternate Care MSR</label>
+        <sharedTo>
+            <role>Alternate_Care_MSR</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Teleflex_Global_IT</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>All_Anes_for_Sean_s_group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>All Anes for Sean&apos;s group</label>
+        <sharedTo>
+            <group>Sean_Higgins_Anes_Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Anesthesia_President</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Anesthesia_Inside_Sales_VP</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares Read/Write access to all Accounts for Anesthesia Inside Sales VPs</description>
+        <label>Anesthesia Inside Sales VP</label>
+        <sharedTo>
+            <role>Anesthesia_Inside_Sales_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Teleflex_Global_IT</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CEM_Share_Central</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares Central territory with CEM GL/Central</description>
+        <label>CEM: Share Central</label>
+        <sharedTo>
+            <role>Vascular_RCEM_GreatLakes_Central</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_Central</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Cardiac_Account_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Cardiac Account Sharing</label>
+        <sharedTo>
+            <group>Interventional_Capital_Executive</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Interventional_Capital_Executive</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Commercial_Operations</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>This rule shares out all Accounts and Contacts with the Commercial Op&apos;s team so that they can edit/update Accounts and Contacts related to the Price Quoting functionality. 16Sept2015 ESC</description>
+        <label>Commercial Operations</label>
+        <sharedTo>
+            <role>Commercial_Operations</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>KAM_South_Central_Vascular</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>KAM South Central Vascular</label>
+        <sharedTo>
+            <role>Vascular_KAM_South_Central</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_RSM_South_Central</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>New_Latin_America_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Allows accounts created by Sandra and Cris to be shared between them for qualifying their accuracy and if they need to be added</description>
+        <label>New Latin America Accounts</label>
+        <sharedTo>
+            <group>Latin_America</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Latin_America</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>RespiratoryInside_Sales_VP</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Shares Read/Write access to all Accounts for Respiratory nside Sales VPs</description>
+        <label>RespiratoryInside Sales VP</label>
+        <sharedTo>
+            <role>Respiratory_Inside_Sales_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Teleflex_Global_IT</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Respiratory_Marketing</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Respiratory Marketing</label>
+        <sharedTo>
+            <role>Respiratory_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Surgical_Disposables_Exec_View_Percuvance</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>This rule is to allow Roland to see all Percuvance Account&apos;s and Opportunities</description>
+        <label>Surgical Disposables Exec View Percuvance</label>
+        <sharedTo>
+            <role>Surgical_Disposables_Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Surgical_Percuvance_Executive</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Analyst_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Vascular Analyst &amp; Marketing</label>
+        <sharedTo>
+            <group>Vascular</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Global_IT</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Vascular_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Vascular Marketing</label>
+        <sharedTo>
+            <role>Vascular_Marketing</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Vascular_President</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>View_Only_for_CEs</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>View Only for CEs</label>
+        <sharedTo>
+            <group>Clinical_Educator_Guest</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Teleflex_Global_IT</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

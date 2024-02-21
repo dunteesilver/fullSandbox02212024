@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discuss_Product_Differences__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Discuss product differences the inserter may
+experience compared to current product
+• Non-taper
+• Catheter stiffness — difference in feel
+• User’s comfort level with a buddy wire
+• GlideThru® Sheath — reduces need for skin nick
+• Explain A and B bevel/safety non-safety needles
+• Nitinol 45 cm wire vs stainless
+• IR/Radiology — Hydrophilic coated wire
+• Dressing protocol related to antithrombogenic
+properties
+• Reinforce clamping if moving from valved catheter</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Discuss product differences the inserter may
+experience compared to current product
+• Non-taper
+• Catheter stiffness — difference in feel
+• User’s comfort level with a buddy wire
+• GlideThru® Sheath — reduces need for skin nick
+• Explain A and B bevel/safety non-safety needles
+• Nitinol 45 cm wire vs stainless
+• IR/Radiology — Hydrophilic coated wire
+• Dressing protocol related to antithrombogenic
+properties
+• Reinforce clamping if moving from valved catheter</inlineHelpText>
+    <label>Discuss Product Differences...</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

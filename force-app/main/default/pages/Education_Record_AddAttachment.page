@@ -1,0 +1,87 @@
+<apex:page controller="Education_Record_AddAttachment" showHeader="False">
+    <html>
+        <head>
+            <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+            
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+            <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+            
+            <style type="text/css">
+                div.body {
+                margin: 0px 15px 0px 15px;
+                }
+                .panel {
+                margin-bottom: 0px;
+                }
+                .r {
+                text-align: right;
+                }
+                #crf td{
+                vertical-align: middle;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="teleflex body">
+                <div class="panel-body">
+                    <img style="max-height:28px;max-width:350px;" src="/servlet/servlet.ImageServer?id={!logoId}&oid={!OrgId}"/>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">Clinical Education Expenses Portal - Attach Roster</h6>
+                    </div>
+                    <div class="panel-body">
+                        <apex:pageMessages />
+                        
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Upload Roster</h6>
+                            </div>
+                            <div class="panel-body">
+                                <div class="alert alert-danger" style="vertical-align: middle; margin: 0px;">
+                                    <center>
+                                        <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;<strong>
+                                        Rosters are required for In-Service Training. Please make sure to enter your attachments as .PDF File or .JPG Image<br/>
+                                        Click Previous to go back to the main page.</strong>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+                                    </center>
+                                </div>
+                                
+                                
+                                <apex:form enctype="multipart/form-data">
+                                    <apex:pageMessages />
+                                    <apex:pageBlock >
+                                        
+                                        <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+                                            
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel value="Browse Roster File" for="file"/>
+                                                <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file" contentType="{!attachment.ContentType}" accept="image/*,application/pdf"/>
+                                            </apex:pageBlockSectionItem>
+                                            
+                                        </apex:pageBlockSection>
+                                        
+                                        <apex:pageBlockButtons >
+                                            <apex:commandButton action="/apex/Education_Record_CEPublic?id={!crfid}" value="Previous" id="previous" styleClass="btn btn-primary btn-sm"/>
+                                            <apex:commandButton action="{!uploadroster}" value="Save and Confirm" styleClass="btn btn-primary btn-sm"/>
+                                            <apex:commandButton action="/apex/Education_Record_CEPublic?id={!crfid}" value="No Roster" id="previous1" styleClass="btn btn-primary btn-sm"/>
+                                        </apex:pageBlockButtons>
+                                        
+                                    </apex:pageBlock>
+                                </apex:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-danger" style="vertical-align: middle; margin: 0px;">
+                    <center>
+                        <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;<strong>All Invoices should be submitted <u>within 3 days</u> of Inservice, Lab, Etc. Please refer to agreement for additional info.</strong>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+                    </center>
+                </div>
+            </div>
+            
+        </body>
+    </html>    
+</apex:page>

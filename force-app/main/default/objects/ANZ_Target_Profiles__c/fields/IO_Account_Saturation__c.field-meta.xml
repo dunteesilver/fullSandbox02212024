@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IO_Account_Saturation__c</fullName>
+    <externalId>false</externalId>
+    <formula>X12M_Needle_Rolling_Sales_eaches__c / IO_Potential_Eaches__c</formula>
+    <label>IO Account Saturation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

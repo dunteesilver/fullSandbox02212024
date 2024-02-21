@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRF_Subject__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;*SFDC* CRF - &quot;&amp;CE_Full_Name__c&amp;&quot; - &quot;&amp;CRF_IS_Date__c&amp;&quot; - &quot;&amp;CRF_Business_Reason__c&amp;&quot; - &quot; &amp;TEXT(Grand_Total_Reimbursement__c)  &amp;&quot; - &quot;&amp; TEXT(Clinical_Educator_Name__r.Mailing_Country__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CRF Subject</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

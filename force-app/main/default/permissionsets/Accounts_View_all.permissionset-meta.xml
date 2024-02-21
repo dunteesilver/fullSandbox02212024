@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Ref case 00004768.
+Renamed the label to fall in line with a standard naming convention. - ESC 09Feb2015
+Add write access so notes can be added as well. Case: 7968 LEC 11/1/16</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>View All - Accounts</label>
+    <license>Salesforce</license>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Account</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <recordTypeVisibilities>
+        <recordType>Account.Vascular_Customer_NA</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

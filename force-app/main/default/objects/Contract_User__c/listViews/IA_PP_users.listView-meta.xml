@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IA_PP_users</fullName>
+    <columns>Business_Unit__c</columns>
+    <columns>NAME</columns>
+    <columns>Active_Region__c</columns>
+    <columns>View_Margin__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>Interventional</value>
+    </filters>
+    <label>IA PP users</label>
+</ListView>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2H_Fiscal_Quarter_Number_Sort__c</fullName>
+    <description>Created to support Surgical H2 calendar</description>
+    <externalId>false</externalId>
+    <formula>/*Created to support Surgical H2 calendar */
+
+/* 2021 */
+if(AND(Date__c &gt;= DATEVALUE(&quot;2021-06-29&quot;),Date__c &lt; DATEVALUE(&quot;2021-09-28&quot;)),&quot;3&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2021-09-28&quot;),Date__c &lt;= DATEVALUE(&quot;2021-01-02&quot;)),&quot;4&quot;,
+
+
+/* 2020 */
+if(AND(Date__c &gt;= DATEVALUE(&quot;2020-06-30&quot;),Date__c &lt; DATEVALUE(&quot;2020-09-29&quot;)),&quot;3&quot;,
+if(AND(Date__c &gt;= DATEVALUE(&quot;2020-09-29&quot;),Date__c &lt;= DATEVALUE(&quot;2020-12-31&quot;)),&quot;4&quot;,
+
+
+NULL
+))
+))</formula>
+    <label>2H Fiscal Quarter Number Sort</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

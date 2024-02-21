@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Convert</fullName>
+    <availability>online</availability>
+    <description>New Lead Conversion Process
+{!$Site.Domain}/apex/LeadConversion?id={!Lead.Id}&amp;aid={!Lead.AccountId__c}&amp;cid={!Lead.Contact__c}
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/35.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/35.0/apex.js&quot;)} 
+
+var result;
+var url = window.location.href;
+
+if( &quot;{!Lead.RecordTypeId}&quot; != &quot;012E0000000RHE7&quot; &amp;&amp; &quot;{!Lead.Account__c}&quot; != &quot;&quot; &amp;&amp; &quot;{!Lead.Contact__c}&quot; != &quot;&quot; &amp;&amp; &quot;{!Lead.Product_Family__c}&quot; != &quot;&quot; &amp;&amp; &quot;{!Lead.Product_of_Interest__c}&quot; != &quot;&quot;) 
+{
+result = sforce.apex.execute(&quot;convertLead&quot;, &quot;doConvert&quot;, {l:&apos;{!Lead.Id}&apos;});
+var baseURL = url.substring(0, url.indexOf(&apos;/&apos;, 14));
+window.location = baseURL + result[0].substring(0,16);
+} 
+else 
+{
+window.location = &quot;/apex/LeadConversion?id={!Lead.Id}&amp;aid={!Lead.AccountId__c}&amp;cid={!Lead.ContactId__c}&quot;;
+}</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Convert</masterLabel>
+    <openType>noSidebar</openType>
+    <protected>false</protected>
+    <url>{!$Site.Domain}/apex/LeadConversionAccount?id={!Lead.Id}</url>
+</WebLink>

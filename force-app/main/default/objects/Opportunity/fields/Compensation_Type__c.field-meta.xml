@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compensation_Type__c</fullName>
+    <description>Backup AN-2/19/2019 updating the field to handle 2019 bucketing
+if(
+AND(
+ISPICKVAL(Owner.Region__c, &quot;Canada&quot;),
+ISPICKVAL(Owner.Business_Unit__c, &quot;Vascular&quot;),
+NOT(ISPICKVAL(Product_Family_GPL__c, &quot;EZIO&quot;))
+),
+&quot;All Other&quot;,
+
+CASE(Product_Family_GPL__c,
+&quot;Acute Dialysis&quot;, &quot;CVC&quot;,
+&quot;Arterials&quot;, &quot;CVC&quot;,
+&quot;Central Access&quot;, &quot;CVC&quot;,
+&quot;Intraosseous Access&quot;, &quot;EZIO&quot;,
+&quot;Other Access&quot;, &quot;CVC&quot;,
+&quot;Peripheral Access&quot;, &quot;PICC&quot;,
+NULL)
+)
+
+AN - Added new case statement for surgical dispo POI</description>
+    <externalId>false</externalId>
+    <formula>CASE(Product_of_Interest_GPL__c ,
+&quot;Polymer&quot;,&quot;Focus&quot;,
+&quot;EFx Shield EFX002&quot;,&quot;Focus&quot;,
+&quot;Metal&quot;,&quot;Core&quot;,
+&quot;Minilap&quot;,&quot;Core&quot;,
+&quot;EFx Classic EFXCT1&quot;,&quot;Core&quot;,
+&quot;EFx Passer EFXSP1&quot;, &quot;Core&quot;,
+&quot;EFX Suture Passer EFXSP2&quot;,&quot;Core&quot;,
+&quot;Berci Passer P47428&quot;,&quot;Core&quot;,
+NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Compensation Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

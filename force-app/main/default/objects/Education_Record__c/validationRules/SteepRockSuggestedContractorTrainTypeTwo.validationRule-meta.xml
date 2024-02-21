@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SteepRockSuggestedContractorTrainTypeTwo</fullName>
+    <active>true</active>
+    <description>Rule that makes sure if suggested contractor 2 is filled in then trainer type 2 should contain contractor</description>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK(RequestedContractor2__c )),
+ 
+NOT(CONTAINS( TEXT( VATrainerType2__c ) , &quot;Contractor&quot;)) 
+
+)</errorConditionFormula>
+    <errorDisplayField>VATrainerType2__c</errorDisplayField>
+    <errorMessage>If Suggested Contractor is filled in Trainer Type must contain a Contractor selection</errorMessage>
+</ValidationRule>

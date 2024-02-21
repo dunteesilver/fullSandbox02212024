@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Release_Data_Last_Updated__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date/Time the &apos;Release Date&apos; and &apos;Release Qty&apos; fields were updated.</inlineHelpText>
+    <label>Release Data Last Updated</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

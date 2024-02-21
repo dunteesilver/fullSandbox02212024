@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Coaching_Form_Created_Edited</fullName>
+        <description>Coaching Form Created/Edited</description>
+        <protected>false</protected>
+        <recipients>
+            <field>User_RSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Coaching_Form/Coaching_Form_Created_Edited</template>
+    </alerts>
+    <rules>
+        <fullName>Coaching Form Created%2FEdited</fullName>
+        <actions>
+            <name>Coaching_Form_Created_Edited</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>1 = 1</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Comp_Rule_Business_Unit</fullName>
+        <field>Business_Unit__c</field>
+        <formula>Workflow_Business_Unit__c</formula>
+        <name>Comp Rule - Business Unit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Comp_Rule_Compensation_Profile_Fix</fullName>
+        <field>Compensation_Profile__c</field>
+        <formula>Workflow_Compensation_Profile__c</formula>
+        <name>Comp Rule - Compensation Profile Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Comp_Rule_Compensation_Type_Case_Fix</fullName>
+        <field>Compensation_Type__c</field>
+        <formula>Workflow_Compensation_Type__c</formula>
+        <name>Comp Rule - Compensation Type Case Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Comp_Rule_Key</fullName>
+        <field>Key__c</field>
+        <formula>Workflow_Key__c</formula>
+        <name>Comp Rule - Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Compensation_Rule_Check_Fix_Case</fullName>
+        <field>Compensation_Type__c</field>
+        <formula>if(UPPER(Compensation_Type__c) = &quot;ALL OTHER&quot;,&quot;All Other&quot;,
+if(UPPER(Compensation_Type__c) = &quot;ALL OTHER PRODUCTS&quot;,&quot;All Other Products&quot;,
+if(UPPER(Compensation_Type__c) = &quot;ALL PRODUCTS&quot;,&quot;All Products&quot;,
+if(UPPER(Compensation_Type__c) = &quot;COMPENSABLE&quot;,&quot;Compensable&quot;,
+if(UPPER(Compensation_Type__c) = &quot;CORE&quot;,&quot;Core&quot;,
+if(UPPER(Compensation_Type__c) = &quot;CVC&quot;,&quot;CVC&quot;,
+if(UPPER(Compensation_Type__c) = &quot;EZIO&quot;,&quot;EZIO&quot;,
+if(UPPER(Compensation_Type__c) = &quot;FOCUS&quot;,&quot;Focus&quot;,
+if(UPPER(Compensation_Type__c) = &quot;NOT APPLICABLE&quot;,&quot;Not Applicable&quot;,
+if(UPPER(Compensation_Type__c) = &quot;PERCUTANEOUS&quot;,&quot;Percutaneous&quot;,
+if(UPPER(Compensation_Type__c) = &quot;PICC&quot;,&quot;PICC&quot;,
+Compensation_Type__c
+)))))))))))</formula>
+        <name>Compensation Rule - Check/Fix Case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Case Check%2FFix</fullName>
+        <actions>
+            <name>Compensation_Rule_Check_Fix_Case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>UPPER(Compensation_Type__c) = Compensation_Type__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Comp Rule - Business Unit Fix</fullName>
+        <actions>
+            <name>Comp_Rule_Business_Unit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( NOT(ISBLANK(Compensation_Profile_Id__c)), Business_Unit__c &lt;&gt; Workflow_Business_Unit__c  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Comp Rule - Compensation Profile Fix</fullName>
+        <actions>
+            <name>Comp_Rule_Compensation_Profile_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  NOT(ISBLANK(Compensation_Profile_Id__c)),  Compensation_Profile__c &lt;&gt; Workflow_Compensation_Profile__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Comp Rule - Compensation Type Case Fix</fullName>
+        <actions>
+            <name>Comp_Rule_Compensation_Type_Case_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  NOT(ISBLANK(Compensation_Type_Id__c)),  Compensation_Type__c &lt;&gt; Workflow_Compensation_Type__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Comp Rule - Key</fullName>
+        <actions>
+            <name>Comp_Rule_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(  NOT(ISBLANK(Compensation_Profile_Id__c)),  NOT(ISBLANK(Product_Hierarchy_Id__c)), Key__c &lt;&gt; Workflow_Key__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

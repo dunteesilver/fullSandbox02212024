@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monitor_product_inventory_re_order__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Monitor product inventory/re-order</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Monitor product inventory/re-order</inlineHelpText>
+    <label>Monitor product inventory/re-order</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

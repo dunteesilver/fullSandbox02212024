@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>OBJECT_ID</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Account_ID__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Financial_Site__c</columns>
+    <columns>Product_Class__c</columns>
+    <columns>Product_Family1__c</columns>
+    <columns>Product_Family_Map__c</columns>
+    <columns>Sales_Region_Formula__c</columns>
+    <columns>Sales_Region__c</columns>
+    <columns>Transaction_Amount__c</columns>
+    <columns>Transaction_Date__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

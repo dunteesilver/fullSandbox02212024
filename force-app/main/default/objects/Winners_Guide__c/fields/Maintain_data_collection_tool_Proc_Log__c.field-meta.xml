@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maintain_data_collection_tool_Proc_Log__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Maintain data collection tool/Procedure Log</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Maintain data collection tool/Procedure Log</inlineHelpText>
+    <label>Maintain data collection tool/Proc. Log</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

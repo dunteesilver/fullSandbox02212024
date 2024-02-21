@@ -1,0 +1,11 @@
+<apex:page showHeader="true" sidebar="true" controller="RecordTypesController">
+    <apex:pageblock >
+        <apex:pageBlockTable value="{!recs}" var="myRec">
+            <apex:column headerValue="Object" value="{!myRec.SobjectType}"/>
+            <apex:column headerValue="Record Type Name" value="{!myRec.Name}"/>
+            <apex:column headerValue="Record Type Id" value="{!myRec.Id}"/>
+            <apex:column headerValue="Developer Name" value="{!myRec.DeveloperName}"/>
+            <apex:column headerValue="Active" value="{!myRec.IsActive}"/>
+        </apex:pageBlockTable>
+    </apex:pageblock>
+</apex:page>

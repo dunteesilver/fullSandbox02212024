@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X60_day_and_90_day_follow_up__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>60 day and 90 day follow up with attendees from training Determine if more hands-on training is necessary for THIS GROUP (new opportunity should be created for new group)</inlineHelpText>
+    <label>60 day and 90 day follow up</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

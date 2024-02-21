@@ -1,0 +1,2 @@
+<apex:page controller="survey_Helper_Class" action="{!redirect}">
+</apex:page>

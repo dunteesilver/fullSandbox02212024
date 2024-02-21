@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Product_of_Interest__c</fullName>
+    <description>text field for Eloqua on leads called &quot;External Product of Interest&quot; that will support multiple products of interest from an external source.</description>
+    <externalId>false</externalId>
+    <label>External Product of Interest</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

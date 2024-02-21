@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAClinicalSalesMustBeCreatedFromOppBttn</fullName>
+    <active>false</active>
+    <description>Vascular Clinical Sales Must Be Created From Opportunity Training Request Button</description>
+    <errorConditionFormula>AND (RecordType.Name = &quot;Clinical Sales Program&quot;, CreatedbyOppTRButton__c = FALSE
+
+)</errorConditionFormula>
+    <errorMessage>If you are creating a Clinical Sales Program Training Request you must create it from &quot;Create a Training Request&quot; Button on the appropriate Opportunity</errorMessage>
+</ValidationRule>

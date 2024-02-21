@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Where_is_EZ_IO_kept_moved_to_new_locat__c</fullName>
+    <description>Where is the EZ-IO kept? Does it need to be moved to new location?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Where is the EZ-IO kept? Does it need to be moved to new location?</inlineHelpText>
+    <label>Where is EZ-IO kept &amp; moved to new locat</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

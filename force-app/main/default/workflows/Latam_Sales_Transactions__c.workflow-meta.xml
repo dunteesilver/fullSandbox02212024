@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>LATAM_Update_Account_Name</fullName>
+        <field>Account_Name__c</field>
+        <formula>IF (Account__r.Do_not_Show_in_RR__c, &quot;Other&quot;,  Account__r.Name)</formula>
+        <name>LATAM Update Account Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LATAM_Update_Sales_Region</fullName>
+        <field>Sales_Region__c</field>
+        <formula>TEXT(Account__r.Sales_Region__c)</formula>
+        <name>LATAM Update Sales Region</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Family_LMA</fullName>
+        <field>Product_Family1__c</field>
+        <literalValue>LMA</literalValue>
+        <name>Product Family - LMA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>LMA Product Family - Sales</fullName>
+        <actions>
+            <name>LATAM_Update_Account_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>LATAM_Update_Sales_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Family_LMA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Latam_Sales_Transactions__c.Financial_Site__c</field>
+            <operation>equals</operation>
+            <value>IE10</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>No LMA Product Family - Sales</fullName>
+        <actions>
+            <name>LATAM_Update_Account_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>LATAM_Update_Sales_Region</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Latam_Sales_Transactions__c.Financial_Site__c</field>
+            <operation>notEqual</operation>
+            <value>IE10</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Latam_Sales_Transactions__c.Account_Name__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

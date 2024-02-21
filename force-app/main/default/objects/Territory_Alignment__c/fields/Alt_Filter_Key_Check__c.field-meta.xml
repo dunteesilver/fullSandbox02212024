@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alt_Filter_Key_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>Alt_Filter_Key__c = Zipcode__c &amp; &quot;-&quot; &amp; ZPSA_Table__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Alt Filter Key Check</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

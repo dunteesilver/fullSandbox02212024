@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_Approval_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Test the Material Status */
+IF(Material_Status_Check__c = 1,
+&quot;Material is not Saleable&quot;,
+
+/* Main Section */
+
+/* These rules should cover 99% of Line Items */
+
+/* Sales Price does not match current Contract Pricing */
+IF( 
+AND( 
+!ISBLANK(Sales_Deal_Description__c), 
+Eligible_Price__c &lt;&gt; Sales_Price__c 
+), 
+&quot;Sales Price does not match current Contract Pricing&quot;, 
+
+/* Sales Price is outside Rep Guidelines  */
+IF(
+AND(
+Eligible_Price__c &lt;&gt;  Sales_Price__c, 
+Sales_Price__c &lt; Rep_Price__c,
+OR(
+Owner_Approval_Level__c = 1,
+!ISBLANK(Owner_Approval_Level__c) 
+)
+),&quot;Sales Price is outside Rep Guidelines&quot;,
+
+/* Sales Price is outside RSM Guidelines  */
+IF(
+AND(
+Eligible_Price__c &lt;&gt;  Sales_Price__c, 
+Sales_Price__c &lt; RSM_Price__c
+),&quot;Sales Price is outside RSM Guidelines&quot;,
+
+
+/* These are the exceptions that get sent to the RSM to sort out */
+
+/* Off Contract and List Price is Zero */
+IF(
+AND(
+Sales_Price__c = 0,
+List_Price__c = 0
+),&quot;Off Contract and List Price is Zero&quot;,
+
+/* When RSM and Rep Price is Zero, Sales Price must Equal Sales Price or Require Approval  */
+IF(
+AND(
+Rep_Price__c = 0, 
+RSM_Price__c = 0, 
+ISBLANK(Sales_Deal_Description__c),
+List_Price__c &lt;&gt;  Sales_Price__c
+),&quot;When RSM and Rep Price is Zero, Sales Price must Equal Sales Price or Require Approval&quot;,
+
+/* Sales Price is above Contract Price  */
+IF(
+AND(
+!ISBLANK(Sales_Deal_Description__c),
+Sales_Price__c &gt; Eligible_Price__c
+),&quot;Sales Price is above Contract Price&quot;,
+
+/* Sales Price is above List Price  */
+IF(
+AND(
+Sales_Price__c &gt; List_Price__c,
+Eligible_Price__c &lt;&gt;  Sales_Price__c
+),&quot;Sales Price is above List Price&quot;,
+&quot;Ready&quot;
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Temp Approval Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patients_Current_Condition_Unknown</fullName>
+    <active>true</active>
+    <description>VSI Products: If &quot;Patient&apos;s Current Condition&quot; = &quot;Unknown&quot; or &quot;Other&quot;, please fill out &quot;Patient&apos;s Current Condition Description&quot; above</description>
+    <errorConditionFormula>AND(RecordType.Name = &quot;Interventional – Legacy VSI Products&quot;, 
+  OR(ISPICKVAL(Patients_Current_Condition__c, &quot;Unknown&quot;),ISPICKVAL(Patients_Current_Condition__c, &quot;Other&quot;)),ISBLANK( PatientsCurrentConditionDescription__c ))</errorConditionFormula>
+    <errorDisplayField>PatientsCurrentConditionDescription__c</errorDisplayField>
+    <errorMessage>If &quot;Patient&apos;s Current Condition&quot; = &quot;Unknown&quot; or &quot;Other&quot;, please fill out &quot;Patient&apos;s Current Condition Description&quot; above</errorMessage>
+</ValidationRule>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+                <label>Do Not Renew</label>
+            </value>
+            <value>
+                <fullName>Contract Audit</fullName>
+                <default>false</default>
+                <label>Contract Audit</label>
+            </value>
+            <value>
+                <fullName>Sales Review</fullName>
+                <default>false</default>
+                <label>Sales Review</label>
+            </value>
+            <value>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+                <label>Pending Approval</label>
+            </value>
+            <value>
+                <fullName>Ready for Renew</fullName>
+                <default>false</default>
+                <label>Ready for Renew</label>
+            </value>
+            <value>
+                <fullName>Renewal Complete</fullName>
+                <default>false</default>
+                <label>Renewal Complete</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Expired</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Expired</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

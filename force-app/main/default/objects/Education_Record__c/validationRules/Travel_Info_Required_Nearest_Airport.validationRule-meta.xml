@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Travel_Info_Required_Nearest_Airport</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  RecordType.Name =&quot;Education Program Request&quot;,
+OR(ISPICKVAL(  Travel_Type_Requested__c  , &quot;Flight&quot;)  ,ISPICKVAL(  Travel_Type_Requested__c  , &quot;Train&quot;)
+),
+ ISBLANK (     Nearest_Alternative_Airport_Station__c   ))</errorConditionFormula>
+    <errorDisplayField>Nearest_Alternative_Airport_Station__c</errorDisplayField>
+    <errorMessage>Please fill in Nearest Airport/Station when Flight or Train transportation is is requested</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Month_Multiplier__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Used when estimating the year total as the multiplier.
+Runrate times multiplier plus current sales = yearly estimate.</inlineHelpText>
+    <label>Fiscal Month Multiplier</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

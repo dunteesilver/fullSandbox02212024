@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conference_or_Event_Name__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If Associated with Conference or Event, please enter the name of the conference or event</inlineHelpText>
+    <label>Conference or Event Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

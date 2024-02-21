@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_RecordType__c</fullName>
+    <externalId>false</externalId>
+    <label>Copy: RecordType</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Education Program Request</fullName>
+                <default>false</default>
+                <label>Education Program Request</label>
+            </value>
+            <value>
+                <fullName>CMA Speaker Request</fullName>
+                <default>false</default>
+                <label>CMA Speaker Request</label>
+            </value>
+            <value>
+                <fullName>CMA Procedural Lab</fullName>
+                <default>false</default>
+                <label>CMA Procedural Lab</label>
+            </value>
+            <value>
+                <fullName>Live Education Program Request</fullName>
+                <default>false</default>
+                <label>Live Education Program Request</label>
+            </value>
+            <value>
+                <fullName>Online Education Program Request</fullName>
+                <default>false</default>
+                <label>Online Education Program Request</label>
+            </value>
+            <value>
+                <fullName>Strategic Vascular Education Programs</fullName>
+                <default>false</default>
+                <label>Strategic Vascular Education Programs</label>
+            </value>
+            <value>
+                <fullName>Inservice Record</fullName>
+                <default>false</default>
+                <label>Inservice Record</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

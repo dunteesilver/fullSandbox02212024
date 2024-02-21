@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Projects_3_Stories_Completed</fullName>
+    <columns>NAME</columns>
+    <columns>Nickname__c</columns>
+    <columns>SBU__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Owner__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>Project__c</columns>
+    <columns>Prioritization_Score__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Complete</value>
+    </filters>
+    <label>All Initiatives - 3. Stories Completed</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Group_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Group__c,  
+&quot;00&quot;,&quot;Urology&quot;,
+&quot;01&quot;,&quot;Alt Site&quot;,
+&quot;02&quot;,&quot;Anesthesia&quot;,
+&quot;03&quot;,&quot;OEM&quot;,
+&quot;04&quot;,&quot;Respiratory&quot;,
+&quot;05&quot;,&quot;Surgical&quot;,
+&quot;06&quot;,&quot;Critical Care&quot;,
+&quot;07&quot;,&quot;GPO&quot;,
+&quot;08&quot;,&quot;IDN&quot;,
+&quot;09&quot;,&quot;Distribution&quot;,
+&quot;10&quot;,&quot;Dialysis&quot;,
+&quot;11&quot;,&quot;Specialty Markets&quot;,
+&quot;12&quot;,&quot;Vascular Access&quot;,
+&quot;13&quot;,&quot;Interventional&quot;,
+&quot;14&quot;,&quot;Cardiac&quot;,
+&quot;15&quot;,&quot;Cross Divisional&quot;,
+&quot;Not Defined&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Group Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

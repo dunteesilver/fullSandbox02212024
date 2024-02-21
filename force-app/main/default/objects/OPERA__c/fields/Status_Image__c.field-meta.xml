@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Image__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+ISPICKVAL(Approval_Stage__c, &quot;Approved - Contract Pending&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkg&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;Approved - Pending Contract&quot;),
+
+
+IF(ISPICKVAL(Approval_Stage__c, &quot;Approved - Contract Attached&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkf&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;Approved - Contract Attached&quot;),
+
+IF( ISPICKVAL(Approval_Stage__c , &quot;Rejected&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkj&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;Rejected&quot;),
+ 
+IF( ISPICKVAL(Approval_Stage__c , &quot;Submitted for OPERA Core Team&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkl&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;OPERA Core&quot;),
+
+ 
+IF( ISPICKVAL(Approval_Stage__c , &quot;Submitted for RCEM&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkm&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;RCEM&quot;),
+
+
+IF( ISPICKVAL(Approval_Stage__c , &quot;Submitted for CEM&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkk&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;CEM&quot;),
+
+
+IF( ISPICKVAL(Approval_Stage__c , &quot;Submitted for RSM&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkn&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;RSM&quot;),
+
+IF( ISPICKVAL(Approval_Stage__c , &quot;OPERA Complete&quot;), 
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrkh&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;OPERA Complete&quot;), 
+
+IMAGE(&quot;https://teleflex--c.na38.content.force.com/servlet/servlet.ImageServer?id=0154400000AGrki&amp;oid=00DOy000000IObl&amp;lastMod=1500661437000&quot;,&quot;Not Submitted&quot;)
+))))))))</formula>
+    <label>Status Image</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

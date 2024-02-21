@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>CVC_Product_Family_Update</fullName>
+        <description>Update the Opportunity Product Family when the Opportunity Product Line item Product Family equeals Central Venous Access.</description>
+        <field>Product_Family__c</field>
+        <literalValue>Central Venous Access</literalValue>
+        <name>CVC Product Family Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Central_Venous_Acc</fullName>
+        <field>Product_Family__c</field>
+        <literalValue>Central Venous Access</literalValue>
+        <name>Central Venous Access</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Central_Venous_Access</fullName>
+        <field>Product_Family__c</field>
+        <literalValue>Central Venous Access</literalValue>
+        <name>Central Venous Access</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PICCs</fullName>
+        <field>Product_Family__c</field>
+        <literalValue>PICCs</literalValue>
+        <name>PICCs</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Family_Arterial</fullName>
+        <field>Product_Family__c</field>
+        <literalValue>Arterial</literalValue>
+        <name>Product Family Arterial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VasoNova</fullName>
+        <field>Product_Family__c</field>
+        <literalValue>VasoNova</literalValue>
+        <name>VasoNova</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>OpportunityId</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Opportunity Product Family Arterial</fullName>
+        <actions>
+            <name>Product_Family_Arterial</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Name</field>
+            <operation>contains</operation>
+            <value>No Product Family</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Family</field>
+            <operation>equals</operation>
+            <value>Arterial</value>
+        </criteriaItems>
+        <description>This workflow is used to update the Product Family field on the Opportunity with the Product Product Family value Arterial  .</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Product Family CVC</fullName>
+        <actions>
+            <name>Central_Venous_Acc</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Name</field>
+            <operation>contains</operation>
+            <value>No Product Family</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Family</field>
+            <operation>equals</operation>
+            <value>Central Venous Access</value>
+        </criteriaItems>
+        <description>This workflow is used to update the Product Family field on the Opportunity with the Product Product Family value Central Venous Access.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Product Family PICCs</fullName>
+        <actions>
+            <name>PICCs</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Name</field>
+            <operation>contains</operation>
+            <value>No Product Family</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Family</field>
+            <operation>equals</operation>
+            <value>PICCs</value>
+        </criteriaItems>
+        <description>This workflow is used to update the Product Family field on the Opportunity with the Product Product Family value PICCs  .</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Product Family VasoNova</fullName>
+        <actions>
+            <name>VasoNova</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Name</field>
+            <operation>contains</operation>
+            <value>No Product Family</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Family</field>
+            <operation>equals</operation>
+            <value>VasoNova</value>
+        </criteriaItems>
+        <description>This workflow is used to update the Product Family field on the Opportunity with the Product Product Family value VasoNova .</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

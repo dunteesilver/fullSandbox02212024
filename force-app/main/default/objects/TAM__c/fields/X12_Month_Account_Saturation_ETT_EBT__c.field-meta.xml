@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X12_Month_Account_Saturation_ETT_EBT__c</fullName>
+    <externalId>false</externalId>
+    <formula>Rolling_12_Month_Sales_ETT_EBT__c  /  Estimated_Potential_ETT_EBT_Spend__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>12 Month Account Saturation ETT / EBT</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

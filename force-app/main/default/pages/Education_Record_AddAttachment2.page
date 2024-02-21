@@ -1,0 +1,90 @@
+<apex:page controller="Education_Record_AddAttachment" showHeader="False">
+    <html>
+        <head>
+            <apex:includeScript value="{!URLFOR($Resource.bootstrap3, 'bootstrap/js/bootstrap.min.js')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.bootstrap3, 'bootstrap/css/bootstrap.css')}"/>
+            
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+            <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+            <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+            
+            <style type="text/css">
+                div.body {
+                margin: 0px 15px 0px 15px;
+                }
+                .panel {
+                margin-bottom: 0px;
+                }
+                .r {
+                text-align: right;
+                }
+                #crf td{
+                vertical-align: middle;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="teleflex body">
+                <div class="panel-body">
+                    <img style="max-height:28px;max-width:350px;" src="/servlet/servlet.ImageServer?id={!logoId}&oid={!OrgId}"/>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">Clinical Education Expenses Portal - Attach Receipts</h6>
+                    </div>
+                    <div class="panel-body">
+                        <apex:pageMessages />
+                        
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h6 class="panel-title">Upload Receipts</h6>
+                            </div>
+                            <div class="panel-body">
+                                <div class="alert alert-danger" style="vertical-align: middle; margin: 0px;">
+                                    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;<strong>Please make sure to enter your attachments as .PDF File or .JPG Image.</strong>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+                                </div>
+                                <apex:form enctype="multipart/form-data">
+                                    <apex:pageMessages />
+                                    <apex:pageBlock >
+                                        
+                                        <apex:pageBlockSection showHeader="false" columns="1" id="block1">
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel value="Select type of Receipt" for="fileName" />
+                                                <apex:selectList id="chooseFileName" value="{!attachment.name}" size="1">
+                                                    <apex:selectOption itemValue="Meals" itemLabel="Meals"/>
+                                                    <apex:selectOption itemValue="Transportation" itemLabel="Transportation"/>
+                                                    <apex:selectOption itemValue="Airfare" itemLabel="Airfare"/>
+                                                    <apex:selectOption itemValue="Hotel" itemLabel="Hotel"/>
+                                                    <apex:selectOption itemValue="Other" itemLabel="Other"/>
+                                                </apex:selectList>
+                                                
+                                                <!--     <apex:inputText value="{!attachment.name}" id="fileName"/>-->
+                                            </apex:pageBlockSectionItem>
+                                            
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel value="Browse File" for="file"/>
+                                                <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file" contentType="{!attachment.ContentType}" accept="image/*,application/pdf"/>
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSection>
+                                        
+                                        <apex:pageBlockButtons >
+                                            <apex:commandButton action="/apex/Education_Record_addAttachment?id={!crfid}" value="Previous" id="previous"  styleClass="btn btn-primary btn-sm"/>
+                                            <apex:commandButton action="{!upload}" value="Save and Attach another file" styleClass="btn btn-primary btn-sm"/>
+                                            <apex:commandButton action="{!go_next_step}" value="Go to Next Step" styleClass="btn btn-primary btn-sm"/>
+                                        </apex:pageBlockButtons>
+                                        
+                                    </apex:pageBlock>
+                                </apex:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-danger" style="vertical-align: middle; margin: 0px;">
+                    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;&nbsp;<strong>All Invoices should be submitted <u>within 3 days</u> of Inservice, Lab, Etc. Please refer to agreement for additional info.</strong>&nbsp;&nbsp;<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+                </div>
+            </div>
+            
+        </body>
+    </html>
+</apex:page>

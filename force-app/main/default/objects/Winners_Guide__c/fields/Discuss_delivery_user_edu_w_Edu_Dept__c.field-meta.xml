@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discuss_delivery_user_edu_w_Edu_Dept__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Discuss best way of delivering end user education with Education Department (staff meetings/morning huddles, etc.)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Discuss best way of delivering end user education with Education Department (staff meetings/morning huddles, etc.)</inlineHelpText>
+    <label>Discuss delivery user edu w/Edu Dept</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

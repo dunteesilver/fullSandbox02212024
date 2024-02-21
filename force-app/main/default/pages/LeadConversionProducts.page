@@ -1,0 +1,84 @@
+<apex:page showHeader="true" sidebar="true" standardController="Lead" extensions="convertingLeads">
+<apex:includescript value="/soap/ajax/34.0/connection.js"> </apex:includescript>
+        <apex:includescript value="/soap/ajax/34.0/apex.js"> </apex:includescript>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-1.11.3.min.js')}"/>
+        <apex:includeScript value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.js')}"/>
+        <apex:stylesheet value="{!UrlFor($Resource.jQuery1113,'/jquery-ui.min.css')}"/>
+<style type="text/css">
+ table.exceptionText td {
+                 font-style:italic;
+                 font-size:16px;
+                 font-weight:bold;
+                 text-align:center;
+                 color:red;}
+</style>
+<!--
+<apex:outputPanel id="msgPanel">
+	<apex:messages id="msgBlock" layout="table" styleClass="exceptionText" />
+</apex:outputPanel>
+
+<apex:form id="prodForm" rendered="{!left(lead.RecordTypeId,15) != '012E0000000RHE7'}">
+<apex:pageblock >
+<apex:pageblockSection title="Step 3: Please confirm Product Family/Product of Interest to continue."/>
+	<apex:pageblockSection id="PBSprod" title="Product Family and Interest" collapsible="false" columns="1" >
+	<apex:outputLink value="/{!lead.Id}">Back to Lead Record</apex:outputLink>
+		<apex:inputField label="Product Family" value="{!lead.Product_Family__c}" />
+		<apex:inputField label="Product of Interest" value="{!lead.Product_of_Interest__c}" />
+    <apex:inputField label="Amount $" value="{!lead.Amount__c}" />
+    <apex:pageBlockSectionItem HelpText="{!$ObjectType.lead.fields.Do_Not_Create_Opportunity__c.inlineHelpText}" >
+    <apex:outputLabel value="Do Not Create Opportunity" />
+    <apex:outputText >
+    <apex:inputField label="Do Not Create Opportunity" value="{!lead.Do_Not_Create_Opportunity__c}" />
+    </apex:outputText>
+    </apex:pageBlockSectionItem>
+	</apex:pageblockSection>
+	<apex:commandButton value="Back To Contact" action="/apex/LeadConversionContact?id={!lead.Id}" rendered="{!left(lead.RecordTypeId,15) != '012E0000000RHE7'}" />
+  <apex:commandButton value="Convert Lead" action="{!saveProds}" rendered="{!left(lead.RecordTypeId,15) != '012E0000000RHE7'}" />
+</apex:pageBlock>
+</apex:form>
+
+<apex:form id="latProdForm" rendered="{!left(lead.RecordTypeId,15) = '012E0000000RHE7'}">
+<apex:pageblock >
+<apex:pageblockSection title="Step 3: Please confirm Business Unit/Product Family/Product of Interest to continue. LA"/>
+	<apex:pageblockSection id="PBSlat" title="Product Family and Interest" collapsible="false" columns="1" >
+	<apex:outputLink value="/{!lead.Id}">Back to Lead Record</apex:outputLink>
+	<apex:inputField label="Business Unit" value="{!lead.Business_Unit__c}" />
+		<apex:inputField label="LA Product Family" value="{!lead.Product_Family_LatAm__c}" />
+		<apex:inputField label="LA Product of Interest" value="{!lead.Product_of_Interest_LatAm__c}" />
+    <apex:inputField label="Amount $" value="{!lead.Amount__c}" />
+    <apex:pageBlockSectionItem HelpText="{!$ObjectType.lead.fields.Do_Not_Create_Opportunity__c.inlineHelpText}" >
+    <apex:outputLabel value="Do Not Create Opportunity" />
+    <apex:outputText >
+    <apex:inputField label="Do Not Create Opportunity" value="{!lead.Do_Not_Create_Opportunity__c}" />
+    </apex:outputText>
+    </apex:pageBlockSectionItem>
+	</apex:pageblockSection>
+	<apex:commandButton value="Back To Contact" action="/apex/LeadConversionContact?id={!lead.Id}" rendered="{!left(lead.RecordTypeId,15) = '012E0000000RHE7'}" />
+  <apex:commandButton value="Convert Lead" action="{!saveProds}" rendered="{!left(lead.RecordTypeId,15) = '012E0000000RHE7'}" />
+</apex:pageBlock>
+</apex:form>
+-->
+
+<apex:form id="prodForm2" rendered="{!left(lead.RecordTypeId,15) != '012E0000000RHE7'}">
+    <apex:pageMessages />
+<apex:actionFunction name="refreshDoNot" reRender="doNotPanel" />
+<apex:pageblock >
+<apex:pageblockSection title="Step 3: Please confirm Product Family/Product of Interest to continue."/>
+	<apex:pageblockSection id="PBSprod" title="Product Family and Interest" collapsible="false" columns="1" >
+	<apex:outputLink value="/{!lead.Id}">Back to Lead Record</apex:outputLink>
+    <apex:inputField REQUIRED="true" label="Business Unit" value="{!lead.Business_Unit__c}" />
+	<apex:inputField REQUIRED="true" label="Product Family" value="{!lead.Product_Family_GPL__c}" />
+	<apex:inputField REQUIRED="true" label="Product of Interest" value="{!lead.Product_of_Interest_GPL__c}" />
+    <apex:inputField label="Amount $" value="{!lead.Amount__c}" id="checkFalse"/>
+    <apex:pageBlockSectionItem HelpText="{!$ObjectType.lead.fields.Do_Not_Create_Opportunity__c.inlineHelpText}">
+    <apex:outputLabel value="Do Not Create Opportunity" />
+    <apex:outputText >
+    <apex:inputField label="Do Not Create Opportunity" value="{!lead.Do_Not_Create_Opportunity__c}" id="oppCheck" />
+    </apex:outputText>
+    </apex:pageBlockSectionItem>
+	</apex:pageblockSection>
+	<apex:commandButton value="Back To Contact" action="/apex/LeadConversionContact?id={!lead.Id}" rendered="{!left(lead.RecordTypeId,15) != '012E0000000RHE7'}" />
+  <apex:commandButton value="Convert Lead" action="{!saveProds}" rendered="{!left(lead.RecordTypeId,15) != '012E0000000RHE7'}" />
+</apex:pageBlock>
+</apex:form>
+</apex:page>

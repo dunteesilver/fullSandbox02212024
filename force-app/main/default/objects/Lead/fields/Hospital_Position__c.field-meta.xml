@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hospital_Position__c</fullName>
+    <externalId>false</externalId>
+    <label>Hospital Position</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Medical Doctor</fullName>
+                <default>false</default>
+                <label>Medical Doctor</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse</fullName>
+                <default>false</default>
+                <label>Registered Nurse</label>
+            </value>
+            <value>
+                <fullName>Certified Registered Nurse Anesthetists</fullName>
+                <default>false</default>
+                <label>Certified Registered Nurse Anesthetists</label>
+            </value>
+            <value>
+                <fullName>Physician&apos;s Assistant</fullName>
+                <default>false</default>
+                <label>Physician&apos;s Assistant</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner</label>
+            </value>
+            <value>
+                <fullName>Scrub Tech</fullName>
+                <default>false</default>
+                <label>Scrub Tech</label>
+            </value>
+            <value>
+                <fullName>Circulating Nurse</fullName>
+                <default>false</default>
+                <label>Circulating Nurse</label>
+            </value>
+            <value>
+                <fullName>Coordinator</fullName>
+                <default>false</default>
+                <label>Coordinator</label>
+            </value>
+            <value>
+                <fullName>Materials Management</fullName>
+                <default>false</default>
+                <label>Materials Management</label>
+            </value>
+            <value>
+                <fullName>SPD Manager</fullName>
+                <default>false</default>
+                <label>SPD Manager</label>
+            </value>
+            <value>
+                <fullName>SPD Instrument Tech</fullName>
+                <default>false</default>
+                <label>SPD Instrument Tech</label>
+            </value>
+            <value>
+                <fullName>Nurse Technician</fullName>
+                <default>false</default>
+                <label>Nurse Technician</label>
+            </value>
+            <value>
+                <fullName>Infection Control Nurse</fullName>
+                <default>false</default>
+                <label>Infection Control Nurse</label>
+            </value>
+            <value>
+                <fullName>ICU Nurse</fullName>
+                <default>false</default>
+                <label>ICU Nurse</label>
+            </value>
+            <value>
+                <fullName>Anesthesia Nurse</fullName>
+                <default>false</default>
+                <label>Anesthesia Nurse</label>
+            </value>
+            <value>
+                <fullName>Operating Room Nurse</fullName>
+                <default>false</default>
+                <label>Operating Room Nurse</label>
+            </value>
+            <value>
+                <fullName>Operating Room Technician</fullName>
+                <default>false</default>
+                <label>Operating Room Technician</label>
+            </value>
+            <value>
+                <fullName>Sterile Processing Manager</fullName>
+                <default>false</default>
+                <label>Sterile Processing Manager</label>
+            </value>
+            <value>
+                <fullName>Sterile Processing Instrument Technician</fullName>
+                <default>false</default>
+                <label>Sterile Processing Instrument Technician</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

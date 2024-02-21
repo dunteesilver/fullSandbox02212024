@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specific_Lead_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Specific Lead Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>LeadSource</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Place holder field to map lead source to contact</fullName>
+                <default>false</default>
+                <label>Place holder field to map lead source to contact</label>
+            </value>
+            <value>
+                <fullName>American Association for Respiratory Care (AARC)</fullName>
+                <default>false</default>
+                <label>American Association for Respiratory Care (AARC)</label>
+            </value>
+            <value>
+                <fullName>FOCUS</fullName>
+                <default>false</default>
+                <label>FOCUS</label>
+            </value>
+            <value>
+                <fullName>National Association of Neonatal Nurses (NANN)</fullName>
+                <default>false</default>
+                <label>National Association of Neonatal Nurses (NANN)</label>
+            </value>
+            <value>
+                <fullName>American Society of Anesthesiologists (ASA)</fullName>
+                <default>false</default>
+                <label>American Society of Anesthesiologists (ASA)</label>
+            </value>
+            <value>
+                <fullName>Society of Airway Management (SAM)</fullName>
+                <default>false</default>
+                <label>Society of Airway Management (SAM)</label>
+            </value>
+            <value>
+                <fullName>American Society of Anesthesia Technologists &amp; Technicians (ASATT)</fullName>
+                <default>false</default>
+                <label>American Society of Anesthesia Technologists &amp; Technicians (ASATT)</label>
+            </value>
+            <value>
+                <fullName>Post Graduate Assembly (PGA)</fullName>
+                <default>false</default>
+                <label>Post Graduate Assembly (PGA)</label>
+            </value>
+            <value>
+                <fullName>Association for Professionals in Infection Control and Epidemiology (APIC)</fullName>
+                <default>false</default>
+                <label>Association for Professionals in Infection Control and Epidemiology (APIC)</label>
+            </value>
+            <value>
+                <fullName>Society of Critical Care Medicine (SCCM)</fullName>
+                <default>false</default>
+                <label>Society of Critical Care Medicine (SCCM)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Place holder field to map lead source to contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>American Association for Respiratory Care (AARC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>FOCUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>National Association of Neonatal Nurses (NANN)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>American Society of Anesthesiologists (ASA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Society of Airway Management (SAM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>American Society of Anesthesia Technologists &amp; Technicians (ASATT)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Post Graduate Assembly (PGA)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Association for Professionals in Infection Control and Epidemiology (APIC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Trade Show</controllingFieldValue>
+            <valueName>Society of Critical Care Medicine (SCCM)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

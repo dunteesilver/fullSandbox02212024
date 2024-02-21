@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Eaches_Per_Case_1</fullName>
+        <field>Each_per_Case__c</field>
+        <formula>1</formula>
+        <name>Eaches Per Case 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LATAM_List_Price</fullName>
+        <field>List_Price__c</field>
+        <formula>Distributor_List__c</formula>
+        <name>LATAM List Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_Products_as_Inactive</fullName>
+        <description>Mark Products as Inactive for US10 and US30.</description>
+        <field>IsActive</field>
+        <literalValue>0</literalValue>
+        <name>Mark Products as Inactive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Material_Field_Update</fullName>
+        <field>Material__c</field>
+        <formula>Name</formula>
+        <name>Material Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Material_Key_Fix</fullName>
+        <field>Material_Key__c</field>
+        <formula>Name &amp; &quot;-&quot; &amp; Sales_Org__c &amp; &quot;-&quot; &amp;  Distribution_Channel__c</formula>
+        <name>Material Key Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Qty_Sales_Unit</fullName>
+        <field>Qty_Sales_Unit__c</field>
+        <formula>1</formula>
+        <name>Product - Qty/Sales Unit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Sales_Unit_Blank</fullName>
+        <field>Sales_Unit__c</field>
+        <formula>&quot;EA&quot;</formula>
+        <name>Product - Sales Unit Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_duplicate_update</fullName>
+        <description>Mark products as duplicates.</description>
+        <field>Duplicate__c</field>
+        <literalValue>1</literalValue>
+        <name>Product duplicate update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Org_Key_Fix</fullName>
+        <field>Sales_Org_Key__c</field>
+        <formula>if(AND(OR(Sales_Org__c = &quot;US10&quot;,Sales_Org__c = &quot;US30&quot;), Distribution_Channel__c =&quot;10&quot;), &quot;US103010&quot;,
+if(AND(Sales_Org__c = &quot;CA10&quot;, Distribution_Channel__c =&quot;10&quot;), &quot;CA1010&quot;,
+if(AND(OR(Sales_Org__c = &quot;US10&quot;,Sales_Org__c = &quot;US30&quot;), Distribution_Channel__c =&quot;20&quot;), &quot;US103020&quot;,
+if(AND(Sales_Org__c = &quot;MX40&quot;, Distribution_Channel__c =&quot;10&quot;), &quot;MX4010&quot;,
+&quot;&quot;
+))))</formula>
+        <name>Sales Org Key Fix</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Material_Status</fullName>
+        <field>Material_Status__c</field>
+        <formula>Material_Status_Description__c</formula>
+        <name>Update Material Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SBU_field_with_BU_Information</fullName>
+        <field>SBU__c</field>
+        <formula>IF( Division__c = &quot;10&quot;, &quot;Respiratory and Anesthesia (TFX Only)&quot;,
+IF(OR(Division__c = &quot;20&quot;,Division__c = &quot;30&quot;), &quot;Surgical&quot;,
+IF(Division__c = &quot;40&quot;, &quot;Vascular&quot;,
+IF(Division__c = &quot;50&quot;, &quot;Anesthesia (Arrow Only)&quot;,
+&quot;Cardiac&quot;
+)
+)
+)
+)</formula>
+        <name>Update SBU field with BU Information</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Sales_Org_Key</fullName>
+        <description>Used to fix Sales Org Key for US60 change.</description>
+        <field>Sales_Org_Key__c</field>
+        <formula>IF(
+AND( Distribution_Channel__c = &apos;10&apos;,OR(Sales_Org__c = &apos;US10&apos;,Sales_Org__c = &apos;US30&apos;) ), &apos;US103010&apos;,
+IF(
+AND( Distribution_Channel__c = &apos;20&apos;,OR(Sales_Org__c = &apos;US10&apos;,Sales_Org__c = &apos;US30&apos;) ), &apos;US103020&apos;,
+IF(
+AND( Distribution_Channel__c = &apos;10&apos;,Sales_Org__c = &apos;US60&apos; ), &apos;US6010&apos;,
+IF(
+AND( Distribution_Channel__c = &apos;20&apos;,Sales_Org__c = &apos;US60&apos; ), &apos;US6020&apos;,
+IF(
+Sales_Org__c = &apos;CA10&apos;, &apos;CA1010&apos;,
+IF(
+Sales_Org__c = &apos;MX40&apos;, &apos;MX4010&apos;,
+IF(
+Sales_Org__c = &apos;CL10&apos;, &apos;CL1010&apos;,
+IF(
+Sales_Org__c = &apos;CO10&apos;, &apos;CO1010&apos;,
+IF(
+Sales_Org__c = &apos;AU10&apos;, &apos;AU1010&apos;,
+IF(
+Sales_Org__c = &apos;NZ10&apos;, &apos;NZ1010&apos;,
+IF(
+Sales_Org__c = &apos;BR10&apos;, &apos;BR1010&apos;,
+IF(
+Sales_Org__c = &apos;AT10&apos;, &apos;AT1010&apos;,
+IF(
+Sales_Org__c = &apos;BE10&apos;, &apos;BE1010&apos;,
+IF(
+Sales_Org__c = &apos;CH10&apos;, &apos;CH1010&apos;,
+IF(
+Sales_Org__c = &apos;CZ20&apos;, &apos;CZ2010&apos;,
+IF(
+Sales_Org__c = &apos;DE10&apos;, &apos;DE1010&apos;,
+IF(
+Sales_Org__c = &apos;ES10&apos;, &apos;ES1010&apos;,
+IF(
+Sales_Org__c = &apos;FR10&apos;, &apos;FR1010&apos;,
+IF(
+Sales_Org__c = &apos;GR10&apos;, &apos;GR1010&apos;,
+IF(
+Sales_Org__c = &apos;IE20&apos;, &apos;IE2010&apos;,
+IF(
+Sales_Org__c = &apos;NL10&apos;, &apos;NL1010&apos;,
+IF(
+Sales_Org__c = &apos;PL10&apos;, &apos;PL1010&apos;,
+IF(
+Sales_Org__c = &apos;PT10&apos;, &apos;PT1010&apos;,
+IF(
+Sales_Org__c = &apos;SK10&apos;, &apos;SK1010&apos;,
+IF(
+Sales_Org__c = &apos;UK10&apos;, &apos;UK1010&apos;,
+IF(
+Sales_Org__c = &apos;ZA10&apos;, &apos;ZA1010&apos;,
+Sales_Org_Key__c
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)</formula>
+        <name>Update Sales Org Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Transfer_Price_for_872_DTP</fullName>
+        <description>Updated cost of product 872-DTP to $80 at the request of Dave Price.  Workflow changes the transfer price of product to 3.16.</description>
+        <field>Transfer_Price__c</field>
+        <formula>3.16</formula>
+        <name>Update Transfer Price for 872-DTP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_UOM</fullName>
+        <field>UOM__c</field>
+        <formula>Sales_Unit__c</formula>
+        <name>Update UOM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_to_add_Vascular_materials_to_EZIO</fullName>
+        <description>Some of Vascular&apos;s products moved to EMS under EZIO. The Vascular products are stilled sold outside of North America so they remained labeled under Division 40. This rule has a field update to check the boxes of the affected products to show for EMS.</description>
+        <field>Division__c</field>
+        <formula>TEXT(50)</formula>
+        <name>Update to add Vascular materials to EZIO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>ETL - UOM sync with Sales Unit</fullName>
+        <actions>
+            <name>Update_UOM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>UOM__c &lt;&gt; Sales_Unit__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>LATAM List Price</fullName>
+        <actions>
+            <name>LATAM_List_Price</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>We get ZD as ZH in the PP extract. This fixes that for LATAM
+-- Adding CL and CH - 16Aug2018 ESC
+-- Removing CL and CO - 19Mar2019 DAS</description>
+        <formula>AND( 
+List_Price__c &lt;&gt; Distributor_List__c, 
+OR( 
+Sales_Org_Key__c = &quot;US103020&quot;, 
+Sales_Org_Key__c = &quot;CH1010&quot;,  
+Sales_Org_Key__c = &quot;MX4010&quot;
+) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Mark Products as Inactive</fullName>
+        <actions>
+            <name>Mark_Products_as_Inactive</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>US10,US30</value>
+        </criteriaItems>
+        <description>Mark Products as Inactive for US10,US30</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Material Key Fix</fullName>
+        <actions>
+            <name>Material_Key_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>NOT(CONTAINS(Material_Key__c,Name ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product - Sales Unit Blank %282017%29</fullName>
+        <actions>
+            <name>Product_Sales_Unit_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.Sales_Unit__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>We stopped getting the UOM for some reason, this workflow fixes those by putting in EA for the default.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product - UOM QTY %282015%29</fullName>
+        <actions>
+            <name>Eaches_Per_Case_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Qty_Sales_Unit</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Product2.Each_per_Case__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Qty_Sales_Unit__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Sets the default Unit of Measure to 1 if the product comes in at 0.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product duplicate update</fullName>
+        <actions>
+            <name>Product_duplicate_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.Sales_Org__c</field>
+            <operation>equals</operation>
+            <value>US10,US30</value>
+        </criteriaItems>
+        <description>Mark products as duplicates.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sales Org Key Fix</fullName>
+        <actions>
+            <name>Sales_Org_Key_Fix</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Sales_Org_Key__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Material</fullName>
+        <actions>
+            <name>Material_Field_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.Material__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Material Status</fullName>
+        <actions>
+            <name>Update_Material_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>Material_Status__c &lt;&gt; Material_Status_Description__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update SBU field</fullName>
+        <actions>
+            <name>Update_SBU_field_with_BU_Information</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.SBU__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This workflow rule updates the SBU field whenever it is empty by using the Division field help text.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Sales Org Key</fullName>
+        <actions>
+            <name>Update_Sales_Org_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Updates sales org key for US10,US</description>
+        <formula>OR( ISBLANK(Sales_Org_Key__c), Sales_Org_Key__c &lt;&gt; Sales_Org__c + Distribution_Channel__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Transfer Price for 872-DTP</fullName>
+        <actions>
+            <name>Update_Transfer_Price_for_872_DTP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>equals</operation>
+            <value>872-DTP</value>
+        </criteriaItems>
+        <description>Updated cost of product 872-DTP to $80 at the request of Dave Price. Workflow changes the transfer price of product to 3.16.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update to add Vascular materials to EZIO</fullName>
+        <actions>
+            <name>Update_to_add_Vascular_materials_to_EZIO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Product2.Description</field>
+            <operation>contains</operation>
+            <value>EZ-IO</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Sales_Org_Key__c</field>
+            <operation>equals</operation>
+            <value>US6010</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Division__c</field>
+            <operation>equals</operation>
+            <value>40</value>
+        </criteriaItems>
+        <description>Some of Vascular&apos;s products moved to EMS under EZIO. The Vascular products are stilled sold outside of North America so they remained labeled under Division 40. This rule has a field update to check the boxes of the affected products to show for EMS.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

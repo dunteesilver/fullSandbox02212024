@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Family_GPL__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Family</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Unit__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Product_Family_GPL</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Active Humidification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Adaptors/Connectors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Aerosol Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Filters/HMEs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>High Flow Nasal Cannula Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Infant Nasal Cpap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>NIV</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Oxygen Therapy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <valueName>Pulmonary Hygiene</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alternate Care</controllingFieldValue>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>Respiratory</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Resuscitation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional Capital</controllingFieldValue>
+            <valueName>Access (Cardiac)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Access (Interventional)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Access (Surgical)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Accessories - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Acute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Acute Dialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Acute Dialysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Airway</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Angioplasty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Arterials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Aspiration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Auto Ligation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Central Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Instruments</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Chest Drain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Collection Devices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Coronary Angioplasty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Dialysis Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Dressing/Securement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Embolics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Endourology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>EZ-IO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Fascial Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Catheter-Extension</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Guidewires</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Gynecology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Hemostasis/Biologics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Hemostatic Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Hydrophilic Intermittent Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>IAB Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional Capital</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>IAB Consoles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>IABP Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional Capital</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>IAB Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Indwelling Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Instruments</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Instruments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Intermittent Catheter Closed Systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Interventional Procedures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Interventional Urology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Intraosseous Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>IR JACC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Large Bore Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Ligation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>LMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Male External Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Specialty Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Non TFX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>OnControl</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Other Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <controllingFieldValue>EMS</controllingFieldValue>
+            <valueName>Pain Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Percutaneous</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Peripheral Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Polaris</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Port(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>PTD Thrombectomy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>PYNG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Radiation safety</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional Capital</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Right Heart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Several</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Sheaths</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Stimpod</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <controllingFieldValue>Surgical</controllingFieldValue>
+            <valueName>Suture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Trans-Radial Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Uncoated Intermittent Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Uretheral Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <controllingFieldValue>Urology</controllingFieldValue>
+            <valueName>Urodynamic Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Vein</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Latin America</controllingFieldValue>
+            <valueName>Ventrain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Aortic Punch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Conduit Harvesting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Dura/Derma</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Electrosurgery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <controllingFieldValue>Surgical Bariatrics</controllingFieldValue>
+            <valueName>Internal Stapling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Disposables</controllingFieldValue>
+            <valueName>Skin Stapling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Surgical Instruments</controllingFieldValue>
+            <valueName>Thoracic Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anesthesia</controllingFieldValue>
+            <valueName>Anesthesia Capital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>ANZ - Cardiac Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>ANZ - EZ-IO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>ANZ - Non-TFX Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vascular</controllingFieldValue>
+            <valueName>Visualization Naviga</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Access + Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Bone Access + Biopsy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Drainage/Centesis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Embolization</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Hemodyalysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Interventional Access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>MCS Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Right Heart Catheters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interventional</controllingFieldValue>
+            <valueName>Structural Heart</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

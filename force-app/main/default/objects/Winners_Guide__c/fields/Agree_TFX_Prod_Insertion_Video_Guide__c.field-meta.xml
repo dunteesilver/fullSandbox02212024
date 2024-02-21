@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agree_TFX_Prod_Insertion_Video_Guide__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Agree TFX Prod. Insertion Video and/or guide?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Agree to Teleflex Product Insertion Video and/or guide?</inlineHelpText>
+    <label>Agree TFX Prod. Insertion Video/Guide?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

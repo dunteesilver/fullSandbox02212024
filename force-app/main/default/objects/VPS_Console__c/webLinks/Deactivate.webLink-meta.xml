@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deactivate</fullName>
+    <availability>online</availability>
+    <description>Deactivate a VPS Console</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Deactivate</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/27.0/connection.js&quot;)}; 
+
+var VPSconObj = new sforce.SObject(&quot;VPS_Console__c&quot;); 
+VPSconObj.Id= &quot;{!VPS_Console__c.Id}&quot;;
+
+if(VPSconObj.Unit_Status__c != &quot;Deactivated&quot;) {
+     VPSconObj.Unit_Status__c = &quot;Deactivated&quot;; 
+     var result = sforce.connection.update([VPSconObj]);
+
+     var approval = new sforce.ProcessSubmitRequest();
+     approval.objectId = &quot;{!VPS_Console__c.Id}&quot;;
+     var processRes = sforce.connection.process([approval]);
+     window.location=(&quot;/{!VPS_Console__c.Id}&quot;);
+}
+else{
+     var approval = new sforce.ProcessSubmitRequest();
+     approval.objectId = &quot;{!VPS_Console__c.Id}&quot;;
+     var processRes = sforce.connection.process([approval]);
+     window.location=(&quot;/{!VPS_Console__c.Id}&quot;);
+}</url>
+</WebLink>

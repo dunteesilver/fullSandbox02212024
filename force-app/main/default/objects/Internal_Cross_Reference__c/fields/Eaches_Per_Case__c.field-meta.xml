@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eaches_Per_Case__c</fullName>
+    <externalId>false</externalId>
+    <formula>Text(Cross_Reference_Product__r.Each_per_Case__c)</formula>
+    <label>Eaches Per Case</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

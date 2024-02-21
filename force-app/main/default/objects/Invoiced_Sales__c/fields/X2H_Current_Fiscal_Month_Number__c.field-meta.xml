@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2H_Current_Fiscal_Month_Number__c</fullName>
+    <description>Created to support Surgical H2 calendar</description>
+    <externalId>false</externalId>
+    <formula>/* Created to support Surgical H2 calendar */
+
+/* 2021 */
+if(TODAY() &gt; DATEVALUE(&quot;2021-11-29&quot;), 12,
+if(TODAY() &gt; DATEVALUE(&quot;2021-11-01&quot;), 11,
+if(TODAY() &gt; DATEVALUE(&quot;2021-09-27&quot;), 10,
+if(TODAY() &gt; DATEVALUE(&quot;2021-08-30&quot;), 9,
+if(TODAY() &gt; DATEVALUE(&quot;2021-08-02&quot;), 8,
+if(TODAY() &gt; DATEVALUE(&quot;2021-06-28&quot;), 7,
+
+/* 2020 */
+if(TODAY() &gt; DATEVALUE(&quot;2020-11-30&quot;), 12,
+if(TODAY() &gt; DATEVALUE(&quot;2020-11-02&quot;), 11,
+if(TODAY() &gt; DATEVALUE(&quot;2020-09-28&quot;), 10,
+if(TODAY() &gt; DATEVALUE(&quot;2020-08-31&quot;), 9,
+if(TODAY() &gt; DATEVALUE(&quot;2020-08-03&quot;), 8,
+if(TODAY() &gt; DATEVALUE(&quot;2020-06-29&quot;), 7,
+
+0
+))))))
+))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>2H Current Fiscal Month Number</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

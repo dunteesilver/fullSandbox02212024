@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Unqualified_Reason</fullName>
+    <active>false</active>
+    <description>Require a reason for the lead being unqualified.</description>
+    <errorConditionFormula>AND(
+  OR(
+  $RecordType.Name = &quot;AR Lead&quot;,
+  $RecordType.Name = &quot;Specialty Lead&quot;,
+  $RecordType.Name = &quot;NA Vascular Sales&quot;)
+,  Text(Status) =  &quot;Unqualified&quot;, Text(Reason_Lead_is_Unqualified_Picklist__c) = &quot;&quot; )</errorConditionFormula>
+    <errorDisplayField>Reason_Lead_is_Unqualified_Picklist__c</errorDisplayField>
+    <errorMessage>Please enter a reason the lead is not qualified</errorMessage>
+</ValidationRule>

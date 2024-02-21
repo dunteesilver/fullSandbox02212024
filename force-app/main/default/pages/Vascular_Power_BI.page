@@ -1,0 +1,21 @@
+<apex:page >
+<body>
+<iframe id="myiframe"
+    src="https://app.powerbi.com/reportEmbed?reportId=a4fd2d33-3328-45a8-977c-fcf89edcc68c&autoAuth=true&ctid=46cec638-8a06-43fd-a7d7-8a626e13367f"
+    frameborder="0"
+    allowfullscreen="true">
+</iframe>
+</body>
+
+<script>
+var w = window.innerWidth;
+var h = window.innerHeight;
+
+var iframe = document.getElementById("myiframe");
+
+// Set the width and height attributes of the iframe
+iframe.setAttribute("width", w);
+iframe.setAttribute("height", h);
+console.log("Browser width: " + w + ", height: " + h + ".");
+</script>
+</apex:page>

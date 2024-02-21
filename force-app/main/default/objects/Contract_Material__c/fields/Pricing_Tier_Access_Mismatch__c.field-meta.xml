@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Tier_Access_Mismatch__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+Agreement__r.Pricing_Tier_Access__c &lt;&gt; Level__c,
+Agreement__r.Pricing_Tier_Access__c &lt; Level__c,
+Pricing_Tier__c = TRUE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pricing Tier Access Mismatch</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

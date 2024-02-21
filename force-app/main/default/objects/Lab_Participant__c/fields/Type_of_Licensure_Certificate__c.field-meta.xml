@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Licensure_Certificate__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of Licensure/Certificate</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EMR</fullName>
+                <default>false</default>
+                <label>EMR</label>
+            </value>
+            <value>
+                <fullName>EMT, EMT-B</fullName>
+                <default>false</default>
+                <label>EMT, EMT-B</label>
+            </value>
+            <value>
+                <fullName>AEMT</fullName>
+                <default>false</default>
+                <label>AEMT</label>
+            </value>
+            <value>
+                <fullName>EMT-Int</fullName>
+                <default>false</default>
+                <label>EMT-Int</label>
+            </value>
+            <value>
+                <fullName>EMT-P, NREMTP, Paramedic</fullName>
+                <default>false</default>
+                <label>EMT-P, NREMTP, Paramedic</label>
+            </value>
+            <value>
+                <fullName>MD, DO</fullName>
+                <default>false</default>
+                <label>MD, DO</label>
+            </value>
+            <value>
+                <fullName>RN</fullName>
+                <default>false</default>
+                <label>RN</label>
+            </value>
+            <value>
+                <fullName>NP</fullName>
+                <default>false</default>
+                <label>NP</label>
+            </value>
+            <value>
+                <fullName>PA</fullName>
+                <default>false</default>
+                <label>PA</label>
+            </value>
+            <value>
+                <fullName>RRT</fullName>
+                <default>false</default>
+                <label>RRT</label>
+            </value>
+            <value>
+                <fullName>CRNA</fullName>
+                <default>false</default>
+                <label>CRNA</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>No Licensure</fullName>
+                <default>false</default>
+                <label>No Licensure</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
